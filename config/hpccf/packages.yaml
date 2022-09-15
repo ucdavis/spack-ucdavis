@@ -1,0 +1,18 @@
+packages:
+  all:
+    target: [x86_64]
+    compiler:
+    - gcc@11.2.0
+
+  openmpi:
+    variants: pmix=True schedulers=slurm fabrics=ucx thread_multiple=True singularity=True
+    
+  slurm:
+    variants: +pmix +hwloc +mariadb +singularity
+    
+  r:
+    version: [4.1.1]
+    variants: +X
+
+  gdal:
+    variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat +gif +jasper +pcre +png
