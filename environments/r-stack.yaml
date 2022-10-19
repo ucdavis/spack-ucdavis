@@ -1,0 +1,47 @@
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  definitions:
+  - r_bases:
+    - r@4.1.1
+    - r@4.2.0
+  - r_libraries:
+    - r-rcpp
+    - r-fs
+  specs:
+  - matrix:
+    - [$r_libraries]
+    - [$^r_bases]
+  - $r_bases
+  modules:
+    default:
+      enable:
+        - tcl
+      roots:
+        tcl: $spack/../modules
+      tcl:
+        hash_length: 0
+        exclude_implicits: true
+        include:
+          - r
+        projections:
+          r: 'R/{version}'
+          ^r: 'R/libs/{^r.version}/{name}/{version}'
+        all:
+          conflict: 
+            - '{name}'
+        r:
+          template: hpccf/r-multi-view.tcl
+  view:
+    r-4.1.1:
+      root: views/4.1.1
+      select: [r@4.1.1, ^r@4.1.1]
+      link_type: symlink
+    r-4.2.0:
+      root: views/4.2.0
+      select: [r@4.2.0, ^r@4.2.0]
+      link_type: symlink
+  concretizer:
+    unify: when_possible
