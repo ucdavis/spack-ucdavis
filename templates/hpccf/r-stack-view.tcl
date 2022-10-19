@@ -1,7 +1,7 @@
 {% extends "modules/modulefile.tcl" %}
 {% block footer %}
 
-setenv R_VIEW_HOME /share/apps/spackuser/spack/var/spack/environments/r-multi/views/{{ spec.version }}
+setenv R_VIEW_HOME /share/apps/spackuser/environments/r-stack/views/{{ spec.version }}
 setenv R_HOME $env(R_VIEW_HOME)/rlib/R/
 setenv R_ROOT $env(R_VIEW_HOME)
 
