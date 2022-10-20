@@ -12,6 +12,6 @@ prepend-path CMAKE_PREFIX_PATH $env(R_VIEW_HOME)
 prepend-path R_LIBS $env(R_VIEW_HOME)/rlib/R/library
 
 if [module-info mode load] {
-   puts stderr "Loaded R version {{ spec.version} and libraries."
+   puts stderr "Loaded R version {{ spec.version }} and libraries."
 }
 {% endblock %}
