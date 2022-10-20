@@ -1,5 +1,10 @@
 modules:
   default:
+    enable:
+      - tcl
+    roots:
+      tcl: $spack/../modulefiles/spack
+    arch_folder: false
     tcl:
       verbose: true
       #autoload: 'direct'
@@ -11,5 +16,5 @@ modules:
         environment:
           set:
             '{name}_ROOT': '{prefix}'
-      #circos:
-      #template: hpccf/circos-version-warning.tcl
+      circos:
+        template: hpccf/circos-version-warning.tcl
