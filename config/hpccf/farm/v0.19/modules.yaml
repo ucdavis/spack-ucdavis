@@ -1,0 +1,15 @@
+modules:
+  default:
+    tcl:
+      verbose: true
+      #autoload: 'direct'
+      all:
+        template: hpccf/default.tcl
+        prerequisites: direct
+        conflict:
+        - '{name}'
+        environment:
+          set:
+            '{name}_ROOT': '{prefix}'
+      #circos:
+      #template: hpccf/circos-version-warning.tcl
