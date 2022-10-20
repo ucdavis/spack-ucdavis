@@ -13,32 +13,39 @@ packages:
   hwloc:
     externals:
     - spec: hwloc@2.8.0 +netloc +pci +libxml2 +libudev +cairo ~nvml %gcc@7.5.0
-      prefix: /share/apps/hwloc-2.8.0
+      prefix: /share/apps/hwloc-2.8.0/gcc7
     buildable: False
 
   libevent:
     externals:
     - spec: libevent@2.1.12 %gcc@7.5.0
-      prefix: /share/apps/libevent-2.1.12-stable
+      prefix: /share/apps/libevent-2.1.12-stable/gcc7
     buildable: False
 
   pmix:
     externals:
     - spec: pmix@4.1.1 %gcc@7.5.0
-      prefix: /share/apps/pmix-4.1.1
+      prefix: /share/apps/pmix-4.1.1/gcc7
     buildable: False
 
   ucx:
     externals:
     - spec: ucx@1.13.1 +thread_multiple %gcc@7.5.0
-      prefix: /share/apps/ucx-1.13.1
+      prefix: /share/apps/ucx-1.13.1/gcc7
     buildable: False
+
+  # don't build other mpi providers: always use the external openmpi
+  mpi:
+    buildable: False
+    require:
+    - one_of: [
+        "openmpi@4.1.4 %gcc@7.5.0"
+      ]
 
   openmpi:
     externals:
     - spec: openmpi@4.1.4 fabrics=ucx thread_multiple=True schedulers=slurm %gcc@7.5.0
-      prefix: /share/apps/openmpi-4.1.4
-    buildable: False
+      prefix: /share/apps/openmpi-4.1.4/gcc7
 
   #
   # Spack-built package settings
