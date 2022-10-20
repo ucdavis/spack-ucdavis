@@ -1,59 +1,25 @@
 packages:
-
-  # 
-  # Our self-built slurm/openmpi stack
-  #
-
-  slurm:
-    externals:
-    - spec: slurm@22.05.4 +pmix +mariadb +hwloc +hdf5 +restd +gtk %gcc@7.5.0
-      prefix: /share/apps/slurm-22.05.4/18.04
-    buildable: False
-
-  hwloc:
-    externals:
-    - spec: hwloc@2.8.0 +netloc +pci +libxml2 +libudev +cairo ~nvml %gcc@7.5.0
-      prefix: /share/apps/hwloc-2.8.0
-    buildable: False
-
-  libevent:
-    externals:
-    - spec: libevent@2.1.12 %gcc@7.5.0
-      prefix: /share/apps/libevent-2.1.12-stable
-    buildable: False
-
-  pmix:
-    externals:
-    - spec: pmix@4.1.1 %gcc@7.5.0
-      prefix: /share/apps/pmix-4.1.1
-    buildable: False
-
-  ucx:
-    externals:
-    - spec: ucx@1.13.1 +thread_multiple %gcc@7.5.0
-      prefix: /share/apps/ucx-1.13.1
-    buildable: False
-
-  openmpi:
-    externals:
-    - spec: openmpi@4.1.4 fabrics=ucx thread_multiple=True schedulers=slurm %gcc@7.5.0
-      prefix: /share/apps/openmpi-4.1.4
-    buildable: False
-
-  #
-  # Spack-built package settings
-  #
-
   all:
     target: [x86_64]
     compiler:
-    - gcc@7.5.0
+    - gcc@11.2.0
 
-  #gdal:
-  #  variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat +gif +jasper +pcre +png +zstd
+  openmpi:
+    variants: pmix=True schedulers=slurm fabrics=ucx thread_multiple=True singularity=True
+    
+  slurm:
+    variants: +pmix +hwloc +mariadb +singularity
+    
+  r:
+    version: [4.1.1]
+    variants: +X
+
+  gdal:
+    variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat +gif +jasper +pcre +png +zstd
 
   gdl:
     version: [0.9.8]
-    variants: +graphicsmagick +python
+    variants: +graphicsmagick +ipo +python
+
   sqlite:
     variants: +rtree
