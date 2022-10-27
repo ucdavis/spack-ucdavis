@@ -53,6 +53,7 @@ spack:
     - r-dose
     - r-dplyr
     - r-dqrng
+    - r-envirem
     - r-emmeans
     - r-enrichplot
     - r-ensembldb
@@ -184,4 +185,5 @@ spack:
       select: [r@4.2.0, ^r@4.2.0]
       link_type: symlink
   concretizer:
+    reuse: true
     unify: when_possible
