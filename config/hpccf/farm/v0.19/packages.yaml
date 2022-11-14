@@ -38,9 +38,8 @@ packages:
   mpi:
     buildable: False
     require:
-    - one_of: [
-        "openmpi@4.1.4 %gcc@7.5.0"
-      ]
+    - one_of:
+      - openmpi@4.1.4 %gcc@7.5.0
 
   openmpi:
     externals:
@@ -62,5 +61,15 @@ packages:
   gdl:
     version: [0.9.8]
     variants: +graphicsmagick +python
+
   sqlite:
     variants: +rtree
+
+  r-genomicfeatures:
+    version: [1.49.6]
+
+  r-genomeinfodb:
+    version: [1.35.1]
+
+  r-bsgenome:
+    version: [1.66.1]
