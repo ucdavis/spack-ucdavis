@@ -1,0 +1,24 @@
+modules:
+  default:
+    enable::
+      - lmod
+    roots:
+      tcl: $spack/../modulefiles/spack
+    #arch_folder: false
+    lmod:
+      core_compilers:
+        - 'gcc@11.3.0'
+      hierarchy:
+
+    tcl:
+      verbose: true
+      all:
+        template: hpccf/default.tcl
+        prerequisites: direct
+        conflict:
+        - '{name}'
+        environment:
+          set:
+            '{name}_ROOT': '{prefix}'
+      circos:
+        template: hpccf/circos-version-warning.tcl

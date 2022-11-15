@@ -1,0 +1,60 @@
+packages:
+
+  # 
+  # Our self-built slurm/openmpi stack
+  #
+
+  slurm:
+    version: 21-08-8-2
+    variants: +pmix +mariadb +hwloc +hdf5 +restd +gtk
+
+  hwloc:
+    version: 2.8.0
+    variants: +netloc +pci +libxml2 +libudev +cairo +nvml
+
+  libevent:
+    version: 2.1.12
+
+  pmix:
+    version: 4.1.2
+
+  ucx:
+    version: 1.13.1
+    variants: +thread_multiple
+
+  mpi:
+    require:
+    - one_of:
+      - openmpi@4.1.4
+
+  openmpi:
+    version: 4.1.4
+    variants: fabrics=ucx thread_multiple=True schedulers=slurm
+
+  #
+  # Spack-built package settings
+  #
+
+  all:
+    target: [x86_64]
+    compiler:
+    - gcc@11.3.0
+
+  #gdal:
+  #  variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat +gif +jasper +pcre +png +zstd
+
+  gdl:
+    version: [0.9.8]
+    variants: +graphicsmagick +python
+
+  sqlite:
+    variants: +rtree
+
+  r-genomicfeatures:
+    version: [1.49.6]
+
+  r-genomeinfodb:
+    version: [1.35.1]
+
+  r-bsgenome:
+    version: [1.66.1]
