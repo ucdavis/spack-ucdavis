@@ -205,7 +205,7 @@ spack:
     - r-vroom
     - r-wesanderson
     - r-wordcloud
-    - r-yulab-utils    
+    - r-yulab-utils
   specs:
   - matrix:
     - [$r_libraries]
@@ -218,6 +218,8 @@ spack:
         exclude_implicits: true
         include:
         - r
+        exclude:
+        - ^r
         projections:
           r: R/{version}
         all:
