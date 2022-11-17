@@ -1,15 +1,17 @@
 spack:
   specs:
-    - lmod@8.7.2
-    - slurm
-    - hwloc
-    - libevent
-    - pmix
-    - ucx
-    - openmpi
-  view:
+  - lmod@8.7.2
+  - slurm
+  - hwloc
+  - libevent
+  - pmix
+  - ucx
+  - openmpi
+  view: /share/apps/spack/environments/cluster-core/view
+  modules:
     default:
-      root: $spack/../environments/cluster-core/view
+      lmod:
+        exclude:
+          - lmod
   concretizer:
-    reuse: true
     unify: when_possible

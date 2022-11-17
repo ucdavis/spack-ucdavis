@@ -3,12 +3,17 @@ modules:
     enable::
       - lmod
     roots:
-      tcl: $spack/../modulefiles/spack
-    #arch_folder: false
+      lmod: $spack/../modulefiles/
+    arch_folder: false
     lmod:
       core_compilers:
         - 'gcc@11.3.0'
-      hierarchy:
+      hash_length: 0
+      exclude_implicits: true
+      all:
+        environment:
+          set:
+            '{name}_ROOT': '{prefix}'
 
     tcl:
       verbose: true
