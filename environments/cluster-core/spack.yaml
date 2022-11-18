@@ -13,5 +13,8 @@ spack:
       lmod:
         exclude:
           - lmod
+          - mariadb
+        include:
+          - slurm
   concretizer:
     unify: when_possible
