@@ -6,7 +6,7 @@ packages:
 
   slurm:
     version:
-      - 21-08-8-2
+      - 22-05-6-1
     variants: +pmix +mariadb +hwloc +restd +gtk sysconfdir=/etc/slurm
 
   hwloc:
@@ -49,6 +49,24 @@ packages:
   mariadb:
     externals:
       - spec: mariadb@10.8.2 %gcc@11.3.0
+        prefix: /usr
+    buildable: false
+
+  dbus:
+    externals:
+      - spec: dbus@1.12.20 %gcc@11.3.0
+        prefix: /usr
+    buildable: false
+
+  at-spi2-core:
+    externals:
+      - spec: at-spi2-core@2.44.0 %gcc@11.3.0
+        prefix: /usr
+    buildable: false
+
+  at-spi2-atk:
+    externals:
+      - spec: at-spi2-atk@2.38.0 %gcc@11.3.05
         prefix: /usr
     buildable: false
 
