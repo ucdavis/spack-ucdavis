@@ -1,0 +1,99 @@
+packages:
+
+  # 
+  # Our self-built slurm/openmpi stack
+  #
+
+  slurm:
+    version:
+      - 22-05-6-1
+    variants: +pmix +mariadb +hwloc +restd +gtk sysconfdir=/etc/slurm
+
+  hwloc:
+    version:
+      - 2.8.0
+    variants: +netloc +pci +libxml2 +libudev +cairo +nvml
+
+  libevent:
+    version:
+      - 2.1.12
+
+  pmix:
+    version:
+      - 3.2.3
+
+  ucx:
+    version:
+      - 1.13.1
+    variants: +thread_multiple
+
+  mpi:
+    require:
+    - one_of:
+      - openmpi@4.1.4
+
+  openmpi:
+    version: 
+      - 4.1.4
+    variants: fabrics=ucx thread_multiple=True schedulers=slurm
+
+  lmod:
+    variants: modulepath_root=/share/apps/spack/modulefiles/
+
+  munge:
+    externals:
+      - spec: munge@0.5.14 %gcc@11.3.0
+        prefix: /usr
+    buildable: false
+
+  mariadb:
+    externals:
+      - spec: mariadb@10.8.2 %gcc@11.3.0
+        prefix: /usr
+    buildable: false
+
+  dbus:
+    externals:
+      - spec: dbus@1.12.20 %gcc@11.3.0
+        prefix: /usr
+    buildable: false
+
+  at-spi2-core:
+    externals:
+      - spec: at-spi2-core@2.44.0 %gcc@11.3.0
+        prefix: /usr
+    buildable: false
+
+  at-spi2-atk:
+    externals:
+      - spec: at-spi2-atk@2.38.0 %gcc@11.3.05
+        prefix: /usr
+    buildable: false
+
+  #
+  # Spack-built package settings
+  #
+
+  all:
+    target: [x86_64]
+    compiler:
+    - gcc@11.3.0
+
+  #gdal:
+  #  variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat +gif +jasper +pcre +png +zstd
+
+  gdl:
+    version: [0.9.8]
+    variants: +graphicsmagick +python
+
+  sqlite:
+    variants: +rtree
+
+  r-genomicfeatures:
+    version: [1.49.6]
+
+  r-genomeinfodb:
+    version: [1.35.1]
+
+  r-bsgenome:
+    version: [1.66.1]
