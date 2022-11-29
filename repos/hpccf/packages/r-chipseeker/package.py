@@ -9,8 +9,6 @@ from spack.package import *
 class RChipseeker(RPackage):
     """ChIPseeker for ChIP peak Annotation, Comparison, and Visualization"""
 
-    homepage = "https://bioconductor.org/packages/release/bioc/html/ChIPseeker.html"
-    url = "https://bioconductor.org/packages/release/bioc/src/contrib/ChIPseeker_1.32.1.tar.gz"
     bioc = "ChIPseeker"
 
     version("1.34.1", commit="4bf5e4f36bddb0a843ce6cb1241f1266398ea8d0")

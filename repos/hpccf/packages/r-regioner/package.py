@@ -10,8 +10,6 @@ from spack.package import *
 class RRegioner(RPackage):
     """Association analysis of genomic regions based on permutation tests"""
 
-    homepage = "https://www.bioconductor.org/packages/release/bioc/html/regioneR.html"
-    url = "https://www.bioconductor.org/packages/release/bioc/src/contrib/regioneR_1.30.0.tar.gz"
     bioc = "regioneR"
 
     version("1.30.0", commit="52f238d")
