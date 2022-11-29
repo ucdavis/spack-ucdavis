@@ -14,11 +14,7 @@ class RRegioner(RPackage):
     url = "https://www.bioconductor.org/packages/release/bioc/src/contrib/regioneR_1.30.0.tar.gz"
     bioc = "regioneR"
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers = ["github_user1", "github_user2"]
-
-    version("1.30.0", sha256="89001c6f24ffd23a8badd7f09595cfb973dd1b0e1f2bfdc503b475053ee45605")
+    version("1.30.0", commit="52f238d")
 
     depends_on("r-bsgenome@1.66.1:", type=("build", "run"))
     depends_on("r-genomicranges", type=("build", "run"))
