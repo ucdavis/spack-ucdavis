@@ -13,11 +13,7 @@ class RChipseeker(RPackage):
     url = "https://bioconductor.org/packages/release/bioc/src/contrib/ChIPseeker_1.32.1.tar.gz"
     bioc = "ChIPseeker"
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers = ["github_user1", "github_user2"]
-
-    version("1.32.1", sha256="8eadcd66bbe60d17e72240a4f1c7b95a9cf11a7cd97df9833d1831ba39094550")
+    version("1.34.1", commit="4bf5e4f36bddb0a843ce6cb1241f1266398ea8d0")
 
     depends_on("r-annotationdbi", type=("build", "run"))
     depends_on("r-biocgenerics", type=("build", "run"))
