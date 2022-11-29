@@ -3,40 +3,17 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-# ----------------------------------------------------------------------------
-# If you submit this package back to Spack as a pull request,
-# please first remove this boilerplate and all FIXME comments.
-#
-# This is a template package file for Spack.  We've put "FIXME"
-# next to all the things you'll want to change. Once you've handled
-# them, you can save this file and test your package like this:
-#
-#     spack install r-dmrseq
-#
-# You can edit this file again by typing:
-#
-#     spack edit r-dmrseq
-#
-# See the Spack documentation for more information on packaging.
-# ----------------------------------------------------------------------------
-
 from spack.package import *
 
 
 class RDmrseq(RPackage):
     """Detection and inference of differentially methylated regions from Whole Genome Bisulfite Sequencing"""
 
-    homepage = "https://www.bioconductor.org/packages/release/bioc/html/dmrseq.html"
-    url = "https://www.bioconductor.org/packages/release/bioc/src/contrib/dmrseq_1.16.0.tar.gz"
     bioc = "dmrseq"
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers = ["github_user1", "github_user2"]
+    version("1.18.0", commit="3bb8fe6")
+    version("1.16.0", commit="b65f67bb2ecf141d9df1b7702806dc449469165b")
 
-    version("1.16.0", sha256="962cc6e0525afdff6166ad41b70b05ea0b71f4de9ae67ff7b2cb88e884a129b1")
-
-    # depends_on("r-foo", type=("build", "run"))
     depends_on("r-bsseq", type=("build", "run"))
     depends_on("r-genomicranges", type=("build", "run"))
     depends_on("r-nlme", type=("build", "run"))
