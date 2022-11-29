@@ -3,30 +3,12 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-# ----------------------------------------------------------------------------
-# If you submit this package back to Spack as a pull request,
-# please first remove this boilerplate and all FIXME comments.
-#
-# This is a template package file for Spack.  We've put "FIXME"
-# next to all the things you'll want to change. Once you've handled
-# them, you can save this file and test your package like this:
-#
-#     spack install r-chipseeker
-#
-# You can edit this file again by typing:
-#
-#     spack edit r-chipseeker
-#
-# See the Spack documentation for more information on packaging.
-# ----------------------------------------------------------------------------
-
 from spack.package import *
 
 
 class RChipseeker(RPackage):
     """ChIPseeker for ChIP peak Annotation, Comparison, and Visualization"""
 
-    # FIXME: Add a proper url for your package's homepage here.
     homepage = "https://bioconductor.org/packages/release/bioc/html/ChIPseeker.html"
     url = "https://bioconductor.org/packages/release/bioc/src/contrib/ChIPseeker_1.32.1.tar.gz"
     bioc = "ChIPseeker"
@@ -37,8 +19,6 @@ class RChipseeker(RPackage):
 
     version("1.32.1", sha256="8eadcd66bbe60d17e72240a4f1c7b95a9cf11a7cd97df9833d1831ba39094550")
 
-    # FIXME: Add dependencies if required.
-    # depends_on("r-foo", type=("build", "run"))
     depends_on("r-annotationdbi", type=("build", "run"))
     depends_on("r-biocgenerics", type=("build", "run"))
     depends_on("r-boot", type=("build", "run"))

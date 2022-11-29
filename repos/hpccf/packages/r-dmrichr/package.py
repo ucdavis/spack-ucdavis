@@ -36,8 +36,6 @@ class RDmrichr(RPackage):
 
     version('1.7.1', sha256='dde09ad5623ab10ca72e646804cbafc4024c53dc4dc5f2d9caa824279fa3151e')
 
-    # FIXME: Add dependencies if required.
-    # depends_on('r-foo', type=('build', 'run'))
     depends_on('r@4.1.1:', type=('build', 'run'))
     depends_on('r-genomeinfodb@1.35.1:', type=('build', 'run'))
     depends_on('r-biocmanager@1.30.10:', type=('build', 'run'))
