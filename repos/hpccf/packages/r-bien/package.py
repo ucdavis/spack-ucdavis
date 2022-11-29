@@ -20,7 +20,7 @@
 # See the Spack documentation for more information on packaging.
 # ----------------------------------------------------------------------------
 
-from spack import *
+from spack.package import *
 
 
 class RBien(RPackage):
@@ -32,7 +32,6 @@ class RBien(RPackage):
     Information). This package provides functions that query the BIEN
     database by constructing and executing optimized SQL queries."""
 
-    # FIXME: Add a proper url for your package's homepage here.
     homepage = "https://cran.r-project.org/web/packages/BIEN/index.html"
     cran     = "BIEN"
 
@@ -42,8 +41,6 @@ class RBien(RPackage):
 
     version('1.2.5', sha256='8844b35b61d7e9678135022cc6d50cbb33a8d5347318389ad61b11b7beb12869')
 
-    # FIXME: Add dependencies if required.
-    # depends_on('r-foo', type=('build', 'run'))
     depends_on('r-rpostgresql', type=('build', 'run'))    
     depends_on('r-rgeos', type=('build', 'run'))    
     depends_on('r-rgdal', type=('build', 'run'))    
@@ -56,9 +53,3 @@ class RBien(RPackage):
     depends_on('r-doparallel', type=('build', 'run'))    
     depends_on('r-foreach', type=('build', 'run'))        
     
-
-    def configure_args(self):
-        # FIXME: Add arguments to pass to install via --configure-args
-        # FIXME: If not needed delete this function
-        args = []
-        return args
