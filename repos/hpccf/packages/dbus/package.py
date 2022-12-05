@@ -6,7 +6,7 @@
 from spack.package import *
 
 
-class Dbus(Package):
+class Dbus(AutotoolsPackage):
     """D-Bus is a message bus system, a simple way for applications to
     talk to one another. D-Bus supplies both a system daemon (for
     events such new hardware device printer queue ) and a
@@ -27,6 +27,13 @@ class Dbus(Package):
     version("1.8.4", sha256="3ef63dc8d0111042071ee7f7bafa0650c6ce2d7be957ef0b7ec269495a651ff8")
     version("1.8.2", sha256="5689f7411165adc953f37974e276a3028db94447c76e8dd92efe910c6d3bae08")
 
+    variant(
+        "local_state_dir",
+        default="PREFIX/var",
+        values=any,
+        description="Set the local state directory (sockets and whatnot)."
+    )
+
     depends_on("pkgconfig", type="build")
     depends_on("docbook-xml@4.4", type="build")
     depends_on("docbook-xsl", type="build")
@@ -34,8 +41,23 @@ class Dbus(Package):
     depends_on("glib")
     depends_on("libsm")
 
+    def configure_args(self):
+        spec = self.spec
+        
+        args = [
+            "--prefix={0}".format(spec.prefix),
+            "--disable-systemd",
+            "--disable-launchd"
+        ]
+
+        localstatedir = spec.variants["local_state_dir"].value
+        if localstatedir != "PREFIX/var":
+            args.append("--localstatedir={0}".format(localstatedir))
+
+        return args
+
     def install(self, spec, prefix):
-        configure("--prefix=%s" % prefix, "--disable-systemd", "--disable-launchd", "--localstatedir=/var/")
+
         make()
         make("install")
 
