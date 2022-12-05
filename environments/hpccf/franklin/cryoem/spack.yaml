@@ -1,0 +1,13 @@
+spack:
+  specs:
+  - relion@4.0-beta ~gui +cuda cuda_arch=75 purpose=cluster
+  - ctffind
+  #- relion@4.0-beta ~cuda +altcpu purpose=cluster
+  view: /share/apps/spack/environments/cryoem/view
+  modules:
+    default:
+      lmod:
+        exclude_implicits: true
+  concretizer:
+    reuse: true
+    unify: when_possible
