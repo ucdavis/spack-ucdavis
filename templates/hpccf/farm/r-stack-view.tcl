@@ -10,8 +10,8 @@ prepend-path LD_LIBRARY_PATH $env(R_VIEW_HOME)/rlib/R/lib
 prepend-path PKG_CONFIG_PATH $env(R_VIEW_HOME)/rlib/pkgconfig
 prepend-path CMAKE_PREFIX_PATH $env(R_VIEW_HOME)
 
-prepend-path R_LIBS $env(R_VIEW_HOME)/rlib/R/library
-prepend-path R_LIBS /share/apps/spackuser/Rlibs/{{ spec.version }}
+prepend-path R_LIBS_SITE $env(R_VIEW_HOME)/rlib/R/library
+prepend-path R_LIBS_SITE /share/apps/spackuser/Rlibs/{{ spec.version }}
 
 if [module-info mode load] {
    puts stderr "Loaded R version {{ spec.version }} and libraries."
