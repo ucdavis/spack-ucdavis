@@ -125,6 +125,11 @@ class Relion(CMakePackage, CudaPackage):
                     "-DCUDA_ARCH=%s" % (carch),
                 ]
 
+            if "+mklfft" not in self.spec and int(carch) >= 11:
+                args += [
+                    "-DTHRUST_IGNORE_CUB_VERSION_CHECK=1"
+                ]
+
         if "+amdfftw" in self.spec:
             args += [
                 "-DAMDFFTW=ON"
@@ -155,3 +160,11 @@ class Relion(CMakePackage, CudaPackage):
                 r'\1 "{0}"'.format(join_path(self.spec["motioncor2"].prefix.bin, "MotionCor2")),
                 join_path("src", "pipeline_jobs.h"),
             )
+
+        if "+cuda" in self.spec:
+            carch = self.spec.variants["cuda_arch"].value[0]
+            if int(carch) >= 11:
+                # see: https://github.com/3dem/relion/commit/554e0ed993e5ac8a3fee4be7c5cf64a62216a8c7
+                filter_file(r'^#define CUB_NS_QUALIFIER ::cub # for compatibility with CUDA 11.5',
+                            r'#define CUB_NS_QUALIFIER ::cub // for compatibility with CUDA 11.5',
+                            join_path("src", "acc", "cuda", "cuda_utils_cub.cuh"))
