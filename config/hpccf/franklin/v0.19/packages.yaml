@@ -1,56 +1,53 @@
 packages:
 
-  # 
-  # Our self-built slurm/openmpi stack
+  #  slurm:
+  #    version:
+  #      - 22-05-6-1
+  #    variants: +pmix +mariadb +hwloc +restd sysconfdir=/etc/slurm
+  #    #require: "@22-05-6-1 /xqrmrt7"
   #
-
-  slurm:
-    version:
-      - 22-05-6-1
-    variants: +pmix +mariadb +hwloc +restd sysconfdir=/etc/slurm
-    require: "/xqrmrt7"
-
-  hwloc:
-    version:
-      - 2.8.0
-    variants: +netloc +pci +libxml2 +libudev +cairo +nvml
-
-  cairo:
-    require: "+X +ft +fc +pdf +png +gobject"
-
-  python:
-    require: "~libxml2"
-
-  libxml2:
-    require: "@2.10.2: +python"
-
-  libevent:
-    version:
-      - 2.1.12
-
-  pmix:
-    version:
-      - 4.1.2
-      - 3.2.3
-
-  ucx:
-    version:
-      - 1.13.1
-    variants: +thread_multiple
-
-  mpi:
-    require:
-    - one_of:
-      - openmpi@4.1.4
-
-  openmpi:
-    version: 
-      - 4.1.4
-    require: "/wb2zk5p" # we want only one openmpi! convert to a `one_of` when we switch to arch-specific builds.
-    variants: fabrics=ucx thread_multiple=True schedulers=slurm
-
-  lmod:
-    variants: modulepath_root=/share/apps/spack/modulefiles/
+  #  hwloc:
+  #    version:
+  #      - 2.8.0
+  #    variants: +netloc +pci +libxml2 +libudev +cairo +nvml
+  #
+  #  cairo:
+  #    require: "+X +ft +fc +pdf +png +gobject"
+  #
+  #  python:
+  #    require: "~libxml2"
+  #
+  #  libxml2:
+  #    require: "@2.10.2: +python"
+  #
+  #  libevent:
+  #    version:
+  #      - 2.1.12
+  #
+  #  pmix:
+  #    version:
+  #      - 4.1.2
+  #      - 3.2.3
+  #
+  #  ucx:
+  #    version:
+  #      - 1.13.1
+  #    variants: +thread_multiple
+  #
+  #  mpi:
+  #    require:
+  #    - one_of:
+  #      - "openmpi@4.1.4 fabrics=ucx schedulers=slurm +cuda"
+  #      - "openmpi@4.1.4 fabrics=ucx schedulers=slurm ~cuda"
+  #
+  #  openmpi:
+  #    version: 
+  #      - 4.1.4
+  #  #  require: "/6abxuin" # we want only one openmpi! convert to a `one_of` when we switch to arch-specific builds.
+  #  #  require: "fabrics=ucx thread_multiple=True schedulers=slurm"
+  #
+  #  lmod:
+  #    variants: modulepath_root=/share/apps/spack/modulefiles/
 
   munge:
     externals:
@@ -81,15 +78,6 @@ packages:
 
   dbus:
     require: "@1.12.8 local_state_dir=/var/"
-
-  #
-  # Franklin has A4000, A5000, and eventually, RTX2080 GPUs
-  # A4000 and A5000 are compute capability 8.6;
-  # RTX2080 are 7.5.
-  # For now, target the lowest common version.
-  #
-  cuda:
-    variants: cuda_arch=75
 
   #
   # Spack-built package settings
