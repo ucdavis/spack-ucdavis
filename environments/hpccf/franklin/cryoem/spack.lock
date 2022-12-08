@@ -24,6 +24,10 @@
     {
       "hash": "6cxdklc7ypshvkyqcr2xqsp2qgxje357",
       "spec": "gctf"
+    },
+    {
+      "hash": "wgwcyy4nr7fy5rqfqu5j6dn5gnvat4so",
+      "spec": "motioncor2@1.5.0"
     }
   ],
   "concrete_specs": {
@@ -8485,6 +8489,150 @@
       },
       "package_hash": "fhyrdhsk55mghzgg3dhw3yt3aqscnh42lch2tbpa7xnbop276bgq====",
       "hash": "4izwetii2to3vb352gz5n2u6ue2zzy2u"
+    },
+    "wgwcyy4nr7fy5rqfqu5j6dn5gnvat4so": {
+      "name": "motioncor2",
+      "version": "1.5.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "ucdavis.hpccf",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "brdz6eyrrt5xbci67hgtmeg7rha3zbxqkpzww5xbnf35gucuehla====",
+      "dependencies": [
+        {
+          "name": "cuda",
+          "hash": "422u3rl4y6ymdhzog5m6fjdfdgpx7cc5",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "libtiff",
+          "hash": "4kn7cqf5uonilmbb57teof2bbfegih2x",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "patchelf",
+          "hash": "4izwetii2to3vb352gz5n2u6ue2zzy2u",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "wgwcyy4nr7fy5rqfqu5j6dn5gnvat4so"
+    },
+    "422u3rl4y6ymdhzog5m6fjdfdgpx7cc5": {
+      "name": "cuda",
+      "version": "11.5.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "allow-unsupported-compilers": false,
+        "build_system": "generic",
+        "dev": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "pw4g4ghpf7lyxdk3zqsyzdx4tc4ghzwbdu4nwj7fmnayo42s3saq====",
+      "dependencies": [
+        {
+          "name": "libxml2",
+          "hash": "hwle4dz3ylpu7yebuev6c52lh2a3bbfr",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "422u3rl4y6ymdhzog5m6fjdfdgpx7cc5"
+    },
+    "hwle4dz3ylpu7yebuev6c52lh2a3bbfr": {
+      "name": "libxml2",
+      "version": "2.10.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "ucdavis.hpccf",
+      "parameters": {
+        "build_system": "autotools",
+        "python": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "ooqnmnukit4ufpbgqpwqitt4iux3guqosezxnuio3oynqkaxpkqa====",
+      "dependencies": [
+        {
+          "name": "libiconv",
+          "hash": "5etceu6iqoqsiqkpon7dy3pipnxt26yr",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "xqpwsucguxnkdw2c2jy6ukqos3lzes5a",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "xz",
+          "hash": "msioatv4quivppmm3tykkmrfjoi4x2wa",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "o5mnwe7apyslhsjn4ysrmtypqaulijew",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "hwle4dz3ylpu7yebuev6c52lh2a3bbfr"
     }
   }
 }
