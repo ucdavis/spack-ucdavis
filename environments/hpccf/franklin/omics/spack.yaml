@@ -1,0 +1,38 @@
+spack:
+  all:
+    target: [zen2]
+  include:
+  - $spack/../environments/cluster-core/exports.yaml
+  specs:
+  - augustus
+  - blast-plus
+  - blast2go
+  - allpathslg
+  - aragorn
+  - bedtools2
+  - bcftools +libgsl +perl-filters
+  - blat
+  - bowtie
+  - bowtie2
+  - braker
+  - bridger
+  - bwa
+  - bwtool
+  - canu
+  - cap3
+  - corset
+  - clustal-omega
+  - clustalw
+  - cufflinks
+  - diamond
+  view: false
+  modules:
+    default:
+      lmod:
+        exclude_implicits: true
+        all:
+          conflict:
+          - '{name}'
+  concretizer:
+    reuse: true
+    unify: when_possible
