@@ -1,4 +1,5 @@
 {% extends "hpccf/base.lua" %}
+
 {% block postload %}
    {{ super() }}
    LmodMessage(myModuleFullName() .. ": loaded.")
