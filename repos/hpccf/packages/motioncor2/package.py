@@ -53,6 +53,8 @@ class Motioncor2(Package):
     def install(self, spec, prefix):
         cuda_version = spec["cuda"].version.up_to(2).joined
         cuda_rpath = join_path(spec["cuda"].prefix.targets, "x86_64-linux", "lib")
+        libtiff_rpath = spec["libtiff"].prefix.lib
+        rpaths = "{0}:{1}".format(cuda_rpath, libtiff_rpath)
         patchelf = which("patchelf")
 
         mkdirp(prefix.bin)
@@ -62,7 +64,7 @@ class Motioncor2(Package):
                 raise ValueError("Unable to match MotionCor2 binary file.")
             else:
                 motioncor_binary = motioncor_binary[0]
-            patchelf("--set-rpath", cuda_rpath, motioncor_binary)
+            patchelf("--force-rpath", "--set-rpath", rpaths, motioncor_binary)
             install(
                 motioncor_binary,
                 join_path(prefix.bin, "MotionCor2"),
