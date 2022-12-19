@@ -6,34 +6,46 @@
   },
   "roots": [
     {
-      "hash": "vngqj5zpwjlr4j6mxxp7zjs7ft3bxplf",
-      "spec": "relion@4.0-beta+amdfftw+cuda~gui cuda_arch=75 purpose=cluster arch=None-None-zen2"
+      "hash": "2n4nyfeymvq6sny2ymxbzasbqypctict",
+      "spec": "relion@4.0.0+amdfftw+cuda+gui cuda_arch=75 purpose=cluster arch=None-None-zen2"
     },
     {
-      "hash": "4kceacp3vuc4w5atj4tz2pk4zvhtxjjq",
-      "spec": "relion@3.1.3+amdfftw+cuda~gui cuda_arch=75 purpose=cluster arch=None-None-zen2"
+      "hash": "rsn5fn3zyycikuovint5w7sipqqicc5n",
+      "spec": "relion@4.0-beta+amdfftw+cuda+gui cuda_arch=75 purpose=cluster arch=None-None-zen2"
     },
     {
-      "hash": "soj5ufnztitmd7rpgx42yqkobdlzjmzp",
-      "spec": "relion@4.0-beta+altcpu+amdfftw~cuda~gui purpose=cluster arch=None-None-zen2"
+      "hash": "s6zeurl2y7hrnwz5rn2wct7xqhntrtuo",
+      "spec": "relion@3.1.3+amdfftw+cuda+gui cuda_arch=75 purpose=cluster arch=None-None-zen2"
     },
     {
-      "hash": "q64bo2ucrf5xekge5kutxqe3ayx6moka",
-      "spec": "relion@3.1.3+altcpu+amdfftw~cuda~gui purpose=cluster arch=None-None-zen2"
+      "hash": "earfvqcwwcpkmhyyhleks3f2sgaiu2qd",
+      "spec": "relion@4.0.0+altcpu+amdfftw~cuda+gui purpose=cluster arch=None-None-zen2"
+    },
+    {
+      "hash": "v2yk7gc5kmvbq44cl44me5tbinzo3bxc",
+      "spec": "relion@4.0-beta+altcpu+amdfftw~cuda+gui purpose=cluster arch=None-None-zen2"
+    },
+    {
+      "hash": "2aigiaecoh7x4x5fg7lmii4y4xh7hajt",
+      "spec": "relion@3.1.3+altcpu+amdfftw~cuda+gui purpose=cluster arch=None-None-zen2"
     },
     {
       "hash": "6cxdklc7ypshvkyqcr2xqsp2qgxje357",
       "spec": "gctf"
     },
     {
-      "hash": "wgwcyy4nr7fy5rqfqu5j6dn5gnvat4so",
+      "hash": "ao2tuowmtor6gcrm6pbj6qoibxjnq65q",
       "spec": "motioncor2@1.5.0"
+    },
+    {
+      "hash": "q3mkb2mrzzrgklbfpglifkxnks56m56e",
+      "spec": "ghostscript"
     }
   ],
   "concrete_specs": {
-    "vngqj5zpwjlr4j6mxxp7zjs7ft3bxplf": {
+    "2n4nyfeymvq6sny2ymxbzasbqypctict": {
       "name": "relion",
-      "version": "4.0-beta",
+      "version": "4.0.0",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu22.04",
@@ -91,7 +103,7 @@
         "double": true,
         "double-gpu": false,
         "external_motioncor2": false,
-        "gui": false,
+        "gui": true,
         "ipo": false,
         "mklfft": false,
         "purpose": "cluster",
@@ -102,7 +114,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "kmzzoosnhsdrwfwoa6tuznftna7v4vwbmerbqtgh2kskfxkpdnnq====",
+      "package_hash": "opwj4lcqazpflyrkwivvgwozkdc4gfvnnkvifguostwmok25vx7a====",
       "dependencies": [
         {
           "name": "amdfftw",
@@ -128,7 +140,15 @@
         },
         {
           "name": "cuda",
-          "hash": "sfah46qo5dhrzdh5djlcmtghde5o3gvp",
+          "hash": "cao4k76jkkj7xb7k2veegvwjailr73un",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "fltk",
+          "hash": "ljqtwkrogbzrspxmzqfd63ajf4prtdw4",
           "type": [
             "build",
             "link"
@@ -159,7 +179,7 @@
           ]
         }
       ],
-      "hash": "vngqj5zpwjlr4j6mxxp7zjs7ft3bxplf"
+      "hash": "2n4nyfeymvq6sny2ymxbzasbqypctict"
     },
     "bfa2l5ogcvrmiowhvcfflgfz7pka4llc": {
       "name": "amdfftw",
@@ -7737,48 +7757,13 @@
       ],
       "hash": "edd3557ubyqbvaid3kxfasplpqvg5h6k"
     },
-    "sfah46qo5dhrzdh5djlcmtghde5o3gvp": {
+    "cao4k76jkkj7xb7k2veegvwjailr73un": {
       "name": "cuda",
       "version": "11.8.0",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu22.04",
-        "target": {
-          "name": "zen2",
-          "vendor": "AuthenticAMD",
-          "features": [
-            "abm",
-            "aes",
-            "avx",
-            "avx2",
-            "bmi1",
-            "bmi2",
-            "clflushopt",
-            "clwb",
-            "clzero",
-            "cx16",
-            "f16c",
-            "fma",
-            "fsgsbase",
-            "mmx",
-            "movbe",
-            "pclmulqdq",
-            "popcnt",
-            "rdseed",
-            "sse",
-            "sse2",
-            "sse4_1",
-            "sse4_2",
-            "sse4a",
-            "ssse3",
-            "xsavec",
-            "xsaveopt"
-          ],
-          "generation": 0,
-          "parents": [
-            "zen"
-          ]
-        }
+        "target": "x86_64"
       },
       "compiler": {
         "name": "gcc",
@@ -7796,80 +7781,136 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "external": {
-        "path": "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/cuda-11.8.0-cao4k76jkkj7xb7k2veegvwjailr73un/.",
-        "module": [
-          "cuda/11.8.0"
-        ],
-        "extra_attributes": {}
-      },
       "package_hash": "zxrkn446nq2eqvd226rlbugavivueik33j5mjsowti4lug6aov7q====",
-      "hash": "sfah46qo5dhrzdh5djlcmtghde5o3gvp"
+      "dependencies": [
+        {
+          "name": "libxml2",
+          "hash": "ajav75ktil4uaq6rrbaxb3ia6k4lbd6n",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "cao4k76jkkj7xb7k2veegvwjailr73un"
     },
-    "4kceacp3vuc4w5atj4tz2pk4zvhtxjjq": {
-      "name": "relion",
-      "version": "3.1.3",
+    "ljqtwkrogbzrspxmzqfd63ajf4prtdw4": {
+      "name": "fltk",
+      "version": "1.3.7",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu22.04",
-        "target": {
-          "name": "zen2",
-          "vendor": "AuthenticAMD",
-          "features": [
-            "abm",
-            "aes",
-            "avx",
-            "avx2",
-            "bmi1",
-            "bmi2",
-            "clflushopt",
-            "clwb",
-            "clzero",
-            "cx16",
-            "f16c",
-            "fma",
-            "fsgsbase",
-            "mmx",
-            "movbe",
-            "pclmulqdq",
-            "popcnt",
-            "rdseed",
-            "sse",
-            "sse2",
-            "sse4_1",
-            "sse4_2",
-            "sse4a",
-            "ssse3",
-            "xsavec",
-            "xsaveopt"
-          ],
-          "generation": 0,
-          "parents": [
-            "zen"
-          ]
-        }
+        "target": "x86_64"
       },
       "compiler": {
         "name": "gcc",
         "version": "11.3.0"
       },
-      "namespace": "ucdavis.hpccf",
+      "namespace": "builtin",
       "parameters": {
-        "allow_ctf_in_sagd": true,
-        "amdfftw": true,
-        "build_system": "cmake",
-        "build_type": "RelWithDebInfo",
-        "cuda": true,
-        "cuda_arch": [
-          "75"
+        "build_system": "generic",
+        "gl": true,
+        "shared": true,
+        "xft": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "ouqmzoilvsivsles6soe2i453asijbdbqd7zmo4dmspqmltimuna====",
+      "dependencies": [
+        {
+          "name": "glx",
+          "hash": "lekiwqrbvzr5c5pji64qwd4dtkbtq2du",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libx11",
+          "hash": "3mp36maqzaaums4rdhxo5w2v5fbn2a4i",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libxft",
+          "hash": "o3b2b5oepmnvtnkr2upysagow2bz52y2",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "ljqtwkrogbzrspxmzqfd63ajf4prtdw4"
+    },
+    "lekiwqrbvzr5c5pji64qwd4dtkbtq2du": {
+      "name": "glx",
+      "version": "1.4",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "bundle",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "nudnzva5x7jvvuiz2dnb64jz5blb6dfd4dnimgk4sd7lt4oaf33a====",
+      "dependencies": [
+        {
+          "name": "mesa",
+          "hash": "hawsoo4gkewu2vutgdth3woxjiz6yddt",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "lekiwqrbvzr5c5pji64qwd4dtkbtq2du"
+    },
+    "hawsoo4gkewu2vutgdth3woxjiz6yddt": {
+      "name": "mesa",
+      "version": "22.1.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "meson",
+        "buildtype": "release",
+        "default_library": [
+          "shared"
         ],
-        "double": true,
-        "double-gpu": false,
-        "external_motioncor2": false,
-        "gui": false,
-        "ipo": false,
-        "mklfft": false,
-        "purpose": "cluster",
+        "glx": true,
+        "llvm": true,
+        "opengl": true,
+        "opengles": false,
+        "osmesa": true,
+        "patches": [
+          "ee737d105aac4a9eacbbd504aee44c58b05978e0f2a42f2de088550878219ea3"
+        ],
+        "strip": false,
         "cflags": [],
         "cppflags": [],
         "cxxflags": [],
@@ -7877,14 +7918,16 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "ylqrigifz6ntdbos5owy5d2ixihs2de7q2x76hxiv4pxdxluujqq====",
+      "patches": [
+        "ee737d105aac4a9eacbbd504aee44c58b05978e0f2a42f2de088550878219ea3"
+      ],
+      "package_hash": "5qtlhd3ccki2almiiwe74xg77o6h3eyfhh7wvvzr7tvcbppbaorq====",
       "dependencies": [
         {
-          "name": "amdfftw",
-          "hash": "bfa2l5ogcvrmiowhvcfflgfz7pka4llc",
+          "name": "bison",
+          "hash": "yjm6gb7yzocdf3suozu74mg4k4x5fcdb",
           "type": [
-            "build",
-            "link"
+            "build"
           ]
         },
         {
@@ -7895,101 +7938,152 @@
           ]
         },
         {
-          "name": "ctffind",
-          "hash": "muiihkujv3v4lrqimqhkwkq46abmh44j",
-          "type": [
-            "run"
-          ]
-        },
-        {
-          "name": "cuda",
-          "hash": "sfah46qo5dhrzdh5djlcmtghde5o3gvp",
+          "name": "expat",
+          "hash": "6dkt5moqr6xhxu73j5zjq3wzer53gbhy",
           "type": [
             "build",
             "link"
           ]
         },
         {
-          "name": "libtiff",
-          "hash": "4kn7cqf5uonilmbb57teof2bbfegih2x",
+          "name": "flex",
+          "hash": "fr5tdctlc6vceee7uhthcs3s6edxf6vo",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "gettext",
+          "hash": "qd4ppwbwtp3wbvxnl6sgfqh43qft5shz",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "glproto",
+          "hash": "jvelc7jwixvymjelemfh5yystzsus2ri",
           "type": [
             "build",
             "link"
           ]
         },
         {
-          "name": "openmpi",
-          "hash": "gajs6eftw4gosakzb6hyjgrbw3dxa3w4",
+          "name": "libunwind",
+          "hash": "4i5whhrytxukeiebcvk7hv3ahfmtnzc4",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libx11",
+          "hash": "3mp36maqzaaums4rdhxo5w2v5fbn2a4i",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libxcb",
+          "hash": "wdrdnmcdtxk6yclckynh5yr3tom2iji5",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libxext",
+          "hash": "s6maa2lj5ybybjm7k4a5b7nlkyy5hsyi",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libxt",
+          "hash": "wdzi3bxxcyw5qajyia662x4jbaarmg6i",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "llvm",
+          "hash": "4rgfoctygs54fsvuy7jpoyb546ypmw2j",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "meson",
+          "hash": "wg56ooj5qh6hjfecuaq42hzwdwjijwht",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "ninja",
+          "hash": "27zq2dydg774v2olhzucain4mu5vs67z",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "xqpwsucguxnkdw2c2jy6ukqos3lzes5a",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "py-mako",
+          "hash": "fiqdyaoj4pp3tmnnlwaybzwubbzg2wgc",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "qhgbbats44hhnqsggt6oaeswz2fzzqlt",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "xrandr",
+          "hash": "kiooerdyi67c33ixhfmann43m7q36lh2",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "o5mnwe7apyslhsjn4ysrmtypqaulijew",
           "type": [
             "build",
             "link"
           ]
         }
       ],
-      "hash": "4kceacp3vuc4w5atj4tz2pk4zvhtxjjq"
+      "hash": "hawsoo4gkewu2vutgdth3woxjiz6yddt"
     },
-    "soj5ufnztitmd7rpgx42yqkobdlzjmzp": {
-      "name": "relion",
-      "version": "4.0-beta",
+    "jvelc7jwixvymjelemfh5yystzsus2ri": {
+      "name": "glproto",
+      "version": "1.4.17",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu22.04",
-        "target": {
-          "name": "zen2",
-          "vendor": "AuthenticAMD",
-          "features": [
-            "abm",
-            "aes",
-            "avx",
-            "avx2",
-            "bmi1",
-            "bmi2",
-            "clflushopt",
-            "clwb",
-            "clzero",
-            "cx16",
-            "f16c",
-            "fma",
-            "fsgsbase",
-            "mmx",
-            "movbe",
-            "pclmulqdq",
-            "popcnt",
-            "rdseed",
-            "sse",
-            "sse2",
-            "sse4_1",
-            "sse4_2",
-            "sse4a",
-            "ssse3",
-            "xsavec",
-            "xsaveopt"
-          ],
-          "generation": 0,
-          "parents": [
-            "zen"
-          ]
-        }
+        "target": "x86_64"
       },
       "compiler": {
         "name": "gcc",
         "version": "11.3.0"
       },
-      "namespace": "ucdavis.hpccf",
+      "namespace": "builtin",
       "parameters": {
-        "allow_ctf_in_sagd": true,
-        "altcpu": true,
-        "amdfftw": true,
-        "build_system": "cmake",
-        "build_type": "RelWithDebInfo",
-        "cuda": false,
-        "double": true,
-        "double-gpu": false,
-        "external_motioncor2": false,
-        "gui": false,
-        "ipo": false,
-        "mklfft": false,
-        "purpose": "cluster",
+        "build_system": "autotools",
         "cflags": [],
         "cppflags": [],
         "cxxflags": [],
@@ -7997,68 +8091,282 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "kmzzoosnhsdrwfwoa6tuznftna7v4vwbmerbqtgh2kskfxkpdnnq====",
+      "package_hash": "baal5ii3swebi24q6u677bj7x5mz6urcud6ygvghb2l6apbcepvq====",
       "dependencies": [
         {
-          "name": "amdfftw",
-          "hash": "bfa2l5ogcvrmiowhvcfflgfz7pka4llc",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "cmake",
-          "hash": "ybhe5sz6vjjcy3czubhfrrppn44ax7pi",
+          "name": "pkgconf",
+          "hash": "xqpwsucguxnkdw2c2jy6ukqos3lzes5a",
           "type": [
             "build"
           ]
         },
         {
-          "name": "ctffind",
-          "hash": "muiihkujv3v4lrqimqhkwkq46abmh44j",
+          "name": "util-macros",
+          "hash": "axf2eumsfjtjvyofdhfztbszvfcws7ct",
           "type": [
-            "run"
+            "build"
           ]
-        },
+        }
+      ],
+      "hash": "jvelc7jwixvymjelemfh5yystzsus2ri"
+    },
+    "4i5whhrytxukeiebcvk7hv3ahfmtnzc4": {
+      "name": "libunwind",
+      "version": "1.6.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "block_signals": false,
+        "build_system": "autotools",
+        "components": [
+          "none"
+        ],
+        "conservative_checks": false,
+        "cxx_exceptions": false,
+        "debug": false,
+        "debug_frame": false,
+        "docs": true,
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "pic": false,
+        "tests": true,
+        "weak_backtrace": true,
+        "xz": false,
+        "zlib": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "ehitg7cktumeyju2lsmjvka7gkkmqmhlh36fylthqjrflkww55ga====",
+      "hash": "4i5whhrytxukeiebcvk7hv3ahfmtnzc4"
+    },
+    "wdzi3bxxcyw5qajyia662x4jbaarmg6i": {
+      "name": "libxt",
+      "version": "1.1.5",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "ng4kdtqjxm2sznqij2zhaufk3cixl5idt5266wc67bqrvmikto4q====",
+      "dependencies": [
         {
-          "name": "intel-tbb",
-          "hash": "6wbdi3eovhci76vrr4je2kfllglq5gqs",
+          "name": "kbproto",
+          "hash": "3savccwcmb4ptdd7rilvwfthboqlhvk3",
           "type": [
             "build",
             "link"
           ]
         },
         {
-          "name": "libpng",
-          "hash": "nq2aj324ld4u6f2zoqfyax5m2bh7dcxh",
+          "name": "libice",
+          "hash": "3j7tfmlsf52uq5zif4nw22kzkdvxeglp",
           "type": [
             "build",
             "link"
           ]
         },
         {
-          "name": "libtiff",
-          "hash": "4kn7cqf5uonilmbb57teof2bbfegih2x",
+          "name": "libsm",
+          "hash": "k5japrf7dgcv2wd5y5fnqkjlitl7tspp",
           "type": [
             "build",
             "link"
           ]
         },
         {
-          "name": "openmpi",
-          "hash": "gajs6eftw4gosakzb6hyjgrbw3dxa3w4",
+          "name": "libx11",
+          "hash": "3mp36maqzaaums4rdhxo5w2v5fbn2a4i",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "xqpwsucguxnkdw2c2jy6ukqos3lzes5a",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "util-macros",
+          "hash": "axf2eumsfjtjvyofdhfztbszvfcws7ct",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "xproto",
+          "hash": "kgeo7yijsscusycapi7rqdrsewxt6kw6",
           "type": [
             "build",
             "link"
           ]
         }
       ],
-      "hash": "soj5ufnztitmd7rpgx42yqkobdlzjmzp"
+      "hash": "wdzi3bxxcyw5qajyia662x4jbaarmg6i"
     },
-    "6wbdi3eovhci76vrr4je2kfllglq5gqs": {
-      "name": "intel-tbb",
-      "version": "2021.7.0",
+    "3j7tfmlsf52uq5zif4nw22kzkdvxeglp": {
+      "name": "libice",
+      "version": "1.0.9",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "afgts7cnufoig4lxag4wpja37yk3mmy3hk6kopvect4hqun43jeq====",
+      "dependencies": [
+        {
+          "name": "pkgconf",
+          "hash": "xqpwsucguxnkdw2c2jy6ukqos3lzes5a",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "util-macros",
+          "hash": "axf2eumsfjtjvyofdhfztbszvfcws7ct",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "xproto",
+          "hash": "kgeo7yijsscusycapi7rqdrsewxt6kw6",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "xtrans",
+          "hash": "qxvqikmqfyxyh4pz2pym6su5ay7xhwzy",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "3j7tfmlsf52uq5zif4nw22kzkdvxeglp"
+    },
+    "k5japrf7dgcv2wd5y5fnqkjlitl7tspp": {
+      "name": "libsm",
+      "version": "1.2.3",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "fvahiyp4gx6lypfwgxeqddq47pkusw2wulobn6vfivf35c243w5q====",
+      "dependencies": [
+        {
+          "name": "libice",
+          "hash": "3j7tfmlsf52uq5zif4nw22kzkdvxeglp",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "xqpwsucguxnkdw2c2jy6ukqos3lzes5a",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "util-linux-uuid",
+          "hash": "2uxosdsb5dvspp57wlyzjcqnc5cn4owi",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "util-macros",
+          "hash": "axf2eumsfjtjvyofdhfztbszvfcws7ct",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "xproto",
+          "hash": "kgeo7yijsscusycapi7rqdrsewxt6kw6",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "xtrans",
+          "hash": "qxvqikmqfyxyh4pz2pym6su5ay7xhwzy",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "k5japrf7dgcv2wd5y5fnqkjlitl7tspp"
+    },
+    "4rgfoctygs54fsvuy7jpoyb546ypmw2j": {
+      "name": "llvm",
+      "version": "14.0.6",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu22.04",
@@ -8071,11 +8379,37 @@
       "namespace": "builtin",
       "parameters": {
         "build_system": "cmake",
-        "build_type": "RelWithDebInfo",
-        "cxxstd": "default",
+        "build_type": "Release",
+        "clang": true,
+        "compiler-rt": true,
+        "cuda": false,
+        "flang": false,
+        "gold": true,
+        "internal_unwind": true,
         "ipo": false,
-        "shared": true,
-        "tm": true,
+        "libcxx": true,
+        "link_llvm_dylib": false,
+        "lld": true,
+        "lldb": true,
+        "llvm_dylib": true,
+        "mlir": false,
+        "omp_as_runtime": true,
+        "omp_debug": false,
+        "omp_tsan": false,
+        "patches": [
+          "637916895d45c8abcf308579de41d3b71586794128ab8741238d24208612d0cf",
+          "d85ef51601ba51d86241f3b4f0265e385ad2653e7b8a739319427ffc7cc57816",
+          "f920173d0258c934f246fcee65864bcbe9dcb1be32d4298f9b6323c364919b99"
+        ],
+        "polly": true,
+        "python": false,
+        "shlib_symbol_version": "none",
+        "split_dwarf": false,
+        "targets": [
+          "none"
+        ],
+        "version_suffix": "none",
+        "z3": false,
         "cflags": [],
         "cppflags": [],
         "cxxflags": [],
@@ -8083,8 +8417,21 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "h3nuj2faghxjqlnyhqdt4mbrpc4wnrsttubvjycynwpnlwyrjzfa====",
+      "patches": [
+        "637916895d45c8abcf308579de41d3b71586794128ab8741238d24208612d0cf",
+        "d85ef51601ba51d86241f3b4f0265e385ad2653e7b8a739319427ffc7cc57816",
+        "f920173d0258c934f246fcee65864bcbe9dcb1be32d4298f9b6323c364919b99"
+      ],
+      "package_hash": "4rik4w7mjdv7mesugszh2eoprfule4nplexbwnvwwjcqjklhmleq====",
       "dependencies": [
+        {
+          "name": "binutils",
+          "hash": "6bs5wigx2apnzai6t42w4gp4e6al3liu",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
         {
           "name": "cmake",
           "hash": "ybhe5sz6vjjcy3czubhfrrppn44ax7pi",
@@ -8099,9 +8446,124 @@
             "build",
             "link"
           ]
+        },
+        {
+          "name": "libedit",
+          "hash": "eu43jaqsex532zycjrzv6wpv4cy5ojyr",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "ncurses",
+          "hash": "qfxtgqwgd46uawkgruouir2supqdeqgx",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "ninja",
+          "hash": "27zq2dydg774v2olhzucain4mu5vs67z",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "perl-data-dumper",
+          "hash": "ynfvrdugefg4dp46m6456pqbesqp7uor",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "xqpwsucguxnkdw2c2jy6ukqos3lzes5a",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "qhgbbats44hhnqsggt6oaeswz2fzzqlt",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "o5mnwe7apyslhsjn4ysrmtypqaulijew",
+          "type": [
+            "build",
+            "link"
+          ]
         }
       ],
-      "hash": "6wbdi3eovhci76vrr4je2kfllglq5gqs"
+      "hash": "4rgfoctygs54fsvuy7jpoyb546ypmw2j"
+    },
+    "6bs5wigx2apnzai6t42w4gp4e6al3liu": {
+      "name": "binutils",
+      "version": "2.38",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "gas": false,
+        "gold": true,
+        "headers": false,
+        "interwork": false,
+        "ld": true,
+        "libiberty": false,
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "lto": false,
+        "nls": true,
+        "plugins": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "omtssetb75krfrbdkc7maq3cl6mw7dwwhvifktngmrd62u6lrauq====",
+      "dependencies": [
+        {
+          "name": "diffutils",
+          "hash": "ark5ct45qdeqhepxrt2wspf3e2xxv4sc",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "gettext",
+          "hash": "qd4ppwbwtp3wbvxnl6sgfqh43qft5shz",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "o5mnwe7apyslhsjn4ysrmtypqaulijew",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "6bs5wigx2apnzai6t42w4gp4e6al3liu"
     },
     "i2lzyfovgkqjfnrn5jyf3plaqsa5dsz5": {
       "name": "hwloc",
@@ -8192,43 +8654,6 @@
       ],
       "hash": "i2lzyfovgkqjfnrn5jyf3plaqsa5dsz5"
     },
-    "cao4k76jkkj7xb7k2veegvwjailr73un": {
-      "name": "cuda",
-      "version": "11.8.0",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "allow-unsupported-compilers": false,
-        "build_system": "generic",
-        "dev": false,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "zxrkn446nq2eqvd226rlbugavivueik33j5mjsowti4lug6aov7q====",
-      "dependencies": [
-        {
-          "name": "libxml2",
-          "hash": "ajav75ktil4uaq6rrbaxb3ia6k4lbd6n",
-          "type": [
-            "build",
-            "link"
-          ]
-        }
-      ],
-      "hash": "cao4k76jkkj7xb7k2veegvwjailr73un"
-    },
     "mfeyvzqhrkbnhxwdtautxndzhnbppbkp": {
       "name": "libpciaccess",
       "version": "0.16",
@@ -8277,7 +8702,791 @@
       ],
       "hash": "mfeyvzqhrkbnhxwdtautxndzhnbppbkp"
     },
-    "q64bo2ucrf5xekge5kutxqe3ayx6moka": {
+    "eu43jaqsex532zycjrzv6wpv4cy5ojyr": {
+      "name": "libedit",
+      "version": "3.1-20210216",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "ninqmmvykou34qav4dotjyhs5xmqulqxvmhebpbr5nv3y6slsxva====",
+      "dependencies": [
+        {
+          "name": "ncurses",
+          "hash": "qfxtgqwgd46uawkgruouir2supqdeqgx",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "xqpwsucguxnkdw2c2jy6ukqos3lzes5a",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "eu43jaqsex532zycjrzv6wpv4cy5ojyr"
+    },
+    "ynfvrdugefg4dp46m6456pqbesqp7uor": {
+      "name": "perl-data-dumper",
+      "version": "2.173",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "perl",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "edbmece6jwopol7z7tss54ygevakvvsth2zycmjv6mzueupgvbia====",
+      "dependencies": [
+        {
+          "name": "perl",
+          "hash": "ld435wajgzlm7boqdq2irduzthlxom54",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "ynfvrdugefg4dp46m6456pqbesqp7uor"
+    },
+    "fiqdyaoj4pp3tmnnlwaybzwubbzg2wgc": {
+      "name": "py-mako",
+      "version": "1.2.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "python_pip",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "ym3joq7r6m2juwihcspqjoc7n5iufa3luaa4ypt4sznktqahhl4q====",
+      "dependencies": [
+        {
+          "name": "py-markupsafe",
+          "hash": "da3lyu2m4qu3fe274js4hukyejrsowyr",
+          "type": [
+            "build",
+            "run"
+          ]
+        },
+        {
+          "name": "py-pip",
+          "hash": "tipbf3e52l6o7shkrxmpexqetcqqbnwr",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "py-setuptools",
+          "hash": "6v2lk5ik6rmbgezieiaqnk3t4nr5y7lr",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "py-wheel",
+          "hash": "xu3gcltpktstqka5xu77u2dry7uhhoif",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "qhgbbats44hhnqsggt6oaeswz2fzzqlt",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "fiqdyaoj4pp3tmnnlwaybzwubbzg2wgc"
+    },
+    "da3lyu2m4qu3fe274js4hukyejrsowyr": {
+      "name": "py-markupsafe",
+      "version": "2.1.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "python_pip",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "47bvjmkphp6oabhr75t76r6brc7elzpqhtyh7cea6be6nzt5te4q====",
+      "dependencies": [
+        {
+          "name": "py-pip",
+          "hash": "tipbf3e52l6o7shkrxmpexqetcqqbnwr",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "py-setuptools",
+          "hash": "6v2lk5ik6rmbgezieiaqnk3t4nr5y7lr",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "py-wheel",
+          "hash": "xu3gcltpktstqka5xu77u2dry7uhhoif",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "qhgbbats44hhnqsggt6oaeswz2fzzqlt",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "da3lyu2m4qu3fe274js4hukyejrsowyr"
+    },
+    "rsn5fn3zyycikuovint5w7sipqqicc5n": {
+      "name": "relion",
+      "version": "4.0-beta",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen2",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avx",
+            "avx2",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "f16c",
+            "fma",
+            "fsgsbase",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "ucdavis.hpccf",
+      "parameters": {
+        "allow_ctf_in_sagd": true,
+        "amdfftw": true,
+        "build_system": "cmake",
+        "build_type": "RelWithDebInfo",
+        "cuda": true,
+        "cuda_arch": [
+          "75"
+        ],
+        "double": true,
+        "double-gpu": false,
+        "external_motioncor2": false,
+        "gui": true,
+        "ipo": false,
+        "mklfft": false,
+        "purpose": "cluster",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "y7fh6g3nhifoodtl4xi4lykhk54s6lq5r3lkvunhmbnrqdksolcq====",
+      "dependencies": [
+        {
+          "name": "amdfftw",
+          "hash": "bfa2l5ogcvrmiowhvcfflgfz7pka4llc",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "cmake",
+          "hash": "ybhe5sz6vjjcy3czubhfrrppn44ax7pi",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "ctffind",
+          "hash": "muiihkujv3v4lrqimqhkwkq46abmh44j",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "cuda",
+          "hash": "cao4k76jkkj7xb7k2veegvwjailr73un",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "fltk",
+          "hash": "ljqtwkrogbzrspxmzqfd63ajf4prtdw4",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libpng",
+          "hash": "nq2aj324ld4u6f2zoqfyax5m2bh7dcxh",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libtiff",
+          "hash": "4kn7cqf5uonilmbb57teof2bbfegih2x",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "openmpi",
+          "hash": "gajs6eftw4gosakzb6hyjgrbw3dxa3w4",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "rsn5fn3zyycikuovint5w7sipqqicc5n"
+    },
+    "s6zeurl2y7hrnwz5rn2wct7xqhntrtuo": {
+      "name": "relion",
+      "version": "3.1.3",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen2",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avx",
+            "avx2",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "f16c",
+            "fma",
+            "fsgsbase",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "ucdavis.hpccf",
+      "parameters": {
+        "allow_ctf_in_sagd": true,
+        "amdfftw": true,
+        "build_system": "cmake",
+        "build_type": "RelWithDebInfo",
+        "cuda": true,
+        "cuda_arch": [
+          "75"
+        ],
+        "double": true,
+        "double-gpu": false,
+        "external_motioncor2": false,
+        "gui": true,
+        "ipo": false,
+        "mklfft": false,
+        "purpose": "cluster",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "xdljs7gsz22ijy4ujb2b47s27xywbigblwqabbjnhrbfygdonawa====",
+      "dependencies": [
+        {
+          "name": "amdfftw",
+          "hash": "bfa2l5ogcvrmiowhvcfflgfz7pka4llc",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "cmake",
+          "hash": "ybhe5sz6vjjcy3czubhfrrppn44ax7pi",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "ctffind",
+          "hash": "muiihkujv3v4lrqimqhkwkq46abmh44j",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "cuda",
+          "hash": "cao4k76jkkj7xb7k2veegvwjailr73un",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "fltk",
+          "hash": "ljqtwkrogbzrspxmzqfd63ajf4prtdw4",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libtiff",
+          "hash": "4kn7cqf5uonilmbb57teof2bbfegih2x",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "openmpi",
+          "hash": "gajs6eftw4gosakzb6hyjgrbw3dxa3w4",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "s6zeurl2y7hrnwz5rn2wct7xqhntrtuo"
+    },
+    "earfvqcwwcpkmhyyhleks3f2sgaiu2qd": {
+      "name": "relion",
+      "version": "4.0.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen2",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avx",
+            "avx2",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "f16c",
+            "fma",
+            "fsgsbase",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "ucdavis.hpccf",
+      "parameters": {
+        "allow_ctf_in_sagd": true,
+        "altcpu": true,
+        "amdfftw": true,
+        "build_system": "cmake",
+        "build_type": "RelWithDebInfo",
+        "cuda": false,
+        "double": true,
+        "double-gpu": false,
+        "external_motioncor2": false,
+        "gui": true,
+        "ipo": false,
+        "mklfft": false,
+        "purpose": "cluster",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "opwj4lcqazpflyrkwivvgwozkdc4gfvnnkvifguostwmok25vx7a====",
+      "dependencies": [
+        {
+          "name": "amdfftw",
+          "hash": "bfa2l5ogcvrmiowhvcfflgfz7pka4llc",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "cmake",
+          "hash": "ybhe5sz6vjjcy3czubhfrrppn44ax7pi",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "ctffind",
+          "hash": "muiihkujv3v4lrqimqhkwkq46abmh44j",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "fltk",
+          "hash": "ljqtwkrogbzrspxmzqfd63ajf4prtdw4",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "intel-tbb",
+          "hash": "6wbdi3eovhci76vrr4je2kfllglq5gqs",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libpng",
+          "hash": "nq2aj324ld4u6f2zoqfyax5m2bh7dcxh",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libtiff",
+          "hash": "4kn7cqf5uonilmbb57teof2bbfegih2x",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "openmpi",
+          "hash": "gajs6eftw4gosakzb6hyjgrbw3dxa3w4",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "earfvqcwwcpkmhyyhleks3f2sgaiu2qd"
+    },
+    "6wbdi3eovhci76vrr4je2kfllglq5gqs": {
+      "name": "intel-tbb",
+      "version": "2021.7.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "cmake",
+        "build_type": "RelWithDebInfo",
+        "cxxstd": "default",
+        "ipo": false,
+        "shared": true,
+        "tm": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "h3nuj2faghxjqlnyhqdt4mbrpc4wnrsttubvjycynwpnlwyrjzfa====",
+      "dependencies": [
+        {
+          "name": "cmake",
+          "hash": "ybhe5sz6vjjcy3czubhfrrppn44ax7pi",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "hwloc",
+          "hash": "i2lzyfovgkqjfnrn5jyf3plaqsa5dsz5",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "6wbdi3eovhci76vrr4je2kfllglq5gqs"
+    },
+    "v2yk7gc5kmvbq44cl44me5tbinzo3bxc": {
+      "name": "relion",
+      "version": "4.0-beta",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen2",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avx",
+            "avx2",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "f16c",
+            "fma",
+            "fsgsbase",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "ucdavis.hpccf",
+      "parameters": {
+        "allow_ctf_in_sagd": true,
+        "altcpu": true,
+        "amdfftw": true,
+        "build_system": "cmake",
+        "build_type": "RelWithDebInfo",
+        "cuda": false,
+        "double": true,
+        "double-gpu": false,
+        "external_motioncor2": false,
+        "gui": true,
+        "ipo": false,
+        "mklfft": false,
+        "purpose": "cluster",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "y7fh6g3nhifoodtl4xi4lykhk54s6lq5r3lkvunhmbnrqdksolcq====",
+      "dependencies": [
+        {
+          "name": "amdfftw",
+          "hash": "bfa2l5ogcvrmiowhvcfflgfz7pka4llc",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "cmake",
+          "hash": "ybhe5sz6vjjcy3czubhfrrppn44ax7pi",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "ctffind",
+          "hash": "muiihkujv3v4lrqimqhkwkq46abmh44j",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "fltk",
+          "hash": "ljqtwkrogbzrspxmzqfd63ajf4prtdw4",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "intel-tbb",
+          "hash": "6wbdi3eovhci76vrr4je2kfllglq5gqs",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libpng",
+          "hash": "nq2aj324ld4u6f2zoqfyax5m2bh7dcxh",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libtiff",
+          "hash": "4kn7cqf5uonilmbb57teof2bbfegih2x",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "openmpi",
+          "hash": "gajs6eftw4gosakzb6hyjgrbw3dxa3w4",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "v2yk7gc5kmvbq44cl44me5tbinzo3bxc"
+    },
+    "2aigiaecoh7x4x5fg7lmii4y4xh7hajt": {
       "name": "relion",
       "version": "3.1.3",
       "arch": {
@@ -8335,7 +9544,7 @@
         "double": true,
         "double-gpu": false,
         "external_motioncor2": false,
-        "gui": false,
+        "gui": true,
         "ipo": false,
         "mklfft": false,
         "purpose": "cluster",
@@ -8346,7 +9555,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "ylqrigifz6ntdbos5owy5d2ixihs2de7q2x76hxiv4pxdxluujqq====",
+      "package_hash": "xdljs7gsz22ijy4ujb2b47s27xywbigblwqabbjnhrbfygdonawa====",
       "dependencies": [
         {
           "name": "amdfftw",
@@ -8368,6 +9577,14 @@
           "hash": "muiihkujv3v4lrqimqhkwkq46abmh44j",
           "type": [
             "run"
+          ]
+        },
+        {
+          "name": "fltk",
+          "hash": "ljqtwkrogbzrspxmzqfd63ajf4prtdw4",
+          "type": [
+            "build",
+            "link"
           ]
         },
         {
@@ -8395,7 +9612,7 @@
           ]
         }
       ],
-      "hash": "q64bo2ucrf5xekge5kutxqe3ayx6moka"
+      "hash": "2aigiaecoh7x4x5fg7lmii4y4xh7hajt"
     },
     "6cxdklc7ypshvkyqcr2xqsp2qgxje357": {
       "name": "gctf",
@@ -8490,7 +9707,7 @@
       "package_hash": "fhyrdhsk55mghzgg3dhw3yt3aqscnh42lch2tbpa7xnbop276bgq====",
       "hash": "4izwetii2to3vb352gz5n2u6ue2zzy2u"
     },
-    "wgwcyy4nr7fy5rqfqu5j6dn5gnvat4so": {
+    "ao2tuowmtor6gcrm6pbj6qoibxjnq65q": {
       "name": "motioncor2",
       "version": "1.5.0",
       "arch": {
@@ -8512,7 +9729,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "brdz6eyrrt5xbci67hgtmeg7rha3zbxqkpzww5xbnf35gucuehla====",
+      "package_hash": "pzdvqu6iulkn6nptabqbqamuwne6otcanxiommgixfc33ahft6mq====",
       "dependencies": [
         {
           "name": "cuda",
@@ -8536,7 +9753,7 @@
           ]
         }
       ],
-      "hash": "wgwcyy4nr7fy5rqfqu5j6dn5gnvat4so"
+      "hash": "ao2tuowmtor6gcrm6pbj6qoibxjnq65q"
     },
     "422u3rl4y6ymdhzog5m6fjdfdgpx7cc5": {
       "name": "cuda",
@@ -8633,6 +9850,221 @@
         }
       ],
       "hash": "hwle4dz3ylpu7yebuev6c52lh2a3bbfr"
+    },
+    "q3mkb2mrzzrgklbfpglifkxnks56m56e": {
+      "name": "ghostscript",
+      "version": "9.56.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "tesseract": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "v3ijssmkxpuxbzu7opmenrcvpivo5dmfdqjweyjzgp3vgzexsjoa====",
+      "dependencies": [
+        {
+          "name": "freetype",
+          "hash": "iuibx3yjznoyalg6k2xeftvcdwsrvk4r",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "gtkplus",
+          "hash": "nxiv4scu5c2nxwpmlg6ypw4vd5becacb",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "krb5",
+          "hash": "5pgq6qlcreow4rf2vjjnmwih2q4iidjo",
+          "type": [
+            "link"
+          ]
+        },
+        {
+          "name": "lcms",
+          "hash": "nrim74hxtcgmlnhvekymkqitue7vzxwb",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libjpeg-turbo",
+          "hash": "7qloa3u5d6aqhyhap4axcsulpgpqugov",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libpng",
+          "hash": "nq2aj324ld4u6f2zoqfyax5m2bh7dcxh",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libtiff",
+          "hash": "4kn7cqf5uonilmbb57teof2bbfegih2x",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libxext",
+          "hash": "s6maa2lj5ybybjm7k4a5b7nlkyy5hsyi",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkgconf",
+          "hash": "xqpwsucguxnkdw2c2jy6ukqos3lzes5a",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "o5mnwe7apyslhsjn4ysrmtypqaulijew",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "q3mkb2mrzzrgklbfpglifkxnks56m56e"
+    },
+    "5pgq6qlcreow4rf2vjjnmwih2q4iidjo": {
+      "name": "krb5",
+      "version": "1.19.3",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "shared": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "lti7kbibd5mb2y3gvpdzhgphypqfj6wx24ktnmryvuc6m3wz756a====",
+      "dependencies": [
+        {
+          "name": "bison",
+          "hash": "yjm6gb7yzocdf3suozu74mg4k4x5fcdb",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "diffutils",
+          "hash": "ark5ct45qdeqhepxrt2wspf3e2xxv4sc",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "gettext",
+          "hash": "qd4ppwbwtp3wbvxnl6sgfqh43qft5shz",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "openssl",
+          "hash": "ezvp5uq2woukr6yxgwh425khznrq5oxj",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "5pgq6qlcreow4rf2vjjnmwih2q4iidjo"
+    },
+    "nrim74hxtcgmlnhvekymkqitue7vzxwb": {
+      "name": "lcms",
+      "version": "2.13.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "3h43rrk3occsbcaaxdtzvvyuwov7cfjvdcm22v2v7lcl4r7wdeta====",
+      "dependencies": [
+        {
+          "name": "libjpeg-turbo",
+          "hash": "7qloa3u5d6aqhyhap4axcsulpgpqugov",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libtiff",
+          "hash": "4kn7cqf5uonilmbb57teof2bbfegih2x",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "o5mnwe7apyslhsjn4ysrmtypqaulijew",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "nrim74hxtcgmlnhvekymkqitue7vzxwb"
     }
   }
 }
