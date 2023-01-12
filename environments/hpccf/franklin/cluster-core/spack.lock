@@ -14,8 +14,16 @@
       "spec": "cuda"
     },
     {
+      "hash": "tz46dinm5zmznvjdyiktih23k7m5pxyy",
+      "spec": "fftw"
+    },
+    {
       "hash": "vwh3risluwod76qu33tvolcfquhxxwcq",
       "spec": "hwloc"
+    },
+    {
+      "hash": "njxsi2maikdix2xjveyzgnt3f2dgjagh",
+      "spec": "intel-oneapi-mkl"
     },
     {
       "hash": "rpdu6qcdtk5wrcfcxuljc7u232q5d2jj",
@@ -1375,6 +1383,48 @@
         }
       ],
       "hash": "2uxosdsb5dvspp57wlyzjcqnc5cn4owi"
+    },
+    "tz46dinm5zmznvjdyiktih23k7m5pxyy": {
+      "name": "fftw",
+      "version": "3.3.10",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "mpi": true,
+        "openmp": true,
+        "pfft_patches": false,
+        "precision": [
+          "double",
+          "float"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "b5bkvwfcfqyx7ankdqcm4v7cqwyxavvafi2js6ztj7myfnsf2qzq====",
+      "dependencies": [
+        {
+          "name": "openmpi",
+          "hash": "gajs6eftw4gosakzb6hyjgrbw3dxa3w4",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "tz46dinm5zmznvjdyiktih23k7m5pxyy"
     },
     "vwh3risluwod76qu33tvolcfquhxxwcq": {
       "name": "hwloc",
@@ -3649,6 +3699,69 @@
         }
       ],
       "hash": "mfeyvzqhrkbnhxwdtautxndzhnbppbkp"
+    },
+    "njxsi2maikdix2xjveyzgnt3f2dgjagh": {
+      "name": "intel-oneapi-mkl",
+      "version": "2022.2.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cluster": false,
+        "ilp64": false,
+        "shared": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "isqgwgh3y7outurbe3mpis2ilucrygh7xzxanp3mo37frho25auq====",
+      "dependencies": [
+        {
+          "name": "intel-oneapi-tbb",
+          "hash": "tvj2n6lv2keaum3447hxm4cu4u2bwvho",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "njxsi2maikdix2xjveyzgnt3f2dgjagh"
+    },
+    "tvj2n6lv2keaum3447hxm4cu4u2bwvho": {
+      "name": "intel-oneapi-tbb",
+      "version": "2021.7.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "wkyag53rgwzeeuqlxtj6uxmt6rr2xj7qegsqxd5r75sde674upga====",
+      "hash": "tvj2n6lv2keaum3447hxm4cu4u2bwvho"
     },
     "rpdu6qcdtk5wrcfcxuljc7u232q5d2jj": {
       "name": "libevent",

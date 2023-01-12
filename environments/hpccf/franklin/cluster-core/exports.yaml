@@ -48,6 +48,18 @@
       - spec: amdfftw@3.1.2 +openmp target=zen2
         modules:
         - openmpi/4.1.4
-        - amdfftw/3.1.2
+        - amdfftw/3.2
       buildable: false
-
+    fftw:
+      externals:
+      - spec: fftw@3.3.10
+        modules:
+        - openmpi/4.1.4
+        - fftw/3.3.10
+      buildable: false
+    intel-oneapi-mkl:
+      externals:
+      - spec: intel-oneapi-mkl@2022.2.1
+        modules:
+        - intel-oneapi-mkl/2022.2.1
+      buildable: false
