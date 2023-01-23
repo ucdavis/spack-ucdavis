@@ -1,53 +1,13 @@
 packages:
 
-  #  slurm:
-  #    version:
-  #      - 22-05-6-1
-  #    variants: +pmix +mariadb +hwloc +restd sysconfdir=/etc/slurm
-  #    #require: "@22-05-6-1 /xqrmrt7"
-  #
-  #  hwloc:
-  #    version:
-  #      - 2.8.0
-  #    variants: +netloc +pci +libxml2 +libudev +cairo +nvml
-  #
-  #  cairo:
-  #    require: "+X +ft +fc +pdf +png +gobject"
-  #
-  #  python:
-  #    require: "~libxml2"
-  #
-  #  libxml2:
-  #    require: "@2.10.2: +python"
-  #
-  #  libevent:
-  #    version:
-  #      - 2.1.12
-  #
-  #  pmix:
-  #    version:
-  #      - 4.1.2
-  #      - 3.2.3
-  #
-  #  ucx:
-  #    version:
-  #      - 1.13.1
-  #    variants: +thread_multiple
-  #
-  #  mpi:
-  #    require:
-  #    - one_of:
-  #      - "openmpi@4.1.4 fabrics=ucx schedulers=slurm +cuda"
-  #      - "openmpi@4.1.4 fabrics=ucx schedulers=slurm ~cuda"
-  #
-  #  openmpi:
-  #    version: 
-  #      - 4.1.4
-  #  #  require: "/6abxuin" # we want only one openmpi! convert to a `one_of` when we switch to arch-specific builds.
-  #  #  require: "fabrics=ucx thread_multiple=True schedulers=slurm"
-  #
-  #  lmod:
-  #    variants: modulepath_root=/share/apps/spack/modulefiles/
+  mpi:
+    require: openmpi
+
+  tbb:
+    require: intel-oneapi-tbb
+
+  mkl:
+    require: intel-oneapi-mkl
 
   munge:
     externals:
@@ -78,15 +38,85 @@ packages:
 
   dbus:
     require: "@1.12.8 local_state_dir=/var/"
+  
+  ####
+
+  slurm:
+    require: "@22-05-6-1 +pmix +mariadb +hwloc +restd sysconfdir=/etc/slurm"
+    version:
+    - 22-05-6-1
+    variants: +pmix +mariadb +hwloc +restd sysconfdir=/etc/slurm
+  hwloc:
+    # When mpi=openmpi, this introduces an unresolvable dependency.
+    # See https://github.com/spack/spack/issues/15836 for details
+    require: "@2.8.0 ~netloc +pci +libxml2 +libudev +nvml +cairo cuda_arch=75"
+    version:
+    - 2.8.0
+    variants: +netloc +pci +libxml2 +libudev +cairo +nvml
+  cairo:
+    require: +X +ft +fc +pdf +png +gobject
+  python:
+    require: ~libxml2
+  libxml2:
+    require: '@2.10.2: +python'
+  libevent:
+    require: "@2.1.12"
+    version:
+    - 2.1.12
+  pmix:
+    require: "@4.1.2"
+    version:
+    - 4.1.2
+  ucx:
+    require: "@1.13.1 +thread_multiple"
+    version:
+    - 1.13.1
+    variants: +thread_multiple
+  openmpi:
+    require:
+      - any_of:
+        - "@4.1.4 fabrics=ucx schedulers=slurm +cuda cuda_arch=75 target=x86_64_v3"
+        - "@4.1.4 fabrics=ucx schedulers=slurm +cuda cuda_arch=75 target=zen2"
+    version:
+    - 4.1.4
+    variants: fabrics=ucx schedulers=slurm +cuda
+  lmod:
+    require: "@8.7.14 modulepath_root=/share/apps/spack/modulefiles/"
+    version:
+    - 8.7.14
+    variants: modulepath_root=/share/apps/spack/modulefiles/
+
+  amdfftw:
+    require: "@3.2 +openmp"
+    version:
+    - 3.2
+    variants: +openmp
+  intel-oneapi-mkl:
+    require: "@2022.2.1"
+    version:
+    - 2022.2.1
+  fftw:
+    require: "@3.3.10 +openmp"
+    version:
+    - 3.3.10
+    variants: +openmp
+
+
+  ####
 
   #
   # Spack-built package settings
   #
 
   all:
-    target: [x86_64]
+    target: [x86_64_v3, zen2]
     compiler:
     - gcc@11.3.0
+    providers:
+      tbb:
+        - intel-oneapi-tbb
+    variants:
+      - cuda_arch=75
 
   #gdal:
   #  variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat +gif +jasper +pcre +png +zstd
