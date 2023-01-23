@@ -16,14 +16,11 @@ class Relion(CMakePackage, CudaPackage):
     git = "https://github.com/3dem/relion.git"
     url = "https://github.com/3dem/relion/archive/3.1.3.zip"
 
-    version("4.0.0", commit="04079953afd9f74c8705e24004091575b4fd71e0")
-    version("4.0-beta", commit="e3537c82cf7a816df805f4e54c0bc12475803524")
+    version("4.0.0",
+            commit="04079953afd9f74c8705e24004091575b4fd71e0",
+            preferred=True)
 
-    version(
-        "3.1.3",
-        sha256="e67277200b54d1814045cfe02c678a58d88eb8f988091573453c8568bfde90fc",
-        preferred=True,
-    )
+    version("3.1.3", sha256="e67277200b54d1814045cfe02c678a58d88eb8f988091573453c8568bfde90fc")
     version("3.1.2", sha256="dcdf6f214f79a03d29f0fed2de58054efa35a9d8401543bdc52bfb177987931f")
     version("3.1.1", sha256="63e9b77e1ba9ec239375020ad6ff631424d1a5803cba5c608c09fd44d20b1618")
     version("3.1.0", sha256="8a7e751fa6ebcdf9f36046499b3d88e170c4da86d5ff9ad1914b5f3d178867a8")
@@ -60,7 +57,7 @@ class Relion(CMakePackage, CudaPackage):
     # these new values were added in relion 3
     # do not seem to cause problems with < 3
     variant("mklfft", default=True, description="Use MKL rather than FFTW for FFT")
-    variant("amdfftw", default=False, description="Use AMD-optimized FFTW")
+    #variant("amdfftw", default=False, description="Use AMD-optimized FFTW")
     variant(
         "allow_ctf_in_sagd",
         default=True,
@@ -79,7 +76,7 @@ class Relion(CMakePackage, CudaPackage):
     depends_on("mpi")
     depends_on("cmake@3:", type="build")
     depends_on("fftw-api precision=float,double", when="~mklfft")
-    depends_on("amdfftw precision=float,double", when="+amdfftw")
+    #depends_on("amdfftw precision=float,double", when="+amdfftw")
 
     # use the +xft variant so the interface is not so horrible looking
     depends_on("fltk+xft", when="+gui")
@@ -130,9 +127,16 @@ class Relion(CMakePackage, CudaPackage):
                     "-DTHRUST_IGNORE_CUB_VERSION_CHECK=1"
                 ]
 
-        if "+amdfftw" in self.spec:
+        if "^amdfftw" in self.spec:
             args += [
                 "-DAMDFFTW=ON"
+            ]
+
+        if "+altcpu" in self.spec:
+            args += [
+                "-DFORCE_OWN_TBB=OFF",
+                self.define("TBB_INCLUDE_DIR", self.spec["tbb"].headers.directories[0]),
+                self.define("TBB_LIBRARY", self.spec["tbb"].libs.directories[0])
             ]
 
         return args
