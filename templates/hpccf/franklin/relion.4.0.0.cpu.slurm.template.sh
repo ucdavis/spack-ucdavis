@@ -36,14 +36,9 @@
 #Set the number of OpenMP threads per MPI task to SLURM internal variable value
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 #
-#
-#print out the list of GPUs before the job is started
-/usr/bin/nvidia-smi
-#
-#
 
 module load openmpi/4.1.4
-module load relion/cpu/4.0.0
+module load relion/cpu/4.0.0+amd
 module load motioncor2/1.5.0
 
 which relion_refine_mpi
