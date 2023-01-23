@@ -35,11 +35,12 @@ class Dbus(AutotoolsPackage):
     )
 
     depends_on("pkgconfig", type="build")
-    depends_on("docbook-xml@4.4", type="build")
+    depends_on("docbook-xml", type="build")
     depends_on("docbook-xsl", type="build")
     depends_on("expat")
     depends_on("glib")
     depends_on("libsm")
+    depends_on("xmlto")
 
     def configure_args(self):
         spec = self.spec
