@@ -1,0 +1,2 @@
+load("slurm")
+load("openmpi")
