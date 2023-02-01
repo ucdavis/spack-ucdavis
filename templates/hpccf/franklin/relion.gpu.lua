@@ -16,9 +16,9 @@ setenv("RELION_QSUB_EXTRA1", "Email:")
 setenv("RELION_QSUB_EXTRA1_DEFAULT", user_email)
 setenv("RELION_QSUB_EXTRA1_HELP", "The email address to use for slurm notifications.")
 
-setenv("RELION_QSUB_EXTRA2", "Number of GPUs:")
+setenv("RELION_QSUB_EXTRA2", "GPU resources:")
 setenv("RELION_QSUB_EXTRA2_DEFAULT", "2")
-setenv("RELION_QSUB_EXTRA2_HELP", "Number of GPUs to allocate to this job.")
+setenv("RELION_QSUB_EXTRA2_HELP", [[Number (and optionally type) of GPUs to request for this job. If only an integer is supplied, will request any GPU. If TYPE:NUM is supplied (example: a4000:4), specific models of GPU will be requested. Note that specific combinations of GPU type and job queue may fail; that is, if you select "high" as your queue and "a4000:4" as your GPU resources, but your account does not have access to the A4000 nodes' high queue, the job will fail to submit. You can view avaiable GPU resource types by running `sinfo -o "%20N %10c %10m %30G"`.]])
 
 setenv("RELION_QSUB_EXTRA3", "Memory per CPU (MB):")
 setenv("RELION_QSUB_EXTRA3_DEFAULT", "10000")
