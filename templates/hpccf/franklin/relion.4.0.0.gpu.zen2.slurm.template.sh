@@ -59,14 +59,12 @@ module list
 
 echo "RELION JOB STARTED at: `date`"
 
-export RELION_command="XXXcommandXXX"
-
 mkdir -p slurm
 cp XXXoutfileXXX slurm/slurm$SLURM_JOB_ID_0
 ln -s ../XXXoutfileXXX slurm/slurm$SLURM_JOB_ID
 
 #run your Relion job here
-echo srun --mpi=pmix -n $SLURM_NTASKS $RELION_command
-srun --mpi=pmix -n $SLURM_NTASKS $RELION_command
+#echo srun --mpi=pmix -n $SLURM_NTASKS $RELION_command
+srun --mpi=pmix -n $SLURM_NTASKS XXXcommandXXX
 
 echo "RELION JOB ENDED at: `date`"
