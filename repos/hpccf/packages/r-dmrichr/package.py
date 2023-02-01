@@ -20,7 +20,7 @@
 # See the Spack documentation for more information on packaging.
 # ----------------------------------------------------------------------------
 
-from spack import *
+from spack.package import *
 
 
 class RDmrichr(RPackage):
@@ -36,15 +36,16 @@ class RDmrichr(RPackage):
 
     version('1.7.1', sha256='dde09ad5623ab10ca72e646804cbafc4024c53dc4dc5f2d9caa824279fa3151e')
 
-    # FIXME: Add dependencies if required.
-    # depends_on('r-foo', type=('build', 'run'))
     depends_on('r@4.1.1:', type=('build', 'run'))
+    depends_on('r-genomeinfodb@1.35.1:', type=('build', 'run'))
     depends_on('r-biocmanager@1.30.10:', type=('build', 'run'))
+    depends_on('r-genomicfeatures@1.49.6:', type=('build', 'run'))
+    depends_on('r-ensembldb@2.20.2:', type=('build', 'run'))
+    
     depends_on('r-bsseq', type=('build', 'run'))
     depends_on('r-biocgenerics', type=('build', 'run'))
     depends_on('r-boruta', type=('build', 'run'))
     depends_on('r-gofuncr', type=('build', 'run'))
-    depends_on('r-genomeinfodb', type=('build', 'run'))
     depends_on('r-genomicranges', type=('build', 'run'))
     depends_on('r-broom', type=('build', 'run'))
     depends_on('r-ggplot2', type=('build', 'run'))
@@ -68,11 +69,9 @@ class RDmrichr(RPackage):
     depends_on('r-tibble', type=('build', 'run'))
     depends_on('r-readxl', type=('build', 'run'))
     depends_on('r-readr', type=('build', 'run'))
-    depends_on('r-ensembldb', type=('build', 'run'))
     depends_on('r-glimma', type=('build', 'run'))
     depends_on('r-magrittr', type=('build', 'run'))
     depends_on('r-rlang', type=('build', 'run'))
-    depends_on('r-genomicfeatures', type=('build', 'run'))
     depends_on('r-delayedmatrixstats', type=('build', 'run'))
     depends_on('r-iranges', type=('build', 'run'))
     depends_on('r-tidyselect', type=('build', 'run'))
@@ -80,9 +79,20 @@ class RDmrichr(RPackage):
     depends_on('r-s4vectors', type=('build', 'run'))
     depends_on('r-bumphunter', type=('build', 'run'))
     depends_on('r-genefilter', type=('build', 'run'))
-
-    def configure_args(self):
-        # FIXME: Add arguments to pass to install via --configure-args
-        # FIXME: If not needed delete this function
-        args = []
-        return args
+    depends_on("r-dmrseq", type=("build", "run"))
+    depends_on("r-cmplot", type=("build", "run"))
+    depends_on("r-chipseeker", type=("build", "run"))
+    depends_on("r-enrichr", type=("build", "run"))
+    depends_on("r-ggbiplot", type=("build", "run"))
+    depends_on("r-gt", type=("build", "run"))
+    depends_on("r-lsmeans", type=("build", "run"))
+    depends_on("r-rgreat", type=("build", "run"))
+    depends_on("r-sigfeature", type=("build", "run"))
+    depends_on("r-r2html", type=("build", "run"))
+    depends_on("r-lola", type=("build", "run"))
+    depends_on("r-performanceanalytics", type=("build", "run"))
+    depends_on("r-hablar", type=("build", "run"))
+    depends_on("r-plyranges", type=("build", "run"))
+    depends_on("r-wesanderson", type=("build", "run"))
+    depends_on("r-rrvgo", type=("build", "run"))
+    depends_on("r-methylcc", type=("build", "run"))

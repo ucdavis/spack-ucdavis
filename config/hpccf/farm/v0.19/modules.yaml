@@ -1,0 +1,39 @@
+modules:
+  # This maps paths in the package install prefix to environment variables
+  # they should be added to. For example, <prefix>/bin should be in PATH.
+  prefix_inspections:
+    bin:
+      - PATH
+    man:
+      - MANPATH
+    share/man:
+      - MANPATH
+    share/aclocal:
+      - ACLOCAL_PATH
+    lib/pkgconfig:
+      - PKG_CONFIG_PATH
+    lib64/pkgconfig:
+      - PKG_CONFIG_PATH
+    share/pkgconfig:
+      - PKG_CONFIG_PATH
+    ./:
+      - CMAKE_PREFIX_PATH
+
+  default:
+    enable:
+      - tcl
+    roots:
+      tcl: $spack/../modulefiles/spack
+    arch_folder: false
+    tcl:
+      verbose: true
+      all:
+        template: default.tcl
+        prerequisites: direct
+        conflict:
+        - '{name}'
+        environment:
+          set:
+            '{name}_ROOT': '{prefix}'
+      circos:
+        template: circos-version-warning.tcl
