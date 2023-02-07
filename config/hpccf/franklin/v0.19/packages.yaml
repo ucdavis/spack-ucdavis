@@ -29,7 +29,7 @@ packages:
 
   at-spi2-atk:
     externals:
-      - spec: at-spi2-atk@2.38.0 %gcc@11.3.05
+      - spec: at-spi2-atk@2.38.0 %gcc@11.3.0
         prefix: /usr
     buildable: false
 
@@ -38,7 +38,25 @@ packages:
 
   dbus:
     require: "@1.12.8 local_state_dir=/var/"
-  
+
+  opengl:
+    buildable: False
+    externals:
+    - spec: opengl@4.5.0 %gcc@11.3.0
+      prefix: /usr
+
+  linux-pam:
+    buildable: False
+    externals:
+    - spec: linux-pam@1.4.0 %gcc@11.3.0
+      prefix: /usr
+
+  openssl:
+    externals:
+    - spec: openssl@3.0.2
+      prefix: /usr
+    buildable: False
+
   ####
 
   slurm:
