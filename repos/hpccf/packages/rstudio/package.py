@@ -28,7 +28,7 @@ class Rstudio(CMakePackage):
     variant("notebook", default=False, description="Enable notebook support.")
     variant("server", default=False, when="@2022.12.0-353:", description="Build server version.")
 
-    depends_on("r@3.0.1:", type=("build", "run"))
+    depends_on("r@3.0.1:", type=("build"))
     depends_on("cmake@3.4.3:", type="build")
     depends_on("pkgconfig", type="build")
     depends_on("ant", type="build")
