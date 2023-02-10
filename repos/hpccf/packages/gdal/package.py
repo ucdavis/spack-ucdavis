@@ -1,1 +1,0 @@
-../../deprecated/gdal/package.py
