@@ -33,11 +33,25 @@ packages:
         prefix: /usr
     buildable: false
 
+  atk:
+    externals:
+      - spec: atk@2.36.0
+        prefix: /usr
+    buildable: false
+
   intel-mkl:
     require: "@2017.0.098:" # force post-2017 MKLs that are OSS
 
   dbus:
     require: "@1.12.8 local_state_dir=/var/"
+
+  gtkplus:
+    buildable: False
+    externals:
+      - spec: gtkplus@3.24.33
+        prefix: /usr
+      - spec: gtkplus@2.24.33
+        prefix: /usr
 
   opengl:
     buildable: False
@@ -55,7 +69,31 @@ packages:
     externals:
     - spec: openssl@3.0.2
       prefix: /usr
-    buildable: False
+    #buildable: False
+
+  rust:
+    externals:
+    - spec: rust@1.61.0
+      prefix: /usr
+
+  cvs:
+    externals:
+    - spec: cvs@1.12.13
+      prefix: /usr
+
+  subversion:
+    externals:
+    - spec: subversion@1.14.1
+      prefix: /usr
+
+  llvm:
+    externals:
+    - spec: llvm@14.0.0+clang~lld~lldb
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          c: /usr/bin/clang-14
+          cxx: /usr/bin/clang++-14
 
   ####
 
@@ -136,8 +174,8 @@ packages:
     variants:
       - cuda_arch=75
 
-  #gdal:
-  #  variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat +gif +jasper +pcre +png +zstd
+  gdal:
+    variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat +gif +jasper +pcre +png +zstd
 
   gdl:
     version: [0.9.8]
