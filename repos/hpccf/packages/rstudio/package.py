@@ -28,7 +28,7 @@ class Rstudio(CMakePackage):
     variant("notebook", default=False, description="Enable notebook support.")
     variant("server", default=False, when="@2022.12.0-353:", description="Build server version.")
 
-    depends_on("r@3.0.1:", type=("build", "link"))
+    depends_on("r@3.0.1:", type="build")
     depends_on("cmake@3.4.3:", type="build")
     depends_on("pkgconfig", type="build")
     depends_on("ant", type="build")
@@ -72,7 +72,8 @@ class Rstudio(CMakePackage):
     def cmake_args(self):
 
         args = [
-            "-DRSTUDIO_PACKAGE_BUILD=Yes",
+            "-DRSTUDIO_PACKAGE_BUILD=1",
+            "-DCMAKE_BUILD_TYPE=Release",
             "-DRSTUDIO_USE_SYSTEM_YAML_CPP=Yes",
             "-DRSTUDIO_USE_SYSTEM_BOOST=Yes",
             "-DRSTUDIO_USE_SYSTEM_SOCI=Yes",
