@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-25 13:33:55.704472
+-- Module file created by spack (https://github.com/spack/spack) on 2023-03-02 16:30:06.318031
 --
 -- ucx@1.13.1%gcc@11.3.0~assertions~backtrace_detail~cma~cuda~dc~debug~dm+examples~gdrcopy~ib_hw_tm~java~knem~logging~mlx5_dv+openmp+optimizations~parameter_checking+pic~rc~rdmacm~rocm+thread_multiple~ucg~ud~verbs~vfs~xpmem build_system=autotools libs=shared,static opt=3 patches=32fce32 simd=auto arch=linux-ubuntu22.04-x86_64_v3/nabnsut
 --

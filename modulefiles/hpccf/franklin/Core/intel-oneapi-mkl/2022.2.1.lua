@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-25 13:33:52.816027
+-- Module file created by spack (https://github.com/spack/spack) on 2023-03-02 16:30:05.064414
 --
 -- intel-oneapi-mkl@2022.2.1%gcc@11.3.0~cluster~ilp64+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3/x3feadh
 --

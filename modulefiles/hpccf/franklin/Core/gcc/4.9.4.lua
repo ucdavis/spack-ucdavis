@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-19 14:39:20.270399
+-- Module file created by spack (https://github.com/spack/spack) on 2023-03-02 16:30:04.287415
 --
 -- gcc@4.9.4%gcc@9.5.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages=c,c++,fortran patches=27e9829,7112abb,f5643d9,f73de87 arch=linux-ubuntu22.04-x86_64_v3/2ezpkyy
 --
