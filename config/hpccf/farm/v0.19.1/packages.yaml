@@ -1,0 +1,193 @@
+packages:
+
+  munge:
+    externals:
+      - spec: munge@0.5.14 %gcc@11.3.0
+        prefix: /usr
+    buildable: false
+
+  mariadb:
+    externals:
+      - spec: mariadb@10.8.2 %gcc@11.3.0
+        prefix: /usr
+    buildable: false
+
+  at-spi2-core:
+    externals:
+      - spec: at-spi2-core@2.44.0 %gcc@11.3.0
+        prefix: /usr
+    buildable: false
+
+  at-spi2-atk:
+    externals:
+      - spec: at-spi2-atk@2.38.0 %gcc@11.3.0
+        prefix: /usr
+    buildable: false
+
+  atk:
+    externals:
+      - spec: atk@2.36.0
+        prefix: /usr
+    buildable: false
+
+  gtkplus:
+    buildable: False
+    externals:
+      - spec: gtkplus@3.24.33
+        prefix: /usr
+      - spec: gtkplus@2.24.33
+        prefix: /usr
+
+  opengl:
+    buildable: False
+    externals:
+    - spec: opengl@4.5.0 %gcc@11.3.0
+      prefix: /usr
+
+  linux-pam:
+    buildable: False
+    externals:
+    - spec: linux-pam@1.4.0 %gcc@11.3.0
+      prefix: /usr
+
+  openssl:
+    externals:
+    - spec: openssl@3.0.2
+      prefix: /usr
+    #buildable: False
+
+  rust:
+    externals:
+    - spec: rust@1.61.0
+      prefix: /usr
+
+  cvs:
+    buildable: False
+    externals:
+    - spec: cvs@1.12.13
+      prefix: /usr
+
+  subversion:
+    buildable: False
+    externals:
+    - spec: subversion@1.14.1
+      prefix: /usr
+
+  llvm:
+    buildable: False
+    externals:
+    - spec: llvm@14.0.0+clang~lld~lldb
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          c: /usr/bin/clang-14
+          cxx: /usr/bin/clang++-14
+
+  slurm:
+    buildable: False
+    externals:
+    - spec: slurm@slurm@22-05-8 +pmix +mariadb +hwloc +restd
+      prefix: /share/apps/22.04/slurm/22.05.8
+
+  hwloc:
+    buildable: False
+    externals:
+    - spec: hwloc@2.9.0
+      prefix: /share/apps/22.04/hwloc/2.9.0
+
+  pmix:
+    buildable: False
+    externals:
+    - spec: pmix@4.1.1
+      prefix: /share/apps/22.04/pmix/4.1.1
+
+  ucx:
+    buildable: False
+    externals:
+    - spec: ucx@1.13.1 +thread_multiple
+      prefix: /share/apps/22.04/ucx/1.13.1
+
+  libevent:
+    buildable: False
+    externals:
+    - spec: libevent@2.1.12
+      prefix: /share/apps/22.04/libevent/2.1.12-stable
+
+  openmpi:
+    buildable: False
+    externals:
+    - spec: openmpi@4.1.5 fabrics=ucx schedulers=slurm +cuda
+      prefix: /share/apps/22.04/openmpi/4.1.5
+
+  ##########
+
+  intel-mkl:
+    require: "@2017.0.098:" # force post-2017 MKLs that are OSS
+
+  mpi:
+    require: openmpi
+
+  tbb:
+    require: intel-oneapi-tbb
+
+  mkl:
+    require: intel-oneapi-mkl
+
+  dbus:
+    require: "@1.12.8 local_state_dir=/var/"
+
+  cairo:
+    require: +X +ft +fc +pdf +png +gobject
+
+  python:
+    require: ~libxml2
+
+  libxml2:
+    require: '@2.10.2: +python'
+
+
+  lmod:
+    require: "@8.7.14 modulepath_root=/share/apps/spack/modulefiles/"
+    version:
+    - 8.7.14
+    variants: modulepath_root=/share/apps/spack/modulefiles/
+
+  amdfftw:
+    require: "@3.2 +openmp"
+    version:
+    - 3.2
+    variants: +openmp
+
+  intel-oneapi-mkl:
+    require: "@2022.2.1"
+    version:
+    - 2022.2.1
+
+  fftw:
+    require: "@3.3.10 +openmp"
+    version:
+    - 3.3.10
+    variants: +openmp
+
+  ####
+
+  all:
+    target: [x86_64_v2]
+    compiler:
+    - gcc@11.3.0
+    providers:
+      tbb:
+        - intel-oneapi-tbb
+    variants:
+      - cuda_arch=75
+
+  gdal:
+    variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat +gif +jasper +pcre +png +zstd
+
+  gdl:
+    version: [0.9.8]
+    variants: +graphicsmagick +python
+
+  sqlite:
+    variants: +rtree
+
