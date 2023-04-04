@@ -1,1 +1,1 @@
-print-module-loaded.tcl
+base.tcl
