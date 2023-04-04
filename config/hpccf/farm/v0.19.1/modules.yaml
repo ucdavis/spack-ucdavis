@@ -3,30 +3,9 @@ modules:
     enable::
       - tcl
     roots:
-      lmod: $spack/../../modulefiles/spack/
-      tcl: $spack/../../modulefiles/spack/
+      lmod: $spack/../../modulefiles/spack/general
+      tcl: $spack/../../modulefiles/spack/general
     arch_folder: false
-    lmod:
-      core_compilers:
-        - 'gcc@11.3.0'
-        - 'gcc@9.5.0'
-      hierarchy:: []
-      hash_length: 0
-      exclude_implicits: true
-      include:
-        - gcc
-      projections:
-        all: '{name}/{version}'
-        target=zen2: '{name}/{version}+amd'
-      defaults:
-        - target=x86_64
-      all:
-        template: hpccf/default.lua
-        autoload: direct
-        environment:
-          set:
-            '{name}_ROOT': '{prefix}'
-
     tcl:
       verbose: true
       hash_length: 0
@@ -34,6 +13,11 @@ modules:
       projections:
         all: '{name}/{version}'
         target=zen2: '{name}/{version}+amd'
+      exclude:
+        - slurm
+        - pmix
+        - ucx
+        - openmpi
       all:
         template: hpccf/default.tcl
         prerequisites: direct
