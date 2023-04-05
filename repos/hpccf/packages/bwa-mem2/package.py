@@ -24,4 +24,5 @@ class BwaMem2(MakefilePackage):
         build_targets = ["CXX=icpc", "multi"]
 
     def install(self, spec, prefix):
+        mkdirp(prefix.bin)
         install("bwa-mem2*", prefix.bin)
