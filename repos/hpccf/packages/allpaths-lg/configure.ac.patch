@@ -1,0 +1,11 @@
+--- a/configure.ac	2015-04-14 08:34:53.000000000 -0700
++++ b/configure.ac	2023-04-05 13:10:55.501370316 -0700
+@@ -12,7 +12,7 @@
+ AC_OPENMP
+ AC_OPENMP_CHECK
+ 
+-CXXFLAGS="$CXXFLAGS -std=c++11 -Wextra -Wall -Wsign-promo -Woverloaded-virtual -Wendif-labels -Wno-unused -Wno-deprecated -Wno-long-long -Wno-parentheses -Wno-unused-parameter -fno-nonansi-builtins -mieee-fp -fno-strict-aliasing -iquote . -ggdb -DNDEBUG"
++CXXFLAGS="$CXXFLAGS -std=c++11 -Wextra -Wall -Wsign-promo -Woverloaded-virtual -Wendif-labels -Wno-unused -Wno-deprecated -Wno-long-long -Wno-parentheses -Wno-unused-parameter -fno-nonansi-builtins -fno-strict-aliasing -iquote . -ggdb -DNDEBUG"
+ 
+ OS_RELEASE="`uname -r`"
+ AC_SUBST(CXXFLAGS)
