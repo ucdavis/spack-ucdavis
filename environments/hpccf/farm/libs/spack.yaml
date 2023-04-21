@@ -7,6 +7,7 @@ spack:
   - fftw
   - gmp
   - gsl
+  - hdf5
   - intel-oneapi-mkl
   - libszip
   - mpfr
@@ -15,13 +16,17 @@ spack:
   - netcdf-fortran
   - nlohmann-json
   - zlib
-  view:
-    generic:
-      root: /share/apps/22.04/spack/environments/libs/view
-      link_type: symlink
+  view: false
   modules:
+    prefix_inspections:
+      lib64: [LD_LIBRARY_PATH]
+      lib: [LD_LIBRARY_PATH]
+      include:
+      - CPATH
+      - C_INCLUDE_PATH
+      - CPLUS_INCLUDE_PATH
     default:
       roots:
         tcl: $spack/../../modulefiles/spack/libs/
   concretizer:
-    unify: when_possible
+    unify: false
