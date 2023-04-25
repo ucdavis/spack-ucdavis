@@ -52,5 +52,7 @@ spack:
         - openjdk
         projections:
           slurm: slurm/22.05.8
+        slurm:
+          template: hpccf/slurm.tcl
   concretizer:
     unify: when_possible
