@@ -16,6 +16,8 @@ spack:
   - relion@3.1.3 +gui +cuda +mklfft cuda_arch=75 purpose=cluster ^intel-oneapi-mkl
     ^ctffind+openmp^intel-oneapi-mkl@2022.2.1
   - py-relion-helper@0.2
+  - unblur@1.02 target=x86_64_v3
+  - cistem@1.0.0-beta target=x86_64_v3
   view: false
   modules:
     default:
@@ -27,6 +29,8 @@ spack:
         - gctf
         - motioncor2
         - ghostscript
+        - unblur
+        - cistem
         projections:
           relion+cuda target=zen2: relion/gpu/{version}+amd
           relion+cuda target=x86_64_v3: relion/gpu/{version}+intel
