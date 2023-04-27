@@ -13,7 +13,6 @@ packages:
     externals:
     - spec: curl@7.81.0+gssapi+ldap+nghttp2
       prefix: /usr
-    buildable: false
   bash:
     externals:
     - spec: bash@5.1.16
@@ -29,6 +28,10 @@ packages:
     - spec: mariadb@10.8.2 %gcc@11.3.0
       prefix: /usr
     buildable: false
+  mariadb-c-client:
+    externals:
+    - spec: mariadb-c-client@3 %gcc@11.3.0
+      prefix: /usr
   at-spi2-core:
     externals:
     - spec: at-spi2-core@2.44.0 %gcc@11.3.0
@@ -82,7 +85,6 @@ packages:
     - spec: subversion@1.14.1
       prefix: /usr
   llvm:
-    buildable: false
     externals:
     - spec: llvm@14.0.0+clang~lld~lldb
       prefix: /usr
