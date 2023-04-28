@@ -5,11 +5,13 @@
 spack:
   specs:
   - rstudio@2022.12.0+server
+  - openldap@2.4.49
   modules:
     default:
       lmod:
         include:
         - rstudio
+        - openldap
         projections:
           rstudio: rstudio-server/{version}
         rstudio:
@@ -18,3 +20,7 @@ spack:
     reuse: true
     unify: false
   view: false
+  #  default:
+  #    root: /share/apps/spack/environments/general/view
+  #    exclude:
+  #      - rstudio
