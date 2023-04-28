@@ -72,8 +72,10 @@ class Gdl(CMakePackage):
 
     # Allows building gdl as a shared library to in turn allow building
     # both the executable and the Python module
-    patch('https://sources.debian.org/data/main/g/gnudatalanguage/1.0.1-3/debian/patches/Create-a-shared-library.patch',
-          sha256='b1b97fc8cecc2ca5b6522dade15f0060260932d0849a6df25f59fc9ff844c5c2',
+    #patch('https://sources.debian.org/data/main/g/gnudatalanguage/1.0.1-4/debian/patches/Create-a-shared-library.patch',
+    #      sha256='b1b97fc8cecc2ca5b6522dade15f0060260932d0849a6df25f59fc9ff844c5c2',
+    patch('create-shared-lib.patch',
+          sha256='ee18503cac928a9378e57487ac4b24bd6104ae3b7a2bc7a236642e058c6bad06',
           when='@0.9.8')
     patch('Always-build-antlr-as-shared-library.patch',
           sha256='f40c06e8a8f1977780787f58885590affd7e382007cb677d2fb4723aaadd415c',
