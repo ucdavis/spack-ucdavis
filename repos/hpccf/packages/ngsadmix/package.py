@@ -6,7 +6,7 @@
 from spack.package import *
 
 
-class Ngsadminx(Package):
+class Ngsadmix(Package):
     """Inferring admixture proportions from NGS data."""
 
     homepage = "http://www.popgen.dk/software/index.php/NgsAdmix"

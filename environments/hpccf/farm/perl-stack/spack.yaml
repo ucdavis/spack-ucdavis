@@ -1,0 +1,47 @@
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  definitions:
+  - perl_bases:
+    - perl@5.36.0
+  - perl_libraries:
+    - perl-bioperl
+    - perl-libwww-perl
+    - perl-log-log4perl
+    - perl-math-matrixreal
+    - perl-module-install
+    - perl-moo
+    - perl-moose
+    - perl-parallel-forkmanager
+    - perl-text-simpletable
+  specs:
+  - matrix:
+    - [$perl_libraries]
+    - [$^perl_bases]
+  - $perl_bases
+  modules:
+    default:
+      tcl:
+        hash_length: 0
+        exclude_implicits: true
+        include:
+        - perl
+        exclude:
+        - ^perl
+        projections:
+          perl: perl/{version}
+        all:
+          conflict:
+          - '{name}'
+        perl:
+          template: hpccf/farm/perl-stack-view.tcl
+  view:
+    perl-5.36.0:
+      root: /share/apps/22.04/spack/environments/perl-stack/views/5.36.0
+      select: [perl@5.36.0, ^perl@5.36.0]
+      link_type: symlink
+  concretizer:
+    reuse: true
+    unify: when_possible
