@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-25 13:33:53.233259
+-- Module file created by spack (https://github.com/spack/spack) on 2023-05-11 15:18:42.412279
 --
 -- motioncor2@1.5.0%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64/rt7eqto
 --

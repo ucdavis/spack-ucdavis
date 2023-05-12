@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-03-02 16:30:05.763452
+-- Module file created by spack (https://github.com/spack/spack) on 2023-05-12 12:29:35.014705
 --
 -- parallel@20220522%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/tdt7nq6
 --

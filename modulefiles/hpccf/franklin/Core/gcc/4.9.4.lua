@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-03-02 16:30:04.287415
+-- Module file created by spack (https://github.com/spack/spack) on 2023-05-12 12:29:32.996075
 --
 -- gcc@4.9.4%gcc@9.5.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages=c,c++,fortran patches=27e9829,7112abb,f5643d9,f73de87 arch=linux-ubuntu22.04-x86_64_v3/2ezpkyy
 --
@@ -21,6 +21,8 @@ prepend_path("MODULEPATH", "/share/apps/spack/modulefiles/gcc/4.9.4")
 
 
 
+prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/gcc-4.9.4-2ezpkyy2h6jqjqiwlbwpymgas5mex2lm/lib64", ":")
+prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/gcc-4.9.4-2ezpkyy2h6jqjqiwlbwpymgas5mex2lm/lib", ":")
 prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/gcc-4.9.4-2ezpkyy2h6jqjqiwlbwpymgas5mex2lm/./bin", ":")
 prepend_path("MANPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/gcc-4.9.4-2ezpkyy2h6jqjqiwlbwpymgas5mex2lm/./share/man", ":")
 prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/gcc-4.9.4-2ezpkyy2h6jqjqiwlbwpymgas5mex2lm/./", ":")
