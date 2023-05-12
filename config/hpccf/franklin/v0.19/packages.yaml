@@ -4,10 +4,10 @@ packages:
     externals:
     - spec: openssh@8.9p1
       prefix: /usr
-  autoconf:
-    externals:
-    - spec: autoconf@2.71
-      prefix: /usr
+  #autoconf:
+  #  externals:
+  #  - spec: autoconf@2.71
+  #    prefix: /usr
   mpi:
     require: openmpi
   tbb:
@@ -127,11 +127,11 @@ packages:
   openmpi:
     require:
     - any_of:
-      - '@4.1.4 fabrics=ucx schedulers=slurm +cuda cuda_arch=75 target=x86_64_v3'
-      - '@4.1.4 fabrics=ucx schedulers=slurm +cuda cuda_arch=75 target=zen2'
+      - '@4.1.4 fabrics=ucx schedulers=slurm +legacylaunchers +cuda cuda_arch=75 target=x86_64_v3'
+      - '@4.1.4 fabrics=ucx schedulers=slurm +legacylaunchers +cuda cuda_arch=75 target=zen2'
     version:
     - 4.1.4
-    variants: fabrics=ucx schedulers=slurm +cuda
+    variants: fabrics=ucx schedulers=slurm +cuda +legacylaunchers
   lmod:
     require: '@8.7.14 modulepath_root=/share/apps/spack/modulefiles/'
     version:
@@ -151,11 +151,14 @@ packages:
     version:
     - 3.3.10
     variants: +openmp
-  ####
 
-  #
-  # Spack-built package settings
-  #
+  cuda:
+    version:
+    - 11.7
+
+  # see: https://github.com/spack/spack/issues/33178
+  m4:
+    require: '%gcc'
 
   all:
     target: [x86_64_v3, zen2]
