@@ -39,6 +39,7 @@ class Turbovnc(CMakePackage):
 
     depends_on("libjpeg-turbo@2.1:")
     depends_on("openjdk@11:")
+    depends_on("virtualgl", type="run")
 
     def cmake_args(self):
         args = [
