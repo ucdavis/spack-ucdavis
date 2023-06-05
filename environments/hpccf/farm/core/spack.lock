@@ -14,11 +14,11 @@
       "spec": "environment-modules@5.2.0"
     },
     {
-      "hash": "v5sj3iuskh33avrjlwd3qdlguy76aymb",
+      "hash": "d255x4vbusu6tovl72zfui73i4trwpnq",
       "spec": "gcc@4.9.4%gcc@9.5.0"
     },
     {
-      "hash": "zwsopu4nz3s2elistdyqludbqavqrtdb",
+      "hash": "kucjzzygua4qh5vwxmkt6mxt3vxxmmvp",
       "spec": "gcc@5.5.0%gcc@9.5.0"
     },
     {
@@ -34,8 +34,16 @@
       "spec": "intel-oneapi-compilers@2022.2.1"
     },
     {
-      "hash": "so72n2hfxyasj5uamwn4b4ubbvqf6uls",
-      "spec": "jdk@14_36"
+      "hash": "dkgoji4ld43pu2ypbqjkb3umezwmw7ne",
+      "spec": "jdk@17.0.1"
+    },
+    {
+      "hash": "czzifdcburl2i7erjf4nsoejiydax2aj",
+      "spec": "julia@1.8.5"
+    },
+    {
+      "hash": "damy7ni3clpzct2zlnj52xrnuauo7esk",
+      "spec": "julia@1.9.0"
     },
     {
       "hash": "kum5i3y72vglpenkdg5yte6fpljfv6gk",
@@ -44,6 +52,14 @@
     {
       "hash": "lkrzgxuhnqeonpra4egpals6ap2ba2l2",
       "spec": "nvhpc@23.1"
+    },
+    {
+      "hash": "oucx2ae437h47qbuudvuzl6yuejnpvde",
+      "spec": "openjdk@11.0.17_8"
+    },
+    {
+      "hash": "4yopvxz7hv3owcodzmzokvaq62fndvkf",
+      "spec": "openjdk@16.0.2"
     },
     {
       "hash": "64l7uzf3wsw6q6y2aqy2kljeijfq5bzt",
@@ -1276,7 +1292,7 @@
       ],
       "hash": "dwv224o6mmazoaoff6ic6272pwt6bvth"
     },
-    "v5sj3iuskh33avrjlwd3qdlguy76aymb": {
+    "d255x4vbusu6tovl72zfui73i4trwpnq": {
       "name": "gcc",
       "version": "4.9.4",
       "arch": {
@@ -1334,14 +1350,14 @@
         },
         {
           "name": "gawk",
-          "hash": "x4ygy3cemnymo3clkv4vh4csmczzvlut",
+          "hash": "fhzy62toryogyfdnbz3s7an2eq6jcayn",
           "type": [
             "build"
           ]
         },
         {
           "name": "gmp",
-          "hash": "b6yq7kmgfhb4uptr3f7wdvyhecmm232h",
+          "hash": "t7mom3odhpwv3uc3nrbkiffeplgt6bwt",
           "type": [
             "build",
             "link"
@@ -1356,7 +1372,7 @@
         },
         {
           "name": "mpc",
-          "hash": "2tmztd7jazrcsam7bbxho2z2nzdlsdfk",
+          "hash": "wd7gvlpl33th2ddr6iealekjqjoo6f4w",
           "type": [
             "build",
             "link"
@@ -1364,7 +1380,7 @@
         },
         {
           "name": "mpfr",
-          "hash": "uljmtzhlqap5fiasge32p5kexlqs27mi",
+          "hash": "q4aamyikmvo4axrkxjhfjmpmw5sxkmao",
           "type": [
             "build",
             "link"
@@ -1372,13 +1388,13 @@
         },
         {
           "name": "texinfo",
-          "hash": "ku5qagxaoslgjdwhwdn67tjpi67kpcls",
+          "hash": "cyxhit3r2njnctkvd4nsb44uyjk7efeo",
           "type": [
             "build"
           ]
         }
       ],
-      "hash": "v5sj3iuskh33avrjlwd3qdlguy76aymb"
+      "hash": "d255x4vbusu6tovl72zfui73i4trwpnq"
     },
     "n6q3u7d7aqce4q5fv5r43jiortvswijd": {
       "name": "diffutils",
@@ -1443,898 +1459,6 @@
       },
       "package_hash": "iwav2dx3w6bi363i3gqu3ndd2rajsle7ebgznblzarzb46iraw4q====",
       "hash": "ceucmfj6ugoeahf3oy64mqc2gwrbkvbb"
-    },
-    "x4ygy3cemnymo3clkv4vh4csmczzvlut": {
-      "name": "gawk",
-      "version": "5.1.1",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "nls": false,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "pkx6g22fqmed3tgwpgl4tqwjsocyuic6s4f6u5o6ojkmzjsjt53q====",
-      "dependencies": [
-        {
-          "name": "gmp",
-          "hash": "b6yq7kmgfhb4uptr3f7wdvyhecmm232h",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "libsigsegv",
-          "hash": "qrl5gmsz2632yznhi6lw52ahjzpfna7c",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "mpfr",
-          "hash": "uljmtzhlqap5fiasge32p5kexlqs27mi",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "readline",
-          "hash": "njobqi3oytuvt7j6qrlx3rj2whc2mxfj",
-          "type": [
-            "build",
-            "link"
-          ]
-        }
-      ],
-      "hash": "x4ygy3cemnymo3clkv4vh4csmczzvlut"
-    },
-    "b6yq7kmgfhb4uptr3f7wdvyhecmm232h": {
-      "name": "gmp",
-      "version": "6.2.1",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "libs": [
-          "shared",
-          "static"
-        ],
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "4i5iaqoht2qtpyzk5dxh4kntsucj6m256jy4jpvlcxzuzhx3xhza====",
-      "dependencies": [
-        {
-          "name": "autoconf",
-          "hash": "w5qe7mkst5f4nyntggjs5h5errmxnlqp",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "automake",
-          "hash": "6jjecxtoczgtzcoxsgflgq7phefgkyis",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "libtool",
-          "hash": "a37wpkgovu5glevmxbzvkoki4qki7jpe",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "m4",
-          "hash": "ce7ppgn2p2icyqvfma7dgufpy4pacqno",
-          "type": [
-            "build"
-          ]
-        }
-      ],
-      "hash": "b6yq7kmgfhb4uptr3f7wdvyhecmm232h"
-    },
-    "w5qe7mkst5f4nyntggjs5h5errmxnlqp": {
-      "name": "autoconf",
-      "version": "2.69",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "patches": [
-          "35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2",
-          "7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7",
-          "a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee"
-        ],
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "patches": [
-        "7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7",
-        "35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2",
-        "a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee"
-      ],
-      "package_hash": "m5knz2kbrkk4y4rmtair5tgqaj6ia4ektauspszjscawxhjem3mq====",
-      "dependencies": [
-        {
-          "name": "m4",
-          "hash": "ce7ppgn2p2icyqvfma7dgufpy4pacqno",
-          "type": [
-            "build",
-            "run"
-          ]
-        },
-        {
-          "name": "perl",
-          "hash": "r2i4iiemvypstotx4grc33kasgohkgna",
-          "type": [
-            "build",
-            "run"
-          ]
-        }
-      ],
-      "hash": "w5qe7mkst5f4nyntggjs5h5errmxnlqp"
-    },
-    "ce7ppgn2p2icyqvfma7dgufpy4pacqno": {
-      "name": "m4",
-      "version": "1.4.19",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "patches": [
-          "9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573",
-          "bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89"
-        ],
-        "sigsegv": true,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "patches": [
-        "bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89",
-        "9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573"
-      ],
-      "package_hash": "sqgbfqha5alfkehw2p7okvlj6zwtfvnp7i6k2wpqjcm3iexzchfq====",
-      "dependencies": [
-        {
-          "name": "diffutils",
-          "hash": "n6q3u7d7aqce4q5fv5r43jiortvswijd",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "libsigsegv",
-          "hash": "qrl5gmsz2632yznhi6lw52ahjzpfna7c",
-          "type": [
-            "build",
-            "link"
-          ]
-        }
-      ],
-      "hash": "ce7ppgn2p2icyqvfma7dgufpy4pacqno"
-    },
-    "qrl5gmsz2632yznhi6lw52ahjzpfna7c": {
-      "name": "libsigsegv",
-      "version": "2.13",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "nmoykqybj2ahbtvuts4ajbnyyzzdezs5s7cozp2o54gmtsvc6wiq====",
-      "hash": "qrl5gmsz2632yznhi6lw52ahjzpfna7c"
-    },
-    "r2i4iiemvypstotx4grc33kasgohkgna": {
-      "name": "perl",
-      "version": "5.36.0",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "generic",
-        "cpanm": true,
-        "shared": true,
-        "threads": true,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "vw2644btge4qgtnxof7wkbt67yjhznjlxxkqutbuyecbohb7p53q====",
-      "dependencies": [
-        {
-          "name": "berkeley-db",
-          "hash": "wsezrnswkjdfnhgrk3m6jrvu3ibafrg5",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "bzip2",
-          "hash": "kxhivhlcch5t4zmriocdxz7z3uuniatv",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "gdbm",
-          "hash": "k24qj2vhftrtlgzofmm3afuzevqzmhyf",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "zlib",
-          "hash": "dvrqpry3us6gyhns3w5xuehgakeqbpi2",
-          "type": [
-            "build",
-            "link"
-          ]
-        }
-      ],
-      "hash": "r2i4iiemvypstotx4grc33kasgohkgna"
-    },
-    "wsezrnswkjdfnhgrk3m6jrvu3ibafrg5": {
-      "name": "berkeley-db",
-      "version": "18.1.40",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "cxx": true,
-        "docs": false,
-        "patches": [
-          "26090f418891757af46ac3b89a9f43d6eb5989f7a3dce3d1cfc99fba547203b3",
-          "b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522"
-        ],
-        "stl": true,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "patches": [
-        "b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522",
-        "26090f418891757af46ac3b89a9f43d6eb5989f7a3dce3d1cfc99fba547203b3"
-      ],
-      "package_hash": "vpd5eetcurni5woqzl6jrukuo4a6fr5yoluxz32gxezgx5ftpxza====",
-      "hash": "wsezrnswkjdfnhgrk3m6jrvu3ibafrg5"
-    },
-    "kxhivhlcch5t4zmriocdxz7z3uuniatv": {
-      "name": "bzip2",
-      "version": "1.0.8",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "generic",
-        "debug": false,
-        "pic": false,
-        "shared": true,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "hwzzje524zinhoim5aj25ucowy2n57b6zm7gtzaimfjft2onrvuq====",
-      "dependencies": [
-        {
-          "name": "diffutils",
-          "hash": "n6q3u7d7aqce4q5fv5r43jiortvswijd",
-          "type": [
-            "build"
-          ]
-        }
-      ],
-      "hash": "kxhivhlcch5t4zmriocdxz7z3uuniatv"
-    },
-    "k24qj2vhftrtlgzofmm3afuzevqzmhyf": {
-      "name": "gdbm",
-      "version": "1.23",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "liepxl6phlcxbgfmibxafhewtihlgaa4x3hko37ckqlafhxkrgdq====",
-      "dependencies": [
-        {
-          "name": "readline",
-          "hash": "njobqi3oytuvt7j6qrlx3rj2whc2mxfj",
-          "type": [
-            "build",
-            "link"
-          ]
-        }
-      ],
-      "hash": "k24qj2vhftrtlgzofmm3afuzevqzmhyf"
-    },
-    "njobqi3oytuvt7j6qrlx3rj2whc2mxfj": {
-      "name": "readline",
-      "version": "8.1.2",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "ouxxalld7kxximyke7ekitja6kuz3h7tlt7lm2szo3hg7amf6ana====",
-      "dependencies": [
-        {
-          "name": "ncurses",
-          "hash": "zik5lgk3zf4pdtllhrrch4d3l4jgdwhh",
-          "type": [
-            "build",
-            "link"
-          ]
-        }
-      ],
-      "hash": "njobqi3oytuvt7j6qrlx3rj2whc2mxfj"
-    },
-    "zik5lgk3zf4pdtllhrrch4d3l4jgdwhh": {
-      "name": "ncurses",
-      "version": "6.3",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "abi": "none",
-        "build_system": "autotools",
-        "symlinks": false,
-        "termlib": true,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "xt4gmttjogkqm2ol74rux4rjqnilsdqxyjjgjrfgkwroyr5eignq====",
-      "dependencies": [
-        {
-          "name": "pkg-config",
-          "hash": "kju75adeaz7fr2hztk7iteibq5jqq7wy",
-          "type": [
-            "build"
-          ]
-        }
-      ],
-      "hash": "zik5lgk3zf4pdtllhrrch4d3l4jgdwhh"
-    },
-    "kju75adeaz7fr2hztk7iteibq5jqq7wy": {
-      "name": "pkg-config",
-      "version": "0.29.2",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "internal_glib": true,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "external": {
-        "path": "/usr",
-        "module": null,
-        "extra_attributes": {}
-      },
-      "package_hash": "gbg7cfatgrssz3uo55zzkox2fzkpr4san6eijcbszseublk6ohfa====",
-      "hash": "kju75adeaz7fr2hztk7iteibq5jqq7wy"
-    },
-    "dvrqpry3us6gyhns3w5xuehgakeqbpi2": {
-      "name": "zlib",
-      "version": "1.2.13",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "makefile",
-        "optimize": true,
-        "pic": true,
-        "shared": true,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "ghj4qyx3sv3so5vpvnodld6r372mc6oqefofmoer3xbpq5tcwvca====",
-      "hash": "dvrqpry3us6gyhns3w5xuehgakeqbpi2"
-    },
-    "6jjecxtoczgtzcoxsgflgq7phefgkyis": {
-      "name": "automake",
-      "version": "1.16.5",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "mwdviv4g6xu2ttfs6dnzmwbofpxa4vke3y5egbb6w4fesykvnbda====",
-      "dependencies": [
-        {
-          "name": "autoconf",
-          "hash": "w5qe7mkst5f4nyntggjs5h5errmxnlqp",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "perl",
-          "hash": "r2i4iiemvypstotx4grc33kasgohkgna",
-          "type": [
-            "build",
-            "run"
-          ]
-        }
-      ],
-      "hash": "6jjecxtoczgtzcoxsgflgq7phefgkyis"
-    },
-    "a37wpkgovu5glevmxbzvkoki4qki7jpe": {
-      "name": "libtool",
-      "version": "2.4.7",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "7lyavyiwpnrhw7tfv5vgri32at345gdegbixiskk63ext2f5rzza====",
-      "dependencies": [
-        {
-          "name": "m4",
-          "hash": "ce7ppgn2p2icyqvfma7dgufpy4pacqno",
-          "type": [
-            "build"
-          ]
-        }
-      ],
-      "hash": "a37wpkgovu5glevmxbzvkoki4qki7jpe"
-    },
-    "uljmtzhlqap5fiasge32p5kexlqs27mi": {
-      "name": "mpfr",
-      "version": "3.1.6",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "libs": [
-          "shared",
-          "static"
-        ],
-        "patches": [
-          "7a6dd71bcda4803d6b89612706a17b8816e1acd5dd9bf1bec29cf748f3b60008"
-        ],
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "patches": [
-        "7a6dd71bcda4803d6b89612706a17b8816e1acd5dd9bf1bec29cf748f3b60008"
-      ],
-      "package_hash": "mniy3e73fqb72o4xpatbzth47zsfijigjgtzxtau2ku4322jwaeq====",
-      "dependencies": [
-        {
-          "name": "autoconf",
-          "hash": "w5qe7mkst5f4nyntggjs5h5errmxnlqp",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "automake",
-          "hash": "6jjecxtoczgtzcoxsgflgq7phefgkyis",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "gmp",
-          "hash": "b6yq7kmgfhb4uptr3f7wdvyhecmm232h",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "libtool",
-          "hash": "a37wpkgovu5glevmxbzvkoki4qki7jpe",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "m4",
-          "hash": "ce7ppgn2p2icyqvfma7dgufpy4pacqno",
-          "type": [
-            "build"
-          ]
-        }
-      ],
-      "hash": "uljmtzhlqap5fiasge32p5kexlqs27mi"
-    },
-    "2tmztd7jazrcsam7bbxho2z2nzdlsdfk": {
-      "name": "mpc",
-      "version": "1.1.0",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "libs": [
-          "shared",
-          "static"
-        ],
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "l477zevvd4qyly5hahrwivy7pmvss7lhjpzfigbe3rp6fcv2i6uq====",
-      "dependencies": [
-        {
-          "name": "gmp",
-          "hash": "b6yq7kmgfhb4uptr3f7wdvyhecmm232h",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "mpfr",
-          "hash": "uljmtzhlqap5fiasge32p5kexlqs27mi",
-          "type": [
-            "build",
-            "link"
-          ]
-        }
-      ],
-      "hash": "2tmztd7jazrcsam7bbxho2z2nzdlsdfk"
-    },
-    "ku5qagxaoslgjdwhwdn67tjpi67kpcls": {
-      "name": "texinfo",
-      "version": "6.5",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "patches": [
-          "12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a",
-          "1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1"
-        ],
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "patches": [
-        "1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1",
-        "12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a"
-      ],
-      "package_hash": "5ezhfxdlbkvlktgswsq7jzk4s7bu3hlstetxd4cmdw4b2xbhctaa====",
-      "dependencies": [
-        {
-          "name": "perl",
-          "hash": "r2i4iiemvypstotx4grc33kasgohkgna",
-          "type": [
-            "build",
-            "link"
-          ]
-        }
-      ],
-      "hash": "ku5qagxaoslgjdwhwdn67tjpi67kpcls"
-    },
-    "zwsopu4nz3s2elistdyqludbqavqrtdb": {
-      "name": "gcc",
-      "version": "5.5.0",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "9.5.0"
-      },
-      "namespace": "ucdavis.hpccf",
-      "parameters": {
-        "binutils": false,
-        "bootstrap": true,
-        "build_system": "autotools",
-        "build_type": "RelWithDebInfo",
-        "graphite": false,
-        "languages": [
-          "c",
-          "c++",
-          "fortran"
-        ],
-        "nvptx": false,
-        "patches": [
-          "1ee899af9974bfdf7d97e8b420d822c8140790cc4c7a46ab8dec657dd8cc5e49",
-          "4661e64fea337848b3ecd0bfe44ec3e771624caccb67a263a54f774ef40b382a",
-          "51aebe82afc9a0433ca3503a36592edf5ca769b1433986919cfb9ae2ddf3e343",
-          "a9762dc030444a0c17d911caaadb7e7dac38264e8db7aa2cf54b07c9f0c0e606"
-        ],
-        "piclibs": false,
-        "profiled": false,
-        "strip": false,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "patches": [
-        "1ee899af9974bfdf7d97e8b420d822c8140790cc4c7a46ab8dec657dd8cc5e49",
-        "a9762dc030444a0c17d911caaadb7e7dac38264e8db7aa2cf54b07c9f0c0e606",
-        "51aebe82afc9a0433ca3503a36592edf5ca769b1433986919cfb9ae2ddf3e343",
-        "4661e64fea337848b3ecd0bfe44ec3e771624caccb67a263a54f774ef40b382a"
-      ],
-      "package_hash": "u5m56pg5ddruhfu27p2rgjxspy25a4ziby36xkhoobbhzvk4ia5a====",
-      "dependencies": [
-        {
-          "name": "diffutils",
-          "hash": "n6q3u7d7aqce4q5fv5r43jiortvswijd",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "gawk",
-          "hash": "fhzy62toryogyfdnbz3s7an2eq6jcayn",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "gmp",
-          "hash": "t7mom3odhpwv3uc3nrbkiffeplgt6bwt",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "libtool",
-          "hash": "a37wpkgovu5glevmxbzvkoki4qki7jpe",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "mpc",
-          "hash": "wd7gvlpl33th2ddr6iealekjqjoo6f4w",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "mpfr",
-          "hash": "q4aamyikmvo4axrkxjhfjmpmw5sxkmao",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "texinfo",
-          "hash": "cyxhit3r2njnctkvd4nsb44uyjk7efeo",
-          "type": [
-            "build"
-          ]
-        }
-      ],
-      "hash": "zwsopu4nz3s2elistdyqludbqavqrtdb"
     },
     "fhzy62toryogyfdnbz3s7an2eq6jcayn": {
       "name": "gawk",
@@ -2508,6 +1632,82 @@
       ],
       "hash": "buqwoazkvjukihzb6iua4kqqpoxy5q3e"
     },
+    "ce7ppgn2p2icyqvfma7dgufpy4pacqno": {
+      "name": "m4",
+      "version": "1.4.19",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "patches": [
+          "9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573",
+          "bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89"
+        ],
+        "sigsegv": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89",
+        "9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573"
+      ],
+      "package_hash": "sqgbfqha5alfkehw2p7okvlj6zwtfvnp7i6k2wpqjcm3iexzchfq====",
+      "dependencies": [
+        {
+          "name": "diffutils",
+          "hash": "n6q3u7d7aqce4q5fv5r43jiortvswijd",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "libsigsegv",
+          "hash": "qrl5gmsz2632yznhi6lw52ahjzpfna7c",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "ce7ppgn2p2icyqvfma7dgufpy4pacqno"
+    },
+    "qrl5gmsz2632yznhi6lw52ahjzpfna7c": {
+      "name": "libsigsegv",
+      "version": "2.13",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "nmoykqybj2ahbtvuts4ajbnyyzzdezs5s7cozp2o54gmtsvc6wiq====",
+      "hash": "qrl5gmsz2632yznhi6lw52ahjzpfna7c"
+    },
     "qne6x2hj4gcdbon4yla6r7sk6xhy2hhx": {
       "name": "perl",
       "version": "5.36.0",
@@ -2569,6 +1769,79 @@
         }
       ],
       "hash": "qne6x2hj4gcdbon4yla6r7sk6xhy2hhx"
+    },
+    "wsezrnswkjdfnhgrk3m6jrvu3ibafrg5": {
+      "name": "berkeley-db",
+      "version": "18.1.40",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cxx": true,
+        "docs": false,
+        "patches": [
+          "26090f418891757af46ac3b89a9f43d6eb5989f7a3dce3d1cfc99fba547203b3",
+          "b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522"
+        ],
+        "stl": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522",
+        "26090f418891757af46ac3b89a9f43d6eb5989f7a3dce3d1cfc99fba547203b3"
+      ],
+      "package_hash": "vpd5eetcurni5woqzl6jrukuo4a6fr5yoluxz32gxezgx5ftpxza====",
+      "hash": "wsezrnswkjdfnhgrk3m6jrvu3ibafrg5"
+    },
+    "kxhivhlcch5t4zmriocdxz7z3uuniatv": {
+      "name": "bzip2",
+      "version": "1.0.8",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "debug": false,
+        "pic": false,
+        "shared": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "hwzzje524zinhoim5aj25ucowy2n57b6zm7gtzaimfjft2onrvuq====",
+      "dependencies": [
+        {
+          "name": "diffutils",
+          "hash": "n6q3u7d7aqce4q5fv5r43jiortvswijd",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "kxhivhlcch5t4zmriocdxz7z3uuniatv"
     },
     "3re5duzstugektnehdwxsok64dibqf3j": {
       "name": "gdbm",
@@ -2702,6 +1975,34 @@
       "package_hash": "olr5zscvqru56pgiiqlnzc4ud5e7iuyntj6fsplcrjh3jngqjpja====",
       "hash": "znkyqyouywyblrjg3fiqielmkxx6bso3"
     },
+    "dvrqpry3us6gyhns3w5xuehgakeqbpi2": {
+      "name": "zlib",
+      "version": "1.2.13",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "makefile",
+        "optimize": true,
+        "pic": true,
+        "shared": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "ghj4qyx3sv3so5vpvnodld6r372mc6oqefofmoer3xbpq5tcwvca====",
+      "hash": "dvrqpry3us6gyhns3w5xuehgakeqbpi2"
+    },
     "tmz7yyhfem6ch7677rmvb37aupx2vwmi": {
       "name": "automake",
       "version": "1.16.5",
@@ -2743,6 +2044,40 @@
         }
       ],
       "hash": "tmz7yyhfem6ch7677rmvb37aupx2vwmi"
+    },
+    "a37wpkgovu5glevmxbzvkoki4qki7jpe": {
+      "name": "libtool",
+      "version": "2.4.7",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "7lyavyiwpnrhw7tfv5vgri32at345gdegbixiskk63ext2f5rzza====",
+      "dependencies": [
+        {
+          "name": "m4",
+          "hash": "ce7ppgn2p2icyqvfma7dgufpy4pacqno",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "a37wpkgovu5glevmxbzvkoki4qki7jpe"
     },
     "q4aamyikmvo4axrkxjhfjmpmw5sxkmao": {
       "name": "mpfr",
@@ -2906,6 +2241,687 @@
         }
       ],
       "hash": "cyxhit3r2njnctkvd4nsb44uyjk7efeo"
+    },
+    "kucjzzygua4qh5vwxmkt6mxt3vxxmmvp": {
+      "name": "gcc",
+      "version": "5.5.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "ucdavis.hpccf",
+      "parameters": {
+        "binutils": false,
+        "bootstrap": true,
+        "build_system": "autotools",
+        "build_type": "RelWithDebInfo",
+        "graphite": false,
+        "languages": [
+          "c",
+          "c++",
+          "fortran"
+        ],
+        "nvptx": false,
+        "patches": [
+          "1ee899af9974bfdf7d97e8b420d822c8140790cc4c7a46ab8dec657dd8cc5e49",
+          "4661e64fea337848b3ecd0bfe44ec3e771624caccb67a263a54f774ef40b382a",
+          "51aebe82afc9a0433ca3503a36592edf5ca769b1433986919cfb9ae2ddf3e343",
+          "a9762dc030444a0c17d911caaadb7e7dac38264e8db7aa2cf54b07c9f0c0e606"
+        ],
+        "piclibs": false,
+        "profiled": false,
+        "strip": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "1ee899af9974bfdf7d97e8b420d822c8140790cc4c7a46ab8dec657dd8cc5e49",
+        "a9762dc030444a0c17d911caaadb7e7dac38264e8db7aa2cf54b07c9f0c0e606",
+        "51aebe82afc9a0433ca3503a36592edf5ca769b1433986919cfb9ae2ddf3e343",
+        "4661e64fea337848b3ecd0bfe44ec3e771624caccb67a263a54f774ef40b382a"
+      ],
+      "package_hash": "u5m56pg5ddruhfu27p2rgjxspy25a4ziby36xkhoobbhzvk4ia5a====",
+      "dependencies": [
+        {
+          "name": "diffutils",
+          "hash": "n6q3u7d7aqce4q5fv5r43jiortvswijd",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "gawk",
+          "hash": "x4ygy3cemnymo3clkv4vh4csmczzvlut",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "gmp",
+          "hash": "b6yq7kmgfhb4uptr3f7wdvyhecmm232h",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libtool",
+          "hash": "a37wpkgovu5glevmxbzvkoki4qki7jpe",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "mpc",
+          "hash": "2tmztd7jazrcsam7bbxho2z2nzdlsdfk",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "mpfr",
+          "hash": "uljmtzhlqap5fiasge32p5kexlqs27mi",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "texinfo",
+          "hash": "ku5qagxaoslgjdwhwdn67tjpi67kpcls",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "kucjzzygua4qh5vwxmkt6mxt3vxxmmvp"
+    },
+    "x4ygy3cemnymo3clkv4vh4csmczzvlut": {
+      "name": "gawk",
+      "version": "5.1.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "nls": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "pkx6g22fqmed3tgwpgl4tqwjsocyuic6s4f6u5o6ojkmzjsjt53q====",
+      "dependencies": [
+        {
+          "name": "gmp",
+          "hash": "b6yq7kmgfhb4uptr3f7wdvyhecmm232h",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libsigsegv",
+          "hash": "qrl5gmsz2632yznhi6lw52ahjzpfna7c",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "mpfr",
+          "hash": "uljmtzhlqap5fiasge32p5kexlqs27mi",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "readline",
+          "hash": "njobqi3oytuvt7j6qrlx3rj2whc2mxfj",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "x4ygy3cemnymo3clkv4vh4csmczzvlut"
+    },
+    "b6yq7kmgfhb4uptr3f7wdvyhecmm232h": {
+      "name": "gmp",
+      "version": "6.2.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "4i5iaqoht2qtpyzk5dxh4kntsucj6m256jy4jpvlcxzuzhx3xhza====",
+      "dependencies": [
+        {
+          "name": "autoconf",
+          "hash": "w5qe7mkst5f4nyntggjs5h5errmxnlqp",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "automake",
+          "hash": "6jjecxtoczgtzcoxsgflgq7phefgkyis",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "libtool",
+          "hash": "a37wpkgovu5glevmxbzvkoki4qki7jpe",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "m4",
+          "hash": "ce7ppgn2p2icyqvfma7dgufpy4pacqno",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "b6yq7kmgfhb4uptr3f7wdvyhecmm232h"
+    },
+    "w5qe7mkst5f4nyntggjs5h5errmxnlqp": {
+      "name": "autoconf",
+      "version": "2.69",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "patches": [
+          "35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2",
+          "7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7",
+          "a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7",
+        "35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2",
+        "a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee"
+      ],
+      "package_hash": "m5knz2kbrkk4y4rmtair5tgqaj6ia4ektauspszjscawxhjem3mq====",
+      "dependencies": [
+        {
+          "name": "m4",
+          "hash": "ce7ppgn2p2icyqvfma7dgufpy4pacqno",
+          "type": [
+            "build",
+            "run"
+          ]
+        },
+        {
+          "name": "perl",
+          "hash": "r2i4iiemvypstotx4grc33kasgohkgna",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "w5qe7mkst5f4nyntggjs5h5errmxnlqp"
+    },
+    "r2i4iiemvypstotx4grc33kasgohkgna": {
+      "name": "perl",
+      "version": "5.36.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cpanm": true,
+        "shared": true,
+        "threads": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "vw2644btge4qgtnxof7wkbt67yjhznjlxxkqutbuyecbohb7p53q====",
+      "dependencies": [
+        {
+          "name": "berkeley-db",
+          "hash": "wsezrnswkjdfnhgrk3m6jrvu3ibafrg5",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "bzip2",
+          "hash": "kxhivhlcch5t4zmriocdxz7z3uuniatv",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "gdbm",
+          "hash": "k24qj2vhftrtlgzofmm3afuzevqzmhyf",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "dvrqpry3us6gyhns3w5xuehgakeqbpi2",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "r2i4iiemvypstotx4grc33kasgohkgna"
+    },
+    "k24qj2vhftrtlgzofmm3afuzevqzmhyf": {
+      "name": "gdbm",
+      "version": "1.23",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "liepxl6phlcxbgfmibxafhewtihlgaa4x3hko37ckqlafhxkrgdq====",
+      "dependencies": [
+        {
+          "name": "readline",
+          "hash": "njobqi3oytuvt7j6qrlx3rj2whc2mxfj",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "k24qj2vhftrtlgzofmm3afuzevqzmhyf"
+    },
+    "njobqi3oytuvt7j6qrlx3rj2whc2mxfj": {
+      "name": "readline",
+      "version": "8.1.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "ouxxalld7kxximyke7ekitja6kuz3h7tlt7lm2szo3hg7amf6ana====",
+      "dependencies": [
+        {
+          "name": "ncurses",
+          "hash": "zik5lgk3zf4pdtllhrrch4d3l4jgdwhh",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "njobqi3oytuvt7j6qrlx3rj2whc2mxfj"
+    },
+    "zik5lgk3zf4pdtllhrrch4d3l4jgdwhh": {
+      "name": "ncurses",
+      "version": "6.3",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "abi": "none",
+        "build_system": "autotools",
+        "symlinks": false,
+        "termlib": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "xt4gmttjogkqm2ol74rux4rjqnilsdqxyjjgjrfgkwroyr5eignq====",
+      "dependencies": [
+        {
+          "name": "pkg-config",
+          "hash": "kju75adeaz7fr2hztk7iteibq5jqq7wy",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "zik5lgk3zf4pdtllhrrch4d3l4jgdwhh"
+    },
+    "kju75adeaz7fr2hztk7iteibq5jqq7wy": {
+      "name": "pkg-config",
+      "version": "0.29.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "internal_glib": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/usr",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "gbg7cfatgrssz3uo55zzkox2fzkpr4san6eijcbszseublk6ohfa====",
+      "hash": "kju75adeaz7fr2hztk7iteibq5jqq7wy"
+    },
+    "6jjecxtoczgtzcoxsgflgq7phefgkyis": {
+      "name": "automake",
+      "version": "1.16.5",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "mwdviv4g6xu2ttfs6dnzmwbofpxa4vke3y5egbb6w4fesykvnbda====",
+      "dependencies": [
+        {
+          "name": "autoconf",
+          "hash": "w5qe7mkst5f4nyntggjs5h5errmxnlqp",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "perl",
+          "hash": "r2i4iiemvypstotx4grc33kasgohkgna",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "6jjecxtoczgtzcoxsgflgq7phefgkyis"
+    },
+    "uljmtzhlqap5fiasge32p5kexlqs27mi": {
+      "name": "mpfr",
+      "version": "3.1.6",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "patches": [
+          "7a6dd71bcda4803d6b89612706a17b8816e1acd5dd9bf1bec29cf748f3b60008"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "7a6dd71bcda4803d6b89612706a17b8816e1acd5dd9bf1bec29cf748f3b60008"
+      ],
+      "package_hash": "mniy3e73fqb72o4xpatbzth47zsfijigjgtzxtau2ku4322jwaeq====",
+      "dependencies": [
+        {
+          "name": "autoconf",
+          "hash": "w5qe7mkst5f4nyntggjs5h5errmxnlqp",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "automake",
+          "hash": "6jjecxtoczgtzcoxsgflgq7phefgkyis",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "gmp",
+          "hash": "b6yq7kmgfhb4uptr3f7wdvyhecmm232h",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "libtool",
+          "hash": "a37wpkgovu5glevmxbzvkoki4qki7jpe",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "m4",
+          "hash": "ce7ppgn2p2icyqvfma7dgufpy4pacqno",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "uljmtzhlqap5fiasge32p5kexlqs27mi"
+    },
+    "2tmztd7jazrcsam7bbxho2z2nzdlsdfk": {
+      "name": "mpc",
+      "version": "1.1.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "l477zevvd4qyly5hahrwivy7pmvss7lhjpzfigbe3rp6fcv2i6uq====",
+      "dependencies": [
+        {
+          "name": "gmp",
+          "hash": "b6yq7kmgfhb4uptr3f7wdvyhecmm232h",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "mpfr",
+          "hash": "uljmtzhlqap5fiasge32p5kexlqs27mi",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "2tmztd7jazrcsam7bbxho2z2nzdlsdfk"
+    },
+    "ku5qagxaoslgjdwhwdn67tjpi67kpcls": {
+      "name": "texinfo",
+      "version": "6.5",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "patches": [
+          "12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a",
+          "1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1",
+        "12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a"
+      ],
+      "package_hash": "5ezhfxdlbkvlktgswsq7jzk4s7bu3hlstetxd4cmdw4b2xbhctaa====",
+      "dependencies": [
+        {
+          "name": "perl",
+          "hash": "r2i4iiemvypstotx4grc33kasgohkgna",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "ku5qagxaoslgjdwhwdn67tjpi67kpcls"
     },
     "ni6ffpi6bxh7rw7f6s4m23n2bttllmcj": {
       "name": "gcc",
@@ -3608,9 +3624,9 @@
       "package_hash": "fhyrdhsk55mghzgg3dhw3yt3aqscnh42lch2tbpa7xnbop276bgq====",
       "hash": "t5miykij5eaohfmmia4pkwlumeloflhr"
     },
-    "so72n2hfxyasj5uamwn4b4ubbvqf6uls": {
+    "dkgoji4ld43pu2ypbqjkb3umezwmw7ne": {
       "name": "jdk",
-      "version": "14_36",
+      "version": "17.0.1",
       "arch": {
         "platform": "linux",
         "platform_os": "ubuntu22.04",
@@ -3620,7 +3636,7 @@
         "name": "gcc",
         "version": "11.3.0"
       },
-      "namespace": "builtin",
+      "namespace": "ucdavis.hpccf",
       "parameters": {
         "build_system": "generic",
         "cflags": [],
@@ -3630,8 +3646,84 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "27bvata4um4idijlwn3bp3qilgkde5uhuo4b6n3zqngtezc63p2q====",
-      "hash": "so72n2hfxyasj5uamwn4b4ubbvqf6uls"
+      "package_hash": "bp6bb4vp7nmkc36xisyzx6natto4vz22u7zicpc54zdk4wmwrq5q====",
+      "hash": "dkgoji4ld43pu2ypbqjkb3umezwmw7ne"
+    },
+    "czzifdcburl2i7erjf4nsoejiydax2aj": {
+      "name": "julia",
+      "version": "1.8.5",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "ucdavis.backports",
+      "parameters": {
+        "build_system": "makefile",
+        "openlibm": true,
+        "patches": [
+          "12e8f412416951ce3320cd3b3425e1a9fd3ae30f56fd486721561ecfdca03456"
+        ],
+        "precompile": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/share/apps/22.04/julia/1.8.5",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "patches": [
+        "12e8f412416951ce3320cd3b3425e1a9fd3ae30f56fd486721561ecfdca03456"
+      ],
+      "package_hash": "hncfc3ubcttq2qenbcnr7rqqczpt2vqqdloqt4qeqhgem6wiavia====",
+      "hash": "czzifdcburl2i7erjf4nsoejiydax2aj"
+    },
+    "damy7ni3clpzct2zlnj52xrnuauo7esk": {
+      "name": "julia",
+      "version": "1.9.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "ucdavis.backports",
+      "parameters": {
+        "build_system": "makefile",
+        "openlibm": true,
+        "patches": [
+          "12e8f412416951ce3320cd3b3425e1a9fd3ae30f56fd486721561ecfdca03456"
+        ],
+        "precompile": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/share/apps/22.04/julia/1.9.0",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "patches": [
+        "12e8f412416951ce3320cd3b3425e1a9fd3ae30f56fd486721561ecfdca03456"
+      ],
+      "package_hash": "kdgxxxvqjlhcm6n66za3y7dy2bj26zo5gkqdlblfaxdjukqckkiq====",
+      "hash": "damy7ni3clpzct2zlnj52xrnuauo7esk"
     },
     "kum5i3y72vglpenkdg5yte6fpljfv6gk": {
       "name": "libevent",
@@ -3692,6 +3784,56 @@
       },
       "package_hash": "rk7aceqkvjprqlf4pp4zxmioaoeyq2uanopm5lrlt5ub5d52vbna====",
       "hash": "lkrzgxuhnqeonpra4egpals6ap2ba2l2"
+    },
+    "oucx2ae437h47qbuudvuzl6yuejnpvde": {
+      "name": "openjdk",
+      "version": "11.0.17_8",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "cogbixjotnhfpjce2pnpjtntbe3yzy7ecjewxijcfrm456dkrqiq====",
+      "hash": "oucx2ae437h47qbuudvuzl6yuejnpvde"
+    },
+    "4yopvxz7hv3owcodzmzokvaq62fndvkf": {
+      "name": "openjdk",
+      "version": "16.0.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "6dqhn4hfzyaouqr5chxwtjtbdsoskon73uqixmb2dwsfddax7ula====",
+      "hash": "4yopvxz7hv3owcodzmzokvaq62fndvkf"
     },
     "64l7uzf3wsw6q6y2aqy2kljeijfq5bzt": {
       "name": "openmpi",
