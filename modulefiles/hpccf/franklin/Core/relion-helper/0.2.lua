@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-25 13:33:54.008079
+-- Module file created by spack (https://github.com/spack/spack) on 2023-05-12 12:27:46.154597
 --
 -- py-relion-helper@0.2%gcc@11.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/2yrfnnk
 --
@@ -13,6 +13,7 @@ help([[Utilities for Relion Cryo-EM data processing on clusters.]])
 
 
 
+prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/py-relion-helper-0.2-2yrfnnkqkc53v6nyfleetnzk3tebk7fq/lib", ":")
 prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/py-relion-helper-0.2-2yrfnnkqkc53v6nyfleetnzk3tebk7fq/./bin", ":")
 prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/py-relion-helper-0.2-2yrfnnkqkc53v6nyfleetnzk3tebk7fq/./", ":")
 prepend_path("PYTHONPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/py-relion-helper-0.2-2yrfnnkqkc53v6nyfleetnzk3tebk7fq/lib/python3.10/site-packages", ":")

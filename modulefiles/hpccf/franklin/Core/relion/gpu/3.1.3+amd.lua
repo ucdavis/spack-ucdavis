@@ -1,7 +1,7 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-25 13:33:54.512092
+-- Module file created by spack (https://github.com/spack/spack) on 2023-05-12 12:27:46.484306
 --
--- relion@3.1.3%gcc@11.3.0+allow_ctf_in_sagd+cuda+double~double-gpu~external_motioncor2+gui~ipo~mklfft build_system=cmake build_type=RelWithDebInfo cuda_arch=75 purpose=cluster arch=linux-ubuntu22.04-zen2/ji5aw5q
+-- relion@3.1.3%gcc@11.3.0+allow_ctf_in_sagd+cuda+double~double-gpu~external_motioncor2+gui~ipo~mklfft build_system=cmake build_type=RelWithDebInfo cuda_arch=75 purpose=cluster arch=linux-ubuntu22.04-zen2/f3rc4wh
 --
 
 whatis([[Name : relion]])
@@ -16,30 +16,15 @@ to refinement of (multiple) 3D reconstructions or 2D class averages in
 electron cryo-microscopy (cryo-EM).]])
 
 
-depends_on("amdfftw/3.2+amd")
 depends_on("ctffind/4.1.14+amd")
-depends_on("cuda/11.8.0")
-depends_on("openmpi/4.1.4")
+depends_on("cuda/11.7.1")
 
-prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-ji5aw5qk63dusijtlqub65ts7asshkza/./bin", ":")
-prepend_path("PKG_CONFIG_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-ji5aw5qk63dusijtlqub65ts7asshkza/./lib/pkgconfig", ":")
-prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-ji5aw5qk63dusijtlqub65ts7asshkza/./", ":")
+prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-f3rc4whdjeckeeu7d4viy7rqyeuwieuo/lib", ":")
+prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-f3rc4whdjeckeeu7d4viy7rqyeuwieuo/./bin", ":")
+prepend_path("PKG_CONFIG_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-f3rc4whdjeckeeu7d4viy7rqyeuwieuo/./lib/pkgconfig", ":")
+prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-f3rc4whdjeckeeu7d4viy7rqyeuwieuo/./", ":")
 prepend_path("XLOCALEDIR", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libx11-1.7.0-37huyicewgwa4it26lyc7hrklw2g6q6o/share/X11/locale", ":")
-prepend_path("XDG_DATA_DIRS", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gobject-introspection-1.72.0-nuughpbhubfucho3khmlqeuqafr3egqr/share", ":")
-prepend_path("GI_TYPELIB_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gobject-introspection-1.72.0-nuughpbhubfucho3khmlqeuqafr3egqr/lib/girepository-1.0", ":")
-prepend_path("XDG_DATA_DIRS", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/atk-2.36.0-4lb2c45jallxu4dz4sk3igk2b4a3dha7/share", ":")
-prepend_path("GI_TYPELIB_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/atk-2.36.0-4lb2c45jallxu4dz4sk3igk2b4a3dha7/lib/girepository-1.0", ":")
-prepend_path("XDG_DATA_DIRS", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/shared-mime-info-1.9-r7svlvsqtjm653bt24omr2yob56zanqi/share", ":")
-prepend_path("XDG_DATA_DIRS", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gdk-pixbuf-2.42.2-g7rsxjgws4oigp65bdyl53gnbgror7bb/share", ":")
-prepend_path("GI_TYPELIB_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gdk-pixbuf-2.42.2-g7rsxjgws4oigp65bdyl53gnbgror7bb/lib/girepository-1.0", ":")
-prepend_path("XDG_DATA_DIRS", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/harfbuzz-5.1.0-b7kmkkp3wdnhilrjpwpzgstgaeuqzvbl/share", ":")
-prepend_path("GI_TYPELIB_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/harfbuzz-5.1.0-b7kmkkp3wdnhilrjpwpzgstgaeuqzvbl/lib/girepository-1.0", ":")
-prepend_path("XDG_DATA_DIRS", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pango-1.50.7-o4cw42bgzpgxb6po773m47fglqvrnwog/share", ":")
-prepend_path("GI_TYPELIB_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pango-1.50.7-o4cw42bgzpgxb6po773m47fglqvrnwog/lib/girepository-1.0", ":")
-prepend_path("XDG_DATA_DIRS", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/librsvg-2.51.0-ujnb3s6led7g2cst64xrkm6zfcmdtuft/share", ":")
-prepend_path("XDG_DATA_DIRS", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gtkplus-2.24.32-ae4d4jo2kknxxlg7lfpa457ugneocfgh/share", ":")
-prepend_path("GI_TYPELIB_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gtkplus-2.24.32-ae4d4jo2kknxxlg7lfpa457ugneocfgh/lib/girepository-1.0", ":")
-setenv("RELION_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-ji5aw5qk63dusijtlqub65ts7asshkza")
+setenv("RELION_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-f3rc4whdjeckeeu7d4viy7rqyeuwieuo")
 setenv("RELION_QSUB_TEMPLATE", "/share/apps/spack/templates/hpccf/franklin/relion.3.1.3.gpu.zen2.slurm.template.sh")
 
 
@@ -72,7 +57,7 @@ setenv("RELION_QSUB_EXTRA1", "Email:")
 setenv("RELION_QSUB_EXTRA1_DEFAULT", user_email)
 setenv("RELION_QSUB_EXTRA1_HELP", "The email address to use for slurm notifications.")
 
-setenv("RELION_QSUB_EXTRA2", "GPU resources")
+setenv("RELION_QSUB_EXTRA2", "GPU resources:")
 setenv("RELION_QSUB_EXTRA2_DEFAULT", "2")
 setenv("RELION_QSUB_EXTRA2_HELP", [[Number (and optionally type) of GPUs to request for this job. If only an integer is supplied, will request any GPU. If TYPE:NUM is supplied (example: a4000:4), specific models of GPU will be requested. Note that specific combinations of GPU type and job queue may fail; that is, if you select "high" as your queue and "a4000:4" as your GPU resources, but your account does not have access to the A4000 nodes' high queue, the job will fail to submit. You can view avaiable GPU resource types by running `sinfo -o "%20N %10c %10m %30G"`.]])
 

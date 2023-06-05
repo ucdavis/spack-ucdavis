@@ -1,14 +1,14 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-03-02 16:30:06.025825
+-- Module file created by spack (https://github.com/spack/spack) on 2023-05-12 12:29:35.404719
 --
--- slurm@22-05-6-1%gcc@11.3.0~gtk~hdf5+hwloc+mariadb+pmix+readline+restd build_system=autotools sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3/whta76v
+-- slurm@22-05-6-1%gcc@11.3.0~gtk~hdf5+hwloc+mariadb+pmix+readline+restd build_system=autotools sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3/vmazq33
 --
 
 whatis([[Name : slurm]])
 whatis([[Version : 22-05-6-1]])
 whatis([[Target : x86_64_v3]])
 whatis([[Short description : Slurm is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters.]])
-whatis([[Configure options : --with-libcurl=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/curl-7.85.0-ag5ukq5tdrrooskersye6ysy3sdozprj --with-json=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/json-c-0.16-q4x3pbztc5tdl4sdx2a3xbspqwnno2tr --with-lz4=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/lz4-1.9.4-pmhn4z7tdvrjqvqqitqjbbd7keqtfcpp --with-munge=/usr --with-ssl=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/openssl-1.1.1s-wyam5dezc5a45ygkuqanhvkp2e7tcxd6 --with-zlib=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-r25gtq3tqq464wdldy252urtjxspz7ln --disable-gtktest --without-hdf5 --enable-slurmrestd --with-http-parser=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/http-parser-2.9.4-iio2oua3skccilrbci6nmltouc7mrn5x --with-jwt=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libjwt-1.13.1-2ccxsx6aaniwjrnjg7hm2puecxtwanpc --with-hwloc=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/hwloc-2.8.0-we7qgbmgvhlep6h7cown7njd76rec6vr --with-pmix=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pmix-4.1.2-uc3xvg5kif37urqmcdzjqca47terufuv --sysconfdir=/etc/slurm]])
+whatis([[Configure options : --with-libcurl=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/curl-7.85.0-ag5ukq5tdrrooskersye6ysy3sdozprj --with-json=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/json-c-0.16-gd6nsl22p3irilm354sf2yjov43nw43l --with-lz4=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/lz4-1.9.4-pmhn4z7tdvrjqvqqitqjbbd7keqtfcpp --with-munge=/usr --with-ssl=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/openssl-1.1.1s-wyam5dezc5a45ygkuqanhvkp2e7tcxd6 --with-zlib=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-r25gtq3tqq464wdldy252urtjxspz7ln --disable-gtktest --without-hdf5 --enable-slurmrestd --with-http-parser=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/http-parser-2.9.4-iio2oua3skccilrbci6nmltouc7mrn5x --with-jwt=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libjwt-1.13.1-g4wv7qpipedcp7pxkw3s5wskbpylsqhg --with-hwloc=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/hwloc-2.8.0-hwfibpmbrcgtjoglao3z5itozvgqmoa6 --with-pmix=/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pmix-4.1.2-6gsyachlobhzj6tskq2li4rjhpla23om --sysconfdir=/etc/slurm]])
 
 help([[Slurm is an open source, fault-tolerant, and highly scalable cluster
 management and job scheduling system for large and small Linux clusters.
@@ -25,11 +25,12 @@ managing a queue of pending work.]])
 depends_on("hwloc/2.8.0")
 depends_on("pmix/4.1.2")
 
-prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/slurm-22-05-6-1-whta76v5vrjdlldwigu5vtambivkghmt/./bin", ":")
-prepend_path("MANPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/slurm-22-05-6-1-whta76v5vrjdlldwigu5vtambivkghmt/./share/man", ":")
-prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/slurm-22-05-6-1-whta76v5vrjdlldwigu5vtambivkghmt/./", ":")
+prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/slurm-22-05-6-1-vmazq33tb6xwck7ondvbresytx3zohm3/lib", ":")
+prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/slurm-22-05-6-1-vmazq33tb6xwck7ondvbresytx3zohm3/./bin", ":")
+prepend_path("MANPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/slurm-22-05-6-1-vmazq33tb6xwck7ondvbresytx3zohm3/./share/man", ":")
+prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/slurm-22-05-6-1-vmazq33tb6xwck7ondvbresytx3zohm3/./", ":")
 prepend_path("XLOCALEDIR", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libx11-1.7.0-37huyicewgwa4it26lyc7hrklw2g6q6o/share/X11/locale", ":")
-setenv("SLURM_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/slurm-22-05-6-1-whta76v5vrjdlldwigu5vtambivkghmt")
+setenv("SLURM_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/slurm-22-05-6-1-vmazq33tb6xwck7ondvbresytx3zohm3")
 
 
 local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])

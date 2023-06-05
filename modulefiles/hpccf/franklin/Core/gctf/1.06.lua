@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-25 13:33:52.056948
+-- Module file created by spack (https://github.com/spack/spack) on 2023-05-12 12:27:45.506426
 --
 -- gctf@1.06%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/svcstm4
 --

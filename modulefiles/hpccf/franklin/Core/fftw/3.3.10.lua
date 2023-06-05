@@ -1,7 +1,7 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-03-02 16:30:04.101036
+-- Module file created by spack (https://github.com/spack/spack) on 2023-05-12 12:29:32.850760
 --
--- fftw@3.3.10%gcc@11.3.0+mpi+openmp~pfft_patches build_system=autotools precision=double,float arch=linux-ubuntu22.04-x86_64_v3/vj2j6kx
+-- fftw@3.3.10%gcc@11.3.0+mpi+openmp~pfft_patches build_system=autotools precision=double,float arch=linux-ubuntu22.04-x86_64_v3/oeeu44u
 --
 
 whatis([[Name : fftw]])
@@ -19,12 +19,13 @@ applications.]])
 
 depends_on("openmpi/4.1.4")
 
-prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/fftw-3.3.10-vj2j6kxcqcib54yso3iytpj523tla3mr/./bin", ":")
-prepend_path("MANPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/fftw-3.3.10-vj2j6kxcqcib54yso3iytpj523tla3mr/./share/man", ":")
-prepend_path("PKG_CONFIG_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/fftw-3.3.10-vj2j6kxcqcib54yso3iytpj523tla3mr/./lib/pkgconfig", ":")
-prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/fftw-3.3.10-vj2j6kxcqcib54yso3iytpj523tla3mr/./", ":")
+prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/fftw-3.3.10-oeeu44uv5vdpmoy27y2wybfjlnco7tff/lib", ":")
+prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/fftw-3.3.10-oeeu44uv5vdpmoy27y2wybfjlnco7tff/./bin", ":")
+prepend_path("MANPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/fftw-3.3.10-oeeu44uv5vdpmoy27y2wybfjlnco7tff/./share/man", ":")
+prepend_path("PKG_CONFIG_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/fftw-3.3.10-oeeu44uv5vdpmoy27y2wybfjlnco7tff/./lib/pkgconfig", ":")
+prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/fftw-3.3.10-oeeu44uv5vdpmoy27y2wybfjlnco7tff/./", ":")
 prepend_path("XLOCALEDIR", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libx11-1.7.0-37huyicewgwa4it26lyc7hrklw2g6q6o/share/X11/locale", ":")
-setenv("FFTW_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/fftw-3.3.10-vj2j6kxcqcib54yso3iytpj523tla3mr")
+setenv("FFTW_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/fftw-3.3.10-oeeu44uv5vdpmoy27y2wybfjlnco7tff")
 
 
 local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
