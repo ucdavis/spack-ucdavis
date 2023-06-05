@@ -78,8 +78,14 @@ class Maker(Package):
         perl = which('perl')
         rm = which('rm')
         with working_dir('src'):
+            filter_file(r"^.*/data/home/apache/maker/maker/maker/src/.*", "", *["_build/build_params", "_build/config_data"])
             perl('Build.PL', '--install_base', prefix)
             perl('Build', 'install')
+
+        with working_dir(prefix):
+            # perl/lib/GI.pm hard codes $FindBin::RealBin/../lib/Widget/fgenesh/fgenesh_wrap
+            # so create the symlink so that path exists.
+            symlink('./perl/lib', 'lib')
 
         install_tree('lib', join_path(prefix, 'perl', 'lib'))
 
