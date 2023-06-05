@@ -1,16 +1,23 @@
+#gdl # 2023-04-27: known broken
 spack:
   specs:
+  - apptainer
   - aspera-cli
+  - awscli ^python@2.7
   - cdo
   - cmake
-  - gdl
+  - gnuplot
   - gromacs
   - jags
+  - mark
   - nco
   - parallel
+  - pigz
   - rclone
-  - rstudio@2022.12.0+server
+  - rstudio@2022.12.0+server ^curl@7.85.0
   - stata
+  - turbovnc
+  - virtualgl
   - yasm
   modules:
     default:
@@ -20,14 +27,19 @@ spack:
         exclude_implicits: true
         include:
         - rstudio
+        - pigz%gcc@11.3.0
+        - turbovnc
+        - gdl
         projections:
           rstudio: rstudio-server/{version}
         rstudio:
-          template: hpccf/rstudio-server.tcl
+          template: hpccf/farm/rstudio-server.tcl
+        turbovnc:
+          template: hpccf/farm/turbovnc.tcl
         all:
           conflict:
           - '{name}'
   concretizer:
     reuse: true
-    unify: when_possible
+    unify: false
   view: false

@@ -8,7 +8,9 @@ spack:
   - gmp
   - gsl
   - hdf5
+  - hypre
   - intel-oneapi-mkl
+  - librsvg
   - libszip
   - mpfr
   - netcdf-c
@@ -34,7 +36,7 @@ spack:
         include:
         - gsl
         exclude:
-          - perl
+        - perl
       roots:
         tcl: $spack/../../modulefiles/spack/libs/
   concretizer:

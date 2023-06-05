@@ -122,7 +122,8 @@ spack:
   - rnaquast
   - rsem
   - sabre
-  - salmon
+  - salmon@1.9.0
+  - salmon@1.10.1
   - samtools
   - satsuma2
   - scallop
@@ -130,12 +131,14 @@ spack:
   - seqtk
   - shoremap %gcc@11.3.0
   - sickle
+  - slim
   - smartdenovo
   - snap-korf
   - sortmerna
   - spades
   - sratoolkit
   - star
+  - strelka
   - stringtie
   - tabix
   - tassel
@@ -163,9 +166,11 @@ spack:
       tcl:
         exclude_implicits: true
         exclude:
-        - parallel
-        - zlib
         - cmake
+        - parallel
+        - python@2.7.18
+        - zlib
+        - perl
   concretizer:
     reuse: true
     unify: when_possible
