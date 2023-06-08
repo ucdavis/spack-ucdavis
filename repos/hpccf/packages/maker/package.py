@@ -89,6 +89,8 @@ class Maker(Package):
 
         install_tree('lib', join_path(prefix, 'perl', 'lib'))
 
+        install_tree('data', join_path(prefix, 'data'))
+
         # Remove scripts that do not work. The 'mpi_evaluator' and
         # 'mpi_iprscan' scripts depend on a custom perl module that is not
         # shipped with maker. The 'maker2chado' script depends on setting up a
