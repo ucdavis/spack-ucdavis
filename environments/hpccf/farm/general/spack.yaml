@@ -2,6 +2,7 @@
 spack:
   specs:
   - apptainer
+  - aria2
   - aspera-cli
   - awscli ^python@2.7
   - cdo
@@ -23,7 +24,7 @@ spack:
     default:
       tcl:
         exclude:
-          - perl
+        - perl
         exclude_implicits: true
         include:
         - rstudio
