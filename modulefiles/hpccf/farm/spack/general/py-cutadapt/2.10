@@ -1,0 +1,27 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:17.354249
+##
+## py-cutadapt@2.10%gcc@9.5.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v2/ukgavdv
+##
+
+
+module-whatis "Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads."
+
+proc ModulesHelp { } {
+puts stderr "Cutadapt finds and removes adapter sequences, primers, poly-A tails and"
+puts stderr "other types of unwanted sequence from your high-throughput sequencing"
+puts stderr "reads."
+}
+
+conflict py-cutadapt
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-cutadapt-2.10-ukgavdve765cpbtkr5pgftdewh5nmmkn/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-cutadapt-2.10-ukgavdve765cpbtkr5pgftdewh5nmmkn/."
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-cutadapt-2.10-ukgavdve765cpbtkr5pgftdewh5nmmkn/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-dnaio-0.4.2-ito5f4wlmarlfvu3p5xwlpwmcsa5o2dn/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-setuptools-59.4.0-anzrds76gmqhput627ackiimwc6bikaq/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-xopen-0.8.4-qj4wulehz54rphfycvy2djja4syh5j4k/lib/python3.9/site-packages"
+setenv PY_CUTADAPT_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-cutadapt-2.10-ukgavdve765cpbtkr5pgftdewh5nmmkn"
+
+if [module-info mode load] {
+}

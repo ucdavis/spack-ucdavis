@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:19.083583
+##
+## repeatscout@1.0.5%gcc@9.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/s3vb6xf
+##
+
+
+module-whatis "RepeatScout - De Novo Repeat Finder, Price A.L., Jones N.C. and Pevzner P.A."
+
+proc ModulesHelp { } {
+puts stderr "RepeatScout - De Novo Repeat Finder, Price A.L., Jones N.C. and Pevzner"
+puts stderr "P.A."
+}
+
+conflict repeatscout
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/repeatscout-1.0.5-s3vb6xfg6u42bghbmfnsid2jzxtb37pu/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/repeatscout-1.0.5-s3vb6xfg6u42bghbmfnsid2jzxtb37pu/."
+setenv REPEATSCOUT_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/repeatscout-1.0.5-s3vb6xfg6u42bghbmfnsid2jzxtb37pu"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-05-30 16:51:48.713628
+##
+## pmix@4.1.1%gcc@11.3.0~docs+pmi_backwards_compatibility~restful build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/2ihoi4r
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis "The Process Management Interface (PMI) has been used for quite some time as a means of exchanging wireup information needed for interprocess communication. However, meeting the significant orchestration challenges presented by exascale systems requires that the process-to-system interface evolve to permit a tighter integration between the different components of the parallel application and existing and future SMS solutions."
+
+proc ModulesHelp { } {
+puts stderr "The Process Management Interface (PMI) has been used for quite some time"
+puts stderr "as a means of exchanging wireup information needed for interprocess"
+puts stderr "communication. However, meeting the significant orchestration challenges"
+puts stderr "presented by exascale systems requires that the process-to-system"
+puts stderr "interface evolve to permit a tighter integration between the different"
+puts stderr "components of the parallel application and existing and future SMS"
+puts stderr "solutions. PMI Exascale (PMIx) addresses these needs by providing an"
+puts stderr "extended version of the PMI definitions specifically designed to support"
+puts stderr "exascale and beyond environments by: (a) adding flexibility to the"
+puts stderr "functionality expressed in the existing APIs, (b) augmenting the"
+puts stderr "interfaces with new APIs that provide extended capabilities, (c) forging"
+puts stderr "a collaboration between subsystem providers including resource manager,"
+puts stderr "fabric, file system, and programming library developers, (d)"
+puts stderr "establishing a standards-like body for maintaining the definitions, and"
+puts stderr "(e) providing a reference implementation of the PMIx standard that"
+puts stderr "demonstrates the desired level of scalability while maintaining strict"
+puts stderr "separation between it and the standard itself."
+}
+
+conflict pmix
+
+prepend-path LD_LIBRARY_PATH "/share/apps/22.04/pmix/4.1.1/lib"
+prepend-path PATH "/share/apps/22.04/pmix/4.1.1/bin"
+prepend-path MANPATH "/share/apps/22.04/pmix/4.1.1/share/man"
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/pmix/4.1.1/lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/pmix/4.1.1/."
+setenv PMIX_ROOT "/share/apps/22.04/pmix/4.1.1"
+
+if [module-info mode load] {
+}

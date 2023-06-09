@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:34.982347
+##
+## blat@35%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/wyjgwxa
+##
+
+
+module-whatis "BLAT (BLAST-like alignment tool) is a pairwise sequence alignment algorithm."
+
+proc ModulesHelp { } {
+puts stderr "BLAT (BLAST-like alignment tool) is a pairwise sequence alignment"
+puts stderr "algorithm."
+}
+
+conflict blat
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/blat-35-wyjgwxaabrbj6fcr3ngpy7vaureb73dm/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/blat-35-wyjgwxaabrbj6fcr3ngpy7vaureb73dm/."
+setenv BLAT_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/blat-35-wyjgwxaabrbj6fcr3ngpy7vaureb73dm"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

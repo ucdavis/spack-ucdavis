@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:57.223407
+##
+## spades@3.15.5%gcc@9.5.0~ipo build_system=cmake build_type=RelWithDebInfo arch=linux-ubuntu22.04-x86_64_v2/xgb7e5r
+##
+
+
+module-whatis "SPAdes - St. Petersburg genome assembler - is intended for both standard isolates and single-cell MDA bacteria assemblies."
+
+proc ModulesHelp { } {
+puts stderr "SPAdes - St. Petersburg genome assembler - is intended for both standard"
+puts stderr "isolates and single-cell MDA bacteria assemblies."
+}
+
+conflict spades
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/spades-3.15.5-xgb7e5r3nefqazcqk3gxexabhy5o46ts/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/spades-3.15.5-xgb7e5r3nefqazcqk3gxexabhy5o46ts/."
+setenv SPADES_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/spades-3.15.5-xgb7e5r3nefqazcqk3gxexabhy5o46ts"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

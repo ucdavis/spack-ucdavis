@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:09.934214
+##
+## canu@2.2%gcc@9.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/rsclkib
+##
+
+
+module-whatis "A single molecule sequence assembler for genomes large and small."
+
+proc ModulesHelp { } {
+puts stderr "A single molecule sequence assembler for genomes large and small."
+}
+
+conflict canu
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/canu-2.2-rsclkibjkxj3i7puccaasfnressckjx4/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/canu-2.2-rsclkibjkxj3i7puccaasfnressckjx4/."
+prepend-path XLOCALEDIR "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/libx11-1.7.0-xda3mpigk6jk7cjafzigrd4amhiawkdv/share/X11/locale"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/gobject-introspection-1.72.0-r3pe4ufkmsggkpardhbdunukcwz42sza/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/gobject-introspection-1.72.0-r3pe4ufkmsggkpardhbdunukcwz42sza/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/harfbuzz-5.1.0-amswtbcgd2udedxytmus6jgcqypijphg/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/harfbuzz-5.1.0-amswtbcgd2udedxytmus6jgcqypijphg/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/pango-1.50.7-qrqyrisfmcnfn443lm5kizgb556a5u2l/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/pango-1.50.7-qrqyrisfmcnfn443lm5kizgb556a5u2l/lib/girepository-1.0"
+setenv CANU_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/canu-2.2-rsclkibjkxj3i7puccaasfnressckjx4"
+
+if [module-info mode load] {
+}

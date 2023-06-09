@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:11.104194
+##
+## fastqc@0.11.9%gcc@9.5.0 build_system=generic patches=b237b24 arch=linux-ubuntu22.04-x86_64_v2/dmqbzyt
+##
+
+
+module-whatis "A quality control tool for high throughput sequence data."
+
+proc ModulesHelp { } {
+puts stderr "A quality control tool for high throughput sequence data."
+}
+
+conflict fastqc
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/fastqc-0.11.9-dmqbzytt5swnwhyrkwqgknimurmwr6pd/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/fastqc-0.11.9-dmqbzytt5swnwhyrkwqgknimurmwr6pd/."
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/openjdk-11.0.17_8-ac5evltntidr2h4y3jrjsrqtodfdq25d/bin"
+setenv FASTQC_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/fastqc-0.11.9-dmqbzytt5swnwhyrkwqgknimurmwr6pd"
+
+if [module-info mode load] {
+}

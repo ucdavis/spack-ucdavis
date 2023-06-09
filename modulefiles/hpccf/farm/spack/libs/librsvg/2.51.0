@@ -1,0 +1,41 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-01 15:58:29.779193
+##
+## librsvg@2.51.0%gcc@11.3.0~doc build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/mxzuia5
+##
+## Configure options: --enable-gtk-doc=no
+##
+
+
+module-whatis "Library to render SVG files using Cairo"
+
+proc ModulesHelp { } {
+puts stderr "Library to render SVG files using Cairo"
+}
+
+conflict librsvg
+
+prepend-path CPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-mxzuia5myxrmauot7urwzdjbfoh6pwe6/include"
+prepend-path C_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-mxzuia5myxrmauot7urwzdjbfoh6pwe6/include"
+prepend-path CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-mxzuia5myxrmauot7urwzdjbfoh6pwe6/include"
+prepend-path LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-mxzuia5myxrmauot7urwzdjbfoh6pwe6/lib"
+prepend-path LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-mxzuia5myxrmauot7urwzdjbfoh6pwe6/lib"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-mxzuia5myxrmauot7urwzdjbfoh6pwe6/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-mxzuia5myxrmauot7urwzdjbfoh6pwe6/share/man"
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-mxzuia5myxrmauot7urwzdjbfoh6pwe6/lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-mxzuia5myxrmauot7urwzdjbfoh6pwe6/."
+prepend-path XLOCALEDIR "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libx11-1.7.0-vovihlpu6m3y3gj2q7zmcflfargnrbbr/share/X11/locale"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gobject-introspection-1.72.0-rvu5vzv275v32kenrybilzsevsjrs7pn/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gobject-introspection-1.72.0-rvu5vzv275v32kenrybilzsevsjrs7pn/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/shared-mime-info-1.9-mtg75orzesuztayp72s34depmufsrrys/share"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gdk-pixbuf-2.42.2-yjyxhznmppi7shjyenyjh2bn3t77zhca/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gdk-pixbuf-2.42.2-yjyxhznmppi7shjyenyjh2bn3t77zhca/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/harfbuzz-5.1.0-k2gosxcaakwbrn4jqfu3lu3ualmpcer4/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/harfbuzz-5.1.0-k2gosxcaakwbrn4jqfu3lu3ualmpcer4/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pango-1.50.7-qlmlesyftpwlpfcarf7b4o6jy4sp2o4j/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pango-1.50.7-qlmlesyftpwlpfcarf7b4o6jy4sp2o4j/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-mxzuia5myxrmauot7urwzdjbfoh6pwe6/share"
+setenv LIBRSVG_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-mxzuia5myxrmauot7urwzdjbfoh6pwe6"
+
+if [module-info mode load] {
+}

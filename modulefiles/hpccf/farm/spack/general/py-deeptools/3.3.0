@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:17.441161
+##
+## py-deeptools@3.3.0%gcc@9.5.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v2/sm72gsh
+##
+
+
+module-whatis "deepTools addresses the challenge of handling the large amounts of data that are now routinely generated from DNA sequencing centers."
+
+proc ModulesHelp { } {
+puts stderr "deepTools addresses the challenge of handling the large amounts of data"
+puts stderr "that are now routinely generated from DNA sequencing centers."
+}
+
+conflict py-deeptools
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-deeptools-3.3.0-sm72gshbr5jtedu6nn76lumt3uvcgbzb/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-deeptools-3.3.0-sm72gshbr5jtedu6nn76lumt3uvcgbzb/."
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-deeptools-3.3.0-sm72gshbr5jtedu6nn76lumt3uvcgbzb/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-deeptoolsintervals-0.1.9-nnjuwgdsc2dysrrhvtitnkfyvoyduw4r/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-matplotlib-3.6.2-cyn7d2ekeeei33c5exyjz2mgl4egdiir/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-contourpy-1.0.5-wf4txqetv64fxrkok3bcdznccmfqobdh/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-numpy-1.23.4-ahtsqvw4tep5pl5523q5kejacthcnofr/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-setuptools-59.4.0-anzrds76gmqhput627ackiimwc6bikaq/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-cycler-0.11.0-xstct7aesi4ryidivz37j5ysyhx4ozmx/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-fonttools-4.37.3-rh7aelycgjswepoa2dhctiiky32t5me2/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-kiwisolver-1.3.2-prf5r4oydu5ff3szrneynlidz6etvbcw/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-packaging-21.3-5euv6p5qpkiqpuyuocdbov2fa77qskx4/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pyparsing-3.0.9-kkcofnu5s6iirq7vo7neljhrbqcdbkyf/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pillow-9.2.0-thqyyzdceo4h2jnakr2phe5ncae5lwcv/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-python-dateutil-2.8.2-mheexejzcnmrjexw3t7j4aix7i5k4grm/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-six-1.16.0-jw2todiiwh7c7d4dvjnui7yddyubwupe/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-numpydoc-1.1.0-gyxywwl4sx5n2bmbo6wrekm36r3qdsqx/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-plotly-5.2.2-j6wlyigvpxm3dnr3p25z3tmdsylwxd2r/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-tenacity-8.0.1-huyrkgloh5kamobr2bgtw7qjbapvyv7e/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-py2bit-0.2.1-ntdmtphtbefolie5pkecfofmauutf345/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pybigwig-0.3.12-viwputxryzdigygetlm2d3vilnfo6x32/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pysam-0.19.1-iesyxxeaw4aptrfdbq7zt4ysijyr4vyc/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-scipy-1.8.1-xwl7ksf5yosalxogivxxwt7hptjebuzz/lib/python3.9/site-packages"
+setenv PY_DEEPTOOLS_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-deeptools-3.3.0-sm72gshbr5jtedu6nn76lumt3uvcgbzb"
+
+if [module-info mode load] {
+}

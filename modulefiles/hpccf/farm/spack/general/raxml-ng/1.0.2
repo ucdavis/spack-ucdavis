@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:18.822153
+##
+## raxml-ng@1.0.2%gcc@9.5.0~ipo+mpi build_system=cmake build_type=RelWithDebInfo arch=linux-ubuntu22.04-x86_64_v2/htccd7d
+##
+## Configure options: -DUSE_MPI:BOOL=ON
+##
+
+
+module-whatis "RAxML-NG is a phylogenetic tree inference tool which uses maximum-likelihood (ML) optimality criterion."
+
+proc ModulesHelp { } {
+puts stderr "RAxML-NG is a phylogenetic tree inference tool which uses maximum-"
+puts stderr "likelihood (ML) optimality criterion. Its search heuristic is based on"
+puts stderr "iteratively performing a series of Subtree Pruning and Regrafting (SPR)"
+puts stderr "moves, which allows to quickly navigate to the best-known ML tree."
+puts stderr "RAxML-NG is a successor of RAxML (Stamatakis 2014) and leverages the"
+puts stderr "highly optimized likelihood computation implemented in libpll (Flouri et"
+puts stderr "al. 2014)."
+}
+
+conflict raxml-ng
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/raxml-ng-1.0.2-htccd7df5ru3jxoou4au4i67vndaq24h/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/raxml-ng-1.0.2-htccd7df5ru3jxoou4au4i67vndaq24h/."
+setenv RAXML_NG_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/raxml-ng-1.0.2-htccd7df5ru3jxoou4au4i67vndaq24h"
+
+if [module-info mode load] {
+}

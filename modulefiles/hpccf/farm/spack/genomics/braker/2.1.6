@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:35.235156
+##
+## braker@2.1.6%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/ycvfhxq
+##
+
+
+module-whatis "BRAKER is a pipeline for unsupervised RNA-Seq-based genome annotation that combines the advantages of GeneMark-ET and AUGUSTUS"
+
+proc ModulesHelp { } {
+puts stderr "BRAKER is a pipeline for unsupervised RNA-Seq-based genome annotation"
+puts stderr "that combines the advantages of GeneMark-ET and AUGUSTUS"
+}
+
+prereq augustus/3.3
+prereq diamond/2.0.15
+prereq samtools/1.14
+conflict braker
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/braker-2.1.6-ycvfhxqvegnsbanggqhcu4mwhrjlxa5u/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/braker-2.1.6-ycvfhxqvegnsbanggqhcu4mwhrjlxa5u/."
+prepend-path PERL5LIB "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-file-homedir-1.004-warotoq3yfyrkg2ma5p4ojz2xgwlpegh/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-file-which-1.22-ym7qyviiz2pmp45j4tipqlqwaed4w2pm/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-hash-merge-0.300-m2buh7rrtwo6ysrbazdabincizx7jyvz/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-clone-choose-0.010-du4rhdy4yjfdfumkm5nez6kiq5akxypx/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-scalar-list-utils-1.50-wsgwecw7hkmjtcfus2bnzy3ut6ja6nhn/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-logger-simple-2.0-l3o7r5a5owm7ezeh6qdguc5rtlp2zqg3/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-object-insideout-4.05-re5h2elk524nu2vavjaryfo3w4rqfwn3/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-exception-class-1.43-25rmw4oxr6fmjq5z25ug2utinjrs67nw/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-class-data-inheritable-0.08-tu2eemny6r7ja7jrizlbhftzxj5wfgmb/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-devel-stacktrace-2.02-xhqceomtgbldhsp32z66g7z6tlu3l53c/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-parallel-forkmanager-1.19-e4xay5i6iin6gg3nb3iscvhbg2vuv5ho/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-scalar-util-numeric-0.40-3m7wn5elfz7zj6lwkhfzp3qkishspp5w/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-yaml-1.27-icjrwdehr4tc7b6vqp6hwvusqrnxa22g/lib/perl5"
+prepend-path PERL5LIB "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/braker-2.1.6-ycvfhxqvegnsbanggqhcu4mwhrjlxa5u/lib"
+setenv BRAKER_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/braker-2.1.6-ycvfhxqvegnsbanggqhcu4mwhrjlxa5u"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

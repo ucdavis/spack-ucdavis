@@ -1,0 +1,97 @@
+#%Module1.0
+# vim: syntax=tcl
+
+module-whatis "Spack is a package management tool designed to support multiple versions and configurations of software on a wide variety of platforms and environments. It was designed for large supercomputing centers, where many users and application teams share common installations of software on clusters with exotic architectures, using libraries that do not have a standard ABI. Spack is non-destructive: installing a new version does not break existing installations, so many configurations can coexist on the same system."
+
+set name "spack"
+set version "0.19.1"
+set url "https://spack.readthedocs.io/en/latest/index.html"
+set root "/share/apps/22.04/spack/spack-v0.19.1"
+
+set shellfamily [module-info shelltype]
+set shellprog [module-info shell]
+set modmode [module-info mode]
+
+set spack_aliases { "spacktivate" }
+
+set spack_funcs { "_spack_audit" "_spack_pkg_list"
+                  "_spack_env_depfile" "_spack_ci_rebuild" "_spack_concretize"
+                  "_spack_create" "_spack_view_check" "_spack_buildcache_download"
+                  "_spack_compilers" "_spack_repo_list" "_spack_view_copy"
+                  "_spack_module_tcl_loads" "_spack_env_loads" "_spack_bootstrap_trust"
+                  "_spack_gpg_init" "_spack_config_blame" "_spack_bootstrap"
+                  "_bash_completion_spack" "_spack_buildcache_list" "_spack_buildcache_sync"
+                  "_spack_verify" "_spack_bootstrap_mirror" "_spack_test_find"
+                  "_spack_repo" "_spack_mirror_rm" "_spack_buildcache_get_buildcache_name"
+                  "_spack_unit_test" "_spack_test_status" "_spack_dependencies"
+                  "_spack_pathadd" "_spack_view_rm" "_spack_config_remove"
+                  "_spack_completions" "_spack_mirror_set_url" "_spack_compiler"
+                  "_spack" "_spack_config_add" "_spack_url_summary"
+                  "_spack_compiler_rm" "_spack_log_parse" "_spack_env_create"
+                  "spack" "_spack_view_statlink" "_spack_module_tcl_find"
+                  "_spack_pkg_diff" "_spack_list" "_spack_test"
+                  "_spack_test_results" "_spack_ci_generate" "_spack_buildcache_install"
+                  "_spack_fn_exists" "_spack_versions" "_spack_maintainers"
+                  "_spack_env_ls" "_spack_env_status" "_spack_extensions"
+                  "_spack_url_list" "_spack_module_tcl_setdefault" "_spack_gpg_list"
+                  "_spack_restage" "_spack_pkg_source" "_spack_url"
+                  "_spack_undevelop" "_spack_audit_packages" "_spack_unload"
+                  "_spack_dependents" "_spack_mark" "_spack_env_st"
+                  "_spack_module_lmod_loads" "_spack_bootstrap_add" "_spack_compiler_remove"
+                  "_spack_blame" "_spack_clean" "_spack_mirror_destroy"
+                  "_spack_shell_wrapper" "_spack_gpg_sign" "_spack_license_verify"
+                  "_spack_config_revert" "_spack_module_lmod_find" "_spack_audit_list"
+                  "_spacktivate" "_spack_view" "_spack_gpg_trust"
+                  "_spack_load" "_spack_change" "_spack_bootstrap_now"
+                  "_spack_diff" "_spack_bootstrap_root" "_spack_external_read_cray_manifest"
+                  "_spack_url_parse" "_spack_commands" "_spack_view_symlink"
+                  "_spack_env" "_spack_fetch" "_spack_tags"
+                  "_spack_module_tcl_refresh" "_spack_config_update" "_spack_env_deactivate"
+                  "_spack_view_status" "_spack_repo_add" "_spack_env_view"
+                  "_spack_env_update" "_spack_url_stats" "_spack_license"
+                  "_spack_bootstrap_list" "_spack_buildcache_keys" "_spack_bootstrap_remove"
+                  "_spack_compiler_list" "_spack_build_env" "_spack_buildcache_update_index"
+                  "_spack_bootstrap_disable" "_spack_repo_rm" "_spack_view_add"
+                  "_spack_buildcache_create" "_spack_pkg_added" "_spack_python"
+                  "_spack_graph" "_spack_buildcache_save_specfile" "_spack_gpg_publish"
+                  "_spack_mirror_add" "_spack_external_find" "_spack_develop"
+                  "_spack_find" "_spack_style" "_spack_gpg"
+                  "_spack_solve" "_spack_rm" "_spack_debug_report"
+                  "_spack_module_tcl_rm" "_spack_info" "_spack_config_get"
+                  "_spack_pkg_add" }
+
+set spack_vars { "SPACK_ROOT" "SPACK_PYTHON" }
+
+setenv SPACK_ROOT $root
+prepend-path PATH $root/bin
+chdir $root/../
+
+if { [module-info mode load] } {
+    set spack_src_script $root/share/spack/setup-env.sh
+    puts stdout "eval \"\$(grep -v '_spack_pathadd PATH' $spack_src_script)\"; "
+}
+
+#puts stderr "Mode: $modmode"
+
+if { [module-info mode unload] } {
+    #if { [info exists ::env(SPACK_ENV)] } {
+    #    puts stdout "despacktivate 2> /dev/null; "
+    #}
+
+    foreach spack_func $spack_funcs {
+        if { $shellprog == "zsh" } {
+            puts stdout "unfunction $spack_func; "
+        } else {
+            puts stdout "unset -f $spack_func; "
+        }
+    }
+
+    foreach spack_var $spack_vars {
+        puts stdout "unset $spack_var; "
+    }
+
+    foreach spack_alias $spack_aliases {
+        puts stdout "unalias $spack_alias; "
+    }
+}
+

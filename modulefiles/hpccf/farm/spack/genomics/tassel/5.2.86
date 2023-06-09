@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:57.479846
+##
+## tassel@5.2.86%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/vvnihck
+##
+
+
+module-whatis "TASSEL is a software package to evaluate traits associations, evolutionary patterns, and linkage disequilibrium."
+
+proc ModulesHelp { } {
+puts stderr "TASSEL is a software package to evaluate traits associations,"
+puts stderr "evolutionary patterns, and linkage disequilibrium."
+}
+
+conflict tassel
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/tassel-5.2.86-vvnihckzeujkb73gp3ruxygh6mcpd7np/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/tassel-5.2.86-vvnihckzeujkb73gp3ruxygh6mcpd7np/."
+prepend-path CLASSPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/tassel-5.2.86-vvnihckzeujkb73gp3ruxygh6mcpd7np/bin/lib"
+setenv TASSEL_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/tassel-5.2.86-vvnihckzeujkb73gp3ruxygh6mcpd7np"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

@@ -1,0 +1,35 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-01 15:58:27.731434
+##
+## amdfftw@3.2%gcc@11.3.0~amd-app-opt~amd-dynamic-dispatcher~amd-fast-planner~amd-mpi-vader-limit~amd-top-n-planner~amd-trans~debug+mpi+openmp+shared~static~threads build_system=autotools precision=double,float arch=linux-ubuntu22.04-zen/tohlfbw
+##
+
+
+module-whatis "FFTW (AMD Optimized version) is a comprehensive collection of fast C routines for computing the Discrete Fourier Transform (DFT) and various special cases thereof."
+
+proc ModulesHelp { } {
+puts stderr "FFTW (AMD Optimized version) is a comprehensive collection of fast C"
+puts stderr "routines for computing the Discrete Fourier Transform (DFT) and various"
+puts stderr "special cases thereof. It is an open-source implementation of the Fast"
+puts stderr "Fourier transform algorithm. It can compute transforms of real and"
+puts stderr "complex-values arrays of arbitrary size and dimension. AMD Optimized"
+puts stderr "FFTW is the optimized FFTW implementation targeted for AMD CPUs. For"
+puts stderr "single precision build, please use precision value as float. Example :"
+puts stderr "spack install amdfftw precision=float"
+}
+
+conflict amdfftw
+
+prepend-path CPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/amdfftw-3.2-tohlfbwgcsmnkckwrhuz2v5ftkym236y/include"
+prepend-path C_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/amdfftw-3.2-tohlfbwgcsmnkckwrhuz2v5ftkym236y/include"
+prepend-path CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/amdfftw-3.2-tohlfbwgcsmnkckwrhuz2v5ftkym236y/include"
+prepend-path LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/amdfftw-3.2-tohlfbwgcsmnkckwrhuz2v5ftkym236y/lib"
+prepend-path LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/amdfftw-3.2-tohlfbwgcsmnkckwrhuz2v5ftkym236y/lib"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/amdfftw-3.2-tohlfbwgcsmnkckwrhuz2v5ftkym236y/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/amdfftw-3.2-tohlfbwgcsmnkckwrhuz2v5ftkym236y/share/man"
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/amdfftw-3.2-tohlfbwgcsmnkckwrhuz2v5ftkym236y/lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/amdfftw-3.2-tohlfbwgcsmnkckwrhuz2v5ftkym236y/."
+setenv AMDFFTW_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/amdfftw-3.2-tohlfbwgcsmnkckwrhuz2v5ftkym236y"
+
+if [module-info mode load] {
+}

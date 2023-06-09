@@ -1,0 +1,21 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:16.352801
+##
+## ont-guppy@6.1.7%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/7oxh7ni
+##
+
+
+module-whatis "Guppy: local accelerated basecalling for Nanopore data"
+
+proc ModulesHelp { } {
+puts stderr "Guppy: local accelerated basecalling for Nanopore data"
+}
+
+conflict ont-guppy
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ont-guppy-6.1.7-7oxh7ni4osr4x2egh26ljqzhlfugqxf4/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ont-guppy-6.1.7-7oxh7ni4osr4x2egh26ljqzhlfugqxf4/."
+setenv ONT_GUPPY_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ont-guppy-6.1.7-7oxh7ni4osr4x2egh26ljqzhlfugqxf4"
+
+if [module-info mode load] {
+}

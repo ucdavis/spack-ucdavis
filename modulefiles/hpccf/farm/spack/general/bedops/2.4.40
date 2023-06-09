@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:09.437529
+##
+## bedops@2.4.40%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/4y2nyiv
+##
+
+
+module-whatis "BEDOPS is an open-source command-line toolkit that performs highly efficient and scalable Boolean and other set operations, statistical calculations, archiving, conversion and other management of genomic data of arbitrary scale."
+
+proc ModulesHelp { } {
+puts stderr "BEDOPS is an open-source command-line toolkit that performs highly"
+puts stderr "efficient and scalable Boolean and other set operations, statistical"
+puts stderr "calculations, archiving, conversion and other management of genomic data"
+puts stderr "of arbitrary scale."
+}
+
+conflict bedops
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bedops-2.4.40-4y2nyivrtnilyolhessrnejymu7niswb/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bedops-2.4.40-4y2nyivrtnilyolhessrnejymu7niswb/."
+setenv BEDOPS_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bedops-2.4.40-4y2nyivrtnilyolhessrnejymu7niswb"
+
+if [module-info mode load] {
+}

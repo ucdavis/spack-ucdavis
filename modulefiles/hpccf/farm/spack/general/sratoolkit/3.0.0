@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:20.072017
+##
+## sratoolkit@3.0.0%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/o55xapj
+##
+
+
+module-whatis "The NCBI SRA Toolkit enables reading ('dumping') of sequencing files from the SRA database and writing ('loading') files into the .sra format."
+
+proc ModulesHelp { } {
+puts stderr "The NCBI SRA Toolkit enables reading ("dumping") of sequencing files"
+puts stderr "from the SRA database and writing ("loading") files into the .sra"
+puts stderr "format."
+}
+
+conflict sratoolkit
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/sratoolkit-3.0.0-o55xapjjuu32622l7zlz4swspeje43yv/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/sratoolkit-3.0.0-o55xapjjuu32622l7zlz4swspeje43yv/."
+setenv SRATOOLKIT_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/sratoolkit-3.0.0-o55xapjjuu32622l7zlz4swspeje43yv"
+
+if [module-info mode load] {
+}

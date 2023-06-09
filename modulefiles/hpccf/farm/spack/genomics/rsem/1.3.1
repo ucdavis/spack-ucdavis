@@ -1,0 +1,36 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:56.544331
+##
+## rsem@1.3.1%gcc@9.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/nkmo65s
+##
+
+
+module-whatis "RSEM is a software package for estimating gene and isoform expression levels from RNA-Seq data."
+
+proc ModulesHelp { } {
+puts stderr "RSEM is a software package for estimating gene and isoform expression"
+puts stderr "levels from RNA-Seq data."
+}
+
+prereq bowtie/1.3.0
+prereq bowtie2/2.4.2
+prereq star/2.7.6a
+conflict rsem
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/rsem-1.3.1-nkmo65sqtxa4nykvuq7hkx2urbh54jzk/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/rsem-1.3.1-nkmo65sqtxa4nykvuq7hkx2urbh54jzk/."
+prepend-path XLOCALEDIR "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/libx11-1.7.0-xda3mpigk6jk7cjafzigrd4amhiawkdv/share/X11/locale"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/gobject-introspection-1.72.0-22wpc6ge35xyjw7ewfofao75msrwq4xy/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/gobject-introspection-1.72.0-22wpc6ge35xyjw7ewfofao75msrwq4xy/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/harfbuzz-5.1.0-deeugzp2gjtmltczhdnt72crvtdrhh7n/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/harfbuzz-5.1.0-deeugzp2gjtmltczhdnt72crvtdrhh7n/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/pango-1.50.7-i7jlrlmk2blbn5sk2cdfqc5ots5awwoa/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/pango-1.50.7-i7jlrlmk2blbn5sk2cdfqc5ots5awwoa/lib/girepository-1.0"
+prepend-path --delim " " TCLLIBPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/tk-8.6.11-2avmixjod6t5skvua5mgc64wq2ci7vv2/lib"
+setenv R_HOME "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/r-4.2.2-a3wykqdzx5rwzslqaeu4r3fjrlvflb2a/rlib/R"
+setenv RSEM_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/rsem-1.3.1-nkmo65sqtxa4nykvuq7hkx2urbh54jzk"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

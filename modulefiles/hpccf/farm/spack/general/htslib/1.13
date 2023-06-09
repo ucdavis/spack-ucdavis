@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:14.034757
+##
+## htslib@1.13%gcc@9.5.0+libcurl+libdeflate build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/mbbp73i
+##
+## Configure options: --enable-libcurl --enable-libdeflate
+##
+
+
+module-whatis "C library for high-throughput sequencing data formats."
+
+proc ModulesHelp { } {
+puts stderr "C library for high-throughput sequencing data formats."
+}
+
+conflict htslib
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/htslib-1.13-mbbp73i6g57e4gimazq5qwpp3cxfdr4a/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/htslib-1.13-mbbp73i6g57e4gimazq5qwpp3cxfdr4a/share/man"
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/htslib-1.13-mbbp73i6g57e4gimazq5qwpp3cxfdr4a/lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/htslib-1.13-mbbp73i6g57e4gimazq5qwpp3cxfdr4a/."
+setenv HTSLIB_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/htslib-1.13-mbbp73i6g57e4gimazq5qwpp3cxfdr4a"
+
+if [module-info mode load] {
+}

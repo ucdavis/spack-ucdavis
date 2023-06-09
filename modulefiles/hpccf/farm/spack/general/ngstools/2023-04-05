@@ -1,0 +1,34 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:16.323291
+##
+## ngstools@2023-04-05%gcc@9.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/r3irfds
+##
+
+
+module-whatis "ngsTools is a collection of programs for population genetics analyses from NGS data, taking into account data statistical uncertainty. The methods implemented in these programs do not rely on SNP or genotype calling, and are particularly suitable for low sequencing depth data. An application note illustrating its application has published (Fumagalli et al. 2014)."
+
+proc ModulesHelp { } {
+puts stderr "ngsTools is a collection of programs for population genetics analyses"
+puts stderr "from NGS data, taking into account data statistical uncertainty. The"
+puts stderr "methods implemented in these programs do not rely on SNP or genotype"
+puts stderr "calling, and are particularly suitable for low sequencing depth data. An"
+puts stderr "application note illustrating its application has published (Fumagalli"
+puts stderr "et al. 2014)."
+}
+
+prereq htslib/1.13
+conflict ngstools
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ngstools-2023-04-05-r3irfds5wplvcggxb3nhib5ff43l4aem/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ngstools-2023-04-05-r3irfds5wplvcggxb3nhib5ff43l4aem/."
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ngstools-2023-04-05-r3irfds5wplvcggxb3nhib5ff43l4aem/bin/ngsSim"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ngstools-2023-04-05-r3irfds5wplvcggxb3nhib5ff43l4aem/bin/ngsPopGen"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ngstools-2023-04-05-r3irfds5wplvcggxb3nhib5ff43l4aem/bin/ngsUtils"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ngstools-2023-04-05-r3irfds5wplvcggxb3nhib5ff43l4aem/bin/ngsDist"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ngstools-2023-04-05-r3irfds5wplvcggxb3nhib5ff43l4aem/bin/ngsLD"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ngstools-2023-04-05-r3irfds5wplvcggxb3nhib5ff43l4aem/bin/ngsF"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ngstools-2023-04-05-r3irfds5wplvcggxb3nhib5ff43l4aem/bin/ngsF-HMM"
+setenv NGSTOOLS_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ngstools-2023-04-05-r3irfds5wplvcggxb3nhib5ff43l4aem"
+
+if [module-info mode load] {
+}

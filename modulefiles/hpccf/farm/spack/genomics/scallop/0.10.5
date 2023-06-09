@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:56.890278
+##
+## scallop@0.10.5%gcc@9.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/lxrcdx6
+##
+## Configure options: --with-clp=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/clp-1.17.6-vxavf5b66dfoditubxubvfk4dppe2ziq --with-htslib=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/htslib-1.14-7jx6t3cbv5pokdwnpbwnbj63slo2bneo --with-boost=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/boost-1.80.0-7n7loigpqcbtd3wsufwi3i2e3nbvvqsg
+##
+
+
+module-whatis "Scallop is a reference-based transcriptome assembler for RNA-seq"
+
+proc ModulesHelp { } {
+puts stderr "Scallop is a reference-based transcriptome assembler for RNA-seq"
+}
+
+prereq htslib/1.14
+conflict scallop
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/scallop-0.10.5-lxrcdx62q6vz6socvfd3jubaiz7nvmeo/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/scallop-0.10.5-lxrcdx62q6vz6socvfd3jubaiz7nvmeo/."
+setenv SCALLOP_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/scallop-0.10.5-lxrcdx62q6vz6socvfd3jubaiz7nvmeo"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

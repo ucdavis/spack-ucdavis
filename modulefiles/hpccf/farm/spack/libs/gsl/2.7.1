@@ -1,0 +1,33 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-01 15:58:29.055211
+##
+## gsl@2.7.1%gcc@11.3.0~external-cblas build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/7z5dz5c
+##
+
+
+module-whatis "The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers. It is free software under the GNU General Public License. The library provides a wide range of mathematical routines such as random number generators, special functions and least-squares fitting. There are over 1000 functions in total with an extensive test suite."
+
+proc ModulesHelp { } {
+puts stderr "The GNU Scientific Library (GSL) is a numerical library for C and C++"
+puts stderr "programmers. It is free software under the GNU General Public License."
+puts stderr "The library provides a wide range of mathematical routines such as"
+puts stderr "random number generators, special functions and least-squares fitting."
+puts stderr "There are over 1000 functions in total with an extensive test suite."
+}
+
+conflict gsl
+
+prepend-path CPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gsl-2.7.1-7z5dz5cle3byaeyf4uvq6x3biakagq2b/include"
+prepend-path C_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gsl-2.7.1-7z5dz5cle3byaeyf4uvq6x3biakagq2b/include"
+prepend-path CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gsl-2.7.1-7z5dz5cle3byaeyf4uvq6x3biakagq2b/include"
+prepend-path LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gsl-2.7.1-7z5dz5cle3byaeyf4uvq6x3biakagq2b/lib"
+prepend-path LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gsl-2.7.1-7z5dz5cle3byaeyf4uvq6x3biakagq2b/lib"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gsl-2.7.1-7z5dz5cle3byaeyf4uvq6x3biakagq2b/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gsl-2.7.1-7z5dz5cle3byaeyf4uvq6x3biakagq2b/share/man"
+prepend-path ACLOCAL_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gsl-2.7.1-7z5dz5cle3byaeyf4uvq6x3biakagq2b/share/aclocal"
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gsl-2.7.1-7z5dz5cle3byaeyf4uvq6x3biakagq2b/lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gsl-2.7.1-7z5dz5cle3byaeyf4uvq6x3biakagq2b/."
+setenv GSL_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gsl-2.7.1-7z5dz5cle3byaeyf4uvq6x3biakagq2b"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-01 15:58:31.308797
+##
+## nlohmann-json@3.11.2%gcc@11.3.0~ipo+multiple_headers build_system=cmake build_type=RelWithDebInfo arch=linux-ubuntu22.04-x86_64_v2/nfbexa2
+##
+## Configure options: -DJSON_MultipleHeaders:BOOL=ON -DJSON_BuildTests:BOOL=OFF
+##
+
+
+module-whatis "JSON for Modern C++"
+
+proc ModulesHelp { } {
+puts stderr "JSON for Modern C++"
+}
+
+conflict nlohmann-json
+
+prepend-path CPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlohmann-json-3.11.2-nfbexa2eicppex4zlddafrbne77cbk22/include"
+prepend-path C_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlohmann-json-3.11.2-nfbexa2eicppex4zlddafrbne77cbk22/include"
+prepend-path CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlohmann-json-3.11.2-nfbexa2eicppex4zlddafrbne77cbk22/include"
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlohmann-json-3.11.2-nfbexa2eicppex4zlddafrbne77cbk22/share/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlohmann-json-3.11.2-nfbexa2eicppex4zlddafrbne77cbk22/."
+setenv NLOHMANN_JSON_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlohmann-json-3.11.2-nfbexa2eicppex4zlddafrbne77cbk22"
+
+if [module-info mode load] {
+}

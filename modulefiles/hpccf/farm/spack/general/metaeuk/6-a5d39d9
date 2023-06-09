@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:15.578970
+##
+## metaeuk@6-a5d39d9%gcc@9.5.0~ipo build_system=cmake build_type=RelWithDebInfo arch=linux-ubuntu22.04-x86_64_v2/t7dtwnc
+##
+
+
+module-whatis "MetaEuk is a modular toolkit designed for large-scale gene discovery and annotation in eukaryotic metagenomic contigs. "
+
+proc ModulesHelp { } {
+puts stderr "MetaEuk is a modular toolkit designed for large-scale gene discovery and"
+puts stderr "annotation in eukaryotic metagenomic contigs."
+}
+
+conflict metaeuk
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/metaeuk-6-a5d39d9-t7dtwnc2hz4kgkxw36cxckq6ixecao5t/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/metaeuk-6-a5d39d9-t7dtwnc2hz4kgkxw36cxckq6ixecao5t/."
+setenv METAEUK_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/metaeuk-6-a5d39d9-t7dtwnc2hz4kgkxw36cxckq6ixecao5t"
+
+if [module-info mode load] {
+}

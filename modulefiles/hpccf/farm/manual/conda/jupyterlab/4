@@ -1,0 +1,34 @@
+#%Module1.0
+# vim: syntax=tcl
+
+module-whatis "An extensible environment for interactive and reproducible computing, based on the Jupyter Notebook and Architecture."
+
+set envname "jupyterlab-4"
+
+set fqdn [exec /bin/hostname]
+
+if {[string equal $fqdn "farm"]} {
+   puts stderr "
+Jupyter is not allowed on the head node.
+
+You need to run it on a node through srun and use SSH to do port forwarding.
+
+For example: srun -p high2 --time=9:00:00 --cpus-per-task=4 --mem=5G --pty /bin/bash -l
+
+After your srun has been allocated resources you can then: module load [module-info name]
+
+Then follow the instructions that are printed.
+"
+   exit
+}
+
+prereq conda/base/latest
+
+if { [module-info mode load] } {
+	puts stdout "conda activate $envname 2> /dev/null; "
+    puts stdout "/share/apps/22.04/hpccf-wrappers/jupyter/jupyter-farm"
+}
+
+if { [module-info mode unload] } {
+	puts stdout "conda deactivate 2> /dev/null; "
+}

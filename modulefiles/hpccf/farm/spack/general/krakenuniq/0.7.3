@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:14.653131
+##
+## krakenuniq@0.7.3%gcc@9.5.0~jellyfish build_system=generic arch=linux-ubuntu22.04-x86_64_v2/urv2z5w
+##
+
+
+module-whatis "Metagenomics classifier with unique k-mer counting for more specific results."
+
+proc ModulesHelp { } {
+puts stderr "Metagenomics classifier with unique k-mer counting for more specific"
+puts stderr "results."
+}
+
+conflict krakenuniq
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/krakenuniq-0.7.3-urv2z5wph3pr3vjnyn3yb52lqjbt46dh/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/krakenuniq-0.7.3-urv2z5wph3pr3vjnyn3yb52lqjbt46dh/."
+setenv KRAKENUNIQ_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/krakenuniq-0.7.3-urv2z5wph3pr3vjnyn3yb52lqjbt46dh"
+
+if [module-info mode load] {
+}

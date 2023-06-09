@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-05 15:41:13.678793
+##
+## busco@5.4.3%gcc@9.5.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v2/5wcguol
+##
+
+
+module-whatis "Assesses genome assembly and annotation completeness with Benchmarking Universal Single-Copy Orthologs"
+
+proc ModulesHelp { } {
+puts stderr "Assesses genome assembly and annotation completeness with Benchmarking"
+puts stderr "Universal Single-Copy Orthologs"
+}
+
+prereq augustus/3.4.0
+prereq bbmap/38.63
+prereq blast-plus/2.12.0
+prereq hmmer/3.3.2
+prereq metaeuk/6-a5d39d9
+prereq py-biopython/1.79
+conflict busco
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/busco-5.4.3-5wcguolhwo3avrr2dya5k7qolyvcbzvm/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/busco-5.4.3-5wcguolhwo3avrr2dya5k7qolyvcbzvm/."
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/busco-5.4.3-5wcguolhwo3avrr2dya5k7qolyvcbzvm/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-biopython-1.79-riaufzcmss77ppndarimop7wxxsb3vqh/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-numpy-1.23.4-ahtsqvw4tep5pl5523q5kejacthcnofr/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-setuptools-59.4.0-anzrds76gmqhput627ackiimwc6bikaq/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pandas-1.5.1-l4xb5ocka7i3igqaiuhhuqj3j4o6bowc/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-bottleneck-1.3.5-ijaobbbyl4do7a732f5ljp3u7mr4cnt3/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-numexpr-2.8.3-vrv6xfdxcye7el2u2rgzyeg2kut4ta4q/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-packaging-21.3-5euv6p5qpkiqpuyuocdbov2fa77qskx4/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pyparsing-3.0.9-kkcofnu5s6iirq7vo7neljhrbqcdbkyf/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-python-dateutil-2.8.2-mheexejzcnmrjexw3t7j4aix7i5k4grm/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-six-1.16.0-jw2todiiwh7c7d4dvjnui7yddyubwupe/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pytz-2022.2.1-rvvdkxs33vmbk2kvxmjchpkbjn2lisgj/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/sepp-4.5.1-6ffrriblc6f5d7zi77qncbhluliiq6fp/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/pasta-1.9.0-uspsbykhe3kt4ewgk6f4xm5kuusg6fkw/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-dendropy-4.5.2-dbushhjacsvrogxslqoj5tkrhvuhfatl/lib/python3.9/site-packages"
+setenv BUSCO_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/busco-5.4.3-5wcguolhwo3avrr2dya5k7qolyvcbzvm"
+
+if [module-info mode load] {
+}

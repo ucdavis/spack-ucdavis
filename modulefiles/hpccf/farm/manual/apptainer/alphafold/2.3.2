@@ -1,0 +1,35 @@
+#%Module1.0
+
+set name "alphafold"
+set version "2.3.2"
+set note "https://github.com/deepmind/alphafold"
+
+set dir [ string tolower $name ]
+set os "22.04"
+
+# requirements here
+prereq conda/base/latest
+if { [module-info mode load] } {
+	puts stdout "conda activate $name-$version 2> /dev/null; "
+}
+
+
+setenv ALPHAFOLD_DIR /share/apps/conda/environments/alphafold-2.3.2/_alphafold-2.3.2
+setenv [ string toupper $name]_HOME $env(ALPHAFOLD_DIR)
+
+module-whatis "This module loads $name version $version.\n  $note"
+
+prepend-path PATH            $env(ALPHAFOLD_DIR)/singularity
+
+if { [ module-info mode load ] } {
+    puts stderr "Module $dir/$version loaded.
+
+This module provides the run_singularity.py wrapper to help run
+Alphafold under Singularity on Farm. For a sample sbatch file:
+
+cat \$ALPHAFOLD_DIR/singularity/slurm-farm-alphafold.sh
+
+"
+
+}
+

@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:09:39.825993
+##
+## gmp@6.2.1%gcc@11.3.0 build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v2/mml4r4f
+##
+## Configure options: --enable-cxx --enable-shared --enable-static --with-pic
+##
+
+
+module-whatis "GMP is a free library for arbitrary precision arithmetic, operating on signed integers, rational numbers, and floating-point numbers."
+
+proc ModulesHelp { } {
+puts stderr "GMP is a free library for arbitrary precision arithmetic, operating on"
+puts stderr "signed integers, rational numbers, and floating-point numbers."
+}
+
+conflict gmp
+
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-mml4r4fekvkqnrcfzxaoypafbpygkicb/lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-mml4r4fekvkqnrcfzxaoypafbpygkicb/."
+setenv GMP_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-mml4r4fekvkqnrcfzxaoypafbpygkicb"
+
+if [module-info mode load] {
+}

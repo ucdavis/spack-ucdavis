@@ -1,0 +1,16 @@
+#%Module1.0
+# vim: syntax=tcl
+
+module-whatis "CoverM aims to be a configurable, easy to use and fast DNA read coverage and relative abundance calculator focused on metagenomics applications."
+
+set envname "coverm-0.6.1"
+
+prereq conda/base/latest
+
+if { [module-info mode load] } {
+	puts stdout "conda activate $envname 2> /dev/null; "
+}
+
+if { [module-info mode unload] } {
+	puts stdout "conda deactivate 2> /dev/null; "
+}

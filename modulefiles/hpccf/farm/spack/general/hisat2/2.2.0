@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:11.625301
+##
+## hisat2@2.2.0%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/auwn22w
+##
+
+
+module-whatis "HISAT2 is a fast and sensitive alignment program for mapping next-generation sequencing reads (whole-genome, transcriptome, and exome sequencing data) against the general human population (as well as against a single reference genome)."
+
+proc ModulesHelp { } {
+puts stderr "HISAT2 is a fast and sensitive alignment program for mapping next-"
+puts stderr "generation sequencing reads (whole-genome, transcriptome, and exome"
+puts stderr "sequencing data) against the general human population (as well as"
+puts stderr "against a single reference genome)."
+}
+
+conflict hisat2
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hisat2-2.2.0-auwn22wrcuuz2wh23rcvz4oo6uebuqcf/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hisat2-2.2.0-auwn22wrcuuz2wh23rcvz4oo6uebuqcf/."
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hisat2-2.2.0-auwn22wrcuuz2wh23rcvz4oo6uebuqcf"
+setenv HISAT2_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hisat2-2.2.0-auwn22wrcuuz2wh23rcvz4oo6uebuqcf"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:55.712535
+##
+## qualimap@2.2.1%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/gfrafvg
+##
+
+
+module-whatis "Qualimap 2 is a platform-independent application written in Java and R that provides both a Graphical User Inteface (GUI) and a command-line interface to facilitate the quality control of alignment sequencing data and its derivatives like feature counts."
+
+proc ModulesHelp { } {
+puts stderr "Qualimap 2 is a platform-independent application written in Java and R"
+puts stderr "that provides both a Graphical User Inteface (GUI) and a command-line"
+puts stderr "interface to facilitate the quality control of alignment sequencing data"
+puts stderr "and its derivatives like feature counts."
+}
+
+conflict qualimap
+
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/qualimap-2.2.1-gfrafvg22oxnmwnjkzqfe3le4ejwbxlv/."
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/qualimap-2.2.1-gfrafvg22oxnmwnjkzqfe3le4ejwbxlv"
+setenv QUALIMAP_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/qualimap-2.2.1-gfrafvg22oxnmwnjkzqfe3le4ejwbxlv"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

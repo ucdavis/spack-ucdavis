@@ -1,0 +1,30 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:11.692041
+##
+## homer@4.9.1%gcc@9.5.0~data build_system=generic arch=linux-ubuntu22.04-x86_64_v2/4forkzz
+##
+
+
+module-whatis "Software for motif discovery and next generation sequencing analysis"
+
+proc ModulesHelp { } {
+puts stderr "Software for motif discovery and next generation sequencing analysis"
+}
+
+conflict homer
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/homer-4.9.1-4forkzzade6shnk6tdpaoimtrfsvzn4g/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/homer-4.9.1-4forkzzade6shnk6tdpaoimtrfsvzn4g/."
+prepend-path XLOCALEDIR "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/libx11-1.7.0-xda3mpigk6jk7cjafzigrd4amhiawkdv/share/X11/locale"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/gobject-introspection-1.72.0-r3pe4ufkmsggkpardhbdunukcwz42sza/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/gobject-introspection-1.72.0-r3pe4ufkmsggkpardhbdunukcwz42sza/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/harfbuzz-5.1.0-amswtbcgd2udedxytmus6jgcqypijphg/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/harfbuzz-5.1.0-amswtbcgd2udedxytmus6jgcqypijphg/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/pango-1.50.7-qrqyrisfmcnfn443lm5kizgb556a5u2l/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/pango-1.50.7-qrqyrisfmcnfn443lm5kizgb556a5u2l/lib/girepository-1.0"
+prepend-path --delim " " TCLLIBPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/tk-8.6.11-gpu3nvxuco4vocgwwcu42ezk756r6rt6/lib"
+setenv R_HOME "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/r-4.2.2-cmgg7cn6xcucx3cniidmylzongeicnjp/rlib/R"
+setenv HOMER_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/homer-4.9.1-4forkzzade6shnk6tdpaoimtrfsvzn4g"
+
+if [module-info mode load] {
+}

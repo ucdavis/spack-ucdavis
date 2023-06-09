@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:56.629942
+##
+## sabre@2013-09-27%gcc@9.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/iunmxlp
+##
+
+
+module-whatis "Sabre is a tool that will demultiplex barcoded reads into separate files. It will work on both single-end and paired-end data in fastq format. It simply compares the provided barcodes with each read and separates the read into its appropriate barcode file, after stripping the barcode from the read (and also stripping the quality values of the barcode bases). If a read does not have a recognized barcode, then it is put into the unknown file. "
+
+proc ModulesHelp { } {
+puts stderr "Sabre is a tool that will demultiplex barcoded reads into separate"
+puts stderr "files. It will work on both single-end and paired-end data in fastq"
+puts stderr "format. It simply compares the provided barcodes with each read and"
+puts stderr "separates the read into its appropriate barcode file, after stripping"
+puts stderr "the barcode from the read (and also stripping the quality values of the"
+puts stderr "barcode bases). If a read does not have a recognized barcode, then it is"
+puts stderr "put into the unknown file."
+}
+
+conflict sabre
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/sabre-2013-09-27-iunmxlphwfcpxwijd57xicga6tspfm73/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/sabre-2013-09-27-iunmxlphwfcpxwijd57xicga6tspfm73/."
+setenv SABRE_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/sabre-2013-09-27-iunmxlphwfcpxwijd57xicga6tspfm73"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

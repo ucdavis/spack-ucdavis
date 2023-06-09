@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-01 15:58:28.384170
+##
+## boost@1.80.0%gcc@11.3.0~atomic~chrono~clanglibcpp~container~context~contract~coroutine~date_time~debug~exception~fiber~filesystem~graph~graph_parallel~icu~iostreams~json~locale~log~math~mpi+multithreaded~nowide~numpy~pic~program_options~python~random~regex~serialization+shared~signals~singlethreaded~stacktrace~system~taggedlayout~test~thread~timer~type_erasure~versionedlayout~wave build_system=generic cxxstd=98 patches=a440f96 visibility=hidden arch=linux-ubuntu22.04-x86_64_v2/tvehvq4
+##
+
+
+module-whatis "Boost provides free peer-reviewed portable C++ source libraries, emphasizing libraries that work well with the C++ Standard Library."
+
+proc ModulesHelp { } {
+puts stderr "Boost provides free peer-reviewed portable C++ source libraries,"
+puts stderr "emphasizing libraries that work well with the C++ Standard Library."
+puts stderr "Boost libraries are intended to be widely useful, and usable across a"
+puts stderr "broad spectrum of applications. The Boost license encourages both"
+puts stderr "commercial and non-commercial use."
+}
+
+conflict boost
+
+prepend-path CPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/boost-1.80.0-tvehvq4gzq6dcy4evpxhzprjatq7djgz/include"
+prepend-path C_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/boost-1.80.0-tvehvq4gzq6dcy4evpxhzprjatq7djgz/include"
+prepend-path CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/boost-1.80.0-tvehvq4gzq6dcy4evpxhzprjatq7djgz/include"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/boost-1.80.0-tvehvq4gzq6dcy4evpxhzprjatq7djgz/."
+setenv BOOST_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/boost-1.80.0-tvehvq4gzq6dcy4evpxhzprjatq7djgz"
+setenv BOOST_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/boost-1.80.0-tvehvq4gzq6dcy4evpxhzprjatq7djgz"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:09:39.766320
+##
+## fftw@3.3.10%gcc@11.3.0+mpi+openmp~pfft_patches build_system=autotools precision=double,float arch=linux-ubuntu22.04-x86_64_v2/dtktmqv
+##
+
+
+module-whatis "FFTW is a C subroutine library for computing the discrete Fourier transform (DFT) in one or more dimensions, of arbitrary input size, and of both real and complex data (as well as of even/odd data, i.e. the discrete cosine/sine transforms or DCT/DST). We believe that FFTW, which is free software, should become the FFT library of choice for most applications."
+
+proc ModulesHelp { } {
+puts stderr "FFTW is a C subroutine library for computing the discrete Fourier"
+puts stderr "transform (DFT) in one or more dimensions, of arbitrary input size, and"
+puts stderr "of both real and complex data (as well as of even/odd data, i.e. the"
+puts stderr "discrete cosine/sine transforms or DCT/DST). We believe that FFTW, which"
+puts stderr "is free software, should become the FFT library of choice for most"
+puts stderr "applications."
+}
+
+conflict fftw
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/fftw-3.3.10-dtktmqv2nt3zvljzyigpwg3vl4gqvbmu/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/fftw-3.3.10-dtktmqv2nt3zvljzyigpwg3vl4gqvbmu/share/man"
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/fftw-3.3.10-dtktmqv2nt3zvljzyigpwg3vl4gqvbmu/lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/fftw-3.3.10-dtktmqv2nt3zvljzyigpwg3vl4gqvbmu/."
+setenv FFTW_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/fftw-3.3.10-dtktmqv2nt3zvljzyigpwg3vl4gqvbmu"
+
+if [module-info mode load] {
+}

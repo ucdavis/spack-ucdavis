@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-05-30 16:51:48.771161
+##
+## ucx@1.13.1%gcc@11.3.0~assertions~backtrace_detail~cma~cuda~dc~debug~dm+examples~gdrcopy~ib_hw_tm~java~knem~logging~mlx5_dv+openmp+optimizations~parameter_checking+pic~rc~rdmacm~rocm+thread_multiple~ucg~ud~verbs~vfs~xpmem build_system=autotools libs=shared,static opt=3 patches=32fce32 simd=auto arch=linux-ubuntu22.04-x86_64_v2/pw7m2nz
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis "a communication library implementing high-performance messaging for MPI/PGAS frameworks"
+
+proc ModulesHelp { } {
+puts stderr "a communication library implementing high-performance messaging for"
+puts stderr "MPI/PGAS frameworks"
+}
+
+conflict ucx
+
+prepend-path LD_LIBRARY_PATH "/share/apps/22.04/ucx/1.13.1/lib"
+prepend-path PATH "/share/apps/22.04/ucx/1.13.1/bin"
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/ucx/1.13.1/lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/ucx/1.13.1/."
+setenv UCX_ROOT "/share/apps/22.04/ucx/1.13.1"
+
+if [module-info mode load] {
+}

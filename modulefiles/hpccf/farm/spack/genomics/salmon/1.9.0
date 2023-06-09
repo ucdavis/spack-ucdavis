@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:56.725556
+##
+## salmon@1.9.0%gcc@9.5.0~ipo build_system=cmake build_type=RELEASE arch=linux-ubuntu22.04-x86_64_v2/6obe34j
+##
+## Configure options: -DBOOST_ROOT=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/boost-1.80.0-7n7loigpqcbtd3wsufwi3i2e3nbvvqsg
+##
+
+
+module-whatis "Salmon is a tool for quantifying the expression of transcripts using RNA-seq data."
+
+proc ModulesHelp { } {
+puts stderr "Salmon is a tool for quantifying the expression of transcripts using"
+puts stderr "RNA-seq data."
+}
+
+conflict salmon
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/salmon-1.9.0-6obe34jtdlhl2hr6o4rzx57aqlxtyg3o/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/salmon-1.9.0-6obe34jtdlhl2hr6o4rzx57aqlxtyg3o/."
+setenv SALMON_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/salmon-1.9.0-6obe34jtdlhl2hr6o4rzx57aqlxtyg3o"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

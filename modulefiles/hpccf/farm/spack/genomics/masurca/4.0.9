@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:43.700121
+##
+## masurca@4.0.9%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/pfofqsm
+##
+
+
+module-whatis "MaSuRCA is whole genome assembly software. It combines the efficiency of the de Bruijn graph and Overlap-Layout-Consensus (OLC) approaches."
+
+proc ModulesHelp { } {
+puts stderr "MaSuRCA is whole genome assembly software. It combines the efficiency of"
+puts stderr "the de Bruijn graph and Overlap-Layout-Consensus (OLC) approaches."
+}
+
+conflict masurca
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/masurca-4.0.9-pfofqsmkwqursbgmrcss3adxegere5u3/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/masurca-4.0.9-pfofqsmkwqursbgmrcss3adxegere5u3/share/man"
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/masurca-4.0.9-pfofqsmkwqursbgmrcss3adxegere5u3/lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/masurca-4.0.9-pfofqsmkwqursbgmrcss3adxegere5u3/."
+setenv MASURCA_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/masurca-4.0.9-pfofqsmkwqursbgmrcss3adxegere5u3"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

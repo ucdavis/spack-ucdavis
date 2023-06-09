@@ -1,0 +1,35 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-01 15:58:28.516917
+##
+## cgal@5.4.1%gcc@11.3.0~core~demos+eigen~header_only~imageio~ipo+shared build_system=cmake build_type=Release arch=linux-ubuntu22.04-x86_64_v2/ztyjcmt
+##
+## Configure options: -DBUILD_SHARED_LIBS:BOOL=True -DWITH_CGAL_Core:BOOL=False -DWITH_CGAL_ImageIO:BOOL=False -DWITH_CGAL_Qt5:BOOL=False -DCGAL_HEADER_ONLY:BOOL=False
+##
+
+
+module-whatis "The Computational Geometry Algorithms Library (CGAL) is a C++ library that aims to provide easy access to efficient and reliable algorithms in computational geometry. CGAL is used in various areas needing geometric computation, such as geographic information systems, computer aided design, molecular biology, medical imaging, computer graphics, and robotics. "
+
+proc ModulesHelp { } {
+puts stderr "The Computational Geometry Algorithms Library (CGAL) is a C++ library"
+puts stderr "that aims to provide easy access to efficient and reliable algorithms in"
+puts stderr "computational geometry. CGAL is used in various areas needing geometric"
+puts stderr "computation, such as geographic information systems, computer aided"
+puts stderr "design, molecular biology, medical imaging, computer graphics, and"
+puts stderr "robotics."
+}
+
+prereq zlib/1.2.13
+conflict cgal
+
+prepend-path CPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-ztyjcmtjc5ezybyvn7ehinetkntijjqp/include"
+prepend-path C_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-ztyjcmtjc5ezybyvn7ehinetkntijjqp/include"
+prepend-path CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-ztyjcmtjc5ezybyvn7ehinetkntijjqp/include"
+prepend-path LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-ztyjcmtjc5ezybyvn7ehinetkntijjqp/lib"
+prepend-path LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-ztyjcmtjc5ezybyvn7ehinetkntijjqp/lib"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-ztyjcmtjc5ezybyvn7ehinetkntijjqp/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-ztyjcmtjc5ezybyvn7ehinetkntijjqp/share/man"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-ztyjcmtjc5ezybyvn7ehinetkntijjqp/."
+setenv CGAL_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-ztyjcmtjc5ezybyvn7ehinetkntijjqp"
+
+if [module-info mode load] {
+}

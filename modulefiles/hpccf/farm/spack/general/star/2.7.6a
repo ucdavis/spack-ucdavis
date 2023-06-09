@@ -1,0 +1,21 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:20.095953
+##
+## star@2.7.6a%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/rufh6il
+##
+
+
+module-whatis "STAR is an ultrafast universal RNA-seq aligner."
+
+proc ModulesHelp { } {
+puts stderr "STAR is an ultrafast universal RNA-seq aligner."
+}
+
+conflict star
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/star-2.7.6a-rufh6ilgct3x3t5imeb7pp2kvygworu3/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/star-2.7.6a-rufh6ilgct3x3t5imeb7pp2kvygworu3/."
+setenv STAR_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/star-2.7.6a-rufh6ilgct3x3t5imeb7pp2kvygworu3"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:11.212267
+##
+## freebayes@1.3.6%gcc@9.5.0~strip build_system=meson buildtype=debugoptimized default_library=shared arch=linux-ubuntu22.04-x86_64_v2/5gmpbns
+##
+
+
+module-whatis "Bayesian haplotype-based genetic polymorphism discovery and genotyping."
+
+proc ModulesHelp { } {
+puts stderr "Bayesian haplotype-based genetic polymorphism discovery and genotyping."
+}
+
+prereq htslib/1.13
+prereq samtools/1.13
+prereq vcftools/0.1.14
+conflict freebayes
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/freebayes-1.3.6-5gmpbnsisdpu7shgsp33d6l76qpxwqdb/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/freebayes-1.3.6-5gmpbnsisdpu7shgsp33d6l76qpxwqdb/."
+setenv FREEBAYES_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/freebayes-1.3.6-5gmpbnsisdpu7shgsp33d6l76qpxwqdb"
+
+if [module-info mode load] {
+}

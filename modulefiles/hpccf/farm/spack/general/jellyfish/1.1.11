@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:14.371117
+##
+## jellyfish@1.1.11%gcc@9.5.0 build_system=autotools patches=e729c13 arch=linux-ubuntu22.04-x86_64_v2/qd7lf5r
+##
+
+
+module-whatis "JELLYFISH is a tool for fast, memory-efficient counting of k-mers in DNA."
+
+proc ModulesHelp { } {
+puts stderr "JELLYFISH is a tool for fast, memory-efficient counting of k-mers in"
+puts stderr "DNA."
+}
+
+conflict jellyfish
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/jellyfish-1.1.11-qd7lf5rhfsmu3hpveud2fgw5djt4ad7c/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/jellyfish-1.1.11-qd7lf5rhfsmu3hpveud2fgw5djt4ad7c/share/man"
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/jellyfish-1.1.11-qd7lf5rhfsmu3hpveud2fgw5djt4ad7c/lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/jellyfish-1.1.11-qd7lf5rhfsmu3hpveud2fgw5djt4ad7c/."
+setenv JELLYFISH_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/jellyfish-1.1.11-qd7lf5rhfsmu3hpveud2fgw5djt4ad7c"
+
+if [module-info mode load] {
+}

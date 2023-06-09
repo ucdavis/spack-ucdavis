@@ -1,0 +1,16 @@
+#%Module1.0
+# vim: syntax=tcl
+
+module-whatis "The implementation for diploS/HIC as described in Kern and Schrider (2018; https://doi.org/10.1534/g3.118.200262), along with its associated support scripts."
+
+set envname "diploshic-1.0.4"
+
+prereq conda/base/latest
+
+if { [module-info mode load] } {
+	puts stdout "conda activate $envname 2> /dev/null; "
+}
+
+if { [module-info mode unload] } {
+	puts stdout "conda deactivate 2> /dev/null; "
+}

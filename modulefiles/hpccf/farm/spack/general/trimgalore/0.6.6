@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:20.352022
+##
+## trimgalore@0.6.6%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/22okczy
+##
+
+
+module-whatis "Trim Galore! is a wrapper around Cutadapt and FastQC to consistently apply adapter and quality trimming to FastQ files, with extra functionality for RRBS data."
+
+proc ModulesHelp { } {
+puts stderr "Trim Galore! is a wrapper around Cutadapt and FastQC to consistently"
+puts stderr "apply adapter and quality trimming to FastQ files, with extra"
+puts stderr "functionality for RRBS data."
+}
+
+prereq fastqc/0.11.9
+prereq py-cutadapt/2.10
+conflict trimgalore
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/trimgalore-0.6.6-22okczy4k62ig55c4poy6t5attvru2rz/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/trimgalore-0.6.6-22okczy4k62ig55c4poy6t5attvru2rz/."
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-cutadapt-2.10-ukgavdve765cpbtkr5pgftdewh5nmmkn/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-dnaio-0.4.2-ito5f4wlmarlfvu3p5xwlpwmcsa5o2dn/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-setuptools-59.4.0-anzrds76gmqhput627ackiimwc6bikaq/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-xopen-0.8.4-qj4wulehz54rphfycvy2djja4syh5j4k/lib/python3.9/site-packages"
+setenv TRIMGALORE_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/trimgalore-0.6.6-22okczy4k62ig55c4poy6t5attvru2rz"
+
+if [module-info mode load] {
+}

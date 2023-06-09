@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:56.128528
+##
+## repeatmodeler@1.0.11%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/agwz4w2
+##
+
+
+module-whatis "RepeatModeler is a de-novo repeat family identification and modeling package."
+
+proc ModulesHelp { } {
+puts stderr "RepeatModeler is a de-novo repeat family identification and modeling"
+puts stderr "package."
+}
+
+prereq ncbi-rmblastn/2.11.0
+prereq recon/1.05
+prereq repeatmasker/4.0.9
+prereq repeatscout/1.0.5
+conflict repeatmodeler
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/repeatmodeler-1.0.11-agwz4w2vp23ayxfctatjnlwr6gyldwc6/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/repeatmodeler-1.0.11-agwz4w2vp23ayxfctatjnlwr6gyldwc6/."
+prepend-path PERL5LIB "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-json-2.97001-z2qoo32smwzxrdhz4fuwoq2uxk4ndyiv/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-libwww-perl-6.33-iq6lkzfb5awknwygwyrqjivqeakelcw5/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-encode-locale-1.05-26vd55gqc6g6oztjbegdhh5hb4htbpjk/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-file-listing-6.04-n3ljac4evyqpaftiz2ashdveg2vbx42t/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-http-date-6.02-nzrjvj5j7lyhlmz6vwvjlghahairrxaz/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-html-parser-3.72-mrgvapyx2hqqhfq6lkz5d6krwqtgbbae/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-html-tagset-3.20-txnkyfj6gi7wl7jmd5tn5ktm53ofbpo2/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-http-cookies-6.04-zmk4p47zc65ie63q4p4xdiqp37nxxvy5/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-http-message-6.13-i4qyx4zyokl4yjd2atxhvopec2jenrit/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-io-html-1.001-ggomz3ojahfmispwimfw74n3w7f47tyn/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-lwp-mediatypes-6.02-sixzz4rsekrr7cenbuawplcjupbd6odf/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-try-tiny-0.28-tysj5rs6v4ijhmazxtaegfzeqi34e7vy/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-uri-1.72-an6qnqqmwj36dhhvp2v6nuvalb5t2vdn/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-http-daemon-6.01-dywubpj44mhf7pnpfpyaxhr4vae3xwy5/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-http-negotiate-6.01-5t73xa3mx7xnzfdwi4amyep7ls6c2ldo/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-net-http-6.17-n4ssj5euetelvjcfcucj7yi67afqowso/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-www-robotrules-6.02-ofo3ugzlh2xwtj42mq5dn5d5d6scb42g/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-text-soundex-3.05-j65f6xn4ys53wkvnxxry2v7jz37rehx5/lib/perl5"
+setenv REPEATMODELER_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/repeatmodeler-1.0.11-agwz4w2vp23ayxfctatjnlwr6gyldwc6"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

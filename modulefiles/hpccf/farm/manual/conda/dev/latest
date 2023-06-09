@@ -1,0 +1,72 @@
+#%Module1.0
+# vim: syntax=tcl
+
+module-whatis "Conda is an open source package management system and environment management system that runs on Windows, macOS, and Linux. Conda quickly installs, runs and updates packages and their dependencies. Conda easily creates, saves, loads and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language."
+
+set name "conda"
+set version "4.X"
+set url "https://docs.conda.io/en/latest/miniconda.html"
+
+set root "/share/apps/conda/conda-root"
+
+set shellfamily [module-info shelltype]
+set shellprog [module-info shell]
+
+#puts stderr "shell family: $shellfamily"
+#puts stderr "shell prog: $shellprog"
+
+if { [info exists env(CONDA_EXE)] && [module-info command load] } {
+	puts stderr "ERROR: CONDA_EXE is currently defined: $env(CONDA_EXE)."
+	puts stderr "This module will almost certainly interfere with your conda installation."
+	puts stderr "Remove existing conda installation and its shell hooks from your PATH before proceeding."
+	exit
+}
+
+set conda_vars { "_CE_CONDA" "_CONDA_EXE" "_CONDA_ROOT" "_CE_M" 
+								 "CONDA_EXE" "CONDA_PYTHON_EXE" "CONDA_SHLVL" }
+set conda_funcs { "__conda_activate" "__conda_exe" "__conda_hashr" 
+								  "__conda_reactivate" "conda" "mamba" }
+# missing func? "__add_sys_prefix_to_path" 
+
+
+prepend-path PATH "$root/condabin"
+
+switch -- $shellfamily {
+	sh {
+		if { [module-info mode load] } {
+			# We want to eval conda's shell hook code, but WITHOUT the PATH munging.
+			# This awk one-liner strips out the chunk that prepends to and exports PATH.
+			set conda_setup "'$root/bin/conda' 'shell.$shellprog' 'hook' 2> /dev/null | awk '/PATH|different/{getline;next} 1'"
+			# puts stderr $conda_setup
+
+			puts stdout "eval \"\$($conda_setup)\"; "
+			puts stdout "source $root/etc/profile.d/mamba.sh; "
+		}
+
+		if { [module-info mode unload] } {
+			set conda_deactivate "conda deactivate 2> /dev/null"
+			set conda_shell_level $env(CONDA_SHLVL)
+
+			for {set conda_level $env(CONDA_SHLVL)} {$conda_level > 0} {incr conda_level -1} {
+				puts stdout "$conda_deactivate; "
+			}
+
+			foreach conda_var $conda_vars {
+				puts stdout "unset $conda_var; "
+			}
+
+			foreach conda_func $conda_funcs {
+				if { $shellprog == "zsh" } {
+					puts stdout "unfunction $conda_func; "
+				} else {
+					puts stdout "unset -f $conda_func; "
+				}
+			}
+		}
+	}
+	default {
+		puts stderr "Shell not supported."
+		exit
+	}
+}
+

@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:15.438545
+##
+## mcl@14-137%gcc@9.5.0~blast build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/c5xkgzy
+##
+
+
+module-whatis "The MCL algorithm is short for the Markov Cluster Algorithm, a fast and scalable unsupervised cluster algorithm for graphs (also known as networks) based on simulation of (stochastic) flow in graphs."
+
+proc ModulesHelp { } {
+puts stderr "The MCL algorithm is short for the Markov Cluster Algorithm, a fast and"
+puts stderr "scalable unsupervised cluster algorithm for graphs (also known as"
+puts stderr "networks) based on simulation of (stochastic) flow in graphs."
+}
+
+conflict mcl
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mcl-14-137-c5xkgzymdekh57iu2tm65y5bf3ebyw3j/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mcl-14-137-c5xkgzymdekh57iu2tm65y5bf3ebyw3j/share/man"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mcl-14-137-c5xkgzymdekh57iu2tm65y5bf3ebyw3j/."
+setenv MCL_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mcl-14-137-c5xkgzymdekh57iu2tm65y5bf3ebyw3j"
+
+if [module-info mode load] {
+}

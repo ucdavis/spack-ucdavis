@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:20.130788
+##
+## strelka@2.9.10%gcc@11.3.0~ipo build_system=cmake build_type=RelWithDebInfo arch=linux-ubuntu22.04-x86_64_v2/jm2g6t7
+##
+## Configure options: -DCMAKE_CXX_STANDARD:STRING=14
+##
+
+
+module-whatis "Somatic and germline small variant caller for mapped sequencing data."
+
+proc ModulesHelp { } {
+puts stderr "Somatic and germline small variant caller for mapped sequencing data."
+}
+
+conflict strelka
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/strelka-2.9.10-jm2g6t737amoq4witq4xtgjjvu6l4s65/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/strelka-2.9.10-jm2g6t737amoq4witq4xtgjjvu6l4s65/."
+setenv STRELKA_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/strelka-2.9.10-jm2g6t737amoq4witq4xtgjjvu6l4s65"
+
+if [module-info mode load] {
+}

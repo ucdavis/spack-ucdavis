@@ -1,0 +1,30 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-01 15:58:29.328178
+##
+## hypre@2.26.0%gcc@11.3.0~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~umpire~unified-memory build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/ghb45id
+##
+## Configure options: --prefix=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hypre-2.26.0-ghb45idnwoqmgdzwuarfxwwge3kstkls --with-lapack-libs=blas lapack nvf --with-lapack-lib-dirs=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nvhpc-23.1-lkrzgxuhnqeonpra4egpals6ap2ba2l2/Linux_x86_64/23.1/compilers/lib --with-blas-libs=blas lapack nvf --with-blas-lib-dirs=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nvhpc-23.1-lkrzgxuhnqeonpra4egpals6ap2ba2l2/Linux_x86_64/23.1/compilers/lib --with-MPI --with-MPI-lib-dirs=/share/apps/22.04/openmpi/4.1.5/lib --with-MPI-include=/share/apps/22.04/openmpi/4.1.5/include --without-openmp --disable-bigint --disable-mixedint --disable-complex --enable-shared --without-superlu --without-mli --without-fei --disable-debug --without-cuda --disable-curand --disable-cusparse --without-hip --disable-rocrand --disable-rocsparse --enable-fortran
+##
+
+
+module-whatis "Hypre is a library of high performance preconditioners that features parallel multigrid methods for both structured and unstructured grid problems."
+
+proc ModulesHelp { } {
+puts stderr "Hypre is a library of high performance preconditioners that features"
+puts stderr "parallel multigrid methods for both structured and unstructured grid"
+puts stderr "problems."
+}
+
+prereq nvhpc/23.1
+conflict hypre
+
+prepend-path CPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hypre-2.26.0-ghb45idnwoqmgdzwuarfxwwge3kstkls/include"
+prepend-path C_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hypre-2.26.0-ghb45idnwoqmgdzwuarfxwwge3kstkls/include"
+prepend-path CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hypre-2.26.0-ghb45idnwoqmgdzwuarfxwwge3kstkls/include"
+prepend-path LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hypre-2.26.0-ghb45idnwoqmgdzwuarfxwwge3kstkls/lib"
+prepend-path LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hypre-2.26.0-ghb45idnwoqmgdzwuarfxwwge3kstkls/lib"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hypre-2.26.0-ghb45idnwoqmgdzwuarfxwwge3kstkls/."
+setenv HYPRE_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hypre-2.26.0-ghb45idnwoqmgdzwuarfxwwge3kstkls"
+
+if [module-info mode load] {
+}

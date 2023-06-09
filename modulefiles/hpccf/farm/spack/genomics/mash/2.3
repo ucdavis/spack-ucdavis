@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:43.593262
+##
+## mash@2.3%gcc@9.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/xfdh7wm
+##
+## Configure options: --with-capnp=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/capnproto-0.8.0-2rz4fdghwkpej5rgypzpj6e2injn3o7y --with-gsl=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/gsl-2.7.1-5hejqwieca7ltiavtq5clk6u6vgrwuw5
+##
+
+
+module-whatis " Fast genome and metagenome distance estimation using MinHash. "
+
+proc ModulesHelp { } {
+puts stderr " Fast genome and metagenome distance estimation using MinHash."
+}
+
+conflict mash
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mash-2.3-xfdh7wm34xmjx66gywfo6foakpxxep4c/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mash-2.3-xfdh7wm34xmjx66gywfo6foakpxxep4c/share/man"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mash-2.3-xfdh7wm34xmjx66gywfo6foakpxxep4c/."
+setenv MASH_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mash-2.3-xfdh7wm34xmjx66gywfo6foakpxxep4c"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

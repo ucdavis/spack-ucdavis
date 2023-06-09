@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:36.442828
+##
+## cdhit@4.8.1%gcc@9.5.0+openmp+zlib build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/5p5yofa
+##
+
+
+module-whatis "CD-HIT is a very widely used program for clustering and comparing protein or nucleotide sequences."
+
+proc ModulesHelp { } {
+puts stderr "CD-HIT is a very widely used program for clustering and comparing"
+puts stderr "protein or nucleotide sequences."
+}
+
+conflict cdhit
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/cdhit-4.8.1-5p5yofa7erv5e4uodro3fsa63qsptcn3/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/cdhit-4.8.1-5p5yofa7erv5e4uodro3fsa63qsptcn3/."
+setenv CDHIT_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/cdhit-4.8.1-5p5yofa7erv5e4uodro3fsa63qsptcn3"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

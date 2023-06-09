@@ -1,0 +1,16 @@
+#%Module1.0
+# vim: syntax=tcl
+
+module-whatis "VirSorter2 applies a multi-classifier, expert-guided approach to detect diverse DNA and RNA virus genomes."
+
+set envname "virsorter-2.2.4"
+
+prereq conda/base/latest
+
+if { [module-info mode load] } {
+	puts stdout "conda activate $envname 2> /dev/null; "
+}
+
+if { [module-info mode unload] } {
+	puts stdout "conda deactivate 2> /dev/null; "
+}

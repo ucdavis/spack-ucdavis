@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-05 15:41:29.203185
+##
+## mummer4@4.0.0rc1%gcc@9.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/bsxiebh
+##
+
+
+module-whatis "MUMmer is a versatil alignment tool for DNA and protein sequences."
+
+proc ModulesHelp { } {
+puts stderr "MUMmer is a versatil alignment tool for DNA and protein sequences."
+}
+
+conflict mummer4
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mummer4-4.0.0rc1-bsxiebhmwl7rr3abbdyuojux5axybpj5/bin"
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mummer4-4.0.0rc1-bsxiebhmwl7rr3abbdyuojux5axybpj5/lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mummer4-4.0.0rc1-bsxiebhmwl7rr3abbdyuojux5axybpj5/."
+setenv MUMMER4_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mummer4-4.0.0rc1-bsxiebhmwl7rr3abbdyuojux5axybpj5"
+
+if [module-info mode load] {
+}

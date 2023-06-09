@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:36.747857
+##
+## ea-utils@2021-10-20%gcc@9.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/umkbad2
+##
+
+
+module-whatis "Command-line tools for processing biological sequencing data. Barcode demultiplexing, adapter trimming, etc. Primarily written to support an Illumina based pipeline - but should work with any FASTQs."
+
+proc ModulesHelp { } {
+puts stderr "Command-line tools for processing biological sequencing data. Barcode"
+puts stderr "demultiplexing, adapter trimming, etc. Primarily written to support an"
+puts stderr "Illumina based pipeline - but should work with any FASTQs."
+}
+
+conflict ea-utils
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ea-utils-2021-10-20-umkbad2ixkx4pojn6l3wifz3pm22mrjk/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ea-utils-2021-10-20-umkbad2ixkx4pojn6l3wifz3pm22mrjk/."
+setenv EA_UTILS_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ea-utils-2021-10-20-umkbad2ixkx4pojn6l3wifz3pm22mrjk"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

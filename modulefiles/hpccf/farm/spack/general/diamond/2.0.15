@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:10.616468
+##
+## diamond@2.0.15%gcc@9.5.0~ipo build_system=cmake build_type=RelWithDebInfo arch=linux-ubuntu22.04-x86_64_v2/pytzrk5
+##
+
+
+module-whatis "DIAMOND is a sequence aligner for protein and translated DNA searches, designed for high performance analysis of big sequence data."
+
+proc ModulesHelp { } {
+puts stderr "DIAMOND is a sequence aligner for protein and translated DNA searches,"
+puts stderr "designed for high performance analysis of big sequence data."
+}
+
+conflict diamond
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/diamond-2.0.15-pytzrk5rb2s4ysouhxhq7qvrhodpip2e/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/diamond-2.0.15-pytzrk5rb2s4ysouhxhq7qvrhodpip2e/."
+setenv DIAMOND_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/diamond-2.0.15-pytzrk5rb2s4ysouhxhq7qvrhodpip2e"
+
+if [module-info mode load] {
+}

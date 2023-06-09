@@ -1,0 +1,31 @@
+#%Module1.0
+
+########## BEGIN EDIT ##########
+set name "ucx"
+set version "1.13.1"
+set note "An open-source, production-grade communication framework for data-centric and high-performance applications. https://github.com/openucx/ucx"
+########## END EDIT ##########
+
+set dir [ string tolower $name ]
+set os "22.04"
+set swroot "/share/apps/$os/$dir/$version"
+
+# requirements here
+#if ![ is-loaded java ] { module load java }
+
+setenv [ string toupper $name]_HOME $swroot
+
+module-whatis "This module loads $name version $version.\n   $note"
+
+prepend-path PATH            $swroot/bin
+#prepend-path PATH            $swroot/sbin
+prepend-path CPATH           $swroot/include
+prepend-path LD_LIBRARY_PATH $swroot/lib
+
+prepend-path MANPATH $swroot/share/man
+
+#setenv SQUEUE_FORMAT "%.20i %.9P %.8j %.8u %.8a %.2t %.11M %.11L %.5D %3C %6m %R"
+
+if { [ module-info mode load ] } {
+    puts stderr "Module $dir/$version loaded.\n"
+}

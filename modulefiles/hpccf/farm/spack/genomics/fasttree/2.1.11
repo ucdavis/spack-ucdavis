@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:37.546982
+##
+## fasttree@2.1.11%gcc@11.3.0+openmp build_system=generic arch=linux-ubuntu22.04-x86_64_v2/o2djdyx
+##
+
+
+module-whatis "FastTree infers approximately-maximum-likelihood phylogenetic trees from alignments of nucleotide or protein sequences. "
+
+proc ModulesHelp { } {
+puts stderr "FastTree infers approximately-maximum-likelihood phylogenetic trees from"
+puts stderr "alignments of nucleotide or protein sequences."
+}
+
+conflict fasttree
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/fasttree-2.1.11-o2djdyxw6ejide6h2c72n5y2g2xrdzct/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/fasttree-2.1.11-o2djdyxw6ejide6h2c72n5y2g2xrdzct/."
+setenv FASTTREE_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/fasttree-2.1.11-o2djdyxw6ejide6h2c72n5y2g2xrdzct"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

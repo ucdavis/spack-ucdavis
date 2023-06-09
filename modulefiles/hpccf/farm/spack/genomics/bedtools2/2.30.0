@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:34.581483
+##
+## bedtools2@2.30.0%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/6farmes
+##
+
+
+module-whatis "Collectively, the bedtools utilities are a swiss-army knife of tools for a wide-range of genomics analysis tasks. The most widely-used tools enable genome arithmetic: that is, set theory on the genome."
+
+proc ModulesHelp { } {
+puts stderr "Collectively, the bedtools utilities are a swiss-army knife of tools for"
+puts stderr "a wide-range of genomics analysis tasks. The most widely-used tools"
+puts stderr "enable genome arithmetic: that is, set theory on the genome."
+}
+
+conflict bedtools2
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/bedtools2-2.30.0-6farmesyaip3upcr74wg7aestj7lcvqw/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/bedtools2-2.30.0-6farmesyaip3upcr74wg7aestj7lcvqw/."
+setenv BEDTOOLS2_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/bedtools2-2.30.0-6farmesyaip3upcr74wg7aestj7lcvqw"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

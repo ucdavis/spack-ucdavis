@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:10.429744
+##
+## clustal-omega@1.2.4%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/2zg7tzx
+##
+
+
+module-whatis "Clustal Omega: the last alignment program you'll ever need."
+
+proc ModulesHelp { } {
+puts stderr "Clustal Omega: the last alignment program you'll ever need."
+}
+
+conflict clustal-omega
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/clustal-omega-1.2.4-2zg7tzxxpai3jkht36gxwskp5igxkjgm/bin"
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/clustal-omega-1.2.4-2zg7tzxxpai3jkht36gxwskp5igxkjgm/lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/clustal-omega-1.2.4-2zg7tzxxpai3jkht36gxwskp5igxkjgm/."
+setenv CLUSTAL_OMEGA_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/clustal-omega-1.2.4-2zg7tzxxpai3jkht36gxwskp5igxkjgm"
+
+if [module-info mode load] {
+}

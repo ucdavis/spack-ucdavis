@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:37.841837
+##
+## gatk@3.8.1%gcc@11.3.0~r build_system=generic arch=linux-ubuntu22.04-x86_64_v2/qn5ztcd
+##
+
+
+module-whatis " Genome Analysis Toolkit Variant Discovery in High-Throughput Sequencing Data "
+
+proc ModulesHelp { } {
+puts stderr " Genome Analysis Toolkit Variant Discovery in High-Throughput Sequencing"
+puts stderr "Data"
+}
+
+conflict gatk
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gatk-3.8.1-qn5ztcdx4i6vfhlmxxja6twtte5wcogf/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gatk-3.8.1-qn5ztcdx4i6vfhlmxxja6twtte5wcogf/."
+prepend-path GATK "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gatk-3.8.1-qn5ztcdx4i6vfhlmxxja6twtte5wcogf/bin/GenomeAnalysisTK.jar"
+setenv GATK_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gatk-3.8.1-qn5ztcdx4i6vfhlmxxja6twtte5wcogf"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:46.049611
+##
+## phylip@3.697%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/yotuc44
+##
+
+
+module-whatis "PHYLIP (the PHYLogeny Inference Package) is a package of programs for inferring phylogenies (evolutionary trees)."
+
+proc ModulesHelp { } {
+puts stderr "PHYLIP (the PHYLogeny Inference Package) is a package of programs for"
+puts stderr "inferring phylogenies (evolutionary trees)."
+}
+
+conflict phylip
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/phylip-3.697-yotuc442w73q3stzcfuemxp5ppkcxpbc/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/phylip-3.697-yotuc442w73q3stzcfuemxp5ppkcxpbc/."
+setenv PHYLIP_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/phylip-3.697-yotuc442w73q3stzcfuemxp5ppkcxpbc"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

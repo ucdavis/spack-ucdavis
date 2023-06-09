@@ -1,0 +1,37 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-05-30 16:51:48.570284
+##
+## nvhpc@23.1%gcc@11.3.0+blas+lapack~mpi build_system=generic install_type=single arch=linux-ubuntu22.04-x86_64_v2/lkrzgxu
+##
+
+
+module-whatis "The NVIDIA HPC SDK is a comprehensive suite of compilers, libraries and tools essential to maximizing developer productivity and the performance and portability of HPC applications. The NVIDIA HPC SDK C, C++, and Fortran compilers support GPU acceleration of HPC modeling and simulation applications with standard C++ and Fortran, OpenACC directives, and CUDA. GPU-accelerated math libraries maximize performance on common HPC algorithms, and optimized communications libraries enable standards-based multi-GPU and scalable systems programming. Performance profiling and debugging tools simplify porting and optimization of HPC applications."
+
+proc ModulesHelp { } {
+puts stderr "The NVIDIA HPC SDK is a comprehensive suite of compilers, libraries and"
+puts stderr "tools essential to maximizing developer productivity and the performance"
+puts stderr "and portability of HPC applications. The NVIDIA HPC SDK C, C++, and"
+puts stderr "Fortran compilers support GPU acceleration of HPC modeling and"
+puts stderr "simulation applications with standard C++ and Fortran, OpenACC"
+puts stderr "directives, and CUDA. GPU-accelerated math libraries maximize"
+puts stderr "performance on common HPC algorithms, and optimized communications"
+puts stderr "libraries enable standards-based multi-GPU and scalable systems"
+puts stderr "programming. Performance profiling and debugging tools simplify porting"
+puts stderr "and optimization of HPC applications."
+}
+
+conflict nvhpc
+
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nvhpc-23.1-lkrzgxuhnqeonpra4egpals6ap2ba2l2/."
+setenv CC "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nvhpc-23.1-lkrzgxuhnqeonpra4egpals6ap2ba2l2/Linux_x86_64/23.1/compilers/bin/nvc"
+setenv CXX "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nvhpc-23.1-lkrzgxuhnqeonpra4egpals6ap2ba2l2/Linux_x86_64/23.1/compilers/bin/nvc++"
+setenv F77 "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nvhpc-23.1-lkrzgxuhnqeonpra4egpals6ap2ba2l2/Linux_x86_64/23.1/compilers/bin/nvfortran"
+setenv FC "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nvhpc-23.1-lkrzgxuhnqeonpra4egpals6ap2ba2l2/Linux_x86_64/23.1/compilers/bin/nvfortran"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nvhpc-23.1-lkrzgxuhnqeonpra4egpals6ap2ba2l2/Linux_x86_64/23.1/compilers/bin"
+prepend-path LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nvhpc-23.1-lkrzgxuhnqeonpra4egpals6ap2ba2l2/Linux_x86_64/23.1/compilers/lib"
+prepend-path LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nvhpc-23.1-lkrzgxuhnqeonpra4egpals6ap2ba2l2/Linux_x86_64/23.1/compilers/lib"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nvhpc-23.1-lkrzgxuhnqeonpra4egpals6ap2ba2l2/Linux_x86_64/23.1/compilers/man"
+setenv NVHPC_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nvhpc-23.1-lkrzgxuhnqeonpra4egpals6ap2ba2l2"
+
+if [module-info mode load] {
+}

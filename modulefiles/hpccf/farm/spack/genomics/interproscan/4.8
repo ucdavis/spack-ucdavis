@@ -1,0 +1,27 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:42.454865
+##
+## interproscan@4.8%gcc@9.5.0 build_system=generic patches=a243277,c90e3d6 arch=linux-ubuntu22.04-x86_64_v2/c763rqn
+##
+
+
+module-whatis "InterProScan is the software package that allows sequences (protein and nucleic) to be scanned against InterPro's signatures. Signatures are predictive models, provided by several different databases, that make up the InterPro consortium."
+
+proc ModulesHelp { } {
+puts stderr "InterProScan is the software package that allows sequences (protein and"
+puts stderr "nucleic) to be scanned against InterPro's signatures. Signatures are"
+puts stderr "predictive models, provided by several different databases, that make up"
+puts stderr "the InterPro consortium."
+}
+
+conflict interproscan
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/interproscan-4.8-c763rqnoqrf2qwx4rdkhms3b2g5wo5gb/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/interproscan-4.8-c763rqnoqrf2qwx4rdkhms3b2g5wo5gb/."
+prepend-path PERL5LIB "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-cgi-4.54-hrjcefm7mos6fxxdftwg5h77z6x5f7fa/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-html-parser-3.72-mrgvapyx2hqqhfq6lkz5d6krwqtgbbae/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-html-tagset-3.20-txnkyfj6gi7wl7jmd5tn5ktm53ofbpo2/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-db-file-1.840-l7s6bpalvgx2cmph2foizwhyjma74p2t/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-io-string-1.08-pzn3lk4gqif7ncqv6elokx2rhhu73mii/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-io-stringy-2.111-q42nio5ve7agm2rae2gilrmz2va6cydd/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-mailtools-2.21-h2k34isvvxjytxyrr4x7ck6lqat4ycet/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-timedate-2.30-2lqe7jjqvxtefm37z3ybks4k7yx43ut2/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-xml-parser-2.44-e2uz7pagwfkpljp4oilvduqwofpcf5cw/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-libwww-perl-6.33-iq6lkzfb5awknwygwyrqjivqeakelcw5/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-encode-locale-1.05-26vd55gqc6g6oztjbegdhh5hb4htbpjk/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-file-listing-6.04-n3ljac4evyqpaftiz2ashdveg2vbx42t/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-http-date-6.02-nzrjvj5j7lyhlmz6vwvjlghahairrxaz/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-http-cookies-6.04-zmk4p47zc65ie63q4p4xdiqp37nxxvy5/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-http-message-6.13-i4qyx4zyokl4yjd2atxhvopec2jenrit/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-io-html-1.001-ggomz3ojahfmispwimfw74n3w7f47tyn/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-lwp-mediatypes-6.02-sixzz4rsekrr7cenbuawplcjupbd6odf/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-try-tiny-0.28-tysj5rs6v4ijhmazxtaegfzeqi34e7vy/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-uri-1.72-an6qnqqmwj36dhhvp2v6nuvalb5t2vdn/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-http-daemon-6.01-dywubpj44mhf7pnpfpyaxhr4vae3xwy5/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-http-negotiate-6.01-5t73xa3mx7xnzfdwi4amyep7ls6c2ldo/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-net-http-6.17-n4ssj5euetelvjcfcucj7yi67afqowso/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-www-robotrules-6.02-ofo3ugzlh2xwtj42mq5dn5d5d6scb42g/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-xml-quote-1.02-d2327ipozgkqeu5g32yws7n6hobmm5uf/lib/perl5"
+setenv INTERPROSCAN_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/interproscan-4.8-c763rqnoqrf2qwx4rdkhms3b2g5wo5gb"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

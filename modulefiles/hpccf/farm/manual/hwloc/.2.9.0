@@ -1,0 +1,29 @@
+#%Module1.0
+
+########## BEGIN EDIT ##########
+set name "hwloc"
+set version "2.9.0"
+set note "The Hardware Locality (hwloc) software project aims at easing the process of discovering hardware resources in parallel architectures. https://github.com/open-mpi/hwloc"
+########## END EDIT ##########
+
+set dir [ string tolower $name ]
+set os "22.04"
+set swroot "/share/apps/$os/$dir/$version"
+
+# requirements here
+#if ![ is-loaded java ] { module load java }
+
+setenv [ string toupper $name]_HOME $swroot
+
+module-whatis "This module loads $name version $version for $os.\n   $note"
+
+prepend-path PATH            $swroot/bin
+prepend-path PATH            $swroot/sbin
+prepend-path CPATH           $swroot/include
+prepend-path LD_LIBRARY_PATH $swroot/lib
+
+prepend-path MANPATH $swroot/share/man
+
+if { [ module-info mode load ] } {
+    puts stderr "Module $dir/$version loaded.\n"
+}

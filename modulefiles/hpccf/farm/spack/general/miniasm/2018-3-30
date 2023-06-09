@@ -1,0 +1,21 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:15.635176
+##
+## miniasm@2018-3-30%gcc@9.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64/vqw42ar
+##
+
+
+module-whatis "Miniasm is a very fast OLC-based de novo assembler for noisy long reads."
+
+proc ModulesHelp { } {
+puts stderr "Miniasm is a very fast OLC-based de novo assembler for noisy long reads."
+}
+
+conflict miniasm
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64/gcc-9.5.0/miniasm-2018-3-30-vqw42ar5mg5qsxs6vduvdidv26duuve2/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64/gcc-9.5.0/miniasm-2018-3-30-vqw42ar5mg5qsxs6vduvdidv26duuve2/."
+setenv MINIASM_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64/gcc-9.5.0/miniasm-2018-3-30-vqw42ar5mg5qsxs6vduvdidv26duuve2"
+
+if [module-info mode load] {
+}

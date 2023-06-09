@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:53.827559
+##
+## py-multiqc@1.0%gcc@9.5.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v2/t2slxnh
+##
+
+
+module-whatis "MultiQC is a tool to aggregate bioinformatics results across many samples into a single report. It is written in Python and contains modules for a large number of common bioinformatics tools."
+
+proc ModulesHelp { } {
+puts stderr "MultiQC is a tool to aggregate bioinformatics results across many"
+puts stderr "samples into a single report. It is written in Python and contains"
+puts stderr "modules for a large number of common bioinformatics tools."
+}
+
+conflict py-multiqc
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-multiqc-1.0-t2slxnhymkbi26o3woqfc7m5kfihxp4q/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-multiqc-1.0-t2slxnhymkbi26o3woqfc7m5kfihxp4q/."
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-multiqc-1.0-t2slxnhymkbi26o3woqfc7m5kfihxp4q/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-click-8.1.3-vge3ikuav436bcbzoau7nzel3ve65f2k/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-future-0.18.2-yi2d2efq6do55fk3jskdxnmloxx3pktt/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-jinja2-3.1.2-ulbtlibgccb6qenaf7kvht43nfdj7v2q/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-markupsafe-2.1.1-obrz2tflbos3lniyx4tnj5huutevgmwn/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-lzstring-1.0.3-p2yq2txh5xjjwpbpxyzapopwugz2dumb/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-matplotlib-3.6.2-xzjtejf5cqp64pdsotu6vyg7dh2p47io/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-contourpy-1.0.5-zns34uhnipbyahlcdceccf2tf5abbjji/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-numpy-1.23.4-vzkqcrmphyqcdkhv7xih5bfzba66seyu/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-setuptools-59.4.0-q3aw4cpyzhxvjizrr3ovd2mnycyvhl7l/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-cycler-0.11.0-cnibsg6jpljobjtnfojphb3fiu5gt3wc/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-fonttools-4.37.3-z3evlnvkzlsz7exdp6cfk5vbabg2t6ae/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-kiwisolver-1.3.2-lqfnio3kmjotzpu4mwyvoloqnd5pa53u/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-packaging-21.3-pfvymraoag6l3m5n2jewvamwe6qutcp3/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pyparsing-3.0.9-45fpim4vjrkiuxajpw6cbrj7t2dpjb4h/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pillow-9.2.0-wv35ol3brdjiomuihssctjcgobr2ydjs/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-python-dateutil-2.8.2-javv2hkbumtwrtsn6pbbsa2q5iwcrkg5/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-six-1.16.0-mctnsnvrslo6n3nkt6cn3d4tmk4vmaqf/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pyyaml-6.0-fi7jpwllufqbzla7m5rga6wugqhxzbod/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-simplejson-3.17.2-6nxj64z3chqhffsf2mb7xu3rsplz36nq/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-spectra-0.0.8-o6wfhj5ti2d4egwvut4csdf3zvuh5i3p/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-colormath-2.1.1-u74tpx6yhmptok3shkw45cwbagcdr4lx/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-networkx-1.11-dw4u5u3coh6rxm3dgw7erhbxtv6oezjk/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-decorator-5.1.1-cp46f4lzdcxl4qtkeif7cnleueb64y46/lib/python3.9/site-packages"
+setenv PY_MULTIQC_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-multiqc-1.0-t2slxnhymkbi26o3woqfc7m5kfihxp4q"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

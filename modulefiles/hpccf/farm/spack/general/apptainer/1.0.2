@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:09:36.805742
+##
+## apptainer@1.0.2%gcc@11.3.0+network+suid build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/vszyffc
+##
+
+
+module-whatis "Apptainer is an open source container platform designed to be simple, fast, and secure. Many container platforms are available, but Apptainer is designed for ease-of-use on shared systems and in high performance computing (HPC) environments."
+
+proc ModulesHelp { } {
+puts stderr "Apptainer is an open source container platform designed to be simple,"
+puts stderr "fast, and secure. Many container platforms are available, but Apptainer"
+puts stderr "is designed for ease-of-use on shared systems and in high performance"
+puts stderr "computing (HPC) environments. Needs post-install chmod/chown steps to"
+puts stderr "enable full functionality. See package definition or `spack-build-"
+puts stderr "out.txt` build log for details, e.g.:: tail -15 $(spack location -i"
+puts stderr "apptainer)/.spack/spack-build-out.txt"
+}
+
+conflict apptainer
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/apptainer-1.0.2-vszyffclq6cyv2ehmedyccosgr7gp5fk/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/apptainer-1.0.2-vszyffclq6cyv2ehmedyccosgr7gp5fk/share/man"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/apptainer-1.0.2-vszyffclq6cyv2ehmedyccosgr7gp5fk/."
+prepend-path GOPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/apptainer-1.0.2-vszyffclq6cyv2ehmedyccosgr7gp5fk"
+setenv APPTAINER_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/apptainer-1.0.2-vszyffclq6cyv2ehmedyccosgr7gp5fk"
+
+if [module-info mode load] {
+}

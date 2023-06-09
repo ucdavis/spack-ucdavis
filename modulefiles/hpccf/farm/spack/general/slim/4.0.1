@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:19.923203
+##
+## slim@4.0.1%gcc@9.5.0~ipo build_system=cmake build_type=RelWithDebInfo arch=linux-ubuntu22.04-x86_64_v2/2awwfg7
+##
+
+
+module-whatis "SLiM is an evolutionary simulation framework that combines a powerful engine for population genetic simulations with the capability of modeling arbitrarily complex evolutionary scenarios."
+
+proc ModulesHelp { } {
+puts stderr "SLiM is an evolutionary simulation framework that combines a powerful"
+puts stderr "engine for population genetic simulations with the capability of"
+puts stderr "modeling arbitrarily complex evolutionary scenarios."
+}
+
+conflict slim
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/slim-4.0.1-2awwfg77z4qa2gtm5cwe6q5s6ablckgl/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/slim-4.0.1-2awwfg77z4qa2gtm5cwe6q5s6ablckgl/."
+setenv SLIM_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/slim-4.0.1-2awwfg77z4qa2gtm5cwe6q5s6ablckgl"
+
+if [module-info mode load] {
+}

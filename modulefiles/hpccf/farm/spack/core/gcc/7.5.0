@@ -1,0 +1,31 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-05-30 16:51:48.254119
+##
+## gcc@7.5.0%gcc@11.3.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages=c,c++,fortran patches=98a9c96,b620e92,dc1ca24 arch=linux-ubuntu22.04-x86_64_v2/ni6ffpi
+##
+## Configure options: --with-pkgversion=Spack GCC --with-bugurl=https://github.com/spack/spack/issues --disable-multilib --enable-languages=c,c++,fortran --disable-nls --disable-canonical-system-headers --with-system-zlib --enable-bootstrap --with-mpfr-include=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpfr-3.1.6-mgdv666gquarp6poyljuqao7k2v5npkg/include --with-mpfr-lib=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpfr-3.1.6-mgdv666gquarp6poyljuqao7k2v5npkg/lib --with-gmp-include=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-bwzat5qeyopiddg3fflajtive64ovicj/include --with-gmp-lib=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-bwzat5qeyopiddg3fflajtive64ovicj/lib --with-mpc-include=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpc-1.1.0-6fphmb6u7s5tqm5nirrb7temnvhbtnaf/include --with-mpc-lib=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpc-1.1.0-6fphmb6u7s5tqm5nirrb7temnvhbtnaf/lib --without-isl --with-stage1-ldflags=-Wl,-rpath,/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gcc-7.5.0-ni6ffpi6bxh7rw7f6s4m23n2bttllmcj/lib -Wl,-rpath,/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gcc-7.5.0-ni6ffpi6bxh7rw7f6s4m23n2bttllmcj/lib64 -Wl,-rpath,/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-bwzat5qeyopiddg3fflajtive64ovicj/lib -Wl,-rpath,/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpc-1.1.0-6fphmb6u7s5tqm5nirrb7temnvhbtnaf/lib -Wl,-rpath,/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpfr-3.1.6-mgdv666gquarp6poyljuqao7k2v5npkg/lib -Wl,-rpath,/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/zlib-1.2.13-3xat3cxw3izc3bph2gq5sed7vd5jx4ey/lib --with-boot-ldflags=-Wl,-rpath,/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gcc-7.5.0-ni6ffpi6bxh7rw7f6s4m23n2bttllmcj/lib -Wl,-rpath,/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gcc-7.5.0-ni6ffpi6bxh7rw7f6s4m23n2bttllmcj/lib64 -Wl,-rpath,/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-bwzat5qeyopiddg3fflajtive64ovicj/lib -Wl,-rpath,/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpc-1.1.0-6fphmb6u7s5tqm5nirrb7temnvhbtnaf/lib -Wl,-rpath,/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpfr-3.1.6-mgdv666gquarp6poyljuqao7k2v5npkg/lib -Wl,-rpath,/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/zlib-1.2.13-3xat3cxw3izc3bph2gq5sed7vd5jx4ey/lib -static-libstdc++ -static-libgcc --with-build-config=spack
+##
+
+
+module-whatis "The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages."
+
+proc ModulesHelp { } {
+puts stderr "The GNU Compiler Collection includes front ends for C, C++, Objective-C,"
+puts stderr "Fortran, Ada, and Go, as well as libraries for these languages."
+}
+
+conflict gcc
+
+prepend-path LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gcc-7.5.0-ni6ffpi6bxh7rw7f6s4m23n2bttllmcj/lib64"
+prepend-path LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gcc-7.5.0-ni6ffpi6bxh7rw7f6s4m23n2bttllmcj/lib"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gcc-7.5.0-ni6ffpi6bxh7rw7f6s4m23n2bttllmcj/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gcc-7.5.0-ni6ffpi6bxh7rw7f6s4m23n2bttllmcj/share/man"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gcc-7.5.0-ni6ffpi6bxh7rw7f6s4m23n2bttllmcj/."
+setenv CC "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gcc-7.5.0-ni6ffpi6bxh7rw7f6s4m23n2bttllmcj/bin/gcc"
+setenv CXX "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gcc-7.5.0-ni6ffpi6bxh7rw7f6s4m23n2bttllmcj/bin/g++"
+setenv FC "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gcc-7.5.0-ni6ffpi6bxh7rw7f6s4m23n2bttllmcj/bin/gfortran"
+setenv F77 "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gcc-7.5.0-ni6ffpi6bxh7rw7f6s4m23n2bttllmcj/bin/gfortran"
+setenv GCC_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gcc-7.5.0-ni6ffpi6bxh7rw7f6s4m23n2bttllmcj"
+
+if [module-info mode load] {
+}
