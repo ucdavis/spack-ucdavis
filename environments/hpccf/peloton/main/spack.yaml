@@ -1,0 +1,341 @@
+spack:
+  definitions:
+    - core_specs: &core_specs
+      - openmpi ~romio
+      - openmpi +romio
+      - slurm@22-05-9
+      - hwloc
+      - libevent
+      - pmix
+      - ucx
+      - cuda@11.7
+      - gcc@11.3.0
+      - gcc@9.5.0
+      - gcc@7.5.0
+      #- gcc@5.5.0 %gcc@9.5.0
+      #- gcc@4.9.4 %gcc@9.5.0
+      - intel-oneapi-compilers@2022.2.1
+      #- nvhpc@23.1 # huge, waiting...
+      - jdk@17.0.1
+      - openjdk@16.0.2
+      - openjdk@11.0.17_8
+      #- julia@1.8.5
+      #- julia@1.9.0
+    - libs_specs: &libs_specs
+      - amdfftw target=zen
+      - boost
+      - ccfits
+      - cfitsio
+      - cgal
+      - dealii
+      - eigen
+      - fftw
+      - fsl
+      - gmp
+      - gsl
+      - hdf5
+      - intel-oneapi-mkl
+      - librsvg
+      - libszip
+      - mpfr
+      - netcdf-c
+      - netcdf-cxx4
+      - netcdf-fortran
+      - nlohmann-json
+      - zlib
+    - general_specs: &general_specs
+      # misc
+      - apptainer
+      - aria2
+      - aspera-cli
+      - awscli 
+      - cdo
+      - cmake
+      - gnuplot
+      - gromacs
+      - hypre
+      - jags
+      - mark
+      - nco
+      - parallel
+      - pigz
+      - rclone
+      - rstudio@2022.12.0+server ^curl@7.85.0
+      - stata
+      - turbovnc
+      - virtualgl
+      - yasm
+
+      # genomics
+      - abyss
+      #- allpaths-lg %gcc@4.9.4
+      - angsd
+      - aragorn
+      - augustus
+      - bayenv2
+      - bbmap
+      - bcftools +libgsl +perl-filters
+      - beagle
+      - bedops
+      - bedtools2
+      - blast-plus
+      - blast2go
+      - blat
+      - bowtie
+      - bowtie2
+      - braker
+      - busco
+      - bwa
+      - bwa-mem2 %oneapi target=x86_64
+      - bwtool
+      - canu
+      - cap3
+      - cdhit
+      - circos
+      - clustal-omega
+      - clustalw
+      - corset
+      - cufflinks
+      - deml
+      - diamond
+      - dssp
+      - ea-utils
+      - emboss
+      - exonerate
+      - exonerate-gff3
+      - fastme
+      - fastq-screen
+      - fastqc
+      - fasttree
+      - fastx-toolkit
+      - freebayes
+      - gatk@3.8.1
+      - gatk@4.2.6.1 %gcc@11.3.0
+      - gemma
+      - genometools
+      - genrich
+      - gffcompare
+      - gffread
+      - glimmer
+      - hisat2
+      - hh-suite
+      - hmmer
+      - homer
+      - htslib
+      - igv
+      - infernal
+      - interproscan
+      - iq-tree
+      - iqtree2
+      - jellyfish@1.1.11
+      - jellyfish@2.3.0
+      - kalign
+      - kallisto
+      - kmergenie
+      - kraken
+      - kraken2
+      - krakenuniq
+      - last
+      - mafft
+      - maker
+      - mash
+      - masurca
+      - maven
+      - mcl
+      - meme@5.3.0
+      - metabat
+      - metaeuk
+      - minced
+      - miniasm
+      - minimap2
+      - mirdeep2
+      - mmseqs2
+      - mothur
+      - mummer
+      - mummer4
+      - muscle
+      - muscle5
+      - ncbi-rmblastn
+      - ncbi-toolkit
+      - ncbi-vdb
+      - nextflow
+      - ngsadmix
+      - ngstools
+      - ont-guppy
+      - orthofinder
+      - orthomcl
+      - phylip
+      - phyluce
+      - picard
+      - pilon
+      - plink
+      - plink-ng
+      - prokka
+      - py-biopython
+      - py-checkm-genome
+      - py-cutadapt
+      - py-deeptools
+      - py-htseq
+      - py-ipython
+      - py-multiqc
+      - py-quast
+      - py-vcf-kit
+      - qualimap
+      - raxml
+      - raxml-ng
+      - ray
+      - recon
+      - repeatmasker
+      - repeatmodeler ^repeatmasker@4.0.9
+      - repeatscout
+      - rnaquast
+      - rsem
+      - sabre
+      - salmon@1.9.0
+      - salmon@1.10.1
+      - samtools
+      - satsuma2
+      - scallop
+      - seqprep
+      - seqtk
+      - shoremap %gcc@11.3.0
+      - sickle
+      - slim
+      - smartdenovo
+      - snap-korf
+      - sortmerna
+      - spades
+      - sratoolkit
+      - star
+      #- strelka
+      - stringtie
+      - tabix
+      - tassel
+      - trimgalore
+      - trimmomatic
+      - trinity
+      - usearch
+      - vcftools
+      - velvet
+      - velvetoptimiser
+      - vsearch
+  specs:
+  - environment-modules@5.2.0
+  - $core_specs
+  - $libs_specs
+  view:
+    generic:
+      root: /share/apps/22.04/spack/environments/main/view
+      select:
+      - environment-modules
+      exclude:
+      - gcc
+      link_type: symlink
+  modules:
+    common:
+      tcl: &tcl_common_opts
+        verbose: true
+        hash_length: 0
+        exclude_implicits: true
+        all:
+          template: hpccf/default.tcl
+          autoload: none
+          prerequisites: none
+          conflict:
+          - '{name}'
+          environment:
+            set:
+              '{name}_ROOT': '{prefix}'
+        ^python:
+          autoload: direct
+          prerequisites: direct
+    core:
+      roots:
+        tcl: $spack/../../modulefiles/spack/core/
+      prefix_inspections:
+        lib64:
+        - LD_LIBRARY_PATH
+        lib:
+        - LD_LIBRARY_PATH
+      arch_folder: false
+      tcl:
+        <<: *tcl_common_opts
+        include: *core_specs
+        exclude:
+          - environment-modules
+          - gmp
+          - zlib
+          - pigz
+        defaults:
+        - openmpi~romio
+        projections:
+          all: '{name}/{version}'
+          target=zen2: '{name}/{version}+amd'
+          slurm: slurm/22.05.9
+          openmpi~romio: openmpi/{version}
+          openmpi+romio: openmpi/{version}-mpi-io
+        slurm:
+          template: hpccf/slurm.tcl
+
+    libs:
+      roots:
+        tcl: $spack/../../modulefiles/spack/libs/
+      prefix_inspections:
+        include:
+        - CPATH
+        - C_INCLUDE_PATH
+        - CPLUS_INCLUDE_PATH
+        lib64:
+        - LD_LIBRARY_PATH
+        - LIBRARY_PATH
+        lib:
+        - LD_LIBRARY_PATH
+        - LIBRARY_PATH
+      arch_folder: false
+      tcl:
+        <<: *tcl_common_opts
+        include: *libs_specs
+        exclude:
+        - cmake
+        - cuda
+        - environment-modules
+        - gcc
+        - hwloc
+        - hypre
+        - intel-oneapi-compilers
+        - jdk
+        - libevent
+        - openjdk
+        - openmpi
+        - pigz
+        - pmix
+        - slurm
+        - ucx
+        - zlib%gcc@9.5.0
+        projections:
+          all: '{name}/{version}'
+          target=zen2: '{name}/{version}+amd'
+
+    general:
+      roots:
+        tcl: $spack/../../modulefiles/spack/general/
+      arch_folder: false
+      tcl:
+        <<: *tcl_common_opts
+        include: *general_specs
+        #exclude:
+        #- $libs_specs
+        #- $core_specs
+        projections:
+          all: '{name}/{version}'
+          target=zen2: '{name}/{version}+amd'
+          rstudio: rstudio-server/{version}
+        circos:
+          template: hpccf/circos-version-warning.tcl
+        rstudio:
+          template: hpccf/farm/rstudio-server.tcl
+        turbovnc:
+          template: hpccf/farm/turbovnc.tcl
+
+  concretizer:
+    unify: when_possible
