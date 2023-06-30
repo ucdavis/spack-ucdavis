@@ -1,0 +1,22 @@
+--- a/Makefile	2021-07-23 07:23:13.000000000 -0700
++++ b/Makefile	2023-04-05 13:46:45.306807959 -0700
+@@ -1,4 +1,4 @@
+-GCLIB := $(if $(GCLIB),$(GCLIB),../gclib)
++GCLIB := $(if $(GCLIB),$(GCLIB),gclib)
+ 
+ INCDIRS := -I${GCLIB}
+ 
+@@ -55,10 +55,10 @@
+  ${GCLIB}/GStr.o ${GCLIB}/GArgs.o
+ 
+ .PHONY : all
+-all debug release static memcheck memdebug : ../gclib gffcompare trmap
++all debug release static memcheck memdebug : gclib gffcompare trmap
+ 
+-../gclib:
+-	git clone https://github.com/gpertea/gclib.git ../gclib
++gclib:
++	git clone https://github.com/gpertea/gclib.git gclib
+ 
+ ${GCLIB}/gff.o  : ${GCLIB}/gff.h
+ ./gtf_tracking.o : ./gtf_tracking.h
