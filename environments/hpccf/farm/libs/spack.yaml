@@ -8,6 +8,7 @@ spack:
   - gmp
   - gsl
   - hdf5
+  - h5z-zfp@1.1.0
   - hypre
   - intel-oneapi-mkl
   - librsvg
@@ -37,6 +38,10 @@ spack:
         - gsl
         exclude:
         - perl
+        h5z-zfp:
+          environment:
+            prepend_path:
+              HDF5_PLUGIN_PATH: '{prefix}/plugin'
       roots:
         tcl: $spack/../../modulefiles/spack/libs/
   concretizer:
