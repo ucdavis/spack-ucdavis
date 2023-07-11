@@ -1,9 +1,10 @@
 modules:
+
   default:
     enable::
       - tcl
     roots:
-      tcl: $spack/../../modulefiles/spack/general
+      tcl: $spack/../../modulefiles/spack/tcl
     arch_folder: false
     tcl:
       verbose: true
@@ -12,11 +13,11 @@ modules:
       projections:
         all: '{name}/{version}'
         target=zen2: '{name}/{version}+amd'
-      exclude:
-        - slurm
-        - pmix
-        - ucx
-        - openmpi
+#      exclude:
+#        - slurm
+#        - pmix
+#        - ucx
+#        - openmpi
       all:
         template: hpccf/default.tcl
         prerequisites: direct
@@ -25,5 +26,5 @@ modules:
         environment:
           set:
             '{name}_ROOT': '{prefix}'
-      circos:
-        template: hpccf/circos-version-warning.tcl
+#      circos:
+#        template: hpccf/circos-version-warning.tcl

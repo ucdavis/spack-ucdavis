@@ -33,6 +33,25 @@ packages:
     - spec: cvs@1.12.13
       prefix: /usr
 
+  gcc:
+    externals:
+    - spec: gcc@11.3.0
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          cc: /usr/bin/gcc
+          cxx: /usr/bin/g++
+          f77: /usr/bin/gfortran
+          fc: /usr/bin/gfortran
+    - spec: gcc@9.5.0
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          cc: /usr/bin/gcc-9
+          cxx: /usr/bin/g++-9
+          f77: /usr/bin/gfortran-9
+          fc: /usr/bin/gfortran-9
+
   gtkplus:
     buildable: false
     externals:
@@ -44,7 +63,7 @@ packages:
   hwloc:
     buildable: false
     externals:
-    - spec: hwloc@2.9.0
+    - spec: hwloc@2.9.0 target=x86_64_v2
       prefix: /share/apps/22.04/manual/hwloc/2.9.0
 
   pkg-config:
@@ -53,13 +72,13 @@ packages:
       prefix: /usr
     buildable: false
 
-  julia:
-    buildable: false
-    externals:
-    - spec: julia@1.8.5
-      prefix: /share/apps/22.04/julia/1.8.5
-    - spec: julia@1.9.0
-      prefix: /share/apps/22.04/julia/1.9.0
+  #julia:
+  #  buildable: false
+  #  externals:
+  #  - spec: julia@1.8.5
+  #    prefix: /share/apps/22.04/julia/1.8.5
+  #  - spec: julia@1.9.0
+  #    prefix: /share/apps/22.04/julia/1.9.0
 
   libevent:
     buildable: false
@@ -233,6 +252,8 @@ packages:
     providers:
       tbb:
       - intel-oneapi-tbb
+      fftw-api:
+      - fftw
     variants:
     - cuda_arch=75
 
