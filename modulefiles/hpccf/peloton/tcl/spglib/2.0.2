@@ -1,0 +1,32 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:08:04.019628
+##
+## spglib@2.0.2%gcc@11.3.0~ipo+openmp build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/rb7loq6
+##
+## Configure options: -DUSE_OMP:BOOL=ON
+##
+
+
+module-whatis "C library for finding and handling crystal symmetries."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : spglib"
+    puts stderr "Version: 2.0.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "C library for finding and handling crystal symmetries."
+}
+
+conflict spglib
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/spglib-2.0.2-rb7loq6a5up3b27n7fidpizgkevq6632/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/spglib-2.0.2-rb7loq6a5up3b27n7fidpizgkevq6632/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/spglib-2.0.2-rb7loq6a5up3b27n7fidpizgkevq6632/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/spglib-2.0.2-rb7loq6a5up3b27n7fidpizgkevq6632/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/spglib-2.0.2-rb7loq6a5up3b27n7fidpizgkevq6632/lib"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/spglib-2.0.2-rb7loq6a5up3b27n7fidpizgkevq6632/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/spglib-2.0.2-rb7loq6a5up3b27n7fidpizgkevq6632/."
+setenv SPGLIB_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/spglib-2.0.2-rb7loq6a5up3b27n7fidpizgkevq6632"
+
+if [module-info mode load] {
+}

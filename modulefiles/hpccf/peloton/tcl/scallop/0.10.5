@@ -1,0 +1,27 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:08:03.179803
+##
+## scallop@0.10.5%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/a7tbn7y
+##
+## Configure options: --with-clp=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/clp-1.17.7-q6yka3pi267nt7xu67onnpr4izozjfmr --with-htslib=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/htslib-1.17-yao7ak3ikb7apsvonm32vopdrauoy4r7 --with-boost=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/boost-1.82.0-wgxpvwq4sg4k3qxzyq2xinnvxqm2rkli
+##
+
+
+module-whatis "Scallop is a reference-based transcriptome assembler for RNA-seq"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : scallop"
+    puts stderr "Version: 0.10.5"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Scallop is a reference-based transcriptome assembler for RNA-seq"
+}
+
+conflict scallop
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/scallop-0.10.5-a7tbn7ylqcd6n53b2wnasdf4rvopa2d3/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/scallop-0.10.5-a7tbn7ylqcd6n53b2wnasdf4rvopa2d3/."
+setenv SCALLOP_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/scallop-0.10.5-a7tbn7ylqcd6n53b2wnasdf4rvopa2d3"
+
+if [module-info mode load] {
+}

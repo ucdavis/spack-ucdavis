@@ -1,0 +1,31 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:49.874239
+##
+## mummer4@4.0.0rc1%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/ou3viqv
+##
+
+
+module-whatis "MUMmer is a versatil alignment tool for DNA and protein sequences."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : mummer4"
+    puts stderr "Version: 4.0.0rc1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "MUMmer is a versatil alignment tool for DNA and protein sequences."
+}
+
+conflict mummer4
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mummer4-4.0.0rc1-ou3viqvsaoiqmhj4g37bapo76icfszpu/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mummer4-4.0.0rc1-ou3viqvsaoiqmhj4g37bapo76icfszpu/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mummer4-4.0.0rc1-ou3viqvsaoiqmhj4g37bapo76icfszpu/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mummer4-4.0.0rc1-ou3viqvsaoiqmhj4g37bapo76icfszpu/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mummer4-4.0.0rc1-ou3viqvsaoiqmhj4g37bapo76icfszpu/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mummer4-4.0.0rc1-ou3viqvsaoiqmhj4g37bapo76icfszpu/bin"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mummer4-4.0.0rc1-ou3viqvsaoiqmhj4g37bapo76icfszpu/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mummer4-4.0.0rc1-ou3viqvsaoiqmhj4g37bapo76icfszpu/."
+setenv MUMMER4_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mummer4-4.0.0rc1-ou3viqvsaoiqmhj4g37bapo76icfszpu"
+
+if [module-info mode load] {
+}

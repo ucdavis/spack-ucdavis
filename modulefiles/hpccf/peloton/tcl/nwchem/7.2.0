@@ -1,0 +1,31 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:51.612845
+##
+## nwchem@7.2.0%gcc@11.3.0~mpipr~openmp build_system=generic arch=linux-ubuntu22.04-x86_64_v2/7q4zfph
+##
+
+
+module-whatis "High-performance computational chemistry software"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : nwchem"
+    puts stderr "Version: 7.2.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "High-performance computational chemistry software"
+}
+
+module load fftw/3.3.10
+module load openmpi/4.1.5
+prereq fftw/3.3.10
+prereq openmpi/4.1.5
+conflict nwchem
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nwchem-7.2.0-7q4zfphri73ymwu3ni5fjbovgjgfx4wh/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nwchem-7.2.0-7q4zfphri73ymwu3ni5fjbovgjgfx4wh/."
+setenv NWCHEM_BASIS_LIBRARY "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nwchem-7.2.0-7q4zfphri73ymwu3ni5fjbovgjgfx4wh/share/nwchem/libraries/"
+setenv NWCHEM_NWPW_LIBRARY "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nwchem-7.2.0-7q4zfphri73ymwu3ni5fjbovgjgfx4wh/share/nwchem/libraryps/"
+setenv NWCHEM_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nwchem-7.2.0-7q4zfphri73ymwu3ni5fjbovgjgfx4wh"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,31 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:08:04.412501
+##
+## tophat@2.1.2%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/rdvxgcp
+##
+## Configure options: --with-boost=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/boost-1.82.0-cxrpgjacxeqbrrkf6ho4x5hz6ldrndkr
+##
+
+
+module-whatis "Spliced read mapper for RNA-Seq."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : tophat"
+    puts stderr "Version: 2.1.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Spliced read mapper for RNA-Seq."
+}
+
+module load bowtie2/2.4.2
+prereq bowtie2/2.4.2
+conflict tophat
+
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/tophat-2.1.2-rdvxgcpo5seunv4lodola5lzpurqkegb/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/tophat-2.1.2-rdvxgcpo5seunv4lodola5lzpurqkegb/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/tophat-2.1.2-rdvxgcpo5seunv4lodola5lzpurqkegb/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/tophat-2.1.2-rdvxgcpo5seunv4lodola5lzpurqkegb/."
+setenv TOPHAT_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/tophat-2.1.2-rdvxgcpo5seunv4lodola5lzpurqkegb"
+
+if [module-info mode load] {
+}

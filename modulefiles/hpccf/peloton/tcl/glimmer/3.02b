@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:42.255346
+##
+## glimmer@3.02b%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/uw25zl6
+##
+
+
+module-whatis "Glimmer is a system for finding genes in microbial DNA, especially the genomes of bacteria, archaea, and viruses."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : glimmer"
+    puts stderr "Version: 3.02b"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Glimmer is a system for finding genes in microbial DNA, especially the"
+    puts stderr "genomes of bacteria, archaea, and viruses."
+}
+
+conflict glimmer
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/glimmer-3.02b-uw25zl6vlq5f2quyacmm2s57zewdogda/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/glimmer-3.02b-uw25zl6vlq5f2quyacmm2s57zewdogda/."
+setenv GLIMMER_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/glimmer-3.02b-uw25zl6vlq5f2quyacmm2s57zewdogda"
+
+if [module-info mode load] {
+}

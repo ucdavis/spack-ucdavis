@@ -1,0 +1,37 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:40.281592
+##
+## freesurfer@7.2.0%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/76dllw7
+##
+
+
+module-whatis "Freesurfer is an open source software suite for processing and analyzing (human) brain MRI images."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : freesurfer"
+    puts stderr "Version: 7.2.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Freesurfer is an open source software suite for processing and analyzing"
+    puts stderr "(human) brain MRI images."
+}
+
+conflict freesurfer
+
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/freesurfer-7.2.0-76dllw7aadeqarrsv6az6a2ydgjfgwxi/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/freesurfer-7.2.0-76dllw7aadeqarrsv6az6a2ydgjfgwxi/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/freesurfer-7.2.0-76dllw7aadeqarrsv6az6a2ydgjfgwxi/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/freesurfer-7.2.0-76dllw7aadeqarrsv6az6a2ydgjfgwxi/."
+prepend-path --delim ":" XLOCALEDIR "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libx11-1.8.4-rx4ruu6iblxc6tsoulpncimn5jrtpnly/share/X11/locale"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gobject-introspection-1.72.1-ralzj5olxxto55h4sekvksjoadh47hbh/share"
+prepend-path --delim ":" GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gobject-introspection-1.72.1-ralzj5olxxto55h4sekvksjoadh47hbh/lib/girepository-1.0"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/harfbuzz-5.3.1-uke7zhhjhpw5p2xcrtpm5dolwrxzqcwt/share"
+prepend-path --delim ":" GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/harfbuzz-5.3.1-uke7zhhjhpw5p2xcrtpm5dolwrxzqcwt/lib/girepository-1.0"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/freesurfer-7.2.0-76dllw7aadeqarrsv6az6a2ydgjfgwxi/bin"
+setenv FREESURFER_HOME "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/freesurfer-7.2.0-76dllw7aadeqarrsv6az6a2ydgjfgwxi"
+setenv SUBJECTS_DIR "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/freesurfer-7.2.0-76dllw7aadeqarrsv6az6a2ydgjfgwxi/subjects"
+setenv FUNCTIONALS_DIR "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/freesurfer-7.2.0-76dllw7aadeqarrsv6az6a2ydgjfgwxi/sessions"
+setenv FREESURFER_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/freesurfer-7.2.0-76dllw7aadeqarrsv6az6a2ydgjfgwxi"
+
+if [module-info mode load] {
+}

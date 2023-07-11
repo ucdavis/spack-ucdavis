@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:39.436764
+##
+## fastme@2.1.5.1%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/gssbdpi
+##
+
+
+module-whatis "FastME is a distance based phylogeny reconstruction program that works on distance matrices and, as of v2.0, sequence data."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : fastme"
+    puts stderr "Version: 2.1.5.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "FastME is a distance based phylogeny reconstruction program that works"
+    puts stderr "on distance matrices and, as of v2.0, sequence data."
+}
+
+conflict fastme
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/fastme-2.1.5.1-gssbdpib6hdro7h5nok35caedizwdoay/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/fastme-2.1.5.1-gssbdpib6hdro7h5nok35caedizwdoay/."
+setenv FASTME_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/fastme-2.1.5.1-gssbdpib6hdro7h5nok35caedizwdoay"
+
+if [module-info mode load] {
+}

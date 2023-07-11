@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:08:03.296457
+##
+## sickle@1.33%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/scyxets
+##
+
+
+module-whatis "Sickle is a tool that uses sliding windows along with quality and length thresholds to determine when quality is sufficiently low to trim the 3'-end of reads and also determines when the quality is sufficiently high enough to trim the 5'-end of reads."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : sickle"
+    puts stderr "Version: 1.33"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Sickle is a tool that uses sliding windows along with quality and length"
+    puts stderr "thresholds to determine when quality is sufficiently low to trim the"
+    puts stderr "3'-end of reads and also determines when the quality is sufficiently"
+    puts stderr "high enough to trim the 5'-end of reads."
+}
+
+conflict sickle
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/sickle-1.33-scyxetszvhy647otcwlmtlz643lgfyha/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/sickle-1.33-scyxetszvhy647otcwlmtlz643lgfyha/."
+setenv SICKLE_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/sickle-1.33-scyxetszvhy647otcwlmtlz643lgfyha"
+
+if [module-info mode load] {
+}

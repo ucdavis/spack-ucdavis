@@ -1,0 +1,33 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:08:06.348969
+##
+## yasm@1.3.0%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/edfusab
+##
+
+
+module-whatis "Yasm is a complete rewrite of the NASM-2.11.06 assembler. It supports the x86 and AMD64 instruction sets, accepts NASM and GAS assembler syntaxes and outputs binary, ELF32 and ELF64 object formats."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : yasm"
+    puts stderr "Version: 1.3.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Yasm is a complete rewrite of the NASM-2.11.06 assembler. It supports"
+    puts stderr "the x86 and AMD64 instruction sets, accepts NASM and GAS assembler"
+    puts stderr "syntaxes and outputs binary, ELF32 and ELF64 object formats."
+}
+
+conflict yasm
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/yasm-1.3.0-edfusabnabwknfr27qjssxotndixkrxg/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/yasm-1.3.0-edfusabnabwknfr27qjssxotndixkrxg/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/yasm-1.3.0-edfusabnabwknfr27qjssxotndixkrxg/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/yasm-1.3.0-edfusabnabwknfr27qjssxotndixkrxg/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/yasm-1.3.0-edfusabnabwknfr27qjssxotndixkrxg/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/yasm-1.3.0-edfusabnabwknfr27qjssxotndixkrxg/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/yasm-1.3.0-edfusabnabwknfr27qjssxotndixkrxg/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/yasm-1.3.0-edfusabnabwknfr27qjssxotndixkrxg/."
+setenv YASM_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/yasm-1.3.0-edfusabnabwknfr27qjssxotndixkrxg"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,36 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:08:01.490390
+##
+## pythia6@6.4.28%gcc@11.3.0~ipo~root build_system=cmake build_type=Release generator=make nmxhep=4000 patches=d081752 arch=linux-ubuntu22.04-x86_64_v2/bgl24qd
+##
+## Configure options: -DPYTHIA6_VERSION=6.4.28
+##
+
+
+module-whatis "PYTHIA is a program for the generation of high-energy physics events, i.e. for the description of collisions at high energies between elementary particles such as e+, e-, p and pbar in various combinations."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : pythia6"
+    puts stderr "Version: 6.4.28"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "PYTHIA is a program for the generation of high-energy physics events,"
+    puts stderr "i.e. for the description of collisions at high energies between"
+    puts stderr "elementary particles such as e+, e-, p and pbar in various combinations."
+    puts stderr "PYTHIA6 is a Fortran package which is no longer maintained: new"
+    puts stderr "prospective users should use Pythia8 instead. This recipe includes"
+    puts stderr "patches required to interoperate with Root."
+}
+
+conflict pythia6
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pythia6-6.4.28-bgl24qdi2fejhn4ne26txx7avxssrsrt/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pythia6-6.4.28-bgl24qdi2fejhn4ne26txx7avxssrsrt/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pythia6-6.4.28-bgl24qdi2fejhn4ne26txx7avxssrsrt/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pythia6-6.4.28-bgl24qdi2fejhn4ne26txx7avxssrsrt/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pythia6-6.4.28-bgl24qdi2fejhn4ne26txx7avxssrsrt/lib"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pythia6-6.4.28-bgl24qdi2fejhn4ne26txx7avxssrsrt/."
+setenv PYTHIA6_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pythia6-6.4.28-bgl24qdi2fejhn4ne26txx7avxssrsrt"
+
+if [module-info mode load] {
+}

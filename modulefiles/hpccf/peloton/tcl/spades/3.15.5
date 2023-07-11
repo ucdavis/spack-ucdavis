@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:08:03.944462
+##
+## spades@3.15.5%gcc@11.3.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/fstskwk
+##
+
+
+module-whatis "SPAdes - St. Petersburg genome assembler - is intended for both standard isolates and single-cell MDA bacteria assemblies."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : spades"
+    puts stderr "Version: 3.15.5"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "SPAdes - St. Petersburg genome assembler - is intended for both standard"
+    puts stderr "isolates and single-cell MDA bacteria assemblies."
+}
+
+module load zlib/1.2.13
+prereq zlib/1.2.13
+conflict spades
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/spades-3.15.5-fstskwkc3ghbgp4oyqyqzamy3naxxev3/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/spades-3.15.5-fstskwkc3ghbgp4oyqyqzamy3naxxev3/."
+setenv SPADES_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/spades-3.15.5-fstskwkc3ghbgp4oyqyqzamy3naxxev3"
+
+if [module-info mode load] {
+}

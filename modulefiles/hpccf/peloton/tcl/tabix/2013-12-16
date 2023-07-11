@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:08:04.265808
+##
+## tabix@2013-12-16%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/ejkizfx
+##
+
+
+module-whatis "Generic indexer for TAB-delimited genome position files"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : tabix"
+    puts stderr "Version: 2013-12-16"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Generic indexer for TAB-delimited genome position files"
+}
+
+module load zlib/1.2.13
+prereq zlib/1.2.13
+conflict tabix
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/tabix-2013-12-16-ejkizfxnhroyw3d7wl6p2h4rgns342gs/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/tabix-2013-12-16-ejkizfxnhroyw3d7wl6p2h4rgns342gs/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/tabix-2013-12-16-ejkizfxnhroyw3d7wl6p2h4rgns342gs/."
+setenv TABIX_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/tabix-2013-12-16-ejkizfxnhroyw3d7wl6p2h4rgns342gs"
+
+if [module-info mode load] {
+}

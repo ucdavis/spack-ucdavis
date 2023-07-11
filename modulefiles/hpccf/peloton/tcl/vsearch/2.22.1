@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 09:07:38.897563
+##
+## vsearch@2.22.1%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/mw67rnm
+##
+
+
+module-whatis "VSEARCH is a versatile open-source tool for metagenomics."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : vsearch"
+    puts stderr "Version: 2.22.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "VSEARCH is a versatile open-source tool for metagenomics."
+}
+
+conflict vsearch
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/vsearch-2.22.1-mw67rnmdblrostrhnczjgv3iee76rmcq/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/vsearch-2.22.1-mw67rnmdblrostrhnczjgv3iee76rmcq/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/vsearch-2.22.1-mw67rnmdblrostrhnczjgv3iee76rmcq/."
+setenv VSEARCH_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/vsearch-2.22.1-mw67rnmdblrostrhnczjgv3iee76rmcq"
+
+if [module-info mode load] {
+}

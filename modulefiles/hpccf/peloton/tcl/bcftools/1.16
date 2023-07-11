@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:32.259625
+##
+## bcftools@1.16%gcc@11.3.0+libgsl+perl-filters build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/obn6u25
+##
+## Configure options: --with-htslib=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/htslib-1.16-c6gyawboz5kop255ysag27chyhh5dc73 --enable-libgsl --enable-perl-filters
+##
+
+
+module-whatis "BCFtools is a set of utilities that manipulate variant calls in the Variant Call Format (VCF) and its binary counterpart BCF. All commands work transparently with both VCFs and BCFs, both uncompressed and BGZF-compressed."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : bcftools"
+    puts stderr "Version: 1.16"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "BCFtools is a set of utilities that manipulate variant calls in the"
+    puts stderr "Variant Call Format (VCF) and its binary counterpart BCF. All commands"
+    puts stderr "work transparently with both VCFs and BCFs, both uncompressed and BGZF-"
+    puts stderr "compressed."
+}
+
+module load gsl/2.7.1
+prereq gsl/2.7.1
+conflict bcftools
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bcftools-1.16-obn6u255nmmgnwn222lpr55w6qo2z6vq/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bcftools-1.16-obn6u255nmmgnwn222lpr55w6qo2z6vq/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bcftools-1.16-obn6u255nmmgnwn222lpr55w6qo2z6vq/."
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-matplotlib-3.7.1-o26yn5bpu2eupgk6jarnbariwexq5aye/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-contourpy-1.0.5-pbksj6frfrastamgk2jttz2rbx6xzayt/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-numpy-1.24.3-ncgncvgk3wg73eqiitkkumoniwwv5fnv/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-setuptools-63.4.3-lbj7d45k7odyhqivr4lk5oqyfeymtkux/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-cycler-0.11.0-jb4275pnm7hbn7hthddnlwpzatbecpaw/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-fonttools-4.37.3-hk43we6pasaw4lmenav75vnz2gcusid4/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-kiwisolver-1.4.4-2hrb757fm255ofquczrzy6hq4xg5o6gz/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-packaging-23.0-guzysrx46md3mjvnsetxoui22uce5vwm/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-pillow-9.5.0-fvsebbblokzqdhycxej32hz5mdnfrv7o/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-pyparsing-3.0.9-udtuyywx67y6fhejp35vjiezfaff6pu3/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-python-dateutil-2.8.2-3npk57crmmsp3ms6sc346qcs5a7pgu5v/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-six-1.16.0-n5ow3krhvn3dl7zwzvmfwpa7wpmbfepd/lib/python3.10/site-packages"
+setenv BCFTOOLS_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bcftools-1.16-obn6u255nmmgnwn222lpr55w6qo2z6vq"
+
+if [module-info mode load] {
+}

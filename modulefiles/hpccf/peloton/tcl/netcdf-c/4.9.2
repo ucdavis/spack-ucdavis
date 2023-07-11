@@ -1,0 +1,35 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:50.720895
+##
+## netcdf-c@4.9.2%gcc@11.3.0+blosc~byterange~dap~fsync~hdf4~jna+mpi~nczarr_zip+optimize~parallel-netcdf+pic+shared+szip+zstd build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/zw4h5k7
+##
+
+
+module-whatis "NetCDF (network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. This is the C distribution."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : netcdf-c"
+    puts stderr "Version: 4.9.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "NetCDF (network Common Data Form) is a set of software libraries and"
+    puts stderr "machine-independent data formats that support the creation, access, and"
+    puts stderr "sharing of array-oriented scientific data. This is the C distribution."
+}
+
+conflict netcdf-c
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-c-4.9.2-zw4h5k7el6e3x53ml3cvx46pljzppxmq/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-c-4.9.2-zw4h5k7el6e3x53ml3cvx46pljzppxmq/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-c-4.9.2-zw4h5k7el6e3x53ml3cvx46pljzppxmq/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-c-4.9.2-zw4h5k7el6e3x53ml3cvx46pljzppxmq/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-c-4.9.2-zw4h5k7el6e3x53ml3cvx46pljzppxmq/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-c-4.9.2-zw4h5k7el6e3x53ml3cvx46pljzppxmq/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-c-4.9.2-zw4h5k7el6e3x53ml3cvx46pljzppxmq/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-c-4.9.2-zw4h5k7el6e3x53ml3cvx46pljzppxmq/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-c-4.9.2-zw4h5k7el6e3x53ml3cvx46pljzppxmq/."
+append-path --delim ":" HDF5_PLUGIN_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-c-4.9.2-zw4h5k7el6e3x53ml3cvx46pljzppxmq/plugins"
+setenv NETCDF_C_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-c-4.9.2-zw4h5k7el6e3x53ml3cvx46pljzppxmq"
+
+if [module-info mode load] {
+}

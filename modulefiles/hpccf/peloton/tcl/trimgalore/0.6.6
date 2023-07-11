@@ -1,0 +1,35 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:08:04.586994
+##
+## trimgalore@0.6.6%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/p5swvkg
+##
+
+
+module-whatis "Trim Galore! is a wrapper around Cutadapt and FastQC to consistently apply adapter and quality trimming to FastQ files, with extra functionality for RRBS data."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : trimgalore"
+    puts stderr "Version: 0.6.6"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Trim Galore! is a wrapper around Cutadapt and FastQC to consistently"
+    puts stderr "apply adapter and quality trimming to FastQ files, with extra"
+    puts stderr "functionality for RRBS data."
+}
+
+module load py-cutadapt/4.1
+prereq py-cutadapt/4.1
+conflict trimgalore
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/trimgalore-0.6.6-p5swvkgg43lyymbjlm5dyipalwd6w6yc/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/trimgalore-0.6.6-p5swvkgg43lyymbjlm5dyipalwd6w6yc/."
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-cutadapt-4.1-splikzvmapaiqatyjo3c3xqse4oqu6bd/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-cython-0.29.33-j7dz4z74r3ikjtz6pxss2xvrd4pvrmgb/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-setuptools-67.6.0-73pqhmiv63aez67x7bfchimen7vyv77c/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-dnaio-0.9.1-b5ov4u2th2ayhv3spaiqgauacpu3kdkp/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-xopen-1.6.0-bleewvezlrctkoureikfv6t4h3lg46pd/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-isal-1.1.0-yiyr3ikrqtenfgmvckbt6cs3n6crtkrf/lib/python3.10/site-packages"
+setenv TRIMGALORE_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/trimgalore-0.6.6-p5swvkgg43lyymbjlm5dyipalwd6w6yc"
+
+if [module-info mode load] {
+}

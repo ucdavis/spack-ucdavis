@@ -1,0 +1,31 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:52.562564
+##
+## orthomcl@2.0.9%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/pr7vrrs
+##
+
+
+module-whatis "OrthoMCL is a genome-scale algorithm for grouping orthologous protein sequences."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : orthomcl"
+    puts stderr "Version: 2.0.9"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "OrthoMCL is a genome-scale algorithm for grouping orthologous protein"
+    puts stderr "sequences."
+}
+
+module load blast-plus/2.13.0
+prereq blast-plus/2.13.0
+conflict orthomcl
+
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/orthomcl-2.0.9-pr7vrrslktrxmcvcwq4b2an4uhb375qg/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/orthomcl-2.0.9-pr7vrrslktrxmcvcwq4b2an4uhb375qg/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/orthomcl-2.0.9-pr7vrrslktrxmcvcwq4b2an4uhb375qg/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/orthomcl-2.0.9-pr7vrrslktrxmcvcwq4b2an4uhb375qg/."
+prepend-path --delim ":" PERL5LIB "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/orthomcl-2.0.9-pr7vrrslktrxmcvcwq4b2an4uhb375qg/lib"
+setenv ORTHOMCL_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/orthomcl-2.0.9-pr7vrrslktrxmcvcwq4b2an4uhb375qg"
+
+if [module-info mode load] {
+}

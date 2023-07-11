@@ -1,0 +1,36 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:36.343056
+##
+## cplex@12.8.0%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/ym2ah5f
+##
+
+
+module-whatis "The IBM ILOG CPLEX Optimization Studio consists of the CPLEX Optimizer for mathematical programming, the IBM ILOG CPLEX CP Optimizer for constraint programming, the Optimization Programming Language (OPL), and an integrated IDE."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : cplex"
+    puts stderr "Version: 12.8.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "The IBM ILOG CPLEX Optimization Studio consists of the CPLEX Optimizer"
+    puts stderr "for mathematical programming, the IBM ILOG CPLEX CP Optimizer for"
+    puts stderr "constraint programming, the Optimization Programming Language (OPL), and"
+    puts stderr "an integrated IDE."
+}
+
+conflict cplex
+
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cplex-12.8.0-ym2ah5ffhia4vdxwcxiybwakldut7l7l/."
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cplex-12.8.0-ym2ah5ffhia4vdxwcxiybwakldut7l7l/cplex/bin/x86-64_linux"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cplex-12.8.0-ym2ah5ffhia4vdxwcxiybwakldut7l7l/cplex/bin/x86-64_linux"
+prepend-path --delim ":" MATLABPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cplex-12.8.0-ym2ah5ffhia4vdxwcxiybwakldut7l7l/cplex/matlab/x86-64_linux"
+prepend-path --delim ":" MATLABPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cplex-12.8.0-ym2ah5ffhia4vdxwcxiybwakldut7l7l/cplex/examples/src/matlab"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cplex-12.8.0-ym2ah5ffhia4vdxwcxiybwakldut7l7l/cpoptimizer/bin/x86-64_linux"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cplex-12.8.0-ym2ah5ffhia4vdxwcxiybwakldut7l7l/opl/oplide"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cplex-12.8.0-ym2ah5ffhia4vdxwcxiybwakldut7l7l/opl/bin/x86-64_linux"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cplex-12.8.0-ym2ah5ffhia4vdxwcxiybwakldut7l7l/opl/bin/x86-64_linux"
+setenv CPLEX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cplex-12.8.0-ym2ah5ffhia4vdxwcxiybwakldut7l7l"
+setenv CPLEX_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cplex-12.8.0-ym2ah5ffhia4vdxwcxiybwakldut7l7l"
+
+if [module-info mode load] {
+}

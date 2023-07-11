@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:37.192016
+##
+## dealii@9.4.2%gcc@11.3.0+adol-c+arborx+arpack+assimp+cgal~cuda~doc+examples+ginkgo+gmsh+gsl+hdf5~int64~ipo+metis+mpi+muparser~nanoflann~netcdf+oce~optflags+p4est+petsc~python+scalapack+simplex+slepc+sundials+symengine+threads+trilinos build_system=cmake build_type=DebugRelease cxxstd=17 generator=ninja patches=7869dfa,8a1f7b9,c9884eb arch=linux-ubuntu22.04-x86_64_v2/amd4qgi
+##
+## Configure options: -DDEAL_II_EXAMPLES_RELDIR:STRING=share/deal.II/examples -DDEAL_II_DOCREADME_RELDIR:STRING=share/deal.II/ -DDEAL_II_DOCHTML_RELDIR:STRING=share/deal.II/doc -DBOOST_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/boost-1.79.0-jpmedgdd7f6xvtmecliqlkdyzc5mty7m -DLAPACK_FOUND:BOOL=ON -DLAPACK_INCLUDE_DIRS:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/openblas-0.3.23-vfu3m2svnjvpeoxiskmm43gm7dm7sf6b/include -DLAPACK_LIBRARIES:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/openblas-0.3.23-vfu3m2svnjvpeoxiskmm43gm7dm7sf6b/lib/libopenblas.so -DUMFPACK_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/suite-sparse-5.13.0-qxdugb2a4yvgfd2sghpdlzrfawy5uhd6 -DZLIB_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/zlib-1.2.13-77qi6rvrwc4iwqziogd6vdxucahcm5qe -DDEAL_II_ALLOW_BUNDLED:BOOL=OFF -DDEAL_II_COMPONENT_DOCUMENTATION:BOOL=OFF -DDEAL_II_COMPONENT_EXAMPLES:BOOL=ON -DDEAL_II_WITH_64BIT_INDICES:BOOL=OFF -DDEAL_II_WITH_CUDA:BOOL=OFF -DDEAL_II_WITH_MPI:BOOL=ON -DCMAKE_C_COMPILER:STRING=/share/apps/22.04/manual/openmpi/4.1.5-mpi-io/bin/mpicc -DCMAKE_CXX_COMPILER:STRING=/share/apps/22.04/manual/openmpi/4.1.5-mpi-io/bin/mpic++ -DCMAKE_Fortran_COMPILER:STRING=/share/apps/22.04/manual/openmpi/4.1.5-mpi-io/bin/mpif90 -DMPI_C_COMPILER:STRING=/share/apps/22.04/manual/openmpi/4.1.5-mpi-io/bin/mpicc -DMPI_CXX_COMPILER:STRING=/share/apps/22.04/manual/openmpi/4.1.5-mpi-io/bin/mpic++ -DMPI_Fortran_COMPILER:STRING=/share/apps/22.04/manual/openmpi/4.1.5-mpi-io/bin/mpif90 -DMPI_CXX_LINK_FLAGS:STRING=-lopen-pal -DDEAL_II_COMPONENT_PYTHON_BINDINGS:BOOL=OFF -DDEAL_II_WITH_TBB:BOOL=ON -DTBB_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-tbb-2021.9.0-pdkleenlgn32v245lvlrvgfczcykun64 -DDEAL_II_WITH_GSL:BOOL=ON -DGSL_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gsl-2.7.1-7z5dz5cle3byaeyf4uvq6x3biakagq2b -DDEAL_II_WITH_HDF5:BOOL=ON -DHDF5_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hdf5-1.10.7-rcmxzu36dojkio7zk2doidcj5hetu6sf -DDEAL_II_WITH_P4EST:BOOL=ON -DP4EST_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/p4est-2.8-oieqf5hobgmhlujkpctucx7uyxunei2b -DDEAL_II_WITH_PETSC:BOOL=ON -DPETSC_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/petsc-3.19.1-jpnccs35fgssak5buk3ibcbpygnx7fjg -DDEAL_II_WITH_SLEPC:BOOL=ON -DSLEPC_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/slepc-3.19.0-oegsqdhxpoppquobdfl62uzfqeyrsakh -DDEAL_II_WITH_TRILINOS:BOOL=ON -DTRILINOS_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/trilinos-13.0.1-swnurw2n7sycaoxx5oejym2gh6oicdy6 -DDEAL_II_WITH_METIS:BOOL=ON -DMETIS_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/metis-5.1.0-koewlvcthuotliz2aetim6uorzsbewj5 -DDEAL_II_WITH_SUNDIALS:BOOL=ON -DSUNDIALS_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/sundials-6.5.0-gfzegpfyp3kfhaxg2e5egmqg32ri3fro -DDEAL_II_WITH_NANOFLANN:BOOL=OFF -DDEAL_II_WITH_ASSIMP:BOOL=ON -DASSIMP_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/assimp-5.2.5-bnvpoz6uv6shcsg2rtendx43yjunxwaq -DDEAL_II_WITH_GMSH:BOOL=ON -DGMSH_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmsh-4.8.4-qa3r5p5kgajxqidanwnistng32p4cgjx -DDEAL_II_WITH_MUPARSER:BOOL=ON -DMUPARSER_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/muparser-2.3.4-3a5qmm6gnclpwmcn7wczvsdz2mmpk6si -DDEAL_II_WITH_SYMENGINE:BOOL=ON -DSYMENGINE_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/symengine-0.9.0-pbulj45mxji66d2yro24etdllr5g4ycz -DDEAL_II_WITH_GINKGO:BOOL=ON -DGINKGO_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ginkgo-1.5.0-uldwbfpde4yuoendw7snpemicjomlqij -DDEAL_II_WITH_ARBORX:BOOL=ON -DARBORX_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/arborx-1.1-t7lje6prv3ac3dcyiacssoj2bhwrvs27 -DDEAL_II_WITH_CGAL:BOOL=ON -DCGAL_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-ka7yybpddbd23phhp2jamssb23vmho55 -DDEAL_II_WITH_ADOLC:BOOL=ON -DADOLC_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/adol-c-2.7.2-4p2bdsxzuoqwwaxyaxdpout74birj76v -DDEAL_II_WITH_ARPACK:BOOL=ON -DARPACK_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/arpack-ng-3.9.0-w7qztl5n3wmkrnmfpzviku32v6rhhmkx -DDEAL_II_ARPACK_WITH_PARPACK:BOOL=ON -DDEAL_II_WITH_NETCDF:BOOL=OFF -DDEAL_II_WITH_SCALAPACK:BOOL=ON -DSCALAPACK_FOUND:BOOL=ON -DSCALAPACK_INCLUDE_DIRS:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netlib-scalapack-2.2.0-dta5rzscj2dil424rxvzfonpjxpxofwd/include -DSCALAPACK_LIBRARIES:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netlib-scalapack-2.2.0-dta5rzscj2dil424rxvzfonpjxpxofwd/lib/libscalapack.so -DSCALAPACK_LIBRARY:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netlib-scalapack-2.2.0-dta5rzscj2dil424rxvzfonpjxpxofwd/lib/libscalapack.so -DDEAL_II_WITH_OPENCASCADE:BOOL=ON -DOPENCASCADE_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/oce-0.18.3-7ynkhsq7ksr7lvtox7sghidrys5mehd2 -DCMAKE_CXX_FLAGS:STRING=-std=c++17 -DDEAL_II_CXX_FLAGS:STRING=-march=x86-64-v2 -mtune=generic
+##
+
+
+module-whatis "C++ software library providing well-documented tools to build finite element codes for a broad variety of PDEs."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : dealii"
+    puts stderr "Version: 9.4.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "C++ software library providing well-documented tools to build finite"
+    puts stderr "element codes for a broad variety of PDEs."
+}
+
+module load gsl/2.7.1
+module load intel-oneapi-tbb/2021.9.0
+module load openmpi/4.1.5-mpi-io
+module load trilinos/13.0.1
+module load zlib/1.2.13
+prereq gsl/2.7.1
+prereq intel-oneapi-tbb/2021.9.0
+prereq openmpi/4.1.5-mpi-io
+prereq trilinos/13.0.1
+prereq zlib/1.2.13
+conflict dealii
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/dealii-9.4.2-amd4qgiiy45iq65nw4ue6nucntm5zys6/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/dealii-9.4.2-amd4qgiiy45iq65nw4ue6nucntm5zys6/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/dealii-9.4.2-amd4qgiiy45iq65nw4ue6nucntm5zys6/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/dealii-9.4.2-amd4qgiiy45iq65nw4ue6nucntm5zys6/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/dealii-9.4.2-amd4qgiiy45iq65nw4ue6nucntm5zys6/lib"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/dealii-9.4.2-amd4qgiiy45iq65nw4ue6nucntm5zys6/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/dealii-9.4.2-amd4qgiiy45iq65nw4ue6nucntm5zys6/."
+prepend-path --delim ":" XLOCALEDIR "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libx11-1.8.4-elhqje4pmr6c4jp256hrfear2cp45szn/share/X11/locale"
+setenv DEAL_II_DIR "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/dealii-9.4.2-amd4qgiiy45iq65nw4ue6nucntm5zys6"
+setenv DEALII_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/dealii-9.4.2-amd4qgiiy45iq65nw4ue6nucntm5zys6"
+
+if [module-info mode load] {
+}

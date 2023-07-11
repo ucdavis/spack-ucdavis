@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:42.657445
+##
+## gromacs@2023.1%gcc@11.3.0~blas~cp2k~cuda~cycle_subcounters~double+hwloc~ipo~lapack~mdrun_only+mpi~nosuffix~opencl+openmp~relaxed_double_precision+shared~sycl build_system=cmake build_type=Release generator=make openmp_max_threads=none arch=linux-ubuntu22.04-x86_64_v2/fqybbme
+##
+
+
+module-whatis "GROMACS is a molecular dynamics package primarily designed for simulations of proteins, lipids and nucleic acids. It was originally developed in the Biophysical Chemistry department of University of Groningen, and is now maintained by contributors in universities and research centers across the world."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : gromacs"
+    puts stderr "Version: 2023.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "GROMACS is a molecular dynamics package primarily designed for"
+    puts stderr "simulations of proteins, lipids and nucleic acids. It was originally"
+    puts stderr "developed in the Biophysical Chemistry department of University of"
+    puts stderr "Groningen, and is now maintained by contributors in universities and"
+    puts stderr "research centers across the world. GROMACS is one of the fastest and"
+    puts stderr "most popular software packages available and can run on CPUs as well as"
+    puts stderr "GPUs. It is free, open source released under the GNU Lesser General"
+    puts stderr "Public License. Before the version 4.6, GROMACS was released under the"
+    puts stderr "GNU General Public License."
+}
+
+conflict gromacs
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gromacs-2023.1-fqybbmegrrrxhhdnkh32v64pkjcektfm/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gromacs-2023.1-fqybbmegrrrxhhdnkh32v64pkjcektfm/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gromacs-2023.1-fqybbmegrrrxhhdnkh32v64pkjcektfm/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gromacs-2023.1-fqybbmegrrrxhhdnkh32v64pkjcektfm/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gromacs-2023.1-fqybbmegrrrxhhdnkh32v64pkjcektfm/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gromacs-2023.1-fqybbmegrrrxhhdnkh32v64pkjcektfm/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gromacs-2023.1-fqybbmegrrrxhhdnkh32v64pkjcektfm/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gromacs-2023.1-fqybbmegrrrxhhdnkh32v64pkjcektfm/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gromacs-2023.1-fqybbmegrrrxhhdnkh32v64pkjcektfm/."
+setenv GROMACS_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gromacs-2023.1-fqybbmegrrrxhhdnkh32v64pkjcektfm"
+
+if [module-info mode load] {
+}

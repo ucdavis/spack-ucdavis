@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:29.587667
+##
+## amdfftw@3.2%gcc@11.3.0~amd-app-opt~amd-dynamic-dispatcher~amd-fast-planner~amd-mpi-vader-limit~amd-top-n-planner~amd-trans~debug+mpi+openmp+shared~static~threads build_system=autotools precision=double,float arch=linux-ubuntu22.04-zen2/fl7nvdk
+##
+
+
+module-whatis "FFTW (AMD Optimized version) is a comprehensive collection of fast C routines for computing the Discrete Fourier Transform (DFT) and various special cases thereof."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : amdfftw"
+    puts stderr "Version: 3.2"
+    puts stderr "Target : zen2"
+    puts stderr ""
+    puts stderr "FFTW (AMD Optimized version) is a comprehensive collection of fast C"
+    puts stderr "routines for computing the Discrete Fourier Transform (DFT) and various"
+    puts stderr "special cases thereof. It is an open-source implementation of the Fast"
+    puts stderr "Fourier transform algorithm. It can compute transforms of real and"
+    puts stderr "complex-values arrays of arbitrary size and dimension. AMD Optimized"
+    puts stderr "FFTW is the optimized FFTW implementation targeted for AMD CPUs. For"
+    puts stderr "single precision build, please use precision value as float. Example :"
+    puts stderr "spack install amdfftw precision=float LICENSING INFORMATION: By"
+    puts stderr "downloading, installing and using this software, you agree to the terms"
+    puts stderr "and conditions of the AMD AOCL-FFTW license agreement. You may obtain a"
+    puts stderr "copy of this license agreement from"
+    puts stderr "https://www.amd.com/en/developer/aocl/fftw/fftw-libraries-4-0-eula.html"
+    puts stderr "https://www.amd.com/en/developer/aocl/fftw/fftw-libraries-eula.html"
+}
+
+conflict amdfftw
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/amdfftw-3.2-fl7nvdkjyzxy6aminks7qcb4gzledpai/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/amdfftw-3.2-fl7nvdkjyzxy6aminks7qcb4gzledpai/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/amdfftw-3.2-fl7nvdkjyzxy6aminks7qcb4gzledpai/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/amdfftw-3.2-fl7nvdkjyzxy6aminks7qcb4gzledpai/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/amdfftw-3.2-fl7nvdkjyzxy6aminks7qcb4gzledpai/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/amdfftw-3.2-fl7nvdkjyzxy6aminks7qcb4gzledpai/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/amdfftw-3.2-fl7nvdkjyzxy6aminks7qcb4gzledpai/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/amdfftw-3.2-fl7nvdkjyzxy6aminks7qcb4gzledpai/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/amdfftw-3.2-fl7nvdkjyzxy6aminks7qcb4gzledpai/."
+setenv AMDFFTW_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/amdfftw-3.2-fl7nvdkjyzxy6aminks7qcb4gzledpai"
+
+if [module-info mode load] {
+}

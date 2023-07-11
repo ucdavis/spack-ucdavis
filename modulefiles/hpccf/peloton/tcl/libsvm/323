@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:48.056495
+##
+## libsvm@323%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/677gox5
+##
+
+
+module-whatis "Libsvm is a simple, easy-to-use, and efficient software for SVM classification and regression."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : libsvm"
+    puts stderr "Version: 323"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Libsvm is a simple, easy-to-use, and efficient software for SVM"
+    puts stderr "classification and regression."
+}
+
+conflict libsvm
+
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libsvm-323-677gox55r2iaylyfr2sjpjsgdjfmzwae/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libsvm-323-677gox55r2iaylyfr2sjpjsgdjfmzwae/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libsvm-323-677gox55r2iaylyfr2sjpjsgdjfmzwae/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libsvm-323-677gox55r2iaylyfr2sjpjsgdjfmzwae/."
+setenv LIBSVM_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libsvm-323-677gox55r2iaylyfr2sjpjsgdjfmzwae"
+
+if [module-info mode load] {
+}

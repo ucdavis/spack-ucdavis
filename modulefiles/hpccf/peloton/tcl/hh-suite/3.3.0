@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:42.749782
+##
+## hh-suite@3.3.0%gcc@11.3.0~ipo+mpi build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/md7kvgy
+##
+
+
+module-whatis "HH-suite is a widely used open source software suite for sensitive sequence similarity searches and protein fold recognition. It is based on pairwise alignment of profile Hidden Markov models (HMMs), which represent multiple sequence alignments of homologous proteins."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : hh-suite"
+    puts stderr "Version: 3.3.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "HH-suite is a widely used open source software suite for sensitive"
+    puts stderr "sequence similarity searches and protein fold recognition. It is based"
+    puts stderr "on pairwise alignment of profile Hidden Markov models (HMMs), which"
+    puts stderr "represent multiple sequence alignments of homologous proteins."
+}
+
+conflict hh-suite
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hh-suite-3.3.0-md7kvgy444qsp5gv2odbwjvtks6fzzmz/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hh-suite-3.3.0-md7kvgy444qsp5gv2odbwjvtks6fzzmz/."
+setenv HH_SUITE_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hh-suite-3.3.0-md7kvgy444qsp5gv2odbwjvtks6fzzmz"
+
+if [module-info mode load] {
+}

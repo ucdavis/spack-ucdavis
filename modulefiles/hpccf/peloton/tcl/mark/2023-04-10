@@ -1,0 +1,27 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:48.220375
+##
+## mark@2023-04-10%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/rrd5gko
+##
+
+
+module-whatis "Program MARK, developed and maintained by Gary White (Colorado State University) is the most flexible, widely used application currently available for parameter estimation using data from marked individuals."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : mark"
+    puts stderr "Version: 2023-04-10"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Program MARK, developed and maintained by Gary White (Colorado State"
+    puts stderr "University) is the most flexible, widely used application currently"
+    puts stderr "available for parameter estimation using data from marked individuals."
+}
+
+conflict mark
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mark-2023-04-10-rrd5gkol2vz77ebs45inat2qz33tvsee/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mark-2023-04-10-rrd5gkol2vz77ebs45inat2qz33tvsee/."
+setenv MARK_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mark-2023-04-10-rrd5gkol2vz77ebs45inat2qz33tvsee"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:57.115023
+##
+## plumed@2.8.2%gcc@11.3.0+gsl+mpi+shared arrayfire=none build_system=autotools optional_modules=all arch=linux-ubuntu22.04-x86_64_v2/erb2jdh
+##
+## Configure options: --disable-ld-r --enable-mpi CXX=/share/apps/22.04/manual/openmpi/4.1.5/bin/mpic++ LDFLAGS=-L/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gsl-2.7.1-7z5dz5cle3byaeyf4uvq6x3biakagq2b/lib -L/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/openblas-0.3.23-hjvgpb5hmku762lpowdlqs4qoxmmizv3/lib -lgsl -lopenblas --enable-shared=yes --enable-gsl=yes --enable-af_cpu=no --enable-af_cuda=no --enable-af_ocl=no --enable-modules=all
+##
+
+
+module-whatis "PLUMED is an open source library for free energy calculations in molecular systems which works together with some of the most popular molecular dynamics engines."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : plumed"
+    puts stderr "Version: 2.8.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "PLUMED is an open source library for free energy calculations in"
+    puts stderr "molecular systems which works together with some of the most popular"
+    puts stderr "molecular dynamics engines. Free energy calculations can be performed as"
+    puts stderr "a function of many order parameters with a particular focus on"
+    puts stderr "biological problems, using state of the art methods such as"
+    puts stderr "metadynamics, umbrella sampling and Jarzynski-equation based steered MD."
+    puts stderr "The software, written in C++, can be easily interfaced with both fortran"
+    puts stderr "and C/C++ codes."
+}
+
+module load gsl/2.7.1
+module load openblas/0.3.23
+module load openmpi/4.1.5
+module load zlib/1.2.13
+prereq gsl/2.7.1
+prereq openblas/0.3.23
+prereq openmpi/4.1.5
+prereq zlib/1.2.13
+conflict plumed
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/plumed-2.8.2-erb2jdhcjv4m6mfrh4hl4omof2k2mfh6/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/plumed-2.8.2-erb2jdhcjv4m6mfrh4hl4omof2k2mfh6/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/plumed-2.8.2-erb2jdhcjv4m6mfrh4hl4omof2k2mfh6/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/plumed-2.8.2-erb2jdhcjv4m6mfrh4hl4omof2k2mfh6/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/plumed-2.8.2-erb2jdhcjv4m6mfrh4hl4omof2k2mfh6/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/plumed-2.8.2-erb2jdhcjv4m6mfrh4hl4omof2k2mfh6/bin"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/plumed-2.8.2-erb2jdhcjv4m6mfrh4hl4omof2k2mfh6/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/plumed-2.8.2-erb2jdhcjv4m6mfrh4hl4omof2k2mfh6/."
+setenv PLUMED_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/plumed-2.8.2-erb2jdhcjv4m6mfrh4hl4omof2k2mfh6"
+
+if [module-info mode load] {
+}

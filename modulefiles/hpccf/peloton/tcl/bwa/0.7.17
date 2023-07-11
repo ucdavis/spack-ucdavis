@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:33.433305
+##
+## bwa@0.7.17%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/xz4ny7r
+##
+
+
+module-whatis "Burrow-Wheeler Aligner for pairwise alignment between DNA sequences."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : bwa"
+    puts stderr "Version: 0.7.17"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Burrow-Wheeler Aligner for pairwise alignment between DNA sequences."
+}
+
+conflict bwa
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bwa-0.7.17-xz4ny7repxhbg3zijiymaejp52w3j5ee/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bwa-0.7.17-xz4ny7repxhbg3zijiymaejp52w3j5ee/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bwa-0.7.17-xz4ny7repxhbg3zijiymaejp52w3j5ee/."
+setenv BWA_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bwa-0.7.17-xz4ny7repxhbg3zijiymaejp52w3j5ee"
+
+if [module-info mode load] {
+}

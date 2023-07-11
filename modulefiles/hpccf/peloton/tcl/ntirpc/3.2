@@ -1,0 +1,30 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:51.448146
+##
+## ntirpc@3.2%gcc@11.3.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/cllmvtn
+##
+
+
+module-whatis "New development on tirpc"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : ntirpc"
+    puts stderr "Version: 3.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "New development on tirpc"
+}
+
+conflict ntirpc
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ntirpc-3.2-cllmvtnmzqfpsqxvstkduyd5csjfmyn4/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ntirpc-3.2-cllmvtnmzqfpsqxvstkduyd5csjfmyn4/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ntirpc-3.2-cllmvtnmzqfpsqxvstkduyd5csjfmyn4/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ntirpc-3.2-cllmvtnmzqfpsqxvstkduyd5csjfmyn4/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ntirpc-3.2-cllmvtnmzqfpsqxvstkduyd5csjfmyn4/lib"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ntirpc-3.2-cllmvtnmzqfpsqxvstkduyd5csjfmyn4/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ntirpc-3.2-cllmvtnmzqfpsqxvstkduyd5csjfmyn4/."
+setenv NTIRPC_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ntirpc-3.2-cllmvtnmzqfpsqxvstkduyd5csjfmyn4"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,27 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:49.997425
+##
+## muscle@3.8.1551%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/nvnr65c
+##
+
+
+module-whatis "MUSCLE is one of the best-performing multiple alignment programs according to published benchmark tests, with accuracy and speed that are consistently better than CLUSTALW."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : muscle"
+    puts stderr "Version: 3.8.1551"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "MUSCLE is one of the best-performing multiple alignment programs"
+    puts stderr "according to published benchmark tests, with accuracy and speed that are"
+    puts stderr "consistently better than CLUSTALW."
+}
+
+conflict muscle
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/muscle-3.8.1551-nvnr65czwetfnzlcmikk6jr67kjzx6jj/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/muscle-3.8.1551-nvnr65czwetfnzlcmikk6jr67kjzx6jj/."
+setenv MUSCLE_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/muscle-3.8.1551-nvnr65czwetfnzlcmikk6jr67kjzx6jj"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,33 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:50.514017
+##
+## ncbi-vdb@3.0.2%gcc@11.3.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/luhovuf
+##
+
+
+module-whatis "The SRA Toolkit and SDK from NCBI is a collection of tools and libraries for using data in the INSDC Sequence Read Archives. This package contains the interface to the VDB."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : ncbi-vdb"
+    puts stderr "Version: 3.0.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "The SRA Toolkit and SDK from NCBI is a collection of tools and libraries"
+    puts stderr "for using data in the INSDC Sequence Read Archives. This package"
+    puts stderr "contains the interface to the VDB."
+}
+
+module load openjdk/11.0.17_8
+prereq openjdk/11.0.17_8
+conflict ncbi-vdb
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-vdb-3.0.2-luhovuf5o55lsdfhvurhex6fqzbkl7xw/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-vdb-3.0.2-luhovuf5o55lsdfhvurhex6fqzbkl7xw/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-vdb-3.0.2-luhovuf5o55lsdfhvurhex6fqzbkl7xw/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-vdb-3.0.2-luhovuf5o55lsdfhvurhex6fqzbkl7xw/lib64"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-vdb-3.0.2-luhovuf5o55lsdfhvurhex6fqzbkl7xw/lib64"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-vdb-3.0.2-luhovuf5o55lsdfhvurhex6fqzbkl7xw/."
+setenv NCBI_VDB_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-vdb-3.0.2-luhovuf5o55lsdfhvurhex6fqzbkl7xw"
+
+if [module-info mode load] {
+}

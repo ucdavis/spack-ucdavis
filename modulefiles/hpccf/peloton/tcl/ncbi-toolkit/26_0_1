@@ -1,0 +1,34 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:50.242464
+##
+## ncbi-toolkit@26_0_1%gcc@11.3.0~debug build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/n6tolwg
+##
+## Configure options: --without-sybase --without-fastcgi --without-debug
+##
+
+
+module-whatis "NCBI C++ Toolkit"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : ncbi-toolkit"
+    puts stderr "Version: 26_0_1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "NCBI C++ Toolkit"
+}
+
+module load zlib/1.2.13
+prereq zlib/1.2.13
+conflict ncbi-toolkit
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-toolkit-26_0_1-n6tolwgs347r6oixdnzqeupzgmpp7itz/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-toolkit-26_0_1-n6tolwgs347r6oixdnzqeupzgmpp7itz/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-toolkit-26_0_1-n6tolwgs347r6oixdnzqeupzgmpp7itz/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-toolkit-26_0_1-n6tolwgs347r6oixdnzqeupzgmpp7itz/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-toolkit-26_0_1-n6tolwgs347r6oixdnzqeupzgmpp7itz/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-toolkit-26_0_1-n6tolwgs347r6oixdnzqeupzgmpp7itz/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-toolkit-26_0_1-n6tolwgs347r6oixdnzqeupzgmpp7itz/."
+setenv NCBI_TOOLKIT_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-toolkit-26_0_1-n6tolwgs347r6oixdnzqeupzgmpp7itz"
+
+if [module-info mode load] {
+}

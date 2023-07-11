@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:32.686913
+##
+## beagle@5.4%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/adx2zao
+##
+
+
+module-whatis "Beagle is a software package for phasing genotypes and for imputing ungenotyped markers."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : beagle"
+    puts stderr "Version: 5.4"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Beagle is a software package for phasing genotypes and for imputing"
+    puts stderr "ungenotyped markers."
+}
+
+conflict beagle
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/beagle-5.4-adx2zaojrqweco3ohpi5qi626nyjbne7/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/beagle-5.4-adx2zaojrqweco3ohpi5qi626nyjbne7/."
+setenv BEAGLE_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/beagle-5.4-adx2zaojrqweco3ohpi5qi626nyjbne7"
+
+if [module-info mode load] {
+}

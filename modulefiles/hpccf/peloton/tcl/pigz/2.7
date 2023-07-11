@@ -1,0 +1,27 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:56.860685
+##
+## pigz@2.7%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/hmwbpnc
+##
+
+
+module-whatis "A parallel implementation of gzip for modern multi-processor, multi-core machines."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : pigz"
+    puts stderr "Version: 2.7"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "A parallel implementation of gzip for modern multi-processor, multi-core"
+    puts stderr "machines."
+}
+
+conflict pigz
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pigz-2.7-hmwbpnc6rmjcauvzztfoijacbiojpszn/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pigz-2.7-hmwbpnc6rmjcauvzztfoijacbiojpszn/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pigz-2.7-hmwbpnc6rmjcauvzztfoijacbiojpszn/."
+setenv PIGZ_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pigz-2.7-hmwbpnc6rmjcauvzztfoijacbiojpszn"
+
+if [module-info mode load] {
+}

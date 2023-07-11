@@ -1,0 +1,32 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:51.751093
+##
+## octopus@7.3%gcc@11.3.0~arpack~berkeleygw~cgal~cuda~debug~elpa~etsf-io+libvdwxc~libyaml~likwid~metis+mpi~netcdf~nfft~nlopt~parmetis~pfft~python~scalapack~sparskit build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/zn6dpzq
+##
+## Configure options: --prefix=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/octopus-7.3-zn6dpzqoyxujmb5k2zskukimgmtqflaf --with-blas=-L/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/openblas-0.3.23-hjvgpb5hmku762lpowdlqs4qoxmmizv3/lib -lopenblas --with-lapack=-L/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/openblas-0.3.23-hjvgpb5hmku762lpowdlqs4qoxmmizv3/lib -lopenblas --with-gsl-prefix=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gsl-2.7.1-7z5dz5cle3byaeyf4uvq6x3biakagq2b --with-libxc-prefix=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libxc-3.0.0-lcimv2b3sbteoalqhnmv3bguyygj6ys7 --enable-openmp --enable-mpi CC=/share/apps/22.04/manual/openmpi/4.1.5/bin/mpicc FC=/share/apps/22.04/manual/openmpi/4.1.5/bin/mpif90 --with-fftw-prefix=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/fftw-3.3.10-pr4hd22yph7x5z3t2lnfc2mngunqs6sz --with-libvdwxc-prefix=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libvdwxc-0.4.0-jwyh4h46izi6pvzk73xnhzkhn4qt4yz3 FCFLAGS=-O2 -ffree-line-length-none -fallow-argument-mismatch -fallow-invalid-boz CXXFLAGS=-O2 -fallow-argument-mismatch -fallow-invalid-boz CFLAGS=-O2 -fallow-argument-mismatch -fallow-invalid-boz
+##
+
+
+module-whatis "A real-space finite-difference (time-dependent) density-functional theory code."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : octopus"
+    puts stderr "Version: 7.3"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "A real-space finite-difference (time-dependent) density-functional"
+    puts stderr "theory code."
+}
+
+conflict octopus
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/octopus-7.3-zn6dpzqoyxujmb5k2zskukimgmtqflaf/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/octopus-7.3-zn6dpzqoyxujmb5k2zskukimgmtqflaf/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/octopus-7.3-zn6dpzqoyxujmb5k2zskukimgmtqflaf/include"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/octopus-7.3-zn6dpzqoyxujmb5k2zskukimgmtqflaf/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/octopus-7.3-zn6dpzqoyxujmb5k2zskukimgmtqflaf/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/octopus-7.3-zn6dpzqoyxujmb5k2zskukimgmtqflaf/."
+setenv OCTOPUS_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/octopus-7.3-zn6dpzqoyxujmb5k2zskukimgmtqflaf"
+
+if [module-info mode load] {
+}

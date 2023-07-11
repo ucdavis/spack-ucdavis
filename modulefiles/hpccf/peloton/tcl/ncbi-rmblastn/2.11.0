@@ -1,0 +1,32 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:50.090350
+##
+## ncbi-rmblastn@2.11.0%gcc@11.3.0 build_system=autotools patches=ce985ab arch=linux-ubuntu22.04-x86_64_v2/5l7qypb
+##
+## Configure options: --with-mt --without-debug --without-krb5 --without-openssl --without-libuv --with-projects=scripts/projects/rmblastn/project.lst
+##
+
+
+module-whatis "RMBlast search engine for NCBI"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : ncbi-rmblastn"
+    puts stderr "Version: 2.11.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "RMBlast search engine for NCBI"
+}
+
+conflict ncbi-rmblastn
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-rmblastn-2.11.0-5l7qypbbokbmg6ty2fy32jzga2qb6lzt/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-rmblastn-2.11.0-5l7qypbbokbmg6ty2fy32jzga2qb6lzt/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-rmblastn-2.11.0-5l7qypbbokbmg6ty2fy32jzga2qb6lzt/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-rmblastn-2.11.0-5l7qypbbokbmg6ty2fy32jzga2qb6lzt/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-rmblastn-2.11.0-5l7qypbbokbmg6ty2fy32jzga2qb6lzt/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-rmblastn-2.11.0-5l7qypbbokbmg6ty2fy32jzga2qb6lzt/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-rmblastn-2.11.0-5l7qypbbokbmg6ty2fy32jzga2qb6lzt/."
+setenv NCBI_RMBLASTN_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-rmblastn-2.11.0-5l7qypbbokbmg6ty2fy32jzga2qb6lzt"
+
+if [module-info mode load] {
+}

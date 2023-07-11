@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:29.289347
+##
+## abyss@2.3.5%gcc@11.3.0 build_system=autotools maxk=128 arch=linux-ubuntu22.04-x86_64_v2/obavyvn
+##
+## Configure options: --with-boost=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/boost-1.82.0-qwtzu7tpga4mlh2i3v2u3mm722bkgyeb --with-sqlite=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/sqlite-3.40.1-4lhpdh33huvpelfja6mi5tzjy26mijze --with-mpi=/share/apps/22.04/manual/openmpi/4.1.5 --enable-maxk=128
+##
+
+
+module-whatis "ABySS is a de novo, parallel, paired-end sequence assembler that is designed for short reads. The single-processor version is useful for assembling genomes up to 100 Mbases in size."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : abyss"
+    puts stderr "Version: 2.3.5"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "ABySS is a de novo, parallel, paired-end sequence assembler that is"
+    puts stderr "designed for short reads. The single-processor version is useful for"
+    puts stderr "assembling genomes up to 100 Mbases in size."
+}
+
+conflict abyss
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/abyss-2.3.5-obavyvnrq6gsfe6qlnvoltzyyc77wd6u/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/abyss-2.3.5-obavyvnrq6gsfe6qlnvoltzyyc77wd6u/."
+setenv ABYSS_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/abyss-2.3.5-obavyvnrq6gsfe6qlnvoltzyyc77wd6u"
+
+if [module-info mode load] {
+}

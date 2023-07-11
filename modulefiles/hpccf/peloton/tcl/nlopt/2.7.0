@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:51.166527
+##
+## nlopt@2.7.0%gcc@11.3.0~cxx~guile~ipo~matlab~octave+python+shared build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/rkhmuje
+##
+## Configure options: -DPYTHON_EXECUTABLE=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/python-3.10.10-v5jpflnztkbw3n2odw6nx4ty6hzajvem/bin/python3.10 -DNLOPT_OCTAVE:Bool=OFF
+##
+
+
+module-whatis "NLopt is a free/open-source library for nonlinear optimization, providing a common interface for a number of different free optimization routines available online as well as original implementations of various other algorithms."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : nlopt"
+    puts stderr "Version: 2.7.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "NLopt is a free/open-source library for nonlinear optimization,"
+    puts stderr "providing a common interface for a number of different free optimization"
+    puts stderr "routines available online as well as original implementations of various"
+    puts stderr "other algorithms."
+}
+
+conflict nlopt
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlopt-2.7.0-rkhmujexhy4o3w7mgwgwidc7ysjyaseu/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlopt-2.7.0-rkhmujexhy4o3w7mgwgwidc7ysjyaseu/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlopt-2.7.0-rkhmujexhy4o3w7mgwgwidc7ysjyaseu/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlopt-2.7.0-rkhmujexhy4o3w7mgwgwidc7ysjyaseu/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlopt-2.7.0-rkhmujexhy4o3w7mgwgwidc7ysjyaseu/lib"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlopt-2.7.0-rkhmujexhy4o3w7mgwgwidc7ysjyaseu/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlopt-2.7.0-rkhmujexhy4o3w7mgwgwidc7ysjyaseu/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlopt-2.7.0-rkhmujexhy4o3w7mgwgwidc7ysjyaseu/."
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlopt-2.7.0-rkhmujexhy4o3w7mgwgwidc7ysjyaseu/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-numpy-1.24.3-weuaipxfhdzjufh7dwrjpe7mbm3xvdp7/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-setuptools-63.4.3-eipobqg37cmma4kuuguhojfyvoorlzaq/lib/python3.10/site-packages"
+setenv NLOPT_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlopt-2.7.0-rkhmujexhy4o3w7mgwgwidc7ysjyaseu"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,33 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:48.526721
+##
+## masurca@4.1.0%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/wvg2por
+##
+
+
+module-whatis "MaSuRCA is whole genome assembly software. It combines the efficiency of the de Bruijn graph and Overlap-Layout-Consensus (OLC) approaches."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : masurca"
+    puts stderr "Version: 4.1.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "MaSuRCA is whole genome assembly software. It combines the efficiency of"
+    puts stderr "the de Bruijn graph and Overlap-Layout-Consensus (OLC) approaches."
+}
+
+conflict masurca
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/masurca-4.1.0-wvg2por5up6dmhdrewgy4zi2dzlbqkcx/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/masurca-4.1.0-wvg2por5up6dmhdrewgy4zi2dzlbqkcx/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/masurca-4.1.0-wvg2por5up6dmhdrewgy4zi2dzlbqkcx/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/masurca-4.1.0-wvg2por5up6dmhdrewgy4zi2dzlbqkcx/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/masurca-4.1.0-wvg2por5up6dmhdrewgy4zi2dzlbqkcx/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/masurca-4.1.0-wvg2por5up6dmhdrewgy4zi2dzlbqkcx/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/masurca-4.1.0-wvg2por5up6dmhdrewgy4zi2dzlbqkcx/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/masurca-4.1.0-wvg2por5up6dmhdrewgy4zi2dzlbqkcx/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/masurca-4.1.0-wvg2por5up6dmhdrewgy4zi2dzlbqkcx/."
+setenv MASURCA_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/masurca-4.1.0-wvg2por5up6dmhdrewgy4zi2dzlbqkcx"
+
+if [module-info mode load] {
+}

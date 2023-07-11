@@ -1,0 +1,33 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:39.132493
+##
+## emboss@6.6.0%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/jzvf7ex
+##
+
+
+module-whatis "EMBOSS is a free Open Source software analysis package specially developed for the needs of the molecular biology (e.g. EMBnet) user community"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : emboss"
+    puts stderr "Version: 6.6.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "EMBOSS is a free Open Source software analysis package specially"
+    puts stderr "developed for the needs of the molecular biology (e.g. EMBnet) user"
+    puts stderr "community"
+}
+
+conflict emboss
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/emboss-6.6.0-jzvf7exteh54kwss64sehw73hmqd3jg5/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/emboss-6.6.0-jzvf7exteh54kwss64sehw73hmqd3jg5/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/emboss-6.6.0-jzvf7exteh54kwss64sehw73hmqd3jg5/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/emboss-6.6.0-jzvf7exteh54kwss64sehw73hmqd3jg5/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/emboss-6.6.0-jzvf7exteh54kwss64sehw73hmqd3jg5/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/emboss-6.6.0-jzvf7exteh54kwss64sehw73hmqd3jg5/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/emboss-6.6.0-jzvf7exteh54kwss64sehw73hmqd3jg5/."
+prepend-path --delim ":" XLOCALEDIR "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libx11-1.8.4-elhqje4pmr6c4jp256hrfear2cp45szn/share/X11/locale"
+setenv EMBOSS_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/emboss-6.6.0-jzvf7exteh54kwss64sehw73hmqd3jg5"
+
+if [module-info mode load] {
+}

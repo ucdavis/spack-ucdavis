@@ -1,0 +1,34 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:50.908723
+##
+## netlib-lapack@3.11.0%gcc@11.3.0~external-blas~ipo+lapacke+shared~xblas build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/yakpaxt
+##
+
+
+module-whatis "LAPACK version 3.X is a comprehensive FORTRAN library that does linear algebra operations including matrix inversions, least squared solutions to linear sets of equations, eigenvector analysis, singular value decomposition, etc. It is a very comprehensive and reputable package that has found extensive use in the scientific community."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : netlib-lapack"
+    puts stderr "Version: 3.11.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "LAPACK version 3.X is a comprehensive FORTRAN library that does linear"
+    puts stderr "algebra operations including matrix inversions, least squared solutions"
+    puts stderr "to linear sets of equations, eigenvector analysis, singular value"
+    puts stderr "decomposition, etc. It is a very comprehensive and reputable package"
+    puts stderr "that has found extensive use in the scientific community."
+}
+
+conflict netlib-lapack
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netlib-lapack-3.11.0-yakpaxt3ouw3s74wyvs2vzc3gbympxsc/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netlib-lapack-3.11.0-yakpaxt3ouw3s74wyvs2vzc3gbympxsc/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netlib-lapack-3.11.0-yakpaxt3ouw3s74wyvs2vzc3gbympxsc/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netlib-lapack-3.11.0-yakpaxt3ouw3s74wyvs2vzc3gbympxsc/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netlib-lapack-3.11.0-yakpaxt3ouw3s74wyvs2vzc3gbympxsc/lib"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netlib-lapack-3.11.0-yakpaxt3ouw3s74wyvs2vzc3gbympxsc/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netlib-lapack-3.11.0-yakpaxt3ouw3s74wyvs2vzc3gbympxsc/."
+setenv NETLIB_LAPACK_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netlib-lapack-3.11.0-yakpaxt3ouw3s74wyvs2vzc3gbympxsc"
+
+if [module-info mode load] {
+}

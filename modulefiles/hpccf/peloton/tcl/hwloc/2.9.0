@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:44.435849
+##
+## hwloc@2.9.0%gcc@11.3.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~oneapi-level-zero~opencl+pci~rocm build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v2/jh42wxu
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis "The Hardware Locality (hwloc) software project."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : hwloc"
+    puts stderr "Version: 2.9.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "The Hardware Locality (hwloc) software project. The Portable Hardware"
+    puts stderr "Locality (hwloc) software package provides a portable abstraction"
+    puts stderr "(across OS, versions, architectures, ...) of the hierarchical topology"
+    puts stderr "of modern architectures, including NUMA memory nodes, sockets, shared"
+    puts stderr "caches, cores and simultaneous multithreading. It also gathers various"
+    puts stderr "system attributes such as cache and memory information as well as the"
+    puts stderr "locality of I/O devices such as network interfaces, InfiniBand HCAs or"
+    puts stderr "GPUs. It primarily aims at helping applications with gathering"
+    puts stderr "information about modern computing hardware so as to exploit it"
+    puts stderr "accordingly and efficiently."
+}
+
+conflict hwloc
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/manual/hwloc/2.9.0/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/manual/hwloc/2.9.0/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/manual/hwloc/2.9.0/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/manual/hwloc/2.9.0/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/manual/hwloc/2.9.0/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/manual/hwloc/2.9.0/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/manual/hwloc/2.9.0/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/manual/hwloc/2.9.0/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/manual/hwloc/2.9.0/."
+setenv HWLOC_ROOT "/share/apps/22.04/manual/hwloc/2.9.0"
+
+if [module-info mode load] {
+}

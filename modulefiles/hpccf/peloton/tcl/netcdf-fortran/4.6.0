@@ -1,0 +1,37 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:50.841975
+##
+## netcdf-fortran@4.6.0%gcc@11.3.0~doc+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/ch2bhyp
+##
+## Configure options: --enable-static --enable-shared --disable-doxygen --disable-parallel-tests
+##
+
+
+module-whatis "NetCDF (network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. This is the Fortran distribution."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : netcdf-fortran"
+    puts stderr "Version: 4.6.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "NetCDF (network Common Data Form) is a set of software libraries and"
+    puts stderr "machine-independent data formats that support the creation, access, and"
+    puts stderr "sharing of array-oriented scientific data. This is the Fortran"
+    puts stderr "distribution."
+}
+
+conflict netcdf-fortran
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-fortran-4.6.0-ch2bhypi3sjwx44ir7bwue6c65i5pc7m/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-fortran-4.6.0-ch2bhypi3sjwx44ir7bwue6c65i5pc7m/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-fortran-4.6.0-ch2bhypi3sjwx44ir7bwue6c65i5pc7m/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-fortran-4.6.0-ch2bhypi3sjwx44ir7bwue6c65i5pc7m/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-fortran-4.6.0-ch2bhypi3sjwx44ir7bwue6c65i5pc7m/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-fortran-4.6.0-ch2bhypi3sjwx44ir7bwue6c65i5pc7m/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-fortran-4.6.0-ch2bhypi3sjwx44ir7bwue6c65i5pc7m/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-fortran-4.6.0-ch2bhypi3sjwx44ir7bwue6c65i5pc7m/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-fortran-4.6.0-ch2bhypi3sjwx44ir7bwue6c65i5pc7m/."
+setenv NETCDF_FORTRAN_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-fortran-4.6.0-ch2bhypi3sjwx44ir7bwue6c65i5pc7m"
+
+if [module-info mode load] {
+}

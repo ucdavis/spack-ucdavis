@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:44.588763
+##
+## imagemagick@7.0.8-7%gcc@11.3.0~ghostscript build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/waj2dj3
+##
+## Configure options: --without-gslib
+##
+
+
+module-whatis "ImageMagick is a software suite to create, edit, compose, or convert bitmap images."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : imagemagick"
+    puts stderr "Version: 7.0.8-7"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "ImageMagick is a software suite to create, edit, compose, or convert"
+    puts stderr "bitmap images."
+}
+
+conflict imagemagick
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/imagemagick-7.0.8-7-waj2dj3xc5ygp66fqwry4dgh2jjiir5o/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/imagemagick-7.0.8-7-waj2dj3xc5ygp66fqwry4dgh2jjiir5o/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/imagemagick-7.0.8-7-waj2dj3xc5ygp66fqwry4dgh2jjiir5o/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/imagemagick-7.0.8-7-waj2dj3xc5ygp66fqwry4dgh2jjiir5o/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/imagemagick-7.0.8-7-waj2dj3xc5ygp66fqwry4dgh2jjiir5o/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/imagemagick-7.0.8-7-waj2dj3xc5ygp66fqwry4dgh2jjiir5o/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/imagemagick-7.0.8-7-waj2dj3xc5ygp66fqwry4dgh2jjiir5o/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/imagemagick-7.0.8-7-waj2dj3xc5ygp66fqwry4dgh2jjiir5o/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/imagemagick-7.0.8-7-waj2dj3xc5ygp66fqwry4dgh2jjiir5o/."
+prepend-path --delim ":" XLOCALEDIR "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libx11-1.8.4-elhqje4pmr6c4jp256hrfear2cp45szn/share/X11/locale"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gobject-introspection-1.72.1-nu356my5vhotbyf4w2nfliyqilhq7edi/share"
+prepend-path --delim ":" GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gobject-introspection-1.72.1-nu356my5vhotbyf4w2nfliyqilhq7edi/lib/girepository-1.0"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/harfbuzz-5.3.1-qyvpfb7knng7m4hxr5id3jvtluoqxeoj/share"
+prepend-path --delim ":" GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/harfbuzz-5.3.1-qyvpfb7knng7m4hxr5id3jvtluoqxeoj/lib/girepository-1.0"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pango-1.50.13-xyculs47or3ygkdcemaibdyrmvkab3gf/share"
+prepend-path --delim ":" GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pango-1.50.13-xyculs47or3ygkdcemaibdyrmvkab3gf/lib/girepository-1.0"
+setenv IMAGEMAGICK_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/imagemagick-7.0.8-7-waj2dj3xc5ygp66fqwry4dgh2jjiir5o"
+
+if [module-info mode load] {
+}

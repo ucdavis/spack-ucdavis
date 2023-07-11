@@ -1,0 +1,31 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:51.854950
+##
+## openblas@0.3.23%gcc@11.3.0~bignuma~consistent_fpcsr+fortran~ilp64+locking+pic+shared build_system=makefile symbol_suffix=none threads=none arch=linux-ubuntu22.04-x86_64_v2/hjvgpb5
+##
+
+
+module-whatis "OpenBLAS: An optimized BLAS library"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : openblas"
+    puts stderr "Version: 0.3.23"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "OpenBLAS: An optimized BLAS library"
+}
+
+conflict openblas
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/openblas-0.3.23-hjvgpb5hmku762lpowdlqs4qoxmmizv3/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/openblas-0.3.23-hjvgpb5hmku762lpowdlqs4qoxmmizv3/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/openblas-0.3.23-hjvgpb5hmku762lpowdlqs4qoxmmizv3/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/openblas-0.3.23-hjvgpb5hmku762lpowdlqs4qoxmmizv3/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/openblas-0.3.23-hjvgpb5hmku762lpowdlqs4qoxmmizv3/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/openblas-0.3.23-hjvgpb5hmku762lpowdlqs4qoxmmizv3/bin"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/openblas-0.3.23-hjvgpb5hmku762lpowdlqs4qoxmmizv3/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/openblas-0.3.23-hjvgpb5hmku762lpowdlqs4qoxmmizv3/."
+setenv OPENBLAS_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/openblas-0.3.23-hjvgpb5hmku762lpowdlqs4qoxmmizv3"
+
+if [module-info mode load] {
+}

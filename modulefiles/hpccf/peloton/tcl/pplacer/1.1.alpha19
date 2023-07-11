@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:57.245015
+##
+## pplacer@1.1.alpha19%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/5tz6ssq
+##
+
+
+module-whatis "Pplacer places query sequences on a fixed reference phylogenetic tree to maximize phylogenetic likelihood or posterior probability according to a reference alignment. Pplacer is designed to be fast, to give useful information about uncertainty, and to offer advanced visualization and downstream analysis. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : pplacer"
+    puts stderr "Version: 1.1.alpha19"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Pplacer places query sequences on a fixed reference phylogenetic tree to"
+    puts stderr "maximize phylogenetic likelihood or posterior probability according to a"
+    puts stderr "reference alignment. Pplacer is designed to be fast, to give useful"
+    puts stderr "information about uncertainty, and to offer advanced visualization and"
+    puts stderr "downstream analysis."
+}
+
+conflict pplacer
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pplacer-1.1.alpha19-5tz6ssq4nshpphso5ztvuxpb6z73asxy/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pplacer-1.1.alpha19-5tz6ssq4nshpphso5ztvuxpb6z73asxy/."
+setenv PPLACER_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pplacer-1.1.alpha19-5tz6ssq4nshpphso5ztvuxpb6z73asxy"
+
+if [module-info mode load] {
+}

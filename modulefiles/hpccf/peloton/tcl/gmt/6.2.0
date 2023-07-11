@@ -1,0 +1,35 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:42.330644
+##
+## gmt@6.2.0%gcc@11.3.0~blas~docs~ffmpeg~fftw~gdal~ghostscript~glib~graphicsmagick~lapack~pcre build_system=generic arch=linux-ubuntu22.04-x86_64_v2/hp77ltj
+##
+
+
+module-whatis "GMT (Generic Mapping Tools) is an open source collection of about 80 command-line tools for manipulating geographic and Cartesian data sets (including filtering, trend fitting, gridding, projecting, etc.) and producing PostScript illustrations ranging from simple x-y plots via contour maps to artificially illuminated surfaces and 3D perspective views. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : gmt"
+    puts stderr "Version: 6.2.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "GMT (Generic Mapping Tools) is an open source collection of about 80"
+    puts stderr "command-line tools for manipulating geographic and Cartesian data sets"
+    puts stderr "(including filtering, trend fitting, gridding, projecting, etc.) and"
+    puts stderr "producing PostScript illustrations ranging from simple x-y plots via"
+    puts stderr "contour maps to artificially illuminated surfaces and 3D perspective"
+    puts stderr "views."
+}
+
+conflict gmt
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmt-6.2.0-hp77ltj4s44skapf2dvdi5h7bwpzwqv2/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmt-6.2.0-hp77ltj4s44skapf2dvdi5h7bwpzwqv2/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmt-6.2.0-hp77ltj4s44skapf2dvdi5h7bwpzwqv2/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmt-6.2.0-hp77ltj4s44skapf2dvdi5h7bwpzwqv2/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmt-6.2.0-hp77ltj4s44skapf2dvdi5h7bwpzwqv2/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmt-6.2.0-hp77ltj4s44skapf2dvdi5h7bwpzwqv2/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmt-6.2.0-hp77ltj4s44skapf2dvdi5h7bwpzwqv2/."
+setenv GMT_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmt-6.2.0-hp77ltj4s44skapf2dvdi5h7bwpzwqv2"
+
+if [module-info mode load] {
+}

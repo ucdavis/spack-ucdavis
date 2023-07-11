@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:49.021191
+##
+## minced@0.4.2%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/6l7ozkf
+##
+
+
+module-whatis "MinCED is a program to find Clustered Regularly Interspaced Short Palindromic Repeats (CRISPRs) in full genomes or environmental datasets such as metagenomes, in which sequence size can be anywhere from 100 to 800 bp."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : minced"
+    puts stderr "Version: 0.4.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "MinCED is a program to find Clustered Regularly Interspaced Short"
+    puts stderr "Palindromic Repeats (CRISPRs) in full genomes or environmental datasets"
+    puts stderr "such as metagenomes, in which sequence size can be anywhere from 100 to"
+    puts stderr "800 bp."
+}
+
+conflict minced
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/minced-0.4.2-6l7ozkfnztgk2qvvftwqhqc5imr74pia/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/minced-0.4.2-6l7ozkfnztgk2qvvftwqhqc5imr74pia/."
+setenv MINCED_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/minced-0.4.2-6l7ozkfnztgk2qvvftwqhqc5imr74pia"
+
+if [module-info mode load] {
+}

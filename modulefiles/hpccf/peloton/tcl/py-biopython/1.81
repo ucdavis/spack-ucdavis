@@ -1,0 +1,30 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-04 10:34:08.722326
+##
+## py-biopython@1.81%gcc@11.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v2/cj6auol
+##
+
+
+module-whatis "A distributed collaborative effort to develop Python libraries and applications which address the needs of current and future work in bioinformatics. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : py-biopython"
+    puts stderr "Version: 1.81"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "A distributed collaborative effort to develop Python libraries and"
+    puts stderr "applications which address the needs of current and future work in"
+    puts stderr "bioinformatics."
+}
+
+conflict py-biopython
+
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-biopython-1.81-cj6auolz5yfeuzghg3t3u6fwusd2h2tv/lib"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-biopython-1.81-cj6auolz5yfeuzghg3t3u6fwusd2h2tv/."
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-biopython-1.81-cj6auolz5yfeuzghg3t3u6fwusd2h2tv/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-numpy-1.24.3-ncgncvgk3wg73eqiitkkumoniwwv5fnv/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-setuptools-63.4.3-lbj7d45k7odyhqivr4lk5oqyfeymtkux/lib/python3.10/site-packages"
+setenv PY_BIOPYTHON_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-biopython-1.81-cj6auolz5yfeuzghg3t3u6fwusd2h2tv"
+
+if [module-info mode load] {
+}

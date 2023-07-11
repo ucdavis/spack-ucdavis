@@ -1,0 +1,33 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:48.253607
+##
+## mash@2.3%gcc@11.3.0 build_system=autotools patches=3e6d6ee arch=linux-ubuntu22.04-x86_64_v2/wydsvan
+##
+## Configure options: --with-capnp=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/capnproto-0.10.2-p5mw2o42lwtf5viwh4oln2ixmfomdgmt --with-gsl=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gsl-2.7.1-7z5dz5cle3byaeyf4uvq6x3biakagq2b
+##
+
+
+module-whatis " Fast genome and metagenome distance estimation using MinHash. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : mash"
+    puts stderr "Version: 2.3"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr " Fast genome and metagenome distance estimation using MinHash."
+}
+
+conflict mash
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mash-2.3-wydsvanz2vae47ez2guv2wlijornykwn/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mash-2.3-wydsvanz2vae47ez2guv2wlijornykwn/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mash-2.3-wydsvanz2vae47ez2guv2wlijornykwn/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mash-2.3-wydsvanz2vae47ez2guv2wlijornykwn/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mash-2.3-wydsvanz2vae47ez2guv2wlijornykwn/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mash-2.3-wydsvanz2vae47ez2guv2wlijornykwn/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mash-2.3-wydsvanz2vae47ez2guv2wlijornykwn/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mash-2.3-wydsvanz2vae47ez2guv2wlijornykwn/."
+setenv MASH_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mash-2.3-wydsvanz2vae47ez2guv2wlijornykwn"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,32 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:45.631624
+##
+## interproscan@5.61-93.0%gcc@11.3.0 build_system=generic patches=6a81cbb,70c0de2 arch=linux-ubuntu22.04-x86_64_v2/3aqbpki
+##
+
+
+module-whatis "InterProScan is the software package that allows sequences (protein and nucleic) to be scanned against InterPro's signatures. Signatures are predictive models, provided by several different databases, that make up the InterPro consortium."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : interproscan"
+    puts stderr "Version: 5.61-93.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "InterProScan is the software package that allows sequences (protein and"
+    puts stderr "nucleic) to be scanned against InterPro's signatures. Signatures are"
+    puts stderr "predictive models, provided by several different databases, that make up"
+    puts stderr "the InterPro consortium."
+}
+
+module load openjdk/11.0.17_8
+prereq openjdk/11.0.17_8
+conflict interproscan
+
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/interproscan-5.61-93.0-3aqbpkib7mcld2yu2geyp2cmfgxwialg/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/interproscan-5.61-93.0-3aqbpkib7mcld2yu2geyp2cmfgxwialg/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/interproscan-5.61-93.0-3aqbpkib7mcld2yu2geyp2cmfgxwialg/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/interproscan-5.61-93.0-3aqbpkib7mcld2yu2geyp2cmfgxwialg/."
+setenv INTERPROSCAN_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/interproscan-5.61-93.0-3aqbpkib7mcld2yu2geyp2cmfgxwialg"
+
+if [module-info mode load] {
+}

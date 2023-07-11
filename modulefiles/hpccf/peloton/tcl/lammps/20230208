@@ -1,0 +1,36 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:47.318850
+##
+## lammps@20230208%gcc@11.3.0~adios~amoeba~asphere~atc~awpmd~bocs~body~bpm~brownian~cg-dna~cg-spica~class2~colloid~colvars~compress~coreshell~cuda~cuda_mps~dielectric~diffraction~dipole~dpd-basic~dpd-meso~dpd-react~dpd-smooth~drude~eff~electrode~exceptions~extra-compute~extra-dump~extra-fix~extra-molecule~extra-pair~fep~ffmpeg~granular~h5md~intel~interlayer~ipo~jpeg~kim~kokkos+kspace~latboltz~latte~lepton+lib~machdyn~manifold+manybody~mc~meam~mesont~mgpt~misc~ml-hdnnp~ml-iap~ml-pod~ml-rann~ml-snap~mofff+molecule~molfile+mpi~mpiio~netcdf~opencl+openmp~openmp-package~opt~orient~peri~phonon~plugin~plumed~png~poems~ptm~python~qeq~qtb~reaction~reaxff~replica+rigid~rocm~shock~smtbq~sph~spin~srd~tally~uef~voronoi~vtk~yaff build_system=cmake build_type=Release fftw_precision=double generator=make gpu_precision=mixed lammps_sizes=smallbig arch=linux-ubuntu22.04-x86_64_v2/zdt2ngf
+##
+## Configure options: -DBUILD_SHARED_LIBS:BOOL=ON -DLAMMPS_EXCEPTIONS:BOOL=OFF -DBUILD_MPI:BOOL=ON -DBUILD_OMP:BOOL=ON -DENABLE_TESTING:BOOL=OFF -DPKG_GPU:BOOL=OFF -DBUILD_LIB:BOOL=ON -DCMAKE_TUNE_FLAGS:STRING=-march=x86-64-v2 -mtune=generic -DLAMMPS_SIZES:STRING=smallbig -DWITH_JPEG:BOOL=OFF -DWITH_PNG:BOOL=OFF -DWITH_FFMPEG:BOOL=OFF -DPKG_ADIOS:BOOL=OFF -DPKG_AMOEBA:BOOL=OFF -DPKG_ASPHERE:BOOL=OFF -DPKG_ATC:BOOL=OFF -DPKG_AWPMD:BOOL=OFF -DPKG_BOCS:BOOL=OFF -DPKG_BODY:BOOL=OFF -DPKG_BPM:BOOL=OFF -DPKG_BROWNIAN:BOOL=OFF -DPKG_CG-DNA:BOOL=OFF -DPKG_CG-SPICA:BOOL=OFF -DPKG_CLASS2:BOOL=OFF -DPKG_COLLOID:BOOL=OFF -DPKG_COLVARS:BOOL=OFF -DPKG_COMPRESS:BOOL=OFF -DPKG_CORESHELL:BOOL=OFF -DPKG_DIELECTRIC:BOOL=OFF -DPKG_DIFFRACTION:BOOL=OFF -DPKG_DIPOLE:BOOL=OFF -DPKG_DPD-BASIC:BOOL=OFF -DPKG_DPD-MESO:BOOL=OFF -DPKG_DPD-REACT:BOOL=OFF -DPKG_DPD-SMOOTH:BOOL=OFF -DPKG_DRUDE:BOOL=OFF -DPKG_EFF:BOOL=OFF -DPKG_ELECTRODE:BOOL=OFF -DPKG_EXTRA-COMPUTE:BOOL=OFF -DPKG_EXTRA-DUMP:BOOL=OFF -DPKG_EXTRA-FIX:BOOL=OFF -DPKG_EXTRA-MOLECULE:BOOL=OFF -DPKG_EXTRA-PAIR:BOOL=OFF -DPKG_FEP:BOOL=OFF -DPKG_GRANULAR:BOOL=OFF -DPKG_H5MD:BOOL=OFF -DPKG_INTEL:BOOL=OFF -DPKG_INTERLAYER:BOOL=OFF -DPKG_KIM:BOOL=OFF -DPKG_KOKKOS:BOOL=OFF -DPKG_KSPACE:BOOL=ON -DPKG_LATBOLTZ:BOOL=OFF -DPKG_LATTE:BOOL=OFF -DPKG_LEPTON:BOOL=OFF -DPKG_MACHDYN:BOOL=OFF -DPKG_MANIFOLD:BOOL=OFF -DPKG_MANYBODY:BOOL=ON -DPKG_MC:BOOL=OFF -DPKG_MEAM:BOOL=OFF -DPKG_MESONT:BOOL=OFF -DPKG_MGPT:BOOL=OFF -DPKG_MISC:BOOL=OFF -DPKG_ML-HDNNP:BOOL=OFF -DPKG_ML-IAP:BOOL=OFF -DPKG_ML-POD:BOOL=OFF -DPKG_ML-RANN:BOOL=OFF -DPKG_ML-SNAP:BOOL=OFF -DPKG_MOFFF:BOOL=OFF -DPKG_MOLECULE:BOOL=ON -DPKG_MOLFILE:BOOL=OFF -DPKG_MPIIO:BOOL=OFF -DPKG_NETCDF:BOOL=OFF -DPKG_OPENMP:BOOL=OFF -DPKG_OPT:BOOL=OFF -DPKG_ORIENT:BOOL=OFF -DPKG_PERI:BOOL=OFF -DPKG_PHONON:BOOL=OFF -DPKG_PLUGIN:BOOL=OFF -DPKG_PLUMED:BOOL=OFF -DPKG_POEMS:BOOL=OFF -DPKG_PTM:BOOL=OFF -DPKG_PYTHON:BOOL=OFF -DPKG_QEQ:BOOL=OFF -DPKG_QTB:BOOL=OFF -DPKG_REACTION:BOOL=OFF -DPKG_REAXFF:BOOL=OFF -DPKG_REPLICA:BOOL=OFF -DPKG_RIGID:BOOL=ON -DPKG_SHOCK:BOOL=OFF -DPKG_SMTBQ:BOOL=OFF -DPKG_SPH:BOOL=OFF -DPKG_SPIN:BOOL=OFF -DPKG_SRD:BOOL=OFF -DPKG_TALLY:BOOL=OFF -DPKG_UEF:BOOL=OFF -DPKG_VORONOI:BOOL=OFF -DPKG_VTK:BOOL=OFF -DPKG_YAFF:BOOL=OFF -DFFT:STRING=FFTW3 -DFFT_SINGLE:BOOL=OFF
+##
+
+
+module-whatis "LAMMPS stands for Large-scale Atomic/Molecular Massively Parallel Simulator. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : lammps"
+    puts stderr "Version: 20230208"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "LAMMPS stands for Large-scale Atomic/Molecular Massively Parallel"
+    puts stderr "Simulator."
+}
+
+conflict lammps
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/lammps-20230208-zdt2ngftgn5ogfi4rwrgvr757ecim3xz/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/lammps-20230208-zdt2ngftgn5ogfi4rwrgvr757ecim3xz/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/lammps-20230208-zdt2ngftgn5ogfi4rwrgvr757ecim3xz/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/lammps-20230208-zdt2ngftgn5ogfi4rwrgvr757ecim3xz/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/lammps-20230208-zdt2ngftgn5ogfi4rwrgvr757ecim3xz/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/lammps-20230208-zdt2ngftgn5ogfi4rwrgvr757ecim3xz/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/lammps-20230208-zdt2ngftgn5ogfi4rwrgvr757ecim3xz/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/lammps-20230208-zdt2ngftgn5ogfi4rwrgvr757ecim3xz/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/lammps-20230208-zdt2ngftgn5ogfi4rwrgvr757ecim3xz/."
+setenv LAMMPS_POTENTIALS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/lammps-20230208-zdt2ngftgn5ogfi4rwrgvr757ecim3xz/share/lammps/potentials"
+setenv LAMMPS_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/lammps-20230208-zdt2ngftgn5ogfi4rwrgvr757ecim3xz"
+
+if [module-info mode load] {
+}

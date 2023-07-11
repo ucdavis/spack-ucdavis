@@ -1,0 +1,33 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:45.937338
+##
+## jellyfish@1.1.11%gcc@11.3.0~ruby build_system=autotools patches=e729c13 arch=linux-ubuntu22.04-x86_64_v2/raxzxdb
+##
+
+
+module-whatis "JELLYFISH is a tool for fast, memory-efficient counting of k-mers in DNA."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : jellyfish"
+    puts stderr "Version: 1.1.11"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "JELLYFISH is a tool for fast, memory-efficient counting of k-mers in"
+    puts stderr "DNA."
+}
+
+conflict jellyfish
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jellyfish-1.1.11-raxzxdbhb7ar4hzbljuh4y76shuhb3dh/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jellyfish-1.1.11-raxzxdbhb7ar4hzbljuh4y76shuhb3dh/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jellyfish-1.1.11-raxzxdbhb7ar4hzbljuh4y76shuhb3dh/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jellyfish-1.1.11-raxzxdbhb7ar4hzbljuh4y76shuhb3dh/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jellyfish-1.1.11-raxzxdbhb7ar4hzbljuh4y76shuhb3dh/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jellyfish-1.1.11-raxzxdbhb7ar4hzbljuh4y76shuhb3dh/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jellyfish-1.1.11-raxzxdbhb7ar4hzbljuh4y76shuhb3dh/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jellyfish-1.1.11-raxzxdbhb7ar4hzbljuh4y76shuhb3dh/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jellyfish-1.1.11-raxzxdbhb7ar4hzbljuh4y76shuhb3dh/."
+setenv JELLYFISH_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jellyfish-1.1.11-raxzxdbhb7ar4hzbljuh4y76shuhb3dh"
+
+if [module-info mode load] {
+}

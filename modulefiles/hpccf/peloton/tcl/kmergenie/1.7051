@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:46.549756
+##
+## kmergenie@1.7051%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/wpm7fsl
+##
+
+
+module-whatis "KmerGenie estimates the best k-mer length for genome de novo assembly."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : kmergenie"
+    puts stderr "Version: 1.7051"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "KmerGenie estimates the best k-mer length for genome de novo assembly."
+}
+
+module load zlib/1.2.13
+prereq zlib/1.2.13
+conflict kmergenie
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/kmergenie-1.7051-wpm7fslnxrvrlrqps7jgnccsb7jdt5w7/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/kmergenie-1.7051-wpm7fslnxrvrlrqps7jgnccsb7jdt5w7/."
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-setuptools-67.6.0-6zptasw65hqd5nybxil3qyqli5tcvvrm/lib/python3.10/site-packages"
+setenv R_HOME "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/r-4.2.2-kfibfnbb4qyeu67brykexwi56hldkrwy/rlib/R"
+setenv KMERGENIE_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/kmergenie-1.7051-wpm7fslnxrvrlrqps7jgnccsb7jdt5w7"
+
+if [module-info mode load] {
+}

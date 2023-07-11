@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:08:03.261651
+##
+## seqtk@1.3%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/cvauxij
+##
+
+
+module-whatis "Toolkit for processing sequences in FASTA/Q formats."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : seqtk"
+    puts stderr "Version: 1.3"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Toolkit for processing sequences in FASTA/Q formats."
+}
+
+conflict seqtk
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/seqtk-1.3-cvauxijhuiwejycfrxhjmclhigiqk6kp/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/seqtk-1.3-cvauxijhuiwejycfrxhjmclhigiqk6kp/."
+setenv SEQTK_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/seqtk-1.3-cvauxijhuiwejycfrxhjmclhigiqk6kp"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,58 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:08:01.232213
+##
+## py-quast@4.6.3%gcc@11.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v2/ldeaxv4
+##
+
+
+module-whatis "Quality Assessment Tool for Genome Assemblies"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : py-quast"
+    puts stderr "Version: 4.6.3"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Quality Assessment Tool for Genome Assemblies"
+}
+
+module load bwa/0.7.17
+module load glimmer/3.02b
+module load gnuplot/5.4.3
+module load mummer/3.23
+module load openjdk/16.0.2
+prereq bwa/0.7.17
+prereq glimmer/3.02b
+prereq gnuplot/5.4.3
+prereq mummer/3.23
+prereq openjdk/16.0.2
+conflict py-quast
+
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-quast-4.6.3-ldeaxv4gjzlvxmegau5lkxfecdfdvc7i/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-quast-4.6.3-ldeaxv4gjzlvxmegau5lkxfecdfdvc7i/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-quast-4.6.3-ldeaxv4gjzlvxmegau5lkxfecdfdvc7i/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-quast-4.6.3-ldeaxv4gjzlvxmegau5lkxfecdfdvc7i/."
+prepend-path --delim ":" PERL5LIB "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-time-hires-1.9758-cssxnpvrdtgm7cylv3f4qfmzhxm2ec67/lib/perl5"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-quast-4.6.3-ldeaxv4gjzlvxmegau5lkxfecdfdvc7i/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-matplotlib-3.7.1-dl47oo2rbeq4gtantzayq6key7zmeun5/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-contourpy-1.0.5-w5ubnirw2a54xylbe5mtg3od4qy2hkcj/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-numpy-1.24.3-smq5zjvzvwacabs3urczo6cw6wax4jxd/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-setuptools-63.4.3-cncjqik3yxqj7xpxmpsxyad6nq56vfad/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-cycler-0.11.0-3pcs6rvaryxcc32lgmki3hrsgwiun76l/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-fonttools-4.37.3-ls4qcvdflnskoeebaad7v353ie7czzqb/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-kiwisolver-1.4.4-2sokfv2gk344zoqnme3fqwo7sfaomakh/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-packaging-23.0-uoxuqqcyacdnyxnlblqih3qoaam6josk/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-pillow-9.5.0-zmjpx4etvtpfuar4ib545n2akod5iaqa/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-pyparsing-3.0.9-s3rsocwi3wxdanyh3oe3sehonrzeeujv/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-python-dateutil-2.8.2-s2vsdln43zak4b7oju5xtrtem2xybg67/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-six-1.16.0-poo24ax5hz5sc365dmcijs5har7ucu4y/lib/python3.10/site-packages"
+prepend-path --delim ":" XLOCALEDIR "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libx11-1.8.4-elhqje4pmr6c4jp256hrfear2cp45szn/share/X11/locale"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gobject-introspection-1.72.1-nu356my5vhotbyf4w2nfliyqilhq7edi/share"
+prepend-path --delim ":" GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gobject-introspection-1.72.1-nu356my5vhotbyf4w2nfliyqilhq7edi/lib/girepository-1.0"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/harfbuzz-5.3.1-qyvpfb7knng7m4hxr5id3jvtluoqxeoj/share"
+prepend-path --delim ":" GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/harfbuzz-5.3.1-qyvpfb7knng7m4hxr5id3jvtluoqxeoj/lib/girepository-1.0"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pango-1.50.13-xyculs47or3ygkdcemaibdyrmvkab3gf/share"
+prepend-path --delim ":" GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pango-1.50.13-xyculs47or3ygkdcemaibdyrmvkab3gf/lib/girepository-1.0"
+setenv PY_QUAST_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-quast-4.6.3-ldeaxv4gjzlvxmegau5lkxfecdfdvc7i"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,30 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:08:03.103638
+##
+## samtools@1.16.1%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/lnn4vjr
+##
+
+
+module-whatis "SAM Tools provide various utilities for manipulating alignments in the SAM format, including sorting, merging, indexing and generating alignments in a per-position format"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : samtools"
+    puts stderr "Version: 1.16.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "SAM Tools provide various utilities for manipulating alignments in the"
+    puts stderr "SAM format, including sorting, merging, indexing and generating"
+    puts stderr "alignments in a per-position format"
+}
+
+module load zlib/1.2.13
+prereq zlib/1.2.13
+conflict samtools
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/samtools-1.16.1-lnn4vjrhnbbdgni5kzliy3xulc2cbxe5/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/samtools-1.16.1-lnn4vjrhnbbdgni5kzliy3xulc2cbxe5/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/samtools-1.16.1-lnn4vjrhnbbdgni5kzliy3xulc2cbxe5/."
+setenv SAMTOOLS_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/samtools-1.16.1-lnn4vjrhnbbdgni5kzliy3xulc2cbxe5"
+
+if [module-info mode load] {
+}

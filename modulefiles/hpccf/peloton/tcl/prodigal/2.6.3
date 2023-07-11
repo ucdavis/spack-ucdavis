@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:57.267820
+##
+## prodigal@2.6.3%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/ffbskzz
+##
+
+
+module-whatis "Fast, reliable protein-coding gene prediction for prokaryotic genomes."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : prodigal"
+    puts stderr "Version: 2.6.3"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Fast, reliable protein-coding gene prediction for prokaryotic genomes."
+}
+
+conflict prodigal
+
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/prodigal-2.6.3-ffbskzzj2jkrjamlw77gedqobgyair63/."
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/prodigal-2.6.3-ffbskzzj2jkrjamlw77gedqobgyair63"
+setenv PRODIGAL_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/prodigal-2.6.3-ffbskzzj2jkrjamlw77gedqobgyair63"
+
+if [module-info mode load] {
+}

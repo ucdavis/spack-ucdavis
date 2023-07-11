@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:59.540677
+##
+## py-ipython@8.11.0%gcc@11.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v2/4pcirtq
+##
+
+
+module-whatis "IPython provides a rich toolkit to help you make the most out of using Python interactively."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : py-ipython"
+    puts stderr "Version: 8.11.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "IPython provides a rich toolkit to help you make the most out of using"
+    puts stderr "Python interactively."
+}
+
+conflict py-ipython
+
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-ipython-8.11.0-4pcirtqh4fxmboia3wnenqgn27zuutgi/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-ipython-8.11.0-4pcirtqh4fxmboia3wnenqgn27zuutgi/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-ipython-8.11.0-4pcirtqh4fxmboia3wnenqgn27zuutgi/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-ipython-8.11.0-4pcirtqh4fxmboia3wnenqgn27zuutgi/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-ipython-8.11.0-4pcirtqh4fxmboia3wnenqgn27zuutgi/."
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-ipython-8.11.0-4pcirtqh4fxmboia3wnenqgn27zuutgi/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-backcall-0.2.0-f4zjsvoxihy5gn4qm5qvhs7fgizzmuhf/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-decorator-5.1.1-zapuwg5hk52mc2f6hlkbw3rlwxvo73rh/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-jedi-0.18.1-htl3isvoyjvweqamx4xqwkwizs3jx2ol/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-parso-0.8.3-73nfmfmkrajwanojhfpk2yvfidjjjurj/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-setuptools-67.6.0-6zptasw65hqd5nybxil3qyqli5tcvvrm/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-matplotlib-inline-0.1.6-5na5vuybkq7c5yakkjsos6k4qe2x43pd/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-traitlets-5.9.0-3zzoiqyf3dppb23qocjwqbm7jyycl5nn/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-pexpect-4.8.0-scosptrdmvr2czdp3fy3zdc6frc7dddt/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-ptyprocess-0.7.0-b5bh5xkiyibixjs7s5o3qnlif5z7uyy3/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-pickleshare-0.7.5-tdflqybxogtgf5d4eimcnevk4tcybcdf/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-prompt-toolkit-3.0.31-fjrair7itbwei5kyc565egk4q5y5tnpx/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-wcwidth-0.2.5-damsrqpsjjbhaydviquwclgwi37nftln/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-pygments-2.13.0-gg3ti7m3zl27yi2cx2bjkhmck6lukaxx/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-stack-data-0.5.0-ure6wlgofolacxz7dtntfz3nbujhyexf/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-asttokens-2.0.8-4vgl3abkqkkavpmrnkvtbim3kfxf5p72/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-six-1.16.0-3gezqelwrpxlnssexhglquiiucclgbhz/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-executing-1.1.0-uclum6nftvoq4mn5tc6n47etktsfq36t/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-pure-eval-0.2.2-rj6e65cqwxsc6jqo26oxggo7fquaosf5/lib/python3.10/site-packages"
+setenv PY_IPYTHON_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-ipython-8.11.0-4pcirtqh4fxmboia3wnenqgn27zuutgi"
+
+if [module-info mode load] {
+}

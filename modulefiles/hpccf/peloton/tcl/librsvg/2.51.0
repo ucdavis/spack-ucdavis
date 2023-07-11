@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:47.526021
+##
+## librsvg@2.51.0%gcc@11.3.0~doc build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/qzbtkyh
+##
+## Configure options: --disable-gtk-doc GTKDOC_MKPDF=/bin/true GTKDOC_REBASE=/bin/true GTKDOC_CHECK_PATH=/bin/true
+##
+
+
+module-whatis "Library to render SVG files using Cairo"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : librsvg"
+    puts stderr "Version: 2.51.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Library to render SVG files using Cairo"
+}
+
+conflict librsvg
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-qzbtkyhkwwv4uat2rhs3nd7zstv37xci/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-qzbtkyhkwwv4uat2rhs3nd7zstv37xci/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-qzbtkyhkwwv4uat2rhs3nd7zstv37xci/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-qzbtkyhkwwv4uat2rhs3nd7zstv37xci/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-qzbtkyhkwwv4uat2rhs3nd7zstv37xci/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-qzbtkyhkwwv4uat2rhs3nd7zstv37xci/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-qzbtkyhkwwv4uat2rhs3nd7zstv37xci/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-qzbtkyhkwwv4uat2rhs3nd7zstv37xci/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-qzbtkyhkwwv4uat2rhs3nd7zstv37xci/."
+prepend-path --delim ":" XLOCALEDIR "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libx11-1.8.4-elhqje4pmr6c4jp256hrfear2cp45szn/share/X11/locale"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gobject-introspection-1.72.1-nu356my5vhotbyf4w2nfliyqilhq7edi/share"
+prepend-path --delim ":" GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gobject-introspection-1.72.1-nu356my5vhotbyf4w2nfliyqilhq7edi/lib/girepository-1.0"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/shared-mime-info-1.10-nirlzdw5a4soupmbu3eq7hgqbtkd73pv/share"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gdk-pixbuf-2.42.10-mt6emdf3o65evljg5it3zpoub33tsh6c/share"
+prepend-path --delim ":" GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gdk-pixbuf-2.42.10-mt6emdf3o65evljg5it3zpoub33tsh6c/lib/girepository-1.0"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/harfbuzz-5.3.1-qyvpfb7knng7m4hxr5id3jvtluoqxeoj/share"
+prepend-path --delim ":" GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/harfbuzz-5.3.1-qyvpfb7knng7m4hxr5id3jvtluoqxeoj/lib/girepository-1.0"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pango-1.50.13-xyculs47or3ygkdcemaibdyrmvkab3gf/share"
+prepend-path --delim ":" GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pango-1.50.13-xyculs47or3ygkdcemaibdyrmvkab3gf/lib/girepository-1.0"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-qzbtkyhkwwv4uat2rhs3nd7zstv37xci/share"
+setenv LIBRSVG_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/librsvg-2.51.0-qzbtkyhkwwv4uat2rhs3nd7zstv37xci"
+
+if [module-info mode load] {
+}

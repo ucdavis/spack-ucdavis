@@ -1,0 +1,35 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:08:01.559360
+##
+## pythia8@8.309%gcc@11.3.0~evtgen~fastjet~hdf5+hepmc+hepmc3~lhapdf~madgraph5amc~mpich~openmpi~python~rivet~root+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/vma4h73
+##
+## Configure options: --with-hepmc2=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hepmc-2.06.11-j6xkgns4ruam34fsaxmxbkdttwvknguu - - w i t h o u t - m g 5 m e s --with-hepmc3=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hepmc3-3.2.6-exs4bu4qysb5otizwxzajlcekkcvjfr5 - - w i t h o u t - f a s t j e t 3 --without-evtgen --without-root --without-rivet --without-python --without-openmp --without-mpich --without-hdf5
+##
+
+
+module-whatis "The Pythia program is a standard tool for the generation of events in high-energy collisions, comprising a coherent set of physics models for the evolution from a few-body hard process to a complex multiparticle final state."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : pythia8"
+    puts stderr "Version: 8.309"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "The Pythia program is a standard tool for the generation of events in"
+    puts stderr "high-energy collisions, comprising a coherent set of physics models for"
+    puts stderr "the evolution from a few-body hard process to a complex multiparticle"
+    puts stderr "final state."
+}
+
+conflict pythia8
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pythia8-8.309-vma4h737hgsp67bknpzabx6m6rqomr46/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pythia8-8.309-vma4h737hgsp67bknpzabx6m6rqomr46/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pythia8-8.309-vma4h737hgsp67bknpzabx6m6rqomr46/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pythia8-8.309-vma4h737hgsp67bknpzabx6m6rqomr46/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pythia8-8.309-vma4h737hgsp67bknpzabx6m6rqomr46/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pythia8-8.309-vma4h737hgsp67bknpzabx6m6rqomr46/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pythia8-8.309-vma4h737hgsp67bknpzabx6m6rqomr46/."
+setenv PYTHIA8_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pythia8-8.309-vma4h737hgsp67bknpzabx6m6rqomr46"
+
+if [module-info mode load] {
+}

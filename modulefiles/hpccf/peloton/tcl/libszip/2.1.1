@@ -1,0 +1,33 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:48.098641
+##
+## libszip@2.1.1%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/zsteyuj
+##
+## Configure options: --enable-production --enable-shared --enable-static --enable-encoding
+##
+
+
+module-whatis "Szip is an implementation of the extended-Rice lossless compression algorithm."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : libszip"
+    puts stderr "Version: 2.1.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Szip is an implementation of the extended-Rice lossless compression"
+    puts stderr "algorithm. It provides lossless compression of scientific data, and is"
+    puts stderr "provided with HDF software products."
+}
+
+conflict libszip
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libszip-2.1.1-zsteyujess2r7spjnbmocscgno77u22r/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libszip-2.1.1-zsteyujess2r7spjnbmocscgno77u22r/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libszip-2.1.1-zsteyujess2r7spjnbmocscgno77u22r/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libszip-2.1.1-zsteyujess2r7spjnbmocscgno77u22r/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libszip-2.1.1-zsteyujess2r7spjnbmocscgno77u22r/lib"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libszip-2.1.1-zsteyujess2r7spjnbmocscgno77u22r/."
+setenv LIBSZIP_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libszip-2.1.1-zsteyujess2r7spjnbmocscgno77u22r"
+
+if [module-info mode load] {
+}

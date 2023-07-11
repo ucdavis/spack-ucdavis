@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:50.045122
+##
+## muscle5@5.1.0%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/y24vfh4
+##
+
+
+module-whatis "MUSCLE is widely-used software for making multiple alignments of biological sequences. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : muscle5"
+    puts stderr "Version: 5.1.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "MUSCLE is widely-used software for making multiple alignments of"
+    puts stderr "biological sequences."
+}
+
+conflict muscle5
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/muscle5-5.1.0-y24vfh4aubgzbepqzsdsjdmgiekngnai/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/muscle5-5.1.0-y24vfh4aubgzbepqzsdsjdmgiekngnai/."
+setenv MUSCLE5_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/muscle5-5.1.0-y24vfh4aubgzbepqzsdsjdmgiekngnai"
+
+if [module-info mode load] {
+}

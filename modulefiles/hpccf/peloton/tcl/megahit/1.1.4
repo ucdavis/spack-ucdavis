@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:48.923422
+##
+## megahit@1.1.4%gcc@7.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/xwluiz2
+##
+
+
+module-whatis "MEGAHIT: An ultra-fast single-node solution for large and complex metagenomics assembly via succinct de Bruijn graph"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : megahit"
+    puts stderr "Version: 1.1.4"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "MEGAHIT: An ultra-fast single-node solution for large and complex"
+    puts stderr "metagenomics assembly via succinct de Bruijn graph"
+}
+
+conflict megahit
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-7.5.0/megahit-1.1.4-xwluiz2er3d6xtdx3v2fjbwyna65jg7g/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-7.5.0/megahit-1.1.4-xwluiz2er3d6xtdx3v2fjbwyna65jg7g/."
+setenv MEGAHIT_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-7.5.0/megahit-1.1.4-xwluiz2er3d6xtdx3v2fjbwyna65jg7g"
+
+if [module-info mode load] {
+}

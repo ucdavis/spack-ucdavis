@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:36.247337
+##
+## clustalw@2.1%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/jw2m33w
+##
+
+
+module-whatis "Multiple alignment of nucleic acid and protein sequences."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : clustalw"
+    puts stderr "Version: 2.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Multiple alignment of nucleic acid and protein sequences."
+}
+
+conflict clustalw
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/clustalw-2.1-jw2m33wj43egnumiuu45joocqmmd6aez/bin"
+prepend-path --delim ":" ACLOCAL_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/clustalw-2.1-jw2m33wj43egnumiuu45joocqmmd6aez/share/aclocal"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/clustalw-2.1-jw2m33wj43egnumiuu45joocqmmd6aez/."
+setenv CLUSTALW_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/clustalw-2.1-jw2m33wj43egnumiuu45joocqmmd6aez"
+
+if [module-info mode load] {
+}

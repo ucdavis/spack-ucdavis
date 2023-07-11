@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:36.315142
+##
+## corset@1.09%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/x7ldc2l
+##
+
+
+module-whatis "Corset is a command-line software program to go from a de novo transcriptome assembly to gene-level counts."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : corset"
+    puts stderr "Version: 1.09"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Corset is a command-line software program to go from a de novo"
+    puts stderr "transcriptome assembly to gene-level counts."
+}
+
+conflict corset
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/corset-1.09-x7ldc2lo3i67ateuhjocfryjzst3mvnn/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/corset-1.09-x7ldc2lo3i67ateuhjocfryjzst3mvnn/."
+setenv CORSET_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/corset-1.09-x7ldc2lo3i67ateuhjocfryjzst3mvnn"
+
+if [module-info mode load] {
+}

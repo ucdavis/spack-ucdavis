@@ -1,0 +1,31 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:34.548352
+##
+## cdo@2.1.1%gcc@11.3.0~curl~external-grib1+fftw3+hdf5+libxml2~magics+netcdf+openmp+proj+szip+udunits2 build_system=autotools grib2=eccodes arch=linux-ubuntu22.04-x86_64_v2/4234oa3
+##
+## Configure options: --with-netcdf=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-c-4.9.2-muqr7es3ldayqz5vmfhig42wro7gzx3c --with-eccodes=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/eccodes-2.25.0-j6bsah3rlmxso7gxg2ojeamjfafvbq2p --without-grib_api --enable-cgribex --with-szlib=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libaec-1.0.6-m5vggf3f65wr5wea47t6ty7tz4earg4r --with-hdf5=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hdf5-1.14.1-2-pkil3y66rhqrm22gtkoesdq2ccwhm3ps --with-udunits2=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/udunits-2.2.28-4td67tqewcxhvggqjkcbwkuspqtxccwd --with-libxml2=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libxml2-2.10.3-yne3x7jjvxdrolkdppdv4kglwcs6tykj --with-proj=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/proj-9.2.0-a7x2ck6hapnmbokazqkpi7a6qzogbscx --without-curl --without-magics --with-fftw3 --enable-openmp LDFLAGS=-L/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hdf5-1.14.1-2-pkil3y66rhqrm22gtkoesdq2ccwhm3ps/lib CPPFLAGS=-DOMPI_SKIP_MPICXX -DMPICH_SKIP_MPICXX
+##
+
+
+module-whatis "CDO is a collection of command line Operators to manipulate and analyse Climate and NWP model Data. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : cdo"
+    puts stderr "Version: 2.1.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "CDO is a collection of command line Operators to manipulate and analyse"
+    puts stderr "Climate and NWP model Data."
+}
+
+module load fftw/3.3.10
+prereq fftw/3.3.10
+conflict cdo
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cdo-2.1.1-4234oa3qko733lr36d5ltkwptrfhuix7/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cdo-2.1.1-4234oa3qko733lr36d5ltkwptrfhuix7/."
+setenv PROJ_LIB "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/proj-9.2.0-a7x2ck6hapnmbokazqkpi7a6qzogbscx/share/proj"
+setenv CDO_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cdo-2.1.1-4234oa3qko733lr36d5ltkwptrfhuix7"
+
+if [module-info mode load] {
+}

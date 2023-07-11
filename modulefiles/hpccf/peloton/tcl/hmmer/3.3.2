@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:42.845512
+##
+## hmmer@3.3.2%gcc@11.3.0~gsl+mpi build_system=generic arch=linux-ubuntu22.04-x86_64_v2/csjsnjv
+##
+
+
+module-whatis "HMMER is used for searching sequence databases for sequence homologs, and for making sequence alignments. It implements methods using probabilistic models called profile hidden Markov models (profile HMMs). "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : hmmer"
+    puts stderr "Version: 3.3.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "HMMER is used for searching sequence databases for sequence homologs,"
+    puts stderr "and for making sequence alignments. It implements methods using"
+    puts stderr "probabilistic models called profile hidden Markov models (profile HMMs)."
+}
+
+conflict hmmer
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hmmer-3.3.2-csjsnjvgzp6hakghrvllvdam2wmohvhu/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hmmer-3.3.2-csjsnjvgzp6hakghrvllvdam2wmohvhu/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hmmer-3.3.2-csjsnjvgzp6hakghrvllvdam2wmohvhu/."
+setenv HMMER_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hmmer-3.3.2-csjsnjvgzp6hakghrvllvdam2wmohvhu"
+
+if [module-info mode load] {
+}

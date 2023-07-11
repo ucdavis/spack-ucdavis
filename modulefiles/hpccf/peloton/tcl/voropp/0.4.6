@@ -1,0 +1,33 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:08:06.302240
+##
+## voropp@0.4.6%gcc@11.3.0+pic build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/6yxwhkr
+##
+
+
+module-whatis "Voro++ is a open source software library for the computation of the Voronoi diagram, a widely-used tessellation that has applications in many scientific fields."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : voropp"
+    puts stderr "Version: 0.4.6"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Voro++ is a open source software library for the computation of the"
+    puts stderr "Voronoi diagram, a widely-used tessellation that has applications in"
+    puts stderr "many scientific fields."
+}
+
+conflict voropp
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/voropp-0.4.6-6yxwhkrkay5blouuv27herrfqk6ohnqs/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/voropp-0.4.6-6yxwhkrkay5blouuv27herrfqk6ohnqs/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/voropp-0.4.6-6yxwhkrkay5blouuv27herrfqk6ohnqs/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/voropp-0.4.6-6yxwhkrkay5blouuv27herrfqk6ohnqs/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/voropp-0.4.6-6yxwhkrkay5blouuv27herrfqk6ohnqs/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/voropp-0.4.6-6yxwhkrkay5blouuv27herrfqk6ohnqs/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/voropp-0.4.6-6yxwhkrkay5blouuv27herrfqk6ohnqs/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/voropp-0.4.6-6yxwhkrkay5blouuv27herrfqk6ohnqs/."
+setenv VOROPP_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/voropp-0.4.6-6yxwhkrkay5blouuv27herrfqk6ohnqs"
+
+if [module-info mode load] {
+}

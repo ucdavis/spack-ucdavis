@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:08:05.838856
+##
+## turbovnc@3.0.3%gcc@11.3.0~ipo+libjpeg-turbo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/vdwblxl
+##
+## Configure options: -DG:STRING=NMake Makefiles -DCMAKE_BUILD_TYPE:STRING=Release -DTJPEG_INCLUDE_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libjpeg-turbo-2.1.5-2ov4shd6myycxsfbzzebxepvxig4ei2p/include -DTJPEG_LIBRARY:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libjpeg-turbo-2.1.5-2ov4shd6myycxsfbzzebxepvxig4ei2p/lib/libturbojpeg.so
+##
+
+
+module-whatis "TurboVNC is a derivative of VNC (Virtual Network Computing) that is tuned to provide peak performance for 3D and video workloads."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : turbovnc"
+    puts stderr "Version: 3.0.3"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "TurboVNC is a derivative of VNC (Virtual Network Computing) that is"
+    puts stderr "tuned to provide peak performance for 3D and video workloads."
+}
+
+conflict turbovnc
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/turbovnc-3.0.3-vdwblxlkfhjdsfbo3xnmfacyczc2hjij/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/turbovnc-3.0.3-vdwblxlkfhjdsfbo3xnmfacyczc2hjij/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/turbovnc-3.0.3-vdwblxlkfhjdsfbo3xnmfacyczc2hjij/."
+setenv TURBOVNC_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/turbovnc-3.0.3-vdwblxlkfhjdsfbo3xnmfacyczc2hjij"
+
+if [module-info mode load] {
+}

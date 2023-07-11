@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:45.141938
+##
+## intel-oneapi-mkl@2022.2.1%gcc@11.3.0~cluster+envmods~ilp64+shared build_system=generic threads=none arch=linux-ubuntu22.04-x86_64_v2/wtu2kcp
+##
+
+
+module-whatis "Intel oneAPI Math Kernel Library (Intel oneMKL; formerly Intel Math Kernel Library or Intel MKL), is a library of optimized math routines for science, engineering, and financial applications. Core math functions include BLAS, LAPACK, ScaLAPACK, sparse solvers, fast Fourier transforms, and vector math."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : intel-oneapi-mkl"
+    puts stderr "Version: 2022.2.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Intel oneAPI Math Kernel Library (Intel oneMKL; formerly Intel Math"
+    puts stderr "Kernel Library or Intel MKL), is a library of optimized math routines"
+    puts stderr "for science, engineering, and financial applications. Core math"
+    puts stderr "functions include BLAS, LAPACK, ScaLAPACK, sparse solvers, fast Fourier"
+    puts stderr "transforms, and vector math. LICENSE INFORMATION: By downloading and"
+    puts stderr "using this software, you agree to the terms and conditions of the"
+    puts stderr "software license agreements at https://intel.ly/393CijO."
+}
+
+conflict intel-oneapi-mkl
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/lib"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/."
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/mkl/2022.2.1/include"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/mkl/2022.2.1/lib/intel64"
+setenv MKLROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/mkl/2022.2.1"
+prepend-path --delim ":" NLSPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/mkl/2022.2.1/lib/intel64/locale/%l_%t/%N"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/mkl/2022.2.1/lib/intel64"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/mkl/2022.2.1/bin/intel64"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/mkl/2022.2.1/lib/pkgconfig"
+append-path --delim " " __INTEL_POST_CFLAGS "-Wl,-rpath,/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/mkl/2022.2.1/lib/intel64"
+append-path --delim " " __INTEL_POST_FFLAGS "-Wl,-rpath,/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/mkl/2022.2.1/lib/intel64"
+setenv INTEL_ONEAPI_MKL_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3"
+
+if [module-info mode load] {
+}

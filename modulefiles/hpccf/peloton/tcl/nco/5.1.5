@@ -1,0 +1,31 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:50.639407
+##
+## nco@5.1.5%gcc@11.3.0~doc build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/do7dsyi
+##
+## Configure options: --disable-doc
+##
+
+
+module-whatis "The NCO toolkit manipulates and analyzes data stored in netCDF-accessible formats"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : nco"
+    puts stderr "Version: 5.1.5"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "The NCO toolkit manipulates and analyzes data stored in netCDF-"
+    puts stderr "accessible formats"
+}
+
+conflict nco
+
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nco-5.1.5-do7dsyiin3k3exh4hpklikie6hy2j34x/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nco-5.1.5-do7dsyiin3k3exh4hpklikie6hy2j34x/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nco-5.1.5-do7dsyiin3k3exh4hpklikie6hy2j34x/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nco-5.1.5-do7dsyiin3k3exh4hpklikie6hy2j34x/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nco-5.1.5-do7dsyiin3k3exh4hpklikie6hy2j34x/."
+setenv NCO_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nco-5.1.5-do7dsyiin3k3exh4hpklikie6hy2j34x"
+
+if [module-info mode load] {
+}

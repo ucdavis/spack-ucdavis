@@ -1,0 +1,34 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:44.388426
+##
+## htslib@1.17%gcc@11.3.0+libcurl+libdeflate build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/hwdq4ev
+##
+## Configure options: --enable-libcurl --enable-libdeflate
+##
+
+
+module-whatis "C library for high-throughput sequencing data formats."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : htslib"
+    puts stderr "Version: 1.17"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "C library for high-throughput sequencing data formats."
+}
+
+conflict htslib
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/htslib-1.17-hwdq4evx67zqjemualwrbounveioxbzn/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/htslib-1.17-hwdq4evx67zqjemualwrbounveioxbzn/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/htslib-1.17-hwdq4evx67zqjemualwrbounveioxbzn/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/htslib-1.17-hwdq4evx67zqjemualwrbounveioxbzn/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/htslib-1.17-hwdq4evx67zqjemualwrbounveioxbzn/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/htslib-1.17-hwdq4evx67zqjemualwrbounveioxbzn/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/htslib-1.17-hwdq4evx67zqjemualwrbounveioxbzn/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/htslib-1.17-hwdq4evx67zqjemualwrbounveioxbzn/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/htslib-1.17-hwdq4evx67zqjemualwrbounveioxbzn/."
+setenv HTSLIB_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/htslib-1.17-hwdq4evx67zqjemualwrbounveioxbzn"
+
+if [module-info mode load] {
+}

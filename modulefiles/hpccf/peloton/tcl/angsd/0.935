@@ -1,0 +1,33 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:29.838034
+##
+## angsd@0.935%gcc@11.3.0+r build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/bv4fbst
+##
+
+
+module-whatis "Angsd is a program for analysing NGS data."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : angsd"
+    puts stderr "Version: 0.935"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Angsd is a program for analysing NGS data. The software can handle a"
+    puts stderr "number of different input types from mapped reads to imputed genotype"
+    puts stderr "probabilities. Most methods take genotype uncertainty into account"
+    puts stderr "instead of basing the analysis on called genotypes. This is especially"
+    puts stderr "useful for low and medium depth data."
+}
+
+module load zlib/1.2.13
+prereq zlib/1.2.13
+conflict angsd
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/angsd-0.935-bv4fbstwdvnl5sxmoz5mde6d3zbucymf/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/angsd-0.935-bv4fbstwdvnl5sxmoz5mde6d3zbucymf/."
+setenv R_HOME "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/r-4.2.2-io5abfyg43yx6wc7b6liuxm6bh4kyon7/rlib/R"
+setenv R_LIBS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/angsd-0.935-bv4fbstwdvnl5sxmoz5mde6d3zbucymf/R"
+setenv ANGSD_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/angsd-0.935-bv4fbstwdvnl5sxmoz5mde6d3zbucymf"
+
+if [module-info mode load] {
+}

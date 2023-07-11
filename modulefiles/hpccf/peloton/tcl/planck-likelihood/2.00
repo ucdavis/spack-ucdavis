@@ -1,0 +1,33 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:56.941494
+##
+## planck-likelihood@2.00%gcc@11.3.0~lensing-ext~plik-DS~plik-HM-ext~plik-unbinned build_system=generic patches=933b877,c4719d3 arch=linux-ubuntu22.04-x86_64_v2/ajlwnfs
+##
+
+
+module-whatis "2015 Cosmic Microwave Background (CMB) spectra and likelihood code"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : planck-likelihood"
+    puts stderr "Version: 2.00"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "2015 Cosmic Microwave Background (CMB) spectra and likelihood code"
+}
+
+conflict planck-likelihood
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/planck-likelihood-2.00-ajlwnfs4lx74zsl3pzw5k4fsjxao3nf2/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/planck-likelihood-2.00-ajlwnfs4lx74zsl3pzw5k4fsjxao3nf2/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/planck-likelihood-2.00-ajlwnfs4lx74zsl3pzw5k4fsjxao3nf2/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/planck-likelihood-2.00-ajlwnfs4lx74zsl3pzw5k4fsjxao3nf2/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/planck-likelihood-2.00-ajlwnfs4lx74zsl3pzw5k4fsjxao3nf2/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/planck-likelihood-2.00-ajlwnfs4lx74zsl3pzw5k4fsjxao3nf2/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/planck-likelihood-2.00-ajlwnfs4lx74zsl3pzw5k4fsjxao3nf2/."
+setenv CLIK_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/planck-likelihood-2.00-ajlwnfs4lx74zsl3pzw5k4fsjxao3nf2"
+setenv CLIK_DATA "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/planck-likelihood-2.00-ajlwnfs4lx74zsl3pzw5k4fsjxao3nf2/share/clik"
+setenv CLIK_PLUGIN "rel2015"
+setenv PLANCK_LIKELIHOOD_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/planck-likelihood-2.00-ajlwnfs4lx74zsl3pzw5k4fsjxao3nf2"
+
+if [module-info mode load] {
+}
