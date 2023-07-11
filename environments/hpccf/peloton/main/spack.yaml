@@ -1,68 +1,116 @@
 spack:
   definitions:
     - core_specs: &core_specs
+      - aocc @3.2.0 +license-agreed
       - openmpi ~romio
       - openmpi +romio
-      - slurm@22-05-9
+      - slurm @22-05-9
       - hwloc
       - libevent
       - pmix
       - ucx
-      - cuda@11.7
-      - gcc@11.3.0
-      - gcc@9.5.0
-      - gcc@7.5.0
+      - cuda @11.7
+      - gcc @11.3.0
+      - gcc @9.5.0 %gcc@11.3.0
+      - gcc @7.5.0 %gcc@11.3.0
       #- gcc@5.5.0 %gcc@9.5.0
       #- gcc@4.9.4 %gcc@9.5.0
-      - intel-oneapi-compilers@2022.2.1
+      - go @1.20.3
+      - intel-oneapi-compilers @2022.2.1
       #- nvhpc@23.1 # huge, waiting...
-      - jdk@17.0.1
-      - openjdk@16.0.2
-      - openjdk@11.0.17_8
+      - jdk @17.0.1
+      - openjdk @16.0.2
+      - openjdk @11.0.17_8
       #- julia@1.8.5
-      #- julia@1.9.0
+      - julia@1.9.0
     - libs_specs: &libs_specs
-      - amdfftw target=zen
-      - boost
-      - ccfits
-      - cfitsio
-      - cgal
-      - dealii
-      - eigen
-      - fftw
-      - fsl
-      - gmp
-      - gsl
-      - hdf5
-      - intel-oneapi-mkl
-      - librsvg
-      - libszip
+      - amdfftw @3.2 target=zen2
+      - blas @0.4.3
+      - boost @1.82
+      - ccfits @2.6
+      - cfitsio @4.2.0
+      - cgal @5.4.1
+      - dealii @9.4.2 ^openmpi+romio
+      - eigen @3.4.0
+      - fftw @3.3.10
+      - fsl @6.0.5
+      - gmp @6.2.1
+      - gsl @2.7.1
+      - hdf5 @1.14.1-2
+      - intel-oneapi-mkl @2022.2.1
+      - intel-oneapi-tbb @2021.9.0
+      - librsvg @2.51.0
+      - libsvm @323
+      - libszip @2.1.1
+      - libxc @6.1.0
       - mpfr
-      - netcdf-c
-      - netcdf-cxx4
-      - netcdf-fortran
-      - nlohmann-json
-      - zlib
+      - nlopt @2.7.0
+      - netcdf-c @4.9.2
+      - netcdf-cxx4 @4.3.1
+      - netcdf-fortran @4.6.0
+      - netlib-lapack @3.11.0
+      - netlib-xblas @1.0.248
+      - nlohmann-json @3.11.2
+      - ntirpc @3.2
+      - openblas @0.3.23
+      - parmetis @4.0.3
+      - plumed @2.8.2
+      - spglib @2.0.2
+      - voropp @0.4.6
+      - xerces-c @3.2.4
+      - zlib @1.2.13
     - general_specs: &general_specs
       # misc
+      - abinit @9.8.3
+      - amber @20
       - apptainer
       - aria2
       - aspera-cli
+      - atlas @3.10.3
       - awscli 
       - cdo
+      - cp2k @2023.1
+      - cplex @12.8.0
       - cmake
-      - gnuplot
-      - gromacs
+      - doxygen @1.9.6
+      - elk @8.3.22
+      - exciting @oxygen +mpi
+      - fplo @22.00-62
+      - freesurfer @7.2.0
+      - gaussian @16-B.01
+      - geant4 @11.1.1
+      - genie @3.0.6
+      - gmt @6.2.0
+      - gnuplot @5.4.3
+      - gromacs @2019.6
+      - gromacs @2023.1
       - hypre
+      - imagemagick @7.0.8-7
       - jags
+      - lammps @20230208
+      - lcov @1.16
       - mark
       - nco
+      - nwchem @7.2.0
+      - octave @8.2.0
+      - octopus @7.3 ^fftw
+      #- octopus @12.2
+      #- orca @5.0.3-f.1
       - parallel
+      - paraview @5.11.1
       - pigz
+      - planck-likelihood @2.00
+      - pythia6 @6.4.28
+      - pythia8 @8.309
+      - quantum-espresso @7.1
       - rclone
-      - rstudio@2022.12.0+server ^curl@7.85.0
+      - root @6.28.04 +pythia6 +pythia8 +python +fortran +fftw
+      - rstudio @2022.12.0+server ^curl@7.85.0
       - stata
+      - shengbte @1.1.1-8a63749 %gcc@7.5.0
+      - trilinos @13.0.1 # +cuda +uvm +wrapper
       - turbovnc
+      - valgrind @3.20.0
       - virtualgl
       - yasm
 
@@ -78,7 +126,7 @@ spack:
       - beagle
       - bedops
       - bedtools2
-      - blast-plus
+      - blast-plus @2.13.0
       - blast2go
       - blat
       - bowtie
@@ -100,7 +148,7 @@ spack:
       - diamond
       - dssp
       - ea-utils
-      - emboss
+      - emboss @6.6.0
       - exonerate
       - exonerate-gff3
       - fastme
@@ -129,6 +177,7 @@ spack:
       - iqtree2
       - jellyfish@1.1.11
       - jellyfish@2.3.0
+      - kaiju @1.6.2
       - kalign
       - kallisto
       - kmergenie
@@ -143,7 +192,8 @@ spack:
       - maven
       - mcl
       - meme@5.3.0
-      - metabat
+      - megahit@1.1.4 %gcc@7.5.0
+      - metabat@2.15
       - metaeuk
       - minced
       - miniasm
@@ -170,6 +220,8 @@ spack:
       - pilon
       - plink
       - plink-ng
+      - pplacer @1.1.alpha19
+      - prodigal @2.6.3
       - prokka
       - py-biopython
       - py-checkm-genome
@@ -177,8 +229,9 @@ spack:
       - py-deeptools
       - py-htseq
       - py-ipython
+      - py-metaphlan @4.0.2
       - py-multiqc
-      - py-quast
+      - py-quast @4.6.3
       - py-vcf-kit
       - qualimap
       - raxml
@@ -191,9 +244,9 @@ spack:
       - rnaquast
       - rsem
       - sabre
-      - salmon@1.9.0
-      - salmon@1.10.1
-      - samtools
+      - salmon @1.9.0
+      - salmon @1.10.1
+      - samtools @1.16.1
       - satsuma2
       - scallop
       - seqprep
@@ -209,20 +262,25 @@ spack:
       - star
       #- strelka
       - stringtie
+      - subread @2.0.2
       - tabix
       - tassel
+      - tophat @2.1.2
       - trimgalore
       - trimmomatic
       - trinity
-      - usearch
+      - usearch @11.0.667
       - vcftools
       - velvet
       - velvetoptimiser
       - vsearch
+
   specs:
   - environment-modules@5.2.0
   - $core_specs
   - $libs_specs
+  - $general_specs
+
   view:
     generic:
       root: /share/apps/22.04/spack/environments/main/view
@@ -231,6 +289,7 @@ spack:
       exclude:
       - gcc
       link_type: symlink
+
   modules:
     common:
       tcl: &tcl_common_opts
@@ -249,23 +308,24 @@ spack:
         ^python:
           autoload: direct
           prerequisites: direct
-    core:
+
+    default:
       roots:
-        tcl: $spack/../../modulefiles/spack/core/
+        tcl: $spack/../../modulefiles/spack/tcl/
       prefix_inspections:
+        include:
+        - CPATH
+        - C_INCLUDE_PATH
+        - CPLUS_INCLUDE_PATH
         lib64:
         - LD_LIBRARY_PATH
+        - LIBRARY_PATH
         lib:
         - LD_LIBRARY_PATH
+        - LIBRARY_PATH
       arch_folder: false
       tcl:
         <<: *tcl_common_opts
-        include: *core_specs
-        exclude:
-          - environment-modules
-          - gmp
-          - zlib
-          - pigz
         defaults:
         - openmpi~romio
         projections:
@@ -274,6 +334,39 @@ spack:
           slurm: slurm/22.05.9
           openmpi~romio: openmpi/{version}
           openmpi+romio: openmpi/{version}-mpi-io
+        gcc@9.5:
+          template: hpccf/gcc.tcl
+        slurm:
+          template: hpccf/slurm.tcl
+    core:
+      roots:
+        tcl: $spack/../../modulefiles/spack/core/
+      prefix_inspections:
+        include:
+        - CPATH
+        - C_INCLUDE_PATH
+        - CPLUS_INCLUDE_PATH
+        lib64:
+        - LD_LIBRARY_PATH
+        - LIBRARY_PATH
+        lib:
+        - LD_LIBRARY_PATH
+        - LIBRARY_PATH
+      arch_folder: false
+      tcl:
+        <<: *tcl_common_opts
+        include: *core_specs
+        exclude: ['@:']
+        defaults:
+        - openmpi~romio
+        projections:
+          all: '{name}/{version}'
+          target=zen2: '{name}/{version}+amd'
+          slurm: slurm/22.05.9
+          openmpi~romio: openmpi/{version}
+          openmpi+romio: openmpi/{version}-mpi-io
+        gcc@9.5:
+          template: hpccf/gcc.tcl
         slurm:
           template: hpccf/slurm.tcl
 
@@ -295,23 +388,7 @@ spack:
       tcl:
         <<: *tcl_common_opts
         include: *libs_specs
-        exclude:
-        - cmake
-        - cuda
-        - environment-modules
-        - gcc
-        - hwloc
-        - hypre
-        - intel-oneapi-compilers
-        - jdk
-        - libevent
-        - openjdk
-        - openmpi
-        - pigz
-        - pmix
-        - slurm
-        - ucx
-        - zlib%gcc@9.5.0
+        exclude: ['@:']
         projections:
           all: '{name}/{version}'
           target=zen2: '{name}/{version}+amd'
@@ -323,9 +400,7 @@ spack:
       tcl:
         <<: *tcl_common_opts
         include: *general_specs
-        #exclude:
-        #- $libs_specs
-        #- $core_specs
+        exclude: ['@:']
         projections:
           all: '{name}/{version}'
           target=zen2: '{name}/{version}+amd'
@@ -338,4 +413,4 @@ spack:
           template: hpccf/farm/turbovnc.tcl
 
   concretizer:
-    unify: when_possible
+    unify: false
