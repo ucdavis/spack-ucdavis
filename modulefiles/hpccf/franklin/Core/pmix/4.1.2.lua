@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-05-12 12:29:35.177847
+-- Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:40:46.434132
 --
 -- pmix@4.1.2%gcc@11.3.0~docs+pmi_backwards_compatibility~restful build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/6gsyach
 --
@@ -33,6 +33,9 @@ depends_on("hwloc/2.8.0")
 depends_on("libevent/2.1.12")
 
 prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pmix-4.1.2-6gsyachlobhzj6tskq2li4rjhpla23om/lib", ":")
+prepend_path("CPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pmix-4.1.2-6gsyachlobhzj6tskq2li4rjhpla23om/include", ":")
+prepend_path("C_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pmix-4.1.2-6gsyachlobhzj6tskq2li4rjhpla23om/include", ":")
+prepend_path("CPLUS_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pmix-4.1.2-6gsyachlobhzj6tskq2li4rjhpla23om/include", ":")
 prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pmix-4.1.2-6gsyachlobhzj6tskq2li4rjhpla23om/./bin", ":")
 prepend_path("MANPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pmix-4.1.2-6gsyachlobhzj6tskq2li4rjhpla23om/./share/man", ":")
 prepend_path("PKG_CONFIG_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pmix-4.1.2-6gsyachlobhzj6tskq2li4rjhpla23om/./lib/pkgconfig", ":")
@@ -41,8 +44,8 @@ prepend_path("XLOCALEDIR", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu
 setenv("PMIX_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pmix-4.1.2-6gsyachlobhzj6tskq2li4rjhpla23om")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

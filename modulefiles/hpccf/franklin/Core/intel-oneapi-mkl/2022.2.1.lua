@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-05-12 12:29:34.301755
+-- Module file created by spack (https://github.com/spack/spack) on 2023-05-30 13:50:15.749541
 --
 -- intel-oneapi-mkl@2022.2.1%gcc@11.3.0~cluster~ilp64+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3/x3feadh
 --
@@ -21,10 +21,10 @@ software license agreements at https://intel.ly/393CijO.]])
 
 prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-x3feadh5z3mil25ezjnzpwlhhv4duxb5/lib", ":")
 prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-x3feadh5z3mil25ezjnzpwlhhv4duxb5/./", ":")
-prepend_path("CPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-x3feadh5z3mil25ezjnzpwlhhv4duxb5/mkl/2022.2.1/include", ":")
 prepend_path("LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-x3feadh5z3mil25ezjnzpwlhhv4duxb5/mkl/2022.2.1/lib/intel64", ":")
 setenv("MKLROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-x3feadh5z3mil25ezjnzpwlhhv4duxb5/mkl/2022.2.1")
 prepend_path("NLSPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-x3feadh5z3mil25ezjnzpwlhhv4duxb5/mkl/2022.2.1/lib/intel64/locale/%l_%t/%N", ":")
+prepend_path("CPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-x3feadh5z3mil25ezjnzpwlhhv4duxb5/mkl/2022.2.1/include", ":")
 prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-x3feadh5z3mil25ezjnzpwlhhv4duxb5/mkl/2022.2.1/lib/intel64", ":")
 prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-x3feadh5z3mil25ezjnzpwlhhv4duxb5/mkl/2022.2.1/bin/intel64", ":")
 prepend_path("PKG_CONFIG_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-x3feadh5z3mil25ezjnzpwlhhv4duxb5/mkl/2022.2.1/lib/pkgconfig", ":")
@@ -33,8 +33,8 @@ append_path("__INTEL_POST_FFLAGS", "-Wl,-rpath,/share/apps/spack/spack-v0.19/opt
 setenv("INTEL_ONEAPI_MKL_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-x3feadh5z3mil25ezjnzpwlhhv4duxb5")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

@@ -1,14 +1,14 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-07-18 08:43:40.109505
+-- Module file created by spack (https://github.com/spack/spack) on 2023-07-17 13:42:26.311521
 --
--- relion@3.1.3%gcc@11.3.0+allow_ctf_in_sagd+cuda+double~double-gpu~external_motioncor2~gpu_delay+gui~ipo~mklfft build_system=cmake build_type=RelWithDebInfo cuda_arch=75 purpose=cluster arch=linux-ubuntu22.04-zen2/sapstb3
+-- relion@4.0.1%gcc@11.3.0+allow_ctf_in_sagd+cuda+double~double-gpu~external_motioncor2+gui~ipo+mklfft build_system=cmake build_type=RelWithDebInfo cuda_arch=75 purpose=cluster arch=linux-ubuntu22.04-x86_64_v3/kyoxh3j
 --
 
 whatis([[Name : relion]])
-whatis([[Version : 3.1.3]])
-whatis([[Target : zen2]])
+whatis([[Version : 4.0.1]])
+whatis([[Target : x86_64_v3]])
 whatis([[Short description : RELION (for REgularised LIkelihood OptimisatioN, pronounce rely-on) is a stand-alone computer program that employs an empirical Bayesian approach to refinement of (multiple) 3D reconstructions or 2D class averages in electron cryo-microscopy (cryo-EM).]])
-whatis([[Configure options : -DCMAKE_C_FLAGS=-g -DCMAKE_CXX_FLAGS=-g -DGUI=True -DDoublePrec_CPU=True -DDoublePrec_GPU=False -DALLOW_CTF_IN_SAGD=True -DMKLFFT=False -DALTCPU=False -DCUDA=ON -DCudaTexture=ON -DCUDA_ARCH=75 -DTHRUST_IGNORE_CUB_VERSION_CHECK=1 -DAMDFFTW=ON]])
+whatis([[Configure options : -DCMAKE_C_FLAGS=-g -DCMAKE_CXX_FLAGS=-g -DGUI=True -DDoublePrec_CPU=True -DDoublePrec_GPU=False -DALLOW_CTF_IN_SAGD=True -DMKLFFT=True -DALTCPU=False -DCUDA=ON -DCudaTexture=ON -DCUDA_ARCH=75]])
 
 help([[RELION (for REgularised LIkelihood OptimisatioN, pronounce rely-on) is a
 stand-alone computer program that employs an empirical Bayesian approach
@@ -16,16 +16,15 @@ to refinement of (multiple) 3D reconstructions or 2D class averages in
 electron cryo-microscopy (cryo-EM).]])
 
 
-depends_on("ctffind/4.1.14+amd")
+depends_on("ctffind/4.1.14+intel")
 depends_on("cuda/11.7.1")
+depends_on("intel-oneapi-mkl/2022.2.1")
 
-prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-sapstb3shqrwlxjb6djz5ronaeresvgz/lib", ":")
-prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-sapstb3shqrwlxjb6djz5ronaeresvgz/./bin", ":")
-prepend_path("PKG_CONFIG_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-sapstb3shqrwlxjb6djz5ronaeresvgz/./lib/pkgconfig", ":")
-prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-sapstb3shqrwlxjb6djz5ronaeresvgz/./", ":")
+prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/relion-4.0.1-kyoxh3jrmyjigp4dojdjrfzdjau4koup/./bin", ":")
+prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/relion-4.0.1-kyoxh3jrmyjigp4dojdjrfzdjau4koup/./", ":")
 prepend_path("XLOCALEDIR", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libx11-1.7.0-37huyicewgwa4it26lyc7hrklw2g6q6o/share/X11/locale", ":")
-setenv("RELION_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-sapstb3shqrwlxjb6djz5ronaeresvgz")
-setenv("RELION_QSUB_TEMPLATE", "/share/apps/spack/templates/hpccf/franklin/relion.3.1.3.gpu.zen2.slurm.template.sh")
+setenv("RELION_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/relion-4.0.1-kyoxh3jrmyjigp4dojdjrfzdjau4koup")
+setenv("RELION_QSUB_TEMPLATE", "/share/apps/spack/templates/hpccf/franklin/relion.4.0.1.gpu.x86_64_v3.slurm.template.sh")
 setenv("RELION_TOPAZ_EXECUTABLE", "/share/apps/spack/spack-ucdavis/bin/wrappers/topaz")
 
 

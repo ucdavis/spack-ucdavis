@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-03-17 11:41:09.346122
+-- Module file created by spack (https://github.com/spack/spack) on 2023-05-22 12:32:55.178505
 --
 -- rstudio@2022.12.0-353%gcc@11.3.0~ipo~notebook+server build_system=cmake build_type=RelWithDebInfo patches=0bea752 arch=linux-ubuntu22.04-x86_64_v3/iyxyinp
 --

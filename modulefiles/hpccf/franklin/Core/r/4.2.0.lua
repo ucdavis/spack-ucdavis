@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-03-17 11:41:08.647448
+-- Module file created by spack (https://github.com/spack/spack) on 2023-05-22 12:32:54.648053
 --
 -- r@4.2.0%gcc@11.3.0+X~external-lapack~memory_profiling~rmath build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/eh7pas7
 --
