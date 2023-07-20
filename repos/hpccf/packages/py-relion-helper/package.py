@@ -13,6 +13,11 @@ class PyRelionHelper(PythonPackage):
     homepage = "https://github.com/ucdavis/relion-helper"
     git = "https://github.com/ucdavis/relion-helper.git"
 
+    version('0.3',
+            sha256='dcaf487761f0cb608f2df5c3ffe6d93bed9ab119f1c2bb8335d7aaafc08a46a6',
+            url='https://github.com/ucdavis/relion-helper/tarball/40d2f13fca0b3246c578b47355da7d814d23ccc9',
+            extension='tar.gz')
+
     version('0.2',
             sha256='cf02f8054dfaf25b9270879e841b25ac9e48ecc37fff086395857cd1bd2362a2',
             url='https://github.com/ucdavis/relion-helper/tarball/fb7f8bc8e0f0369039580220e872141e6e4cbe94',
@@ -25,3 +30,4 @@ class PyRelionHelper(PythonPackage):
 
     depends_on("python@3.8:", type=("build", "run"))
     depends_on("py-rich", type=("build", "run"))
+    depends_on("py-starfile", type=("build", "run"), when="@0.3:")
