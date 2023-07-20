@@ -94,10 +94,10 @@ packages:
   ####
 
   slurm:
-    require: '@22-05-6-1 +pmix +mariadb +hwloc +restd sysconfdir=/etc/slurm'
+    require: '@22-05-6-1 +pmix +mariadb +hwloc +restd sysconfdir=/share/apps/spack/environments/cluster-core/view/etc/'
     version:
     - 22-05-6-1
-    variants: +pmix +mariadb +hwloc +restd sysconfdir=/etc/slurm
+    variants: +pmix +mariadb +hwloc +restd sysconfdir=/share/apps/spack/environments/cluster-core/view/etc/
   hwloc:
     # When mpi=openmpi, this introduces an unresolvable dependency.
     # See https://github.com/spack/spack/issues/15836 for details
