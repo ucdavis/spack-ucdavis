@@ -36,6 +36,8 @@
 #Define the "gpu" partition for GPU-accelerated jobs
 #SBATCH --partition=XXXqueueXXX
 #
+#SBATCH --account=XXXextra5XXX
+#
 #Define the number of GPUs used by your job
 #SBATCH --gres=gpu:XXXextra2XXX
 #
