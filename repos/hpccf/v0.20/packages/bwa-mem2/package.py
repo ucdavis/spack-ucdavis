@@ -20,8 +20,16 @@ class BwaMem2(MakefilePackage):
 
     depends_on("zlib")
 
-    with when("%intel"):
-        build_targets = ["CXX=icpc", "multi"]
+    patch("__cpuidex.remove.patch")
+    patch("stdcheaders.patch")
+
+    conflicts("%gcc@8:")
+
+    @property
+    def build_targets(self):
+        return ["CXX={0}".format(self.compiler.cxx),
+                "CC={0}".format(self.compiler.cc),
+                "multi"]
 
     def install(self, spec, prefix):
         mkdirp(prefix.bin)
