@@ -27,6 +27,7 @@ spack:
       - amdfftw @3.2 target=zen2
       - blas @0.4.3
       - boost @1.82
+      - bzip2 @1.0.8 +shared
       - ccfits @2.6
       - cfitsio @4.2.0
       - cgal @5.4.1
@@ -75,6 +76,7 @@ spack:
       - doxygen @1.9.6
       - elk @8.3.22
       - exciting @oxygen +mpi
+      - feh @3.10
       - fplo @22.00-62
       - freesurfer @7.2.0
       - gaussian @16-B.01
@@ -85,10 +87,12 @@ spack:
       - gromacs @2019.6
       - gromacs @2023.1
       - hypre
+      - idl @8.7.3
       - imagemagick @7.0.8-7
       - jags
       - lammps @20230208
       - lcov @1.16
+      - matlab @R2018a
       - mark
       - nco
       - nwchem @7.2.0
@@ -134,7 +138,7 @@ spack:
       - braker
       - busco
       - bwa
-      - bwa-mem2 %oneapi target=x86_64
+      - bwa-mem2 @2.2.1 %oneapi target=x86_64
       - bwtool
       - canu
       - cap3
@@ -142,8 +146,11 @@ spack:
       - circos
       - clustal-omega
       - clustalw
+      - coverm %gcc@11.3.0 ^bwa-mem2%oneapi
       - corset
       - cufflinks
+      - dashing @0.4.0 %gcc@7.5.0 # used by coverm
+      - dashing @1.0.3
       - deml
       - diamond
       - dssp
@@ -151,6 +158,7 @@ spack:
       - emboss @6.6.0
       - exonerate
       - exonerate-gff3
+      - fastani @1.33
       - fastme
       - fastq-screen
       - fastqc
