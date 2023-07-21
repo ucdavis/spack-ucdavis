@@ -1,0 +1,24 @@
+--- a/src/runsimd.cpp	2021-03-16 22:38:02.000000000 -0700
++++ b/src/runsimd.cpp	2023-07-20 13:15:11.802088828 -0700
+@@ -53,21 +53,6 @@
+ #define SIMD_AVX512F 0x100
+ #define SIMD_AVX512BW 0x200
+ 
+-#ifndef _MSC_VER
+-// adapted from https://github.com/01org/linux-sgx/blob/master/common/inc/internal/linux/cpuid_gnu.h
+-void __cpuidex(int cpuid[4], int func_id, int subfunc_id)
+-{
+-#if defined(__x86_64__)
+-	__asm__ volatile ("cpuid"
+-			: "=a" (cpuid[0]), "=b" (cpuid[1]), "=c" (cpuid[2]), "=d" (cpuid[3])
+-			: "0" (func_id), "2" (subfunc_id));
+-#else // on 32bit, ebx can NOT be used as PIC code
+-	__asm__ volatile ("xchgl %%ebx, %1; cpuid; xchgl %%ebx, %1"
+-			: "=a" (cpuid[0]), "=r" (cpuid[1]), "=c" (cpuid[2]), "=d" (cpuid[3])
+-			: "0" (func_id), "2" (subfunc_id));
+-#endif
+-}
+-#endif
+ 
+ static int x86_simd(void)
+ {

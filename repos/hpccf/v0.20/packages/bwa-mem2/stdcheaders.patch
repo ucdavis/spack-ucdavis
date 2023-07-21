@@ -1,0 +1,11 @@
+--- a/ext/safestringlib/makefile	2023-07-20 13:47:40.399657548 -0700
++++ b/ext/safestringlib/makefile	2023-07-20 13:47:32.687730628 -0700
+@@ -1,7 +1,7 @@
+ IDIR = include
+ MKDIR_P = mkdir -p
+ CC=gcc
+-CFLAGS=-I$(IDIR) -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security
++CFLAGS=-I$(IDIR) -fstack-protector-strong -fPIE -fPIC -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -DSTDC_HEADERS
+ LDFLAGS=-z noexecstack -z relo -z now
+ 
+ ODIR=obj
