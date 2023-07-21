@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:03.908355
+##
+## bbmap@39.01%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/ij3pq56
+##
+
+
+module-whatis "Short read aligner for DNA and RNA-seq data."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : bbmap"
+    puts stderr "Version: 39.01"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Short read aligner for DNA and RNA-seq data."
+}
+
+module load openjdk-11.0.17_8-gcc-11.3.0-oucx2ae
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bbmap-39.01-ij3pq56fl7ijpjjpugcvu455umkjacsf/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bbmap-39.01-ij3pq56fl7ijpjjpugcvu455umkjacsf/."
+setenv BBMAP_CONFIG "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bbmap-39.01-ij3pq56fl7ijpjjpugcvu455umkjacsf/bin/config"
+setenv BBMAP_RESOURCES "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bbmap-39.01-ij3pq56fl7ijpjjpugcvu455umkjacsf/bin/resources"
+

@@ -1,0 +1,33 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 12:43:21.275266
+##
+## mpfr@4.0.2%gcc@11.3.0 build_system=autotools libs=shared,static patches=3f80b83 arch=linux-ubuntu22.04-x86_64_v2/vrmviet
+##
+## Configure options: --with-gmp=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-qyjndnvcjkrswgso5x4ef52hjzxvsmhw --enable-shared --enable-static --with-pic
+##
+
+
+module-whatis "The MPFR library is a C library for multiple-precision floating-point computations with correct rounding."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : mpfr"
+    puts stderr "Version: 4.0.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "The MPFR library is a C library for multiple-precision floating-point"
+    puts stderr "computations with correct rounding."
+}
+
+conflict mpfr
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpfr-4.0.2-vrmvietrw2n6qyqunp32llkqiw34uqlr/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpfr-4.0.2-vrmvietrw2n6qyqunp32llkqiw34uqlr/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpfr-4.0.2-vrmvietrw2n6qyqunp32llkqiw34uqlr/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpfr-4.0.2-vrmvietrw2n6qyqunp32llkqiw34uqlr/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpfr-4.0.2-vrmvietrw2n6qyqunp32llkqiw34uqlr/lib"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpfr-4.0.2-vrmvietrw2n6qyqunp32llkqiw34uqlr/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpfr-4.0.2-vrmvietrw2n6qyqunp32llkqiw34uqlr/."
+setenv MPFR_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpfr-4.0.2-vrmvietrw2n6qyqunp32llkqiw34uqlr"
+
+if [module-info mode load] {
+}

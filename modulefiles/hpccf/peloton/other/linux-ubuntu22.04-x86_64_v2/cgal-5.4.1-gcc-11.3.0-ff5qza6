@@ -1,0 +1,34 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:01.612038
+##
+## cgal@5.4.1%gcc@11.3.0~core~demos+eigen~header_only~imageio~ipo+shared build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/ff5qza6
+##
+## Configure options: -DBUILD_SHARED_LIBS:BOOL=True -DWITH_CGAL_Core:BOOL=False -DWITH_CGAL_ImageIO:BOOL=False -DWITH_CGAL_Qt5:BOOL=False -DCGAL_HEADER_ONLY:BOOL=False
+##
+
+
+module-whatis "The Computational Geometry Algorithms Library (CGAL) is a C++ library that aims to provide easy access to efficient and reliable algorithms in computational geometry. CGAL is used in various areas needing geometric computation, such as geographic information systems, computer aided design, molecular biology, medical imaging, computer graphics, and robotics. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : cgal"
+    puts stderr "Version: 5.4.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "The Computational Geometry Algorithms Library (CGAL) is a C++ library"
+    puts stderr "that aims to provide easy access to efficient and reliable algorithms in"
+    puts stderr "computational geometry. CGAL is used in various areas needing geometric"
+    puts stderr "computation, such as geographic information systems, computer aided"
+    puts stderr "design, molecular biology, medical imaging, computer graphics, and"
+    puts stderr "robotics."
+}
+
+module load boost-1.82.0-gcc-11.3.0-pafzrtu
+module load eigen-3.4.0-gcc-11.3.0-byn7gmg
+module load gmp-6.2.1-gcc-11.3.0-s6757r7
+module load mpfr-4.0.2-gcc-11.3.0-3n7r5ug
+module load zlib-1.2.13-gcc-11.3.0-77qi6rv
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-ff5qza6saibuevdnjf35eqeqbho5jhyq/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-ff5qza6saibuevdnjf35eqeqbho5jhyq/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-ff5qza6saibuevdnjf35eqeqbho5jhyq/."
+

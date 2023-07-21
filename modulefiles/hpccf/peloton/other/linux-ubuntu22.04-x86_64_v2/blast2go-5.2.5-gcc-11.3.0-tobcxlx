@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:04.116489
+##
+## blast2go@5.2.5%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/tobcxlx
+##
+
+
+module-whatis "Blast2GO is a bioinformatics platform for high-quality functional annotation and analysis of genomic datasets."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : blast2go"
+    puts stderr "Version: 5.2.5"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Blast2GO is a bioinformatics platform for high-quality functional"
+    puts stderr "annotation and analysis of genomic datasets."
+}
+
+module load blast-plus-2.13.0-gcc-11.3.0-zaltoxf
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/blast2go-5.2.5-tobcxlxoqnsz6qshaosdji3hhm3jfoiv/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/blast2go-5.2.5-tobcxlxoqnsz6qshaosdji3hhm3jfoiv/."
+

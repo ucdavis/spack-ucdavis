@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:36.836032
+##
+## dssp@3.1.4%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/n7h5hez
+##
+## Configure options: --with-boost=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/boost-1.79.0-zfgjt4m2kjlie7wjogyqsihuab56czg5
+##
+
+
+module-whatis "'mkdssp' utility. (dictionary of protein secondary structure)"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : dssp"
+    puts stderr "Version: 3.1.4"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "'mkdssp' utility. (dictionary of protein secondary structure)"
+}
+
+module load boost-1.79.0-gcc-11.3.0-zfgjt4m
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/dssp-3.1.4-n7h5hez4ab2q6nfiny3zk3ugf5qnixwb/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/dssp-3.1.4-n7h5hez4ab2q6nfiny3zk3ugf5qnixwb/."
+

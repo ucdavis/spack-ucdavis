@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:06.550468
+##
+## pilon@1.22%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/tdxae7l
+##
+
+
+module-whatis "Pilon is an automated genome assembly improvement and variant detection tool."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : pilon"
+    puts stderr "Version: 1.22"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Pilon is an automated genome assembly improvement and variant detection"
+    puts stderr "tool."
+}
+
+module load openjdk-11.0.17_8-gcc-11.3.0-oucx2ae
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pilon-1.22-tdxae7lhjw3libmgewkskxfqctrywuir/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pilon-1.22-tdxae7lhjw3libmgewkskxfqctrywuir/."
+

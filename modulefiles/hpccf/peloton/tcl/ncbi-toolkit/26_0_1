@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:50.242464
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-11 16:45:26.952381
 ##
 ## ncbi-toolkit@26_0_1%gcc@11.3.0~debug build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/n6tolwg
 ##
@@ -17,7 +17,9 @@ proc ModulesHelp { } {
     puts stderr "NCBI C++ Toolkit"
 }
 
+module load bzip2/1.0.8
 module load zlib/1.2.13
+prereq bzip2/1.0.8
 prereq zlib/1.2.13
 conflict ncbi-toolkit
 

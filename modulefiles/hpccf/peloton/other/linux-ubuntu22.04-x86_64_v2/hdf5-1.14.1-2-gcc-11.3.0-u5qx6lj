@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:37.373216
+##
+## hdf5@1.14.1-2%gcc@11.3.0~cxx+fortran+hl~ipo~java~map+mpi+shared~szip+threadsafe+tools api=default build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/u5qx6lj
+##
+## Configure options: -DALLOW_UNSUPPORTED:BOOL=ON -DHDF5_BUILD_EXAMPLES:BOOL=OFF -DBUILD_TESTING:BOOL=OFF -DHDF5_ENABLE_MAP_API:BOOL=OFF -DHDF5_ENABLE_Z_LIB_SUPPORT:BOOL=ON -DHDF5_ENABLE_SZIP_SUPPORT:BOOL=OFF -DHDF5_ENABLE_SZIP_ENCODING:BOOL=OFF -DBUILD_SHARED_LIBS:BOOL=ON -DONLY_SHARED_LIBS:BOOL=OFF -DHDF5_ENABLE_PARALLEL:BOOL=ON -DHDF5_ENABLE_THREADSAFE:BOOL=ON -DHDF5_BUILD_HL_LIB:BOOL=ON -DHDF5_BUILD_CPP_LIB:BOOL=OFF -DHDF5_BUILD_FORTRAN:BOOL=ON -DHDF5_BUILD_JAVA:BOOL=OFF -DHDF5_BUILD_TOOLS:BOOL=ON -DMPI_CXX_COMPILER:PATH=/share/apps/22.04/manual/openmpi/4.1.5/bin/mpic++ -DMPI_C_COMPILER:PATH=/share/apps/22.04/manual/openmpi/4.1.5/bin/mpicc -DMPI_Fortran_COMPILER:PATH=/share/apps/22.04/manual/openmpi/4.1.5/bin/mpif90
+##
+
+
+module-whatis "HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : hdf5"
+    puts stderr "Version: 1.14.1-2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "HDF5 is a data model, library, and file format for storing and managing"
+    puts stderr "data. It supports an unlimited variety of datatypes, and is designed for"
+    puts stderr "flexible and efficient I/O and for high volume and complex data."
+}
+
+module load openmpi-4.1.5-gcc-11.3.0-63v4xd2
+module load pkgconf-1.9.5-gcc-11.3.0-ccjkwsb
+module load zlib-1.2.13-gcc-11.3.0-lu7f4vc
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hdf5-1.14.1-2-u5qx6ljrxxsycnh5dwbhiqkoga2l6gpv/bin"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hdf5-1.14.1-2-u5qx6ljrxxsycnh5dwbhiqkoga2l6gpv/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hdf5-1.14.1-2-u5qx6ljrxxsycnh5dwbhiqkoga2l6gpv/."
+

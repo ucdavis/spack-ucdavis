@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:37.704630
+##
+## iq-tree@2.1.3%gcc@11.3.0~ipo+lsd2~mpi+openmp build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/vuzq4k7
+##
+## Configure options: -DUSE_LSD2=ON -DIQTREE_FLAGS=omp
+##
+
+
+module-whatis "IQ-TREE Efficient software for phylogenomic inference"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : iq-tree"
+    puts stderr "Version: 2.1.3"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "IQ-TREE Efficient software for phylogenomic inference"
+}
+
+module load boost-1.79.0-gcc-11.3.0-zfgjt4m
+module load eigen-3.4.0-gcc-11.3.0-eseowcc
+module load zlib-1.2.13-gcc-11.3.0-lu7f4vc
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/iq-tree-2.1.3-vuzq4k7rmxb6j5adlp5pmdohmijnlj2j/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/iq-tree-2.1.3-vuzq4k7rmxb6j5adlp5pmdohmijnlj2j/."
+

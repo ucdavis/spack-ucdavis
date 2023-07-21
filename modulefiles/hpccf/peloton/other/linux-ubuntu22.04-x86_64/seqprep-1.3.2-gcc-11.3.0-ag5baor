@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:38.855010
+##
+## seqprep@1.3.2%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64/ag5baor
+##
+
+
+module-whatis "SeqPrep is a program to merge paired end Illumina reads that are overlapping into a single longer read."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : seqprep"
+    puts stderr "Version: 1.3.2"
+    puts stderr "Target : x86_64"
+    puts stderr ""
+    puts stderr "SeqPrep is a program to merge paired end Illumina reads that are"
+    puts stderr "overlapping into a single longer read."
+}
+
+module load zlib-1.2.13-gcc-11.3.0-lu7f4vc
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/seqprep-1.3.2-ag5baorysycoprsre6ruidh46rfy2skf/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/seqprep-1.3.2-ag5baorysycoprsre6ruidh46rfy2skf/."
+

@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:02.769423
+##
+## doxygen@1.9.6%gcc@11.3.0~graphviz~ipo~mscgen build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/6pmayng
+##
+## Configure options: -DPYTHON_EXECUTABLE:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/python-3.10.10-v5jpflnztkbw3n2odw6nx4ty6hzajvem/bin/python3.10
+##
+
+
+module-whatis "Doxygen is the de facto standard tool for generating documentation from annotated C++ sources, but it also supports other popular programming languages such as C, Objective-C, C#, PHP, Java, Python, IDL (Corba, Microsoft, and UNO/OpenOffice flavors), Fortran, VHDL, Tcl, and to some extent D.."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : doxygen"
+    puts stderr "Version: 1.9.6"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Doxygen is the de facto standard tool for generating documentation from"
+    puts stderr "annotated C++ sources, but it also supports other popular programming"
+    puts stderr "languages such as C, Objective-C, C#, PHP, Java, Python, IDL (Corba,"
+    puts stderr "Microsoft, and UNO/OpenOffice flavors), Fortran, VHDL, Tcl, and to some"
+    puts stderr "extent D.."
+}
+
+module load libiconv-1.17-gcc-11.3.0-5uksiej
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/doxygen-1.9.6-6pmayng6wlois3fojo45rdupqdnycabl/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/doxygen-1.9.6-6pmayng6wlois3fojo45rdupqdnycabl/."
+

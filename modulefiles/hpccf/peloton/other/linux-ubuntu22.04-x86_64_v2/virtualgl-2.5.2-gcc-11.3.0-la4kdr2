@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:03.809131
+##
+## virtualgl@2.5.2%gcc@11.3.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/la4kdr2
+##
+
+
+module-whatis "VirtualGL redirects 3D commands from a Unix/Linux OpenGL application onto a server-side GPU and converts the rendered 3D images into a video stream with which remote clients can interact to view and control the 3D application in real time."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : virtualgl"
+    puts stderr "Version: 2.5.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "VirtualGL redirects 3D commands from a Unix/Linux OpenGL application"
+    puts stderr "onto a server-side GPU and converts the rendered 3D images into a video"
+    puts stderr "stream with which remote clients can interact to view and control the 3D"
+    puts stderr "application in real time."
+}
+
+module load libjpeg-turbo-2.1.5-gcc-11.3.0-gb3femn
+module load mesa-glu-9.0.2-gcc-11.3.0-6ecwdvm
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/virtualgl-2.5.2-la4kdr2ukgzzfohds2mq2wftoqxiwht7/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/virtualgl-2.5.2-la4kdr2ukgzzfohds2mq2wftoqxiwht7/."
+

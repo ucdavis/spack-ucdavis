@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:07.867385
+##
+## tassel@5.2.86%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/kg624di
+##
+
+
+module-whatis "TASSEL is a software package to evaluate traits associations, evolutionary patterns, and linkage disequilibrium."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : tassel"
+    puts stderr "Version: 5.2.86"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "TASSEL is a software package to evaluate traits associations,"
+    puts stderr "evolutionary patterns, and linkage disequilibrium."
+}
+
+module load openjdk-11.0.17_8-gcc-11.3.0-oucx2ae
+module load perl-5.36.0-gcc-11.3.0-rp6rwls
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/tassel-5.2.86-kg624dihtwzmegho4ue7wewwhibyi26f/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/tassel-5.2.86-kg624dihtwzmegho4ue7wewwhibyi26f/."
+prepend-path --delim ":" CLASSPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/tassel-5.2.86-kg624dihtwzmegho4ue7wewwhibyi26f/bin/lib"
+

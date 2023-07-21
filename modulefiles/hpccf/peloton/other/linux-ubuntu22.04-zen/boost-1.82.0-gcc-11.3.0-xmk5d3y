@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:36.394755
+##
+## boost@1.82.0%gcc@11.3.0~atomic+chrono~clanglibcpp+container~context~contract~coroutine~date_time~debug+exception~fiber+filesystem+graph~graph_parallel~icu+iostreams~json~locale~log+math~mpi+multithreaded~nowide~numpy~pic+program_options~python+random~regex+serialization+shared~signals~singlethreaded~stacktrace+system~taggedlayout~test+thread+timer~type_erasure~versionedlayout~wave build_system=generic cxxstd=98 patches=a440f96,a7c807f visibility=hidden arch=linux-ubuntu22.04-zen/xmk5d3y
+##
+
+
+module-whatis "Boost provides free peer-reviewed portable C++ source libraries, emphasizing libraries that work well with the C++ Standard Library."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : boost"
+    puts stderr "Version: 1.82.0"
+    puts stderr "Target : zen"
+    puts stderr ""
+    puts stderr "Boost provides free peer-reviewed portable C++ source libraries,"
+    puts stderr "emphasizing libraries that work well with the C++ Standard Library."
+    puts stderr "Boost libraries are intended to be widely useful, and usable across a"
+    puts stderr "broad spectrum of applications. The Boost license encourages both"
+    puts stderr "commercial and non-commercial use."
+}
+
+module load bzip2-1.0.8-gcc-11.3.0-74zana7
+module load xz-5.4.1-gcc-11.3.0-um7kzxd
+module load zlib-1.2.13-gcc-11.3.0-syirmbd
+module load zstd-1.5.5-gcc-11.3.0-i6ry3kd
+
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/boost-1.82.0-xmk5d3ylpjgdxpy44swbmcjm7s6zkprb/."
+setenv BOOST_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/boost-1.82.0-xmk5d3ylpjgdxpy44swbmcjm7s6zkprb"
+

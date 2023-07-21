@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:38.951085
+##
+## sortmerna@2017-07-13%gcc@11.3.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/v56f5fb
+##
+
+
+module-whatis "SortMeRNA is a program tool for filtering, mapping and OTU-picking NGS reads in metatranscriptomic and metagenomic data"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : sortmerna"
+    puts stderr "Version: 2017-07-13"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "SortMeRNA is a program tool for filtering, mapping and OTU-picking NGS"
+    puts stderr "reads in metatranscriptomic and metagenomic data"
+}
+
+module load zlib-1.2.13-gcc-11.3.0-lu7f4vc
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/sortmerna-2017-07-13-v56f5fbhczjnegkishmpwlas6yn57tn5/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/sortmerna-2017-07-13-v56f5fbhczjnegkishmpwlas6yn57tn5/."
+

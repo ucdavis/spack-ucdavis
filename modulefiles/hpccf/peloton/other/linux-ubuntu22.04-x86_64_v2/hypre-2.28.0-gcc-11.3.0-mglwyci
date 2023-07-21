@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 12:22:43.813699
+##
+## hypre@2.28.0%gcc@11.3.0~complex~cuda~debug+fortran~gptune~int64~internal-superlu~mixedint+mpi~openmp~rocm+shared~superlu-dist~sycl~umpire~unified-memory build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/mglwyci
+##
+## Configure options: --prefix=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hypre-2.28.0-mglwyci2rzcegnqtmijckltpp42octc4 --with-lapack-libs=mkl_intel_lp64 mkl_sequential mkl_core m --with-lapack-lib-dirs=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/mkl/2022.2.1/lib/intel64 /lib/x86_64-linux-gnu --with-blas-libs=mkl_intel_lp64 mkl_sequential mkl_core m --with-blas-lib-dirs=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/intel-oneapi-mkl-2022.2.1-wtu2kcp2bxbjcjjxa3ohkjn3wg76hvs3/mkl/2022.2.1/lib/intel64 /lib/x86_64-linux-gnu --with-MPI --with-MPI-lib-dirs=/share/apps/22.04/manual/openmpi/4.1.5/lib --with-MPI-include=/share/apps/22.04/manual/openmpi/4.1.5/include --without-openmp --disable-bigint --disable-mixedint --disable-complex --enable-shared --without-superlu --without-mli --without-fei --disable-debug --without-cuda --disable-curand --disable-cusparse --without-hip --disable-rocrand --disable-rocsparse --enable-fortran
+##
+
+
+module-whatis "Hypre is a library of high performance preconditioners that features parallel multigrid methods for both structured and unstructured grid problems."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : hypre"
+    puts stderr "Version: 2.28.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Hypre is a library of high performance preconditioners that features"
+    puts stderr "parallel multigrid methods for both structured and unstructured grid"
+    puts stderr "problems."
+}
+
+module load intel-oneapi-mkl-2022.2.1-gcc-11.3.0-wtu2kcp
+module load openmpi-4.1.5-gcc-11.3.0-63v4xd2
+
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/hypre-2.28.0-mglwyci2rzcegnqtmijckltpp42octc4/."
+

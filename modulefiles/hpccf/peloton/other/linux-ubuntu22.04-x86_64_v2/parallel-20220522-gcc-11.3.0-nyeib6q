@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:38.574001
+##
+## parallel@20220522%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/nyeib6q
+##
+
+
+module-whatis "GNU parallel is a shell tool for executing jobs in parallel using one or more computers. A job can be a single command or a small script that has to be run for each of the lines in the input. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : parallel"
+    puts stderr "Version: 20220522"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "GNU parallel is a shell tool for executing jobs in parallel using one or"
+    puts stderr "more computers. A job can be a single command or a small script that has"
+    puts stderr "to be run for each of the lines in the input."
+}
+
+module load perl-5.36.0-gcc-11.3.0-a36qqup
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/parallel-20220522-nyeib6qdgw7gkt4cxzyatnq54reyjoxa/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/parallel-20220522-nyeib6qdgw7gkt4cxzyatnq54reyjoxa/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/parallel-20220522-nyeib6qdgw7gkt4cxzyatnq54reyjoxa/."
+

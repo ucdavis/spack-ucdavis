@@ -1,0 +1,27 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:01.510634
+##
+## ccfits@2.6%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/2ifo6gc
+##
+
+
+module-whatis "CCfits is an object oriented interface to the cfitsio library. It is designed to make the capabilities of cfitsio available to programmers working in C++. It is written in ANSI C++ and implemented using the C++ Standard Library with namespaces, exception handling, and member template functions."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : ccfits"
+    puts stderr "Version: 2.6"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "CCfits is an object oriented interface to the cfitsio library. It is"
+    puts stderr "designed to make the capabilities of cfitsio available to programmers"
+    puts stderr "working in C++. It is written in ANSI C++ and implemented using the C++"
+    puts stderr "Standard Library with namespaces, exception handling, and member"
+    puts stderr "template functions."
+}
+
+module load cfitsio-4.2.0-gcc-11.3.0-jf4nazr
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ccfits-2.6-2ifo6gciy63xcwe64xbhrbmtlztf2omo/bin"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ccfits-2.6-2ifo6gciy63xcwe64xbhrbmtlztf2omo/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ccfits-2.6-2ifo6gciy63xcwe64xbhrbmtlztf2omo/."
+

@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 15:51:54.512830
+##
+## aria2@1.36.0%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/3nbosab
+##
+
+
+module-whatis "An ultra fast download utility"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : aria2"
+    puts stderr "Version: 1.36.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "An ultra fast download utility"
+}
+
+conflict aria2
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/aria2-1.36.0-3nbosab6kinjix5byuknci6m4iwdkr7a/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/aria2-1.36.0-3nbosab6kinjix5byuknci6m4iwdkr7a/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/aria2-1.36.0-3nbosab6kinjix5byuknci6m4iwdkr7a/."
+setenv ARIA2_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/aria2-1.36.0-3nbosab6kinjix5byuknci6m4iwdkr7a"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 15:51:55.054840
+##
+## aspera-cli@3.7.7%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/pbcdmfm
+##
+
+
+module-whatis "The Aspera CLI client for the Fast and Secure Protocol (FASP)."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : aspera-cli"
+    puts stderr "Version: 3.7.7"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "The Aspera CLI client for the Fast and Secure Protocol (FASP)."
+}
+
+conflict aspera-cli
+
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/aspera-cli-3.7.7-pbcdmfmnjhx3bmlwtglhgrayazs2k2zo/."
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/aspera-cli-3.7.7-pbcdmfmnjhx3bmlwtglhgrayazs2k2zo/cli/bin"
+setenv ASPERA_CLI_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/aspera-cli-3.7.7-pbcdmfmnjhx3bmlwtglhgrayazs2k2zo"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:03.473939
+##
+## geant4@11.1.1%gcc@11.3.0~ipo~motif~opengl~qt~tbb+threads~vecgeom~vtk~x11 build_system=cmake build_type=Release cxxstd=17 generator=make arch=linux-ubuntu22.04-x86_64_v2/oxvl3k7
+##
+## Configure options: -DGEANT4_USE_SYSTEM_CLHEP:BOOL=ON -DGEANT4_USE_SYSTEM_EXPAT:BOOL=ON -DGEANT4_USE_SYSTEM_ZLIB:BOOL=ON -DGEANT4_USE_G3TOG4:BOOL=ON -DGEANT4_USE_GDML:BOOL=ON -DXERCESC_ROOT_DIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/xerces-c-3.2.4-ld55z644l2ocg2d6z3maohyqv3dae7f4 -DCMAKE_CXX_STANDARD:STRING=17 -DGEANT4_INSTALL_PACKAGE_CACHE:BOOL=ON -DGEANT4_BUILD_MULTITHREADED:BOOL=ON -DGEANT4_USE_TBB:BOOL=OFF -DGEANT4_BUILD_TLS_MODEL=global-dynamic -DGEANT4_INSTALL_DATA:BOOL=OFF -DGEANT4_INSTALL_DATADIR:STRING=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/geant4-data-11.1.0-7xya7o6qpr37gpkw5lkuq4xky7sxb5de/share/geant4-data-11.1.0 -DGEANT4_USE_VTK:BOOL=OFF 
+##
+
+
+module-whatis "Geant4 is a toolkit for the simulation of the passage of particles through matter. Its areas of application include high energy, nuclear and accelerator physics, as well as studies in medical and space science."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : geant4"
+    puts stderr "Version: 11.1.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Geant4 is a toolkit for the simulation of the passage of particles"
+    puts stderr "through matter. Its areas of application include high energy, nuclear"
+    puts stderr "and accelerator physics, as well as studies in medical and space"
+    puts stderr "science."
+}
+
+module load clhep-2.4.6.4-gcc-11.3.0-fidk7nw
+module load expat-2.5.0-gcc-11.3.0-lzi4kj7
+module load geant4-data-11.1.0-gcc-11.3.0-7xya7o6
+module load xerces-c-3.2.4-gcc-11.3.0-ld55z64
+module load zlib-1.2.13-gcc-11.3.0-77qi6rv
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/geant4-11.1.1-oxvl3k7kczzb6gognppc6ibrpwxs2xyx/bin"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/geant4-11.1.1-oxvl3k7kczzb6gognppc6ibrpwxs2xyx/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/geant4-11.1.1-oxvl3k7kczzb6gognppc6ibrpwxs2xyx/."
+setenv G4ABLADATA "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/g4abla-3.1-76evgfjmdjg5wxuktnmb4l2ut2shjviu/share/data/G4ABLA3.1"
+setenv G4LEDATA "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/g4emlow-8.2-5owg2sowgwbqvmvkzlqsasctmjifxgq2/share/data/G4EMLOW8.2"
+setenv G4ENSDFSTATEDATA "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/g4ensdfstate-2.3-uyjpnuwpwo5gtyz2rsmsz3fy2r5p5u3e/share/data/G4ENSDFSTATE2.3"
+setenv G4INCLDATA "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/g4incl-1.0-go7yhdn6sawd4ztenjv3rycgcgjvcmxj/share/data/G4INCL1.0"
+setenv G4NEUTRONHPDATA "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/g4ndl-4.7-d76o3uprt2giidbnadaiojzowmybvprp/share/data/G4NDL4.7"
+setenv G4PARTICLEXSDATA "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/g4particlexs-4.0-varor6eytegofrgtbdkzs4sl3y5xvtru/share/data/G4PARTICLEXS4.0"
+setenv G4LEVELGAMMADATA "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/g4photonevaporation-5.7-sjlvtjswfiuioclexxsdp4yfzlz5sgs2/share/data/PhotonEvaporation5.7"
+setenv G4PIIDATA "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/g4pii-1.3-btjrfgnntjpiiy4zzt5fpxucbv2v6a2n/share/data/G4PII1.3"
+setenv G4RADIOACTIVEDATA "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/g4radioactivedecay-5.6-ftehg7meig5lfndsygedwztejwk36hh7/share/data/RadioactiveDecay5.6"
+setenv G4REALSURFACEDATA "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/g4realsurface-2.2-clx3bkbr5e4yyp6jpp7pwgw6kldiw6wc/share/data/RealSurface2.2"
+setenv G4SAIDXSDATA "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/g4saiddata-2.0-w2fo7plcht7b2vyakhtagtqeacgpozs7/share/data/G4SAIDDATA2.0"
+

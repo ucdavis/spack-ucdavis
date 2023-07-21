@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:37.771590
+##
+## iqtree2@2.1.2%gcc@11.3.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/paorgn6
+##
+
+
+module-whatis "Efficient and versatile phylogenomic software by maximum likelihood"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : iqtree2"
+    puts stderr "Version: 2.1.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Efficient and versatile phylogenomic software by maximum likelihood"
+}
+
+module load boost-1.79.0-gcc-11.3.0-zfgjt4m
+module load eigen-3.4.0-gcc-11.3.0-eseowcc
+module load zlib-1.2.13-gcc-11.3.0-lu7f4vc
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/iqtree2-2.1.2-paorgn6bzqhgf76mutmu2kj5xucux5id/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/iqtree2-2.1.2-paorgn6bzqhgf76mutmu2kj5xucux5id/."
+

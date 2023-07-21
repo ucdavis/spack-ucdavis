@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-12 14:27:27.349220
+##
+## idl@8.7.3%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/ufcjfbt
+##
+
+
+module-whatis "IDL Software: Interactive Data Visulation."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : idl"
+    puts stderr "Version: 8.7.3"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "IDL Software: Interactive Data Visulation. Note: IDL is a licensed"
+    puts stderr "software. You will also need an existing downloaded tarball of IDL in"
+    puts stderr "your current directory or in a spack mirror in order to install."
+}
+
+conflict idl
+
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/idl-8.7.3-ufcjfbtfnvi6r2cnvnb74zb3wx7a5qwq/."
+prepend-path --delim ":" EXELIS_DIR "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/idl-8.7.3-ufcjfbtfnvi6r2cnvnb74zb3wx7a5qwq"
+prepend-path --delim ":" IDL_DIR "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/idl-8.7.3-ufcjfbtfnvi6r2cnvnb74zb3wx7a5qwq/idl"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/idl-8.7.3-ufcjfbtfnvi6r2cnvnb74zb3wx7a5qwq/idl/bin"
+setenv IDL_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/idl-8.7.3-ufcjfbtfnvi6r2cnvnb74zb3wx7a5qwq"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:02.376683
+##
+## awscli@1.27.84%gcc@11.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v2/cepb73k
+##
+
+
+module-whatis "This package provides a unified command line interface to Amazon Web Services"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : awscli"
+    puts stderr "Version: 1.27.84"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "This package provides a unified command line interface to Amazon Web"
+    puts stderr "Services"
+}
+
+module load py-botocore-1.29.84-gcc-11.3.0-bdzi25j
+module load py-colorama-0.4.4-gcc-11.3.0-a66i2ll
+module load py-docutils-0.16-gcc-11.3.0-wivmtay
+module load py-pyyaml-5.4.1-gcc-11.3.0-rv6olba
+module load py-rsa-4.7.2-gcc-11.3.0-m2nk5q5
+module load py-s3transfer-0.6.0-gcc-11.3.0-nym7cdm
+module load python-3.10.10-gcc-11.3.0-v5jpfln
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/awscli-1.27.84-cepb73kjwaewkrok6mzxxs2j6a4r5q2t/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/awscli-1.27.84-cepb73kjwaewkrok6mzxxs2j6a4r5q2t/."
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/awscli-1.27.84-cepb73kjwaewkrok6mzxxs2j6a4r5q2t/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-botocore-1.29.84-bdzi25jqikelwthsezrktqxps7ereolf/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-jmespath-1.0.1-ji7l6q2slkvbasun2jvq34ml66ztlno5/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-python-dateutil-2.8.2-ac4pemjhfr2uqvbvagm3q5bclphzosh2/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-six-1.16.0-4z5qm3tqrdhsixfcfkzhz6yzei6vjzzd/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-urllib3-1.26.12-nxvoto46dk4dj5swfkgtxhucawt3p6pw/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-colorama-0.4.4-a66i2ll6arjv5z2rlzbjbcwlh34l777l/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-docutils-0.16-wivmtay7kvegj2lhlmzk73ilqkuj2mmo/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-pyyaml-5.4.1-rv6olbazwbmwms6oimcnek5omumyswgv/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-rsa-4.7.2-m2nk5q5gvkzp37cy455r2heqi6nwupi4/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-pyasn1-0.4.8-ij2dqhy5ize5yfxmbucszr4wvbgorytd/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-setuptools-67.6.0-73pqhmiv63aez67x7bfchimen7vyv77c/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-s3transfer-0.6.0-nym7cdmihv7ocjnvnrhwxtm77k7radaz/lib/python3.10/site-packages"
+

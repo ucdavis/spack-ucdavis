@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:06.050612
+##
+## mothur@1.48.0%gcc@11.3.0+boost~gsl~hdf5 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/7brn3r6
+##
+
+
+module-whatis "This project seeks to develop a single piece of open-source, expandable software to fill the bioinformatics needs of the microbial ecology community."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : mothur"
+    puts stderr "Version: 1.48.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "This project seeks to develop a single piece of open-source, expandable"
+    puts stderr "software to fill the bioinformatics needs of the microbial ecology"
+    puts stderr "community."
+}
+
+module load boost-1.82.0-gcc-11.3.0-ggrxvld
+module load readline-8.2-gcc-11.3.0-m2v7tzs
+module load usearch-11.0.667-gcc-11.3.0-4bepd6f
+module load vsearch-2.22.1-gcc-11.3.0-jykqcmr
+module load zlib-1.2.13-gcc-11.3.0-77qi6rv
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mothur-1.48.0-7brn3r6lvtd6vi74h5j7jdlib3nrziqu/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mothur-1.48.0-7brn3r6lvtd6vi74h5j7jdlib3nrziqu/."
+

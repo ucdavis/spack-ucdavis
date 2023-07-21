@@ -1,0 +1,32 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:04.879419
+##
+## genometools@1.6.2%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/k67f47b
+##
+
+
+module-whatis "genometools is a free collection of bioinformatics tools (in the realm of genome informatics) combined into a single binary named gt."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : genometools"
+    puts stderr "Version: 1.6.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "genometools is a free collection of bioinformatics tools (in the realm"
+    puts stderr "of genome informatics) combined into a single binary named gt."
+}
+
+module load cairo-1.16.0-gcc-11.3.0-62eb56m
+module load pango-1.50.13-gcc-11.3.0-dgfrigc
+module load perl-5.36.0-gcc-11.3.0-65ysuw5
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/genometools-1.6.2-k67f47buajepecntawrzxdji6otzk7zz/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/genometools-1.6.2-k67f47buajepecntawrzxdji6otzk7zz/."
+prepend-path --delim ":" XLOCALEDIR "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libx11-1.8.4-rx4ruu6iblxc6tsoulpncimn5jrtpnly/share/X11/locale"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gobject-introspection-1.72.1-3l7imrgr56ycxzde2m6ml5lz3rgpv4pw/share"
+prepend-path --delim ":" GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gobject-introspection-1.72.1-3l7imrgr56ycxzde2m6ml5lz3rgpv4pw/lib/girepository-1.0"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/harfbuzz-5.3.1-hmxveerptbtr3d5omsa3x3nwyhvu6bps/share"
+prepend-path --delim ":" GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/harfbuzz-5.3.1-hmxveerptbtr3d5omsa3x3nwyhvu6bps/lib/girepository-1.0"
+prepend-path --delim ":" XDG_DATA_DIRS "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pango-1.50.13-dgfrigcbjtwemykr5gkmciwoatox5olx/share"
+prepend-path --delim ":" GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pango-1.50.13-dgfrigcbjtwemykr5gkmciwoatox5olx/lib/girepository-1.0"
+

@@ -1,0 +1,41 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:48:47.339436
+##
+## openmpi@4.1.5%gcc@11.3.0~atomics+cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker~orterunprefix~pmi~romio+rsh~singularity+static+vt+wrapper-rpath build_system=autotools cuda_arch=none fabrics=ucx schedulers=slurm arch=linux-ubuntu22.04-zen2/aysfvm7
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis "An open source Message Passing Interface implementation."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : openmpi"
+    puts stderr "Version: 4.1.5"
+    puts stderr "Target : zen2"
+    puts stderr ""
+    puts stderr "An open source Message Passing Interface implementation. The Open MPI"
+    puts stderr "Project is an open source Message Passing Interface implementation that"
+    puts stderr "is developed and maintained by a consortium of academic, research, and"
+    puts stderr "industry partners. Open MPI is therefore able to combine the expertise,"
+    puts stderr "technologies, and resources from all across the High Performance"
+    puts stderr "Computing community in order to build the best MPI library available."
+    puts stderr "Open MPI offers advantages for system and software vendors, application"
+    puts stderr "developers and computer science researchers."
+}
+
+conflict openmpi
+
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/manual/openmpi/4.1.5/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/manual/openmpi/4.1.5/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/manual/openmpi/4.1.5/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/manual/openmpi/4.1.5/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/manual/openmpi/4.1.5/."
+setenv MPICC "/share/apps/22.04/manual/openmpi/4.1.5/bin/mpicc"
+setenv MPICXX "/share/apps/22.04/manual/openmpi/4.1.5/bin/mpic++"
+setenv MPIF77 "/share/apps/22.04/manual/openmpi/4.1.5/bin/mpif77"
+setenv MPIF90 "/share/apps/22.04/manual/openmpi/4.1.5/bin/mpif90"
+setenv OPENMPI_ROOT "/share/apps/22.04/manual/openmpi/4.1.5"
+
+if [module-info mode load] {
+}

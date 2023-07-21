@@ -1,0 +1,27 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:06.421763
+##
+## orthomcl@2.0.9%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/gs7dg2n
+##
+
+
+module-whatis "OrthoMCL is a genome-scale algorithm for grouping orthologous protein sequences."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : orthomcl"
+    puts stderr "Version: 2.0.9"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "OrthoMCL is a genome-scale algorithm for grouping orthologous protein"
+    puts stderr "sequences."
+}
+
+module load blast-plus-2.13.0-gcc-11.3.0-zaltoxf
+module load mariadb-10.8.2-gcc-11.3.0-czxnp4h
+module load mcl-14-137-gcc-11.3.0-wju4wvr
+module load perl-5.36.0-gcc-11.3.0-rp6rwls
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/orthomcl-2.0.9-gs7dg2nuufs74lvxqbj6g3sjxdqx4yhm/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/orthomcl-2.0.9-gs7dg2nuufs74lvxqbj6g3sjxdqx4yhm/."
+prepend-path --delim ":" PERL5LIB "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/orthomcl-2.0.9-gs7dg2nuufs74lvxqbj6g3sjxdqx4yhm/lib"
+

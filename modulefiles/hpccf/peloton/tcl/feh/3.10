@@ -1,0 +1,30 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-13 15:52:50.801651
+##
+## feh@3.10%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/dumvrja
+##
+
+
+module-whatis " feh is an X11 image viewer aimed mostly at console users. Unlike most other viewers, it does not have a fancy GUI, but simply displays images. It is controlled via commandline arguments and configurable key/mouse actions. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : feh"
+    puts stderr "Version: 3.10"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr " feh is an X11 image viewer aimed mostly at console users. Unlike most"
+    puts stderr "other viewers, it does not have a fancy GUI, but simply displays images."
+    puts stderr "It is controlled via commandline arguments and configurable key/mouse"
+    puts stderr "actions."
+}
+
+conflict feh
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/feh-3.10-dumvrjard7pd2y6ng73g2ndpazpukdyz/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/feh-3.10-dumvrjard7pd2y6ng73g2ndpazpukdyz/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/feh-3.10-dumvrjard7pd2y6ng73g2ndpazpukdyz/."
+prepend-path --delim ":" XLOCALEDIR "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libx11-1.8.4-elhqje4pmr6c4jp256hrfear2cp45szn/share/X11/locale"
+setenv FEH_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/feh-3.10-dumvrjard7pd2y6ng73g2ndpazpukdyz"
+
+if [module-info mode load] {
+}

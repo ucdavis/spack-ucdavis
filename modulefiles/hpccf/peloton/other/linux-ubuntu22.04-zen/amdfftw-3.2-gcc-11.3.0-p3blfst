@@ -1,0 +1,32 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:35.945073
+##
+## amdfftw@3.2%gcc@11.3.0~amd-app-opt~amd-dynamic-dispatcher~amd-fast-planner~amd-mpi-vader-limit~amd-top-n-planner~amd-trans~debug+mpi+openmp+shared~static~threads build_system=autotools precision=double,float arch=linux-ubuntu22.04-zen/p3blfst
+##
+
+
+module-whatis "FFTW (AMD Optimized version) is a comprehensive collection of fast C routines for computing the Discrete Fourier Transform (DFT) and various special cases thereof."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : amdfftw"
+    puts stderr "Version: 3.2"
+    puts stderr "Target : zen"
+    puts stderr ""
+    puts stderr "FFTW (AMD Optimized version) is a comprehensive collection of fast C"
+    puts stderr "routines for computing the Discrete Fourier Transform (DFT) and various"
+    puts stderr "special cases thereof. It is an open-source implementation of the Fast"
+    puts stderr "Fourier transform algorithm. It can compute transforms of real and"
+    puts stderr "complex-values arrays of arbitrary size and dimension. AMD Optimized"
+    puts stderr "FFTW is the optimized FFTW implementation targeted for AMD CPUs. For"
+    puts stderr "single precision build, please use precision value as float. Example :"
+    puts stderr "spack install amdfftw precision=float"
+}
+
+module load openmpi-4.1.5-gcc-11.3.0-umyyqb6
+module load texinfo-7.0.3-gcc-11.3.0-bd4ga5u
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/amdfftw-3.2-p3blfstqhxo2lrpg76gf4vydaby324fv/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/amdfftw-3.2-p3blfstqhxo2lrpg76gf4vydaby324fv/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/amdfftw-3.2-p3blfstqhxo2lrpg76gf4vydaby324fv/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/amdfftw-3.2-p3blfstqhxo2lrpg76gf4vydaby324fv/."
+

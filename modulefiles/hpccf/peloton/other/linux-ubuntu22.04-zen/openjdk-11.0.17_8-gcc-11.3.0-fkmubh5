@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:38.529143
+##
+## openjdk@11.0.17_8%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-zen/fkmubh5
+##
+
+
+module-whatis "The free and opensource java implementation"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : openjdk"
+    puts stderr "Version: 11.0.17_8"
+    puts stderr "Target : zen"
+    puts stderr ""
+    puts stderr "The free and opensource java implementation"
+}
+
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/openjdk-11.0.17_8-fkmubh5d6pnqvkplbdsezbrkorgqb22y/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/openjdk-11.0.17_8-fkmubh5d6pnqvkplbdsezbrkorgqb22y/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/openjdk-11.0.17_8-fkmubh5d6pnqvkplbdsezbrkorgqb22y/."
+setenv JAVA_HOME "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/openjdk-11.0.17_8-fkmubh5d6pnqvkplbdsezbrkorgqb22y"
+

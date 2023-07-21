@@ -1,0 +1,34 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:06.924095
+##
+## py-cutadapt@4.1%gcc@11.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v2/6dky5mb
+##
+
+
+module-whatis "Cutadapt finds and removes adapter sequences, primers, poly-A tails and other types of unwanted sequence from your high-throughput sequencing reads."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : py-cutadapt"
+    puts stderr "Version: 4.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Cutadapt finds and removes adapter sequences, primers, poly-A tails and"
+    puts stderr "other types of unwanted sequence from your high-throughput sequencing"
+    puts stderr "reads."
+}
+
+module load py-cython-0.29.33-gcc-11.3.0-j7dz4z7
+module load py-dnaio-0.9.1-gcc-11.3.0-jznzkvz
+module load py-setuptools-67.6.0-gcc-11.3.0-73pqhmi
+module load py-xopen-1.6.0-gcc-11.3.0-52h5otw
+module load python-3.10.10-gcc-11.3.0-v5jpfln
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-cutadapt-4.1-6dky5mbuhynqawfulalwagccwklceowo/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-cutadapt-4.1-6dky5mbuhynqawfulalwagccwklceowo/."
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-cutadapt-4.1-6dky5mbuhynqawfulalwagccwklceowo/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-cython-0.29.33-j7dz4z74r3ikjtz6pxss2xvrd4pvrmgb/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-setuptools-67.6.0-73pqhmiv63aez67x7bfchimen7vyv77c/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-dnaio-0.9.1-jznzkvzij3i64qtp2zcj2q6wupozegob/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-xopen-1.6.0-52h5otwse2pd77sufqjkdrf4cpjrykww/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-isal-1.1.0-g6p7ecdnswhcfssdslqylkuaxtjnrpsn/lib/python3.10/site-packages"
+

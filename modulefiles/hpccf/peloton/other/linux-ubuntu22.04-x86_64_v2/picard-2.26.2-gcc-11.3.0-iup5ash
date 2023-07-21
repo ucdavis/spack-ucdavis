@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:06.515393
+##
+## picard@2.26.2%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/iup5ash
+##
+
+
+module-whatis "Picard is a set of command line tools for manipulating high-throughput sequencing (HTS) data and formats such as SAM/BAM/CRAM and VCF. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : picard"
+    puts stderr "Version: 2.26.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Picard is a set of command line tools for manipulating high-throughput"
+    puts stderr "sequencing (HTS) data and formats such as SAM/BAM/CRAM and VCF."
+}
+
+module load openjdk-11.0.17_8-gcc-11.3.0-oucx2ae
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/picard-2.26.2-iup5ashsl7g35xtprc3564neu5x3veol/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/picard-2.26.2-iup5ashsl7g35xtprc3564neu5x3veol/."
+prepend-path --delim ":" PICARD "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/picard-2.26.2-iup5ashsl7g35xtprc3564neu5x3veol/bin/picard.jar"
+

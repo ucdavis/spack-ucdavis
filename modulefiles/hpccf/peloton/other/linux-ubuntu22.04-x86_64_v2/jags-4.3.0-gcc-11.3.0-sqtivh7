@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:37.833025
+##
+## jags@4.3.0%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/sqtivh7
+##
+## Configure options: --with-blas=-L/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/openblas-0.3.23-s3rmti6rm3n2dw7sgyaaswn6usynmw5z/lib -lopenblas --with-lapack=-L/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/openblas-0.3.23-s3rmti6rm3n2dw7sgyaaswn6usynmw5z/lib -lopenblas
+##
+
+
+module-whatis "JAGS is Just Another Gibbs Sampler. It is a program for analysis of Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation not wholly unlike BUGS"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : jags"
+    puts stderr "Version: 4.3.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "JAGS is Just Another Gibbs Sampler. It is a program for analysis of"
+    puts stderr "Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC)"
+    puts stderr "simulation not wholly unlike BUGS"
+}
+
+module load openblas-0.3.23-gcc-11.3.0-s3rmti6
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jags-4.3.0-sqtivh7obkixfbvorjqse7cyzotxgrxj/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jags-4.3.0-sqtivh7obkixfbvorjqse7cyzotxgrxj/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jags-4.3.0-sqtivh7obkixfbvorjqse7cyzotxgrxj/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jags-4.3.0-sqtivh7obkixfbvorjqse7cyzotxgrxj/."
+

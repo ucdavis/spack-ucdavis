@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:37.043892
+##
+## fastqc@0.11.9%gcc@11.3.0 build_system=generic patches=b237b24 arch=linux-ubuntu22.04-x86_64_v2/jfmr2s7
+##
+
+
+module-whatis "A quality control tool for high throughput sequence data."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : fastqc"
+    puts stderr "Version: 0.11.9"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "A quality control tool for high throughput sequence data."
+}
+
+module load openjdk-16.0.2-gcc-11.3.0-4yopvxz
+module load perl-5.36.0-gcc-11.3.0-a36qqup
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/fastqc-0.11.9-jfmr2s7tkl6dg7apint3m75nw6y45pvy/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/fastqc-0.11.9-jfmr2s7tkl6dg7apint3m75nw6y45pvy/."
+

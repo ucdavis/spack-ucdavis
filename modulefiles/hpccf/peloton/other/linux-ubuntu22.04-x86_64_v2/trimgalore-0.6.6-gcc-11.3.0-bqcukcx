@@ -1,0 +1,32 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:07.894970
+##
+## trimgalore@0.6.6%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/bqcukcx
+##
+
+
+module-whatis "Trim Galore! is a wrapper around Cutadapt and FastQC to consistently apply adapter and quality trimming to FastQ files, with extra functionality for RRBS data."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : trimgalore"
+    puts stderr "Version: 0.6.6"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Trim Galore! is a wrapper around Cutadapt and FastQC to consistently"
+    puts stderr "apply adapter and quality trimming to FastQ files, with extra"
+    puts stderr "functionality for RRBS data."
+}
+
+module load fastqc-0.11.9-gcc-11.3.0-yjnufpo
+module load perl-5.36.0-gcc-11.3.0-rp6rwls
+module load py-cutadapt-4.1-gcc-11.3.0-6dky5mb
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/trimgalore-0.6.6-bqcukcxv566kwgohwsv7ijutpucpcnqu/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/trimgalore-0.6.6-bqcukcxv566kwgohwsv7ijutpucpcnqu/."
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-cutadapt-4.1-6dky5mbuhynqawfulalwagccwklceowo/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-cython-0.29.33-j7dz4z74r3ikjtz6pxss2xvrd4pvrmgb/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-setuptools-67.6.0-73pqhmiv63aez67x7bfchimen7vyv77c/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-dnaio-0.9.1-jznzkvzij3i64qtp2zcj2q6wupozegob/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-xopen-1.6.0-52h5otwse2pd77sufqjkdrf4cpjrykww/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-isal-1.1.0-g6p7ecdnswhcfssdslqylkuaxtjnrpsn/lib/python3.10/site-packages"
+

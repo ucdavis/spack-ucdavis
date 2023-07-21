@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:48:48.134263
+##
+## slurm@22-05-9%gcc@11.3.0~gtk~hdf5+hwloc+mariadb+pmix+readline+restd build_system=autotools sysconfdir=PREFIX/etc arch=linux-ubuntu22.04-x86_64_v2/nfnt6yv
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis "Slurm is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : slurm"
+    puts stderr "Version: 22-05-9"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Slurm is an open source, fault-tolerant, and highly scalable cluster"
+    puts stderr "management and job scheduling system for large and small Linux clusters."
+    puts stderr "Slurm requires no kernel modifications for its operation and is"
+    puts stderr "relatively self-contained. As a cluster workload manager, Slurm has"
+    puts stderr "three key functions. First, it allocates exclusive and/or non-exclusive"
+    puts stderr "access to resources (compute nodes) to users for some duration of time"
+    puts stderr "so they can perform work. Second, it provides a framework for starting,"
+    puts stderr "executing, and monitoring work (normally a parallel job) on the set of"
+    puts stderr "allocated nodes. Finally, it arbitrates contention for resources by"
+    puts stderr "managing a queue of pending work."
+}
+
+conflict slurm
+
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/manual/slurm/22.05.9/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/manual/slurm/22.05.9/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/manual/slurm/22.05.9/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/manual/slurm/22.05.9/."
+setenv SLURM_ROOT "/share/apps/22.04/manual/slurm/22.05.9"
+
+if [module-info mode load] {
+}
+
+setenv SQUEUE_FORMAT "%.20i %.9P %.8j %.8u %.8a %.2t %.11M %.11L %.5D %3C %6m %R"

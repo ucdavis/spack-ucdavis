@@ -1,0 +1,31 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:48:46.823069
+##
+## jdk@17.0.1%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/dkgoji4
+##
+
+
+module-whatis "The Java Development Kit (JDK) released by Oracle Corporation in the form of a binary product aimed at Java developers. Includes a complete JRE plus tools for developing, debugging, and monitoring Java applications."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : jdk"
+    puts stderr "Version: 17.0.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "The Java Development Kit (JDK) released by Oracle Corporation in the"
+    puts stderr "form of a binary product aimed at Java developers. Includes a complete"
+    puts stderr "JRE plus tools for developing, debugging, and monitoring Java"
+    puts stderr "applications."
+}
+
+conflict jdk
+
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jdk-17.0.1-dkgoji4ld43pu2ypbqjkb3umezwmw7ne/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jdk-17.0.1-dkgoji4ld43pu2ypbqjkb3umezwmw7ne/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jdk-17.0.1-dkgoji4ld43pu2ypbqjkb3umezwmw7ne/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jdk-17.0.1-dkgoji4ld43pu2ypbqjkb3umezwmw7ne/."
+setenv JAVA_HOME "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jdk-17.0.1-dkgoji4ld43pu2ypbqjkb3umezwmw7ne"
+setenv JDK_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/jdk-17.0.1-dkgoji4ld43pu2ypbqjkb3umezwmw7ne"
+
+if [module-info mode load] {
+}

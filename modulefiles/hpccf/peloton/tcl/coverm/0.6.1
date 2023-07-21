@@ -1,0 +1,32 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-21 11:53:07.848800
+##
+## coverm@0.6.1%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/3uyc4nj
+##
+
+
+module-whatis "coverm @0.6.1"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : coverm"
+    puts stderr "Version: 0.6.1"
+    puts stderr "Target : x86_64_v2"
+}
+
+module load dashing/0.4.0
+module load fastani/1.33
+module load minimap2/2.14
+module load samtools/1.16.1
+prereq dashing/0.4.0
+prereq fastani/1.33
+prereq minimap2/2.14
+prereq samtools/1.16.1
+conflict coverm
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/coverm-0.6.1-3uyc4njzdcyqqyclxc6b2oe3ibvhxith/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/coverm-0.6.1-3uyc4njzdcyqqyclxc6b2oe3ibvhxith/."
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/minimap2-2.14-dixx3xsvo5ruiffedzktry4632plx2vz/lib/python3.10/site-packages"
+setenv COVERM_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/coverm-0.6.1-3uyc4njzdcyqqyclxc6b2oe3ibvhxith"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:37.871508
+##
+## jellyfish@2.3.0%gcc@11.3.0~ruby build_system=autotools arch=linux-ubuntu22.04-zen/6yfp5rc
+##
+
+
+module-whatis "JELLYFISH is a tool for fast, memory-efficient counting of k-mers in DNA."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : jellyfish"
+    puts stderr "Version: 2.3.0"
+    puts stderr "Target : zen"
+    puts stderr ""
+    puts stderr "JELLYFISH is a tool for fast, memory-efficient counting of k-mers in"
+    puts stderr "DNA."
+}
+
+module load perl-5.36.0-gcc-11.3.0-p2ug7cn
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/jellyfish-2.3.0-6yfp5rczdt5vm66tblyiktb3ayurncor/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/jellyfish-2.3.0-6yfp5rczdt5vm66tblyiktb3ayurncor/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/jellyfish-2.3.0-6yfp5rczdt5vm66tblyiktb3ayurncor/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-zen/gcc-11.3.0/jellyfish-2.3.0-6yfp5rczdt5vm66tblyiktb3ayurncor/."
+

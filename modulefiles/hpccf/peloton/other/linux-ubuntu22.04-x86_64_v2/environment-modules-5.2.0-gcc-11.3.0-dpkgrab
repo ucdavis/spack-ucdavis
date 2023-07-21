@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:37.003066
+##
+## environment-modules@5.2.0%gcc@11.3.0+X build_system=generic arch=linux-ubuntu22.04-x86_64_v2/dpkgrab
+##
+
+
+module-whatis "The Environment Modules package provides for the dynamic modification of a user's environment via module files. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : environment-modules"
+    puts stderr "Version: 5.2.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "The Environment Modules package provides for the dynamic modification of"
+    puts stderr "a user's environment via module files."
+}
+
+module load tcl-8.6.12-gcc-11.3.0-2t5tcm5
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/environment-modules-5.2.0-dpkgrabaz7qjev45yet3iz32fosdd4wh/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/environment-modules-5.2.0-dpkgrabaz7qjev45yet3iz32fosdd4wh/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/environment-modules-5.2.0-dpkgrabaz7qjev45yet3iz32fosdd4wh/."
+

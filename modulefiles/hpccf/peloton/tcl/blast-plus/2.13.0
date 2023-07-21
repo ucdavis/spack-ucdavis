@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-07-06 15:07:32.811691
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-11 16:45:12.852049
 ##
 ## blast-plus@2.13.0%gcc@11.3.0+bzip2+freetype+gnutls+jpeg+lzo+openssl+pcre+perl+png+python~static+zlib build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/vttkjtr
 ##
@@ -17,7 +17,9 @@ proc ModulesHelp { } {
     puts stderr "Basic Local Alignment Search Tool."
 }
 
+module load bzip2/1.0.8
 module load zlib/1.2.13
+prereq bzip2/1.0.8
 prereq zlib/1.2.13
 conflict blast-plus
 

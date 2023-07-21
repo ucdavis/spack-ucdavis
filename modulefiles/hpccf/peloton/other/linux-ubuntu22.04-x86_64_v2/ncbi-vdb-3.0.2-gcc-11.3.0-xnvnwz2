@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:06.191847
+##
+## ncbi-vdb@3.0.2%gcc@11.3.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/xnvnwz2
+##
+
+
+module-whatis "The SRA Toolkit and SDK from NCBI is a collection of tools and libraries for using data in the INSDC Sequence Read Archives. This package contains the interface to the VDB."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : ncbi-vdb"
+    puts stderr "Version: 3.0.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "The SRA Toolkit and SDK from NCBI is a collection of tools and libraries"
+    puts stderr "for using data in the INSDC Sequence Read Archives. This package"
+    puts stderr "contains the interface to the VDB."
+}
+
+module load flex-2.6.3-gcc-11.3.0-nuovbl2
+module load libxml2-2.10.2-gcc-11.3.0-h27zwzl
+module load openjdk-11.0.17_8-gcc-11.3.0-oucx2ae
+
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-vdb-3.0.2-xnvnwz2xtwzky23ufoybfziuntmwunu5/."
+

@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:06.313654
+##
+## orthofinder@2.5.4%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/xotz5aw
+##
+
+
+module-whatis "OrthoFinder is a fast, accurate and comprehensive analysis tool for comparative genomics."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : orthofinder"
+    puts stderr "Version: 2.5.4"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "OrthoFinder is a fast, accurate and comprehensive analysis tool for"
+    puts stderr "comparative genomics. It finds orthologues and orthogroups infers rooted"
+    puts stderr "gene trees for all orthogroups and infers a rooted species tree for the"
+    puts stderr "species being analysed. OrthoFinder also provides comprehensive"
+    puts stderr "statistics for comparative genomic analyses. OrthoFinder is simple to"
+    puts stderr "use and all you need to run it is a set of protein sequence files (one"
+    puts stderr "per species) in FASTA format."
+}
+
+module load blast-plus-2.13.0-gcc-11.3.0-vttkjtr
+module load diamond-2.0.15-gcc-11.3.0-3efdjse
+module load fastme-2.1.5.1-gcc-11.3.0-nhuih7m
+module load mcl-14-137-gcc-11.3.0-jmhnvlt
+module load py-numpy-1.24.3-gcc-11.3.0-ncgncvg
+module load py-scipy-1.10.1-gcc-11.3.0-w2gbi73
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/orthofinder-2.5.4-xotz5awqmeyuv3cas32zq6vsxxahn2fc/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/orthofinder-2.5.4-xotz5awqmeyuv3cas32zq6vsxxahn2fc/."
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-numpy-1.24.3-ncgncvgk3wg73eqiitkkumoniwwv5fnv/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-setuptools-63.4.3-lbj7d45k7odyhqivr4lk5oqyfeymtkux/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-scipy-1.10.1-w2gbi73whux5jp63j6dmsylfe6opntmn/lib/python3.10/site-packages"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/orthofinder-2.5.4-xotz5awqmeyuv3cas32zq6vsxxahn2fc/bin"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/orthofinder-2.5.4-xotz5awqmeyuv3cas32zq6vsxxahn2fc/bin/tools"
+

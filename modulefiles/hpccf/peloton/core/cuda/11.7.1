@@ -1,0 +1,32 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 12:42:59.955428
+##
+## cuda@11.7.1%gcc@11.3.0~allow-unsupported-compilers~dev build_system=generic arch=linux-ubuntu22.04-x86_64_v2/bxbn5pp
+##
+
+
+module-whatis "CUDA is a parallel computing platform and programming model invented by NVIDIA. It enables dramatic increases in computing performance by harnessing the power of the graphics processing unit (GPU)."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : cuda"
+    puts stderr "Version: 11.7.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "CUDA is a parallel computing platform and programming model invented by"
+    puts stderr "NVIDIA. It enables dramatic increases in computing performance by"
+    puts stderr "harnessing the power of the graphics processing unit (GPU). Note: This"
+    puts stderr "package does not currently install the drivers necessary to run CUDA."
+    puts stderr "These will need to be installed manually. See:"
+    puts stderr "https://docs.nvidia.com/cuda/ for details."
+}
+
+conflict cuda
+
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cuda-11.7.1-bxbn5ppn3atawq2yaz6ga75ygrwkypis/lib64"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cuda-11.7.1-bxbn5ppn3atawq2yaz6ga75ygrwkypis/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cuda-11.7.1-bxbn5ppn3atawq2yaz6ga75ygrwkypis/."
+setenv CUDA_HOME "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cuda-11.7.1-bxbn5ppn3atawq2yaz6ga75ygrwkypis"
+setenv CUDA_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cuda-11.7.1-bxbn5ppn3atawq2yaz6ga75ygrwkypis"
+
+if [module-info mode load] {
+}

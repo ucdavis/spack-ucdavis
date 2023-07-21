@@ -1,0 +1,35 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-11 16:45:13.430792
+##
+## bzip2@1.0.8%gcc@11.3.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v2/dtsdvar
+##
+
+
+module-whatis "bzip2 is a freely available, patent free high-quality data compressor. It typically compresses files to within 10% to 15% of the best available techniques (the PPM family of statistical compressors), whilst being around twice as fast at compression and six times faster at decompression."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : bzip2"
+    puts stderr "Version: 1.0.8"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "bzip2 is a freely available, patent free high-quality data compressor."
+    puts stderr "It typically compresses files to within 10% to 15% of the best available"
+    puts stderr "techniques (the PPM family of statistical compressors), whilst being"
+    puts stderr "around twice as fast at compression and six times faster at"
+    puts stderr "decompression."
+}
+
+conflict bzip2
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bzip2-1.0.8-dtsdvarms4sm5nhcsdmhljkzfplepf4p/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bzip2-1.0.8-dtsdvarms4sm5nhcsdmhljkzfplepf4p/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bzip2-1.0.8-dtsdvarms4sm5nhcsdmhljkzfplepf4p/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bzip2-1.0.8-dtsdvarms4sm5nhcsdmhljkzfplepf4p/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bzip2-1.0.8-dtsdvarms4sm5nhcsdmhljkzfplepf4p/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bzip2-1.0.8-dtsdvarms4sm5nhcsdmhljkzfplepf4p/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bzip2-1.0.8-dtsdvarms4sm5nhcsdmhljkzfplepf4p/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bzip2-1.0.8-dtsdvarms4sm5nhcsdmhljkzfplepf4p/."
+setenv BZIP2_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bzip2-1.0.8-dtsdvarms4sm5nhcsdmhljkzfplepf4p"
+
+if [module-info mode load] {
+}

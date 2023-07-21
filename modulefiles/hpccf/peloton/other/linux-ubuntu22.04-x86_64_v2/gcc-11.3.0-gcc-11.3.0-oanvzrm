@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 12:06:03.398745
+##
+## gcc@11.3.0%gcc@11.3.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages=c,c++,fortran arch=linux-ubuntu22.04-x86_64_v2/oanvzrm
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis "The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : gcc"
+    puts stderr "Version: 11.3.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "The GNU Compiler Collection includes front ends for C, C++, Objective-C,"
+    puts stderr "Fortran, Ada, and Go, as well as libraries for these languages."
+}
+
+
+prepend-path --delim ":" MANPATH "/usr/share/man"
+prepend-path --delim ":" ACLOCAL_PATH "/usr/share/aclocal"
+prepend-path --delim ":" PKG_CONFIG_PATH "/usr/lib/pkgconfig"
+prepend-path --delim ":" PKG_CONFIG_PATH "/usr/share/pkgconfig"
+

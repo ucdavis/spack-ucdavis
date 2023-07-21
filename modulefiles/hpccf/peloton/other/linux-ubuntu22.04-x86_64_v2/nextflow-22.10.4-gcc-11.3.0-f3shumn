@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:06.279967
+##
+## nextflow@22.10.4%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/f3shumn
+##
+
+
+module-whatis "Data-driven computational pipelines."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : nextflow"
+    puts stderr "Version: 22.10.4"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Data-driven computational pipelines."
+}
+
+module load openjdk-11.0.17_8-gcc-11.3.0-oucx2ae
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nextflow-22.10.4-f3shumndd7vldoauby24zgnykskinbjg/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nextflow-22.10.4-f3shumndd7vldoauby24zgnykskinbjg/."
+

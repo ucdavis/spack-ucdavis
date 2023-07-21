@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:02.821352
+##
+## elk@8.3.22%gcc@11.3.0+libxc+mpi+openmp~w90 build_system=makefile fft=internal linalg=internal arch=linux-ubuntu22.04-x86_64_v2/guahfqs
+##
+
+
+module-whatis "An all-electron full-potential linearised augmented-plane wave (FP-LAPW) code with many advanced features."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : elk"
+    puts stderr "Version: 8.3.22"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "An all-electron full-potential linearised augmented-plane wave (FP-LAPW)"
+    puts stderr "code with many advanced features."
+}
+
+module load libxc-6.1.0-gcc-11.3.0-wdsy6p2
+module load openmpi-4.1.5-gcc-11.3.0-63v4xd2
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/elk-8.3.22-guahfqs2fxcppzj4wlzrupn53f3v5257/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/elk-8.3.22-guahfqs2fxcppzj4wlzrupn53f3v5257/."
+

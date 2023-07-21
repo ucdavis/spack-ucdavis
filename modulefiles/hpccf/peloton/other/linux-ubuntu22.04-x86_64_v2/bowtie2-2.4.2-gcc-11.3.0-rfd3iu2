@@ -1,0 +1,27 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:04.229727
+##
+## bowtie2@2.4.2%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/rfd3iu2
+##
+
+
+module-whatis "Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : bowtie2"
+    puts stderr "Version: 2.4.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Bowtie 2 is an ultrafast and memory-efficient tool for aligning"
+    puts stderr "sequencing reads to long reference sequences"
+}
+
+module load intel-oneapi-tbb-2021.9.0-gcc-11.3.0-pdkleen
+module load perl-5.36.0-gcc-11.3.0-65ysuw5
+module load python-3.10.10-gcc-11.3.0-flhvzx3
+module load readline-8.2-gcc-11.3.0-m2v7tzs
+module load zlib-1.2.13-gcc-11.3.0-77qi6rv
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bowtie2-2.4.2-rfd3iu2wljwxilf4vpiu223nlbh35rrt/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bowtie2-2.4.2-rfd3iu2wljwxilf4vpiu223nlbh35rrt/."
+

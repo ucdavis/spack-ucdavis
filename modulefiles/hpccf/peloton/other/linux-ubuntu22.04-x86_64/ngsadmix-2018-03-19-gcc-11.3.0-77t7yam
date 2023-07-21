@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:38.493107
+##
+## ngsadmix@2018-03-19%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64/77t7yam
+##
+
+
+module-whatis "Inferring admixture proportions from NGS data."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : ngsadmix"
+    puts stderr "Version: 2018-03-19"
+    puts stderr "Target : x86_64"
+    puts stderr ""
+    puts stderr "Inferring admixture proportions from NGS data."
+}
+
+module load zlib-1.2.13-gcc-11.3.0-lu7f4vc
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/ngsadmix-2018-03-19-77t7yamuh6dyediwixuxg6lu4e6aqmc3/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/ngsadmix-2018-03-19-77t7yamuh6dyediwixuxg6lu4e6aqmc3/."
+

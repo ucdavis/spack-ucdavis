@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:04.610306
+##
+## exonerate@2.4.0%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/lgy5uw4
+##
+## Configure options: --disable-debug --disable-dependency-tracking
+##
+
+
+module-whatis "Pairwise sequence alignment of DNA and proteins"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : exonerate"
+    puts stderr "Version: 2.4.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Pairwise sequence alignment of DNA and proteins"
+}
+
+module load glib-2.76.1-gcc-11.3.0-7gcbeqe
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/exonerate-2.4.0-lgy5uw4mblomjvbxtzohkb4gqaatmpix/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/exonerate-2.4.0-lgy5uw4mblomjvbxtzohkb4gqaatmpix/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/exonerate-2.4.0-lgy5uw4mblomjvbxtzohkb4gqaatmpix/."
+

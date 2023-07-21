@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:38.927261
+##
+## snap-korf@2021-11-04%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/7ssbrib
+##
+
+
+module-whatis "SNAP is a general purpose gene finding program suitable for both eukaryotic and prokaryotic genomes."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : snap-korf"
+    puts stderr "Version: 2021-11-04"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "SNAP is a general purpose gene finding program suitable for both"
+    puts stderr "eukaryotic and prokaryotic genomes."
+}
+
+module load perl-5.36.0-gcc-11.3.0-a36qqup
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/snap-korf-2021-11-04-7ssbribul2xcmwt3khjkoo2ckcq4dh76/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/snap-korf-2021-11-04-7ssbribul2xcmwt3khjkoo2ckcq4dh76/."
+setenv ZOE "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/snap-korf-2021-11-04-7ssbribul2xcmwt3khjkoo2ckcq4dh76"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/snap-korf-2021-11-04-7ssbribul2xcmwt3khjkoo2ckcq4dh76"
+

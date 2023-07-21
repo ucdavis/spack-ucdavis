@@ -1,0 +1,27 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:05.099970
+##
+## homer@4.11.1%gcc@11.3.0~data build_system=generic arch=linux-ubuntu22.04-x86_64_v2/25kn7tx
+##
+
+
+module-whatis "Software for motif discovery and next generation sequencing analysis"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : homer"
+    puts stderr "Version: 4.11.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Software for motif discovery and next generation sequencing analysis"
+}
+
+module load perl-5.36.0-gcc-11.3.0-rp6rwls
+module load r-biocgenerics-0.44.0-gcc-11.3.0-i5rz47c
+module load r-biocparallel-1.32.1-gcc-11.3.0-rtlrvzb
+module load r-deseq2-1.38.0-gcc-11.3.0-pecwm2u
+module load r-edger-3.40.0-gcc-11.3.0-uadqghe
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/homer-4.11.1-25kn7tx7uvf7oslkuycuqn7hvivoc2s3/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/homer-4.11.1-25kn7tx7uvf7oslkuycuqn7hvivoc2s3/."
+setenv R_HOME "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/r-4.2.2-u4eerkm4ii7fyrdixtwbcwhzerobevmw/rlib/R"
+

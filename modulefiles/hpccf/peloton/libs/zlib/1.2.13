@@ -1,0 +1,32 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 12:48:57.546643
+##
+## zlib@1.2.13%gcc@11.3.0+optimize+pic+shared build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/77qi6rv
+##
+
+
+module-whatis "A free, general-purpose, legally unencumbered lossless data-compression library. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : zlib"
+    puts stderr "Version: 1.2.13"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "A free, general-purpose, legally unencumbered lossless data-compression"
+    puts stderr "library."
+}
+
+conflict zlib
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/zlib-1.2.13-77qi6rvrwc4iwqziogd6vdxucahcm5qe/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/zlib-1.2.13-77qi6rvrwc4iwqziogd6vdxucahcm5qe/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/zlib-1.2.13-77qi6rvrwc4iwqziogd6vdxucahcm5qe/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/zlib-1.2.13-77qi6rvrwc4iwqziogd6vdxucahcm5qe/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/zlib-1.2.13-77qi6rvrwc4iwqziogd6vdxucahcm5qe/lib"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/zlib-1.2.13-77qi6rvrwc4iwqziogd6vdxucahcm5qe/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/zlib-1.2.13-77qi6rvrwc4iwqziogd6vdxucahcm5qe/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/zlib-1.2.13-77qi6rvrwc4iwqziogd6vdxucahcm5qe/."
+setenv ZLIB_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/zlib-1.2.13-77qi6rvrwc4iwqziogd6vdxucahcm5qe"
+
+if [module-info mode load] {
+}

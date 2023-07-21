@@ -1,0 +1,30 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:03.691593
+##
+## quantum-espresso@7.1%gcc@11.3.0~elpa+epw~ipo~libxc+mpi~nvtx+openmp+patch~qmcpack+scalapack build_system=cmake build_type=Release generator=make hdf5=none patches=5075f2d,e54d33e arch=linux-ubuntu22.04-x86_64_v2/5b2l55k
+##
+
+
+module-whatis "Quantum ESPRESSO is an integrated suite of Open-Source computer codes for electronic-structure calculations and materials modeling at the nanoscale. It is based on density-functional theory, plane waves, and pseudopotentials. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : quantum-espresso"
+    puts stderr "Version: 7.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Quantum ESPRESSO is an integrated suite of Open-Source computer codes"
+    puts stderr "for electronic-structure calculations and materials modeling at the"
+    puts stderr "nanoscale. It is based on density-functional theory, plane waves, and"
+    puts stderr "pseudopotentials."
+}
+
+module load amdblis-4.0-gcc-11.3.0-tno2qoo
+module load amdlibflame-4.0-gcc-11.3.0-dfpoekq
+module load fftw-3.3.10-gcc-11.3.0-pr4hd22
+module load netlib-scalapack-2.2.0-gcc-11.3.0-jbayzp2
+module load openmpi-4.1.5-gcc-11.3.0-63v4xd2
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/quantum-espresso-7.1-5b2l55kljqbujsil3jy2j2naqzlzcje5/bin"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/quantum-espresso-7.1-5b2l55kljqbujsil3jy2j2naqzlzcje5/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/quantum-espresso-7.1-5b2l55kljqbujsil3jy2j2naqzlzcje5/."
+

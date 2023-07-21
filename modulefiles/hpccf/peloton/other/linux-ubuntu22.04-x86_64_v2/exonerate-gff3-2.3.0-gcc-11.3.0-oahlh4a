@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:04.684746
+##
+## exonerate-gff3@2.3.0%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/oahlh4a
+##
+
+
+module-whatis "This is an exonerate fork with added gff3 support. Original website with user guides: http://www.ebi.ac.uk/~guy/exonerate/"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : exonerate-gff3"
+    puts stderr "Version: 2.3.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "This is an exonerate fork with added gff3 support. Original website with"
+    puts stderr "user guides: http://www.ebi.ac.uk/~guy/exonerate/"
+}
+
+module load glib-2.76.1-gcc-11.3.0-7gcbeqe
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/exonerate-gff3-2.3.0-oahlh4azjwqonrbqz5pxtdrz3dj4gvy2/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/exonerate-gff3-2.3.0-oahlh4azjwqonrbqz5pxtdrz3dj4gvy2/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/exonerate-gff3-2.3.0-oahlh4azjwqonrbqz5pxtdrz3dj4gvy2/."
+

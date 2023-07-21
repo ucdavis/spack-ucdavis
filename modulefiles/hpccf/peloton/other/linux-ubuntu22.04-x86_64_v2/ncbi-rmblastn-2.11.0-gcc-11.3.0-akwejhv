@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:38.334451
+##
+## ncbi-rmblastn@2.11.0%gcc@11.3.0 build_system=autotools patches=ce985ab arch=linux-ubuntu22.04-x86_64_v2/akwejhv
+##
+## Configure options: --with-mt --without-debug --without-krb5 --without-openssl --without-libuv --with-projects=scripts/projects/rmblastn/project.lst
+##
+
+
+module-whatis "RMBlast search engine for NCBI"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : ncbi-rmblastn"
+    puts stderr "Version: 2.11.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "RMBlast search engine for NCBI"
+}
+
+module load boost-1.79.0-gcc-11.3.0-zfgjt4m
+module load lzo-2.10-gcc-11.3.0-mfboq4t
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-rmblastn-2.11.0-akwejhvtv64nqwcvaixj5npve46npb24/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ncbi-rmblastn-2.11.0-akwejhvtv64nqwcvaixj5npve46npb24/."
+

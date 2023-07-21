@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:03.568421
+##
+## gmt@6.2.0%gcc@11.3.0~blas~docs~ffmpeg~fftw~gdal~ghostscript~glib~graphicsmagick~lapack~pcre build_system=generic arch=linux-ubuntu22.04-x86_64_v2/i6anvgk
+##
+
+
+module-whatis "GMT (Generic Mapping Tools) is an open source collection of about 80 command-line tools for manipulating geographic and Cartesian data sets (including filtering, trend fitting, gridding, projecting, etc.) and producing PostScript illustrations ranging from simple x-y plots via contour maps to artificially illuminated surfaces and 3D perspective views. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : gmt"
+    puts stderr "Version: 6.2.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "GMT (Generic Mapping Tools) is an open source collection of about 80"
+    puts stderr "command-line tools for manipulating geographic and Cartesian data sets"
+    puts stderr "(including filtering, trend fitting, gridding, projecting, etc.) and"
+    puts stderr "producing PostScript illustrations ranging from simple x-y plots via"
+    puts stderr "contour maps to artificially illuminated surfaces and 3D perspective"
+    puts stderr "views."
+}
+
+module load curl-8.0.1-gcc-11.3.0-lgk3gn3
+module load netcdf-c-4.9.2-gcc-11.3.0-mc64qxq
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmt-6.2.0-i6anvgk73qwur3foqisftq6nvjjn46ro/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmt-6.2.0-i6anvgk73qwur3foqisftq6nvjjn46ro/."
+

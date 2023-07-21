@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:37.226128
+##
+## gemma@0.98.5%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/s2mfomt
+##
+
+
+module-whatis "GEMMA is a software toolkit for fast application of linear mixed models (LMMs) and related models to genome-wide association studies (GWAS) and other large-scale data sets."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : gemma"
+    puts stderr "Version: 0.98.5"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "GEMMA is a software toolkit for fast application of linear mixed models"
+    puts stderr "(LMMs) and related models to genome-wide association studies (GWAS) and"
+    puts stderr "other large-scale data sets."
+}
+
+module load gsl-2.7.1-gcc-11.3.0-7z5dz5c
+module load openblas-0.3.23-gcc-11.3.0-s3rmti6
+module load zlib-1.2.13-gcc-11.3.0-lu7f4vc
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gemma-0.98.5-s2mfomtsa25rye4hlt3dbpwmuzztj6ol/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gemma-0.98.5-s2mfomtsa25rye4hlt3dbpwmuzztj6ol/."
+

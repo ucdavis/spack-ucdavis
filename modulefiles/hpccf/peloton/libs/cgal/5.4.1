@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 12:43:20.000497
+##
+## cgal@5.4.1%gcc@11.3.0~core~demos+eigen~header_only~imageio~ipo+shared build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/texibm3
+##
+## Configure options: -DBUILD_SHARED_LIBS:BOOL=True -DWITH_CGAL_Core:BOOL=False -DWITH_CGAL_ImageIO:BOOL=False -DWITH_CGAL_Qt5:BOOL=False -DCGAL_HEADER_ONLY:BOOL=False
+##
+
+
+module-whatis "The Computational Geometry Algorithms Library (CGAL) is a C++ library that aims to provide easy access to efficient and reliable algorithms in computational geometry. CGAL is used in various areas needing geometric computation, such as geographic information systems, computer aided design, molecular biology, medical imaging, computer graphics, and robotics. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : cgal"
+    puts stderr "Version: 5.4.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "The Computational Geometry Algorithms Library (CGAL) is a C++ library"
+    puts stderr "that aims to provide easy access to efficient and reliable algorithms in"
+    puts stderr "computational geometry. CGAL is used in various areas needing geometric"
+    puts stderr "computation, such as geographic information systems, computer aided"
+    puts stderr "design, molecular biology, medical imaging, computer graphics, and"
+    puts stderr "robotics."
+}
+
+conflict cgal
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-texibm37xc3lyo345kglykclc4j2izmb/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-texibm37xc3lyo345kglykclc4j2izmb/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-texibm37xc3lyo345kglykclc4j2izmb/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-texibm37xc3lyo345kglykclc4j2izmb/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-texibm37xc3lyo345kglykclc4j2izmb/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-texibm37xc3lyo345kglykclc4j2izmb/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-texibm37xc3lyo345kglykclc4j2izmb/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-texibm37xc3lyo345kglykclc4j2izmb/."
+setenv CGAL_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cgal-5.4.1-texibm37xc3lyo345kglykclc4j2izmb"
+
+if [module-info mode load] {
+}

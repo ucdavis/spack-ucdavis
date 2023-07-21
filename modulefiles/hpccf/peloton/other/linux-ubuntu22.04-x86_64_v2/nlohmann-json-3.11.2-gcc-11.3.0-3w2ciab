@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:02.248731
+##
+## nlohmann-json@3.11.2%gcc@11.3.0~ipo+multiple_headers build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/3w2ciab
+##
+## Configure options: -DJSON_MultipleHeaders:BOOL=ON -DJSON_BuildTests:BOOL=OFF
+##
+
+
+module-whatis "JSON for Modern C++"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : nlohmann-json"
+    puts stderr "Version: 3.11.2"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "JSON for Modern C++"
+}
+
+
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlohmann-json-3.11.2-3w2ciabjsofaaaprgnvao3opwi7pe7vy/share/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nlohmann-json-3.11.2-3w2ciabjsofaaaprgnvao3opwi7pe7vy/."
+

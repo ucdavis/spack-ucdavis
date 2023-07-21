@@ -1,0 +1,27 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:01.571050
+##
+## cfitsio@4.2.0%gcc@11.3.0+bzip2+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/pqyld7p
+##
+## Configure options: --with-bzip2=/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bzip2-1.0.8-dtsdvarms4sm5nhcsdmhljkzfplepf4p
+##
+
+
+module-whatis "CFITSIO is a library of C and Fortran subroutines for reading and writing data files in FITS (Flexible Image Transport System) data format. "
+
+proc ModulesHelp { } {
+    puts stderr "Name   : cfitsio"
+    puts stderr "Version: 4.2.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "CFITSIO is a library of C and Fortran subroutines for reading and"
+    puts stderr "writing data files in FITS (Flexible Image Transport System) data"
+    puts stderr "format."
+}
+
+module load bzip2-1.0.8-gcc-11.3.0-dtsdvar
+module load curl-8.0.1-gcc-11.3.0-2vsczof
+
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cfitsio-4.2.0-pqyld7pe7wegi337y5sk6fqmy4bjc5ay/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cfitsio-4.2.0-pqyld7pe7wegi337y5sk6fqmy4bjc5ay/."
+

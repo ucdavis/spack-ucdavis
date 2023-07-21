@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:05.588917
+##
+## igv@2.12.3%gcc@11.3.0~igvtools build_system=generic arch=linux-ubuntu22.04-x86_64_v2/flms2lt
+##
+
+
+module-whatis "The Integrative Genomics Viewer (IGV) is a high-performance visualization tool for interactive exploration of large, integrated genomic datasets. It supports a wide variety of data types, including array-based and next-generation sequence data, and genomic annotations."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : igv"
+    puts stderr "Version: 2.12.3"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "The Integrative Genomics Viewer (IGV) is a high-performance"
+    puts stderr "visualization tool for interactive exploration of large, integrated"
+    puts stderr "genomic datasets. It supports a wide variety of data types, including"
+    puts stderr "array-based and next-generation sequence data, and genomic annotations."
+}
+
+module load openjdk-11.0.17_8-gcc-11.3.0-oucx2ae
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/igv-2.12.3-flms2ltmeu4dtqkzqt3k3wxlxmkndykn/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/igv-2.12.3-flms2ltmeu4dtqkzqt3k3wxlxmkndykn/."
+

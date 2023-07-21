@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:07.456531
+##
+## ray@2.3.1%gcc@11.3.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v2/tq2zguw
+##
+
+
+module-whatis "Parallel genome assemblies for parallel DNA sequencing"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : ray"
+    puts stderr "Version: 2.3.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Parallel genome assemblies for parallel DNA sequencing"
+}
+
+module load openmpi-4.1.5-gcc-11.3.0-63v4xd2
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ray-2.3.1-tq2zguwhxjyvehnzywkm77vbgscj4pk3/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/ray-2.3.1-tq2zguwhxjyvehnzywkm77vbgscj4pk3/."
+

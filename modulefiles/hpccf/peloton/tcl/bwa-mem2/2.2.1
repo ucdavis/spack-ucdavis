@@ -1,0 +1,27 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-20 13:56:37.782795
+##
+## bwa-mem2@2.2.1%oneapi@2022.2.1 build_system=makefile patches=0dab6fb,541bd2d arch=linux-ubuntu22.04-x86_64/svhpjk3
+##
+
+
+module-whatis "The tool bwa-mem2 is the next version of the bwa-mem algorithm in bwa. It produces alignment identical to bwa and is ~1.3-3.1x faster depending on the use-case, dataset and the running machine."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : bwa-mem2"
+    puts stderr "Version: 2.2.1"
+    puts stderr "Target : x86_64"
+    puts stderr ""
+    puts stderr "The tool bwa-mem2 is the next version of the bwa-mem algorithm in bwa."
+    puts stderr "It produces alignment identical to bwa and is ~1.3-3.1x faster depending"
+    puts stderr "on the use-case, dataset and the running machine."
+}
+
+conflict bwa-mem2
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64/oneapi-2022.2.1/bwa-mem2-2.2.1-svhpjk3uq2abx45o5tjp6buoad74lm5f/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64/oneapi-2022.2.1/bwa-mem2-2.2.1-svhpjk3uq2abx45o5tjp6buoad74lm5f/."
+setenv BWA_MEM2_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64/oneapi-2022.2.1/bwa-mem2-2.2.1-svhpjk3uq2abx45o5tjp6buoad74lm5f"
+
+if [module-info mode load] {
+}

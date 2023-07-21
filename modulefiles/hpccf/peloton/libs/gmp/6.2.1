@@ -1,0 +1,33 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 12:43:20.127622
+##
+## gmp@6.2.1%gcc@11.3.0+cxx build_system=autotools libs=shared,static patches=69ad2e2 arch=linux-ubuntu22.04-x86_64_v2/qyjndnv
+##
+## Configure options: --enable-cxx --enable-shared --enable-static --with-pic
+##
+
+
+module-whatis "GMP is a free library for arbitrary precision arithmetic, operating on signed integers, rational numbers, and floating-point numbers."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : gmp"
+    puts stderr "Version: 6.2.1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "GMP is a free library for arbitrary precision arithmetic, operating on"
+    puts stderr "signed integers, rational numbers, and floating-point numbers."
+}
+
+conflict gmp
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-qyjndnvcjkrswgso5x4ef52hjzxvsmhw/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-qyjndnvcjkrswgso5x4ef52hjzxvsmhw/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-qyjndnvcjkrswgso5x4ef52hjzxvsmhw/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-qyjndnvcjkrswgso5x4ef52hjzxvsmhw/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-qyjndnvcjkrswgso5x4ef52hjzxvsmhw/lib"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-qyjndnvcjkrswgso5x4ef52hjzxvsmhw/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-qyjndnvcjkrswgso5x4ef52hjzxvsmhw/."
+setenv GMP_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-qyjndnvcjkrswgso5x4ef52hjzxvsmhw"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,34 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:07.502916
+##
+## repeatmasker@4.1.2-p1%gcc@11.3.0~crossmatch build_system=generic arch=linux-ubuntu22.04-x86_64_v2/vrq4xu7
+##
+
+
+module-whatis "RepeatMasker is a program that screens DNA sequences for interspersed repeats and low complexity DNA sequences."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : repeatmasker"
+    puts stderr "Version: 4.1.2-p1"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "RepeatMasker is a program that screens DNA sequences for interspersed"
+    puts stderr "repeats and low complexity DNA sequences."
+}
+
+module load hmmer-3.3.2-gcc-11.3.0-csjsnjv
+module load ncbi-rmblastn-2.11.0-gcc-11.3.0-5l7qypb
+module load perl-5.36.0-gcc-11.3.0-rp6rwls
+module load perl-text-soundex-3.05-gcc-11.3.0-5s4ul4r
+module load py-h5py-3.8.0-gcc-11.3.0-hwizrbg
+module load python-3.10.10-gcc-11.3.0-v5jpfln
+module load trf-4.09.1-gcc-11.3.0-jdjeosy
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/repeatmasker-4.1.2-p1-vrq4xu7fvpof25ai5jgup5fk2fuulxqc/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/repeatmasker-4.1.2-p1-vrq4xu7fvpof25ai5jgup5fk2fuulxqc/."
+prepend-path --delim ":" PERL5LIB "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-text-soundex-3.05-5s4ul4r7zw2pidsz7ufypymp224v6djq/lib/perl5"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-h5py-3.8.0-hwizrbgvssmcsmtdbdeu2wabixg2fsne/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-mpi4py-3.1.4-5zr4s275vsanokoxxmn36xww5i6roex6/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-numpy-1.24.3-weuaipxfhdzjufh7dwrjpe7mbm3xvdp7/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-setuptools-63.4.3-eipobqg37cmma4kuuguhojfyvoorlzaq/lib/python3.10/site-packages"
+

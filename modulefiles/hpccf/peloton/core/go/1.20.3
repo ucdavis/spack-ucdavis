@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:48:46.237816
+##
+## go@1.20.3%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/ikjw3cn
+##
+
+
+module-whatis "The golang compiler and build environment"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : go"
+    puts stderr "Version: 1.20.3"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "The golang compiler and build environment"
+}
+
+conflict go
+
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/go-1.20.3-ikjw3cnhordkydfxulgxmqxinb4m4boz/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/go-1.20.3-ikjw3cnhordkydfxulgxmqxinb4m4boz/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/go-1.20.3-ikjw3cnhordkydfxulgxmqxinb4m4boz/."
+setenv GO_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/go-1.20.3-ikjw3cnhordkydfxulgxmqxinb4m4boz"
+
+if [module-info mode load] {
+}

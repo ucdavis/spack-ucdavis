@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-07-20 15:11:22.982415
+##
+## dashing@1.0.3%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/7psuijo
+##
+
+
+module-whatis "dashing sketches and computes distances between fasta and fastq data."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : dashing"
+    puts stderr "Version: 1.0.3"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "dashing sketches and computes distances between fasta and fastq data."
+}
+
+conflict dashing
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/dashing-1.0.3-7psuijokf5smmta3d6zbyrrjv4d42pq4/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/dashing-1.0.3-7psuijokf5smmta3d6zbyrrjv4d42pq4/."
+setenv DASHING_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/dashing-1.0.3-7psuijokf5smmta3d6zbyrrjv4d42pq4"
+
+if [module-info mode load] {
+}

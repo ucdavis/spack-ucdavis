@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:39.033490
+##
+## tabix@2013-12-16%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/kr2vxes
+##
+
+
+module-whatis "Generic indexer for TAB-delimited genome position files"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : tabix"
+    puts stderr "Version: 2013-12-16"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Generic indexer for TAB-delimited genome position files"
+}
+
+module load perl-5.36.0-gcc-11.3.0-a36qqup
+module load python-3.10.10-gcc-11.3.0-dstxvfi
+module load zlib-1.2.13-gcc-11.3.0-lu7f4vc
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/tabix-2013-12-16-kr2vxesdxvnqlhgfropqbenpjffsijvs/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/tabix-2013-12-16-kr2vxesdxvnqlhgfropqbenpjffsijvs/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/tabix-2013-12-16-kr2vxesdxvnqlhgfropqbenpjffsijvs/."
+

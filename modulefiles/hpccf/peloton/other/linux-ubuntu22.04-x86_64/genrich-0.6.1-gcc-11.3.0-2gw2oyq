@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:37.273643
+##
+## genrich@0.6.1%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64/2gw2oyq
+##
+
+
+module-whatis "Genrich is a peak-caller for genomic enrichment assays."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : genrich"
+    puts stderr "Version: 0.6.1"
+    puts stderr "Target : x86_64"
+    puts stderr ""
+    puts stderr "Genrich is a peak-caller for genomic enrichment assays."
+}
+
+module load zlib-1.2.13-gcc-11.3.0-lu7f4vc
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/genrich-0.6.1-2gw2oyqzzqgydoco2ajvydh5ajm2khqq/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/genrich-0.6.1-2gw2oyqzzqgydoco2ajvydh5ajm2khqq/."
+

@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:38.660244
+##
+## recon@1.05%gcc@11.3.0+repeatmasker build_system=makefile patches=18a7a0b arch=linux-ubuntu22.04-x86_64_v2/25sri4b
+##
+
+
+module-whatis "RECON: a package for automated de novo identification of repeat families from genomic sequences."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : recon"
+    puts stderr "Version: 1.05"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "RECON: a package for automated de novo identification of repeat families"
+    puts stderr "from genomic sequences."
+}
+
+module load perl-5.36.0-gcc-11.3.0-a36qqup
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/recon-1.05-25sri4bpvey53smefh4wbn45z5un5rbb/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/recon-1.05-25sri4bpvey53smefh4wbn45z5un5rbb/."
+

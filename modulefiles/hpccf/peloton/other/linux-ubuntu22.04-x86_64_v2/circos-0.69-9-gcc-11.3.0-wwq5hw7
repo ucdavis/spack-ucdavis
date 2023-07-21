@@ -1,0 +1,41 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-29 02:48:04.290850
+##
+## circos@0.69-9%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/wwq5hw7
+##
+
+
+module-whatis "Circos is a software package for visualizing data and information."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : circos"
+    puts stderr "Version: 0.69-9"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Circos is a software package for visualizing data and information."
+}
+
+module load perl-5.36.0-gcc-11.3.0-rp6rwls
+module load perl-clone-0.46-gcc-11.3.0-ve4gb6a
+module load perl-config-general-2.65-gcc-11.3.0-cui2sco
+module load perl-exporter-tiny-1.006002-gcc-11.3.0-4zqn5jw
+module load perl-font-ttf-1.06-gcc-11.3.0-xg5cqqs
+module load perl-gd-2.53-gcc-11.3.0-tjienqf
+module load perl-io-string-1.08-gcc-11.3.0-xinf5rl
+module load perl-list-moreutils-0.430-gcc-11.3.0-mdc472j
+module load perl-math-bezier-0.01-gcc-11.3.0-odlcosp
+module load perl-math-round-0.07-gcc-11.3.0-osbmxn5
+module load perl-math-vecstat-0.08-gcc-11.3.0-7q725bi
+module load perl-params-validate-1.31-gcc-11.3.0-5gmlkrd
+module load perl-readonly-2.05-gcc-11.3.0-wl3k4xb
+module load perl-regexp-common-2017060201-gcc-11.3.0-zcs2xqv
+module load perl-set-intspan-1.19-gcc-11.3.0-6hbys4m
+module load perl-statistics-basic-1.6611-gcc-11.3.0-7t32bo3
+module load perl-svg-2.87-gcc-11.3.0-ufs4wju
+module load perl-text-format-0.62-gcc-11.3.0-as2vbgd
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/circos-0.69-9-wwq5hw7pogh4ritzfvhor2byapk277iv/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/circos-0.69-9-wwq5hw7pogh4ritzfvhor2byapk277iv/."
+prepend-path --delim ":" PERL5LIB "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-clone-0.46-ve4gb6auwf4a53r4jeah2rgt3nodtddi/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-config-general-2.65-cui2scobe2wvhezidd3esxzyeww6bdcn/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-exporter-tiny-1.006002-4zqn5jwmxwhvgehp3cq42nsol635h7um/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-font-ttf-1.06-xg5cqqsf35rkvwdnqg2xpyesx2rnrkq3/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-gd-2.53-tjienqfflpp5syovjt6w2vuvuzm3zgt7/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-extutils-makemaker-7.70-xrjw6ydbb3mhmo26jjg7dumac6jgk2j7/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-extutils-pkgconfig-1.16-l4hjun2rxhd2r74kfrq2vzbz25u6eua7/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-io-string-1.08-xinf5rluu7q7j6vcuqgec2zloqrtxhrw/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-list-moreutils-0.430-mdc472j2vx7p7uvt3umcxfvzpfhqqmik/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-list-moreutils-xs-0.430-hjt25ottegq5pwrncrqqsv3lfswsmajw/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-math-bezier-0.01-odlcospgx7eywj5jzvexym75lz6mcjzw/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-math-round-0.07-osbmxn54ob5tkouectup4jmtt5zw2ssf/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-math-vecstat-0.08-7q725biqn6ozcjznaiofmslp4b55npuz/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-params-validate-1.31-5gmlkrdepgwk4k35kglcoq4k2ngg5tjp/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-module-implementation-0.09-wxf6moy2agcawf4kkzmluwgzs6vsmzxr/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-module-runtime-0.016-zczwss4ckorzzf3jaqugrrb7gowj55vk/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-test-fatal-0.017-g2ilc5xwiq75s57m4nnyyneudplab2km/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-try-tiny-0.31-432e3zpsxdhmrfcx4avstmyhdofr4wgo/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-test-requires-0.11-btv4gk2ua2stdvpj7jyijcay6xklmygq/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-readonly-2.05-wl3k4xbkzotfahuq4hyjwnc4kxcyhq7j/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-regexp-common-2017060201-zcs2xqvh6gqywsyaj6igokhqsrfr6h5o/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-set-intspan-1.19-6hbys4mwbo3n75asrr5wn67dumx2anod/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-statistics-basic-1.6611-7t32bo3bnh7cfmpyba53npptqsxflynl/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-number-format-1.75-s4x46q4gzfsoh7joneotkxnikbck2fr4/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-scalar-list-utils-1.63-2fmrhxvuwnhf6qpu3kzytbah4csue5xj/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-svg-2.87-ufs4wjufsucigm2mzaj2qfqqd5gk6k2b/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-text-format-0.62-as2vbgdu4snsaejusvpljbatrcpcgvdx/lib/perl5"
+prepend-path --delim ":" XLOCALEDIR "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libx11-1.8.4-elhqje4pmr6c4jp256hrfear2cp45szn/share/X11/locale"
+

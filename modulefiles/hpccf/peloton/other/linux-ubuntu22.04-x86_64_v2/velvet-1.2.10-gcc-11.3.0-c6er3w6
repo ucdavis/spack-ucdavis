@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:39.117925
+##
+## velvet@1.2.10%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/c6er3w6
+##
+
+
+module-whatis "Velvet is a de novo genomic assembler specially designed for short read sequencing technologies."
+
+proc ModulesHelp { } {
+    puts stderr "Name   : velvet"
+    puts stderr "Version: 1.2.10"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Velvet is a de novo genomic assembler specially designed for short read"
+    puts stderr "sequencing technologies."
+}
+
+module load zlib-1.2.13-gcc-11.3.0-lu7f4vc
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/velvet-1.2.10-c6er3w6jq347uqr5l2yblt4chms4yfd7/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/velvet-1.2.10-c6er3w6jq347uqr5l2yblt4chms4yfd7/."
+

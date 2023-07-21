@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-28 17:20:36.018647
+##
+## aria2@1.36.0%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/osdhwzo
+##
+
+
+module-whatis "An ultra fast download utility"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : aria2"
+    puts stderr "Version: 1.36.0"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "An ultra fast download utility"
+}
+
+module load c-ares-1.15.0-gcc-11.3.0-4p2tdea
+module load libgcrypt-1.10.2-gcc-11.3.0-3bvvbwa
+module load libssh2-1.10.0-gcc-11.3.0-stiyns5
+module load libxml2-2.10.2-gcc-11.3.0-bvlt4ur
+module load sqlite-3.40.1-gcc-11.3.0-dfvdmpo
+module load zlib-1.2.13-gcc-11.3.0-lu7f4vc
+
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/aria2-1.36.0-osdhwzoz5te76tgd7smqmjo3unj66blj/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/aria2-1.36.0-osdhwzoz5te76tgd7smqmjo3unj66blj/share/man"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/aria2-1.36.0-osdhwzoz5te76tgd7smqmjo3unj66blj/."
+
