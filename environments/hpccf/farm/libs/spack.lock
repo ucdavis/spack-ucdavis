@@ -62,16 +62,16 @@
       "spec": "mpfr"
     },
     {
-      "hash": "lpdj7y4q5qhkinrwhdj7nn42b76hxlnz",
-      "spec": "netcdf-c"
+      "hash": "wcvepuwdleclmebzsr65krabovlzihvw",
+      "spec": "netcdf-c+dap+fsync"
     },
     {
-      "hash": "vgxfojiwxzlnf2nfkgiz4ztuvowidile",
-      "spec": "netcdf-cxx4"
+      "hash": "dpanps73fze6yveqcyme7v55em22kxnn",
+      "spec": "netcdf-cxx4 ^netcdf-c+dap+fsync"
     },
     {
-      "hash": "lc2euv3t4tng6we5qmeb5vwin32rzcue",
-      "spec": "netcdf-fortran"
+      "hash": "f5dsyzrh5wg7zxgjhvsu7uxvbzghp5ix",
+      "spec": "netcdf-fortran ^netcdf-c+dap+fsync"
     },
     {
       "hash": "nfbexa2eicppex4zlddafrbne77cbk22",
@@ -8884,7 +8884,7 @@
       ],
       "hash": "cbsq2dxqiidpbv3iwksrs2ifehzc2hqy"
     },
-    "lpdj7y4q5qhkinrwhdj7nn42b76hxlnz": {
+    "wcvepuwdleclmebzsr65krabovlzihvw": {
       "name": "netcdf-c",
       "version": "4.9.0",
       "arch": {
@@ -8899,8 +8899,8 @@
       "namespace": "builtin",
       "parameters": {
         "build_system": "autotools",
-        "dap": false,
-        "fsync": false,
+        "dap": true,
+        "fsync": true,
         "hdf4": false,
         "jna": false,
         "mpi": true,
@@ -8918,6 +8918,14 @@
       },
       "package_hash": "jb2q7gvtayke3mjyaaqwdnx7r6kyhklv4pqym665d6kxvbsssooq====",
       "dependencies": [
+        {
+          "name": "curl",
+          "hash": "mxjthubblkbacwoyfqxr2zoms4bmc4b4",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
         {
           "name": "hdf5",
           "hash": "ueruecygg5qafeatpct4qlkpkoaftgu6",
@@ -8958,7 +8966,71 @@
           ]
         }
       ],
-      "hash": "lpdj7y4q5qhkinrwhdj7nn42b76hxlnz"
+      "hash": "wcvepuwdleclmebzsr65krabovlzihvw"
+    },
+    "mxjthubblkbacwoyfqxr2zoms4bmc4b4": {
+      "name": "curl",
+      "version": "8.0.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "ucdavis.backports",
+      "parameters": {
+        "build_system": "autotools",
+        "gssapi": false,
+        "ldap": false,
+        "libidn2": false,
+        "librtmp": false,
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "libssh": false,
+        "libssh2": false,
+        "nghttp2": false,
+        "tls": [
+          "openssl"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "vbzr7ix4vrln5ngaxl26w7g7k4gj4dhdxftndnlrii3xffe5oggq====",
+      "dependencies": [
+        {
+          "name": "openssl",
+          "hash": "m5abgh6utg75hdgmlt7tzhgv6vugblle",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "pkg-config",
+          "hash": "fme5w5p46aklmsyikqc7ap24ugvpkv2r",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "3xat3cxw3izc3bph2gq5sed7vd5jx4ey",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "mxjthubblkbacwoyfqxr2zoms4bmc4b4"
     },
     "ezvvnmbf7yjscar4dgpmj6sb2ul6e2zj": {
       "name": "zstd",
@@ -8990,7 +9062,7 @@
       "package_hash": "siyun7fbztstttmpvj6uca26svglxhtltno7se4cputoimuejuwq====",
       "hash": "ezvvnmbf7yjscar4dgpmj6sb2ul6e2zj"
     },
-    "vgxfojiwxzlnf2nfkgiz4ztuvowidile": {
+    "dpanps73fze6yveqcyme7v55em22kxnn": {
       "name": "netcdf-cxx4",
       "version": "4.3.1",
       "arch": {
@@ -9019,161 +9091,16 @@
       "dependencies": [
         {
           "name": "netcdf-c",
-          "hash": "qug5cje4sdpbqyr22pzy6ei4cv3w7qh6",
+          "hash": "wcvepuwdleclmebzsr65krabovlzihvw",
           "type": [
             "build",
             "link"
           ]
         }
       ],
-      "hash": "vgxfojiwxzlnf2nfkgiz4ztuvowidile"
+      "hash": "dpanps73fze6yveqcyme7v55em22kxnn"
     },
-    "qug5cje4sdpbqyr22pzy6ei4cv3w7qh6": {
-      "name": "netcdf-c",
-      "version": "4.9.0",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "build_system": "autotools",
-        "dap": false,
-        "fsync": false,
-        "hdf4": false,
-        "jna": false,
-        "mpi": true,
-        "optimize": true,
-        "parallel-netcdf": false,
-        "pic": true,
-        "shared": true,
-        "zstd": true,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "jb2q7gvtayke3mjyaaqwdnx7r6kyhklv4pqym665d6kxvbsssooq====",
-      "dependencies": [
-        {
-          "name": "hdf5",
-          "hash": "r5thbzdzhxjr45p3fwe7m5kcmrgk2ly6",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "m4",
-          "hash": "jblfas35gepahchgpjytjpz2d3a7g2hu",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "openmpi",
-          "hash": "64l7uzf3wsw6q6y2aqy2kljeijfq5bzt",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "zlib",
-          "hash": "3xat3cxw3izc3bph2gq5sed7vd5jx4ey",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "zstd",
-          "hash": "ezvvnmbf7yjscar4dgpmj6sb2ul6e2zj",
-          "type": [
-            "build",
-            "link"
-          ]
-        }
-      ],
-      "hash": "qug5cje4sdpbqyr22pzy6ei4cv3w7qh6"
-    },
-    "r5thbzdzhxjr45p3fwe7m5kcmrgk2ly6": {
-      "name": "hdf5",
-      "version": "1.12.2",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "builtin",
-      "parameters": {
-        "api": "default",
-        "build_system": "cmake",
-        "build_type": "RelWithDebInfo",
-        "cxx": false,
-        "fortran": true,
-        "hl": true,
-        "ipo": false,
-        "java": false,
-        "mpi": true,
-        "shared": true,
-        "szip": false,
-        "threadsafe": false,
-        "tools": true,
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "4mb56zekgwonzamfj5xizouoe42xsvtuahst6z26hya2r7xmpnka====",
-      "dependencies": [
-        {
-          "name": "cmake",
-          "hash": "2kzsgjw3vfxnxg7t5s3a73zlzzpijhoy",
-          "type": [
-            "build"
-          ]
-        },
-        {
-          "name": "openmpi",
-          "hash": "64l7uzf3wsw6q6y2aqy2kljeijfq5bzt",
-          "type": [
-            "build",
-            "link"
-          ]
-        },
-        {
-          "name": "pkg-config",
-          "hash": "fme5w5p46aklmsyikqc7ap24ugvpkv2r",
-          "type": [
-            "run"
-          ]
-        },
-        {
-          "name": "zlib",
-          "hash": "3xat3cxw3izc3bph2gq5sed7vd5jx4ey",
-          "type": [
-            "build",
-            "link"
-          ]
-        }
-      ],
-      "hash": "r5thbzdzhxjr45p3fwe7m5kcmrgk2ly6"
-    },
-    "lc2euv3t4tng6we5qmeb5vwin32rzcue": {
+    "f5dsyzrh5wg7zxgjhvsu7uxvbzghp5ix": {
       "name": "netcdf-fortran",
       "version": "4.6.0",
       "arch": {
@@ -9202,14 +9129,14 @@
       "dependencies": [
         {
           "name": "netcdf-c",
-          "hash": "qug5cje4sdpbqyr22pzy6ei4cv3w7qh6",
+          "hash": "wcvepuwdleclmebzsr65krabovlzihvw",
           "type": [
             "build",
             "link"
           ]
         }
       ],
-      "hash": "lc2euv3t4tng6we5qmeb5vwin32rzcue"
+      "hash": "f5dsyzrh5wg7zxgjhvsu7uxvbzghp5ix"
     },
     "nfbexa2eicppex4zlddafrbne77cbk22": {
       "name": "nlohmann-json",
