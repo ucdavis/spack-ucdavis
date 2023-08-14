@@ -1,0 +1,27 @@
+spack:
+  definitions:
+    - specs:
+      # Parameters borrowed from AMD EPYC 7002 Series Performance Tuning Guide
+      # see: https://documentation.suse.com/en-us/sbp/all/pdf/SBP-AMD-EPYC-2-SLES15SP1_en.pdf
+      - stream @5.10 +openmp offset=512 stream_array_size=268435456 
+      - npb @3.4.1 implementation=mpi
+    - build_targets:
+      - '%gcc @11.3.0 target=x86_64_v3'
+      - '%aocc @3.2.0 target=zen2'
+  specs:
+    - matrix:
+      - [$specs]
+      - [$build_targets]
+  view:
+    default:
+      root: $spack/../environments/benchmarking/view
+      select:
+        - stream
+        - npb
+      projections:
+        all: '{compiler}/{target}/{name}-{version}'
+  modules:
+    default:
+      enable:: []
+  concretizer:
+    unify: false
