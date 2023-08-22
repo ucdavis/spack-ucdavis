@@ -62,7 +62,7 @@
       "spec": "rclone"
     },
     {
-      "hash": "p7ap5bbp4wjyox3imfsxw7thvsznbt5z",
+      "hash": "usix72xyi7n5q2izbkuklw3nl6vdmhs7",
       "spec": "rstudio@2022.12.0+server ^curl@7.85.0"
     },
     {
@@ -74,7 +74,11 @@
       "spec": "turbovnc"
     },
     {
-      "hash": "6wioxfnry7ppo6ual34cok3ijxzquof4",
+      "hash": "d7xsawq6ds7jntsxafot4xmh5uigqchs",
+      "spec": "valgrind"
+    },
+    {
+      "hash": "qh5rxhgmobnfsponzyef2qnsawdlqbim",
       "spec": "virtualgl"
     },
     {
@@ -10873,7 +10877,7 @@
       ],
       "hash": "rwtblp7uhwq6qop25a3jsndbnmpu2asl"
     },
-    "p7ap5bbp4wjyox3imfsxw7thvsznbt5z": {
+    "usix72xyi7n5q2izbkuklw3nl6vdmhs7": {
       "name": "rstudio",
       "version": "2022.12.0-353",
       "arch": {
@@ -11025,7 +11029,7 @@
         },
         {
           "name": "yaml-cpp",
-          "hash": "hcqdikwi34267pkrarlc2s3soik6bew4",
+          "hash": "ixhvmznkghzgkxa3sdupepw4beuyy2u7",
           "type": [
             "build",
             "link"
@@ -11040,7 +11044,7 @@
           ]
         }
       ],
-      "hash": "p7ap5bbp4wjyox3imfsxw7thvsznbt5z"
+      "hash": "usix72xyi7n5q2izbkuklw3nl6vdmhs7"
     },
     "2lgwv36f5m3edug2344z5gkr2ukuo6ul": {
       "name": "ant",
@@ -15401,7 +15405,7 @@
       ],
       "hash": "c3674eufq5riozkfjfz7jsy52zde7cae"
     },
-    "hcqdikwi34267pkrarlc2s3soik6bew4": {
+    "ixhvmznkghzgkxa3sdupepw4beuyy2u7": {
       "name": "yaml-cpp",
       "version": "0.6.3",
       "arch": {
@@ -15432,13 +15436,13 @@
       "dependencies": [
         {
           "name": "cmake",
-          "hash": "l3na3pkh5qbjwxeowpci35yy4ziqkjg5",
+          "hash": "3eopxrmotccsrslz3wmuo6qyhrhme5fn",
           "type": [
             "build"
           ]
         }
       ],
-      "hash": "hcqdikwi34267pkrarlc2s3soik6bew4"
+      "hash": "ixhvmznkghzgkxa3sdupepw4beuyy2u7"
     },
     "4pctq3gxqzofegw2wnjta7tjznz5xosc": {
       "name": "yarn",
@@ -15675,7 +15679,58 @@
       "package_hash": "6dqhn4hfzyaouqr5chxwtjtbdsoskon73uqixmb2dwsfddax7ula====",
       "hash": "4yopvxz7hv3owcodzmzokvaq62fndvkf"
     },
-    "6wioxfnry7ppo6ual34cok3ijxzquof4": {
+    "d7xsawq6ds7jntsxafot4xmh5uigqchs": {
+      "name": "valgrind",
+      "version": "3.19.0",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "boost": true,
+        "build_system": "autotools",
+        "libs": [
+          "shared",
+          "static"
+        ],
+        "mpi": true,
+        "only64bit": true,
+        "ubsan": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "4zivyo6mn7ibc3ookx26lgg5lftviv2utptcvgk2mddsb64h2yia====",
+      "dependencies": [
+        {
+          "name": "boost",
+          "hash": "ivlmg2pelnqogi7tzjpv42twdkyryf5u",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "openmpi",
+          "hash": "64l7uzf3wsw6q6y2aqy2kljeijfq5bzt",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "d7xsawq6ds7jntsxafot4xmh5uigqchs"
+    },
+    "qh5rxhgmobnfsponzyef2qnsawdlqbim": {
       "name": "virtualgl",
       "version": "2.5.2",
       "arch": {
@@ -15703,14 +15758,14 @@
       "dependencies": [
         {
           "name": "cmake",
-          "hash": "2kzsgjw3vfxnxg7t5s3a73zlzzpijhoy",
+          "hash": "3eopxrmotccsrslz3wmuo6qyhrhme5fn",
           "type": [
             "build"
           ]
         },
         {
           "name": "libjpeg-turbo",
-          "hash": "iuag5okstjvjcm5g6bu6mcvb5glz7xl2",
+          "hash": "mhrfbfddxnexusoo6sgk45pta4i6yxyo",
           "type": [
             "build",
             "link"
@@ -15725,7 +15780,7 @@
           ]
         }
       ],
-      "hash": "6wioxfnry7ppo6ual34cok3ijxzquof4"
+      "hash": "qh5rxhgmobnfsponzyef2qnsawdlqbim"
     },
     "6ecwdvm2whvjohxi3okuswgbhxhxxcos": {
       "name": "mesa-glu",
