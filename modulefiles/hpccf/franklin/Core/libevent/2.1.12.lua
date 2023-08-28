@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:40:45.767064
+-- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:19:42.758578
 --
 -- libevent@2.1.12%gcc@11.3.0+openssl build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/7d5va7m
 --

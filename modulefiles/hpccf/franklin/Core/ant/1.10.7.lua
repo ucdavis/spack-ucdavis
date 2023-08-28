@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-05-22 12:32:53.245095
+-- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:19:41.724095
 --
 -- ant@1.10.7%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/vmddnjt
 --
@@ -21,8 +21,8 @@ prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux
 setenv("ANT_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ant-1.10.7-vmddnjtpa3qgdvxwghk2u33j6bl67rfm")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then
