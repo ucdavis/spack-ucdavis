@@ -1,0 +1,32 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-08-11 15:03:35.583323
+##
+## numactl@2.0.14%gcc@11.3.0 build_system=autotools patches=4e1d78c,62fc8a8,ff37630 arch=linux-ubuntu22.04-x86_64_v2/gjrcpsv
+##
+
+
+module-whatis "NUMA support for Linux"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : numactl"
+    puts stderr "Version: 2.0.14"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "NUMA support for Linux"
+}
+
+conflict numactl
+
+prepend-path --delim ":" CPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/numactl-2.0.14-gjrcpsvjroucnzhe3qyi7bkdvkgbusd6/include"
+prepend-path --delim ":" C_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/numactl-2.0.14-gjrcpsvjroucnzhe3qyi7bkdvkgbusd6/include"
+prepend-path --delim ":" CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/numactl-2.0.14-gjrcpsvjroucnzhe3qyi7bkdvkgbusd6/include"
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/numactl-2.0.14-gjrcpsvjroucnzhe3qyi7bkdvkgbusd6/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/numactl-2.0.14-gjrcpsvjroucnzhe3qyi7bkdvkgbusd6/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/numactl-2.0.14-gjrcpsvjroucnzhe3qyi7bkdvkgbusd6/bin"
+prepend-path --delim ":" MANPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/numactl-2.0.14-gjrcpsvjroucnzhe3qyi7bkdvkgbusd6/share/man"
+prepend-path --delim ":" PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/numactl-2.0.14-gjrcpsvjroucnzhe3qyi7bkdvkgbusd6/lib/pkgconfig"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/numactl-2.0.14-gjrcpsvjroucnzhe3qyi7bkdvkgbusd6/."
+setenv NUMACTL_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/numactl-2.0.14-gjrcpsvjroucnzhe3qyi7bkdvkgbusd6"
+
+if [module-info mode load] {
+}
