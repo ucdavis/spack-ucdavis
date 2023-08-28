@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-19 15:02:41.989830
+-- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:34:13.965014
 --
 -- abyss@2.3.1%gcc@9.5.0 build_system=autotools maxk=128 arch=linux-ubuntu22.04-x86_64_v3/jtuw2uo
 --
@@ -24,8 +24,8 @@ prepend_path("XLOCALEDIR", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu
 setenv("ABYSS_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/abyss-2.3.1-jtuw2uops3kg4ooi6dxcirxqjnatfgzw")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

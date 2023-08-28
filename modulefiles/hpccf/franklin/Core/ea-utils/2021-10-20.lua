@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-19 15:02:43.584575
+-- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:34:18.889852
 --
 -- ea-utils@2021-10-20%gcc@9.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/zm4onet
 --
@@ -20,8 +20,8 @@ prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux
 setenv("EA_UTILS_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/ea-utils-2021-10-20-zm4onetrmzwqttfccvizqps6vsafqdj5")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

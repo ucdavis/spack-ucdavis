@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-19 15:02:50.362750
+-- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:34:31.517345
 --
 -- sortmerna@2017-07-13%gcc@9.5.0~ipo build_system=cmake build_type=RelWithDebInfo arch=linux-ubuntu22.04-x86_64_v3/zutqer2
 --
@@ -19,8 +19,8 @@ prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux
 setenv("SORTMERNA_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/sortmerna-2017-07-13-zutqer254f7gnhq4lv6ai7bostc3xgc6")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-19 15:02:47.071941
+-- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:34:24.827023
 --
 -- mash@2.3%gcc@9.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/zdeesqy
 --
@@ -14,14 +14,18 @@ help([[ Fast genome and metagenome distance estimation using MinHash.]])
 
 
 
+prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/mash-2.3-zdeesqyeu75pj7xpmvhg6nbbjwl5zcrq/lib", ":")
+prepend_path("CPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/mash-2.3-zdeesqyeu75pj7xpmvhg6nbbjwl5zcrq/include", ":")
+prepend_path("C_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/mash-2.3-zdeesqyeu75pj7xpmvhg6nbbjwl5zcrq/include", ":")
+prepend_path("CPLUS_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/mash-2.3-zdeesqyeu75pj7xpmvhg6nbbjwl5zcrq/include", ":")
 prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/mash-2.3-zdeesqyeu75pj7xpmvhg6nbbjwl5zcrq/./bin", ":")
 prepend_path("MANPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/mash-2.3-zdeesqyeu75pj7xpmvhg6nbbjwl5zcrq/./share/man", ":")
 prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/mash-2.3-zdeesqyeu75pj7xpmvhg6nbbjwl5zcrq/./", ":")
 setenv("MASH_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/mash-2.3-zdeesqyeu75pj7xpmvhg6nbbjwl5zcrq")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then
