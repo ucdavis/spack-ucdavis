@@ -4,7 +4,7 @@ spack:
       - aocc @3.2.0 +license-agreed
       - openmpi ~romio
       - openmpi +romio
-      - slurm @22-05-9
+      - slurm @22-05-9-p1
       - hwloc
       - libevent
       - pmix
@@ -340,7 +340,7 @@ spack:
         projections:
           all: '{name}/{version}'
           target=zen2: '{name}/{version}+amd'
-          slurm: slurm/22.05.9
+          slurm: slurm/22.05.9.p1
           openmpi~romio: openmpi/{version}
           openmpi+romio: openmpi/{version}-mpi-io
         gcc@9.5:
@@ -371,7 +371,7 @@ spack:
         projections:
           all: '{name}/{version}'
           target=zen2: '{name}/{version}+amd'
-          slurm: slurm/22.05.9
+          slurm: slurm/22.05.9.p1
           openmpi~romio: openmpi/{version}
           openmpi+romio: openmpi/{version}-mpi-io
         gcc@9.5:
