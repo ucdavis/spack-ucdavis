@@ -290,6 +290,10 @@
       "spec": "last"
     },
     {
+      "hash": "qb3subtugiwsswa7cqalynnjblgeph4s",
+      "spec": "maffilter@1.3.1"
+    },
+    {
       "hash": "3mqynm65xq56re5v2jfatw4a4cfhetdc",
       "spec": "mafft"
     },
@@ -23502,6 +23506,418 @@
       },
       "package_hash": "oimtkmdz5aopra2metnjn43hspuxed5pahddpfxuyjirblp2ejca====",
       "hash": "i3ppzimb2imikj6nayecy6ezkzbevzpw"
+    },
+    "qb3subtugiwsswa7cqalynnjblgeph4s": {
+      "name": "maffilter",
+      "version": "1.3.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "ucdavis.hpccf",
+      "parameters": {
+        "build_system": "cmake",
+        "build_type": "RelWithDebInfo",
+        "ipo": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "zm6h4z4fzgdvcvzwgrubw3gx4wtny4rowcywmvcjme4q5kivehba====",
+      "dependencies": [
+        {
+          "name": "boost",
+          "hash": "4qsuf6jj3armeinickgzdml45anne24p",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "bpp-core",
+          "hash": "2zd25oaw24uakyl6npxhpm5pczn4lzq6",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "bpp-phyl",
+          "hash": "rwipnbe4aqavmag5opaqtg4jypt7kdjk",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "bpp-phyl-omics",
+          "hash": "xmpnlaq4u5q6grgmuhy7z3jky4imaok7",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "bpp-popgen",
+          "hash": "yoqxexnvxrv2lweu42lczjbo3cxpvvrk",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "bpp-seq",
+          "hash": "hmmgceopl5ow7rycctqpw5rudtvgf4na",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "bpp-seq-omics",
+          "hash": "a23vi6oxea3rkhnrwvfgoroxmhrqsms4",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "cmake",
+          "hash": "7fbp55qbhzokxnuqmtg25dnppbkupnpt",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "eigen",
+          "hash": "mq5dflp4ipjq4lsunkx7bpcinq4c56ne",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "qb3subtugiwsswa7cqalynnjblgeph4s"
+    },
+    "2zd25oaw24uakyl6npxhpm5pczn4lzq6": {
+      "name": "bpp-core",
+      "version": "2023-07-26",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "ucdavis.forked",
+      "parameters": {
+        "build_system": "cmake",
+        "build_type": "RelWithDebInfo",
+        "ipo": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "qxugowagj3vym7q2skx7kh5inmls2yiwvk6xzjm5k675kmewwltq====",
+      "dependencies": [
+        {
+          "name": "cmake",
+          "hash": "7fbp55qbhzokxnuqmtg25dnppbkupnpt",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "2zd25oaw24uakyl6npxhpm5pczn4lzq6"
+    },
+    "rwipnbe4aqavmag5opaqtg4jypt7kdjk": {
+      "name": "bpp-phyl",
+      "version": "2023-09-04",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "ucdavis.forked",
+      "parameters": {
+        "build_system": "cmake",
+        "build_type": "RelWithDebInfo",
+        "ipo": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "qpbel7vkvwa26z7dqqrh37icq5g4xecderoqa6j3ijd5ksyz57da====",
+      "dependencies": [
+        {
+          "name": "bpp-core",
+          "hash": "2zd25oaw24uakyl6npxhpm5pczn4lzq6",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "bpp-seq",
+          "hash": "hmmgceopl5ow7rycctqpw5rudtvgf4na",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "cmake",
+          "hash": "7fbp55qbhzokxnuqmtg25dnppbkupnpt",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "eigen",
+          "hash": "mq5dflp4ipjq4lsunkx7bpcinq4c56ne",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "rwipnbe4aqavmag5opaqtg4jypt7kdjk"
+    },
+    "hmmgceopl5ow7rycctqpw5rudtvgf4na": {
+      "name": "bpp-seq",
+      "version": "2023-04-24",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "ucdavis.forked",
+      "parameters": {
+        "build_system": "cmake",
+        "build_type": "RelWithDebInfo",
+        "ipo": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "dkhdhnzgvrcsz3jgjjeqi5n2x5dqfdntd642gb347kaf44mlw3oa====",
+      "dependencies": [
+        {
+          "name": "bpp-core",
+          "hash": "2zd25oaw24uakyl6npxhpm5pczn4lzq6",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "cmake",
+          "hash": "7fbp55qbhzokxnuqmtg25dnppbkupnpt",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "hmmgceopl5ow7rycctqpw5rudtvgf4na"
+    },
+    "xmpnlaq4u5q6grgmuhy7z3jky4imaok7": {
+      "name": "bpp-phyl-omics",
+      "version": "2023-04-17",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "ucdavis.forked",
+      "parameters": {
+        "build_system": "cmake",
+        "build_type": "RelWithDebInfo",
+        "ipo": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "uw4hezjsfnt4ewthz3ty3zn7qu67vkqnf5a4o5r7uwkddih2ynva====",
+      "dependencies": [
+        {
+          "name": "bpp-core",
+          "hash": "2zd25oaw24uakyl6npxhpm5pczn4lzq6",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "bpp-phyl",
+          "hash": "rwipnbe4aqavmag5opaqtg4jypt7kdjk",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "bpp-seq",
+          "hash": "hmmgceopl5ow7rycctqpw5rudtvgf4na",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "bpp-seq-omics",
+          "hash": "a23vi6oxea3rkhnrwvfgoroxmhrqsms4",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "cmake",
+          "hash": "7fbp55qbhzokxnuqmtg25dnppbkupnpt",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "xmpnlaq4u5q6grgmuhy7z3jky4imaok7"
+    },
+    "a23vi6oxea3rkhnrwvfgoroxmhrqsms4": {
+      "name": "bpp-seq-omics",
+      "version": "2023-05-07",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "ucdavis.forked",
+      "parameters": {
+        "build_system": "cmake",
+        "build_type": "RelWithDebInfo",
+        "ipo": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "miauxb2hiuhdennkhvh7zq3d354eac7vyr77oxwk6j6hm4rce4hq====",
+      "dependencies": [
+        {
+          "name": "bpp-core",
+          "hash": "2zd25oaw24uakyl6npxhpm5pczn4lzq6",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "bpp-seq",
+          "hash": "hmmgceopl5ow7rycctqpw5rudtvgf4na",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "cmake",
+          "hash": "7fbp55qbhzokxnuqmtg25dnppbkupnpt",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "a23vi6oxea3rkhnrwvfgoroxmhrqsms4"
+    },
+    "yoqxexnvxrv2lweu42lczjbo3cxpvvrk": {
+      "name": "bpp-popgen",
+      "version": "2023-05-07",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "9.5.0"
+      },
+      "namespace": "ucdavis.forked",
+      "parameters": {
+        "build_system": "cmake",
+        "build_type": "RelWithDebInfo",
+        "ipo": false,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "mrphfizr43i3b4yidz6vxpywqcch4azq6dewwlkhjeyd52nh53oa====",
+      "dependencies": [
+        {
+          "name": "bpp-phyl",
+          "hash": "rwipnbe4aqavmag5opaqtg4jypt7kdjk",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "bpp-seq",
+          "hash": "hmmgceopl5ow7rycctqpw5rudtvgf4na",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "cmake",
+          "hash": "7fbp55qbhzokxnuqmtg25dnppbkupnpt",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "yoqxexnvxrv2lweu42lczjbo3cxpvvrk"
     },
     "3mqynm65xq56re5v2jfatw4a4cfhetdc": {
       "name": "mafft",
