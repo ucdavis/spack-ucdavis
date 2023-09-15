@@ -783,10 +783,6 @@
       "spec": "miniasm"
     },
     {
-      "hash": "dixx3xsvo5ruiffedzktry4632plx2vz",
-      "spec": "minimap2"
-    },
-    {
       "hash": "4ar2uarx5u324ng5leun3fwtpl2cf7ai",
       "spec": "mirdeep2"
     },
@@ -1085,6 +1081,10 @@
     {
       "hash": "mw67rnmdblrostrhnczjgv3iee76rmcq",
       "spec": "vsearch"
+    },
+    {
+      "hash": "lawoexuya6js6oiydsboikjjx66baaku",
+      "spec": "minimap2@2.26"
     }
   ],
   "concrete_specs": {
@@ -99822,6 +99822,76 @@
         }
       ],
       "hash": "mw67rnmdblrostrhnczjgv3iee76rmcq"
+    },
+    "lawoexuya6js6oiydsboikjjx66baaku": {
+      "name": "minimap2",
+      "version": "2.26",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "ucdavis.backports",
+      "parameters": {
+        "build_system": "python_pip",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "2cmwamj5n7w3miblibtvjaur6cb2nfmha5x5z2od62kuomjfk7za====",
+      "dependencies": [
+        {
+          "name": "py-cython",
+          "hash": "j7dz4z74r3ikjtz6pxss2xvrd4pvrmgb",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "py-pip",
+          "hash": "sqwd2me2753qj7xdaebjegerpqdvvixk",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "py-setuptools",
+          "hash": "73pqhmiv63aez67x7bfchimen7vyv77c",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "py-wheel",
+          "hash": "e6tvxhputqqw4qidaquxbtlrg4w37mlr",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "python",
+          "hash": "v5jpflnztkbw3n2odw6nx4ty6hzajvem",
+          "type": [
+            "build",
+            "run"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "77qi6rvrwc4iwqziogd6vdxucahcm5qe",
+          "type": [
+            "link"
+          ]
+        }
+      ],
+      "hash": "lawoexuya6js6oiydsboikjjx66baaku"
     }
   }
 }
