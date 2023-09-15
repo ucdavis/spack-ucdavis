@@ -1,0 +1,36 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-09-14 16:05:43.596453
+##
+## braker@2.1.6%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/4dnpnab
+##
+
+
+module-whatis "BRAKER is a pipeline for unsupervised RNA-Seq-based genome annotation that combines the advantages of GeneMark-ET and AUGUSTUS"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : braker"
+    puts stderr "Version: 2.1.6"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "BRAKER is a pipeline for unsupervised RNA-Seq-based genome annotation"
+    puts stderr "that combines the advantages of GeneMark-ET and AUGUSTUS"
+}
+
+module load augustus/3.5.0
+module load diamond/2.0.15
+module load samtools/1.16.1
+prereq augustus/3.5.0
+prereq diamond/2.0.15
+prereq samtools/1.16.1
+conflict braker
+
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/braker-2.1.6-4dnpnabwiiikzc2koe2eqrsvfyowrnr5/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/braker-2.1.6-4dnpnabwiiikzc2koe2eqrsvfyowrnr5/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/braker-2.1.6-4dnpnabwiiikzc2koe2eqrsvfyowrnr5/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/braker-2.1.6-4dnpnabwiiikzc2koe2eqrsvfyowrnr5/."
+prepend-path --delim ":" PERL5LIB "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-file-homedir-1.006-qtrsjvqyc4szaf5wz3qmvqzzo57rn2mx/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-file-which-1.27-efmpgsyek4jwmas6n5rqwna7i6t3jt3x/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-hash-merge-0.300-xm24fwf3tkfbpbec4fl7wyho2crbsi3n/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-clone-choose-0.010-jmffru4gsqyfk2lih7w4chghr6fni43q/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-scalar-list-utils-1.63-2fmrhxvuwnhf6qpu3kzytbah4csue5xj/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-list-moreutils-0.430-mdc472j2vx7p7uvt3umcxfvzpfhqqmik/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-exporter-tiny-1.006002-4zqn5jwmxwhvgehp3cq42nsol635h7um/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-list-moreutils-xs-0.430-hjt25ottegq5pwrncrqqsv3lfswsmajw/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-logger-simple-2.0-oulxf6cjhyhntzlq23iggrnkqqa2v7nm/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-object-insideout-4.05-6s5lc2xb6oomakyajweoamtpyboxjbup/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-exception-class-1.45-nubcsxyodvtzhy5ri23u4zmazlch77ny/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-class-data-inheritable-0.08-ddsz5tj6ieqck3kvmenjnjwihnutxc6x/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-devel-stacktrace-2.04-aojfkj4haitnhphbpykietoopvy4rihy/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-parallel-forkmanager-2.02-vuwbqsljeiun4zr5qe2pxlcvtirpf24g/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-scalar-util-numeric-0.40-r4fbyeiktjou2aebf3mmz6ufu6pbz3g7/lib/perl5:/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-yaml-1.30-gsmre7nabbj2xozgsusznl64eige5de5/lib/perl5"
+prepend-path --delim ":" PERL5LIB "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/braker-2.1.6-4dnpnabwiiikzc2koe2eqrsvfyowrnr5/lib"
+setenv BRAKER_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/braker-2.1.6-4dnpnabwiiikzc2koe2eqrsvfyowrnr5"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-09-14 16:05:44.085156
+##
+## busco@5.4.3%gcc@11.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v2/zphaufq
+##
+
+
+module-whatis "Assesses genome assembly and annotation completeness with Benchmarking Universal Single-Copy Orthologs"
+
+proc ModulesHelp { } {
+    puts stderr "Name   : busco"
+    puts stderr "Version: 5.4.3"
+    puts stderr "Target : x86_64_v2"
+    puts stderr ""
+    puts stderr "Assesses genome assembly and annotation completeness with Benchmarking"
+    puts stderr "Universal Single-Copy Orthologs"
+}
+
+module load hmmer/3.3.2
+module load metaeuk/6-a5d39d9
+module load prodigal/2.6.3
+prereq hmmer/3.3.2
+prereq metaeuk/6-a5d39d9
+prereq prodigal/2.6.3
+conflict busco
+
+prepend-path --delim ":" LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/busco-5.4.3-zphaufqenbaafgqflkxuahi4dno3f4o5/lib"
+prepend-path --delim ":" LIBRARY_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/busco-5.4.3-zphaufqenbaafgqflkxuahi4dno3f4o5/lib"
+prepend-path --delim ":" PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/busco-5.4.3-zphaufqenbaafgqflkxuahi4dno3f4o5/bin"
+prepend-path --delim ":" CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/busco-5.4.3-zphaufqenbaafgqflkxuahi4dno3f4o5/."
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/busco-5.4.3-zphaufqenbaafgqflkxuahi4dno3f4o5/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-biopython-1.81-msrvaf7bmdly4nudbxyiyird2yzyxviv/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-numpy-1.24.3-weuaipxfhdzjufh7dwrjpe7mbm3xvdp7/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-setuptools-63.4.3-eipobqg37cmma4kuuguhojfyvoorlzaq/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-pandas-1.5.3-vucnai4ppe4db6zo6jjufyi2vqg3mdgm/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-bottleneck-1.3.5-hg37iyf4rbdwxmuvijb6feyxzrkayfok/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-numexpr-2.8.3-aj47duuexkgjjvtdyxpgjugvkslla2u5/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-packaging-23.0-kbmyij43godwvbh6ejqjscvetxsb3knu/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-python-dateutil-2.8.2-ogz73eijxvwx4gidwjxknsdkvebktphd/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-six-1.16.0-ytzy3xh5ac3gndxg6nofrb4ocx7hv3ry/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-pytz-2022.2.1-sampgcpgrdg7owhdgtjyjnkivub36sgy/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/sepp-4.5.1-uzo4k3cuoqvzlm4u4patw2w7r5t55ypf/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pasta-1.9.0-fl7uwiou5c6p43f2himyldutkm54mtlb/lib/python3.10/site-packages"
+prepend-path --delim ":" PYTHONPATH "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-dendropy-4.5.2-rra43v5c6efgai2r2q2aenfqwuz47kl2/lib/python3.10/site-packages"
+setenv BUSCO_ROOT "/share/apps/22.04/spack/spack-root/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/busco-5.4.3-zphaufqenbaafgqflkxuahi4dno3f4o5"
+
+if [module-info mode load] {
+}
