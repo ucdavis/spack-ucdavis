@@ -1,12 +1,12 @@
 spack:
   specs:
   - environment-modules@5.2.0
-  - openmpi
-  - slurm@22-05-8
-  - hwloc
-  - libevent
-  - pmix
-  - ucx
+  - openmpi @4.1.5
+  - slurm@22-05-9.p2
+  - hwloc @2.9.3
+  - libevent @2.1.12
+  - pmix @4.2.6
+  - ucx @1.14.1
   - cuda@11.7
   - gcc@7.5.0
   - gcc@5.5.0 %gcc@9.5.0
@@ -56,7 +56,7 @@ spack:
         - openjdk
         - julia
         projections:
-          slurm: slurm/22.05.8
+          slurm: slurm/22.05.9.p2
         slurm:
           template: hpccf/slurm.tcl
   concretizer:
