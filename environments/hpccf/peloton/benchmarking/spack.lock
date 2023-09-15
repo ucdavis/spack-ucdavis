@@ -1,0 +1,443 @@
+{
+  "_meta": {
+    "file-type": "spack-lockfile",
+    "lockfile-version": 4,
+    "specfile-version": 3
+  },
+  "spack": {
+    "version": "0.20.0",
+    "type": "git",
+    "commit": "456db45c4a84ccbdb1277874b31b677141641078"
+  },
+  "roots": [
+    {
+      "hash": "rgfter45lilkchyipacdgndba47pn267",
+      "spec": "stream@5.10%gcc@11.3.0+openmp offset=512 stream_array_size=268435456 arch=None-None-x86_64_v3"
+    },
+    {
+      "hash": "e4xgx4jbailaydqe2vkw7ofzwtpswpty",
+      "spec": "stream@5.10%aocc@3.2.0+openmp offset=512 stream_array_size=268435456 arch=None-None-zen2"
+    },
+    {
+      "hash": "tvsppxcjjv4t2fhmqive6ihuycrowyrh",
+      "spec": "npb@3.4.1%gcc@11.3.0 implementation=mpi arch=None-None-x86_64_v3"
+    },
+    {
+      "hash": "dtdnlgdgx7546bowronnjusvl5e2r66m",
+      "spec": "npb@3.4.1%aocc@3.2.0 implementation=mpi arch=None-None-zen2"
+    }
+  ],
+  "concrete_specs": {
+    "rgfter45lilkchyipacdgndba47pn267": {
+      "name": "stream",
+      "version": "5.10",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v3"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "ucdavis.hpccf",
+      "parameters": {
+        "build_system": "makefile",
+        "ntimes": "none",
+        "offset": "512",
+        "openmp": true,
+        "stream_array_size": "268435456",
+        "stream_type": "none",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "d4nxhhauhee4lvhaxehwsk3xgbb4itay74hphxbcjlhsx5u5ew7a====",
+      "hash": "rgfter45lilkchyipacdgndba47pn267"
+    },
+    "e4xgx4jbailaydqe2vkw7ofzwtpswpty": {
+      "name": "stream",
+      "version": "5.10",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen2",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avx",
+            "avx2",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "f16c",
+            "fma",
+            "fsgsbase",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "aocc",
+        "version": "3.2.0"
+      },
+      "namespace": "ucdavis.hpccf",
+      "parameters": {
+        "build_system": "makefile",
+        "ntimes": "none",
+        "offset": "512",
+        "openmp": true,
+        "stream_array_size": "268435456",
+        "stream_type": "none",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "d4nxhhauhee4lvhaxehwsk3xgbb4itay74hphxbcjlhsx5u5ew7a====",
+      "hash": "e4xgx4jbailaydqe2vkw7ofzwtpswpty"
+    },
+    "tvsppxcjjv4t2fhmqive6ihuycrowyrh": {
+      "name": "npb",
+      "version": "3.4.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v3"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "makefile",
+        "classes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "S",
+          "W"
+        ],
+        "implementation": "mpi",
+        "names": [
+          "bt",
+          "cg",
+          "ep",
+          "ft",
+          "is",
+          "lu",
+          "mg",
+          "sp"
+        ],
+        "nprocs": [
+          "1",
+          "128",
+          "16",
+          "2",
+          "32",
+          "4",
+          "64",
+          "8"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "44zn35yn7pu7iyp5fjirjuw7m2hppr3pb3oc7overvr2islpjkkq====",
+      "dependencies": [
+        {
+          "name": "openmpi",
+          "hash": "b34zdooi6jml5ka4qnztfhsbherwfgaa",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "tvsppxcjjv4t2fhmqive6ihuycrowyrh"
+    },
+    "b34zdooi6jml5ka4qnztfhsbherwfgaa": {
+      "name": "openmpi",
+      "version": "4.1.5",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v3"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "atomics": false,
+        "build_system": "autotools",
+        "cuda": true,
+        "cuda_arch": [
+          "none"
+        ],
+        "cxx": false,
+        "cxx_exceptions": false,
+        "fabrics": [
+          "ucx"
+        ],
+        "gpfs": false,
+        "internal-hwloc": false,
+        "java": false,
+        "legacylaunchers": false,
+        "lustre": false,
+        "memchecker": false,
+        "orterunprefix": false,
+        "pmi": false,
+        "romio": false,
+        "rsh": true,
+        "schedulers": [
+          "slurm"
+        ],
+        "singularity": false,
+        "static": true,
+        "vt": true,
+        "wrapper-rpath": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/share/apps/22.04/manual/openmpi/4.1.5",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "nmeupsigqhzfn64o6rq3tnwiostv6juj26c5dg4564xkoshzyzbq====",
+      "hash": "b34zdooi6jml5ka4qnztfhsbherwfgaa"
+    },
+    "dtdnlgdgx7546bowronnjusvl5e2r66m": {
+      "name": "npb",
+      "version": "3.4.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen2",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avx",
+            "avx2",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "f16c",
+            "fma",
+            "fsgsbase",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "aocc",
+        "version": "3.2.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "makefile",
+        "classes": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "S",
+          "W"
+        ],
+        "implementation": "mpi",
+        "names": [
+          "bt",
+          "cg",
+          "ep",
+          "ft",
+          "is",
+          "lu",
+          "mg",
+          "sp"
+        ],
+        "nprocs": [
+          "1",
+          "128",
+          "16",
+          "2",
+          "32",
+          "4",
+          "64",
+          "8"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "44zn35yn7pu7iyp5fjirjuw7m2hppr3pb3oc7overvr2islpjkkq====",
+      "dependencies": [
+        {
+          "name": "openmpi",
+          "hash": "6gubk6w6c2zjfha4ofpcnqikg7oe5abq",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "dtdnlgdgx7546bowronnjusvl5e2r66m"
+    },
+    "6gubk6w6c2zjfha4ofpcnqikg7oe5abq": {
+      "name": "openmpi",
+      "version": "4.1.5",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": {
+          "name": "zen2",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avx",
+            "avx2",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "f16c",
+            "fma",
+            "fsgsbase",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "aocc",
+        "version": "3.2.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "atomics": false,
+        "build_system": "autotools",
+        "cuda": true,
+        "cuda_arch": [
+          "none"
+        ],
+        "cxx": false,
+        "cxx_exceptions": false,
+        "fabrics": [
+          "ucx"
+        ],
+        "gpfs": false,
+        "internal-hwloc": false,
+        "java": false,
+        "legacylaunchers": false,
+        "lustre": false,
+        "memchecker": false,
+        "orterunprefix": false,
+        "pmi": false,
+        "romio": false,
+        "rsh": true,
+        "schedulers": [
+          "slurm"
+        ],
+        "singularity": false,
+        "static": true,
+        "vt": true,
+        "wrapper-rpath": true,
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/share/apps/22.04/manual/openmpi/4.1.5",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "nmeupsigqhzfn64o6rq3tnwiostv6juj26c5dg4564xkoshzyzbq====",
+      "hash": "6gubk6w6c2zjfha4ofpcnqikg7oe5abq"
+    }
+  }
+}
