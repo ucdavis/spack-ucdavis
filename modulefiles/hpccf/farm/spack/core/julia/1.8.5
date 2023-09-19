@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-05-30 16:51:48.504090
+##
+## julia@1.8.5%gcc@11.3.0+openlibm+precompile build_system=makefile patches=12e8f41 arch=linux-ubuntu22.04-x86_64_v2/czzifdc
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis "The Julia Language: A fresh approach to technical computing"
+
+proc ModulesHelp { } {
+puts stderr "The Julia Language: A fresh approach to technical computing"
+}
+
+conflict julia
+
+prepend-path LD_LIBRARY_PATH "/share/apps/22.04/julia/1.8.5/lib"
+prepend-path PATH "/share/apps/22.04/julia/1.8.5/bin"
+prepend-path MANPATH "/share/apps/22.04/julia/1.8.5/share/man"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/julia/1.8.5/."
+setenv JULIA_ROOT "/share/apps/22.04/julia/1.8.5"
+
+if [module-info mode load] {
+}

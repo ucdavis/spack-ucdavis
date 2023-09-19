@@ -1,0 +1,32 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-01 15:58:31.163084
+##
+## netcdf-cxx4@4.3.1%gcc@11.3.0~doc+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/3dhjvhc
+##
+## Configure options: --enable-shared --disable-doxygen --disable-filter-testing
+##
+
+
+module-whatis "NetCDF (network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. This is the C++ distribution."
+
+proc ModulesHelp { } {
+puts stderr "NetCDF (network Common Data Form) is a set of software libraries and"
+puts stderr "machine-independent data formats that support the creation, access, and"
+puts stderr "sharing of array-oriented scientific data. This is the C++ distribution."
+}
+
+prereq netcdf-c/4.9.0
+conflict netcdf-cxx4
+
+prepend-path CPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-cxx4-4.3.1-3dhjvhce3wcprwvd7zospby2y6ixngf7/include"
+prepend-path C_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-cxx4-4.3.1-3dhjvhce3wcprwvd7zospby2y6ixngf7/include"
+prepend-path CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-cxx4-4.3.1-3dhjvhce3wcprwvd7zospby2y6ixngf7/include"
+prepend-path LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-cxx4-4.3.1-3dhjvhce3wcprwvd7zospby2y6ixngf7/lib"
+prepend-path LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-cxx4-4.3.1-3dhjvhce3wcprwvd7zospby2y6ixngf7/lib"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-cxx4-4.3.1-3dhjvhce3wcprwvd7zospby2y6ixngf7/bin"
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-cxx4-4.3.1-3dhjvhce3wcprwvd7zospby2y6ixngf7/lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-cxx4-4.3.1-3dhjvhce3wcprwvd7zospby2y6ixngf7/."
+setenv NETCDF_CXX4_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/netcdf-cxx4-4.3.1-3dhjvhce3wcprwvd7zospby2y6ixngf7"
+
+if [module-info mode load] {
+}

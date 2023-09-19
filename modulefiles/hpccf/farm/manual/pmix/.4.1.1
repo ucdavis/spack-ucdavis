@@ -1,0 +1,31 @@
+#%Module1.0
+
+########## BEGIN EDIT ##########
+set name "pmix"
+set version "4.1.1"
+set note "https://github.com/openpmix/openpmix"
+########## END EDIT ##########
+
+set dir [ string tolower $name ]
+set os "22.04"
+set swroot "/share/apps/$os/$dir/$version"
+
+# requirements here
+foreach { requirement } [ list libevent/2.1.12-stable hwloc/2.9.0 ] {
+    if ![ is-loaded $requirement ] { module load $requirement }
+}
+
+setenv [ string toupper $name]_HOME $swroot
+
+module-whatis "This module loads $name version $version.\n  $note"
+
+prepend-path PATH            $swroot/bin
+#prepend-path PATH            $swroot/sbin
+prepend-path CPATH           $swroot/include
+prepend-path LD_LIBRARY_PATH $swroot/lib
+
+prepend-path MANPATH $swroot/share/man
+
+if { [ module-info mode load ] } {
+    puts stderr "Module $dir/$version loaded.\n"
+}

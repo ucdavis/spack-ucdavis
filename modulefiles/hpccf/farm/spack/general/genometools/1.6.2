@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:11.412390
+##
+## genometools@1.6.2%gcc@9.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/nh7wjnz
+##
+
+
+module-whatis "genometools is a free collection of bioinformatics tools (in the realm of genome informatics) combined into a single binary named gt."
+
+proc ModulesHelp { } {
+puts stderr "genometools is a free collection of bioinformatics tools (in the realm"
+puts stderr "of genome informatics) combined into a single binary named gt."
+}
+
+conflict genometools
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/genometools-1.6.2-nh7wjnzxytf4lo4imc73hvyx746nawbl/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/genometools-1.6.2-nh7wjnzxytf4lo4imc73hvyx746nawbl/."
+prepend-path XLOCALEDIR "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/libx11-1.7.0-xda3mpigk6jk7cjafzigrd4amhiawkdv/share/X11/locale"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/gobject-introspection-1.72.0-r3pe4ufkmsggkpardhbdunukcwz42sza/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/gobject-introspection-1.72.0-r3pe4ufkmsggkpardhbdunukcwz42sza/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/harfbuzz-5.1.0-amswtbcgd2udedxytmus6jgcqypijphg/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/harfbuzz-5.1.0-amswtbcgd2udedxytmus6jgcqypijphg/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/pango-1.50.7-qrqyrisfmcnfn443lm5kizgb556a5u2l/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/pango-1.50.7-qrqyrisfmcnfn443lm5kizgb556a5u2l/lib/girepository-1.0"
+setenv GENOMETOOLS_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/genometools-1.6.2-nh7wjnzxytf4lo4imc73hvyx746nawbl"
+
+if [module-info mode load] {
+}

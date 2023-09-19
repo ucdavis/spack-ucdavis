@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:09:41.137153
+##
+## rclone@1.59.1%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/rwtblp7
+##
+
+
+module-whatis "Rclone is a command line program to sync files and directories to and from various cloud storage providers"
+
+proc ModulesHelp { } {
+puts stderr "Rclone is a command line program to sync files and directories to and"
+puts stderr "from various cloud storage providers"
+}
+
+conflict rclone
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/rclone-1.59.1-rwtblp7uhwq6qop25a3jsndbnmpu2asl/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/rclone-1.59.1-rwtblp7uhwq6qop25a3jsndbnmpu2asl/."
+setenv RCLONE_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/rclone-1.59.1-rwtblp7uhwq6qop25a3jsndbnmpu2asl"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:09:40.767014
+##
+## mpfr@4.1.0%gcc@11.3.0 build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v2/4ax2jet
+##
+## Configure options: --with-gmp=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gmp-6.2.1-mml4r4fekvkqnrcfzxaoypafbpygkicb --enable-shared --enable-static --with-pic
+##
+
+
+module-whatis "The MPFR library is a C library for multiple-precision floating-point computations with correct rounding."
+
+proc ModulesHelp { } {
+puts stderr "The MPFR library is a C library for multiple-precision floating-point"
+puts stderr "computations with correct rounding."
+}
+
+prereq gmp/6.2.1
+conflict mpfr
+
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpfr-4.1.0-4ax2jetjwzowj4f73iamxqscwmludwtg/lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpfr-4.1.0-4ax2jetjwzowj4f73iamxqscwmludwtg/."
+setenv MPFR_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/mpfr-4.1.0-4ax2jetjwzowj4f73iamxqscwmludwtg"
+
+if [module-info mode load] {
+}

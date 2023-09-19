@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:54.232449
+##
+## py-quast@4.6.3%gcc@11.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v2/vtzyltk
+##
+
+
+module-whatis "Quality Assessment Tool for Genome Assemblies"
+
+proc ModulesHelp { } {
+puts stderr "Quality Assessment Tool for Genome Assemblies"
+}
+
+prereq glimmer/3.02b
+conflict py-quast
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-quast-4.6.3-vtzyltkqtn3ay6szjmayosofgzq6kmye/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-quast-4.6.3-vtzyltkqtn3ay6szjmayosofgzq6kmye/."
+prepend-path PERL5LIB "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-time-hires-1.9746-5qhpzn7mpo36k3pmxr2gdop7dfuvb3jn/lib/perl5"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-quast-4.6.3-vtzyltkqtn3ay6szjmayosofgzq6kmye/lib/python3.10/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-matplotlib-3.6.2-o7il6zdyx6xpeb23uaxox47mo5wnbk6x/lib/python3.10/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-contourpy-1.0.5-bic72zl34lwukyqqw4t6ic5axkn3gup5/lib/python3.10/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-numpy-1.23.4-lxd4nudqcl66dniabbmdrgzddcrvxela/lib/python3.10/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-setuptools-59.4.0-5znqrjorhnh7utyvdsr2w7hlvcl2erjt/lib/python3.10/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-cycler-0.11.0-lyvozyibjp4rh4ajcme6itlvyh7gbch3/lib/python3.10/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-fonttools-4.37.3-eour4h72hfki6b26m645ftw7i3mtdv4k/lib/python3.10/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-kiwisolver-1.3.2-gxt762r3prlmy6vocfub25ox3ar7gfiv/lib/python3.10/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-packaging-21.3-enhwhjfpm6waoxaepklupb25wd7iewue/lib/python3.10/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-pyparsing-3.0.9-d6a47kg5e2mnuwfkhzd7h3gs2nnu4prr/lib/python3.10/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-pillow-9.2.0-jehn55yonqx7e2gnsm5eohbub222f3yo/lib/python3.10/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-python-dateutil-2.8.2-47r7kzijcqvi2v6jqysl4p6bqzyrla65/lib/python3.10/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-six-1.16.0-xozrwwv37a7jhmm7aadhk7hrvwdcrfo3/lib/python3.10/site-packages"
+prepend-path XLOCALEDIR "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libx11-1.7.0-vovihlpu6m3y3gj2q7zmcflfargnrbbr/share/X11/locale"
+setenv PY_QUAST_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-quast-4.6.3-vtzyltkqtn3ay6szjmayosofgzq6kmye"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

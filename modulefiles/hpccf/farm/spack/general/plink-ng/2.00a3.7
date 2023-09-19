@@ -1,0 +1,21 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:16.722416
+##
+## plink-ng@2.00a3.7%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/ovwm242
+##
+
+
+module-whatis "A comprehensive update to the PLINK association analysis toolset."
+
+proc ModulesHelp { } {
+puts stderr "A comprehensive update to the PLINK association analysis toolset."
+}
+
+conflict plink-ng
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/plink-ng-2.00a3.7-ovwm242xlciefh644kndabis2zpe7bty/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/plink-ng-2.00a3.7-ovwm242xlciefh644kndabis2zpe7bty/."
+setenv PLINK_NG_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/plink-ng-2.00a3.7-ovwm242xlciefh644kndabis2zpe7bty"
+
+if [module-info mode load] {
+}

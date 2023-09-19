@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:33.775034
+##
+## augustus@3.3%gcc@9.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/hpmmrnm
+##
+
+
+module-whatis "AUGUSTUS is a program that predicts genes in eukaryotic genomic sequences"
+
+proc ModulesHelp { } {
+puts stderr "AUGUSTUS is a program that predicts genes in eukaryotic genomic"
+puts stderr "sequences"
+}
+
+prereq bcftools/1.14
+prereq htslib/1.14
+prereq samtools/1.14
+conflict augustus
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/augustus-3.3-hpmmrnm4zggq7ci34nvc7bkaydvxq5wn/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/augustus-3.3-hpmmrnm4zggq7ci34nvc7bkaydvxq5wn/."
+setenv AUGUSTUS_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/augustus-3.3-hpmmrnm4zggq7ci34nvc7bkaydvxq5wn/config"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/augustus-3.3-hpmmrnm4zggq7ci34nvc7bkaydvxq5wn/scripts"
+setenv AUGUSTUS_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/augustus-3.3-hpmmrnm4zggq7ci34nvc7bkaydvxq5wn"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

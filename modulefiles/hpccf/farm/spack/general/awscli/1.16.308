@@ -1,0 +1,37 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:09:37.640822
+##
+## awscli@1.16.308%gcc@11.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v2/xyhdg5n
+##
+
+
+module-whatis "This package provides a unified command line interface to Amazon Web Services"
+
+proc ModulesHelp { } {
+puts stderr "This package provides a unified command line interface to Amazon Web"
+puts stderr "Services"
+}
+
+conflict awscli
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/awscli-1.16.308-xyhdg5ntmba7c3o4wbmuhv7weaux2iaf/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/awscli-1.16.308-xyhdg5ntmba7c3o4wbmuhv7weaux2iaf/."
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/awscli-1.16.308-xyhdg5ntmba7c3o4wbmuhv7weaux2iaf/lib/python2.7/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-argparse-1.4.0-hnqtypra36npzz4fpvny5w7lplid75nw/lib/python2.7/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-botocore-1.13.44-lsc3yxoa6cpovjwt4ghwktom26ohl3ca/lib/python2.7/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-docutils-0.15.2-6x4dzb7ila7hj4oh5lpiepmqpmtzfe6d/lib/python2.7/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-jmespath-0.10.0-efxzoi2aphsq52vlffqmxs3xtluy6xto/lib/python2.7/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-python-dateutil-2.5.2-oskyp4diqtulydfzrgnokefu6yuthbwu/lib/python2.7/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-six-1.16.0-slkgql3uvf2hufg3a345n2xqig3h2rk5/lib/python2.7/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-urllib3-1.25.9-n5u2z7kqpub4ihyahwfc4pvxdsd2yzmd/lib/python2.7/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-colorama-0.3.7-5db6dmpkwbsle43abjjlrsfcevtrjz7g/lib/python2.7/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-pyyaml-3.13-3jorsirvrenpzxlvm7rxb4vzc4lispns/lib/python2.7/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-rsa-3.4.2-54ksm54sgzkto7ehom3uq7o7ofaxrfzy/lib/python2.7/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-pyasn1-0.4.8-csm6zerp4yclvxxujjxgavhtqtudvsj5/lib/python2.7/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-setuptools-44.1.1-phjtivyvj5emluhv3mrcxn7kftaaxeb6/lib/python2.7/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-s3transfer-0.2.1-m2iiydi53i4zsiur5wfrqvbifz3exk5v/lib/python2.7/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/py-futures-3.3.0-wsi5ixkvt63y5gbtfb5fnipmfrdy4goc/lib/python2.7/site-packages"
+setenv AWSCLI_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/awscli-1.16.308-xyhdg5ntmba7c3o4wbmuhv7weaux2iaf"
+
+if [module-info mode load] {
+}

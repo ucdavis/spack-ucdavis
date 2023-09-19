@@ -1,0 +1,70 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:57.799452
+##
+## trinity@2.14.0.FULL%gcc@9.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/a5td744
+##
+
+
+module-whatis "Trinity, developed at the Broad Institute and the Hebrew University of Jerusalem, represents a novel method for the efficient and robust de novo reconstruction of transcriptomes from RNA-seq data. Trinity combines three independent software modules: Inchworm, Chrysalis, and Butterfly, applied sequentially to process large volumes of RNA-seq reads. Trinity partitions the sequence data into many individual de Bruijn graphs, each representing the transcriptional complexity at a given gene or locus, and then processes each graph independently to extract full-length splicing isoforms and to tease apart transcripts derived from paralogous genes. "
+
+proc ModulesHelp { } {
+puts stderr "Trinity, developed at the Broad Institute and the Hebrew University of"
+puts stderr "Jerusalem, represents a novel method for the efficient and robust de"
+puts stderr "novo reconstruction of transcriptomes from RNA-seq data. Trinity"
+puts stderr "combines three independent software modules: Inchworm, Chrysalis, and"
+puts stderr "Butterfly, applied sequentially to process large volumes of RNA-seq"
+puts stderr "reads. Trinity partitions the sequence data into many individual de"
+puts stderr "Bruijn graphs, each representing the transcriptional complexity at a"
+puts stderr "given gene or locus, and then processes each graph independently to"
+puts stderr "extract full-length splicing isoforms and to tease apart transcripts"
+puts stderr "derived from paralogous genes."
+}
+
+prereq blast-plus/2.12.0
+prereq bowtie/1.3.0
+prereq bowtie2/2.4.2
+prereq fastqc/0.11.9
+prereq jellyfish/1.1.11
+prereq kallisto/0.48.0
+prereq rsem/1.3.1
+prereq salmon/1.9.0
+prereq samtools/1.14
+conflict trinity
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/trinity-2.14.0.FULL-a5td7447lrgn4wetxptkqkskchyyf2ld/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/trinity-2.14.0.FULL-a5td7447lrgn4wetxptkqkskchyyf2ld/."
+prepend-path XDG_DATA_DIRS "/usr/share"
+prepend-path GI_TYPELIB_PATH "/usr/lib/girepository-1.0"
+prepend-path PERL5LIB "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-db-file-1.840-l7s6bpalvgx2cmph2foizwhyjma74p2t/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-uri-1.72-an6qnqqmwj36dhhvp2v6nuvalb5t2vdn/lib/perl5"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-numpy-1.23.4-vzkqcrmphyqcdkhv7xih5bfzba66seyu/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-setuptools-59.4.0-q3aw4cpyzhxvjizrr3ovd2mnycyvhl7l/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-rst2pdf-0.99-hbogucsmlpnr4tlmzskwzhgrdztfunsw/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-docutils-0.19-l6fxvbin24itde5x7tujaszmmhn56gup/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-importlib-metadata-4.12.0-6ngn5mjzo5q6zb66umb5ybswawsvhfcp/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-zipp-3.8.1-72kgjtmk577me3xajkh52d45lrjdtkjv/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-jinja2-3.1.2-ulbtlibgccb6qenaf7kvht43nfdj7v2q/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-markupsafe-2.1.1-obrz2tflbos3lniyx4tnj5huutevgmwn/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-packaging-21.3-pfvymraoag6l3m5n2jewvamwe6qutcp3/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pyparsing-3.0.9-45fpim4vjrkiuxajpw6cbrj7t2dpjb4h/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pygments-2.13.0-3kbvyg7hpcprs4xr3jek4zhbey5qvkmt/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pyyaml-6.0-fi7jpwllufqbzla7m5rga6wugqhxzbod/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-reportlab-3.4.0-jmzm62uapvpq6lr5gvnzqw3bajfluxsc/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pillow-9.2.0-wv35ol3brdjiomuihssctjcgobr2ydjs/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-smartypants-2.0.1-uxnociildqerojttl5i77dxoutgjh6fd/lib/python3.9/site-packages"
+prepend-path XLOCALEDIR "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/libx11-1.7.0-xda3mpigk6jk7cjafzigrd4amhiawkdv/share/X11/locale"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/gobject-introspection-1.72.0-22wpc6ge35xyjw7ewfofao75msrwq4xy/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/gobject-introspection-1.72.0-22wpc6ge35xyjw7ewfofao75msrwq4xy/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/harfbuzz-5.1.0-deeugzp2gjtmltczhdnt72crvtdrhh7n/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/harfbuzz-5.1.0-deeugzp2gjtmltczhdnt72crvtdrhh7n/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/pango-1.50.7-i7jlrlmk2blbn5sk2cdfqc5ots5awwoa/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/pango-1.50.7-i7jlrlmk2blbn5sk2cdfqc5ots5awwoa/lib/girepository-1.0"
+prepend-path --delim " " TCLLIBPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/tk-8.6.11-2avmixjod6t5skvua5mgc64wq2ci7vv2/lib"
+setenv R_HOME "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/r-4.2.2-a3wykqdzx5rwzslqaeu4r3fjrlvflb2a/rlib/R"
+setenv TRINITY_HOME "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/trinity-2.14.0.FULL-a5td7447lrgn4wetxptkqkskchyyf2ld/bin"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/trinity-2.14.0.FULL-a5td7447lrgn4wetxptkqkskchyyf2ld/bin/util"
+setenv TRINITY_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/trinity-2.14.0.FULL-a5td7447lrgn4wetxptkqkskchyyf2ld"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

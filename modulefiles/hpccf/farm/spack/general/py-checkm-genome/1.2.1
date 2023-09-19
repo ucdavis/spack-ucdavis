@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:17.212640
+##
+## py-checkm-genome@1.2.1%gcc@9.5.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v2/o2uecr4
+##
+
+
+module-whatis "Assess the quality of microbial genomes recovered from isolates, single cells, and metagenomes"
+
+proc ModulesHelp { } {
+puts stderr "Assess the quality of microbial genomes recovered from isolates, single"
+puts stderr "cells, and metagenomes"
+}
+
+prereq hmmer/3.3.2
+conflict py-checkm-genome
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-checkm-genome-1.2.1-o2uecr4igln6gcx7hbuvyvtc54vvqppm/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-checkm-genome-1.2.1-o2uecr4igln6gcx7hbuvyvtc54vvqppm/."
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-checkm-genome-1.2.1-o2uecr4igln6gcx7hbuvyvtc54vvqppm/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-dendropy-4.5.2-dbushhjacsvrogxslqoj5tkrhvuhfatl/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-setuptools-59.4.0-anzrds76gmqhput627ackiimwc6bikaq/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-matplotlib-3.6.2-cyn7d2ekeeei33c5exyjz2mgl4egdiir/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-contourpy-1.0.5-wf4txqetv64fxrkok3bcdznccmfqobdh/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-numpy-1.23.4-ahtsqvw4tep5pl5523q5kejacthcnofr/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-cycler-0.11.0-xstct7aesi4ryidivz37j5ysyhx4ozmx/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-fonttools-4.37.3-rh7aelycgjswepoa2dhctiiky32t5me2/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-kiwisolver-1.3.2-prf5r4oydu5ff3szrneynlidz6etvbcw/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-packaging-21.3-5euv6p5qpkiqpuyuocdbov2fa77qskx4/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pyparsing-3.0.9-kkcofnu5s6iirq7vo7neljhrbqcdbkyf/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pillow-9.2.0-thqyyzdceo4h2jnakr2phe5ncae5lwcv/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-python-dateutil-2.8.2-mheexejzcnmrjexw3t7j4aix7i5k4grm/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-six-1.16.0-jw2todiiwh7c7d4dvjnui7yddyubwupe/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pysam-0.19.1-iesyxxeaw4aptrfdbq7zt4ysijyr4vyc/lib/python3.9/site-packages"
+setenv PY_CHECKM_GENOME_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-checkm-genome-1.2.1-o2uecr4igln6gcx7hbuvyvtc54vvqppm"
+
+if [module-info mode load] {
+}

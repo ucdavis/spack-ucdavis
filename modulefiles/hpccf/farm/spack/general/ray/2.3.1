@@ -1,0 +1,21 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:18.869171
+##
+## ray@2.3.1%gcc@9.5.0~ipo build_system=cmake build_type=RelWithDebInfo arch=linux-ubuntu22.04-x86_64_v2/urz2wsr
+##
+
+
+module-whatis "Parallel genome assemblies for parallel DNA sequencing"
+
+proc ModulesHelp { } {
+puts stderr "Parallel genome assemblies for parallel DNA sequencing"
+}
+
+conflict ray
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ray-2.3.1-urz2wsrwitqhwobdkfy4ml4aqu7viypm/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ray-2.3.1-urz2wsrwitqhwobdkfy4ml4aqu7viypm/."
+setenv RAY_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ray-2.3.1-urz2wsrwitqhwobdkfy4ml4aqu7viypm"
+
+if [module-info mode load] {
+}

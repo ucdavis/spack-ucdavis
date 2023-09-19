@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:09:37.256748
+##
+## aria2@1.36.0%gcc@9.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/fqd4335
+##
+
+
+module-whatis "An ultra fast download utility"
+
+proc ModulesHelp { } {
+puts stderr "An ultra fast download utility"
+}
+
+conflict aria2
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/aria2-1.36.0-fqd4335plswneb2lhthxbskyagzwsgqr/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/aria2-1.36.0-fqd4335plswneb2lhthxbskyagzwsgqr/share/man"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/aria2-1.36.0-fqd4335plswneb2lhthxbskyagzwsgqr/."
+setenv ARIA2_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/aria2-1.36.0-fqd4335plswneb2lhthxbskyagzwsgqr"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-01 15:58:28.808811
+##
+## eigen@3.4.0%gcc@11.3.0~ipo build_system=cmake build_type=RelWithDebInfo arch=linux-ubuntu22.04-x86_64_v2/eywcwh2
+##
+## Configure options: -DBUILD_TESTING:STRING=ON
+##
+
+
+module-whatis "Eigen is a C++ template library for linear algebra matrices, vectors, numerical solvers, and related algorithms. "
+
+proc ModulesHelp { } {
+puts stderr "Eigen is a C++ template library for linear algebra matrices, vectors,"
+puts stderr "numerical solvers, and related algorithms."
+}
+
+conflict eigen
+
+prepend-path CPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/eigen-3.4.0-eywcwh2xt5xx7zj57m7j7hqyhhelwlmq/include"
+prepend-path C_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/eigen-3.4.0-eywcwh2xt5xx7zj57m7j7hqyhhelwlmq/include"
+prepend-path CPLUS_INCLUDE_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/eigen-3.4.0-eywcwh2xt5xx7zj57m7j7hqyhhelwlmq/include"
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/eigen-3.4.0-eywcwh2xt5xx7zj57m7j7hqyhhelwlmq/share/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/eigen-3.4.0-eywcwh2xt5xx7zj57m7j7hqyhhelwlmq/."
+prepend-path CPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/eigen-3.4.0-eywcwh2xt5xx7zj57m7j7hqyhhelwlmq/include/eigen3"
+setenv EIGEN_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/eigen-3.4.0-eywcwh2xt5xx7zj57m7j7hqyhhelwlmq"
+
+if [module-info mode load] {
+}

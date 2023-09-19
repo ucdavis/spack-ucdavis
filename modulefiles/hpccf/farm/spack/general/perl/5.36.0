@@ -1,0 +1,41 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-05-30 16:28:11.643858
+##
+## perl@5.36.0%gcc@11.3.0+cpanm+shared+threads build_system=generic arch=linux-ubuntu22.04-x86_64_v2/y2lzbxp
+##
+## Configure options: -des -Dprefix=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-5.36.0-y2lzbxpqxmbpq7znep3q6ymvgwnrdvdi -Dlocincpth=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gdbm-1.23-ql5dmphojzzvm6tokpr42hsrcfeas2yd/include -Dloclibpth=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gdbm-1.23-ql5dmphojzzvm6tokpr42hsrcfeas2yd/lib -Accflags=-DAPPLLIB_EXP=\"/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/perl-5.36.0-y2lzbxpqxmbpq7znep3q6ymvgwnrdvdi/lib/perl5\" -Duseshrplib -Dusethreads
+##
+
+
+module-whatis "Perl 5 is a highly capable, feature-rich programming language with over 27 years of development."
+
+proc ModulesHelp { } {
+puts stderr "Perl 5 is a highly capable, feature-rich programming language with over"
+puts stderr "27 years of development."
+}
+
+prereq zlib/1.2.13
+conflict perl
+
+
+setenv PERL_VIEW_HOME /share/apps/22.04/spack/environments/perl-stack/views/5.36.0
+setenv PERL_ROOT $env(PERL_VIEW_HOME)/bin
+
+prepend-path PERL5LIB $env(PERL_VIEW_HOME)/lib
+prepend-path PERL5LIB $env(PERL_VIEW_HOME)/lib/perl5
+
+# Set environment so well behaved Perl modules can be user installed.
+# From: perl -Mlocal::lib
+
+setenv PERL_LOCAL_LIB_ROOT /home/$env(LOGNAME)/perl5
+
+prepend-path PATH          $env(PERL_LOCAL_LIB_ROOT)/bin
+prepend-path PERL5LIB      $env(PERL_LOCAL_LIB_ROOT)/lib/perl5
+setenv       PERL_MM_OPT   INSTALL_BASE=$env(PERL_LOCAL_LIB_ROOT)
+setenv       PERL_MB_OPT   "--install_base $env(PERL_LOCAL_LIB_ROOT)"
+
+prepend-path PATH    $env(PERL_VIEW_HOME)/bin
+prepend-path MANPATH $env(PERL_VIEW_HOME)/man
+prepend-path CMAKE_PREFIX_PATH $env(PERL_VIEW_HOME)/.
+
+

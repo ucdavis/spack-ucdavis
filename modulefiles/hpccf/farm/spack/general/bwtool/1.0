@@ -1,0 +1,21 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:09.889262
+##
+## bwtool@1.0%gcc@9.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/rahsgku
+##
+
+
+module-whatis "bwtool is a command-line utility for bigWig files."
+
+proc ModulesHelp { } {
+puts stderr "bwtool is a command-line utility for bigWig files."
+}
+
+conflict bwtool
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/bwtool-1.0-rahsgkuczz2jldw5nzpv5g5lljzlp6dd/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/bwtool-1.0-rahsgkuczz2jldw5nzpv5g5lljzlp6dd/."
+setenv BWTOOL_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/bwtool-1.0-rahsgkuczz2jldw5nzpv5g5lljzlp6dd"
+
+if [module-info mode load] {
+}

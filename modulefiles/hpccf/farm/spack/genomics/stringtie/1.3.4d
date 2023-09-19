@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:57.342032
+##
+## stringtie@1.3.4d%gcc@9.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/slirt6h
+##
+
+
+module-whatis "StringTie is a fast and highly efficient assembler of RNA-Seq alignments into potential transcripts."
+
+proc ModulesHelp { } {
+puts stderr "StringTie is a fast and highly efficient assembler of RNA-Seq alignments"
+puts stderr "into potential transcripts."
+}
+
+prereq samtools/1.14
+conflict stringtie
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/stringtie-1.3.4d-slirt6h55uo5twl4nkq6ncdhyaxmh6vu/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/stringtie-1.3.4d-slirt6h55uo5twl4nkq6ncdhyaxmh6vu/."
+setenv STRINGTIE_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/stringtie-1.3.4d-slirt6h55uo5twl4nkq6ncdhyaxmh6vu"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

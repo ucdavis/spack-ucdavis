@@ -1,0 +1,33 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:43.504856
+##
+## llvm@14.0.0%gcc@9.5.0+clang+compiler-rt~cuda~flang+gold+internal_unwind~ipo+libcxx~link_llvm_dylib~lld~lldb+llvm_dylib~mlir+omp_as_runtime~omp_debug~omp_tsan+polly~python~split_dwarf~z3 build_system=cmake build_type=Release patches=6379168,d85ef51,f920173 shlib_symbol_version=none targets=none version_suffix=none arch=linux-ubuntu22.04-x86_64_v2/ll3fzpe
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis "The LLVM Project is a collection of modular and reusable compiler and toolchain technologies. Despite its name, LLVM has little to do with traditional virtual machines, though it does provide helpful libraries that can be used to build them. The name 'LLVM' itself is not an acronym; it is the full name of the project. "
+
+proc ModulesHelp { } {
+puts stderr "The LLVM Project is a collection of modular and reusable compiler and"
+puts stderr "toolchain technologies. Despite its name, LLVM has little to do with"
+puts stderr "traditional virtual machines, though it does provide helpful libraries"
+puts stderr "that can be used to build them. The name "LLVM" itself is not an"
+puts stderr "acronym; it is the full name of the project."
+}
+
+conflict llvm
+
+prepend-path MANPATH "/usr/share/man"
+prepend-path ACLOCAL_PATH "/usr/share/aclocal"
+prepend-path PKG_CONFIG_PATH "/usr/lib/pkgconfig"
+prepend-path PKG_CONFIG_PATH "/usr/share/pkgconfig"
+setenv CC "/usr/bin/clang"
+setenv CXX "/usr/bin/clang++"
+setenv LLVM_ROOT "/usr"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

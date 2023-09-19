@@ -98,27 +98,33 @@ packages:
     externals:
     - spec: julia@1.8.5
       prefix: /share/apps/22.04/julia/1.8.5
+    - spec: julia@1.9.0
+      prefix: /share/apps/22.04/julia/1.9.0
+    - spec: julia@1.9.2
+      prefix: /share/apps/22.04/julia/1.9.2
+    - spec: julia@1.9.3
+      prefix: /share/apps/22.04/julia/1.9.3
 
   slurm:
     buildable: false
     externals:
-    - spec: slurm@22-05-8 +pmix +mariadb +hwloc +restd
-      prefix: /share/apps/22.04/slurm/22.05.8
+    - spec: slurm@22-05-9.p2 +pmix +mariadb +hwloc +restd
+      prefix: /share/apps/22.04/slurm/22.05.9.p2
   hwloc:
     buildable: false
     externals:
-    - spec: hwloc@2.9.0
-      prefix: /share/apps/22.04/hwloc/2.9.0
+    - spec: hwloc@2.9.3
+      prefix: /share/apps/22.04/hwloc/2.9.3
   pmix:
     buildable: false
     externals:
-    - spec: pmix@4.1.1
-      prefix: /share/apps/22.04/pmix/4.1.1
+    - spec: pmix@4.2.6
+      prefix: /share/apps/22.04/pmix/4.2.6
   ucx:
     buildable: false
     externals:
-    - spec: ucx@1.13.1 +thread_multiple
-      prefix: /share/apps/22.04/ucx/1.13.1
+    - spec: ucx@1.14.1 +thread_multiple
+      prefix: /share/apps/22.04/ucx/1.14.1
   libevent:
     buildable: false
     externals:
@@ -183,7 +189,10 @@ packages:
     variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat
       +gif +jasper +pcre +png +zstd
   gdl:
-    version: [0.9.8]
+    version: [0.9.9]
     variants: +graphicsmagick +python
   sqlite:
     variants: +rtree
+
+  hdf5:
+    variants: +fortran +hl

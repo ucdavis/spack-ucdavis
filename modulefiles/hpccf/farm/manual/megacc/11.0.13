@@ -1,0 +1,28 @@
+#%Module1.0
+
+########## BEGIN EDIT ##########
+set name "megacc"
+set version "11.0.13"
+set note " Sophisticated and user-friendly software suite for analyzing DNA and protein sequence data from species and populations."
+########## END EDIT ##########
+
+set dir [ string tolower $name ]
+set os "22.04"
+set swroot "/share/apps/$os/$dir/$version"
+
+setenv [ string toupper $name]_ROOT $swroot
+
+# requirements here
+#foreach { requirement } [ list pmix/4.1.1 ucx/1.13.1 ] {
+#    if ![ is-loaded $requirement ] { module load $requirement }
+#}
+
+module-whatis "This module loads $name version $version.\n   $note"
+
+setenv MEGACC_ROOT $swroot
+
+prepend-path PATH            $swroot
+
+if { [ module-info mode load ] } {
+    puts stderr "Module $dir/$version loaded.\n"
+}

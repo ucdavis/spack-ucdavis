@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:08.277935
+##
+## allpaths-lg@52488%gcc@4.9.4 build_system=autotools patches=f4adf12 arch=linux-ubuntu22.04-x86_64_v2/4aucazt
+##
+
+
+module-whatis "ALLPATHS-LG is our original short read assembler and it works on both small and large (mammalian size) genomes."
+
+proc ModulesHelp { } {
+puts stderr "ALLPATHS-LG is our original short read assembler and it works on both"
+puts stderr "small and large (mammalian size) genomes."
+}
+
+conflict allpaths-lg
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-4.9.4/allpaths-lg-52488-4aucaztzwiomdzxieops4p5ezpmxwxn4/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-4.9.4/allpaths-lg-52488-4aucaztzwiomdzxieops4p5ezpmxwxn4/."
+setenv ALLPATHS_LG_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-4.9.4/allpaths-lg-52488-4aucaztzwiomdzxieops4p5ezpmxwxn4"
+
+if [module-info mode load] {
+}

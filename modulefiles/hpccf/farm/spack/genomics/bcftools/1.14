@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:34.395441
+##
+## bcftools@1.14%gcc@9.5.0+libgsl+perl-filters build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/4hbwpmw
+##
+## Configure options: --with-htslib=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/htslib-1.14-7jx6t3cbv5pokdwnpbwnbj63slo2bneo --enable-libgsl --enable-perl-filters
+##
+
+
+module-whatis "BCFtools is a set of utilities that manipulate variant calls in the Variant Call Format (VCF) and its binary counterpart BCF. All commands work transparently with both VCFs and BCFs, both uncompressed and BGZF-compressed."
+
+proc ModulesHelp { } {
+puts stderr "BCFtools is a set of utilities that manipulate variant calls in the"
+puts stderr "Variant Call Format (VCF) and its binary counterpart BCF. All commands"
+puts stderr "work transparently with both VCFs and BCFs, both uncompressed and BGZF-"
+puts stderr "compressed."
+}
+
+prereq htslib/1.14
+conflict bcftools
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/bcftools-1.14-4hbwpmw7bzbzh3nmjddnvmw4n5ztdozr/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/bcftools-1.14-4hbwpmw7bzbzh3nmjddnvmw4n5ztdozr/share/man"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/bcftools-1.14-4hbwpmw7bzbzh3nmjddnvmw4n5ztdozr/."
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-matplotlib-3.6.2-xzjtejf5cqp64pdsotu6vyg7dh2p47io/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-contourpy-1.0.5-zns34uhnipbyahlcdceccf2tf5abbjji/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-numpy-1.23.4-vzkqcrmphyqcdkhv7xih5bfzba66seyu/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-setuptools-59.4.0-q3aw4cpyzhxvjizrr3ovd2mnycyvhl7l/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-cycler-0.11.0-cnibsg6jpljobjtnfojphb3fiu5gt3wc/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-fonttools-4.37.3-z3evlnvkzlsz7exdp6cfk5vbabg2t6ae/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-kiwisolver-1.3.2-lqfnio3kmjotzpu4mwyvoloqnd5pa53u/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-packaging-21.3-pfvymraoag6l3m5n2jewvamwe6qutcp3/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pyparsing-3.0.9-45fpim4vjrkiuxajpw6cbrj7t2dpjb4h/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pillow-9.2.0-wv35ol3brdjiomuihssctjcgobr2ydjs/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-python-dateutil-2.8.2-javv2hkbumtwrtsn6pbbsa2q5iwcrkg5/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-six-1.16.0-mctnsnvrslo6n3nkt6cn3d4tmk4vmaqf/lib/python3.9/site-packages"
+setenv BCFTOOLS_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/bcftools-1.14-4hbwpmw7bzbzh3nmjddnvmw4n5ztdozr"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

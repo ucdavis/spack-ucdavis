@@ -8,12 +8,15 @@ spack:
   - gmp
   - gsl
   - hdf5
+  - h5z-zfp@1.1.0
+  - hypre
   - intel-oneapi-mkl
+  - librsvg
   - libszip
   - mpfr
-  - netcdf-c
-  - netcdf-cxx4
-  - netcdf-fortran
+  - netcdf-c +dap +fsync
+  - netcdf-cxx4 ^netcdf-c +dap +fsync
+  - netcdf-fortran ^netcdf-c +dap +fsync
   - nlohmann-json
   - zlib
   view: false
@@ -33,6 +36,12 @@ spack:
       tcl:
         include:
         - gsl
+        exclude:
+        - perl
+        h5z-zfp:
+          environment:
+            prepend_path:
+              HDF5_PLUGIN_PATH: '{prefix}/plugin'
       roots:
         tcl: $spack/../../modulefiles/spack/libs/
   concretizer:

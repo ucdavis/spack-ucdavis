@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:42.687715
+##
+## iq-tree@2.1.3%gcc@9.5.0~ipo+lsd2~mpi+openmp build_system=cmake build_type=RelWithDebInfo arch=linux-ubuntu22.04-x86_64_v2/rg24gvv
+##
+## Configure options: -DUSE_LSD2=ON -DIQTREE_FLAGS=omp
+##
+
+
+module-whatis "IQ-TREE Efficient software for phylogenomic inference"
+
+proc ModulesHelp { } {
+puts stderr "IQ-TREE Efficient software for phylogenomic inference"
+}
+
+conflict iq-tree
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/iq-tree-2.1.3-rg24gvvx4vyb57vyansyspwkyfzu36ax/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/iq-tree-2.1.3-rg24gvvx4vyb57vyansyspwkyfzu36ax/."
+setenv IQ_TREE_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/iq-tree-2.1.3-rg24gvvx4vyb57vyansyspwkyfzu36ax"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

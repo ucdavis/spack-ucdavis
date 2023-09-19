@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:16.618162
+##
+## picard@2.26.2%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/ycaurah
+##
+
+
+module-whatis "Picard is a set of command line tools for manipulating high-throughput sequencing (HTS) data and formats such as SAM/BAM/CRAM and VCF. "
+
+proc ModulesHelp { } {
+puts stderr "Picard is a set of command line tools for manipulating high-throughput"
+puts stderr "sequencing (HTS) data and formats such as SAM/BAM/CRAM and VCF."
+}
+
+conflict picard
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/picard-2.26.2-ycaurahp2ydpmjyv6tnirn3p7kvmvhxf/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/picard-2.26.2-ycaurahp2ydpmjyv6tnirn3p7kvmvhxf/."
+prepend-path PICARD "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/picard-2.26.2-ycaurahp2ydpmjyv6tnirn3p7kvmvhxf/bin/picard.jar"
+setenv PICARD_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/picard-2.26.2-ycaurahp2ydpmjyv6tnirn3p7kvmvhxf"
+
+if [module-info mode load] {
+}

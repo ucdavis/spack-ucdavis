@@ -1,0 +1,16 @@
+#%Module1.0
+# vim: syntax=tcl
+
+module-whatis "Hifiasm is a fast haplotype-resolved de novo assembler initially designed for PacBio HiFi reads."
+
+set envname "hifiasm-0.19.5"
+
+prereq conda/base/latest
+
+if { [module-info mode load] } {
+	puts stdout "conda activate $envname 2> /dev/null; "
+}
+
+if { [module-info mode unload] } {
+	puts stdout "conda deactivate 2> /dev/null; "
+}

@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:20.282303
+##
+## tabix@2013-12-16%gcc@9.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/cq56mzo
+##
+
+
+module-whatis "Generic indexer for TAB-delimited genome position files"
+
+proc ModulesHelp { } {
+puts stderr "Generic indexer for TAB-delimited genome position files"
+}
+
+conflict tabix
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/tabix-2013-12-16-cq56mzod2wn2ggxshs5ze4exbm7hs6wk/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/tabix-2013-12-16-cq56mzod2wn2ggxshs5ze4exbm7hs6wk/share/man"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/tabix-2013-12-16-cq56mzod2wn2ggxshs5ze4exbm7hs6wk/."
+setenv TABIX_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/tabix-2013-12-16-cq56mzod2wn2ggxshs5ze4exbm7hs6wk"
+
+if [module-info mode load] {
+}

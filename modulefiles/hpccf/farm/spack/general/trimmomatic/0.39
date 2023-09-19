@@ -1,0 +1,21 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:20.400552
+##
+## trimmomatic@0.39%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/kqumgyv
+##
+
+
+module-whatis "A flexible read trimming tool for Illumina NGS data."
+
+proc ModulesHelp { } {
+puts stderr "A flexible read trimming tool for Illumina NGS data."
+}
+
+conflict trimmomatic
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/trimmomatic-0.39-kqumgyvj2jo57hlcczmwkzwu4aifgw46/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/trimmomatic-0.39-kqumgyvj2jo57hlcczmwkzwu4aifgw46/."
+setenv TRIMMOMATIC_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/trimmomatic-0.39-kqumgyvj2jo57hlcczmwkzwu4aifgw46"
+
+if [module-info mode load] {
+}

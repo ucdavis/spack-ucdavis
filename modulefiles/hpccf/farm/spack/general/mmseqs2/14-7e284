@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:15.814269
+##
+## mmseqs2@14-7e284%gcc@9.5.0~ipo~mpi~openmp build_system=cmake build_type=RelWithDebInfo arch=linux-ubuntu22.04-x86_64_v2/72xgefe
+##
+## Configure options: -DVERSION_OVERRIDE=14-7e284 -DUSE_SYSTEM_ZSTD=1 -DREQUIRE_OPENMP=0 -DHAVE_MPI=0
+##
+
+
+module-whatis "MMseqs2 (Many-against-Many sequence searching) is a software suite to search and cluster huge protein and nucleotide sequence sets"
+
+proc ModulesHelp { } {
+puts stderr "MMseqs2 (Many-against-Many sequence searching) is a software suite to"
+puts stderr "search and cluster huge protein and nucleotide sequence sets"
+}
+
+conflict mmseqs2
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mmseqs2-14-7e284-72xgefes57eotukkpanzteum7q2vbg2x/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mmseqs2-14-7e284-72xgefes57eotukkpanzteum7q2vbg2x/."
+setenv MMSEQS2_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mmseqs2-14-7e284-72xgefes57eotukkpanzteum7q2vbg2x"
+
+if [module-info mode load] {
+}

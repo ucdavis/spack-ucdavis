@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:09:39.940490
+##
+## gnuplot@5.4.3%gcc@11.3.0~X+cairo+gd+libcerf~pbm~qt~wx build_system=autotools patches=ad89f23 arch=linux-ubuntu22.04-x86_64_v2/ytax5f5
+##
+## Configure options: --disable-dependency-tracking --disable-silent-rules --without-tutorial --with-readline=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/readline-8.1.2-xspmbtrj6n6wcpyfqmv3fwtktl7rtjjo --without-bitmap-terminals --without-x --with-qt=no --disable-wxwidgets --with-gd=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libgd-2.2.4-4ge5jrse6uvk7z7b7iai5ml2w6fpppg3 --with-cairo --with-libcerf --without-pdf --without-lua --without-latex --without-aquaterm
+##
+
+
+module-whatis "Gnuplot is a portable command-line driven graphing utility for Linux, OS/2, MS Windows, OSX, VMS, and many other platforms. The source code is copyrighted but freely distributed (i.e., you don't have to pay for it). It was originally created to allow scientists and students to visualize mathematical functions and data interactively, but has grown to support many non-interactive uses such as web scripting. It is also used as a plotting engine by third-party applications like Octave. Gnuplot has been supported and under active development since 1986"
+
+proc ModulesHelp { } {
+puts stderr "Gnuplot is a portable command-line driven graphing utility for Linux,"
+puts stderr "OS/2, MS Windows, OSX, VMS, and many other platforms. The source code is"
+puts stderr "copyrighted but freely distributed (i.e., you don't have to pay for it)."
+puts stderr "It was originally created to allow scientists and students to visualize"
+puts stderr "mathematical functions and data interactively, but has grown to support"
+puts stderr "many non-interactive uses such as web scripting. It is also used as a"
+puts stderr "plotting engine by third-party applications like Octave. Gnuplot has"
+puts stderr "been supported and under active development since 1986"
+}
+
+conflict gnuplot
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gnuplot-5.4.3-ytax5f5ebxkudb57uow3326g7accz7p3/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gnuplot-5.4.3-ytax5f5ebxkudb57uow3326g7accz7p3/share/man"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gnuplot-5.4.3-ytax5f5ebxkudb57uow3326g7accz7p3/."
+prepend-path XLOCALEDIR "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libx11-1.7.0-vovihlpu6m3y3gj2q7zmcflfargnrbbr/share/X11/locale"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gobject-introspection-1.72.0-rvu5vzv275v32kenrybilzsevsjrs7pn/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gobject-introspection-1.72.0-rvu5vzv275v32kenrybilzsevsjrs7pn/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/harfbuzz-5.1.0-k2gosxcaakwbrn4jqfu3lu3ualmpcer4/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/harfbuzz-5.1.0-k2gosxcaakwbrn4jqfu3lu3ualmpcer4/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pango-1.50.7-qlmlesyftpwlpfcarf7b4o6jy4sp2o4j/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/pango-1.50.7-qlmlesyftpwlpfcarf7b4o6jy4sp2o4j/lib/girepository-1.0"
+setenv GNUPLOT_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gnuplot-5.4.3-ytax5f5ebxkudb57uow3326g7accz7p3"
+
+if [module-info mode load] {
+}

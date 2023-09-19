@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:11.547475
+##
+## gffread@0.12.7%gcc@11.3.0 build_system=makefile patches=a25b092 arch=linux-ubuntu22.04-x86_64_v2/o5cp3ag
+##
+
+
+module-whatis "GFF/GTF utility providing format conversions, filtering, FASTA sequence extraction and more. The paper can be found at: DOI: 10.12688/f1000research.23297.1"
+
+proc ModulesHelp { } {
+puts stderr "GFF/GTF utility providing format conversions, filtering, FASTA sequence"
+puts stderr "extraction and more. The paper can be found at: DOI:"
+puts stderr "10.12688/f1000research.23297.1"
+}
+
+conflict gffread
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gffread-0.12.7-o5cp3agd4ppnw6fmpzrh7v5zsq7vvmol/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gffread-0.12.7-o5cp3agd4ppnw6fmpzrh7v5zsq7vvmol/."
+setenv GFFREAD_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gffread-0.12.7-o5cp3agd4ppnw6fmpzrh7v5zsq7vvmol"
+
+if [module-info mode load] {
+}

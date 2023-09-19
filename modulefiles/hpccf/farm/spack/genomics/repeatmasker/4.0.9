@@ -1,0 +1,27 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:56.004507
+##
+## repeatmasker@4.0.9%gcc@9.5.0~crossmatch build_system=generic patches=b9e0ce5 arch=linux-ubuntu22.04-x86_64_v2/cfyj7x7
+##
+
+
+module-whatis "RepeatMasker is a program that screens DNA sequences for interspersed repeats and low complexity DNA sequences."
+
+proc ModulesHelp { } {
+puts stderr "RepeatMasker is a program that screens DNA sequences for interspersed"
+puts stderr "repeats and low complexity DNA sequences."
+}
+
+prereq hmmer/3.3.2
+prereq ncbi-rmblastn/2.11.0
+conflict repeatmasker
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/repeatmasker-4.0.9-cfyj7x7wbgmgi45np4og63qlnw62nywp/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/repeatmasker-4.0.9-cfyj7x7wbgmgi45np4og63qlnw62nywp/."
+prepend-path PERL5LIB "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-text-soundex-3.05-j65f6xn4ys53wkvnxxry2v7jz37rehx5/lib/perl5"
+setenv REPEATMASKER_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/repeatmasker-4.0.9-cfyj7x7wbgmgi45np4og63qlnw62nywp"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

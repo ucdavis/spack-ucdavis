@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:08.932213
+##
+## aragorn@1.2.38%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/rqvdpy5
+##
+
+
+module-whatis "ARAGORN, a program to detect tRNA genes and tmRNA genes in nucleotide sequences."
+
+proc ModulesHelp { } {
+puts stderr "ARAGORN, a program to detect tRNA genes and tmRNA genes in nucleotide"
+puts stderr "sequences."
+}
+
+conflict aragorn
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/aragorn-1.2.38-rqvdpy5ohqqhirdo2urokmgxnnexpe4e/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/aragorn-1.2.38-rqvdpy5ohqqhirdo2urokmgxnnexpe4e/."
+setenv ARAGORN_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/aragorn-1.2.38-rqvdpy5ohqqhirdo2urokmgxnnexpe4e"
+
+if [module-info mode load] {
+}

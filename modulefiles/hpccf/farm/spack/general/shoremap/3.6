@@ -1,0 +1,29 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:19.748497
+##
+## shoremap@3.6%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/ilvyd77
+##
+
+
+module-whatis "SHOREmap is a computational tool implementing a method that enables simple and straightforward mapping-by-sequencing analysis."
+
+proc ModulesHelp { } {
+puts stderr "SHOREmap is a computational tool implementing a method that enables"
+puts stderr "simple and straightforward mapping-by-sequencing analysis. Whole genome"
+puts stderr "resequencing of pools of recombinant mutant genomes allows directly"
+puts stderr "linking phenotypic traits to causal mutations. Such an analysis, called"
+puts stderr "mapping-by-sequencing, combines classical genetic mapping and next"
+puts stderr "generation sequencing by relying on selection-induced patterns within"
+puts stderr "genome-wide allele frequency in pooled genomes."
+}
+
+conflict shoremap
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/shoremap-3.6-ilvyd774v6zhapao3ivwts4o6mms2vrs/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/shoremap-3.6-ilvyd774v6zhapao3ivwts4o6mms2vrs/."
+prepend-path XLOCALEDIR "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/libx11-1.7.0-xda3mpigk6jk7cjafzigrd4amhiawkdv/share/X11/locale"
+prepend-path LD_LIBRARY_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/dislin-11.5-4yuevrshmy3s442hledlhskhcc2apjuj"
+setenv SHOREMAP_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/shoremap-3.6-ilvyd774v6zhapao3ivwts4o6mms2vrs"
+
+if [module-info mode load] {
+}

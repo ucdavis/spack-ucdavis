@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:09:40.870417
+##
+## nco@5.0.1%gcc@11.3.0~doc build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/tuahrrg
+##
+## Configure options: --disable-doc
+##
+
+
+module-whatis "The NCO toolkit manipulates and analyzes data stored in netCDF-accessible formats"
+
+proc ModulesHelp { } {
+puts stderr "The NCO toolkit manipulates and analyzes data stored in netCDF-"
+puts stderr "accessible formats"
+}
+
+conflict nco
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nco-5.0.1-tuahrrgfgjv6bkvdqtukzwx6prxw7zvk/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nco-5.0.1-tuahrrgfgjv6bkvdqtukzwx6prxw7zvk/share/man"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nco-5.0.1-tuahrrgfgjv6bkvdqtukzwx6prxw7zvk/."
+setenv NCO_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/nco-5.0.1-tuahrrgfgjv6bkvdqtukzwx6prxw7zvk"
+
+if [module-info mode load] {
+}

@@ -1,0 +1,65 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:09:41.255249
+##
+## rstudio@2022.12.0-353%gcc@11.3.0~ipo~notebook+server build_system=cmake build_type=RelWithDebInfo patches=0bea752 arch=linux-ubuntu22.04-x86_64_v2/p7ap5bb
+##
+## Configure options: -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_BUILD_TYPE=Release -DRSTUDIO_USE_SYSTEM_YAML_CPP=Yes -DRSTUDIO_USE_SYSTEM_BOOST=Yes -DRSTUDIO_USE_SYSTEM_SOCI=Yes -DQUARTO_ENABLED=No -DQT_QMAKE_EXECUTABLE="/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/qt-5.15.8-upnrjxgnwqq24oo73zmzpqjsxytq6vkv/bin/qmake" -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=OFF -DRSTUDIO_TARGET=Server
+##
+
+
+module-whatis "RStudio is an integrated development environment (IDE) for R."
+
+proc ModulesHelp { } {
+puts stderr "RStudio is an integrated development environment (IDE) for R."
+}
+
+prereq openjdk/11.0.17_8
+conflict rstudio
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/rstudio-2022.12.0-353-p7ap5bbp4wjyox3imfsxw7thvsznbt5z/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/rstudio-2022.12.0-353-p7ap5bbp4wjyox3imfsxw7thvsznbt5z/."
+prepend-path XLOCALEDIR "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libx11-1.7.0-luifpsv5625gua6imyctabem6yuxytgf/share/X11/locale"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gobject-introspection-1.72.0-hnm5zf3vtu56s5bp4hvviptdyulrwexk/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gobject-introspection-1.72.0-hnm5zf3vtu56s5bp4hvviptdyulrwexk/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/harfbuzz-5.1.0-faesiqx5ruyiepagvvlee5brtps2lpgr/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/harfbuzz-5.1.0-faesiqx5ruyiepagvvlee5brtps2lpgr/lib/girepository-1.0"
+setenv RSTUDIO_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/rstudio-2022.12.0-353-p7ap5bbp4wjyox3imfsxw7thvsznbt5z"
+
+if [module-info mode load] {
+}
+
+
+setenv RSTUDIO_SERVER_UTILS /share/apps/22.04/hpccf-wrappers/rstudio
+prepend-path PATH $env(RSTUDIO_SERVER_UTILS)
+
+if { [module-info mode load] } {
+
+   set hostname [exec /bin/hostname]
+
+   if {[string equal $hostname "farm"]} {
+      puts stderr "
+RStudio Server is not allowed on the head node; it must be run in 
+an interactive Slurm session. For example, you could run:
+
+   srun -p high --time=9:00:00 --cpus-per-task=4 --mem=5G --pty /bin/bash -l
+
+Once your session launches, reload this module again and follow
+the provided directions to launch the server.
+"
+      exit
+   }
+
+   puts stderr "
+If you wish to use RStudio Server with the system R, first load it with:
+
+   module load R
+
+If you instead wish to load R from a conda environment (one that has r-base installed),
+activate the environment before proceeding.
+
+Once your R is sorted, launch the server with:
+
+   rstudio-launch
+"
+}
+

@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:45.699017
+##
+## orthofinder@2.5.4%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/dbw327p
+##
+
+
+module-whatis "OrthoFinder is a fast, accurate and comprehensive analysis tool for comparative genomics."
+
+proc ModulesHelp { } {
+puts stderr "OrthoFinder is a fast, accurate and comprehensive analysis tool for"
+puts stderr "comparative genomics. It finds orthologues and orthogroups infers rooted"
+puts stderr "gene trees for all orthogroups and infers a rooted species tree for the"
+puts stderr "species being analysed. OrthoFinder also provides comprehensive"
+puts stderr "statistics for comparative genomic analyses. OrthoFinder is simple to"
+puts stderr "use and all you need to run it is a set of protein sequence files (one"
+puts stderr "per species) in FASTA format."
+}
+
+prereq blast-plus/2.12.0
+prereq diamond/2.0.15
+prereq fastme/2.1.5.1
+prereq mcl/14-137
+conflict orthofinder
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/orthofinder-2.5.4-dbw327pzcmzazxdrqgzm65tc3u24no3h/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/orthofinder-2.5.4-dbw327pzcmzazxdrqgzm65tc3u24no3h/."
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-numpy-1.23.4-vzkqcrmphyqcdkhv7xih5bfzba66seyu/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-setuptools-59.4.0-q3aw4cpyzhxvjizrr3ovd2mnycyvhl7l/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-scipy-1.8.1-3twjsagsxsndbx3breniz2k6krna4ir3/lib/python3.9/site-packages"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/orthofinder-2.5.4-dbw327pzcmzazxdrqgzm65tc3u24no3h/bin"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/orthofinder-2.5.4-dbw327pzcmzazxdrqgzm65tc3u24no3h/bin/tools"
+setenv ORTHOFINDER_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/orthofinder-2.5.4-dbw327pzcmzazxdrqgzm65tc3u24no3h"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

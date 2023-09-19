@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:19.127806
+##
+## rnaquast@2.2.0%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/w5e272l
+##
+
+
+module-whatis "Quality assessment of de novo transcriptome assemblies from RNA-Seq data"
+
+proc ModulesHelp { } {
+puts stderr "Quality assessment of de novo transcriptome assemblies from RNA-Seq data"
+puts stderr "rnaQUAST is a tool for evaluating RNA-Seq assemblies using reference"
+puts stderr "genome and gene database. In addition, rnaQUAST is also capable of"
+puts stderr "estimating gene database coverage by raw reads and de novo quality"
+puts stderr "assessment using third-party software."
+}
+
+prereq blast-plus/2.12.0
+conflict rnaquast
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/rnaquast-2.2.0-w5e272lh3j2purlr3mem2xjzhtz4jiuu/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/rnaquast-2.2.0-w5e272lh3j2purlr3mem2xjzhtz4jiuu/."
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-gffutils-0.10.1-hu2btoqnobvsrgohzjt6sqtceephv67f/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-argcomplete-2.0.0-a2fcyk44ppk2zaa6fgkxg3sqgls6xyd6/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-argh-0.26.2-777wwnnc3lzysswpn5hnpqjnbua5z32l/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pyfaidx-0.5.5.2-dpw3kcenhnjabb3a3lh4mku7jcv5qx4x/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-setuptools-59.4.0-anzrds76gmqhput627ackiimwc6bikaq/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-six-1.16.0-jw2todiiwh7c7d4dvjnui7yddyubwupe/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-simplejson-3.17.2-qhk4xjvkezmccspevggqnzmzik5twbyd/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-joblib-1.2.0-ch5tysh5uowip7xp7436syjtcte2evuk/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-matplotlib-3.6.2-cyn7d2ekeeei33c5exyjz2mgl4egdiir/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-contourpy-1.0.5-wf4txqetv64fxrkok3bcdznccmfqobdh/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-numpy-1.23.4-ahtsqvw4tep5pl5523q5kejacthcnofr/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-cycler-0.11.0-xstct7aesi4ryidivz37j5ysyhx4ozmx/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-fonttools-4.37.3-rh7aelycgjswepoa2dhctiiky32t5me2/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-kiwisolver-1.3.2-prf5r4oydu5ff3szrneynlidz6etvbcw/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-packaging-21.3-5euv6p5qpkiqpuyuocdbov2fa77qskx4/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pyparsing-3.0.9-kkcofnu5s6iirq7vo7neljhrbqcdbkyf/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pillow-9.2.0-thqyyzdceo4h2jnakr2phe5ncae5lwcv/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-python-dateutil-2.8.2-mheexejzcnmrjexw3t7j4aix7i5k4grm/lib/python3.9/site-packages"
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/rnaquast-2.2.0-w5e272lh3j2purlr3mem2xjzhtz4jiuu/bin"
+setenv RNAQUAST_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/rnaquast-2.2.0-w5e272lh3j2purlr3mem2xjzhtz4jiuu"
+
+if [module-info mode load] {
+}

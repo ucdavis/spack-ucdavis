@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:36.821722
+##
+## emboss@6.6.0%gcc@9.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/ieoovkr
+##
+
+
+module-whatis "EMBOSS is a free Open Source software analysis package specially developed for the needs of the molecular biology (e.g. EMBnet) user community"
+
+proc ModulesHelp { } {
+puts stderr "EMBOSS is a free Open Source software analysis package specially"
+puts stderr "developed for the needs of the molecular biology (e.g. EMBnet) user"
+puts stderr "community"
+}
+
+conflict emboss
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/emboss-6.6.0-ieoovkra76kkn7dvtr2rnysc3axrorwk/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/emboss-6.6.0-ieoovkra76kkn7dvtr2rnysc3axrorwk/."
+prepend-path XLOCALEDIR "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/libx11-1.7.0-xda3mpigk6jk7cjafzigrd4amhiawkdv/share/X11/locale"
+setenv EMBOSS_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/emboss-6.6.0-ieoovkra76kkn7dvtr2rnysc3axrorwk"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

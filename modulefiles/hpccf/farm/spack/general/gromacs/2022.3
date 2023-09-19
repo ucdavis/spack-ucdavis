@@ -1,0 +1,35 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:09:40.446355
+##
+## gromacs@2022.3%gcc@11.3.0~blas~cp2k~cuda~cycle_subcounters~double+hwloc~ipo~lapack~mdrun_only+mpi~nosuffix~opencl+openmp~plumed~relaxed_double_precision+shared~sycl build_system=cmake build_type=RelWithDebInfo arch=linux-ubuntu22.04-x86_64_v2/s2qzayy
+##
+## Configure options: -DGMX_MPI:BOOL=ON -DCMAKE_C_COMPILER=/share/apps/22.04/spack/spack-v0.19.1/lib/spack/env/gcc/gcc -DCMAKE_CXX_COMPILER=/share/apps/22.04/spack/spack-v0.19.1/lib/spack/env/gcc/g++ -DMPI_C_COMPILER=/share/apps/22.04/openmpi/4.1.5/bin/mpicc -DMPI_CXX_COMPILER=/share/apps/22.04/openmpi/4.1.5/bin/mpic++ -DGMX_INSTALL_LEGACY_API=ON -DGMX_HWLOC:BOOL=ON -DGMX_GPU:STRING=OFF -DGMX_EXTERNAL_LAPACK:BOOL=OFF -DGMX_EXTERNAL_BLAS:BOOL=OFF -DGMX_SIMD:STRING=SSE4.1 -DGMX_USE_RDTSCP:BOOL=ON -DGMX_OPENMP:BOOL=ON -DGMX_CYCLE_SUBCOUNTERS:BOOL=OFF -DGMX_FFT_LIBRARY=fftw3 -DGMX_VERSION_STRING_OF_FORK=spack
+##
+
+
+module-whatis "GROMACS is a molecular dynamics package primarily designed for simulations of proteins, lipids and nucleic acids. It was originally developed in the Biophysical Chemistry department of University of Groningen, and is now maintained by contributors in universities and research centers across the world."
+
+proc ModulesHelp { } {
+puts stderr "GROMACS is a molecular dynamics package primarily designed for"
+puts stderr "simulations of proteins, lipids and nucleic acids. It was originally"
+puts stderr "developed in the Biophysical Chemistry department of University of"
+puts stderr "Groningen, and is now maintained by contributors in universities and"
+puts stderr "research centers across the world. GROMACS is one of the fastest and"
+puts stderr "most popular software packages available and can run on CPUs as well as"
+puts stderr "GPUs. It is free, open source released under the GNU Lesser General"
+puts stderr "Public License. Before the version 4.6, GROMACS was released under the"
+puts stderr "GNU General Public License."
+}
+
+prereq fftw/3.3.10
+prereq hwloc/2.9.0
+conflict gromacs
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gromacs-2022.3-s2qzayyvefqiat7wlsuzi5vz5yskbl3u/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gromacs-2022.3-s2qzayyvefqiat7wlsuzi5vz5yskbl3u/share/man"
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gromacs-2022.3-s2qzayyvefqiat7wlsuzi5vz5yskbl3u/lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gromacs-2022.3-s2qzayyvefqiat7wlsuzi5vz5yskbl3u/."
+setenv GROMACS_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gromacs-2022.3-s2qzayyvefqiat7wlsuzi5vz5yskbl3u"
+
+if [module-info mode load] {
+}

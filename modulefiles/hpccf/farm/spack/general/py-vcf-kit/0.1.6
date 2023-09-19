@@ -1,0 +1,68 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:18.510154
+##
+## py-vcf-kit@0.1.6%gcc@9.5.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v2/5uax5zr
+##
+
+
+module-whatis "VCF-kit is a command-line based collection of utilities for performing analysis on Variant Call Format (VCF) files."
+
+proc ModulesHelp { } {
+puts stderr "VCF-kit is a command-line based collection of utilities for performing"
+puts stderr "analysis on Variant Call Format (VCF) files."
+}
+
+prereq bcftools/1.13
+prereq blast-plus/2.12.0
+prereq bwa/0.7.17
+prereq muscle/3.8.1551
+prereq py-biopython/1.79
+prereq samtools/1.13
+prereq vcftools/0.1.14
+conflict py-vcf-kit
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-vcf-kit-0.1.6-5uax5zrgf6g5gwrpczbkq4sban4ubua6/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-vcf-kit-0.1.6-5uax5zrgf6g5gwrpczbkq4sban4ubua6/."
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-vcf-kit-0.1.6-5uax5zrgf6g5gwrpczbkq4sban4ubua6/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-matplotlib-3.6.2-cyn7d2ekeeei33c5exyjz2mgl4egdiir/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-contourpy-1.0.5-wf4txqetv64fxrkok3bcdznccmfqobdh/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-numpy-1.23.4-ahtsqvw4tep5pl5523q5kejacthcnofr/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-setuptools-59.4.0-anzrds76gmqhput627ackiimwc6bikaq/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-cycler-0.11.0-xstct7aesi4ryidivz37j5ysyhx4ozmx/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-fonttools-4.37.3-rh7aelycgjswepoa2dhctiiky32t5me2/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-kiwisolver-1.3.2-prf5r4oydu5ff3szrneynlidz6etvbcw/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-packaging-21.3-5euv6p5qpkiqpuyuocdbov2fa77qskx4/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pyparsing-3.0.9-kkcofnu5s6iirq7vo7neljhrbqcdbkyf/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-pillow-9.2.0-thqyyzdceo4h2jnakr2phe5ncae5lwcv/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-python-dateutil-2.8.2-mheexejzcnmrjexw3t7j4aix7i5k4grm/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-six-1.16.0-jw2todiiwh7c7d4dvjnui7yddyubwupe/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-awesome-slugify-1.6.5-43z4gbngt3tqzdhmqp5e2rlmcgicuny6/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-regex-2022.8.17-atqcmviiqekmdtlkztxe75pkqiakuxvp/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-unidecode-0.04.21-33vke6axb54qptpk25b7stil7tnt4owl/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-biopython-1.79-riaufzcmss77ppndarimop7wxxsb3vqh/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-clint-0.5.1-frunlsvyelytnf26qfovlk2bfg6bx4yi/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-args-0.1.0-vftvwn35nyl2jchcvlexsk3snvlqorwb/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-cyvcf2-0.11.7-ty7ghhmunjedxqpvfzgi7yqcbg3s4n3t/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-click-8.1.3-avfmjmoczcgqhqdt2t4xbqglhkeil5l5/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-coloredlogs-14.0-kip7ugxyg4grexuj36tqqrsiai4bnxtj/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-humanfriendly-8.2-h6vwph447g7qn5ofsfrlfvubjzw3spl3/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-docopt-0.6.2-ulkqmvesvc6gths3xsydd5ztpj3b54vi/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-intervaltree-2.1.0-33l3kypjkyaaczhq4e74krgbcqozjofh/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-sortedcontainers-2.1.0-eg62k3zzplofxg3wci3ae7c3yqccmcip/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-jinja2-3.1.2-sqeeaqltostkdf3ux7pp2cws7xx3wkn5/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-markupsafe-2.1.1-aai2que4epxufhxfijrfh7c56ep4vkye/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-networkx-1.11-ukj2zvo4ptwvlt3bricnogsqg24d4rgs/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-decorator-5.1.1-ptdcdw2de7m2ti6rgfrrjmqay54srsqe/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-requests-2.28.1-ffii62n4w44ckamt2obf7byotf2f4dew/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-certifi-2022.9.14-ho7yyzgto5a2vpyqzwuzhqqo3w7kdh3c/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-charset-normalizer-2.0.12-563yjtntdbyqgwxwg647wflsbomu4mgw/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-idna-3.4-brgvxgks4zmat7v45h23s7jak6ts3w7y/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-urllib3-1.26.12-admd2rffssanmanedlilmp6r2ujqvahs/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-scipy-1.8.1-xwl7ksf5yosalxogivxxwt7hptjebuzz/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-tabulate-0.8.9-rknbrgpa6qpyygfbsxrkwdu4i2kbwqrj/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-yahmm-1.1.2-fy5ds764gwakftpyrx3fntbjibfn4k4n/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-cython-0.29.32-xwoyib46mjhiw5uwk6d5vltw4h5g3kql/lib/python3.9/site-packages"
+setenv PY_VCF_KIT_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-vcf-kit-0.1.6-5uax5zrgf6g5gwrpczbkq4sban4ubua6"
+
+if [module-info mode load] {
+}

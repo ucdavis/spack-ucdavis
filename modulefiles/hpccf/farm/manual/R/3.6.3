@@ -1,0 +1,35 @@
+#%Module1.0
+# vim: syntax=tcl
+
+module-whatis "R 3.6.3 with a collection of libraries."
+
+set envname "r-3.6.3"
+prereq conda/base/latest
+
+prepend-path R_LIBS_SITE /share/apps/22.04/rlibs/3.6.3
+
+set rlibsuser "$env(HOME)/R/x86_64-conda-linux-gnu/3.6"
+setenv R_LIBS_USER $rlibsuser
+file mkdir $rlibsuser
+
+if { [module-info mode load] } {
+	puts stdout "conda activate $envname 2> /dev/null; "
+
+        puts stderr "
+
+Warning: [module-info name] is currently bare bones and has no
+additional libraries installed. You can load the following module
+instead, which has many more libraries already installed: R/4.2.2
+
+Or you can continue to use this version of R and install the libraries
+you need into your home directory using the standard R library
+installation methods.
+
+"
+
+}
+
+if { [module-info mode unload] } {
+	puts stdout "conda deactivate 2> /dev/null; "
+}
+

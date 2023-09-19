@@ -1,0 +1,62 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:09:42.633807
+##
+## turbovnc@3.0.3%gcc@11.3.0~ipo+libjpeg-turbo build_system=cmake build_type=RelWithDebInfo arch=linux-ubuntu22.04-x86_64_v2/6zznbxx
+##
+## Configure options: -DG:STRING=NMake Makefiles -DCMAKE_BUILD_TYPE:STRING=Release -DTJPEG_INCLUDE_DIR:STRING=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libjpeg-turbo-2.1.3-iuag5okstjvjcm5g6bu6mcvb5glz7xl2/include -DTJPEG_LIBRARY:STRING=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/libjpeg-turbo-2.1.3-iuag5okstjvjcm5g6bu6mcvb5glz7xl2/lib/libturbojpeg.so
+##
+
+
+module-whatis "TurboVNC is a derivative of VNC (Virtual Network Computing) that is tuned to provide peak performance for 3D and video workloads."
+
+proc ModulesHelp { } {
+puts stderr "TurboVNC is a derivative of VNC (Virtual Network Computing) that is"
+puts stderr "tuned to provide peak performance for 3D and video workloads."
+}
+
+prereq openjdk/16.0.2
+conflict turbovnc
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/turbovnc-3.0.3-6zznbxxqgfxxzinucueqp4or6slvfxml/bin"
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/turbovnc-3.0.3-6zznbxxqgfxxzinucueqp4or6slvfxml/share/man"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/turbovnc-3.0.3-6zznbxxqgfxxzinucueqp4or6slvfxml/."
+setenv TURBOVNC_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/turbovnc-3.0.3-6zznbxxqgfxxzinucueqp4or6slvfxml"
+
+if [module-info mode load] {
+}
+
+
+setenv TURBOVNC_SERVER_UTILS /share/apps/22.04/hpccf-wrappers/turbovnc
+prepend-path PATH $env(TURBOVNC_SERVER_UTILS)
+
+module load virtualgl
+
+if { [module-info mode load] } {
+
+   set hostname [exec /bin/hostname]
+
+   if {[string equal $hostname "farm"]} {
+      puts stderr "
+TurboVNC is not allowed on the head node.
+
+You need to run it on a node through srun and use SSH to do port forwarding.
+
+For example: srun --partition=gpu-a100-h --gres=gpu:1 --time=9:00:00 --ntasks=1 --cpus-per-task=4 --mem=50G --pty /bin/bash -l
+
+After your srun has been allocated resources you can then: module load [module-info name]
+
+The wrapper script will automatically run, but you can rerun it if necessary: turbovnc-farm
+"
+      exit
+   }
+
+   puts stderr "
+
+Automatically running the wrapper, you may rerun it if necessary: turbovnc-farm
+
+"
+   
+   puts stdout "turbovnc-farm"
+
+}
+

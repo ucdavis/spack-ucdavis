@@ -1,0 +1,36 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:08.319497
+##
+## angsd@0.935%gcc@9.5.0+r build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/corcm7o
+##
+
+
+module-whatis "Angsd is a program for analysing NGS data."
+
+proc ModulesHelp { } {
+puts stderr "Angsd is a program for analysing NGS data. The software can handle a"
+puts stderr "number of different input types from mapped reads to imputed genotype"
+puts stderr "probabilities. Most methods take genotype uncertainty into account"
+puts stderr "instead of basing the analysis on called genotypes. This is especially"
+puts stderr "useful for low and medium depth data."
+}
+
+prereq htslib/1.13
+conflict angsd
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/angsd-0.935-corcm7onfl2aupnbfutqvwhfmemuowf7/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/angsd-0.935-corcm7onfl2aupnbfutqvwhfmemuowf7/."
+prepend-path XLOCALEDIR "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/libx11-1.7.0-xda3mpigk6jk7cjafzigrd4amhiawkdv/share/X11/locale"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/gobject-introspection-1.72.0-r3pe4ufkmsggkpardhbdunukcwz42sza/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/gobject-introspection-1.72.0-r3pe4ufkmsggkpardhbdunukcwz42sza/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/harfbuzz-5.1.0-amswtbcgd2udedxytmus6jgcqypijphg/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/harfbuzz-5.1.0-amswtbcgd2udedxytmus6jgcqypijphg/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/pango-1.50.7-qrqyrisfmcnfn443lm5kizgb556a5u2l/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/pango-1.50.7-qrqyrisfmcnfn443lm5kizgb556a5u2l/lib/girepository-1.0"
+prepend-path --delim " " TCLLIBPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/tk-8.6.11-gpu3nvxuco4vocgwwcu42ezk756r6rt6/lib"
+setenv R_HOME "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/r-4.2.2-cmgg7cn6xcucx3cniidmylzongeicnjp/rlib/R"
+setenv R_LIBS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/angsd-0.935-corcm7onfl2aupnbfutqvwhfmemuowf7/R"
+setenv ANGSD_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/angsd-0.935-corcm7onfl2aupnbfutqvwhfmemuowf7"
+
+if [module-info mode load] {
+}

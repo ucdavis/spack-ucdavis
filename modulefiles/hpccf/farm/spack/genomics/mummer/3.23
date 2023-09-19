@@ -1,0 +1,30 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:44.884046
+##
+## mummer@3.23%gcc@9.5.0 build_system=generic patches=05f53ea,c23ea85 arch=linux-ubuntu22.04-x86_64_v2/igxylmw
+##
+
+
+module-whatis "MUMmer is a system for rapidly aligning entire genomes."
+
+proc ModulesHelp { } {
+puts stderr "MUMmer is a system for rapidly aligning entire genomes."
+}
+
+conflict mummer
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mummer-3.23-igxylmwbyy36rfe2swutw32ljp7tda7b/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mummer-3.23-igxylmwbyy36rfe2swutw32ljp7tda7b/."
+prepend-path XLOCALEDIR "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/libx11-1.7.0-xda3mpigk6jk7cjafzigrd4amhiawkdv/share/X11/locale"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/gobject-introspection-1.72.0-22wpc6ge35xyjw7ewfofao75msrwq4xy/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/gobject-introspection-1.72.0-22wpc6ge35xyjw7ewfofao75msrwq4xy/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/harfbuzz-5.1.0-deeugzp2gjtmltczhdnt72crvtdrhh7n/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/harfbuzz-5.1.0-deeugzp2gjtmltczhdnt72crvtdrhh7n/lib/girepository-1.0"
+prepend-path XDG_DATA_DIRS "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/pango-1.50.7-i7jlrlmk2blbn5sk2cdfqc5ots5awwoa/share"
+prepend-path GI_TYPELIB_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/pango-1.50.7-i7jlrlmk2blbn5sk2cdfqc5ots5awwoa/lib/girepository-1.0"
+setenv MUMMER_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mummer-3.23-igxylmwbyy36rfe2swutw32ljp7tda7b"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

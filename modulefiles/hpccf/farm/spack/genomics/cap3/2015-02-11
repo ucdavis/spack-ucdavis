@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:36.397259
+##
+## cap3@2015-02-11%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/jivt3g4
+##
+
+
+module-whatis "CAP3 is DNA Sequence Assembly Program"
+
+proc ModulesHelp { } {
+puts stderr "CAP3 is DNA Sequence Assembly Program"
+}
+
+conflict cap3
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cap3-2015-02-11-jivt3g4pn246cuxx32t4mhwzftwzh2kn/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cap3-2015-02-11-jivt3g4pn246cuxx32t4mhwzftwzh2kn/."
+setenv CAP3_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cap3-2015-02-11-jivt3g4pn246cuxx32t4mhwzftwzh2kn"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

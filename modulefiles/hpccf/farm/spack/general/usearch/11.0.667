@@ -1,0 +1,26 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:20.421541
+##
+## usearch@11.0.667%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/ueal3vs
+##
+
+
+module-whatis "USEARCH is a unique sequence analysis tool with thousands of users world-wide."
+
+proc ModulesHelp { } {
+puts stderr "USEARCH is a unique sequence analysis tool with thousands of users"
+puts stderr "world-wide. Note: A manual download is required for USEARCH. Spack will"
+puts stderr "search your current directory for the download file. Alternatively, add"
+puts stderr "this file to a mirror so that Spack can find it. For instructions on how"
+puts stderr "to set up a mirror, see"
+puts stderr "https://spack.readthedocs.io/en/latest/mirrors.html"
+}
+
+conflict usearch
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/usearch-11.0.667-ueal3vsd5xvpjvqzsq7wwayon67pev52/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/usearch-11.0.667-ueal3vsd5xvpjvqzsq7wwayon67pev52/."
+setenv USEARCH_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/usearch-11.0.667-ueal3vsd5xvpjvqzsq7wwayon67pev52"
+
+if [module-info mode load] {
+}

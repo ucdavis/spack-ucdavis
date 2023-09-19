@@ -1,0 +1,23 @@
+#%Module1.0
+# vim: syntax=tcl
+
+module-whatis "Avocado is a multi-scale deep tensor factorization method for learning a latent representation of the human epigenome.
+
+Also contains:
+- jupyter
+- fine-mapping-inf
+  - susieinf
+  - finemapinf
+"
+
+set envname "avocado-0.4.0"
+
+prereq conda/base/latest
+
+if { [module-info mode load] } {
+	puts stdout "conda activate $envname 2> /dev/null; "
+}
+
+if { [module-info mode unload] } {
+	puts stdout "conda deactivate 2> /dev/null; "
+}

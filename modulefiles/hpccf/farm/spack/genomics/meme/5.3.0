@@ -1,0 +1,28 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:43.931616
+##
+## meme@5.3.0%gcc@9.5.0~image-magick+mpi build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/nhw4zkz
+##
+
+
+module-whatis "The MEME Suite allows the biologist to discover novel motifs in collections of unaligned nucleotide or protein sequences, and to perform a wide variety of other motif-based analyses."
+
+proc ModulesHelp { } {
+puts stderr "The MEME Suite allows the biologist to discover novel motifs in"
+puts stderr "collections of unaligned nucleotide or protein sequences, and to perform"
+puts stderr "a wide variety of other motif-based analyses."
+}
+
+conflict meme
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/meme-5.3.0-nhw4zkzllc26wuwjft2v6mlhbz3yoo4v/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/meme-5.3.0-nhw4zkzllc26wuwjft2v6mlhbz3yoo4v/."
+prepend-path PERL5LIB "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-xml-parser-2.44-e2uz7pagwfkpljp4oilvduqwofpcf5cw/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-libwww-perl-6.33-iq6lkzfb5awknwygwyrqjivqeakelcw5/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-encode-locale-1.05-26vd55gqc6g6oztjbegdhh5hb4htbpjk/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-file-listing-6.04-n3ljac4evyqpaftiz2ashdveg2vbx42t/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-http-date-6.02-nzrjvj5j7lyhlmz6vwvjlghahairrxaz/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-html-parser-3.72-mrgvapyx2hqqhfq6lkz5d6krwqtgbbae/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-html-tagset-3.20-txnkyfj6gi7wl7jmd5tn5ktm53ofbpo2/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-http-cookies-6.04-zmk4p47zc65ie63q4p4xdiqp37nxxvy5/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-http-message-6.13-i4qyx4zyokl4yjd2atxhvopec2jenrit/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-io-html-1.001-ggomz3ojahfmispwimfw74n3w7f47tyn/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-lwp-mediatypes-6.02-sixzz4rsekrr7cenbuawplcjupbd6odf/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-try-tiny-0.28-tysj5rs6v4ijhmazxtaegfzeqi34e7vy/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-uri-1.72-an6qnqqmwj36dhhvp2v6nuvalb5t2vdn/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-http-daemon-6.01-dywubpj44mhf7pnpfpyaxhr4vae3xwy5/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-http-negotiate-6.01-5t73xa3mx7xnzfdwi4amyep7ls6c2ldo/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-net-http-6.17-n4ssj5euetelvjcfcucj7yi67afqowso/lib/perl5:/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-www-robotrules-6.02-ofo3ugzlh2xwtj42mq5dn5d5d6scb42g/lib/perl5"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/libxml2-2.10.2-23e6k242yuzc5etvoiletn6sxmf76vbb/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/libxslt-1.1.33-ssob4dd76sdln3pqh5rob7ltyz7bmwp5/lib/python3.9/site-packages"
+setenv MEME_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/meme-5.3.0-nhw4zkzllc26wuwjft2v6mlhbz3yoo4v"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

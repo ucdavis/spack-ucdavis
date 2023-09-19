@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:19.900533
+##
+## sickle@1.33%gcc@9.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64/zwimg5u
+##
+
+
+module-whatis "Sickle is a tool that uses sliding windows along with quality and length thresholds to determine when quality is sufficiently low to trim the 3'-end of reads and also determines when the quality is sufficiently high enough to trim the 5'-end of reads."
+
+proc ModulesHelp { } {
+puts stderr "Sickle is a tool that uses sliding windows along with quality and length"
+puts stderr "thresholds to determine when quality is sufficiently low to trim the"
+puts stderr "3'-end of reads and also determines when the quality is sufficiently"
+puts stderr "high enough to trim the 5'-end of reads."
+}
+
+conflict sickle
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64/gcc-9.5.0/sickle-1.33-zwimg5uidenmr5nafcj3qm6ijeqoocwk/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64/gcc-9.5.0/sickle-1.33-zwimg5uidenmr5nafcj3qm6ijeqoocwk/."
+setenv SICKLE_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64/gcc-9.5.0/sickle-1.33-zwimg5uidenmr5nafcj3qm6ijeqoocwk"
+
+if [module-info mode load] {
+}

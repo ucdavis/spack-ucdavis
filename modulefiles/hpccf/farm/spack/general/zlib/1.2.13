@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:09:43.204084
+##
+## zlib@1.2.13%gcc@11.3.0+optimize+pic+shared build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/3xat3cx
+##
+
+
+module-whatis "A free, general-purpose, legally unencumbered lossless data-compression library. "
+
+proc ModulesHelp { } {
+puts stderr "A free, general-purpose, legally unencumbered lossless data-compression"
+puts stderr "library."
+}
+
+conflict zlib
+
+prepend-path MANPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/zlib-1.2.13-3xat3cxw3izc3bph2gq5sed7vd5jx4ey/share/man"
+prepend-path PKG_CONFIG_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/zlib-1.2.13-3xat3cxw3izc3bph2gq5sed7vd5jx4ey/lib/pkgconfig"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/zlib-1.2.13-3xat3cxw3izc3bph2gq5sed7vd5jx4ey/."
+setenv ZLIB_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/zlib-1.2.13-3xat3cxw3izc3bph2gq5sed7vd5jx4ey"
+
+if [module-info mode load] {
+}

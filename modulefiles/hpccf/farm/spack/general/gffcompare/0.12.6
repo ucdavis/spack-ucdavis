@@ -1,0 +1,27 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:11.524575
+##
+## gffcompare@0.12.6%gcc@11.3.0 build_system=makefile patches=86d7701 arch=linux-ubuntu22.04-x86_64_v2/nnq2gs2
+##
+
+
+module-whatis "Compare and evaluate the accuracy of RNA-Seq transcript assemblers (Cufflinks, Stringtie); collapse (merge) duplicate transcripts from multiple GTF/GFF3 files (e.g. resulted from assembly of different samples); classify transcripts from one or multiple GTF/GFF3 files as they relate to reference transcripts provided in a annotation file (also in GTF/GFF3 format)"
+
+proc ModulesHelp { } {
+puts stderr "Compare and evaluate the accuracy of RNA-Seq transcript assemblers"
+puts stderr "(Cufflinks, Stringtie); collapse (merge) duplicate transcripts from"
+puts stderr "multiple GTF/GFF3 files (e.g. resulted from assembly of different"
+puts stderr "samples); classify transcripts from one or multiple GTF/GFF3 files as"
+puts stderr "they relate to reference transcripts provided in a annotation file (also"
+puts stderr "in GTF/GFF3 format) More details can be found in the paper: DOI:"
+puts stderr "10.12688/f1000research.23297.1"
+}
+
+conflict gffcompare
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gffcompare-0.12.6-nnq2gs2mhecgozi3um5cyeihogl6jgng/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gffcompare-0.12.6-nnq2gs2mhecgozi3um5cyeihogl6jgng/."
+setenv GFFCOMPARE_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/gffcompare-0.12.6-nnq2gs2mhecgozi3um5cyeihogl6jgng"
+
+if [module-info mode load] {
+}

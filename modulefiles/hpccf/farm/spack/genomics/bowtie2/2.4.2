@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:35.115770
+##
+## bowtie2@2.4.2%gcc@9.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/mk3ijxm
+##
+
+
+module-whatis "Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences"
+
+proc ModulesHelp { } {
+puts stderr "Bowtie 2 is an ultrafast and memory-efficient tool for aligning"
+puts stderr "sequencing reads to long reference sequences"
+}
+
+conflict bowtie2
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/bowtie2-2.4.2-mk3ijxm42qfak2dk76m44xx2rm7qjk4s/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/bowtie2-2.4.2-mk3ijxm42qfak2dk76m44xx2rm7qjk4s/."
+setenv BOWTIE2_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/bowtie2-2.4.2-mk3ijxm42qfak2dk76m44xx2rm7qjk4s"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

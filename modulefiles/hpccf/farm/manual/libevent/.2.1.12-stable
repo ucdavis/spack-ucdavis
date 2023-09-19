@@ -1,0 +1,30 @@
+#%Module1.0
+
+########## BEGIN EDIT ##########
+set name "libevent"
+set version "2.1.12-stable"
+set note "The libevent API provides callbacks. https://libevent.org/"
+########## END EDIT ##########
+
+set dir [ string tolower $name ]
+set os "22.04"
+set swroot "/share/apps/$os/$dir/$version"
+
+# requirements here
+#if ![ is-loaded java ] { module load java }
+
+setenv [ string toupper $name]_HOME $swroot
+
+module-whatis "This module loads $name version $version.\n   $note"
+
+prepend-path LD_LIBRARY_PATH $swroot/lib
+prepend-path CPATH           $swroot/include
+
+prepend-path PATH $swroot/bin
+prepend-path PATH $swroot/sbin
+
+prepend-path MANPATH $swroot/share/man
+
+if { [ module-info mode load ] } {
+    puts stderr "Module $dir $version loaded.\n"
+}

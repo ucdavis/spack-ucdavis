@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:43.201478
+##
+## kraken@1.0%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/ka2fp5c
+##
+
+
+module-whatis "Kraken is a system for assigning taxonomic labels to short DNA sequences, usually obtained through metagenomic studies."
+
+proc ModulesHelp { } {
+puts stderr "Kraken is a system for assigning taxonomic labels to short DNA"
+puts stderr "sequences, usually obtained through metagenomic studies."
+}
+
+prereq jellyfish/1.1.11
+conflict kraken
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/kraken-1.0-ka2fp5cmrxylw4uq56uecchlmfyc6y53/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/kraken-1.0-ka2fp5cmrxylw4uq56uecchlmfyc6y53/."
+setenv KRAKEN_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/kraken-1.0-ka2fp5cmrxylw4uq56uecchlmfyc6y53"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

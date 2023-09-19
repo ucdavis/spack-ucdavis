@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:15.858104
+##
+## mothur@1.48.0%gcc@9.5.0+boost~gsl~hdf5 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/elxdwdl
+##
+
+
+module-whatis "This project seeks to develop a single piece of open-source, expandable software to fill the bioinformatics needs of the microbial ecology community."
+
+proc ModulesHelp { } {
+puts stderr "This project seeks to develop a single piece of open-source, expandable"
+puts stderr "software to fill the bioinformatics needs of the microbial ecology"
+puts stderr "community."
+}
+
+prereq usearch/11.0.667
+prereq vsearch/2.22.1
+conflict mothur
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mothur-1.48.0-elxdwdlxtdbo4rbh3kf6qj2ics5lfugy/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mothur-1.48.0-elxdwdlxtdbo4rbh3kf6qj2ics5lfugy/."
+setenv MOTHUR_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/mothur-1.48.0-elxdwdlxtdbo4rbh3kf6qj2ics5lfugy"
+
+if [module-info mode load] {
+}

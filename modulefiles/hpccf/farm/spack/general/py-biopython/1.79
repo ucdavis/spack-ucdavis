@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:17.136451
+##
+## py-biopython@1.79%gcc@9.5.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v2/riaufzc
+##
+
+
+module-whatis "A distributed collaborative effort to develop Python libraries and applications which address the needs of current and future work in bioinformatics. "
+
+proc ModulesHelp { } {
+puts stderr "A distributed collaborative effort to develop Python libraries and"
+puts stderr "applications which address the needs of current and future work in"
+puts stderr "bioinformatics."
+}
+
+conflict py-biopython
+
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-biopython-1.79-riaufzcmss77ppndarimop7wxxsb3vqh/."
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-biopython-1.79-riaufzcmss77ppndarimop7wxxsb3vqh/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-numpy-1.23.4-ahtsqvw4tep5pl5523q5kejacthcnofr/lib/python3.9/site-packages"
+prepend-path PYTHONPATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-setuptools-59.4.0-anzrds76gmqhput627ackiimwc6bikaq/lib/python3.9/site-packages"
+setenv PY_BIOPYTHON_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/py-biopython-1.79-riaufzcmss77ppndarimop7wxxsb3vqh"
+
+if [module-info mode load] {
+}

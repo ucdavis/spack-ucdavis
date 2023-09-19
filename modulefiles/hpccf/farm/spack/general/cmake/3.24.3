@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:09:39.698023
+##
+## cmake@3.24.3%gcc@11.3.0~doc+ncurses+ownlibs~qt build_system=generic build_type=Release arch=linux-ubuntu22.04-x86_64_v2/3eopxrm
+##
+
+
+module-whatis "A cross-platform, open-source build system. CMake is a family of tools designed to build, test and package software. "
+
+proc ModulesHelp { } {
+puts stderr "A cross-platform, open-source build system. CMake is a family of tools"
+puts stderr "designed to build, test and package software."
+}
+
+conflict cmake
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cmake-3.24.3-3eopxrmotccsrslz3wmuo6qyhrhme5fn/bin"
+prepend-path ACLOCAL_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cmake-3.24.3-3eopxrmotccsrslz3wmuo6qyhrhme5fn/share/aclocal"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cmake-3.24.3-3eopxrmotccsrslz3wmuo6qyhrhme5fn/."
+setenv CMAKE_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/cmake-3.24.3-3eopxrmotccsrslz3wmuo6qyhrhme5fn"
+
+if [module-info mode load] {
+}

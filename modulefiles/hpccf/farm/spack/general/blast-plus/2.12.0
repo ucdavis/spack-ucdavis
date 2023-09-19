@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:09.546172
+##
+## blast-plus@2.12.0%gcc@9.5.0+bzip2+freetype+gnutls+jpeg+lzo+openssl+pcre+perl+png+python~static+zlib build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/f5fs3ws
+##
+## Configure options: --with-bin-release --without-debug --with-mt --without-boost --with-64 --with-dll --without-static --without-static-exe --with-jpeg=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/libjpeg-turbo-2.1.3-jtptzqspzj62intd5xsmqb7h4aaeqpf3 --with-png=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/libpng-1.6.37-t7wqqecuhw7nbdxpzfcv6euvvabsslmt --with-freetype=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/freetype-2.11.1-w2vg74hzleft7bclmsrtijlounhzuwzu --without-hdf5 --with-z=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64/gcc-9.5.0/zlib-1.2.13-jhjncirksfm27mp7aty6dktgbh2nklve --with-bz2=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/bzip2-1.0.8-kxhivhlcch5t4zmriocdxz7z3uuniatv --with-lzo=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/lzo-2.10-jyaqymb63dnqfedpwgqe6rm72hutg2eb --with-gnutls=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/gnutls-3.7.8-b2ninaww5jl2nplrxlf6x3dhcqfbinhe --with-openssl=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/openssl-1.1.0l-6lo4upnlhmwx3cpmdtyokhfpt7xif6j4 --with-pcre=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/pcre-8.45-hwwtv6u6tfv654nxkznrlgoumf56by62 --with-python=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/python-3.9.15-fknulzlu26nhuafgm5uh2asfhncrfbbj --with-perl=/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/perl-5.36.0-cxoyehn53h434b4hb5npoyvhx7rn37io
+##
+
+
+module-whatis "Basic Local Alignment Search Tool."
+
+proc ModulesHelp { } {
+puts stderr "Basic Local Alignment Search Tool."
+}
+
+conflict blast-plus
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/blast-plus-2.12.0-f5fs3wsh7uqgn45tfdj3eyneibdnirru/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/blast-plus-2.12.0-f5fs3wsh7uqgn45tfdj3eyneibdnirru/."
+setenv BLAST_PLUS_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/blast-plus-2.12.0-f5fs3wsh7uqgn45tfdj3eyneibdnirru"
+
+if [module-info mode load] {
+}

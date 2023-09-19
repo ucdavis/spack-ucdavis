@@ -1,0 +1,22 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:10.529637
+##
+## deml@1.1.4%gcc@7.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/f57t7ks
+##
+
+
+module-whatis "deML: Maximum likelihood demultiplexing for NGS data"
+
+proc ModulesHelp { } {
+puts stderr "deML: Maximum likelihood demultiplexing for NGS data"
+}
+
+prereq gcc/5.5.0
+conflict deml
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-7.5.0/deml-1.1.4-f57t7kshgtlre7d5hpd7pquwativst3d/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-7.5.0/deml-1.1.4-f57t7kshgtlre7d5hpd7pquwativst3d/."
+setenv DEML_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-7.5.0/deml-1.1.4-f57t7kshgtlre7d5hpd7pquwativst3d"
+
+if [module-info mode load] {
+}

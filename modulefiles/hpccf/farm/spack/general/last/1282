@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:14.676500
+##
+## last@1282%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v2/i3ppzim
+##
+
+
+module-whatis "LAST finds similar regions between sequences, and aligns them. It is designed for comparing large datasets to each other (e.g. vertebrate genomes and/or large numbers of DNA reads)."
+
+proc ModulesHelp { } {
+puts stderr "LAST finds similar regions between sequences, and aligns them. It is"
+puts stderr "designed for comparing large datasets to each other (e.g. vertebrate"
+puts stderr "genomes and/or large numbers of DNA reads)."
+}
+
+conflict last
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/last-1282-i3ppzimb2imikj6nayecy6ezkzbevzpw/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/last-1282-i3ppzimb2imikj6nayecy6ezkzbevzpw/."
+setenv LAST_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/last-1282-i3ppzimb2imikj6nayecy6ezkzbevzpw"
+
+if [module-info mode load] {
+}

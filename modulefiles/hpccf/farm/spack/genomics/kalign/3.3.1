@@ -1,0 +1,23 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:42.943243
+##
+## kalign@3.3.1%gcc@9.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/5aryaey
+##
+
+
+module-whatis "A fast multiple sequence alignment program for biological sequences."
+
+proc ModulesHelp { } {
+puts stderr "A fast multiple sequence alignment program for biological sequences."
+}
+
+conflict kalign
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/kalign-3.3.1-5aryaeyc3h25e6jqu7zyca2u4eve5olu/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/kalign-3.3.1-5aryaeyc3h25e6jqu7zyca2u4eve5olu/."
+setenv KALIGN_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/kalign-3.3.1-5aryaeyc3h25e6jqu7zyca2u4eve5olu"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

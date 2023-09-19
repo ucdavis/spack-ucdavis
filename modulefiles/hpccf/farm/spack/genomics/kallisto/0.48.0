@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:43.010025
+##
+## kallisto@0.48.0%gcc@9.5.0~hdf5~ipo build_system=cmake build_type=RelWithDebInfo arch=linux-ubuntu22.04-x86_64_v2/s65x5kr
+##
+
+
+module-whatis "kallisto is a program for quantifying abundances of transcripts from RNA-Seq data."
+
+proc ModulesHelp { } {
+puts stderr "kallisto is a program for quantifying abundances of transcripts from"
+puts stderr "RNA-Seq data."
+}
+
+conflict kallisto
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/kallisto-0.48.0-s65x5kr6dcec3id4drmv5bmfbocbp2ug/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/kallisto-0.48.0-s65x5kr6dcec3id4drmv5bmfbocbp2ug/."
+setenv KALLISTO_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/kallisto-0.48.0-s65x5kr6dcec3id4drmv5bmfbocbp2ug"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

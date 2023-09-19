@@ -1,0 +1,32 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:08.956277
+##
+## bayenv2@2.0%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/p3bn2rd
+##
+
+
+module-whatis "Loci involved in local adaptation can potentially be identified by an unusual correlation between allele frequencies and important ecological variables, or by extreme allele frequency differences between geographic regions. However, such comparisons are complicated by differences in sample sizes and the neutral correlation of allele frequencies across populations due to shared history and gene flow. To overcome these difficulties, we have developed a Bayesian method that estimates the empirical pattern of covariance in allele frequencies between populations from a set of markers, and then uses this as a null model for a test at individual SNPs. Graham developed this method in collaboration with David Witonsky, Anna Di Rienzo and Jonathan Pritchard."
+
+proc ModulesHelp { } {
+puts stderr "Loci involved in local adaptation can potentially be identified by an"
+puts stderr "unusual correlation between allele frequencies and important ecological"
+puts stderr "variables, or by extreme allele frequency differences between geographic"
+puts stderr "regions. However, such comparisons are complicated by differences in"
+puts stderr "sample sizes and the neutral correlation of allele frequencies across"
+puts stderr "populations due to shared history and gene flow. To overcome these"
+puts stderr "difficulties, we have developed a Bayesian method that estimates the"
+puts stderr "empirical pattern of covariance in allele frequencies between"
+puts stderr "populations from a set of markers, and then uses this as a null model"
+puts stderr "for a test at individual SNPs. Graham developed this method in"
+puts stderr "collaboration with David Witonsky, Anna Di Rienzo and Jonathan"
+puts stderr "Pritchard."
+}
+
+conflict bayenv2
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bayenv2-2.0-p3bn2rd3mlzp7hzpfjj34r2rqh7pvpic/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bayenv2-2.0-p3bn2rd3mlzp7hzpfjj34r2rqh7pvpic/."
+setenv BAYENV2_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-11.3.0/bayenv2-2.0-p3bn2rd3mlzp7hzpfjj34r2rqh7pvpic"
+
+if [module-info mode load] {
+}

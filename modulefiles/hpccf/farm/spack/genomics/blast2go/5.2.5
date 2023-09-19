@@ -1,0 +1,25 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-03-30 11:49:34.884522
+##
+## blast2go@5.2.5%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v2/wojkiy4
+##
+
+
+module-whatis "Blast2GO is a bioinformatics platform for high-quality functional annotation and analysis of genomic datasets."
+
+proc ModulesHelp { } {
+puts stderr "Blast2GO is a bioinformatics platform for high-quality functional"
+puts stderr "annotation and analysis of genomic datasets."
+}
+
+prereq blast-plus/2.12.0
+conflict blast2go
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/blast2go-5.2.5-wojkiy42wxhgrjwjnxerucfs6556qz7a/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/blast2go-5.2.5-wojkiy42wxhgrjwjnxerucfs6556qz7a/."
+setenv BLAST2GO_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/blast2go-5.2.5-wojkiy42wxhgrjwjnxerucfs6556qz7a"
+
+if [module-info mode load] {
+   
+   puts stderr "Module [module-info name] loaded"
+}

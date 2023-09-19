@@ -1,0 +1,24 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-06-08 10:21:16.112509
+##
+## ncbi-toolkit@26_0_1%gcc@9.5.0~debug build_system=autotools arch=linux-ubuntu22.04-x86_64_v2/jcw5qwq
+##
+## Configure options: --without-sybase --without-fastcgi --without-debug
+##
+
+
+module-whatis "NCBI C++ Toolkit"
+
+proc ModulesHelp { } {
+puts stderr "NCBI C++ Toolkit"
+}
+
+prereq samtools/1.13
+conflict ncbi-toolkit
+
+prepend-path PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ncbi-toolkit-26_0_1-jcw5qwqim267vl57llz2gz55n4hy74si/bin"
+prepend-path CMAKE_PREFIX_PATH "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ncbi-toolkit-26_0_1-jcw5qwqim267vl57llz2gz55n4hy74si/."
+setenv NCBI_TOOLKIT_ROOT "/share/apps/22.04/spack/spack-v0.19.1/opt/spack/linux-ubuntu22.04-x86_64_v2/gcc-9.5.0/ncbi-toolkit-26_0_1-jcw5qwqim267vl57llz2gz55n4hy74si"
+
+if [module-info mode load] {
+}
