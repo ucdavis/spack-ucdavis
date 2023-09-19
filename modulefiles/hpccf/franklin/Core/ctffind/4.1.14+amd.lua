@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-05-12 12:27:44.945732
+-- Module file created by spack (https://github.com/spack/spack) on 2023-05-30 13:50:14.637529
 --
 -- ctffind@4.1.14%gcc@11.3.0+openmp build_system=autotools patches=d2d349c arch=linux-ubuntu22.04-zen2/bhdvx7a
 --
@@ -20,8 +20,8 @@ prepend_path("XLOCALEDIR", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu
 setenv("CTFFIND_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/ctffind-4.1.14-bhdvx7asemawoj332xvp7uh4ls7u46hn")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

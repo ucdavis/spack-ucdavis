@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-19 15:02:44.082616
+-- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:34:19.745006
 --
 -- gatk@3.8.1%gcc@11.3.0~r build_system=generic arch=linux-ubuntu22.04-x86_64_v3/d7wjgp7
 --
@@ -20,8 +20,8 @@ prepend_path("GATK", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-
 setenv("GATK_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gatk-3.8.1-d7wjgp7wrrb6psfejnninqasm6ib5ab3")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

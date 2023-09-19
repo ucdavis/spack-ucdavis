@@ -41,12 +41,6 @@ packages:
     - spec: gtkplus@2.24.33
       prefix: /usr
 
-  hwloc:
-    buildable: false
-    externals:
-    - spec: hwloc@2.9.0
-      prefix: /share/apps/22.04/hwloc/2.9.0
-
   pkg-config:
     externals:
     - spec: pkg-config@0.29.2
@@ -60,7 +54,35 @@ packages:
       prefix: /share/apps/22.04/julia/1.8.5
     - spec: julia@1.9.0
       prefix: /share/apps/22.04/julia/1.9.0
+    - spec: julia@1.9.2
+      prefix: /share/apps/22.04/julia/1.9.2
+    - spec: julia@1.9.3
+      prefix: /share/apps/22.04/julia/1.9.3
 
+  slurm:
+    buildable: false
+    externals:
+    - spec: slurm@22-05-9.p2 +pmix +mariadb +hwloc +restd
+      prefix: /share/apps/22.04/slurm/22.05.9.p2
+
+  hwloc:
+    buildable: false
+    externals:
+    - spec: hwloc@2.9.3
+      prefix: /share/apps/22.04/hwloc/2.9.3
+
+  pmix:
+    buildable: false
+    externals:
+    - spec: pmix@4.2.6
+      prefix: /share/apps/22.04/pmix/4.2.6
+
+  ucx:
+    buildable: false
+    externals:
+    - spec: ucx@1.14.1 +thread_multiple
+      prefix: /share/apps/22.04/ucx/1.14.1
+  
   libevent:
     buildable: false
     externals:
@@ -102,17 +124,7 @@ packages:
     - spec: openmpi@4.1.5 fabrics=ucx schedulers=slurm +cuda
       prefix: /share/apps/22.04/openmpi/4.1.5
 
-  pmix:
-    buildable: false
-    externals:
-    - spec: pmix@4.1.1
-      prefix: /share/apps/22.04/pmix/4.1.1
 
-  slurm:
-    buildable: false
-    externals:
-    - spec: slurm@22-05-8 +pmix +mariadb +hwloc +restd
-      prefix: /share/apps/22.04/slurm/22.05.8
 
   subversion:
     buildable: false
@@ -120,11 +132,6 @@ packages:
     - spec: subversion@1.14.1
       prefix: /usr
 
-  ucx:
-    buildable: false
-    externals:
-    - spec: ucx@1.13.1 +thread_multiple
-      prefix: /share/apps/22.04/ucx/1.13.1
   
   ####
   # Externals: buildable
@@ -181,9 +188,8 @@ packages:
   gdal:
     variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat
       +gif +jasper +pcre +png +zstd
-
   gdl:
-    version: [0.9.8]
+    version: [0.9.9]
     variants: +graphicsmagick +python
 
   hdf5:

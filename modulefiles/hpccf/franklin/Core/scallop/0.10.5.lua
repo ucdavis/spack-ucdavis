@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-19 15:02:50.176417
+-- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:34:31.143829
 --
 -- scallop@0.10.5%gcc@9.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/mcbfyu5
 --
@@ -19,8 +19,8 @@ prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux
 setenv("SCALLOP_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/scallop-0.10.5-mcbfyu5ddrjlvclx4fulvzsson3yuxbw")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

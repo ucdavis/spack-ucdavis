@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-19 15:02:49.491878
+-- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:34:29.675155
 --
 -- repeatmasker@4.0.9%gcc@9.5.0~crossmatch build_system=generic patches=b9e0ce5 arch=linux-ubuntu22.04-x86_64_v3/no2g7tw
 --
@@ -23,8 +23,8 @@ prepend_path("XLOCALEDIR", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu
 setenv("REPEATMASKER_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/repeatmasker-4.0.9-no2g7twwfys7vltgj6cksnvrajyitwdd")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

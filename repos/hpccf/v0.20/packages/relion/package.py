@@ -75,6 +75,8 @@ class Relion(CMakePackage, CudaPackage):
         description="Have external motioncor2 available in addition to " "Relion builtin",
     )
 
+    variant("gpu_delay", default=False, description="Delay GPU start to alleviate power spikes.")
+
     depends_on("mpi")
     depends_on("cmake@3:", type="build")
     depends_on("fftw-api precision=float,double", when="~mklfft")
@@ -98,6 +100,7 @@ class Relion(CMakePackage, CudaPackage):
     # - Gctf
     # - ResMap
     patch("0002-Simple-patch-to-fix-intel-mkl-linking.patch", when="@:3.1.1 os=ubuntu18.04")
+    patch("delay_gpu_start.patch", when="@4.0.0: +gpu_delay")
 
     def cmake_args(self):
         args = [

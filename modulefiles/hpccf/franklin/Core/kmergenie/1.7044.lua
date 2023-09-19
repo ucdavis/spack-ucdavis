@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-19 15:02:46.806535
+-- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:34:24.345418
 --
 -- kmergenie@1.7044%gcc@9.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/bid4rlv
 --
@@ -28,8 +28,8 @@ setenv("R_HOME", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_
 setenv("KMERGENIE_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/kmergenie-1.7044-bid4rlvmftoglmycrm5klry43joah663")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then
