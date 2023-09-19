@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:19:44.489220
+-- Module file created by spack (https://github.com/spack/spack) on 2023-09-12 14:17:18.754006
 --
 -- rclone@1.59.1%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/p5shsfg
 --

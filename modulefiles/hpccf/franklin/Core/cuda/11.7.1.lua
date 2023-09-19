@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:19:41.815010
+-- Module file created by spack (https://github.com/spack/spack) on 2023-09-12 14:17:16.824319
 --
 -- cuda@11.7.1%gcc@11.3.0~allow-unsupported-compilers~dev build_system=generic arch=linux-ubuntu22.04-x86_64_v3/pkcc5tt
 --

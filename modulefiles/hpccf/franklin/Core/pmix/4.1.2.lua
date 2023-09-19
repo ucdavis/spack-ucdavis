@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:19:43.079278
+-- Module file created by spack (https://github.com/spack/spack) on 2023-09-12 14:17:18.035829
 --
 -- pmix@4.1.2%gcc@11.3.0~docs+pmi_backwards_compatibility~restful build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/6gsyach
 --

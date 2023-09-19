@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:19:42.829439
+-- Module file created by spack (https://github.com/spack/spack) on 2023-09-12 14:17:17.890209
 --
 -- openldap@2.4.49%gcc@11.3.0+client_only+dynamic~icu~perl+sasl+shared~static build_system=autotools tls=gnutls arch=linux-ubuntu22.04-x86_64_v3/uwqsms4
 --

@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:19:44.565773
+-- Module file created by spack (https://github.com/spack/spack) on 2023-09-12 14:17:18.819532
 --
 -- rstudio@2022.12.0-353%gcc@11.3.0~ipo~notebook+server build_system=cmake build_type=RelWithDebInfo patches=0bea752 arch=linux-ubuntu22.04-x86_64_v3/iyxyinp
 --
@@ -13,6 +13,7 @@ whatis([[Configure options : -DRSTUDIO_PACKAGE_BUILD=Yes -DRSTUDIO_USE_SYSTEM_YA
 help([[RStudio is an integrated development environment (IDE) for R.]])
 
 
+depends_on("openjdk/11.0.17_8")
 depends_on("r/4.2.0")
 
 prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/rstudio-2022.12.0-353-iyxyinpo3lt4tk3lkzofeugje2a6phq5/./bin", ":")

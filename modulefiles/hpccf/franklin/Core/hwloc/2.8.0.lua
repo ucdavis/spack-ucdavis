@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:19:42.084954
+-- Module file created by spack (https://github.com/spack/spack) on 2023-09-12 14:17:17.115226
 --
 -- hwloc@2.8.0%gcc@11.3.0+cairo+cuda~gl+libudev+libxml2~netloc+nvml~oneapi-level-zero~opencl+pci~rocm build_system=autotools cuda_arch=75 libs=shared,static arch=linux-ubuntu22.04-x86_64_v3/hwfibpm
 --
