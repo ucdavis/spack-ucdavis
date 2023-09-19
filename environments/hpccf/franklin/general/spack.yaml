@@ -8,6 +8,10 @@ spack:
   - intel-oneapi-mkl
   - fftw
   - parallel
+  - jdk @17.0.1
+  - numactl @2.0.14
+  - openjdk @16.0.2
+  - openjdk @11.0.17_8
   modules:
     default:
       lmod:
@@ -19,6 +23,9 @@ spack:
         - intel-oneapi-mkl
         - fftw
         - parallel
+        - jdk @17.0.1
+        - openjdk @16.0.2
+        - openjdk @11.0.17_8
         projections:
           rstudio: rstudio-server/{version}
         rstudio:
