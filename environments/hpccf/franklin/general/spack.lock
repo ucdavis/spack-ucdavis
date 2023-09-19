@@ -36,6 +36,22 @@
     {
       "hash": "tdt7nq6ffctsyqxdrzsyr2skeky5qen3",
       "spec": "parallel"
+    },
+    {
+      "hash": "brypxckryxybad5tpn2qfhoxfe7vph4k",
+      "spec": "jdk@17.0.1"
+    },
+    {
+      "hash": "y472lgyrjz4zqdu6nwuanc46p3dnkhvy",
+      "spec": "numactl@2.0.14"
+    },
+    {
+      "hash": "5i2oqs2vg6vyatsgfnj55p4zhpnjqodr",
+      "spec": "openjdk@16.0.2"
+    },
+    {
+      "hash": "2xrvl5g5wcmop657pld6dgw57vgnceec",
+      "spec": "openjdk@11.0.17_8"
     }
   ],
   "concrete_specs": {
@@ -10682,6 +10698,121 @@
         }
       ],
       "hash": "tdt7nq6ffctsyqxdrzsyr2skeky5qen3"
+    },
+    "brypxckryxybad5tpn2qfhoxfe7vph4k": {
+      "name": "jdk",
+      "version": "17.0.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v3"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "ucdavis.hpccf",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "bp6bb4vp7nmkc36xisyzx6natto4vz22u7zicpc54zdk4wmwrq5q====",
+      "hash": "brypxckryxybad5tpn2qfhoxfe7vph4k"
+    },
+    "y472lgyrjz4zqdu6nwuanc46p3dnkhvy": {
+      "name": "numactl",
+      "version": "2.0.14",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v3"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "patches": [
+          "4e1d78cbbb85de625bad28705e748856033eaafab92a66dffd383a3d7e00cc94",
+          "62fc8a8bf7665a60e8f4c93ebbd535647cebf74198f7afafec4c085a8825c006",
+          "ff37630df599cfabf0740518b91ec8daaf18e8f288b19adaae5364dc1f6b2296"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "4e1d78cbbb85de625bad28705e748856033eaafab92a66dffd383a3d7e00cc94",
+        "62fc8a8bf7665a60e8f4c93ebbd535647cebf74198f7afafec4c085a8825c006",
+        "ff37630df599cfabf0740518b91ec8daaf18e8f288b19adaae5364dc1f6b2296"
+      ],
+      "package_hash": "pdwatdyiz4tknjdhf5cagul5jvb6573vkioz3ais54bvvdec7zta====",
+      "dependencies": [
+        {
+          "name": "autoconf",
+          "hash": "dx5npxshobznuayjlgdrpfapw5jso6dq",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "automake",
+          "hash": "lmomuhdemfyryehio6hfr6wlbruvrm5s",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "libtool",
+          "hash": "iuf7jk523xpxg5q5qde756pahdbwqte5",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "m4",
+          "hash": "5lfvhoz6gykmvixsh5gfzvbmtysjmbcz",
+          "type": [
+            "build"
+          ]
+        }
+      ],
+      "hash": "y472lgyrjz4zqdu6nwuanc46p3dnkhvy"
+    },
+    "5i2oqs2vg6vyatsgfnj55p4zhpnjqodr": {
+      "name": "openjdk",
+      "version": "16.0.2",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v3"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "6dqhn4hfzyaouqr5chxwtjtbdsoskon73uqixmb2dwsfddax7ula====",
+      "hash": "5i2oqs2vg6vyatsgfnj55p4zhpnjqodr"
     }
   }
 }
