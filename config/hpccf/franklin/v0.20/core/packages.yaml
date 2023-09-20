@@ -1,0 +1,246 @@
+packages:
+
+  ####
+  # CORE packages.
+  ####
+  # Externals: non-buildable
+  ####
+
+  at-spi2-core:
+    externals:
+    - spec: at-spi2-core@2.44.0 %gcc@11.3.0
+      prefix: /usr
+    buildable: false
+
+  at-spi2-atk:
+    externals:
+    - spec: at-spi2-atk@2.38.0 %gcc@11.3.0
+      prefix: /usr
+    buildable: false
+
+  atk:
+    externals:
+    - spec: atk@2.36.0
+      prefix: /usr
+    buildable: false
+
+  bash:
+    externals:
+    - spec: bash@5.1.16
+      prefix: /usr
+    buildable: false
+
+  cvs:
+    buildable: false
+    externals:
+    - spec: cvs@1.12.13
+      prefix: /usr
+
+
+  gtkplus:
+    buildable: false
+    externals:
+    - spec: gtkplus@3.24.33
+      prefix: /usr
+    - spec: gtkplus@2.24.33
+      prefix: /usr
+
+  pkg-config:
+    externals:
+    - spec: pkg-config@0.29.2
+      prefix: /usr
+    buildable: false
+
+  linux-pam:
+    buildable: false
+    externals:
+    - spec: linux-pam@1.4.0 %gcc@11.3.0
+      prefix: /usr
+
+  mariadb:
+    externals:
+    - spec: mariadb@10.8.2 %gcc@11.3.0
+      prefix: /usr
+    buildable: false
+
+  mariadb-c-client:
+    externals:
+    - spec: mariadb-c-client@3 %gcc@11.3.0
+      prefix: /usr
+
+  munge:
+    externals:
+    - spec: munge@0.5.14 %gcc@11.3.0
+      prefix: /usr
+    buildable: false
+
+  opengl:
+    buildable: false
+    externals:
+    - spec: opengl@4.5.0 %gcc@11.3.0
+      prefix: /usr
+
+  pmix:
+    buildable: false
+    externals:
+    - spec: pmix@4.2.6
+      prefix: /share/apps/22.04/manual/pmix/4.2.6
+
+  slurm:
+    buildable: false
+    externals:
+    - spec: slurm@22-05-9 +pmix +mariadb +hwloc +restd
+      prefix: /share/apps/22.04/manual/slurm/22.05.9
+    - spec: slurm@22-05-9-p1 +pmix +mariadb +hwloc +restd
+      prefix: /share/apps/22.04/manual/slurm/22.05.9.p1
+    - spec: slurm@22-05-9-p2 +pmix +mariadb +hwloc +restd
+      prefix: /share/apps/22.04/manual/slurm/22.05.9.p2
+
+
+  subversion:
+    buildable: false
+    externals:
+    - spec: subversion@1.14.1
+      prefix: /usr
+
+  ucx:
+    buildable: false
+    externals:
+    - spec: ucx@1.13.1 +thread_multiple
+      prefix: /share/apps/22.04/manual/ucx/1.13.1
+    - spec: ucx@1.14.1 +thread_multiple
+      prefix: /share/apps/22.04/manual/ucx/1.14.1
+  
+  ####
+  # Externals: buildable
+  ####
+  #
+  
+  curl:
+    externals:
+    - spec: curl@7.81.0+gssapi+ldap+nghttp2
+      prefix: /usr
+
+  llvm:
+    externals:
+    - spec: llvm@14.0.0+clang~lld~lldb
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          c: /usr/bin/clang-14
+          cxx: /usr/bin/clang++-14
+
+  openssl:
+    externals:
+    - spec: openssl@3.0.2
+      prefix: /usr
+
+  rust:
+    externals:
+    - spec: rust@1.61.0
+      prefix: /usr
+
+  ####
+  # Package requirements and variants
+  ####
+  #
+
+  amdfftw:
+    require: '@3.2 +openmp'
+    version:
+    - 3.2
+    variants: +openmp
+
+  cairo:
+    require: +X +ft +fc +pdf +png +gobject
+
+  dbus:
+    require: '@1.12.8 local_state_dir=/var/'
+
+  fftw:
+    require: '@3.3.10 +openmp'
+    version:
+    - 3.3.10
+    variants: +openmp
+
+  gdal:
+    variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat
+      +gif +jasper +pcre +png +zstd
+
+  gdl:
+    version: [0.9.8]
+    variants: +graphicsmagick +python
+
+  # When mpi=openmpi, this introduces an unresolvable dependency.
+  # See https://github.com/spack/spack/issues/15836 for details
+  hwloc:
+    require: '@2.9.1 ~netloc +pci +libxml2 +libudev +nvml +cairo cuda_arch=75'
+    version:
+      - 2.9.1
+    variants: +netloc +pci +libxml2 +libudev +cairo +nvml
+
+
+  intel-mkl:
+    require: '@2017.0.098:'
+
+  intel-oneapi-mkl:
+    require: '@2022.2.1'
+    version:
+    - 2022.2.1
+
+  libxml2:
+    require: '@2.10.2: +python'
+
+  libevent:
+    require: '@2.1.12'
+    version:
+    - 2.1.12
+
+  lmod:
+    require: '@8.7.14 modulepath_root=/share/apps/spack/modulefiles/'
+    version:
+    - 8.7.14
+    variants: modulepath_root=/share/apps/spack/modulefiles/
+
+  mkl:
+    require: intel-oneapi-mkl
+
+  mpi:
+    require: openmpi
+
+  openmpi:
+    require:
+    - any_of:
+      - '@4.1.5 fabrics=ucx schedulers=slurm +legacylaunchers +cuda cuda_arch=75 target=x86_64_v3'
+      - '@4.1.5 fabrics=ucx schedulers=slurm +legacylaunchers +cuda cuda_arch=75 target=zen2'
+    version:
+    - 4.1.5
+    variants: fabrics=ucx schedulers=slurm +cuda +legacylaunchers
+
+
+
+  python:
+    require: ~libxml2
+
+  sqlite:
+    variants: +rtree
+
+  tbb:
+    require: intel-oneapi-tbb
+
+  ####
+
+  all:
+    target: [x86_64_v2]
+    compiler:
+    - gcc@11.3.0
+    providers:
+      tbb:
+      - intel-oneapi-tbb
+      fftw-api:
+      - fftw
+    variants:
+    - cuda_arch=75
+
+
+

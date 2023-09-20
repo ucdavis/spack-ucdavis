@@ -1,0 +1,47 @@
+modules:
+  prefix_inspections:
+    lib64: [LD_LIBRARY_PATH]
+    lib: [LD_LIBRARY_PATH]
+    include:
+    - CPATH
+    - C_INCLUDE_PATH
+    - CPLUS_INCLUDE_PATH
+  default:
+    enable::
+      - lmod
+    roots:
+      lmod: $spack/../modulefiles/
+    arch_folder: false
+    lmod:
+      core_compilers:
+        - 'gcc@11.3.0'
+        - 'gcc@9.5.0'
+      hierarchy:: []
+      hash_length: 0
+      exclude_implicits: true
+      include:
+        - gcc
+      projections:
+        all: '{name}/{version}'
+        target=zen2: '{name}/{version}+amd'
+      defaults:
+        - target=x86_64
+      all:
+        template: hpccf/default.lua
+        autoload: direct
+        environment:
+          set:
+            '{name}_ROOT': '{prefix}'
+
+    tcl:
+      verbose: true
+      all:
+        template: hpccf/default.tcl
+        prerequisites: direct
+        conflict:
+        - '{name}'
+        environment:
+          set:
+            '{name}_ROOT': '{prefix}'
+      circos:
+        template: hpccf/circos-version-warning.tcl

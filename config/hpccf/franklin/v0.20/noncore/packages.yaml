@@ -1,0 +1,270 @@
+packages:
+  ####
+  # Externals: non-buildable
+  ####
+
+  at-spi2-core:
+    externals:
+    - spec: at-spi2-core@2.44.0 %gcc@11.3.0
+      prefix: /usr
+    buildable: false
+
+  at-spi2-atk:
+    externals:
+    - spec: at-spi2-atk@2.38.0 %gcc@11.3.0
+      prefix: /usr
+    buildable: false
+
+  atk:
+    externals:
+    - spec: atk@2.36.0
+      prefix: /usr
+    buildable: false
+
+  bash:
+    externals:
+    - spec: bash@5.1.16
+      prefix: /usr
+    buildable: false
+
+  cvs:
+    buildable: false
+    externals:
+    - spec: cvs@1.12.13
+      prefix: /usr
+
+  gcc:
+    externals:
+    - spec: gcc@11.3.0
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          cc: /usr/bin/gcc
+          cxx: /usr/bin/g++
+          f77: /usr/bin/gfortran
+          fc: /usr/bin/gfortran
+    - spec: gcc@9.5.0
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          cc: /usr/bin/gcc-9
+          cxx: /usr/bin/g++-9
+          f77: /usr/bin/gfortran-9
+          fc: /usr/bin/gfortran-9
+
+  gtkplus:
+    buildable: false
+    externals:
+    - spec: gtkplus@3.24.33
+      prefix: /usr
+    - spec: gtkplus@2.24.33
+      prefix: /usr
+
+  hwloc:
+    buildable: false
+    externals:
+    - spec: hwloc@2.9.0 target=x86_64_v2
+      prefix: /share/apps/22.04/manual/hwloc/2.9.0
+    - spec: hwloc@2.9.3 target=x86_64_v2
+      prefix: /share/apps/22.04/manual/hwloc/2.9.3
+
+  pkg-config:
+    externals:
+    - spec: pkg-config@0.29.2
+      prefix: /usr
+    buildable: false
+
+  #julia:
+  #  buildable: false
+  #  externals:
+  #  - spec: julia@1.8.5
+  #    prefix: /share/apps/22.04/julia/1.8.5
+  #  - spec: julia@1.9.0
+  #    prefix: /share/apps/22.04/julia/1.9.0
+
+  libevent:
+    buildable: false
+    externals:
+    - spec: libevent@2.1.12
+      prefix: /share/apps/22.04/manual/libevent/2.1.12-stable
+
+  linux-pam:
+    buildable: false
+    externals:
+    - spec: linux-pam@1.4.0 %gcc@11.3.0
+      prefix: /usr
+
+  mariadb:
+    externals:
+    - spec: mariadb@10.8.2 %gcc@11.3.0
+      prefix: /usr
+    buildable: false
+
+  mariadb-c-client:
+    externals:
+    - spec: mariadb-c-client@3 %gcc@11.3.0
+      prefix: /usr
+
+  munge:
+    externals:
+    - spec: munge@0.5.14 %gcc@11.3.0
+      prefix: /usr
+    buildable: false
+
+  opengl:
+    buildable: false
+    externals:
+    - spec: opengl@4.5.0 %gcc@11.3.0
+      prefix: /usr
+
+  openmpi:
+    buildable: false
+    # NOTE: we are using the ROMIO variant here, but this is just a fudge for OMPIO,
+    # as the spack package does not include a variant for it and we do not want to have
+    # to maintain another package just to add this variant.
+    variants: ~romio
+    externals:
+    - spec: openmpi@4.1.5 fabrics=ucx schedulers=slurm +cuda ~romio
+      prefix: /share/apps/22.04/manual/openmpi/4.1.5
+    - spec: openmpi@4.1.5 fabrics=ucx schedulers=slurm +cuda +romio
+      prefix: /share/apps/22.04/manual/openmpi/4.1.5-mpi-io
+
+  pmix:
+    buildable: false
+    externals:
+    - spec: pmix@4.2.6
+      prefix: /share/apps/22.04/manual/pmix/4.2.6
+
+  slurm:
+    buildable: false
+    externals:
+    - spec: slurm@22-05-9 +pmix +mariadb +hwloc +restd
+      prefix: /share/apps/22.04/manual/slurm/22.05.9
+    - spec: slurm@22-05-9-p1 +pmix +mariadb +hwloc +restd
+      prefix: /share/apps/22.04/manual/slurm/22.05.9.p1
+    - spec: slurm@22-05-9-p2 +pmix +mariadb +hwloc +restd
+      prefix: /share/apps/22.04/manual/slurm/22.05.9.p2
+
+
+  subversion:
+    buildable: false
+    externals:
+    - spec: subversion@1.14.1
+      prefix: /usr
+
+  ucx:
+    buildable: false
+    externals:
+    - spec: ucx@1.13.1 +thread_multiple
+      prefix: /share/apps/22.04/manual/ucx/1.13.1
+    - spec: ucx@1.14.1 +thread_multiple
+      prefix: /share/apps/22.04/manual/ucx/1.14.1
+  
+  ####
+  # Externals: buildable
+  ####
+  #
+  
+  curl:
+    externals:
+    - spec: curl@7.81.0+gssapi+ldap+nghttp2
+      prefix: /usr
+
+  llvm:
+    externals:
+    - spec: llvm@14.0.0+clang~lld~lldb
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          c: /usr/bin/clang-14
+          cxx: /usr/bin/clang++-14
+
+  openssl:
+    externals:
+    - spec: openssl@3.0.2
+      prefix: /usr
+
+  rust:
+    externals:
+    - spec: rust@1.61.0
+      prefix: /usr
+
+  ####
+  # Package requirements and variants
+  ####
+  #
+
+  amdfftw:
+    require: '@3.2 +openmp'
+    version:
+    - 3.2
+    variants: +openmp
+
+  cairo:
+    require: +X +ft +fc +pdf +png +gobject
+
+  dbus:
+    require: '@1.12.8 local_state_dir=/var/'
+
+  fftw:
+    require: '@3.3.10 +openmp'
+    version:
+    - 3.3.10
+    variants: +openmp
+
+  gdal:
+    variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat
+      +gif +jasper +pcre +png +zstd
+
+  gdl:
+    version: [0.9.8]
+    variants: +graphicsmagick +python
+
+  intel-mkl:
+    require: '@2017.0.098:'
+
+  intel-oneapi-mkl:
+    require: '@2022.2.1'
+    version:
+    - 2022.2.1
+
+  libxml2:
+    require: '@2.10.2: +python'
+
+  lmod:
+    require: '@8.7.14 modulepath_root=/share/apps/spack/modulefiles/'
+    version:
+    - 8.7.14
+    variants: modulepath_root=/share/apps/spack/modulefiles/
+
+  mkl:
+    require: intel-oneapi-mkl
+
+  mpi:
+    require: openmpi
+
+  python:
+    require: ~libxml2
+
+  sqlite:
+    variants: +rtree
+
+  tbb:
+    require: intel-oneapi-tbb
+
+  ####
+
+  all:
+    target: [x86_64_v2]
+    compiler:
+    - gcc@11.3.0
+    providers:
+      tbb:
+      - intel-oneapi-tbb
+      fftw-api:
+      - fftw
+    variants:
+    - cuda_arch=75
+
+
+
