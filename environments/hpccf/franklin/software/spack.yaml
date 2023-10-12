@@ -1,0 +1,292 @@
+spack:
+  definitions:
+    - relion-cuda:
+      - relion @4.0.1 +gui +cuda cuda_arch=75 purpose=cluster 
+      - relion @3.1.3 +gui +cuda cuda_arch=75 purpose=cluster
+    - relion-cpu:
+      - relion @4.0.1 +gui ~cuda +altcpu purpose=cluster
+      - relion @3.1.3 +gui ~cuda +altcpu purpose=cluster
+    - libs-specs:
+      - amdfftw @4.1 target=zen2
+      - blas @0.4.3
+      - boost @1.82
+      - bzip2 @1.0.8 +shared
+      - cgal @5.4.1
+      - eigen @3.4.0
+      - fftw @3.3.10
+      - fsl @6.0.5
+      - gmp @6.2.1
+      - gsl @2.7.1
+      - hdf5 @1.14.1-2
+      - intel-oneapi-mkl @2023.2.0 %oneapi target=skylake_avx512
+      - intel-oneapi-tbb @2021.10.0 %oneapi target=skylake_avx512
+      - intel-oneapi-tbb @2021.10.0 %gcc@11.4.0 target=zen2
+      - librsvg @2.51.0
+      - libsvm @323
+      - libszip @2.1.1
+      - libxc @6.1.0
+      - mpfr @4.2.0
+      - netcdf-c @4.9.2
+      - netcdf-cxx4 @4.3.1
+      - netcdf-fortran @4.6.0
+      - netlib-lapack @3.11.0
+      - netlib-xblas @1.0.248
+      - nlohmann-json @3.11.2
+      - openblas @0.3.23
+      - plumed @2.8.2
+      - voropp @0.4.6
+      - xerces-c @3.2.4
+      - zlib @1.2.13
+    - general-specs:
+      # misc
+      - aria2
+      - aspera-cli
+      - awscli 
+      - cp2k @2023.1
+      - cmake
+      - doxygen @1.9.6
+      - elk @8.3.22
+      - feh @3.10
+      - freesurfer @7.2.0
+      - geant4 @11.1.1
+      - genie @3.0.6
+      - gnuplot @5.4.3
+      - imagemagick @7.0.8-7
+      - jags
+      - jdk @17.0.1
+      - lammps @20230208
+      - lcov @1.16
+      - matlab @R2018a
+      - nco
+      - numactl @2.0.14
+      - openjdk @16.0.2
+      - openjdk @11.0.17_8
+      - openldap@2.4.49
+      - parallel
+      - paraview @5.11.1
+      - pigz
+      - rclone
+      - rstudio @2022.12.0+server ^curl@7.85.0
+      - turbovnc
+      - valgrind @3.20.0
+      - virtualgl
+      - yasm
+
+      # omics
+      - abyss
+      - angsd
+      - aragorn
+      - augustus
+      - bayenv2
+      - bbmap
+      - bcftools +libgsl +perl-filters
+      - beagle
+      - bedops
+      - bedtools2
+      - blast-plus @2.13.0
+      - blast2go
+      - blat
+      - bowtie
+      - bowtie2
+      - braker
+      - busco
+      - bwa
+      - bwa-mem2 @2.2.1 %oneapi target=x86_64_v3
+      - bwtool
+      - canu
+      - cap3
+      - cdhit
+      - circos
+      - clustal-omega
+      - clustalw
+      - coverm %gcc@11.4.0 ^bwa-mem2%oneapi
+      - corset
+      - cufflinks
+      - dashing @0.4.0 %gcc@7.5.0 # used by coverm
+      - dashing @1.0.3
+      - deml
+      - diamond
+      - dssp
+      - ea-utils
+      - emboss @6.6.0
+      - exonerate
+      - exonerate-gff3
+      - fastani @1.33
+      - fastme
+      - fastq-screen
+      - fastqc
+      - fasttree
+      - fastx-toolkit
+      - freebayes
+      - gatk@3.8.1
+      - gatk@4.2.6.1
+      - gemma
+      - genometools
+      - genrich
+      - gffcompare
+      - gffread
+      - glimmer
+      - hisat2
+      - hh-suite
+      - hmmer
+      - homer
+      - htslib
+      - igv
+      - infernal
+      - interproscan
+      - iq-tree
+      - iqtree2
+      - jellyfish @1.1.11
+      - jellyfish @2.3.0
+      - kaiju @1.6.2
+      - kalign
+      - kallisto
+      - kmergenie
+      - kraken
+      - kraken2
+      - krakenuniq
+      - last
+      - mafft
+      - maker
+      - mash
+      - masurca
+      - maven
+      - mcl
+      - meme @5.3.0
+      - megahit @1.1.4 %gcc@7.5.0
+      - metabat @2.15
+      - metaeuk
+      - minced
+      - miniasm
+      - minimap2 @2.26
+      - mirdeep2
+      - mmseqs2
+      - mothur
+      - mummer
+      - mummer4
+      - muscle
+      - muscle5
+      - ncbi-rmblastn
+      - ncbi-toolkit
+      - ncbi-vdb
+      - nextflow
+      - ngsadmix
+      - ngstools
+      - ont-guppy
+      - orthofinder
+      - orthomcl
+      - phylip
+      - phyluce
+      - picard
+      - pilon
+      - plink
+      - plink-ng
+      - pplacer @1.1.alpha19
+      - prodigal @2.6.3
+      - prokka
+      - py-biopython
+      - py-checkm-genome
+      - py-cutadapt
+      - py-deeptools
+      - py-htseq
+      - py-ipython
+      - py-metaphlan @4.0.2
+      - py-multiqc
+      - py-quast @4.6.3
+      - py-vcf-kit
+      - qualimap
+      - raxml
+      - raxml-ng
+      - ray
+      - recon
+      - repeatmasker
+      - repeatmodeler ^repeatmasker@4.0.9
+      - repeatscout
+      - rnaquast
+      - rsem
+      - sabre
+      - salmon @1.10.1
+      - samtools @1.16.1
+      - satsuma2
+      - scallop
+      - seqprep
+      - seqtk
+      - shoremap 
+      - sickle
+      - slim
+      - smartdenovo
+      - snap-korf
+      - sortmerna
+      - spades
+      - sratoolkit
+      - star
+      - stringtie
+      - subread @2.0.2
+      - tabix
+      - tassel
+      - tophat @2.1.2
+      - trimgalore
+      - trimmomatic
+      - trinity
+      - usearch @11.0.667
+      - vcftools
+      - velvet
+      - velvetoptimiser
+      - vsearch
+
+  specs:
+    # Cryo-EM
+  - gctf
+  - motioncor2 @1.5.0
+  - ghostscript
+  - ctffind+openmp %oneapi target=skylake_avx512 ^intel-oneapi-mkl@2022.2.1
+  - ctffind+openmp %gcc target=zen2 ^amdfftw target=zen2
+  - matrix:
+    - [$relion-cuda]
+    - ['%gcc@11.4.0 target=zen2 ^amdfftw target=zen2 ^ctffind+openmp target=zen2',
+       '%oneapi +mklfft +gpu_delay target=skylake_avx512 ^intel-oneapi-mkl ^ctffind+openmp^intel-oneapi-mkl@2022.2.1']
+    - ['^cuda@11.7']
+  - matrix:
+    - [$relion-cpu]
+    - ['%gcc@11.4.0 target=zen2 ^amdfftw target=zen2']
+  - relion-bbr @3.1.2 +gui +cuda +mklfft cuda_arch=75 purpose=cluster target=skylake_avx512
+    ^intel-oneapi-mkl ^ctffind+openmp^intel-oneapi-mkl@2022.2.1 ^cuda@11.2.2
+  - py-relion-helper @0.3
+  - unblur@1.0.2 target=x86_64_v3 ^cuda@11.7
+  - cistem@1.0.0-beta target=x86_64_v3 ^cuda@11.7
+  # splatted specs, see definitions
+  - $libs-specs
+  - $general-specs
+
+  view: false
+  modules:
+    default:
+      roots:
+        tcl: /share/apps/22.04/modulefiles/spack/core
+      tcl:
+        projections:
+          relion+cuda target=zen2: relion/gpu/{version}+amd
+          relion-bbr+cuda target=skylake_avx512: relion-bbr/gpu/{version}+intel
+          relion~cuda target=zen2: relion/cpu/{version}+amd
+          ctffind target=skylake_avx512: ctffind/{version}+intel
+          ctffind target=zen2: ctffind/{version}+amd
+          py-relion-helper: relion-helper/{version}
+        defaults:
+        - target=zen2
+        all:
+          conflict:
+          - '{name}'
+        #relion+cuda:
+        #   template: hpccf/franklin/relion.gpu.lua
+        #  environment:
+        #    set:
+        #      RELION_QSUB_TEMPLATE: /share/apps/spack/templates/hpccf/franklin/relion.{version}.gpu.{target}.slurm.template.sh
+        #      RELION_TOPAZ_EXECUTABLE: /share/apps/spack/spack-ucdavis/bin/wrappers/topaz
+        #relion~cuda:
+        #  template: hpccf/franklin/relion.cpu.lua
+        #  environment:
+        #    set:
+        #      RELION_QSUB_TEMPLATE: /share/apps/spack/templates/hpccf/franklin/relion.{version}.cpu.slurm.template.sh
+        #      RELION_TOPAZ_EXECUTABLE: /share/apps/spack/spack-ucdavis/bin/wrappers/topaz
+  concretizer:
+    unify: false
