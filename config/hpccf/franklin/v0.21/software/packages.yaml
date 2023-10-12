@@ -81,6 +81,24 @@ packages:
     version:
       - 23-02-6-1
     variants: +pmix +mariadb +hwloc +restd sysconfdir=/share/apps/22.04/spack/environments/core/view/etc/
+  cuda:
+    buildable: false
+    externals:
+      - spec: cuda@11.7
+        prefix: /share/apps/22.04/spack/environments/core/view/generic/cuda-11.7.1
+      - spec: cuda@11.2.2
+        prefix: /share/apps/22.04/spack/environments/core/view/generic/cuda-11.2.2
+      - spec: cuda@8.0.61
+        prefix: /share/apps/22.04/spack/environments/core/view/generic/cuda-8.0.61
+    require:
+      - any_of:
+          - '@11.7'
+          - '@11.2.2'
+          - '@8.0.61'
+    version:
+      - 11.7
+      - 11.2.2
+      - 8.0.61
   ####
   # Externals: non-buildable
   ####
@@ -191,10 +209,6 @@ packages:
     version:
       - 4.1
     variants: +openmp
-  cuda:
-    require: '@11.7'
-    version:
-      - 11.7
   fftw:
     require: '@3.3.10 +openmp'
     version:
@@ -203,9 +217,9 @@ packages:
   intel-mkl:
     require: '@2017.0.098:'
   intel-oneapi-mkl:
-    require: '@2022.2.1'
+    require: '@2023.2.0'
     version:
-      - 2022.2.1
+      - 2023.2.0
   mkl:
     require: intel-oneapi-mkl
   mpi:

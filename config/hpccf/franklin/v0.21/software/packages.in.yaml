@@ -60,7 +60,13 @@ packages:
     - spec: slurm@23-02-6-1 target=zen2
       prefix: /share/apps/22.04/spack/environments/core/view/zen2/slurm-23-02-6-1
 
-
-
-
+  cuda:
+    buildable: false
+    externals:
+    - spec: cuda@11.7
+      prefix: /share/apps/22.04/spack/environments/core/view/generic/cuda-11.7.1
+    - spec: cuda@11.2.2
+      prefix: /share/apps/22.04/spack/environments/core/view/generic/cuda-11.2.2
+    - spec: cuda@8.0.61
+      prefix: /share/apps/22.04/spack/environments/core/view/generic/cuda-8.0.61
 

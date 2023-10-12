@@ -135,9 +135,15 @@ packages:
     variants: +openmp
 
   cuda:
-    require: '@11.7'
+    require:
+    - any_of:
+      - '@11.7'
+      - '@11.2.2'
+      - '@8.0.61'
     version:
     - 11.7
+    - 11.2.2
+    - 8.0.61
 
   fftw:
     require: '@3.3.10 +openmp'
@@ -189,9 +195,9 @@ packages:
     require: '@2017.0.098:'
 
   intel-oneapi-mkl:
-    require: '@2022.2.1'
+    require: '@2023.2.0'
     version:
-    - 2022.2.1
+    - 2023.2.0
 
   mkl:
     require: intel-oneapi-mkl
