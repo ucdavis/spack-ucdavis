@@ -62,6 +62,16 @@ packages:
     - spec: linux-pam@1.4.0 %gcc
       prefix: /usr
 
+  llvm:
+    buildable: false
+    externals:
+    - spec: llvm@14.0.0+clang~lld~lldb %gcc
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          c: /usr/bin/clang-14
+          cxx: /usr/bin/clang++-14
+
   mariadb:
     externals:
     - spec: mariadb@10.8.2 %gcc
@@ -97,6 +107,12 @@ packages:
     - spec: subversion@1.14.1 %gcc
       prefix: /usr
 
+  wxwidgets:
+    buildable: false
+    externals:
+    - spec: wxwidgets@3.0.2
+      prefix: /usr
+
   ####
   # Externals: buildable
   ####
@@ -106,14 +122,7 @@ packages:
     - spec: curl@7.81.0+gssapi+ldap+nghttp2 %gcc
       prefix: /usr
 
-  llvm:
-    externals:
-    - spec: llvm@14.0.0+clang~lld~lldb %gcc
-      prefix: /usr
-      extra_attributes:
-        compilers:
-          c: /usr/bin/clang-14
-          cxx: /usr/bin/clang++-14
+
 
   rust:
     externals:
@@ -137,7 +146,7 @@ packages:
   cuda:
     require:
     - any_of:
-      - '@11.7'
+      - '@11.7.1'
       - '@11.2.2'
       - '@8.0.61'
     version:
@@ -152,10 +161,10 @@ packages:
     variants: +openmp
   
   slurm:
-    require: '@23-02-6-1 +pmix +mariadb +hwloc +restd sysconfdir=/share/apps/22.04/spack/environments/core/view/etc/'
+    require: '@23-02-6-1 +pmix +mariadb +hwloc +restd sysconfdir=/share/apps/22.04/spack/environments/core/view/generic/slurm-23-02-6-1/etc'
     version:
     - 23-02-6-1
-    variants: +pmix +mariadb +hwloc +restd sysconfdir=/share/apps/22.04/spack/environments/core/view/etc/
+    variants: +pmix +mariadb +hwloc +restd sysconfdir=/share/apps/22.04/spack/environments/core/view/generic/slurm-23-02-6-1/etc
 
   pmix:
     require: '@4.2.6'
