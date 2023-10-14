@@ -22,12 +22,12 @@
 #
 #Define the number of hours the job should run. 
 #Maximum runtime is limited to 5 days, ie. 120 hours
-#SBATCH --time=XXXextra4XXX
+#SBATCH --time=XXXextra3XXX
 #
 #Define the amount of RAM used per MPI task in GigaBytes
 #The total amount of memory used by the job
 #can be calculated as:  number of MPI tasks * memory per CPU
-#SBATCH --mem-per-cpu=XXXextra3XXX
+#SBATCH --mem-per-cpu=XXXextra2XXX
 #
 #Send emails when a job starts, it is finished or it exits
 #SBATCH --mail-user=XXXextra1XXX
@@ -36,10 +36,10 @@
 #Define the "gpu" partition for GPU-accelerated jobs
 #SBATCH --partition=XXXqueueXXX
 #
-#SBATCH --account=XXXextra5XXX
+#SBATCH --account=XXXextra4XXX
 #
 #Define the number of GPUs used by your job
-#SBATCH --gres=gpu:XXXextra2XXX
+#SBATCH --gres=gpu:XXXextra5XXX
 #
 #SBATCH --no-requeue
 #
@@ -52,8 +52,8 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 #
 #
 
-module load openmpi/4.1.4
-module load intel-oneapi-mkl/2022.2.1
+module load openmpi/4.1.5+intel
+module load intel-oneapi-mkl
 module load relion/gpu/3.1.3+intel
 
 

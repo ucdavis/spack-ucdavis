@@ -39,7 +39,7 @@
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 #
 
-module load openmpi/4.1.4
+module load openmpi/4.1.5+amd
 module load relion/cpu/4.0.0+amd
 module load motioncor2/1.5.0
 
