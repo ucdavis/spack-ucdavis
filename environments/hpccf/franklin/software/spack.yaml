@@ -239,21 +239,25 @@ spack:
   - gctf
   - motioncor2 @1.5.0
   - ghostscript
-  - ctffind+openmp %oneapi target=skylake_avx512 ^intel-oneapi-mkl@2022.2.1
+  - ctffind+openmp %oneapi target=skylake_avx512 ^intel-oneapi-mkl
   - ctffind+openmp %gcc target=zen2 ^amdfftw target=zen2
+
+  # Ongoing issue with OneAPI and CUDA: https://github.com/spack/spack/issues/40374
   - matrix:
     - [$relion-cuda]
-    - ['%gcc@11.4.0 target=zen2 ^amdfftw target=zen2 ^ctffind+openmp target=zen2',
-       '%oneapi +mklfft +gpu_delay target=skylake_avx512 ^intel-oneapi-mkl ^ctffind+openmp^intel-oneapi-mkl@2022.2.1']
-    - ['^cuda@11.7']
+    - ['%gcc@11.4.0 target=zen2 ^cuda@11.7.1+allow-unsupported-compilers ^amdfftw target=zen2 ^ctffind+openmp target=zen2',
+       '%gcc@11.4.0 +mklfft +gpu_delay target=skylake_avx512 ^cuda@11.7.1+allow-unsupported-compilers ^intel-oneapi-mkl ^ctffind+openmp^intel-oneapi-mkl']
+
   - matrix:
     - [$relion-cpu]
     - ['%gcc@11.4.0 target=zen2 ^amdfftw target=zen2']
-  - relion-bbr @3.1.2 +gui +cuda +mklfft cuda_arch=75 purpose=cluster target=skylake_avx512
-    ^intel-oneapi-mkl ^ctffind+openmp^intel-oneapi-mkl@2022.2.1 ^cuda@11.2.2
+
+  - relion-bbr @3.1.2 %gcc@11.4.0 +gui +cuda +mklfft cuda_arch=75 purpose=cluster target=skylake_avx512
+    ^intel-oneapi-mkl ^ctffind+openmp^intel-oneapi-mkl ^cuda@11.2.2+allow-unsupported-compilers
   - py-relion-helper @0.3
-  - unblur@1.0.2 target=x86_64_v3 ^cuda@11.7
-  - cistem@1.0.0-beta target=x86_64_v3 ^cuda@11.7
+  - unblur@1.0.2 target=x86_64_v3 ^cuda@11.7.1
+  #- cistem@1.0.0-beta target=x86_64_v3 ^cuda@11.7.1
+
   # splatted specs, see definitions
   - $libs-specs
   - $general-specs
@@ -262,31 +266,39 @@ spack:
   modules:
     default:
       roots:
-        tcl: /share/apps/22.04/modulefiles/spack/core
+        tcl: /share/apps/22.04/modulefiles/spack/software
       tcl:
         projections:
           relion+cuda target=zen2: relion/gpu/{version}+amd
+          relion+cuda target=skylake_avx512: relion/gpu/{version}+intel
           relion-bbr+cuda target=skylake_avx512: relion-bbr/gpu/{version}+intel
           relion~cuda target=zen2: relion/cpu/{version}+amd
           ctffind target=skylake_avx512: ctffind/{version}+intel
           ctffind target=zen2: ctffind/{version}+amd
           py-relion-helper: relion-helper/{version}
+        include:
+          - intel-oneapi-mkl
+          - intel-oneapi-tbb
         defaults:
         - target=zen2
         all:
           conflict:
           - '{name}'
-        #relion+cuda:
-        #   template: hpccf/franklin/relion.gpu.lua
-        #  environment:
-        #    set:
-        #      RELION_QSUB_TEMPLATE: /share/apps/spack/templates/hpccf/franklin/relion.{version}.gpu.{target}.slurm.template.sh
-        #      RELION_TOPAZ_EXECUTABLE: /share/apps/spack/spack-ucdavis/bin/wrappers/topaz
-        #relion~cuda:
-        #  template: hpccf/franklin/relion.cpu.lua
-        #  environment:
-        #    set:
-        #      RELION_QSUB_TEMPLATE: /share/apps/spack/templates/hpccf/franklin/relion.{version}.cpu.slurm.template.sh
-        #      RELION_TOPAZ_EXECUTABLE: /share/apps/spack/spack-ucdavis/bin/wrappers/topaz
+        relion:
+          environment:
+            set:
+              RELION_TOPAZ_EXECUTABLE: /share/apps/spack/spack-ucdavis/bin/wrappers/topaz
+              #RELION_MOTIONCOR2_EXECUTABLE: '{^motioncor2.prefix}/bin/MotionCor2'
+              RELION_CTFFIND_EXECUTABLE: '{^ctffind.prefix}/bin/ctffind'
+        relion+cuda:
+          template: hpccf/franklin/relion.gpu.tcl
+          environment:
+            set:
+              RELION_QSUB_TEMPLATE: /share/apps/22.04/spack/spack-ucdavis/templates/hpccf/franklin/relion.{version}.gpu.{target}.slurm.template.sh
+        relion~cuda:
+          template: hpccf/franklin/relion.cpu.tcl
+          environment:
+            set:
+              RELION_QSUB_TEMPLATE: /share/apps/22.04/spack/spack-ucdavis/templates/hpccf/franklin/relion.{version}.cpu.slurm.template.sh
   concretizer:
     unify: false

@@ -4,11 +4,11 @@
 
 prereq motioncor2
 prereq gctf/1.06
-preeq ghostscript
+prereq ghostscript
 
-setenv RELION_MOTIONCOR2_EXECUTABLE [file join $env(MOTIONCOR2_ROOT) "bin/MotionCor2"]
-setenv RELION_CTFFIND_EXECUTABLE [file join $env(CTFFIND_ROOT) "bin/ctffind"]
-setenv RELION_GCTF_EXECUTABLE [file join $env(GCTF_ROOT) "bin/Gctf-v1.06_sm_30_cu8.0_x86_64"]
+setenv RELION_MOTIONCOR2_EXECUTABLE [file join [getenv MOTIONCOR2_ROOT] "bin/MotionCor2"]
+#setenv RELION_CTFFIND_EXECUTABLE [file join [getenv CTFFIND_ROOT] "bin/ctffind"]
+setenv RELION_GCTF_EXECUTABLE [file join [getenv GCTF_ROOT] "bin/Gctf-v1.06_sm_30_cu8.0_x86_64"]
 
 setenv RELION_QSUB_EXTRA_COUNT "4"
 
