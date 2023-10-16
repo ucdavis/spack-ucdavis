@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:35.892749
+##
+## ncbi-toolkit@26_0_1%gcc@11.4.0~debug build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/2elqe6w
+##
+## Configure options: --without-sybase --without-fastcgi --without-debug
+##
+
+
+module-whatis {NCBI C++ Toolkit}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : ncbi-toolkit}
+    puts stderr {Version: 26_0_1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {NCBI C++ Toolkit}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load bzip2/1.0.8
+} else {
+    depends-on bzip2/1.0.8
+}
+prereq bzip2/1.0.8
+conflict ncbi-toolkit
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-toolkit-26_0_1-2elqe6wsetmc52etvxjisys6xitgxj5r/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-toolkit-26_0_1-2elqe6wsetmc52etvxjisys6xitgxj5r/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-toolkit-26_0_1-2elqe6wsetmc52etvxjisys6xitgxj5r/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-toolkit-26_0_1-2elqe6wsetmc52etvxjisys6xitgxj5r/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-toolkit-26_0_1-2elqe6wsetmc52etvxjisys6xitgxj5r/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-toolkit-26_0_1-2elqe6wsetmc52etvxjisys6xitgxj5r/.}
+setenv NCBI_TOOLKIT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-toolkit-26_0_1-2elqe6wsetmc52etvxjisys6xitgxj5r}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:48.826426
+##
+## tassel@5.2.86%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/fjuvads
+##
+
+
+module-whatis {TASSEL is a software package to evaluate traits associations, evolutionary patterns, and linkage disequilibrium.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : tassel}
+    puts stderr {Version: 5.2.86}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {TASSEL is a software package to evaluate traits associations,}
+    puts stderr {evolutionary patterns, and linkage disequilibrium.}
+}
+
+conflict tassel
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tassel-5.2.86-fjuvads3skpamfj66xumh2iat4b4ynfr/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tassel-5.2.86-fjuvads3skpamfj66xumh2iat4b4ynfr/.}
+prepend-path --delim {:} CLASSPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tassel-5.2.86-fjuvads3skpamfj66xumh2iat4b4ynfr/bin/lib}
+setenv TASSEL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tassel-5.2.86-fjuvads3skpamfj66xumh2iat4b4ynfr}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

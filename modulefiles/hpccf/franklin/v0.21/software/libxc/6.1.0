@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:31.749652
+##
+## libxc@6.1.0%gcc@11.4.0~cuda~kxc~lxc+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/zg43i2r
+##
+## Configure options: --enable-shared --disable-cuda
+##
+
+
+module-whatis {Libxc is a library of exchange-correlation functionals for density-functional theory.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libxc}
+    puts stderr {Version: 6.1.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Libxc is a library of exchange-correlation functionals for density-}
+    puts stderr {functional theory.}
+}
+
+conflict libxc
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxc-6.1.0-zg43i2rmenernzjzzd5idtosjc5yqq3m/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxc-6.1.0-zg43i2rmenernzjzzd5idtosjc5yqq3m/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxc-6.1.0-zg43i2rmenernzjzzd5idtosjc5yqq3m/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxc-6.1.0-zg43i2rmenernzjzzd5idtosjc5yqq3m/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxc-6.1.0-zg43i2rmenernzjzzd5idtosjc5yqq3m/bin}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxc-6.1.0-zg43i2rmenernzjzzd5idtosjc5yqq3m/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxc-6.1.0-zg43i2rmenernzjzzd5idtosjc5yqq3m/.}
+setenv LIBXC_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxc-6.1.0-zg43i2rmenernzjzzd5idtosjc5yqq3m}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

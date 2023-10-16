@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:31.716734
+##
+## libszip@2.1.1%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/c77zbt6
+##
+## Configure options: --enable-production --enable-shared --enable-static --enable-encoding
+##
+
+
+module-whatis {Szip is an implementation of the extended-Rice lossless compression algorithm.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libszip}
+    puts stderr {Version: 2.1.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Szip is an implementation of the extended-Rice lossless compression}
+    puts stderr {algorithm. It provides lossless compression of scientific data, and is}
+    puts stderr {provided with HDF software products.}
+}
+
+conflict libszip
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libszip-2.1.1-c77zbt6mq36an6ippv5lmsmt27jvtnwb/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libszip-2.1.1-c77zbt6mq36an6ippv5lmsmt27jvtnwb/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libszip-2.1.1-c77zbt6mq36an6ippv5lmsmt27jvtnwb/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libszip-2.1.1-c77zbt6mq36an6ippv5lmsmt27jvtnwb/include}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libszip-2.1.1-c77zbt6mq36an6ippv5lmsmt27jvtnwb/.}
+setenv LIBSZIP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libszip-2.1.1-c77zbt6mq36an6ippv5lmsmt27jvtnwb}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

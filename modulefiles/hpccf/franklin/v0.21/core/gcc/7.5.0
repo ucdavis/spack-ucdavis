@@ -1,0 +1,51 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-13 18:13:33.007131
+##
+## gcc@7.5.0%gcc@11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages=c,c++,fortran patches=98a9c96,b620e92,d4919d6,dc1ca24 arch=linux-ubuntu22.04-x86_64_v3/piebnx4
+##
+## Configure options: --with-pkgversion=Spack GCC --with-bugurl=https://github.com/spack/spack/issues --disable-multilib --enable-languages=c,c++,fortran --disable-nls --disable-canonical-system-headers --with-system-zlib --with-zstd-include=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.5-ty7czvom3k225wd5nnuqvvxflbh2lnif/include --with-zstd-lib=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.5-ty7czvom3k225wd5nnuqvvxflbh2lnif/lib --enable-bootstrap --with-mpfr-include=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-3.1.6-sp3ttllgo7exzw3vlkx3t2dkxh2lx2bl/include --with-mpfr-lib=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-3.1.6-sp3ttllgo7exzw3vlkx3t2dkxh2lx2bl/lib --with-gmp-include=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-6vzcan3wt43o7khwtvbakwwv4mib6ilv/include --with-gmp-lib=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-6vzcan3wt43o7khwtvbakwwv4mib6ilv/lib --with-mpc-include=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpc-1.1.0-km3q4trw2ihnkfvksurdgq2fylvrme2a/include --with-mpc-lib=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpc-1.1.0-km3q4trw2ihnkfvksurdgq2fylvrme2a/lib --without-isl --with-stage1-ldflags=-Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4/lib64 -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-6vzcan3wt43o7khwtvbakwwv4mib6ilv/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpc-1.1.0-km3q4trw2ihnkfvksurdgq2fylvrme2a/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-3.1.6-sp3ttllgo7exzw3vlkx3t2dkxh2lx2bl/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.3-6bawsidwttj6jecmtk6u24gmu6wypvbp/lib --with-boot-ldflags=-Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4/lib64 -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-6vzcan3wt43o7khwtvbakwwv4mib6ilv/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpc-1.1.0-km3q4trw2ihnkfvksurdgq2fylvrme2a/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-3.1.6-sp3ttllgo7exzw3vlkx3t2dkxh2lx2bl/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.3-6bawsidwttj6jecmtk6u24gmu6wypvbp/lib -static-libstdc++ -static-libgcc --with-build-config=spack
+##
+
+
+module-whatis {The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gcc}
+    puts stderr {Version: 7.5.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The GNU Compiler Collection includes front ends for C, C++, Objective-C,}
+    puts stderr {Fortran, Ada, and Go, as well as libraries for these languages.}
+}
+
+conflict gcc
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4/lib64}
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4/share/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4/.}
+setenv CC {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4/bin/gcc}
+setenv CXX {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4/bin/g++}
+setenv FC {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4/bin/gfortran}
+setenv F77 {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4/bin/gfortran}
+setenv GCC_ROOT {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-piebnx4u5zpb5ggu5udpzk7zvmvybsg4}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

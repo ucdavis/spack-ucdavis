@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:30.043170
+##
+## jags@4.3.0%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/npkbl6k
+##
+## Configure options: --with-blas=-L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-mkl-2020.4.304-gz76uuqigemcbedryzt22kcatjdsdryh/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64 -L/lib/x86_64-linux-gnu -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lm --with-lapack=-L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-mkl-2020.4.304-gz76uuqigemcbedryzt22kcatjdsdryh/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64 -L/lib/x86_64-linux-gnu -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lm
+##
+
+
+module-whatis {JAGS is Just Another Gibbs Sampler. It is a program for analysis of Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation not wholly unlike BUGS}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : jags}
+    puts stderr {Version: 4.3.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {JAGS is Just Another Gibbs Sampler. It is a program for analysis of}
+    puts stderr {Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC)}
+    puts stderr {simulation not wholly unlike BUGS}
+}
+
+conflict jags
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jags-4.3.0-npkbl6ki6cyzxncqc3jqnlp4zdgrqd5y/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jags-4.3.0-npkbl6ki6cyzxncqc3jqnlp4zdgrqd5y/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jags-4.3.0-npkbl6ki6cyzxncqc3jqnlp4zdgrqd5y/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jags-4.3.0-npkbl6ki6cyzxncqc3jqnlp4zdgrqd5y/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jags-4.3.0-npkbl6ki6cyzxncqc3jqnlp4zdgrqd5y/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jags-4.3.0-npkbl6ki6cyzxncqc3jqnlp4zdgrqd5y/share/man}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jags-4.3.0-npkbl6ki6cyzxncqc3jqnlp4zdgrqd5y/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jags-4.3.0-npkbl6ki6cyzxncqc3jqnlp4zdgrqd5y/.}
+setenv JAGS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jags-4.3.0-npkbl6ki6cyzxncqc3jqnlp4zdgrqd5y}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

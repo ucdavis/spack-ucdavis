@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:49.221759
+##
+## turbovnc@3.0.3%gcc@11.4.0~ipo+libjpeg-turbo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/qibm27l
+##
+## Configure options: -DG:STRING=NMake Makefiles -DCMAKE_BUILD_TYPE:STRING=Release -DTJPEG_INCLUDE_DIR:STRING=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libjpeg-turbo-3.0.0-zvs2mir5fpbyqsdbdw47lo7yoakyxtxd/include -DTJPEG_LIBRARY:STRING=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libjpeg-turbo-3.0.0-zvs2mir5fpbyqsdbdw47lo7yoakyxtxd/lib/libturbojpeg.so
+##
+
+
+module-whatis {TurboVNC is a derivative of VNC (Virtual Network Computing) that is tuned to provide peak performance for 3D and video workloads.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : turbovnc}
+    puts stderr {Version: 3.0.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {TurboVNC is a derivative of VNC (Virtual Network Computing) that is}
+    puts stderr {tuned to provide peak performance for 3D and video workloads.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load virtualgl/2.5.2
+} else {
+    depends-on virtualgl/2.5.2
+}
+prereq virtualgl/2.5.2
+conflict turbovnc
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/turbovnc-3.0.3-qibm27lbi54stpew5vmuya2g7kz4azgg/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/turbovnc-3.0.3-qibm27lbi54stpew5vmuya2g7kz4azgg/share/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/turbovnc-3.0.3-qibm27lbi54stpew5vmuya2g7kz4azgg/.}
+setenv TURBOVNC_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/turbovnc-3.0.3-qibm27lbi54stpew5vmuya2g7kz4azgg}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:17.367802
+##
+## bedops@2.4.41%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/zspxugc
+##
+
+
+module-whatis {BEDOPS is an open-source command-line toolkit that performs highly efficient and scalable Boolean and other set operations, statistical calculations, archiving, conversion and other management of genomic data of arbitrary scale.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : bedops}
+    puts stderr {Version: 2.4.41}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {BEDOPS is an open-source command-line toolkit that performs highly}
+    puts stderr {efficient and scalable Boolean and other set operations, statistical}
+    puts stderr {calculations, archiving, conversion and other management of genomic data}
+    puts stderr {of arbitrary scale.}
+}
+
+conflict bedops
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bedops-2.4.41-zspxugcipkk3oick36z4vxmnjmptw43i/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bedops-2.4.41-zspxugcipkk3oick36z4vxmnjmptw43i/.}
+setenv BEDOPS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bedops-2.4.41-zspxugcipkk3oick36z4vxmnjmptw43i}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

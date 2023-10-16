@@ -1,0 +1,67 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:40.575499
+##
+## py-checkm-genome@1.2.1%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/brnzbs7
+##
+
+
+module-whatis {Assess the quality of microbial genomes recovered from isolates, single cells, and metagenomes}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-checkm-genome}
+    puts stderr {Version: 1.2.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Assess the quality of microbial genomes recovered from isolates, single}
+    puts stderr {cells, and metagenomes}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load hmmer/3.4
+    module load pplacer/1.1.alpha19
+    module load prodigal/2.6.3
+} else {
+    depends-on hmmer/3.4
+    depends-on pplacer/1.1.alpha19
+    depends-on prodigal/2.6.3
+}
+prereq hmmer/3.4
+prereq pplacer/1.1.alpha19
+prereq prodigal/2.6.3
+conflict py-checkm-genome
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-checkm-genome-1.2.1-brnzbs7kpeb6kkb2ienbpdvuuqvimlic/lib}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-checkm-genome-1.2.1-brnzbs7kpeb6kkb2ienbpdvuuqvimlic/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-checkm-genome-1.2.1-brnzbs7kpeb6kkb2ienbpdvuuqvimlic/.}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-checkm-genome-1.2.1-brnzbs7kpeb6kkb2ienbpdvuuqvimlic/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-dendropy-4.5.2-qhblwim3xjcp75oyeba5ljfie7qfszas/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-setuptools-63.4.3-hsixzjesbrxime2qpwqaxwdkrwbz22vq/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-matplotlib-3.8.0-q3vzghfqar5zszaoxcvlfyqopzfz4nfu/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-contourpy-1.0.7-yi5fmamx4kzzhhgdpecazmjhus7xaqa3/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numpy-1.25.2-vcmulzidmbvifm7idcfedcwkrf4p2w44/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cycler-0.11.0-rfzhhw4jtannqtrn5mvvx4e2qeda734c/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-fonttools-4.39.4-5wsgyvqunfocfxlae43mc3ozrkls44in/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-kiwisolver-1.4.4-3inmf4glthgyddhf27nleqgegt3epj36/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-packaging-23.1-puj7vheyx7gkeal4irplmxtrhtxmd6gh/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pillow-10.0.0-hwqzyvwnrywspq5admjcbzhosg4tsmvy/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyparsing-3.0.9-g75v3dpuye46sgmuhsrqhbowqf6r4b4h/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-python-dateutil-2.8.2-xskts2iq7eftwceczwhelweftoeqrkfa/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-six-1.16.0-krosed5wbuefnc6rrkoynveb6x73u4cl/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pysam-0.21.0-rlrkbttg3lty46jvfa6aqayzokfss6tz/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-scipy-1.11.2-p46kbevbvkrsbexurcsxzv7huk3tbot6/lib/python3.11/site-packages}
+setenv PY_CHECKM_GENOME_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-checkm-genome-1.2.1-brnzbs7kpeb6kkb2ienbpdvuuqvimlic}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

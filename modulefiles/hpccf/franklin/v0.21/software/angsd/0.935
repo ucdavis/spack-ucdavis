@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:14.255863
+##
+## angsd@0.935%gcc@11.4.0+r build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/qdrcsu2
+##
+
+
+module-whatis {Angsd is a program for analysing NGS data.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : angsd}
+    puts stderr {Version: 0.935}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Angsd is a program for analysing NGS data. The software can handle a}
+    puts stderr {number of different input types from mapped reads to imputed genotype}
+    puts stderr {probabilities. Most methods take genotype uncertainty into account}
+    puts stderr {instead of basing the analysis on called genotypes. This is especially}
+    puts stderr {useful for low and medium depth data.}
+}
+
+conflict angsd
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/angsd-0.935-qdrcsu2cjawervpofi3pci7sjhmkdovp/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/angsd-0.935-qdrcsu2cjawervpofi3pci7sjhmkdovp/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-odq5bdd2ieghfeux27ir4wq7qi53fmj3/rlib/R}
+setenv R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/angsd-0.935-qdrcsu2cjawervpofi3pci7sjhmkdovp/R}
+setenv ANGSD_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/angsd-0.935-qdrcsu2cjawervpofi3pci7sjhmkdovp}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

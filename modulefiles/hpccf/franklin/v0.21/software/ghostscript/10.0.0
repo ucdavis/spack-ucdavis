@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:26.254565
+##
+## ghostscript@10.0.0%gcc@11.4.0~tesseract build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/mvpae5a
+##
+## Configure options: --disable-compile-inits --enable-dynamic --with-system-libtiff --without-tesseract
+##
+
+
+module-whatis {An interpreter for the PostScript language and for PDF.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : ghostscript}
+    puts stderr {Version: 10.0.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {An interpreter for the PostScript language and for PDF.}
+}
+
+conflict ghostscript
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-mvpae5apwxyw6yjbx5thwkcm2ao7tucb/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-mvpae5apwxyw6yjbx5thwkcm2ao7tucb/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-mvpae5apwxyw6yjbx5thwkcm2ao7tucb/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-mvpae5apwxyw6yjbx5thwkcm2ao7tucb/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-mvpae5apwxyw6yjbx5thwkcm2ao7tucb/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-mvpae5apwxyw6yjbx5thwkcm2ao7tucb/share/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-mvpae5apwxyw6yjbx5thwkcm2ao7tucb/.}
+prepend-path --delim {:} XDG_DATA_DIRS {/usr/share}
+prepend-path --delim {:} GI_TYPELIB_PATH {/usr/lib/girepository-1.0}
+prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zaqf7dicjkl3i2sg2ciot74vsehx7k47/share/X11/locale}
+setenv GHOSTSCRIPT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-mvpae5apwxyw6yjbx5thwkcm2ao7tucb}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

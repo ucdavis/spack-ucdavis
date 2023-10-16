@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:30.827334
+##
+## kraken@1.1.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/x5x4gmg
+##
+
+
+module-whatis {Kraken is a system for assigning taxonomic labels to short DNA sequences, usually obtained through metagenomic studies.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : kraken}
+    puts stderr {Version: 1.1.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Kraken is a system for assigning taxonomic labels to short DNA}
+    puts stderr {sequences, usually obtained through metagenomic studies.}
+}
+
+conflict kraken
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kraken-1.1.1-x5x4gmgnb56en7qe5nttjiymblz4hzjg/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kraken-1.1.1-x5x4gmgnb56en7qe5nttjiymblz4hzjg/.}
+setenv KRAKEN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kraken-1.1.1-x5x4gmgnb56en7qe5nttjiymblz4hzjg}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

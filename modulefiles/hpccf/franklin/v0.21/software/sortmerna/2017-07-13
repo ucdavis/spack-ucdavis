@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:48.349405
+##
+## sortmerna@2017-07-13%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/opdu6wi
+##
+
+
+module-whatis {SortMeRNA is a program tool for filtering, mapping and OTU-picking NGS reads in metatranscriptomic and metagenomic data}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : sortmerna}
+    puts stderr {Version: 2017-07-13}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {SortMeRNA is a program tool for filtering, mapping and OTU-picking NGS}
+    puts stderr {reads in metatranscriptomic and metagenomic data}
+}
+
+conflict sortmerna
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sortmerna-2017-07-13-opdu6witmipbaq5ndzqp3vrdri455nv3/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sortmerna-2017-07-13-opdu6witmipbaq5ndzqp3vrdri455nv3/.}
+setenv SORTMERNA_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sortmerna-2017-07-13-opdu6witmipbaq5ndzqp3vrdri455nv3}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

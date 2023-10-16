@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:49.478413
+##
+## velvet@1.2.10%gcc@11.4.0~bigassembly~longsequences~openmp~single_cov_cat~vbigassembly build_system=makefile categories=2 maxkmerlength=31 arch=linux-ubuntu22.04-x86_64_v3/ed3rrai
+##
+
+
+module-whatis {Velvet is a de novo genomic assembler specially designed for short read sequencing technologies.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : velvet}
+    puts stderr {Version: 1.2.10}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Velvet is a de novo genomic assembler specially designed for short read}
+    puts stderr {sequencing technologies.}
+}
+
+conflict velvet
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/velvet-1.2.10-ed3rraiq5alqcplr7yblshh4ol7renwp/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/velvet-1.2.10-ed3rraiq5alqcplr7yblshh4ol7renwp/.}
+setenv VELVET_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/velvet-1.2.10-ed3rraiq5alqcplr7yblshh4ol7renwp}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

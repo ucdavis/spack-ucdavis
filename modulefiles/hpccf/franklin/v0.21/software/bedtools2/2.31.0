@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:17.437754
+##
+## bedtools2@2.31.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/4zmzlls
+##
+
+
+module-whatis {Collectively, the bedtools utilities are a swiss-army knife of tools for a wide-range of genomics analysis tasks. The most widely-used tools enable genome arithmetic: that is, set theory on the genome.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : bedtools2}
+    puts stderr {Version: 2.31.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Collectively, the bedtools utilities are a swiss-army knife of tools for}
+    puts stderr {a wide-range of genomics analysis tasks. The most widely-used tools}
+    puts stderr {enable genome arithmetic: that is, set theory on the genome.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load bzip2/1.0.8
+} else {
+    depends-on bzip2/1.0.8
+}
+prereq bzip2/1.0.8
+conflict bedtools2
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bedtools2-2.31.0-4zmzllsotldo5bcpwtavvgja4drzxhgh/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bedtools2-2.31.0-4zmzllsotldo5bcpwtavvgja4drzxhgh/.}
+setenv BEDTOOLS2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bedtools2-2.31.0-4zmzllsotldo5bcpwtavvgja4drzxhgh}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

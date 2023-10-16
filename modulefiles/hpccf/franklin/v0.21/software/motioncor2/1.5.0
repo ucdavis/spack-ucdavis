@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:35.043120
+##
+## motioncor2@1.5.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/liclxyt
+##
+
+
+module-whatis {MotionCor2 is a multi-GPU program that corrects beam-induced sample motion recorded on dose fractionated movie stacks. It implements a robust iterative alignment algorithm that delivers precise measurement and correction of both global and non-uniform local motions at single pixel level, suitable for both single-particle and tomographic images. MotionCor2 is sufficiently fast to keep up with automated data collection.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : motioncor2}
+    puts stderr {Version: 1.5.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {MotionCor2 is a multi-GPU program that corrects beam-induced sample}
+    puts stderr {motion recorded on dose fractionated movie stacks. It implements a}
+    puts stderr {robust iterative alignment algorithm that delivers precise measurement}
+    puts stderr {and correction of both global and non-uniform local motions at single}
+    puts stderr {pixel level, suitable for both single-particle and tomographic images.}
+    puts stderr {MotionCor2 is sufficiently fast to keep up with automated data}
+    puts stderr {collection.}
+}
+
+conflict motioncor2
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/motioncor2-1.5.0-liclxyt6xde324m4pj5h5efreimi7iih/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/motioncor2-1.5.0-liclxyt6xde324m4pj5h5efreimi7iih/.}
+setenv MOTIONCOR2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/motioncor2-1.5.0-liclxyt6xde324m4pj5h5efreimi7iih}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

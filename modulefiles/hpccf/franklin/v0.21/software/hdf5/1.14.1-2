@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:26.839676
+##
+## hdf5@1.14.1-2%gcc@11.4.0~cxx~fortran~hl~ipo~java~map+mpi+shared~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/roj4mq3
+##
+## Configure options: -DALLOW_UNSUPPORTED:BOOL=ON -DHDF5_BUILD_EXAMPLES:BOOL=OFF -DBUILD_TESTING:BOOL=OFF -DHDF5_ENABLE_MAP_API:BOOL=OFF -DHDF5_ENABLE_Z_LIB_SUPPORT:BOOL=ON -DHDF5_ENABLE_SZIP_SUPPORT:BOOL=OFF -DHDF5_ENABLE_SZIP_ENCODING:BOOL=OFF -DBUILD_SHARED_LIBS:BOOL=ON -DONLY_SHARED_LIBS:BOOL=OFF -DHDF5_ENABLE_PARALLEL:BOOL=ON -DHDF5_ENABLE_THREADSAFE:BOOL=OFF -DHDF5_BUILD_HL_LIB:BOOL=OFF -DHDF5_BUILD_CPP_LIB:BOOL=OFF -DHDF5_BUILD_FORTRAN:BOOL=OFF -DHDF5_BUILD_JAVA:BOOL=OFF -DHDF5_BUILD_TOOLS:BOOL=ON -DMPI_CXX_COMPILER:PATH=/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/bin/mpic++ -DMPI_C_COMPILER:PATH=/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/bin/mpicc
+##
+
+
+module-whatis {HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : hdf5}
+    puts stderr {Version: 1.14.1-2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {HDF5 is a data model, library, and file format for storing and managing}
+    puts stderr {data. It supports an unlimited variety of datatypes, and is designed for}
+    puts stderr {flexible and efficient I/O and for high volume and complex data.}
+}
+
+conflict hdf5
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/bin}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/.}
+append-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/lib}
+setenv HDF5_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

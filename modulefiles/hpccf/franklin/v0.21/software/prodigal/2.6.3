@@ -1,0 +1,37 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:39.847068
+##
+## prodigal@2.6.3%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/nryjhvm
+##
+
+
+module-whatis {Fast, reliable protein-coding gene prediction for prokaryotic genomes.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : prodigal}
+    puts stderr {Version: 2.6.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Fast, reliable protein-coding gene prediction for prokaryotic genomes.}
+}
+
+conflict prodigal
+
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/prodigal-2.6.3-nryjhvm445v3t3a6y7aurp53hkwcmzwz/.}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/prodigal-2.6.3-nryjhvm445v3t3a6y7aurp53hkwcmzwz}
+setenv PRODIGAL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/prodigal-2.6.3-nryjhvm445v3t3a6y7aurp53hkwcmzwz}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

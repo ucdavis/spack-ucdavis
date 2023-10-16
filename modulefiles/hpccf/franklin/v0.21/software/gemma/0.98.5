@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:25.498380
+##
+## gemma@0.98.5%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/5j6g4hh
+##
+
+
+module-whatis {GEMMA is a software toolkit for fast application of linear mixed models (LMMs) and related models to genome-wide association studies (GWAS) and other large-scale data sets.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gemma}
+    puts stderr {Version: 0.98.5}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GEMMA is a software toolkit for fast application of linear mixed models}
+    puts stderr {(LMMs) and related models to genome-wide association studies (GWAS) and}
+    puts stderr {other large-scale data sets.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load gsl/2.7.1
+} else {
+    depends-on gsl/2.7.1
+}
+prereq gsl/2.7.1
+conflict gemma
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gemma-0.98.5-5j6g4hhnvbkyctqtd5opsv4b3mvcxafe/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gemma-0.98.5-5j6g4hhnvbkyctqtd5opsv4b3mvcxafe/.}
+setenv GEMMA_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gemma-0.98.5-5j6g4hhnvbkyctqtd5opsv4b3mvcxafe}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

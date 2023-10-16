@@ -1,0 +1,56 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-13 18:13:32.511266
+##
+## aocc@4.1.0%gcc@11.4.0+license-agreed build_system=generic arch=linux-ubuntu22.04-x86_64_v3/eifp3gy
+##
+
+
+module-whatis { The AOCC compiler system is a high performance, production quality code generation tool. The AOCC environment provides various options to developers when building and optimizing C, C++, and Fortran applications targeting 32-bit and 64-bit Linux platforms. The AOCC compiler system offers a high level of advanced optimizations, multi-threading and processor support that includes global optimization, vectorization, inter-procedural analyses, loop transformations, and code generation. AMD also provides highly optimized libraries, which extract the optimal performance from each x86 processor core when utilized. The AOCC Compiler Suite simplifies and accelerates development and tuning for x86 applications.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : aocc}
+    puts stderr {Version: 4.1.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr { The AOCC compiler system is a high performance, production quality code}
+    puts stderr {generation tool. The AOCC environment provides various options to}
+    puts stderr {developers when building and optimizing C, C++, and Fortran applications}
+    puts stderr {targeting 32-bit and 64-bit Linux platforms. The AOCC compiler system}
+    puts stderr {offers a high level of advanced optimizations, multi-threading and}
+    puts stderr {processor support that includes global optimization, vectorization,}
+    puts stderr {inter-procedural analyses, loop transformations, and code generation.}
+    puts stderr {AMD also provides highly optimized libraries, which extract the optimal}
+    puts stderr {performance from each x86 processor core when utilized. The AOCC}
+    puts stderr {Compiler Suite simplifies and accelerates development and tuning for x86}
+    puts stderr {applications. Installation requires acceptance of the EULA by setting}
+    puts stderr {the +license-agreed variant. https://www.amd.com/en/developer/aocc/aocc-}
+    puts stderr {compiler/eula.html Example for installation: 'spack install aocc}
+    puts stderr {+license-agreed'}
+}
+
+conflict aocc
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.1.0-eifp3gy4vc3sda2ywgng2idqqbfbhw5i/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.1.0-eifp3gy4vc3sda2ywgng2idqqbfbhw5i/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.1.0-eifp3gy4vc3sda2ywgng2idqqbfbhw5i/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.1.0-eifp3gy4vc3sda2ywgng2idqqbfbhw5i/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.1.0-eifp3gy4vc3sda2ywgng2idqqbfbhw5i/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.1.0-eifp3gy4vc3sda2ywgng2idqqbfbhw5i/share/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.1.0-eifp3gy4vc3sda2ywgng2idqqbfbhw5i/.}
+setenv AOCC_ROOT {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.1.0-eifp3gy4vc3sda2ywgng2idqqbfbhw5i}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

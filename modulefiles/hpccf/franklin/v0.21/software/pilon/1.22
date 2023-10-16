@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:39.573812
+##
+## pilon@1.22%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/qsvwvjt
+##
+
+
+module-whatis {Pilon is an automated genome assembly improvement and variant detection tool.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : pilon}
+    puts stderr {Version: 1.22}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Pilon is an automated genome assembly improvement and variant detection}
+    puts stderr {tool.}
+}
+
+conflict pilon
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pilon-1.22-qsvwvjtalla2nkntdygtwjv4fr3gayxu/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pilon-1.22-qsvwvjtalla2nkntdygtwjv4fr3gayxu/.}
+setenv PILON_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pilon-1.22-qsvwvjtalla2nkntdygtwjv4fr3gayxu}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

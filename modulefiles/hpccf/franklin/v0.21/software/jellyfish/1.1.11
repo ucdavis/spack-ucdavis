@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:30.137968
+##
+## jellyfish@1.1.11%gcc@11.4.0~ruby build_system=autotools patches=e729c13 arch=linux-ubuntu22.04-x86_64_v3/hvsay6t
+##
+
+
+module-whatis {JELLYFISH is a tool for fast, memory-efficient counting of k-mers in DNA.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : jellyfish}
+    puts stderr {Version: 1.1.11}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {JELLYFISH is a tool for fast, memory-efficient counting of k-mers in}
+    puts stderr {DNA.}
+}
+
+conflict jellyfish
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-1.1.11-hvsay6t26by7h4qz3jxrm6drcxssyr4d/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-1.1.11-hvsay6t26by7h4qz3jxrm6drcxssyr4d/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-1.1.11-hvsay6t26by7h4qz3jxrm6drcxssyr4d/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-1.1.11-hvsay6t26by7h4qz3jxrm6drcxssyr4d/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-1.1.11-hvsay6t26by7h4qz3jxrm6drcxssyr4d/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-1.1.11-hvsay6t26by7h4qz3jxrm6drcxssyr4d/share/man}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-1.1.11-hvsay6t26by7h4qz3jxrm6drcxssyr4d/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-1.1.11-hvsay6t26by7h4qz3jxrm6drcxssyr4d/.}
+setenv JELLYFISH_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-1.1.11-hvsay6t26by7h4qz3jxrm6drcxssyr4d}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

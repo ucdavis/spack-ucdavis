@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:17.327087
+##
+## beagle@5.4%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/2ijrtxh
+##
+
+
+module-whatis {Beagle is a software package for phasing genotypes and for imputing ungenotyped markers.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : beagle}
+    puts stderr {Version: 5.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Beagle is a software package for phasing genotypes and for imputing}
+    puts stderr {ungenotyped markers.}
+}
+
+conflict beagle
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/beagle-5.4-2ijrtxhhubecu54jyecvav532kz3tbmk/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/beagle-5.4-2ijrtxhhubecu54jyecvav532kz3tbmk/.}
+setenv BEAGLE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/beagle-5.4-2ijrtxhhubecu54jyecvav532kz3tbmk}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

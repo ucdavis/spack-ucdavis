@@ -1,0 +1,41 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:43.971115
+##
+## qualimap@2.2.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/4yr3tg4
+##
+
+
+module-whatis {Qualimap 2 is a platform-independent application written in Java and R that provides both a Graphical User Inteface (GUI) and a command-line interface to facilitate the quality control of alignment sequencing data and its derivatives like feature counts.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : qualimap}
+    puts stderr {Version: 2.2.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Qualimap 2 is a platform-independent application written in Java and R}
+    puts stderr {that provides both a Graphical User Inteface (GUI) and a command-line}
+    puts stderr {interface to facilitate the quality control of alignment sequencing data}
+    puts stderr {and its derivatives like feature counts.}
+}
+
+conflict qualimap
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/qualimap-2.2.1-4yr3tg4io4qkicwe3wljiue5joiujegp/lib}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/qualimap-2.2.1-4yr3tg4io4qkicwe3wljiue5joiujegp/.}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/qualimap-2.2.1-4yr3tg4io4qkicwe3wljiue5joiujegp}
+setenv QUALIMAP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/qualimap-2.2.1-4yr3tg4io4qkicwe3wljiue5joiujegp}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

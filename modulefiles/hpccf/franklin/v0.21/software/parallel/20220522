@@ -1,0 +1,41 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:38.573135
+##
+## parallel@20220522%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/rdq2jwf
+##
+
+
+module-whatis {GNU parallel is a shell tool for executing jobs in parallel using one or more computers. A job can be a single command or a small script that has to be run for each of the lines in the input. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : parallel}
+    puts stderr {Version: 20220522}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GNU parallel is a shell tool for executing jobs in parallel using one or}
+    puts stderr {more computers. A job can be a single command or a small script that has}
+    puts stderr {to be run for each of the lines in the input.}
+}
+
+conflict parallel
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/parallel-20220522-rdq2jwfipzfxcazu5l3hpk4pao2vytlu/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/parallel-20220522-rdq2jwfipzfxcazu5l3hpk4pao2vytlu/share/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/parallel-20220522-rdq2jwfipzfxcazu5l3hpk4pao2vytlu/.}
+setenv PARALLEL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/parallel-20220522-rdq2jwfipzfxcazu5l3hpk4pao2vytlu}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

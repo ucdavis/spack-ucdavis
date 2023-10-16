@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:49.908970
+##
+## virtualgl@2.5.2%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/lmpdtgs
+##
+
+
+module-whatis {VirtualGL redirects 3D commands from a Unix/Linux OpenGL application onto a server-side GPU and converts the rendered 3D images into a video stream with which remote clients can interact to view and control the 3D application in real time.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : virtualgl}
+    puts stderr {Version: 2.5.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {VirtualGL redirects 3D commands from a Unix/Linux OpenGL application}
+    puts stderr {onto a server-side GPU and converts the rendered 3D images into a video}
+    puts stderr {stream with which remote clients can interact to view and control the 3D}
+    puts stderr {application in real time.}
+}
+
+conflict virtualgl
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/virtualgl-2.5.2-lmpdtgsmtmzh6tbrwbzpkkk5ssdck2od/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/virtualgl-2.5.2-lmpdtgsmtmzh6tbrwbzpkkk5ssdck2od/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/virtualgl-2.5.2-lmpdtgsmtmzh6tbrwbzpkkk5ssdck2od/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/virtualgl-2.5.2-lmpdtgsmtmzh6tbrwbzpkkk5ssdck2od/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/virtualgl-2.5.2-lmpdtgsmtmzh6tbrwbzpkkk5ssdck2od/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/virtualgl-2.5.2-lmpdtgsmtmzh6tbrwbzpkkk5ssdck2od/.}
+setenv VIRTUALGL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/virtualgl-2.5.2-lmpdtgsmtmzh6tbrwbzpkkk5ssdck2od}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

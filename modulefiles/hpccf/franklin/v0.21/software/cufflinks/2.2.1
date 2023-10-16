@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:21.996920
+##
+## cufflinks@2.2.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/vlisunz
+##
+
+
+module-whatis {Cufflinks assembles transcripts, estimates their abundances, and tests for differential expression and regulation in RNA-Seq samples.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : cufflinks}
+    puts stderr {Version: 2.2.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Cufflinks assembles transcripts, estimates their abundances, and tests}
+    puts stderr {for differential expression and regulation in RNA-Seq samples.}
+}
+
+conflict cufflinks
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cufflinks-2.2.1-vlisunz67mjsmju4u4vv42fw2vyks4yy/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cufflinks-2.2.1-vlisunz67mjsmju4u4vv42fw2vyks4yy/.}
+setenv CUFFLINKS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cufflinks-2.2.1-vlisunz67mjsmju4u4vv42fw2vyks4yy}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

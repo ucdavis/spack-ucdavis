@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:39.419821
+##
+## phylip@3.697%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/dbaphhy
+##
+
+
+module-whatis {PHYLIP (the PHYLogeny Inference Package) is a package of programs for inferring phylogenies (evolutionary trees).}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : phylip}
+    puts stderr {Version: 3.697}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {PHYLIP (the PHYLogeny Inference Package) is a package of programs for}
+    puts stderr {inferring phylogenies (evolutionary trees).}
+}
+
+conflict phylip
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/phylip-3.697-dbaphhyfkf2c7p63klmaxqitutxvm4zr/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/phylip-3.697-dbaphhyfkf2c7p63klmaxqitutxvm4zr/.}
+setenv PHYLIP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/phylip-3.697-dbaphhyfkf2c7p63klmaxqitutxvm4zr}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

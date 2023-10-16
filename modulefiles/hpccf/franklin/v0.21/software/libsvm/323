@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:31.680599
+##
+## libsvm@323%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/istxk4p
+##
+
+
+module-whatis {Libsvm is a simple, easy-to-use, and efficient software for SVM classification and regression.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libsvm}
+    puts stderr {Version: 323}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Libsvm is a simple, easy-to-use, and efficient software for SVM}
+    puts stderr {classification and regression.}
+}
+
+conflict libsvm
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsvm-323-istxk4pf6737jitbjc43xvia3ecslndp/lib}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsvm-323-istxk4pf6737jitbjc43xvia3ecslndp/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsvm-323-istxk4pf6737jitbjc43xvia3ecslndp/.}
+setenv LIBSVM_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsvm-323-istxk4pf6737jitbjc43xvia3ecslndp}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

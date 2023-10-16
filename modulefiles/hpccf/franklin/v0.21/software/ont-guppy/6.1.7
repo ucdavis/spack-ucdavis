@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:37.701361
+##
+## ont-guppy@6.1.7%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/oo4tlst
+##
+
+
+module-whatis {Guppy: local accelerated basecalling for Nanopore data}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : ont-guppy}
+    puts stderr {Version: 6.1.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Guppy: local accelerated basecalling for Nanopore data}
+}
+
+conflict ont-guppy
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ont-guppy-6.1.7-oo4tlstexpwienjmqeki4hoic7s4ygox/lib}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ont-guppy-6.1.7-oo4tlstexpwienjmqeki4hoic7s4ygox/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ont-guppy-6.1.7-oo4tlstexpwienjmqeki4hoic7s4ygox/.}
+setenv ONT_GUPPY_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ont-guppy-6.1.7-oo4tlstexpwienjmqeki4hoic7s4ygox}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

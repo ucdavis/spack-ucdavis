@@ -1,0 +1,87 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:45.143612
+##
+## relion@4.0.1%gcc@11.4.0+allow_ctf_in_sagd+altcpu~cuda+double~double-gpu~external_motioncor2~gpu_delay+gui~ipo~mklfft build_system=cmake build_type=RelWithDebInfo generator=make purpose=cluster arch=linux-ubuntu22.04-zen2/j2cnoem
+##
+## Configure options: -DCMAKE_C_FLAGS=-g -DCMAKE_CXX_FLAGS=-g -DGUI=True -DDoublePrec_CPU=True -DDoublePrec_GPU=False -DALLOW_CTF_IN_SAGD=True -DMKLFFT=False -DALTCPU=True -DAMDFFTW=ON -DFORCE_OWN_TBB=OFF -DTBB_INCLUDE_DIR:STRING=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/include -DTBB_LIBRARY:STRING=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/lib/intel64/gcc4.8
+##
+
+
+module-whatis {RELION (for REgularised LIkelihood OptimisatioN, pronounce rely-on) is a stand-alone computer program that employs an empirical Bayesian approach to refinement of (multiple) 3D reconstructions or 2D class averages in electron cryo-microscopy (cryo-EM).}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : relion}
+    puts stderr {Version: 4.0.1}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr {RELION (for REgularised LIkelihood OptimisatioN, pronounce rely-on) is a}
+    puts stderr {stand-alone computer program that employs an empirical Bayesian approach}
+    puts stderr {to refinement of (multiple) 3D reconstructions or 2D class averages in}
+    puts stderr {electron cryo-microscopy (cryo-EM).}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load intel-oneapi-tbb/2021.10.0+amd
+} else {
+    depends-on intel-oneapi-tbb/2021.10.0+amd
+}
+prereq intel-oneapi-tbb/2021.10.0+amd
+conflict relion
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-4.0.1-j2cnoemolrwoouqftxeicr7p6zkhfvbr/lib}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-4.0.1-j2cnoemolrwoouqftxeicr7p6zkhfvbr/bin}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-4.0.1-j2cnoemolrwoouqftxeicr7p6zkhfvbr/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-4.0.1-j2cnoemolrwoouqftxeicr7p6zkhfvbr/.}
+prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/share/X11/locale}
+setenv RELION_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-4.0.1-j2cnoemolrwoouqftxeicr7p6zkhfvbr}
+setenv RELION_TOPAZ_EXECUTABLE {/share/apps/spack/spack-ucdavis/bin/wrappers/topaz}
+setenv RELION_CTFFIND_EXECUTABLE {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ctffind-4.1.14-mcco7yaew52w3gkj5yod3ceoj2gzc6sd/bin/ctffind}
+setenv RELION_QSUB_TEMPLATE {/share/apps/22.04/spack/spack-ucdavis/templates/hpccf/franklin/relion.4.0.1.cpu.slurm.template.sh}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+
+
+
+prereq motioncor2
+prereq gctf/1.06
+prereq ghostscript
+
+setenv RELION_MOTIONCOR2_EXECUTABLE [file join [getenv MOTIONCOR2_ROOT] "bin/MotionCor2"]
+#setenv RELION_CTFFIND_EXECUTABLE [file join [getenv CTFFIND_ROOT] "bin/ctffind"]
+setenv RELION_GCTF_EXECUTABLE [file join [getenv GCTF_ROOT] "bin/Gctf-v1.06_sm_30_cu8.0_x86_64"]
+
+setenv RELION_QSUB_EXTRA_COUNT "4"
+
+setenv RELION_QSUB_EXTRA1 "Email:"
+setenv RELION_QSUB_EXTRA1_DEFAULT $user_email
+setenv RELION_QSUB_EXTRA1_HELP "The email address to use for slurm notifications."
+
+setenv RELION_QSUB_EXTRA2 "Memory per CPU (MB):"
+setenv RELION_QSUB_EXTRA2_DEFAULT "10000"
+setenv RELION_QSUB_EXTRA2_HELP "Memory used per CPU thread, in MiB. Total memory can be calculated as (number of MPI tasks) * (memory per CPU)."
+
+setenv RELION_QSUB_EXTRA3 "Job Time:"
+setenv RELION_QSUB_EXTRA3_DEFAULT "12:00:00"
+setenv RELION_QSUB_EXTRA3_HELP "SLURM job time limit in format HH:MM:SS or DAYS-HH:MM:SS."
+
+setenv RELION_QSUB_EXTRA4 "Account:"
+setenv RELION_QSUB_EXTRA4_HELP "SLURM --account parameter."
+
+setenv RELION_QUEUE_USE "yes"
+setenv RELION_QSUB_COMMAND "sbatch"
+setenv RELION_SHELL "bash"
+setenv RELION_SCRATCH_DIR "/tmp/"
+setenv RELION_QUEUE_NAME "low"
+

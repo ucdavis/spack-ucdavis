@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:21.920032
+##
+## ctffind@4.1.14%oneapi@2023.2.0+openmp build_system=autotools patches=d2d349c arch=linux-ubuntu22.04-skylake_avx512/myhgc3z
+##
+## Configure options: --disable-debugmode --enable-mkl CPPFLAGS=-I/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/include -I/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/include/fftw LDFLAGS=-L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/intel64 -L/lib/x86_64-linux-gnu -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lm --enable-openmp
+##
+
+
+module-whatis {Fast and accurate defocus estimation from electron micrographs.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : ctffind}
+    puts stderr {Version: 4.1.14}
+    puts stderr {Target : skylake_avx512}
+    puts stderr {}
+    puts stderr {Fast and accurate defocus estimation from electron micrographs.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load intel-oneapi-mkl/2023.2.0+intel
+} else {
+    depends-on intel-oneapi-mkl/2023.2.0+intel
+}
+prereq intel-oneapi-mkl/2023.2.0+intel
+conflict ctffind
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/ctffind-4.1.14-myhgc3zqfoozdugyysirndf5kbgt77ez/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/ctffind-4.1.14-myhgc3zqfoozdugyysirndf5kbgt77ez/.}
+setenv CTFFIND_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/ctffind-4.1.14-myhgc3zqfoozdugyysirndf5kbgt77ez}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

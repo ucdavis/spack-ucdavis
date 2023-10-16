@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:22.065028
+##
+## diamond@2.1.7%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/wyglftz
+##
+
+
+module-whatis {DIAMOND is a sequence aligner for protein and translated DNA searches, designed for high performance analysis of big sequence data.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : diamond}
+    puts stderr {Version: 2.1.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {DIAMOND is a sequence aligner for protein and translated DNA searches,}
+    puts stderr {designed for high performance analysis of big sequence data.}
+}
+
+conflict diamond
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/diamond-2.1.7-wyglftzsdv5rhtie4fdjzldddfaz4eba/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/diamond-2.1.7-wyglftzsdv5rhtie4fdjzldddfaz4eba/.}
+setenv DIAMOND_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/diamond-2.1.7-wyglftzsdv5rhtie4fdjzldddfaz4eba}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

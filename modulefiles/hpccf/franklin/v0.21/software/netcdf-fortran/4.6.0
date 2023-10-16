@@ -1,0 +1,55 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:37.063136
+##
+## netcdf-fortran@4.6.0%gcc@11.4.0~doc+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/xsz7cjg
+##
+## Configure options: --enable-static --enable-shared --disable-doxygen --disable-parallel-tests
+##
+
+
+module-whatis {NetCDF (network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. This is the Fortran distribution.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : netcdf-fortran}
+    puts stderr {Version: 4.6.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {NetCDF (network Common Data Form) is a set of software libraries and}
+    puts stderr {machine-independent data formats that support the creation, access, and}
+    puts stderr {sharing of array-oriented scientific data. This is the Fortran}
+    puts stderr {distribution.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load netcdf-c/4.9.2
+} else {
+    depends-on netcdf-c/4.9.2
+}
+prereq netcdf-c/4.9.2
+conflict netcdf-fortran
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-fortran-4.6.0-xsz7cjgihikyyfv2zbgnx4rz67ssf5wh/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-fortran-4.6.0-xsz7cjgihikyyfv2zbgnx4rz67ssf5wh/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-fortran-4.6.0-xsz7cjgihikyyfv2zbgnx4rz67ssf5wh/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-fortran-4.6.0-xsz7cjgihikyyfv2zbgnx4rz67ssf5wh/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-fortran-4.6.0-xsz7cjgihikyyfv2zbgnx4rz67ssf5wh/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-fortran-4.6.0-xsz7cjgihikyyfv2zbgnx4rz67ssf5wh/share/man}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-fortran-4.6.0-xsz7cjgihikyyfv2zbgnx4rz67ssf5wh/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-fortran-4.6.0-xsz7cjgihikyyfv2zbgnx4rz67ssf5wh/.}
+setenv NETCDF_FORTRAN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-fortran-4.6.0-xsz7cjgihikyyfv2zbgnx4rz67ssf5wh}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

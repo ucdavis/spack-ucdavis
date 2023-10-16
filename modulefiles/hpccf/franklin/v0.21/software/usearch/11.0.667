@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:49.305603
+##
+## usearch@11.0.667%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/aygudd3
+##
+
+
+module-whatis {USEARCH is a unique sequence analysis tool with thousands of users world-wide.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : usearch}
+    puts stderr {Version: 11.0.667}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {USEARCH is a unique sequence analysis tool with thousands of users}
+    puts stderr {world-wide. Note: A manual download is required for USEARCH. Spack will}
+    puts stderr {search your current directory for the download file. Alternatively, add}
+    puts stderr {this file to a mirror so that Spack can find it. For instructions on how}
+    puts stderr {to set up a mirror, see}
+    puts stderr {https://spack.readthedocs.io/en/latest/mirrors.html}
+}
+
+conflict usearch
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/usearch-11.0.667-aygudd3bcttnihpdidb6e67cvkzfrglp/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/usearch-11.0.667-aygudd3bcttnihpdidb6e67cvkzfrglp/.}
+setenv USEARCH_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/usearch-11.0.667-aygudd3bcttnihpdidb6e67cvkzfrglp}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

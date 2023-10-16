@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:34.740396
+##
+## mmseqs2@14-7e284%gcc@11.4.0~ipo~mpi~openmp build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/wwjt2kf
+##
+## Configure options: -DVERSION_OVERRIDE=14-7e284 -DUSE_SYSTEM_ZSTD=1 -DREQUIRE_OPENMP=0 -DHAVE_MPI=0
+##
+
+
+module-whatis {MMseqs2 (Many-against-Many sequence searching) is a software suite to search and cluster huge protein and nucleotide sequence sets}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : mmseqs2}
+    puts stderr {Version: 14-7e284}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {MMseqs2 (Many-against-Many sequence searching) is a software suite to}
+    puts stderr {search and cluster huge protein and nucleotide sequence sets}
+}
+
+conflict mmseqs2
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mmseqs2-14-7e284-wwjt2kfisjbj6elr2eyvvhz23rls54l5/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mmseqs2-14-7e284-wwjt2kfisjbj6elr2eyvvhz23rls54l5/.}
+setenv MMSEQS2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mmseqs2-14-7e284-wwjt2kfisjbj6elr2eyvvhz23rls54l5}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

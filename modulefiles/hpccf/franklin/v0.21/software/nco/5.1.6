@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:36.429493
+##
+## nco@5.1.6%gcc@11.4.0~doc build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/pd3n7b7
+##
+## Configure options: --disable-doc
+##
+
+
+module-whatis {The NCO toolkit manipulates and analyzes data stored in netCDF-accessible formats}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : nco}
+    puts stderr {Version: 5.1.6}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The NCO toolkit manipulates and analyzes data stored in netCDF-}
+    puts stderr {accessible formats}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load gsl/2.7.1
+    module load netcdf-c/4.9.2
+} else {
+    depends-on gsl/2.7.1
+    depends-on netcdf-c/4.9.2
+}
+prereq gsl/2.7.1
+prereq netcdf-c/4.9.2
+conflict nco
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nco-5.1.6-pd3n7b7bmv4l4o4twffzgpos25keamnf/lib}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nco-5.1.6-pd3n7b7bmv4l4o4twffzgpos25keamnf/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nco-5.1.6-pd3n7b7bmv4l4o4twffzgpos25keamnf/share/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nco-5.1.6-pd3n7b7bmv4l4o4twffzgpos25keamnf/.}
+setenv NCO_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nco-5.1.6-pd3n7b7bmv4l4o4twffzgpos25keamnf}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

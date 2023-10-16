@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:17.029112
+##
+## bayenv2@2.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/mpcwsjc
+##
+
+
+module-whatis {Loci involved in local adaptation can potentially be identified by an unusual correlation between allele frequencies and important ecological variables, or by extreme allele frequency differences between geographic regions. However, such comparisons are complicated by differences in sample sizes and the neutral correlation of allele frequencies across populations due to shared history and gene flow. To overcome these difficulties, we have developed a Bayesian method that estimates the empirical pattern of covariance in allele frequencies between populations from a set of markers, and then uses this as a null model for a test at individual SNPs. Graham developed this method in collaboration with David Witonsky, Anna Di Rienzo and Jonathan Pritchard.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : bayenv2}
+    puts stderr {Version: 2.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Loci involved in local adaptation can potentially be identified by an}
+    puts stderr {unusual correlation between allele frequencies and important ecological}
+    puts stderr {variables, or by extreme allele frequency differences between geographic}
+    puts stderr {regions. However, such comparisons are complicated by differences in}
+    puts stderr {sample sizes and the neutral correlation of allele frequencies across}
+    puts stderr {populations due to shared history and gene flow. To overcome these}
+    puts stderr {difficulties, we have developed a Bayesian method that estimates the}
+    puts stderr {empirical pattern of covariance in allele frequencies between}
+    puts stderr {populations from a set of markers, and then uses this as a null model}
+    puts stderr {for a test at individual SNPs. Graham developed this method in}
+    puts stderr {collaboration with David Witonsky, Anna Di Rienzo and Jonathan}
+    puts stderr {Pritchard.}
+}
+
+conflict bayenv2
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bayenv2-2.0-mpcwsjcde2hxexageg7pr4b3xutvgzos/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bayenv2-2.0-mpcwsjcde2hxexageg7pr4b3xutvgzos/.}
+setenv BAYENV2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bayenv2-2.0-mpcwsjcde2hxexageg7pr4b3xutvgzos}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

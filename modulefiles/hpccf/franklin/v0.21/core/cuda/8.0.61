@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-13 18:13:32.806509
+##
+## cuda@8.0.61%gcc@11.4.0~allow-unsupported-compilers~dev build_system=generic arch=linux-ubuntu22.04-x86_64_v3/oqyeipp
+##
+
+
+module-whatis {CUDA is a parallel computing platform and programming model invented by NVIDIA. It enables dramatic increases in computing performance by harnessing the power of the graphics processing unit (GPU).}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : cuda}
+    puts stderr {Version: 8.0.61}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {CUDA is a parallel computing platform and programming model invented by}
+    puts stderr {NVIDIA. It enables dramatic increases in computing performance by}
+    puts stderr {harnessing the power of the graphics processing unit (GPU). Note: This}
+    puts stderr {package does not currently install the drivers necessary to run CUDA.}
+    puts stderr {These will need to be installed manually. See:}
+    puts stderr {https://docs.nvidia.com/cuda/ for details.}
+}
+
+conflict cuda
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cuda-8.0.61-oqyeippuxfi2w6wmmg3p3upj4lnbehvh/lib64}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cuda-8.0.61-oqyeippuxfi2w6wmmg3p3upj4lnbehvh/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cuda-8.0.61-oqyeippuxfi2w6wmmg3p3upj4lnbehvh/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cuda-8.0.61-oqyeippuxfi2w6wmmg3p3upj4lnbehvh/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cuda-8.0.61-oqyeippuxfi2w6wmmg3p3upj4lnbehvh/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cuda-8.0.61-oqyeippuxfi2w6wmmg3p3upj4lnbehvh/.}
+setenv CUDA_HOME {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cuda-8.0.61-oqyeippuxfi2w6wmmg3p3upj4lnbehvh}
+setenv CUDA_ROOT {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cuda-8.0.61-oqyeippuxfi2w6wmmg3p3upj4lnbehvh}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

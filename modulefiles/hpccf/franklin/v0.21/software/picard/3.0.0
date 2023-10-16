@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:39.468804
+##
+## picard@3.0.0%gcc@11.4.0~parameters build_system=generic arch=linux-ubuntu22.04-x86_64_v3/yfymvgt
+##
+
+
+module-whatis {Picard is a set of command line tools for manipulating high-throughput sequencing (HTS) data and formats such as SAM/BAM/CRAM and VCF. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : picard}
+    puts stderr {Version: 3.0.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Picard is a set of command line tools for manipulating high-throughput}
+    puts stderr {sequencing (HTS) data and formats such as SAM/BAM/CRAM and VCF.}
+}
+
+conflict picard
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/picard-3.0.0-yfymvgtuyyvh5jct4kehwifpdslradnf/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/picard-3.0.0-yfymvgtuyyvh5jct4kehwifpdslradnf/.}
+prepend-path --delim {:} PICARD {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/picard-3.0.0-yfymvgtuyyvh5jct4kehwifpdslradnf/bin/picard.jar}
+setenv PICARD_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/picard-3.0.0-yfymvgtuyyvh5jct4kehwifpdslradnf}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

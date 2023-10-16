@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:38.391680
+##
+## orthomcl@2.0.9%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/ylcmhqo
+##
+
+
+module-whatis {OrthoMCL is a genome-scale algorithm for grouping orthologous protein sequences.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : orthomcl}
+    puts stderr {Version: 2.0.9}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {OrthoMCL is a genome-scale algorithm for grouping orthologous protein}
+    puts stderr {sequences.}
+}
+
+conflict orthomcl
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthomcl-2.0.9-ylcmhqoi44j26mxkc32227iyaoybdacu/lib}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthomcl-2.0.9-ylcmhqoi44j26mxkc32227iyaoybdacu/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthomcl-2.0.9-ylcmhqoi44j26mxkc32227iyaoybdacu/.}
+prepend-path --delim {:} PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthomcl-2.0.9-ylcmhqoi44j26mxkc32227iyaoybdacu/lib}
+setenv ORTHOMCL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthomcl-2.0.9-ylcmhqoi44j26mxkc32227iyaoybdacu}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

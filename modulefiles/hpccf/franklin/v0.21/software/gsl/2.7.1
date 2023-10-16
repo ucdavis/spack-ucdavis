@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:26.760385
+##
+## gsl@2.7.1%gcc@11.4.0~external-cblas+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/62tbson
+##
+## Configure options: --enable-shared --with-pic
+##
+
+
+module-whatis {The GNU Scientific Library (GSL) is a numerical library for C and C++ programmers. It is free software under the GNU General Public License. The library provides a wide range of mathematical routines such as random number generators, special functions and least-squares fitting. There are over 1000 functions in total with an extensive test suite.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gsl}
+    puts stderr {Version: 2.7.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The GNU Scientific Library (GSL) is a numerical library for C and C++}
+    puts stderr {programmers. It is free software under the GNU General Public License.}
+    puts stderr {The library provides a wide range of mathematical routines such as}
+    puts stderr {random number generators, special functions and least-squares fitting.}
+    puts stderr {There are over 1000 functions in total with an extensive test suite.}
+}
+
+conflict gsl
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/share/man}
+prepend-path --delim {:} ACLOCAL_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/share/aclocal}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/.}
+setenv GSL_ROOT_DIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev}
+setenv GSL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

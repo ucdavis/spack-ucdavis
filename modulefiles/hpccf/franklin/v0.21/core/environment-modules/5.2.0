@@ -1,0 +1,41 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-13 18:13:32.938226
+##
+## environment-modules@5.2.0%gcc@11.4.0+X build_system=generic arch=linux-ubuntu22.04-x86_64_v3/srlc7vh
+##
+
+
+module-whatis {The Environment Modules package provides for the dynamic modification of a user's environment via module files. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : environment-modules}
+    puts stderr {Version: 5.2.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The Environment Modules package provides for the dynamic modification of}
+    puts stderr {a user's environment via module files.}
+}
+
+conflict environment-modules
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/environment-modules-5.2.0-srlc7vh43363a3gdz4ffuw3u3ygbj7yv/lib}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/environment-modules-5.2.0-srlc7vh43363a3gdz4ffuw3u3ygbj7yv/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/environment-modules-5.2.0-srlc7vh43363a3gdz4ffuw3u3ygbj7yv/share/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/environment-modules-5.2.0-srlc7vh43363a3gdz4ffuw3u3ygbj7yv/.}
+setenv ENVIRONMENT_MODULES_ROOT {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/environment-modules-5.2.0-srlc7vh43363a3gdz4ffuw3u3ygbj7yv}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

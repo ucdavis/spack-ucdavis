@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:34.862501
+##
+## mothur@1.48.0%gcc@11.4.0+boost~gsl~hdf5 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/zunahmc
+##
+
+
+module-whatis {This project seeks to develop a single piece of open-source, expandable software to fill the bioinformatics needs of the microbial ecology community.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : mothur}
+    puts stderr {Version: 1.48.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This project seeks to develop a single piece of open-source, expandable}
+    puts stderr {software to fill the bioinformatics needs of the microbial ecology}
+    puts stderr {community.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load usearch/11.0.667
+} else {
+    depends-on usearch/11.0.667
+}
+prereq usearch/11.0.667
+conflict mothur
+
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr/.}
+setenv MOTHUR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

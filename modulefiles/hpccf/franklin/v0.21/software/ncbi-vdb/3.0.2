@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:36.225663
+##
+## ncbi-vdb@3.0.2%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/uhy2f7a
+##
+
+
+module-whatis {The SRA Toolkit and SDK from NCBI is a collection of tools and libraries for using data in the INSDC Sequence Read Archives. This package contains the interface to the VDB.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : ncbi-vdb}
+    puts stderr {Version: 3.0.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The SRA Toolkit and SDK from NCBI is a collection of tools and libraries}
+    puts stderr {for using data in the INSDC Sequence Read Archives. This package}
+    puts stderr {contains the interface to the VDB.}
+}
+
+conflict ncbi-vdb
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e/lib64}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e/include}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e/.}
+setenv NCBI_VDB_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

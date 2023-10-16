@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:49.961181
+##
+## voropp@0.4.6%gcc@11.4.0+pic build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/m33uhdo
+##
+
+
+module-whatis {Voro++ is a open source software library for the computation of the Voronoi diagram, a widely-used tessellation that has applications in many scientific fields.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : voropp}
+    puts stderr {Version: 0.4.6}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Voro++ is a open source software library for the computation of the}
+    puts stderr {Voronoi diagram, a widely-used tessellation that has applications in}
+    puts stderr {many scientific fields.}
+}
+
+conflict voropp
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/voropp-0.4.6-m33uhdokezh6ihhgai5a3pmomatjuq7j/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/voropp-0.4.6-m33uhdokezh6ihhgai5a3pmomatjuq7j/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/voropp-0.4.6-m33uhdokezh6ihhgai5a3pmomatjuq7j/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/voropp-0.4.6-m33uhdokezh6ihhgai5a3pmomatjuq7j/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/voropp-0.4.6-m33uhdokezh6ihhgai5a3pmomatjuq7j/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/voropp-0.4.6-m33uhdokezh6ihhgai5a3pmomatjuq7j/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/voropp-0.4.6-m33uhdokezh6ihhgai5a3pmomatjuq7j/.}
+setenv VOROPP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/voropp-0.4.6-m33uhdokezh6ihhgai5a3pmomatjuq7j}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

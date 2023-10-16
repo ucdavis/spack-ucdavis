@@ -1,0 +1,37 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:44.219000
+##
+## ray@2.3.1%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/tb4ogfx
+##
+
+
+module-whatis {Parallel genome assemblies for parallel DNA sequencing}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : ray}
+    puts stderr {Version: 2.3.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Parallel genome assemblies for parallel DNA sequencing}
+}
+
+conflict ray
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ray-2.3.1-tb4ogfxdg4wxctrile5kc6l2wbmxb3yi/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ray-2.3.1-tb4ogfxdg4wxctrile5kc6l2wbmxb3yi/.}
+setenv RAY_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ray-2.3.1-tb4ogfxdg4wxctrile5kc6l2wbmxb3yi}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

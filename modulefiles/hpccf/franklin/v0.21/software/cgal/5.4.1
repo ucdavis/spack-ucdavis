@@ -1,0 +1,59 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:20.727802
+##
+## cgal@5.4.1%gcc@11.4.0~core~demos+eigen~header_only~imageio~ipo+shared build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/c3capt5
+##
+## Configure options: -DBUILD_SHARED_LIBS:BOOL=True -DWITH_CGAL_Core:BOOL=False -DWITH_CGAL_ImageIO:BOOL=False -DWITH_CGAL_Qt5:BOOL=False -DCGAL_HEADER_ONLY:BOOL=False
+##
+
+
+module-whatis {The Computational Geometry Algorithms Library (CGAL) is a C++ library that aims to provide easy access to efficient and reliable algorithms in computational geometry. CGAL is used in various areas needing geometric computation, such as geographic information systems, computer aided design, molecular biology, medical imaging, computer graphics, and robotics. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : cgal}
+    puts stderr {Version: 5.4.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The Computational Geometry Algorithms Library (CGAL) is a C++ library}
+    puts stderr {that aims to provide easy access to efficient and reliable algorithms in}
+    puts stderr {computational geometry. CGAL is used in various areas needing geometric}
+    puts stderr {computation, such as geographic information systems, computer aided}
+    puts stderr {design, molecular biology, medical imaging, computer graphics, and}
+    puts stderr {robotics.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load eigen/3.4.0
+    module load mpfr/4.2.0
+} else {
+    depends-on eigen/3.4.0
+    depends-on mpfr/4.2.0
+}
+prereq eigen/3.4.0
+prereq mpfr/4.2.0
+conflict cgal
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/share/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/.}
+setenv CGAL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

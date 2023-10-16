@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:29.375778
+##
+## interproscan@4.8%gcc@11.4.0~databases build_system=generic patches=a243277,c90e3d6 arch=linux-ubuntu22.04-x86_64_v3/cth5dhw
+##
+
+
+module-whatis {InterProScan is the software package that allows sequences (protein and nucleic) to be scanned against InterPro's signatures. Signatures are predictive models, provided by several different databases, that make up the InterPro consortium. By default this does not download all the databases you likely want, you'll either want to build with +databases or download the data archive for the version you installed to a separate location and modify interproscan.properties}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : interproscan}
+    puts stderr {Version: 4.8}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {InterProScan is the software package that allows sequences (protein and}
+    puts stderr {nucleic) to be scanned against InterPro's signatures. Signatures are}
+    puts stderr {predictive models, provided by several different databases, that make up}
+    puts stderr {the InterPro consortium. By default this does not download all the}
+    puts stderr {databases you likely want, you'll either want to build with +databases}
+    puts stderr {or download the data archive for the version you installed to a separate}
+    puts stderr {location and modify interproscan.properties}
+}
+
+conflict interproscan
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/interproscan-4.8-cth5dhwkgtro4awba4jkyb36tsufdyhq/lib}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/interproscan-4.8-cth5dhwkgtro4awba4jkyb36tsufdyhq/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/interproscan-4.8-cth5dhwkgtro4awba4jkyb36tsufdyhq/.}
+prepend-path --delim {:} PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-cgi-4.56-gjtchlrq7tvukywcxghc6omqwwvujcha/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-html-parser-3.72-gzf4cxbun4apc2u5jdpculaqsuqexmqu/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-html-tagset-3.20-ethpjczwe6s7uxm63h4umtjmje6abd2n/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-db-file-1.858-eo6ficiriej7ozy2jwvk4fglymub5dnj/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-string-1.08-epoalwv5tibo3mq7l4zmb4vt3cy6ibaw/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-stringy-2.111-qwb6tnjliwgaup6vweh4vz45k5kc22qd/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-mailtools-2.21-tpdmvqlmwgraaqhvu67s5kml4dqvxwuo/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-timedate-2.30-taj7egxtg47izfq7khzzffhm5s5moops/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-parser-2.46-4s7gqlvv2qhuwaex7wu364cdy2kpoy7q/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-libwww-perl-6.68-hvqainaa2tmfic7fhrem7ubxm2yk45ij/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-clone-0.46-qvghnmvcsvkjlenivukbbv5ea7zfh7sj/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-encode-locale-1.05-i3yu5cubfljgrfrn2jidhaooexy43d4l/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-file-listing-6.04-fq4m3rsfoc7mue7i6clsqzzgbeonv4ko/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-date-6.02-uj7noibxo6m4lh5nyku7knjhl7xowazv/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-cookies-6.10-xh2s5vjlca6hfuxbete2622tij7gzpng/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-message-6.44-mogcd3b3u6h5scsfv5wqdhvgtrv26yrs/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-html-1.004-aznx2hxrouq2jhbbz2a73o4eb4txalty/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-lwp-mediatypes-6.02-ydjxjaywnstf7lawjacfjlyt5vlj7dhx/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-try-tiny-0.31-l2hiyji7bj3ou3fixu4ed42a3w7ia4kn/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-uri-5.08-m5ahizgcnwspsjcfnzryoy6rxhcf55bg/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-daemon-6.01-gfrosn3r4nbeach6j3wmqbldrmme5scl/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-negotiate-6.01-4coqv76cecnps6mkigbatvlnffxicnpn/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-net-http-6.22-pc245egcgt2yj5bljdxgyhvte2jbirsc/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-www-robotrules-6.02-uplnyrnxrngag76gexmcr3dipz4gksrj/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-quote-1.02-pvkivlg27asjpgbfvx47wsfd5l6fjizn/lib/perl5}
+setenv INTERPROSCAN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/interproscan-4.8-cth5dhwkgtro4awba4jkyb36tsufdyhq}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

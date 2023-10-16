@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-13 18:13:35.259325
+##
+## ucx@1.14.1%oneapi@2023.2.0~assertions~backtrace_detail~cma~cuda~dc~debug~dm+examples~gdrcopy~gtest~ib_hw_tm~java~knem~logging~mlx5_dv+numa+openmp+optimizations~parameter_checking+pic~rc~rdmacm~rocm+thread_multiple~ucg~ud~verbs~vfs~xpmem build_system=autotools libs=shared,static opt=3 simd=auto arch=linux-ubuntu22.04-skylake_avx512/24xu7dq
+##
+## Configure options: --without-go --disable-doxygen-doc --enable-numa --disable-assertions --enable-compiler-opt=3 --without-java --enable-shared --enable-static --disable-logging --enable-mt --with-openmp --enable-optimizations --disable-params-check --disable-gtest --with-pic --without-cuda --disable-cma --without-dc --without-dm --without-gdrcopy --without-ib-hw-tm --without-knem --without-mlx5-dv --without-rc --without-ud --without-xpmem --without-fuse3 --without-bfd --without-rdmacm --without-verbs --with-avx --without-rocm
+##
+
+
+module-whatis {a communication library implementing high-performance messaging for MPI/PGAS frameworks}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : ucx}
+    puts stderr {Version: 1.14.1}
+    puts stderr {Target : skylake_avx512}
+    puts stderr {}
+    puts stderr {a communication library implementing high-performance messaging for}
+    puts stderr {MPI/PGAS frameworks}
+}
+
+conflict ucx
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/ucx-1.14.1-24xu7dqfo4d3jribbliwpinq4x6hxyxc/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/ucx-1.14.1-24xu7dqfo4d3jribbliwpinq4x6hxyxc/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/ucx-1.14.1-24xu7dqfo4d3jribbliwpinq4x6hxyxc/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/ucx-1.14.1-24xu7dqfo4d3jribbliwpinq4x6hxyxc/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/ucx-1.14.1-24xu7dqfo4d3jribbliwpinq4x6hxyxc/bin}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/ucx-1.14.1-24xu7dqfo4d3jribbliwpinq4x6hxyxc/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/ucx-1.14.1-24xu7dqfo4d3jribbliwpinq4x6hxyxc/.}
+setenv UCX_ROOT {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/ucx-1.14.1-24xu7dqfo4d3jribbliwpinq4x6hxyxc}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

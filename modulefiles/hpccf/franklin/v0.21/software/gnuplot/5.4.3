@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:26.637833
+##
+## gnuplot@5.4.3%gcc@11.4.0~X~cairo+gd+libcerf~pbm~qt+readline~wx build_system=autotools patches=ad89f23 arch=linux-ubuntu22.04-x86_64_v3/kxljfwe
+##
+## Configure options: --disable-dependency-tracking --disable-silent-rules --without-tutorial --with-readline=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-jkh6v5ytaixrf2qoatx4knywvjprnybj --without-bitmap-terminals --without-x --with-qt=no --disable-wxwidgets --with-gd=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libgd-2.3.3-b4peh57fb5sqmljndv55yzium6ggaxkt --without-cairo --with-libcerf --without-pdf --without-lua --without-latex --without-aquaterm
+##
+
+
+module-whatis {Gnuplot is a portable command-line driven graphing utility for Linux, OS/2, MS Windows, OSX, VMS, and many other platforms. The source code is copyrighted but freely distributed (i.e., you don't have to pay for it). It was originally created to allow scientists and students to visualize mathematical functions and data interactively, but has grown to support many non-interactive uses such as web scripting. It is also used as a plotting engine by third-party applications like Octave. Gnuplot has been supported and under active development since 1986}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gnuplot}
+    puts stderr {Version: 5.4.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Gnuplot is a portable command-line driven graphing utility for Linux,}
+    puts stderr {OS/2, MS Windows, OSX, VMS, and many other platforms. The source code is}
+    puts stderr {copyrighted but freely distributed (i.e., you don't have to pay for it).}
+    puts stderr {It was originally created to allow scientists and students to visualize}
+    puts stderr {mathematical functions and data interactively, but has grown to support}
+    puts stderr {many non-interactive uses such as web scripting. It is also used as a}
+    puts stderr {plotting engine by third-party applications like Octave. Gnuplot has}
+    puts stderr {been supported and under active development since 1986}
+}
+
+conflict gnuplot
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnuplot-5.4.3-kxljfwev3kx37cu2tqw33m4jshjysgbs/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnuplot-5.4.3-kxljfwev3kx37cu2tqw33m4jshjysgbs/share/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnuplot-5.4.3-kxljfwev3kx37cu2tqw33m4jshjysgbs/.}
+prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/share/X11/locale}
+setenv GNUPLOT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnuplot-5.4.3-kxljfwev3kx37cu2tqw33m4jshjysgbs}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

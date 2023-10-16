@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:27.186808
+##
+## homer@4.11.1%gcc@11.4.0~data build_system=generic arch=linux-ubuntu22.04-x86_64_v3/66jbz3g
+##
+
+
+module-whatis {Software for motif discovery and next generation sequencing analysis}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : homer}
+    puts stderr {Version: 4.11.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Software for motif discovery and next generation sequencing analysis}
+}
+
+conflict homer
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/homer-4.11.1-66jbz3gqjvpauefpmmuzxeorzn5ak2s2/lib}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/homer-4.11.1-66jbz3gqjvpauefpmmuzxeorzn5ak2s2/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/homer-4.11.1-66jbz3gqjvpauefpmmuzxeorzn5ak2s2/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+setenv HOMER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/homer-4.11.1-66jbz3gqjvpauefpmmuzxeorzn5ak2s2}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

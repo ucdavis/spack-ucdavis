@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:50.189276
+##
+## zlib@1.2.13%gcc@11.4.0+optimize+pic+shared build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/rubwmby
+##
+
+
+module-whatis {A free, general-purpose, legally unencumbered lossless data-compression library. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : zlib}
+    puts stderr {Version: 1.2.13}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A free, general-purpose, legally unencumbered lossless data-compression}
+    puts stderr {library.}
+}
+
+conflict zlib
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-1.2.13-rubwmbyumz37c5uh4gnbealnodpguolm/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-1.2.13-rubwmbyumz37c5uh4gnbealnodpguolm/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-1.2.13-rubwmbyumz37c5uh4gnbealnodpguolm/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-1.2.13-rubwmbyumz37c5uh4gnbealnodpguolm/include}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-1.2.13-rubwmbyumz37c5uh4gnbealnodpguolm/share/man}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-1.2.13-rubwmbyumz37c5uh4gnbealnodpguolm/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-1.2.13-rubwmbyumz37c5uh4gnbealnodpguolm/.}
+setenv ZLIB_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-1.2.13-rubwmbyumz37c5uh4gnbealnodpguolm}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

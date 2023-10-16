@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:37.856471
+##
+## openldap@2.4.49%gcc@11.4.0+client_only+dynamic~icu~perl+sasl+shared~static build_system=autotools tls=gnutls arch=linux-ubuntu22.04-x86_64_v3/ujzgxo7
+##
+## Configure options: CPPFLAGS=-D_GNU_SOURCE --disable-debug --disable-slapd --with-cyrus-sasl --disable-static --enable-shared --enable-dynamic
+##
+
+
+module-whatis { OpenLDAP Software is an open source implementation of the Lightweight Directory Access Protocol. The suite includes:}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : openldap}
+    puts stderr {Version: 2.4.49}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr { OpenLDAP Software is an open source implementation of the Lightweight}
+    puts stderr {Directory Access Protocol. The suite includes: slapd - stand-alone LDAP}
+    puts stderr {daemon (server) libraries implementing the LDAP protocol, and utilities,}
+    puts stderr {tools, and sample clients.}
+}
+
+conflict openldap
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openldap-2.4.49-ujzgxo7nwdrvq7v3w6xckvacv2rxau6a/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openldap-2.4.49-ujzgxo7nwdrvq7v3w6xckvacv2rxau6a/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openldap-2.4.49-ujzgxo7nwdrvq7v3w6xckvacv2rxau6a/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openldap-2.4.49-ujzgxo7nwdrvq7v3w6xckvacv2rxau6a/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openldap-2.4.49-ujzgxo7nwdrvq7v3w6xckvacv2rxau6a/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openldap-2.4.49-ujzgxo7nwdrvq7v3w6xckvacv2rxau6a/share/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openldap-2.4.49-ujzgxo7nwdrvq7v3w6xckvacv2rxau6a/.}
+setenv OPENLDAP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openldap-2.4.49-ujzgxo7nwdrvq7v3w6xckvacv2rxau6a}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

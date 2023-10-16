@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:31.119778
+##
+## last@1499%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/zybz7uv
+##
+
+
+module-whatis {LAST finds similar regions between sequences, and aligns them. It is designed for comparing large datasets to each other (e.g. vertebrate genomes and/or large numbers of DNA reads).}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : last}
+    puts stderr {Version: 1499}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {LAST finds similar regions between sequences, and aligns them. It is}
+    puts stderr {designed for comparing large datasets to each other (e.g. vertebrate}
+    puts stderr {genomes and/or large numbers of DNA reads).}
+}
+
+conflict last
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/last-1499-zybz7uvajrr2pgucjs7ucdewx4ddx3bb/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/last-1499-zybz7uvajrr2pgucjs7ucdewx4ddx3bb/.}
+setenv LAST_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/last-1499-zybz7uvajrr2pgucjs7ucdewx4ddx3bb}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

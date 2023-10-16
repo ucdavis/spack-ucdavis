@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:50.085085
+##
+## xerces-c@3.2.4%gcc@11.4.0 build_system=autotools cxxstd=default netaccessor=curl transcoder=gnuiconv arch=linux-ubuntu22.04-x86_64_v3/r7l5pne
+##
+## Configure options: --enable-netaccessor-curl --enable-transcoder-gnuiconv
+##
+
+
+module-whatis {Xerces-C++ is a validating XML parser written in a portable subset of C++. Xerces-C++ makes it easy to give your application the ability to read and write XML data. A shared library is provided for parsing, generating, manipulating, and validating XML documents using the DOM, SAX, and SAX2 APIs.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : xerces-c}
+    puts stderr {Version: 3.2.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Xerces-C++ is a validating XML parser written in a portable subset of}
+    puts stderr {C++. Xerces-C++ makes it easy to give your application the ability to}
+    puts stderr {read and write XML data. A shared library is provided for parsing,}
+    puts stderr {generating, manipulating, and validating XML documents using the DOM,}
+    puts stderr {SAX, and SAX2 APIs.}
+}
+
+conflict xerces-c
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xerces-c-3.2.4-r7l5pneiv4jgwamab6bwqj7socbaq75q/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xerces-c-3.2.4-r7l5pneiv4jgwamab6bwqj7socbaq75q/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xerces-c-3.2.4-r7l5pneiv4jgwamab6bwqj7socbaq75q/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xerces-c-3.2.4-r7l5pneiv4jgwamab6bwqj7socbaq75q/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xerces-c-3.2.4-r7l5pneiv4jgwamab6bwqj7socbaq75q/bin}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xerces-c-3.2.4-r7l5pneiv4jgwamab6bwqj7socbaq75q/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xerces-c-3.2.4-r7l5pneiv4jgwamab6bwqj7socbaq75q/.}
+setenv XERCES_C_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xerces-c-3.2.4-r7l5pneiv4jgwamab6bwqj7socbaq75q}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+
