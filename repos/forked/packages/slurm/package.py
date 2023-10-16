@@ -181,6 +181,7 @@ class Slurm(AutotoolsPackage):
     # TODO: add support for lua
 
     depends_on("curl")
+    depends_on("dbus", type="build", when="@22-05-6-1:")
     depends_on("glib")
     depends_on("json-c")
     depends_on("lz4")
