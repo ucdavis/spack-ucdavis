@@ -21,6 +21,7 @@ modules:
         target=skylake_avx512: '{name}/{version}+intel'
         target=zen2: '{name}/{version}+amd'
       all:
+        autoload: direct
         template: hpccf/default.tcl
         prerequisites: direct
         conflict:
