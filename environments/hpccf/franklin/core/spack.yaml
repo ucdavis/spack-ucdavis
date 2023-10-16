@@ -16,10 +16,12 @@ spack:
     - '%oneapi arch=linux-ubuntu22.04-skylake_avx512'
     - '%gcc@=11.4.0 arch=linux-ubuntu22.04-zen2'
   specs:
-  - environment-modules @5.3.1
+  - environment-modules @5.2.0
   - slurm
   - hwloc
-  - cuda
+  - cuda @11.7
+  - cuda @11.2.2
+  - cuda @8.0.61
   - $compilers
   - matrix:
     - [$multiarch]
@@ -31,9 +33,10 @@ spack:
         gcc: 'compilers/{name}-{version}'
         aocc: 'compilers/{name}-{version}'
         intel-oneapi-compilers: 'compilers/{name}-{version}'
+        tcl: 'generic/{name}-{version}'
         target=x86_64_v3: 'generic/{name}-{version}'
-        target=zen2: 'amd/{name}-{version}'
-        target=skylake_avx512: 'intel/{name}-{version}'
+        target=zen2: 'zen2/{name}-{version}'
+        target=skylake_avx512: 'skylake_avx512/{name}-{version}'
       link: run
       link_type: symlink
   modules:
@@ -43,19 +46,23 @@ spack:
       tcl:
         defaults:
           - cuda @11.7
+          - openmpi target=x86_64_v3
+          - pmix target=x86_64_v3
+          - libevent target=x86_64_v3
+          - ucx target=x86_64_v3
         exclude:
         - mariadb
-        include:
-        - slurm
-        - pmix
-        - ucx
-        - openmpi
-        - cuda
-        - aocc
-        - gcc @13.2.0
-        - gcc @11.4.0
-        - gcc @7.5.0
-        - intel-oneapi-compilers
+        #include:
+        #- slurm
+        #- pmix
+        #- ucx
+        #- openmpi
+        #- cuda
+        #- aocc
+        #- gcc @13.2.0
+        #- gcc @11.4.0
+        #- gcc @7.5.0
+        #- intel-oneapi-compilers
   concretizer:
     unify: false
     reuse: false
