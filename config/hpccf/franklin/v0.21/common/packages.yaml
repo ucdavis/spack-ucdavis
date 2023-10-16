@@ -247,6 +247,10 @@ packages:
   tbb:
     require: intel-oneapi-tbb
 
+  # xmlto does not build properly with OneAPI
+  xmlto:
+    require: "%gcc"
+
   ####
 
   all:
