@@ -11,13 +11,16 @@ if { [module-info mode load] } {
 
    if {[string equal $hostname "farm"]} {
       puts stderr "
-RStudio Server is not allowed on the head node; it must be run in 
-an interactive Slurm session. For example, you could run:
+RStudio Server is not allowed on the head node; it must be run in an interactive Slurm
+session. For example, you could run:
 
-   srun -p high --time=9:00:00 --cpus-per-task=4 --mem=5G --pty /bin/bash -l
+   srun --partition=high2 --time=9:00:00 --cpus-per-task=4 --mem=20G --pty /bin/bash -l
 
-Once your session launches, reload this module again and follow
-the provided directions to launch the server.
+Adjust the --partition= argument to your high partition of choice, and adjust the --mem=
+argument to be large enough to encompass your entire R session.
+
+Once your session launches, reload this module again and follow the provided directions to
+launch the server.
 "
       exit
    }
