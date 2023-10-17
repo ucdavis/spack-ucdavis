@@ -27,10 +27,6 @@
       "spec": "openmpi@4.1.5+romio"
     },
     {
-      "hash": "2raizu26qhr6s3ifivkho6bw4hrhxbb7",
-      "spec": "slurm@23-02-5"
-    },
-    {
       "hash": "aq3nccbfkg2jylviqwvi7nrhs234nvkg",
       "spec": "hwloc@2.9.3"
     },
@@ -1085,6 +1081,10 @@
     {
       "hash": "mw67rnmdblrostrhnczjgv3iee76rmcq",
       "spec": "vsearch"
+    },
+    {
+      "hash": "ppxjotnamkhhjsyocel44um2v3urskun",
+      "spec": "slurm@23-02-6"
     }
   ],
   "concrete_specs": {
@@ -2661,44 +2661,6 @@
       },
       "package_hash": "nmeupsigqhzfn64o6rq3tnwiostv6juj26c5dg4564xkoshzyzbq====",
       "hash": "mi6igmv7hce4icr3xac6y6p6at7dqi4o"
-    },
-    "2raizu26qhr6s3ifivkho6bw4hrhxbb7": {
-      "name": "slurm",
-      "version": "23-02-5",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "ucdavis.hpccf",
-      "parameters": {
-        "build_system": "autotools",
-        "gtk": false,
-        "hdf5": false,
-        "hwloc": true,
-        "mariadb": true,
-        "pmix": true,
-        "readline": true,
-        "restd": true,
-        "sysconfdir": "PREFIX/etc",
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "external": {
-        "path": "/share/apps/22.04/manual/slurm/23.02.5",
-        "module": null,
-        "extra_attributes": {}
-      },
-      "package_hash": "u6juiyit2cdw7ec5ndixzlrh5ilfophuo55gncphec7wbt5a5wga====",
-      "hash": "2raizu26qhr6s3ifivkho6bw4hrhxbb7"
     },
     "aq3nccbfkg2jylviqwvi7nrhs234nvkg": {
       "name": "hwloc",
@@ -99884,6 +99846,44 @@
         }
       ],
       "hash": "mw67rnmdblrostrhnczjgv3iee76rmcq"
+    },
+    "ppxjotnamkhhjsyocel44um2v3urskun": {
+      "name": "slurm",
+      "version": "23-02-6",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "ucdavis.hpccf",
+      "parameters": {
+        "build_system": "autotools",
+        "gtk": false,
+        "hdf5": false,
+        "hwloc": true,
+        "mariadb": true,
+        "pmix": true,
+        "readline": true,
+        "restd": true,
+        "sysconfdir": "PREFIX/etc",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/share/apps/22.04/manual/slurm/23.02.6",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "u6juiyit2cdw7ec5ndixzlrh5ilfophuo55gncphec7wbt5a5wga====",
+      "hash": "ppxjotnamkhhjsyocel44um2v3urskun"
     }
   }
 }
