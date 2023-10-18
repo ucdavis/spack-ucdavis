@@ -1,6 +1,6 @@
 spack:
   specs:
-  - apptainer
+  - apptainer @1.1.9
   - aria2
   - aspera-cli
   - awscli ^python@2.7
@@ -13,10 +13,11 @@ spack:
   - mark
   - nco
   - parallel
-  - pigz
   - phydrus-fortran
+  - pigz
   - rclone
   - rstudio@2022.12.0+server ^curl@7.85.0
+  - squashfs @4.5.1
   - stata
   - turbovnc
   - valgrind
@@ -29,12 +30,16 @@ spack:
         - perl
         exclude_implicits: true
         include:
-        - rstudio
-        - pigz%gcc@11.3.0
-        - turbovnc
         - gdl
+        - pigz%gcc@11.3.0
+        - rstudio
+        - squashfs
+        - turbovnc
         projections:
           rstudio: rstudio-server/{version}
+        apptainer:
+          load:
+          - squashfs
         rstudio:
           template: hpccf/farm/rstudio-server.tcl
         turbovnc:
