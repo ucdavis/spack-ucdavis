@@ -256,6 +256,9 @@ packages:
   tbb:
     require: intel-oneapi-tbb
 
+  squashfs:
+    variants: +gzip +lz4 +lzo +xz +zstd
+
   ####
 
   all:
@@ -269,6 +272,3 @@ packages:
       - fftw
     variants:
     - cuda_arch=75
-
-
-
