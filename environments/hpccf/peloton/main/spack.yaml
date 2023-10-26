@@ -60,12 +60,13 @@ spack:
       - spglib @2.0.2
       - voropp @0.4.6
       - xerces-c @3.2.4
+      - yaml-cpp
       - zlib @1.2.13
     - general_specs: &general_specs
       # misc
       - abinit @9.8.3
       - amber @20
-      - apptainer
+      - apptainer @1.1.9
       - aria2
       - aspera-cli
       - atlas @3.10.3
@@ -347,6 +348,9 @@ spack:
           template: hpccf/gcc.tcl
         slurm:
           template: hpccf/slurm.tcl
+        apptainer:
+          load:
+          - squashfs
     core:
       roots:
         tcl: $spack/../../modulefiles/spack/core/
