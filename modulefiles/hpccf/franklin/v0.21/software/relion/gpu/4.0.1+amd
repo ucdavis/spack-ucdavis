@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 11:28:45.340435
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:16.312800
 ##
 ## relion@4.0.1%gcc@11.4.0+allow_ctf_in_sagd+cuda+double~double-gpu~external_motioncor2~gpu_delay+gui~ipo~mklfft build_system=cmake build_type=RelWithDebInfo cuda_arch=75 generator=make purpose=cluster arch=linux-ubuntu22.04-zen2/unwyr74
 ##
@@ -31,6 +31,7 @@ setenv RELION_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/
 setenv RELION_TOPAZ_EXECUTABLE {/share/apps/spack/spack-ucdavis/bin/wrappers/topaz}
 setenv RELION_CTFFIND_EXECUTABLE {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ctffind-4.1.14-mcco7yaew52w3gkj5yod3ceoj2gzc6sd/bin/ctffind}
 setenv RELION_QSUB_TEMPLATE {/share/apps/22.04/spack/spack-ucdavis/templates/hpccf/franklin/relion.4.0.1.gpu.zen2.slurm.template.sh}
+setenv RELION_QSUB_COMMAND {sbatch --constraint=amd}
 
 
 try {
@@ -74,7 +75,7 @@ setenv RELION_QSUB_EXTRA4 "Account:"
 setenv RELION_QSUB_EXTRA4_HELP "SLURM --account parameter."
 
 setenv RELION_QUEUE_USE "yes"
-setenv RELION_QSUB_COMMAND "sbatch"
+#setenv RELION_QSUB_COMMAND "sbatch"
 setenv RELION_SHELL "bash"
 setenv RELION_SCRATCH_DIR "/tmp/"
 setenv RELION_QUEUE_NAME "low"
