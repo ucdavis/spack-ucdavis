@@ -28,7 +28,7 @@ setenv RELION_QSUB_EXTRA4 "Account:"
 setenv RELION_QSUB_EXTRA4_HELP "SLURM --account parameter."
 
 setenv RELION_QUEUE_USE "yes"
-setenv RELION_QSUB_COMMAND "sbatch"
+#setenv RELION_QSUB_COMMAND "sbatch"
 setenv RELION_SHELL "bash"
 setenv RELION_SCRATCH_DIR "/tmp/"
 setenv RELION_QUEUE_NAME "low"

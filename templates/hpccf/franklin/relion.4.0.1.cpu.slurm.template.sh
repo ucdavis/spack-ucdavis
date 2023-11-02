@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 #
 #-----------------------------------------
 # Multi-node, multi-thread CPU optimized .

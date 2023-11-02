@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 #
 #-----------------------------------------
 # multiple GPU with hybrid MPI + OpenMP
