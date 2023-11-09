@@ -75,7 +75,12 @@ class Relion(CMakePackage, CudaPackage):
     variant(
         "external_motioncor2",
         default=False,
-        description="Have external motioncor2 available in addition to " "Relion builtin",
+        description="Have external motioncor2 available in addition to Relion builtin",
+    )
+    variant(
+        "gctf",
+        default=False,
+        description="Install gctf dependency (requires manual download)"
     )
 
     variant("gpu_delay", default=False, description="Delay GPU start to alleviate power spikes.")
@@ -104,10 +109,10 @@ class Relion(CMakePackage, CudaPackage):
     depends_on("mkl", when="+mklfft")
     depends_on("ctffind", type="run")
     depends_on("motioncor2", type="run", when="+external_motioncor2")
+    depends_on("gctf", type="run", when="+gctf")
 
     # TODO: more externals to add
     # Spack packages needed
-    # - Gctf
     # - ResMap
     patch("0002-Simple-patch-to-fix-intel-mkl-linking.patch", when="@:3.1.1 os=ubuntu18.04")
     patch("delay_gpu_start.patch", when="@4.0.0: +gpu_delay")
