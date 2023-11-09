@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-19 15:02:49.837276
+-- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:34:30.150965
 --
 -- rnaquast@2.2.0%gcc@9.5.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/v7vzs2p
 --
@@ -42,8 +42,8 @@ prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-
 setenv("RNAQUAST_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/rnaquast-2.2.0-v7vzs2pvycjn5kk4wqaqgokzx2lsuicr")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

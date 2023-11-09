@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-05-12 12:29:35.014705
+-- Module file created by spack (https://github.com/spack/spack) on 2023-09-12 14:17:17.991912
 --
 -- parallel@20220522%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/tdt7nq6
 --
@@ -21,8 +21,8 @@ prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux
 setenv("PARALLEL_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/parallel-20220522-tdt7nq6ffctsyqxdrzsyr2skeky5qen3")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

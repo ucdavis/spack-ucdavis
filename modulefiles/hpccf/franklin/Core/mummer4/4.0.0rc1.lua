@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-19 15:02:47.918637
+-- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:34:26.692631
 --
 -- mummer4@4.0.0rc1%gcc@9.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/vxii2wi
 --
@@ -13,14 +13,18 @@ help([[MUMmer is a versatil alignment tool for DNA and protein sequences.]])
 
 
 
+prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/mummer4-4.0.0rc1-vxii2wi4aqlgui3jyme2vlcbvzsnczdn/lib", ":")
+prepend_path("CPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/mummer4-4.0.0rc1-vxii2wi4aqlgui3jyme2vlcbvzsnczdn/include", ":")
+prepend_path("C_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/mummer4-4.0.0rc1-vxii2wi4aqlgui3jyme2vlcbvzsnczdn/include", ":")
+prepend_path("CPLUS_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/mummer4-4.0.0rc1-vxii2wi4aqlgui3jyme2vlcbvzsnczdn/include", ":")
 prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/mummer4-4.0.0rc1-vxii2wi4aqlgui3jyme2vlcbvzsnczdn/./bin", ":")
 prepend_path("PKG_CONFIG_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/mummer4-4.0.0rc1-vxii2wi4aqlgui3jyme2vlcbvzsnczdn/./lib/pkgconfig", ":")
 prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/mummer4-4.0.0rc1-vxii2wi4aqlgui3jyme2vlcbvzsnczdn/./", ":")
 setenv("MUMMER4_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/mummer4-4.0.0rc1-vxii2wi4aqlgui3jyme2vlcbvzsnczdn")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

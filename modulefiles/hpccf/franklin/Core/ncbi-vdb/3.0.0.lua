@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-19 15:02:48.184030
+-- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:34:27.170781
 --
 -- ncbi-vdb@3.0.0%gcc@9.5.0~ipo build_system=cmake build_type=RelWithDebInfo arch=linux-ubuntu22.04-x86_64_v3/uzb37rh
 --
@@ -15,12 +15,16 @@ contains the interface to the VDB.]])
 
 
 
+prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/ncbi-vdb-3.0.0-uzb37rhjfjqpmayfsh6doje23eulj6ep/lib64", ":")
+prepend_path("CPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/ncbi-vdb-3.0.0-uzb37rhjfjqpmayfsh6doje23eulj6ep/include", ":")
+prepend_path("C_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/ncbi-vdb-3.0.0-uzb37rhjfjqpmayfsh6doje23eulj6ep/include", ":")
+prepend_path("CPLUS_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/ncbi-vdb-3.0.0-uzb37rhjfjqpmayfsh6doje23eulj6ep/include", ":")
 prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/ncbi-vdb-3.0.0-uzb37rhjfjqpmayfsh6doje23eulj6ep/./", ":")
 setenv("NCBI_VDB_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/ncbi-vdb-3.0.0-uzb37rhjfjqpmayfsh6doje23eulj6ep")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

@@ -65,6 +65,7 @@ spack:
     - r-dose
     - r-dplyr
     - r-dqrng
+    - r-effectsize
     - r-elliptic
     - r-emmeans
     - r-enrichplot
@@ -86,6 +87,7 @@ spack:
     - r-gbm
     - r-gdalutils
     - r-genomicfeatures
+    - r-genomicsimulation
     - r-ggbiplot
     - r-ggforce
     - r-ggfun
@@ -213,7 +215,7 @@ spack:
   - $r_bases
   modules:
     default:
-      tcl:
+      lmod:
         hash_length: 0
         exclude_implicits: true
         include:
@@ -227,6 +229,9 @@ spack:
           - '{name}'
         r:
           template: hpccf/franklin/r-stack-view.lua
+        rstudio:
+          template: hpccf/rstudio-server.lua
+          autoload: none
   view:
     r-4.1.1:
       root: /share/apps/spack/environments/r-stack/views/4.1.1

@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-05-12 12:29:35.590217
+-- Module file created by spack (https://github.com/spack/spack) on 2023-09-12 14:17:19.165513
 --
 -- ucx@1.13.1%gcc@11.3.0~assertions~backtrace_detail~cma~cuda~dc~debug~dm+examples~gdrcopy~ib_hw_tm~java~knem~logging~mlx5_dv+openmp+optimizations~parameter_checking+pic~rc~rdmacm~rocm+thread_multiple~ucg~ud~verbs~vfs~xpmem build_system=autotools libs=shared,static opt=3 patches=32fce32 simd=auto arch=linux-ubuntu22.04-x86_64_v3/nabnsut
 --
@@ -16,14 +16,17 @@ MPI/PGAS frameworks]])
 
 
 prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ucx-1.13.1-nabnsutc6uz54vi4elfxamotwewr7pxl/lib", ":")
+prepend_path("CPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ucx-1.13.1-nabnsutc6uz54vi4elfxamotwewr7pxl/include", ":")
+prepend_path("C_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ucx-1.13.1-nabnsutc6uz54vi4elfxamotwewr7pxl/include", ":")
+prepend_path("CPLUS_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ucx-1.13.1-nabnsutc6uz54vi4elfxamotwewr7pxl/include", ":")
 prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ucx-1.13.1-nabnsutc6uz54vi4elfxamotwewr7pxl/./bin", ":")
 prepend_path("PKG_CONFIG_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ucx-1.13.1-nabnsutc6uz54vi4elfxamotwewr7pxl/./lib/pkgconfig", ":")
 prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ucx-1.13.1-nabnsutc6uz54vi4elfxamotwewr7pxl/./", ":")
 setenv("UCX_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ucx-1.13.1-nabnsutc6uz54vi4elfxamotwewr7pxl")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

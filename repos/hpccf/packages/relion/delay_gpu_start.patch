@@ -1,0 +1,107 @@
+diff --git a/src/acc/cuda/cuda_ml_optimiser.h b/src/acc/cuda/cuda_ml_optimiser.h
+index e9f91329..1ace3ebb 100644
+--- a/src/acc/cuda/cuda_ml_optimiser.h
++++ b/src/acc/cuda/cuda_ml_optimiser.h
+@@ -35,6 +35,7 @@ public:
+ 	MlOptimiser *baseMLO;
+ 
+ 	int device_id;
++	float startup_delay;
+ 
+ 	int rank_shared_count;
+ 
+@@ -45,6 +46,7 @@ public:
+ 			generateProjectionPlanOnTheFly(false),
+ 			rank_shared_count(1),
+ 			device_id(-1),
++			startup_delay(baseMLO->startup_delay),
+ 			haveWarnedRefinementMem(false),
+ 			allocator(NULL)
+ 	{};
+@@ -93,6 +95,7 @@ public:
+ 	bool dataIs3D;
+ 
+ 	int device_id;
++	float startup_delay;
+ 
+ 	MlDeviceBundle *bundle;
+ 
+@@ -115,6 +118,7 @@ public:
+ 			dataIs3D(baseMLO->mymodel.data_dim == 3),
+ 			bundle(bundle),
+ 			device_id(bundle->device_id),
++			startup_delay(bundle->startup_delay),
+ #ifdef TIMING_FILES
+ 			timer(timing_fnm),
+ #endif
+diff --git a/src/ml_optimiser.cpp b/src/ml_optimiser.cpp
+index e2979ac7..74d66c49 100644
+--- a/src/ml_optimiser.cpp
++++ b/src/ml_optimiser.cpp
+@@ -458,6 +458,7 @@ void MlOptimiser::parseContinue(int argc, char **argv)
+ 
+ 	do_gpu = parser.checkOption("--gpu", "Use available gpu resources for some calculations");
+ 	gpu_ids = parser.getOption("--gpu", "Device ids for each MPI-thread","default");
++	startup_delay = textToFloat(parser.getOption("--startup_delay", "Delay the start of threads on GPUs by this much (avoid power)","0"));
+ #ifndef _CUDA_ENABLED
+ if(do_gpu)
+ 	{
+@@ -826,6 +827,7 @@ void MlOptimiser::parseInitial(int argc, char **argv)
+ 
+ 	do_gpu = parser.checkOption("--gpu", "Use available gpu resources for some calculations");
+ 	gpu_ids = parser.getOption("--gpu", "Device ids for each MPI-thread","default");
++	startup_delay = textToFloat(parser.getOption("--startup_delay", "Delay the start of threads on GPUs by this much (avoid power)","0"));
+ #ifndef _CUDA_ENABLED
+ if(do_gpu)
+ 	{
+@@ -3355,6 +3357,7 @@ void MlOptimiser::expectation()
+ 
+ 	// SHWS10052021: reduce frequency of abort check 10-fold
+ 	long int icheck= 0;
++	float reset_val_delay = startup_delay;
+ 	while (nr_particles_done < my_nr_particles)
+ 	{
+ 
+@@ -3409,6 +3412,7 @@ void MlOptimiser::expectation()
+ 		}
+ 
+ 	}
++	startup_delay = reset_val_delay;
+ 
+ 	if (verb > 0)
+ 		progress_bar(my_nr_particles);
+@@ -3924,9 +3928,20 @@ void MlOptimiser::expectationSomeParticles(long int my_first_part_id, long int m
+ 		// process multiple particles at once
+ 		exp_ipart_ThreadTaskDistributor->resize(my_last_part_id - my_first_part_id + 1, 1);
+ 		exp_ipart_ThreadTaskDistributor->reset();
++
+ 		#pragma omp parallel for num_threads(nr_threads)
+ 		for (int thread_id = 0; thread_id < nr_threads; thread_id++)
++		{
++			if(startup_delay!=0)
++			{
++				float delay =  startup_delay*thread_id;
++				// std::cerr << " delaying thread " << thread_id << " by " << delay << std::endl;
++				sleep(delay);
++			}
++
+ 			globalThreadExpectationSomeParticles(this, thread_id);
++		}
++		startup_delay = 0;
+ 	}
+ #ifdef ALTCPU
+ 	else
+diff --git a/src/ml_optimiser.h b/src/ml_optimiser.h
+index c3bc62db..d244fb35 100644
+--- a/src/ml_optimiser.h
++++ b/src/ml_optimiser.h
+@@ -458,6 +458,9 @@ public:
+ 	// Which GPU devices to use?
+ 	std::string gpu_ids;
+ 
++	// Space out the start of GPU-use by each thread by this many seconds
++	float startup_delay;
++
+ 	// Or preread all images into RAM on the leader node?
+ 	bool do_preread_images;
+ 

@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-05-12 12:29:32.996075
+-- Module file created by spack (https://github.com/spack/spack) on 2023-06-05 16:40:44.688438
 --
 -- gcc@4.9.4%gcc@9.5.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages=c,c++,fortran patches=27e9829,7112abb,f5643d9,f73de87 arch=linux-ubuntu22.04-x86_64_v3/2ezpkyy
 --
@@ -23,6 +23,9 @@ prepend_path("MODULEPATH", "/share/apps/spack/modulefiles/gcc/4.9.4")
 
 prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/gcc-4.9.4-2ezpkyy2h6jqjqiwlbwpymgas5mex2lm/lib64", ":")
 prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/gcc-4.9.4-2ezpkyy2h6jqjqiwlbwpymgas5mex2lm/lib", ":")
+prepend_path("CPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/gcc-4.9.4-2ezpkyy2h6jqjqiwlbwpymgas5mex2lm/include", ":")
+prepend_path("C_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/gcc-4.9.4-2ezpkyy2h6jqjqiwlbwpymgas5mex2lm/include", ":")
+prepend_path("CPLUS_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/gcc-4.9.4-2ezpkyy2h6jqjqiwlbwpymgas5mex2lm/include", ":")
 prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/gcc-4.9.4-2ezpkyy2h6jqjqiwlbwpymgas5mex2lm/./bin", ":")
 prepend_path("MANPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/gcc-4.9.4-2ezpkyy2h6jqjqiwlbwpymgas5mex2lm/./share/man", ":")
 prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/gcc-4.9.4-2ezpkyy2h6jqjqiwlbwpymgas5mex2lm/./", ":")
@@ -33,8 +36,8 @@ setenv("F77", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_
 setenv("GCC_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/gcc-4.9.4-2ezpkyy2h6jqjqiwlbwpymgas5mex2lm")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

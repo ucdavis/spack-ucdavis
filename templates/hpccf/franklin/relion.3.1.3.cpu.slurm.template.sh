@@ -36,6 +36,8 @@
 #Define the "gpu" partition for GPU-accelerated jobs
 #SBATCH --partition=XXXqueueXXX
 #
+#SBATCH --account=XXXextra4XXX
+#
 #SBATCH --no-requeue
 #
 #Set the number of OpenMP threads per MPI task to SLURM internal variable value

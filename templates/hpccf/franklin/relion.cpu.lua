@@ -10,7 +10,7 @@ setenv("RELION_MOTIONCOR2_EXECUTABLE", pathJoin(os.getenv("MOTIONCOR2_ROOT"), "b
 setenv("RELION_CTFFIND_EXECUTABLE", pathJoin(os.getenv("CTFFIND_ROOT"), "bin/ctffind"))
 setenv("RELION_GCTF_EXECUTABLE", pathJoin(os.getenv("GCTF_ROOT"), "bin/Gctf-v1.06_sm_30_cu8.0_x86_64"))
 
-setenv("RELION_QSUB_EXTRA_COUNT", "3")
+setenv("RELION_QSUB_EXTRA_COUNT", "4")
 
 setenv("RELION_QSUB_EXTRA1", "Email:")
 setenv("RELION_QSUB_EXTRA1_DEFAULT", user_email)
@@ -23,6 +23,9 @@ setenv("RELION_QSUB_EXTRA2_HELP", "Memory used per CPU thread, in MiB. Total mem
 setenv("RELION_QSUB_EXTRA3", "Job Time:")
 setenv("RELION_QSUB_EXTRA3_DEFAULT", "12:00:00")
 setenv("RELION_QSUB_EXTRA3_HELP", "SLURM job time limit in format HH:MM:SS or DAYS-HH:MM:SS.")
+
+setenv("RELION_QSUB_EXTRA4", "Account:")
+setenv("RELION_QSUB_EXTRA4_HELP", "SLURM --account parameter.")
 
 
 setenv("RELION_QUEUE_USE", "yes")

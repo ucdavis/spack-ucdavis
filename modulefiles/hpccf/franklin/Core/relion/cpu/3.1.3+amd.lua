@@ -1,7 +1,7 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-05-12 12:27:46.263887
+-- Module file created by spack (https://github.com/spack/spack) on 2023-07-18 08:43:39.075317
 --
--- relion@3.1.3%gcc@11.3.0+allow_ctf_in_sagd+altcpu~cuda+double~double-gpu~external_motioncor2+gui~ipo~mklfft build_system=cmake build_type=RelWithDebInfo purpose=cluster arch=linux-ubuntu22.04-zen2/i65ydry
+-- relion@3.1.3%gcc@11.3.0+allow_ctf_in_sagd+altcpu~cuda+double~double-gpu~external_motioncor2~gpu_delay+gui~ipo~mklfft build_system=cmake build_type=RelWithDebInfo purpose=cluster arch=linux-ubuntu22.04-zen2/fitiovk
 --
 
 whatis([[Name : relion]])
@@ -17,18 +17,20 @@ electron cryo-microscopy (cryo-EM).]])
 
 
 depends_on("ctffind/4.1.14+amd")
+depends_on("openmpi/4.1.4")
 
-prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-i65ydrynbkxjr7envwknyc5rme5dq7pl/lib", ":")
-prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-i65ydrynbkxjr7envwknyc5rme5dq7pl/./bin", ":")
-prepend_path("PKG_CONFIG_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-i65ydrynbkxjr7envwknyc5rme5dq7pl/./lib/pkgconfig", ":")
-prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-i65ydrynbkxjr7envwknyc5rme5dq7pl/./", ":")
+prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-fitiovk2htizf4s3nm3izfbmmtedauh3/lib", ":")
+prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-fitiovk2htizf4s3nm3izfbmmtedauh3/./bin", ":")
+prepend_path("PKG_CONFIG_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-fitiovk2htizf4s3nm3izfbmmtedauh3/./lib/pkgconfig", ":")
+prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-fitiovk2htizf4s3nm3izfbmmtedauh3/./", ":")
 prepend_path("XLOCALEDIR", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libx11-1.7.0-37huyicewgwa4it26lyc7hrklw2g6q6o/share/X11/locale", ":")
-setenv("RELION_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-i65ydrynbkxjr7envwknyc5rme5dq7pl")
+setenv("RELION_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-zen2/gcc-11.3.0/relion-3.1.3-fitiovk2htizf4s3nm3izfbmmtedauh3")
 setenv("RELION_QSUB_TEMPLATE", "/share/apps/spack/templates/hpccf/franklin/relion.3.1.3.cpu.slurm.template.sh")
+setenv("RELION_TOPAZ_EXECUTABLE", "/share/apps/spack/spack-ucdavis/bin/wrappers/topaz")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then
@@ -50,7 +52,7 @@ setenv("RELION_MOTIONCOR2_EXECUTABLE", pathJoin(os.getenv("MOTIONCOR2_ROOT"), "b
 setenv("RELION_CTFFIND_EXECUTABLE", pathJoin(os.getenv("CTFFIND_ROOT"), "bin/ctffind"))
 setenv("RELION_GCTF_EXECUTABLE", pathJoin(os.getenv("GCTF_ROOT"), "bin/Gctf-v1.06_sm_30_cu8.0_x86_64"))
 
-setenv("RELION_QSUB_EXTRA_COUNT", "3")
+setenv("RELION_QSUB_EXTRA_COUNT", "4")
 
 setenv("RELION_QSUB_EXTRA1", "Email:")
 setenv("RELION_QSUB_EXTRA1_DEFAULT", user_email)
@@ -63,6 +65,9 @@ setenv("RELION_QSUB_EXTRA2_HELP", "Memory used per CPU thread, in MiB. Total mem
 setenv("RELION_QSUB_EXTRA3", "Job Time:")
 setenv("RELION_QSUB_EXTRA3_DEFAULT", "12:00:00")
 setenv("RELION_QSUB_EXTRA3_HELP", "SLURM job time limit in format HH:MM:SS or DAYS-HH:MM:SS.")
+
+setenv("RELION_QSUB_EXTRA4", "Account:")
+setenv("RELION_QSUB_EXTRA4_HELP", "SLURM --account parameter.")
 
 
 setenv("RELION_QUEUE_USE", "yes")
