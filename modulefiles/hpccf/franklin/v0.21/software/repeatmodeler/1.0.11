@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:17.444431
+##
+## repeatmodeler@1.0.11%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/epix5ib
+##
+
+
+module-whatis {RepeatModeler is a de-novo repeat family identification and modeling package.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : repeatmodeler}
+    puts stderr {Version: 1.0.11}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {RepeatModeler is a de-novo repeat family identification and modeling}
+    puts stderr {package.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load ncbi-rmblastn/2.14.0
+    module load repeatscout/1.0.5
+} else {
+    depends-on ncbi-rmblastn/2.14.0
+    depends-on repeatscout/1.0.5
+}
+prereq ncbi-rmblastn/2.14.0
+prereq repeatscout/1.0.5
+conflict repeatmodeler
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/repeatmodeler-1.0.11-epix5ibegxko73qljaz7voiqvx2at7ts/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/repeatmodeler-1.0.11-epix5ibegxko73qljaz7voiqvx2at7ts/.}
+prepend-path --delim {:} PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-json-4.10-dj3fvollofk3b6f54ie4v4lot57vdpen/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-libwww-perl-6.68-o55j4274cvgoohhoiepchstuzy2rbvuo/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-clone-0.46-ewzkiq674jjauhoqkfztw5fhwu323jgl/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-encode-locale-1.05-t7dzfezq7pawawpsommwi3clyooy5cei/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-file-listing-6.04-k646ofvyscywyvengc4a7l3uxqexedmp/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-date-6.02-bykoq7ndm3qvbblvdg4inpbyimrymc3l/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-html-parser-3.72-4kare2ib5bucxon32wmvv2z2meyxfioh/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-html-tagset-3.20-fnhmxhchfcjj3fzmjecvefatijdud5j2/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-cookies-6.10-mwsjvjof4xa26cjaykmhcofrvesebpgj/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-message-6.44-jqlirdieoovlzrv56o4mukt64mxcok6b/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-html-1.004-leffasnzdozbaof55jxrcyf6tlvy6qls/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-lwp-mediatypes-6.02-wv4s3ye4ty2nmo3pgqfitrikzlm2aeos/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-try-tiny-0.31-a7y5gc457woklsmup7aggzyfbx4recc4/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-uri-5.08-wwxtrl4ezz2ukztiv2fjh3qlwa6ib7se/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-daemon-6.01-uewtnvkmmvvmuxbyzk7sy3qb7i2ye3qx/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-negotiate-6.01-vvwjp5pdz3tqy7tnqrwdwrxsg4jonxf6/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-net-http-6.22-ts7b52f4wzg5vdc5eeocy3itgnsvjukp/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-www-robotrules-6.02-tphlec4i7s5fr75qgjmpmvvii3bukt2m/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-text-soundex-3.05-rimuigdop7jd34v55jpersa33fhckzkb/lib/perl5}
+setenv REPEATMODELER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/repeatmodeler-1.0.11-epix5ibegxko73qljaz7voiqvx2at7ts}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

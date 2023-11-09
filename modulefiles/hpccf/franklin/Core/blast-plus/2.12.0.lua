@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-01-19 15:02:42.785676
+-- Module file created by spack (https://github.com/spack/spack) on 2023-08-28 11:34:17.361673
 --
 -- blast-plus@2.12.0%gcc@9.5.0+bzip2+freetype+gnutls+jpeg+lzo+openssl+pcre+perl+png+python~static+zlib build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/27hs6fe
 --
@@ -14,13 +14,17 @@ help([[Basic Local Alignment Search Tool.]])
 
 
 
+prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/blast-plus-2.12.0-27hs6fen67knhfqodwkca2gxyeth3ttb/lib", ":")
+prepend_path("CPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/blast-plus-2.12.0-27hs6fen67knhfqodwkca2gxyeth3ttb/include", ":")
+prepend_path("C_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/blast-plus-2.12.0-27hs6fen67knhfqodwkca2gxyeth3ttb/include", ":")
+prepend_path("CPLUS_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/blast-plus-2.12.0-27hs6fen67knhfqodwkca2gxyeth3ttb/include", ":")
 prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/blast-plus-2.12.0-27hs6fen67knhfqodwkca2gxyeth3ttb/./bin", ":")
 prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/blast-plus-2.12.0-27hs6fen67knhfqodwkca2gxyeth3ttb/./", ":")
 setenv("BLAST_PLUS_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/blast-plus-2.12.0-27hs6fen67knhfqodwkca2gxyeth3ttb")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:53.490970
+##
+## fastani@1.33%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/gp5q2ps
+##
+
+
+module-whatis {Fast, alignment-free computation of whole-genome Average Nucleotide Identity (ANI)}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : fastani}
+    puts stderr {Version: 1.33}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Fast, alignment-free computation of whole-genome Average Nucleotide}
+    puts stderr {Identity (ANI)}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load gsl/2.7.1
+} else {
+    depends-on gsl/2.7.1
+}
+prereq gsl/2.7.1
+conflict fastani
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastani-1.33-gp5q2psudf7okbf6omu5penuwvozxu6t/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastani-1.33-gp5q2psudf7okbf6omu5penuwvozxu6t/.}
+setenv FASTANI_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastani-1.33-gp5q2psudf7okbf6omu5penuwvozxu6t}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

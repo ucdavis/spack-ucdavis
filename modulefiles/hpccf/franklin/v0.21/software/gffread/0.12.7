@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:56.173028
+##
+## gffread@0.12.7%gcc@11.4.0 build_system=makefile patches=a25b092 arch=linux-ubuntu22.04-x86_64_v3/a6a5d3w
+##
+
+
+module-whatis {GFF/GTF utility providing format conversions, filtering, FASTA sequence extraction and more. The paper can be found at: DOI: 10.12688/f1000research.23297.1}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gffread}
+    puts stderr {Version: 0.12.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GFF/GTF utility providing format conversions, filtering, FASTA sequence}
+    puts stderr {extraction and more. The paper can be found at: DOI:}
+    puts stderr {10.12688/f1000research.23297.1}
+}
+
+conflict gffread
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gffread-0.12.7-a6a5d3wcngbcz4zstyjsfq7oaf275aab/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gffread-0.12.7-a6a5d3wcngbcz4zstyjsfq7oaf275aab/.}
+setenv GFFREAD_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gffread-0.12.7-a6a5d3wcngbcz4zstyjsfq7oaf275aab}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

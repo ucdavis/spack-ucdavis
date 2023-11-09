@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:05.785009
+##
+## muscle@3.8.1551%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/xfkjman
+##
+
+
+module-whatis {MUSCLE is one of the best-performing multiple alignment programs according to published benchmark tests, with accuracy and speed that are consistently better than CLUSTALW.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : muscle}
+    puts stderr {Version: 3.8.1551}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {MUSCLE is one of the best-performing multiple alignment programs}
+    puts stderr {according to published benchmark tests, with accuracy and speed that are}
+    puts stderr {consistently better than CLUSTALW.}
+}
+
+conflict muscle
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/muscle-3.8.1551-xfkjmanwtgxn5bvw5plm5d6knyy2ce4u/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/muscle-3.8.1551-xfkjmanwtgxn5bvw5plm5d6knyy2ce4u/.}
+setenv MUSCLE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/muscle-3.8.1551-xfkjmanwtgxn5bvw5plm5d6knyy2ce4u}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

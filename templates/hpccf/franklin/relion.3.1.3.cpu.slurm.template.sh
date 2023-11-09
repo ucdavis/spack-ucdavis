@@ -36,15 +36,17 @@
 #Define the "gpu" partition for GPU-accelerated jobs
 #SBATCH --partition=XXXqueueXXX
 #
+#SBATCH --account=XXXextra4XXX
+#
 #SBATCH --no-requeue
 #
 #Set the number of OpenMP threads per MPI task to SLURM internal variable value
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 #
 
-module load openmpi/4.1.4
+module unload openmpi
+module load openmpi/4.1.5+amd
 module load relion/cpu/3.1.3+amd
-module load motioncor2/1.5.0
 
 which relion_refine_mpi
 

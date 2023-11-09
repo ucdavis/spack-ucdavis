@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:05.809378
+##
+## muscle5@5.1.0%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/czccbor
+##
+
+
+module-whatis {MUSCLE is widely-used software for making multiple alignments of biological sequences. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : muscle5}
+    puts stderr {Version: 5.1.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {MUSCLE is widely-used software for making multiple alignments of}
+    puts stderr {biological sequences.}
+}
+
+conflict muscle5
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/muscle5-5.1.0-czccborswx4syvqgmziee4la2lbqrf6y/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/muscle5-5.1.0-czccborswx4syvqgmziee4la2lbqrf6y/.}
+setenv MUSCLE5_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/muscle5-5.1.0-czccborswx4syvqgmziee4la2lbqrf6y}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

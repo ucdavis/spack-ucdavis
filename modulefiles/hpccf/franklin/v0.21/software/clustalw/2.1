@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:51.674316
+##
+## clustalw@2.1%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/fbusvz2
+##
+
+
+module-whatis {Multiple alignment of nucleic acid and protein sequences.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : clustalw}
+    puts stderr {Version: 2.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Multiple alignment of nucleic acid and protein sequences.}
+}
+
+conflict clustalw
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/clustalw-2.1-fbusvz2ptnoolwakgwvovlyegiy5tvqv/bin}
+prepend-path --delim {:} ACLOCAL_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/clustalw-2.1-fbusvz2ptnoolwakgwvovlyegiy5tvqv/share/aclocal}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/clustalw-2.1-fbusvz2ptnoolwakgwvovlyegiy5tvqv/.}
+setenv CLUSTALW_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/clustalw-2.1-fbusvz2ptnoolwakgwvovlyegiy5tvqv}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

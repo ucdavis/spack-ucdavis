@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:58.509497
+##
+## infernal@1.1.4%gcc@11.4.0~mpi build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/vjrwbus
+##
+## Configure options: --disable-mpi
+##
+
+
+module-whatis {Infernal (INFERence of RNA ALignment) is for searching DNA sequence databases for RNA structure and sequence similarities. It is an implementation of a special case of profile stochastic context-free grammars called covariance models (CMs).}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : infernal}
+    puts stderr {Version: 1.1.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Infernal (INFERence of RNA ALignment) is for searching DNA sequence}
+    puts stderr {databases for RNA structure and sequence similarities. It is an}
+    puts stderr {implementation of a special case of profile stochastic context-free}
+    puts stderr {grammars called covariance models (CMs).}
+}
+
+conflict infernal
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/infernal-1.1.4-vjrwbuskdku2gqnc6fo2ejh5u4autvdv/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/infernal-1.1.4-vjrwbuskdku2gqnc6fo2ejh5u4autvdv/share/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/infernal-1.1.4-vjrwbuskdku2gqnc6fo2ejh5u4autvdv/.}
+setenv INFERNAL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/infernal-1.1.4-vjrwbuskdku2gqnc6fo2ejh5u4autvdv}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

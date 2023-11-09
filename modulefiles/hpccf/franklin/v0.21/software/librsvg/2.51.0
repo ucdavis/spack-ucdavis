@@ -1,0 +1,57 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:01.703090
+##
+## librsvg@2.51.0%gcc@11.4.0~doc build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/2cscnks
+##
+## Configure options: --disable-gtk-doc GTKDOC_MKPDF=/bin/true GTKDOC_REBASE=/bin/true GTKDOC_CHECK_PATH=/bin/true
+##
+
+
+module-whatis {Library to render SVG files using Cairo}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : librsvg}
+    puts stderr {Version: 2.51.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Library to render SVG files using Cairo}
+}
+
+conflict librsvg
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/librsvg-2.51.0-2cscnksuvv6tyy4ipbivqgdw5d6ltlpp/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/librsvg-2.51.0-2cscnksuvv6tyy4ipbivqgdw5d6ltlpp/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/librsvg-2.51.0-2cscnksuvv6tyy4ipbivqgdw5d6ltlpp/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/librsvg-2.51.0-2cscnksuvv6tyy4ipbivqgdw5d6ltlpp/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/librsvg-2.51.0-2cscnksuvv6tyy4ipbivqgdw5d6ltlpp/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/librsvg-2.51.0-2cscnksuvv6tyy4ipbivqgdw5d6ltlpp/share/man}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/librsvg-2.51.0-2cscnksuvv6tyy4ipbivqgdw5d6ltlpp/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/librsvg-2.51.0-2cscnksuvv6tyy4ipbivqgdw5d6ltlpp/.}
+prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zaqf7dicjkl3i2sg2ciot74vsehx7k47/share/X11/locale}
+prepend-path --delim {:} XDG_DATA_DIRS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gobject-introspection-1.76.1-p7ovpnwgkhdrynjsf2zetdapj4hwgkkr/share}
+prepend-path --delim {:} GI_TYPELIB_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gobject-introspection-1.76.1-p7ovpnwgkhdrynjsf2zetdapj4hwgkkr/lib/girepository-1.0}
+prepend-path --delim {:} XDG_DATA_DIRS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/shared-mime-info-1.10-dstkd5iu3aqbrgwtgbaoz5dfg6sph33k/share}
+prepend-path --delim {:} XDG_DATA_DIRS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdk-pixbuf-2.42.10-4acmq2ozgbu5gjch5p54fthaowwu43zf/share}
+prepend-path --delim {:} GI_TYPELIB_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdk-pixbuf-2.42.10-4acmq2ozgbu5gjch5p54fthaowwu43zf/lib/girepository-1.0}
+prepend-path --delim {:} XDG_DATA_DIRS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/harfbuzz-7.3.0-qydks2c5unty2nl6v6ppaloxifbjr6ov/share}
+prepend-path --delim {:} GI_TYPELIB_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/harfbuzz-7.3.0-qydks2c5unty2nl6v6ppaloxifbjr6ov/lib/girepository-1.0}
+prepend-path --delim {:} XDG_DATA_DIRS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pango-1.50.13-ulgoaxm2xovaz4xwfzaxj7vzs4mhlvpx/share}
+prepend-path --delim {:} GI_TYPELIB_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pango-1.50.13-ulgoaxm2xovaz4xwfzaxj7vzs4mhlvpx/lib/girepository-1.0}
+prepend-path --delim {:} XDG_DATA_DIRS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/librsvg-2.51.0-2cscnksuvv6tyy4ipbivqgdw5d6ltlpp/share}
+setenv LIBRSVG_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/librsvg-2.51.0-2cscnksuvv6tyy4ipbivqgdw5d6ltlpp}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

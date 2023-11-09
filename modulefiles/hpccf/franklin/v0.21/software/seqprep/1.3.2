@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:19.129723
+##
+## seqprep@1.3.2%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/wnplxtc
+##
+
+
+module-whatis {SeqPrep is a program to merge paired end Illumina reads that are overlapping into a single longer read.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : seqprep}
+    puts stderr {Version: 1.3.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {SeqPrep is a program to merge paired end Illumina reads that are}
+    puts stderr {overlapping into a single longer read.}
+}
+
+conflict seqprep
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/seqprep-1.3.2-wnplxtcjrhyaxgcctadxixuehg5v3vni/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/seqprep-1.3.2-wnplxtcjrhyaxgcctadxixuehg5v3vni/.}
+setenv SEQPREP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/seqprep-1.3.2-wnplxtcjrhyaxgcctadxixuehg5v3vni}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

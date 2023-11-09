@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:19.292638
+##
+## slim@4.0.1%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/t2vph24
+##
+
+
+module-whatis {SLiM is an evolutionary simulation framework that combines a powerful engine for population genetic simulations with the capability of modeling arbitrarily complex evolutionary scenarios.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : slim}
+    puts stderr {Version: 4.0.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {SLiM is an evolutionary simulation framework that combines a powerful}
+    puts stderr {engine for population genetic simulations with the capability of}
+    puts stderr {modeling arbitrarily complex evolutionary scenarios.}
+}
+
+conflict slim
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/slim-4.0.1-t2vph24q33vnx7nobxtkcpwksnahqgzd/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/slim-4.0.1-t2vph24q33vnx7nobxtkcpwksnahqgzd/.}
+setenv SLIM_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/slim-4.0.1-t2vph24q33vnx7nobxtkcpwksnahqgzd}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

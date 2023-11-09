@@ -1,0 +1,50 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:20.567174
+##
+## valgrind@3.20.0%gcc@11.4.0+boost+mpi+only64bit~ubsan build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3/hkftdwr
+##
+## Configure options: --enable-shared --enable-static --enable-only64bit
+##
+
+
+module-whatis {An instrumentation framework for building dynamic analysis.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : valgrind}
+    puts stderr {Version: 3.20.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {An instrumentation framework for building dynamic analysis. There are}
+    puts stderr {Valgrind tools that can automatically detect many memory management and}
+    puts stderr {threading bugs, and profile your programs in detail. You can also use}
+    puts stderr {Valgrind to build new tools. Valgrind is Open Source / Free Software,}
+    puts stderr {and is freely available under the GNU General Public License, version 2.}
+}
+
+conflict valgrind
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/valgrind-3.20.0-hkftdwrss2dvhhu73nvvhe7qazzk2cnd/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/valgrind-3.20.0-hkftdwrss2dvhhu73nvvhe7qazzk2cnd/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/valgrind-3.20.0-hkftdwrss2dvhhu73nvvhe7qazzk2cnd/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/valgrind-3.20.0-hkftdwrss2dvhhu73nvvhe7qazzk2cnd/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/valgrind-3.20.0-hkftdwrss2dvhhu73nvvhe7qazzk2cnd/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/valgrind-3.20.0-hkftdwrss2dvhhu73nvvhe7qazzk2cnd/share/man}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/valgrind-3.20.0-hkftdwrss2dvhhu73nvvhe7qazzk2cnd/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/valgrind-3.20.0-hkftdwrss2dvhhu73nvvhe7qazzk2cnd/.}
+setenv VALGRIND_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/valgrind-3.20.0-hkftdwrss2dvhhu73nvvhe7qazzk2cnd}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

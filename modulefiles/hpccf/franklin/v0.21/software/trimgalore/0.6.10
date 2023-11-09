@@ -1,0 +1,50 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:20.189237
+##
+## trimgalore@0.6.10%gcc@11.4.0~igzip~pigz build_system=generic arch=linux-ubuntu22.04-x86_64_v3/mhi2ida
+##
+
+
+module-whatis {Trim Galore! is a wrapper around Cutadapt and FastQC to consistently apply adapter and quality trimming to FastQ files, with extra functionality for RRBS data.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : trimgalore}
+    puts stderr {Version: 0.6.10}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Trim Galore! is a wrapper around Cutadapt and FastQC to consistently}
+    puts stderr {apply adapter and quality trimming to FastQ files, with extra}
+    puts stderr {functionality for RRBS data.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-cutadapt/4.4
+} else {
+    depends-on py-cutadapt/4.4
+}
+prereq py-cutadapt/4.4
+conflict trimgalore
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/trimgalore-0.6.10-mhi2idatenajed5dphd4rmf7vwpaxvec/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/trimgalore-0.6.10-mhi2idatenajed5dphd4rmf7vwpaxvec/.}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cutadapt-4.4-t4yyleg4rehhdmuqnlmzi5oiht5j7cj5/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-dnaio-0.10.0-xahc7zrz27qxkaug2v43s6ztflagt4s3/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-setuptools-68.0.0-hvwaln64nmuvlkpv6xwqs5cvdhmzygfl/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-xopen-1.6.0-jzuviut4vknvqvgdzipov2djnhb5k6al/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-isal-1.1.0-hzvavlz26bp7bkxdg4zzqchqkg7cy7f2/lib/python3.11/site-packages}
+setenv TRIMGALORE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/trimgalore-0.6.10-mhi2idatenajed5dphd4rmf7vwpaxvec}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

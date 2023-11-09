@@ -1,0 +1,51 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-13 18:13:33.128558
+##
+## gcc@13.2.0%gcc@11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages=c,c++,fortran arch=linux-ubuntu22.04-x86_64_v3/jgnkbyf
+##
+## Configure options: --with-pkgversion=Spack GCC --with-bugurl=https://github.com/spack/spack/issues --disable-multilib --enable-languages=c,c++,fortran --disable-nls --disable-canonical-system-headers --with-system-zlib --with-zstd-include=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.5-ty7czvom3k225wd5nnuqvvxflbh2lnif/include --with-zstd-lib=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.5-ty7czvom3k225wd5nnuqvvxflbh2lnif/lib --enable-bootstrap --with-mpfr-include=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.0-ixzwbvh42mmndfth3fr6kojptuxnpktc/include --with-mpfr-lib=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.0-ixzwbvh42mmndfth3fr6kojptuxnpktc/lib --with-gmp-include=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-6vzcan3wt43o7khwtvbakwwv4mib6ilv/include --with-gmp-lib=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-6vzcan3wt43o7khwtvbakwwv4mib6ilv/lib --with-mpc-include=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpc-1.3.1-5mfijtxkmbndddnowakfls5mjx2ix6eu/include --with-mpc-lib=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpc-1.3.1-5mfijtxkmbndddnowakfls5mjx2ix6eu/lib --without-isl --with-stage1-ldflags=-Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm/lib64 -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-6vzcan3wt43o7khwtvbakwwv4mib6ilv/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpc-1.3.1-5mfijtxkmbndddnowakfls5mjx2ix6eu/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.0-ixzwbvh42mmndfth3fr6kojptuxnpktc/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.3-6bawsidwttj6jecmtk6u24gmu6wypvbp/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.5-ty7czvom3k225wd5nnuqvvxflbh2lnif/lib --with-boot-ldflags=-Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm/lib64 -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-6vzcan3wt43o7khwtvbakwwv4mib6ilv/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpc-1.3.1-5mfijtxkmbndddnowakfls5mjx2ix6eu/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.0-ixzwbvh42mmndfth3fr6kojptuxnpktc/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.3-6bawsidwttj6jecmtk6u24gmu6wypvbp/lib -Wl,-rpath,/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.5-ty7czvom3k225wd5nnuqvvxflbh2lnif/lib -static-libstdc++ -static-libgcc --with-build-config=spack
+##
+
+
+module-whatis {The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gcc}
+    puts stderr {Version: 13.2.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The GNU Compiler Collection includes front ends for C, C++, Objective-C,}
+    puts stderr {Fortran, Ada, and Go, as well as libraries for these languages.}
+}
+
+conflict gcc
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm/lib64}
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm/share/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm/.}
+setenv CC {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm/bin/gcc}
+setenv CXX {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm/bin/g++}
+setenv FC {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm/bin/gfortran}
+setenv F77 {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm/bin/gfortran}
+setenv GCC_ROOT {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-jgnkbyfwxvxneaufyftvbjuxbxdl5ulm}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

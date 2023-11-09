@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:14.891394
+##
+## raxml@8.2.12%gcc@11.4.0+mpi~pthreads build_system=generic patches=8ba0510 arch=linux-ubuntu22.04-x86_64_v3/sueoxmt
+##
+
+
+module-whatis {RAxML (Randomized Axelerated Maximum Likelihood) is a program for sequential and parallel Maximum Likelihood based inference of large phylogenetic trees. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : raxml}
+    puts stderr {Version: 8.2.12}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {RAxML (Randomized Axelerated Maximum Likelihood) is a program for}
+    puts stderr {sequential and parallel Maximum Likelihood based inference of large}
+    puts stderr {phylogenetic trees.}
+}
+
+conflict raxml
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/raxml-8.2.12-sueoxmte5kxrhk6e5v7igjqva6bwreqg/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/raxml-8.2.12-sueoxmte5kxrhk6e5v7igjqva6bwreqg/.}
+setenv RAXML_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/raxml-8.2.12-sueoxmte5kxrhk6e5v7igjqva6bwreqg}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

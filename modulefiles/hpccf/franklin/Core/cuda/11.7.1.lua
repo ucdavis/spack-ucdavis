@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-05-12 12:29:32.701863
+-- Module file created by spack (https://github.com/spack/spack) on 2023-09-12 14:17:16.824319
 --
 -- cuda@11.7.1%gcc@11.3.0~allow-unsupported-compilers~dev build_system=generic arch=linux-ubuntu22.04-x86_64_v3/pkcc5tt
 --
@@ -19,14 +19,17 @@ https://docs.nvidia.com/cuda/ for details.]])
 
 
 prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/cuda-11.7.1-pkcc5ttbgrknfycfjj3v2lezjcdnlth4/lib64", ":")
+prepend_path("CPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/cuda-11.7.1-pkcc5ttbgrknfycfjj3v2lezjcdnlth4/include", ":")
+prepend_path("C_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/cuda-11.7.1-pkcc5ttbgrknfycfjj3v2lezjcdnlth4/include", ":")
+prepend_path("CPLUS_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/cuda-11.7.1-pkcc5ttbgrknfycfjj3v2lezjcdnlth4/include", ":")
 prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/cuda-11.7.1-pkcc5ttbgrknfycfjj3v2lezjcdnlth4/./bin", ":")
 prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/cuda-11.7.1-pkcc5ttbgrknfycfjj3v2lezjcdnlth4/./", ":")
 setenv("CUDA_HOME", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/cuda-11.7.1-pkcc5ttbgrknfycfjj3v2lezjcdnlth4")
 setenv("CUDA_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/cuda-11.7.1-pkcc5ttbgrknfycfjj3v2lezjcdnlth4")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

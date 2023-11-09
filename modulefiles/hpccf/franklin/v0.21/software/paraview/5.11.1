@@ -1,0 +1,65 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:09.365491
+##
+## paraview@5.11.1%gcc@11.4.0~adios2~advanced_debug~catalyst~cuda+development_files~examples~eyedomelighting~fortran~hdf5~ipo+kits~libcatalyst+mpi+opengl2~osmesa~pagosa~python~qt~raytracing~rocm+shared~tbb~visitbridge build_edition=canonical build_system=cmake build_type=Release generator=ninja patches=02253c7,acb3805 use_vtkm=default arch=linux-ubuntu22.04-x86_64_v3/4g7fe7v
+##
+## Configure options: -DVTK_OPENGL_HAS_OSMESA:BOOL=OFF -DVTK_USE_X:BOOL=ON -DPARAVIEW_INSTALL_DEVELOPMENT_FILES:BOOL=ON -DBUILD_TESTING:BOOL=OFF -DOpenGL_GL_PREFERENCE:STRING=LEGACY -DPARAVIEW_ENABLE_VISITBRIDGE:BOOL=OFF -DVISIT_BUILD_READER_Silo:BOOL=OFF -DVTK_MODULE_USE_EXTERNAL_VTK_verdict:BOOL=OFF -DVTK_MODULE_USE_EXTERNAL_ParaView_vtkcatalyst:BOOL=OFF -DVTK_MODULE_USE_EXTERNAL_VTK_ioss:BOOL=OFF -DVTK_MODULE_USE_EXTERNAL_VTK_exprtk:BOOL=OFF -DVTK_MODULE_USE_EXTERNAL_VTK_fmt:BOOL=OFF -DPARAVIEW_BUILD_EDITION:STRING=CANONICAL -DPARAVIEW_USE_QT:BOOL=OFF -DPARAVIEW_BUILD_WITH_EXTERNAL=ON -DPARAVIEW_ENABLE_EXAMPLES:BOOL=OFF -DVTK_MODULE_USE_EXTERNAL_ParaView_cgns=OFF -DVTK_MODULE_USE_EXTERNAL_VTK_gl2ps=OFF -DVTK_MODULE_USE_EXTERNAL_VTK_libharu=OFF -DVTK_MODULE_USE_EXTERNAL_VTK_utf8=OFF -DPARAVIEW_ENABLE_PYTHON:BOOL=OFF -DPARAVIEW_USE_MPI:BOOL=ON -DMPIEXEC:FILEPATH=/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/bin/mpiexec -DMPI_CXX_COMPILER:PATH=/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/bin/mpic++ -DMPI_C_COMPILER:PATH=/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/bin/mpicc -DMPI_Fortran_COMPILER:PATH=/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/bin/mpif90 -DPARAVIEW_BUILD_SHARED_LIBS:BOOL=ON -DPARAVIEW_USE_CUDA:BOOL=OFF -DPARAVIEW_BUILD_WITH_KITS:BOOL=ON -DPARAVIEW_USE_HIP:BOOL=OFF -DPARAVIEW_ENABLE_RAYTRACING:BOOL=OFF -DVTK_ENABLE_OSPRAY:BOOL=OFF -DVTKOSPRAY_ENABLE_DENOISER:BOOL=OFF
+##
+
+
+module-whatis {ParaView is an open-source, multi-platform data analysis and visualization application. This package includes the Catalyst in-situ library for versions 5.7 and greater, otherwise use the catalyst package.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : paraview}
+    puts stderr {Version: 5.11.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {ParaView is an open-source, multi-platform data analysis and}
+    puts stderr {visualization application. This package includes the Catalyst in-situ}
+    puts stderr {library for versions 5.7 and greater, otherwise use the catalyst}
+    puts stderr {package.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load bzip2/1.0.8
+    module load eigen/3.4.0
+    module load nlohmann-json/3.11.2
+} else {
+    depends-on bzip2/1.0.8
+    depends-on eigen/3.4.0
+    depends-on nlohmann-json/3.11.2
+}
+prereq bzip2/1.0.8
+prereq eigen/3.4.0
+prereq nlohmann-json/3.11.2
+conflict paraview
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/.}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/lib/python3.11/site-packages}
+prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zaqf7dicjkl3i2sg2ciot74vsehx7k47/share/X11/locale}
+setenv PROJ_LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/proj-8.1.0-nrswii6eg6hrbrmqgfc6muprpwufg5j5/share/proj}
+setenv ParaView_DIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd}
+setenv PARAVIEW_VTK_DIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/lib/cmake/paraview-5.11/vtk}
+prepend-path --delim {:} LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/lib}
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/lib}
+setenv PARAVIEW_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-05-12 12:27:46.154597
+-- Module file created by spack (https://github.com/spack/spack) on 2023-05-30 13:50:16.411128
 --
 -- py-relion-helper@0.2%gcc@11.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/2yrfnnk
 --
@@ -24,8 +24,8 @@ prepend_path("PYTHONPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu
 setenv("PY_RELION_HELPER_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/py-relion-helper-0.2-2yrfnnkqkc53v6nyfleetnzk3tebk7fq")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

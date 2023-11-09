@@ -3,6 +3,8 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+import os
+
 from spack.package import *
 
 
@@ -16,6 +18,7 @@ class Relion(CMakePackage, CudaPackage):
     git = "https://github.com/3dem/relion.git"
     url = "https://github.com/3dem/relion/archive/3.1.3.zip"
 
+    version("5.0-beta", branch="ver5.0")
     version("4.0.1",
             commit="ec417f5",
             preferred=True)
@@ -72,8 +75,22 @@ class Relion(CMakePackage, CudaPackage):
     variant(
         "external_motioncor2",
         default=False,
-        description="Have external motioncor2 available in addition to " "Relion builtin",
+        description="Have external motioncor2 available in addition to Relion builtin",
     )
+    variant(
+        "gctf",
+        default=False,
+        description="Install gctf dependency (requires manual download)"
+    )
+
+    variant("gpu_delay", default=False, description="Delay GPU start to alleviate power spikes.")
+    variant("conda_python", 
+            default='CONDA_PYTHON', 
+            validator=lambda cls_name, var_name, v: os.path.isfile(v[0]) and os.access(v[0], os.X_OK),
+            when="@5:")
+    variant("torch_home",
+            default='TORCH_HOME',
+            when="@5:")
 
     depends_on("mpi")
     depends_on("cmake@3:", type="build")
@@ -92,12 +109,13 @@ class Relion(CMakePackage, CudaPackage):
     depends_on("mkl", when="+mklfft")
     depends_on("ctffind", type="run")
     depends_on("motioncor2", type="run", when="+external_motioncor2")
+    depends_on("gctf", type="run", when="+gctf")
 
     # TODO: more externals to add
     # Spack packages needed
-    # - Gctf
     # - ResMap
     patch("0002-Simple-patch-to-fix-intel-mkl-linking.patch", when="@:3.1.1 os=ubuntu18.04")
+    patch("delay_gpu_start.patch", when="@4.0.0: +gpu_delay")
 
     def cmake_args(self):
         args = [
@@ -139,6 +157,16 @@ class Relion(CMakePackage, CudaPackage):
                 "-DFORCE_OWN_TBB=OFF",
                 self.define("TBB_INCLUDE_DIR", self.spec["tbb"].headers.directories[0]),
                 self.define("TBB_LIBRARY", self.spec["tbb"].libs.directories[0])
+            ]
+
+        if 'conda_python' in self.spec.variants:
+            args += [
+                self.define_from_variant("PYTHON_EXE_PATH", "conda_python")
+            ]
+
+        if "torch_home" in self.spec.variants:
+            args += [
+                self.define_from_variant("TORCH_HOME_PATH", "torch_home")
             ]
 
         return args

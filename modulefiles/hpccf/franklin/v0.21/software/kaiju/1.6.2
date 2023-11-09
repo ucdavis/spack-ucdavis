@@ -1,0 +1,53 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:00.502530
+##
+## kaiju@1.6.2%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/gnplutc
+##
+
+
+module-whatis {Kaiju is a program for the taxonomic classification of high-throughput sequencing reads.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : kaiju}
+    puts stderr {Version: 1.6.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Kaiju is a program for the taxonomic classification of high-throughput}
+    puts stderr {sequencing reads.}
+}
+
+conflict kaiju
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kaiju-1.6.2-gnplutcsw4lpbgpn4q2eca2kfvtyqzsc/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kaiju-1.6.2-gnplutcsw4lpbgpn4q2eca2kfvtyqzsc/.}
+prepend-path --delim {:} PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-compress-2.204-mb6d544vnjtsy2cfcn6p5v3bee2cns62/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-compress-raw-bzip2-2.204-eep2jc7grc5xrpqp2vs44wgfnr2ovxgk/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-compress-raw-zlib-2.204-zem4a7qaejfdy55vhsahzhausmsnmigh/lib/perl5}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-htseq-0.11.2-dc3zkgh7rzm4fxb7cnrykm55fu3e5s3t/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-matplotlib-3.8.0-qkq4nm72nrtixat7jsf26hsft7wobdxd/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-contourpy-1.0.7-j5nqmef7f6r2nwbxtjktkfuxwyf4rees/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numpy-1.25.2-wnu35glxayp2uswy7dizfvgqytul6tcd/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-setuptools-63.4.3-gerjumbuhqoehxurdobbuortjepqbgdk/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cycler-0.11.0-gkgfgboo7mxgso5ih7n5zzl3hp5xen6k/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-fonttools-4.39.4-szekdscngprthckt3z6glxl5mafkw62k/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-kiwisolver-1.4.4-t6sx4yqbdbg3xfgj7aerossyx5yq2gsu/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-packaging-23.1-pmrqnpodguoeqmo2ssqrydgdzc3qwrxe/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pillow-10.0.0-vdehid7sbsy3rysf4keeajgv4s5qzejt/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyparsing-3.0.9-gxq3vmdndt3ovo5y4tsvdpq2piwyed3g/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-python-dateutil-2.8.2-vzjgfcxspf6uuaygw45cugx23xzjshco/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-six-1.16.0-wlmiepptfys2ktep3nj6z2t5ok3iw3vg/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pysam-0.21.0-dxkkahurehxui55ui5piiv5hr3d6hwjx/lib/python3.11/site-packages}
+setenv KAIJU_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kaiju-1.6.2-gnplutcsw4lpbgpn4q2eca2kfvtyqzsc}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

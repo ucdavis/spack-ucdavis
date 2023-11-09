@@ -1,0 +1,57 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:08.375306
+##
+## orthofinder@2.5.5%gcc@11.4.0~blast~iqtree~mmseqs2~muscle~raxml~raxml-ng build_system=generic arch=linux-ubuntu22.04-x86_64_v3/nzgilbi
+##
+
+
+module-whatis {OrthoFinder is a fast, accurate and comprehensive analysis tool for comparative genomics.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : orthofinder}
+    puts stderr {Version: 2.5.5}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {OrthoFinder is a fast, accurate and comprehensive analysis tool for}
+    puts stderr {comparative genomics. It finds orthologues and orthogroups infers rooted}
+    puts stderr {gene trees for all orthogroups and infers a rooted species tree for the}
+    puts stderr {species being analysed. OrthoFinder also provides comprehensive}
+    puts stderr {statistics for comparative genomic analyses. OrthoFinder is simple to}
+    puts stderr {use and all you need to run it is a set of protein sequence files (one}
+    puts stderr {per species) in FASTA format.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load fasttree/2.1.11
+    module load mafft/7.505
+} else {
+    depends-on fasttree/2.1.11
+    depends-on mafft/7.505
+}
+prereq fasttree/2.1.11
+prereq mafft/7.505
+conflict orthofinder
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthofinder-2.5.5-nzgilbilwee4bei4xlchrnjy75e5tkiw/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthofinder-2.5.5-nzgilbilwee4bei4xlchrnjy75e5tkiw/.}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numpy-1.25.2-vcmulzidmbvifm7idcfedcwkrf4p2w44/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-setuptools-63.4.3-hsixzjesbrxime2qpwqaxwdkrwbz22vq/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-scipy-1.11.2-p46kbevbvkrsbexurcsxzv7huk3tbot6/lib/python3.11/site-packages}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthofinder-2.5.5-nzgilbilwee4bei4xlchrnjy75e5tkiw/bin}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthofinder-2.5.5-nzgilbilwee4bei4xlchrnjy75e5tkiw/bin/tools}
+setenv ORTHOFINDER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthofinder-2.5.5-nzgilbilwee4bei4xlchrnjy75e5tkiw}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

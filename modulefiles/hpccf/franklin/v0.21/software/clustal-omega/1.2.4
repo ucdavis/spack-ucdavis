@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:51.623111
+##
+## clustal-omega@1.2.4%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/dgofc5t
+##
+
+
+module-whatis {Clustal Omega: the last alignment program you'll ever need.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : clustal-omega}
+    puts stderr {Version: 1.2.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Clustal Omega: the last alignment program you'll ever need.}
+}
+
+conflict clustal-omega
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/clustal-omega-1.2.4-dgofc5t2mbg742dxoubkblaezzag6wiq/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/clustal-omega-1.2.4-dgofc5t2mbg742dxoubkblaezzag6wiq/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/clustal-omega-1.2.4-dgofc5t2mbg742dxoubkblaezzag6wiq/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/clustal-omega-1.2.4-dgofc5t2mbg742dxoubkblaezzag6wiq/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/clustal-omega-1.2.4-dgofc5t2mbg742dxoubkblaezzag6wiq/bin}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/clustal-omega-1.2.4-dgofc5t2mbg742dxoubkblaezzag6wiq/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/clustal-omega-1.2.4-dgofc5t2mbg742dxoubkblaezzag6wiq/.}
+setenv CLUSTAL_OMEGA_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/clustal-omega-1.2.4-dgofc5t2mbg742dxoubkblaezzag6wiq}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

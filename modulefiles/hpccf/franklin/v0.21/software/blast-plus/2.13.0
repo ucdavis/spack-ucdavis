@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:47.266538
+##
+## blast-plus@2.13.0%gcc@11.4.0+bzip2+freetype+gnutls+jpeg+lzo+openssl+pcre+perl+png+python~static+zlib build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/spcghx3
+##
+## Configure options: --with-bin-release --without-debug --with-mt --without-boost --with-64 --with-dll --without-static --without-static-exe --with-jpeg=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libjpeg-turbo-3.0.0-6zvogxjoqaqdqiekv33lmt4xvzsaaaz7 --with-png=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libpng-1.6.39-p3c2fzu44lvvz2ihmjul2ghrkrzo6vgo --with-freetype=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/freetype-2.11.1-idjnpjirxoxggguue6bqsacm2jlc56xu --without-hdf5 --with-z=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.3-6bawsidwttj6jecmtk6u24gmu6wypvbp --with-bz2=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-c3vnkum6unfohk23dfiw4avkknpmx74h --with-lzo=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lzo-2.10-uyxxxvbl6adxw7kh4v532ttmmjonfr54 --with-gnutls=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnutls-3.7.8-tl3tykvgbmtkp3oxi54sousv4zigghha --with-openssl=/usr --with-pcre=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pcre-8.45-w5sysjxegb4dc55jeq7yhbyxm6s5o7t4 --with-python=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/python-3.11.6-rsiojxhe6noyzj3r3vapbkydvqu33nc2 --with-perl=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.38.0-lfl2a73mxtea55vpdeecal5tjmgr3plf
+##
+
+
+module-whatis {Basic Local Alignment Search Tool.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : blast-plus}
+    puts stderr {Version: 2.13.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Basic Local Alignment Search Tool.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load bzip2/1.0.8
+} else {
+    depends-on bzip2/1.0.8
+}
+prereq bzip2/1.0.8
+conflict blast-plus
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/blast-plus-2.13.0-spcghx3zhezhl5xmrodhy26q52fwgrt5/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/blast-plus-2.13.0-spcghx3zhezhl5xmrodhy26q52fwgrt5/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/blast-plus-2.13.0-spcghx3zhezhl5xmrodhy26q52fwgrt5/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/blast-plus-2.13.0-spcghx3zhezhl5xmrodhy26q52fwgrt5/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/blast-plus-2.13.0-spcghx3zhezhl5xmrodhy26q52fwgrt5/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/blast-plus-2.13.0-spcghx3zhezhl5xmrodhy26q52fwgrt5/.}
+setenv BLAST_PLUS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/blast-plus-2.13.0-spcghx3zhezhl5xmrodhy26q52fwgrt5}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

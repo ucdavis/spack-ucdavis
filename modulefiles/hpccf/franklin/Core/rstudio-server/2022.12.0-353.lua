@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-03-17 11:41:09.346122
+-- Module file created by spack (https://github.com/spack/spack) on 2023-09-12 14:17:18.819532
 --
 -- rstudio@2022.12.0-353%gcc@11.3.0~ipo~notebook+server build_system=cmake build_type=RelWithDebInfo patches=0bea752 arch=linux-ubuntu22.04-x86_64_v3/iyxyinp
 --
@@ -13,6 +13,7 @@ whatis([[Configure options : -DRSTUDIO_PACKAGE_BUILD=Yes -DRSTUDIO_USE_SYSTEM_YA
 help([[RStudio is an integrated development environment (IDE) for R.]])
 
 
+depends_on("openjdk/11.0.17_8")
 depends_on("r/4.2.0")
 
 prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/rstudio-2022.12.0-353-iyxyinpo3lt4tk3lkzofeugje2a6phq5/./bin", ":")
@@ -29,8 +30,8 @@ setenv("R_HOME", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_
 setenv("RSTUDIO_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/rstudio-2022.12.0-353-iyxyinpo3lt4tk3lkzofeugje2a6phq5")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

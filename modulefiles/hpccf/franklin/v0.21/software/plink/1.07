@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:10.197498
+##
+## plink@1.07%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/xw4vhig
+##
+
+
+module-whatis {PLINK is a free, open-source whole genome association analysis toolset, designed to perform a range of basic, large-scale analyses in a computationally efficient manner.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : plink}
+    puts stderr {Version: 1.07}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {PLINK is a free, open-source whole genome association analysis toolset,}
+    puts stderr {designed to perform a range of basic, large-scale analyses in a}
+    puts stderr {computationally efficient manner.}
+}
+
+conflict plink
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/plink-1.07-xw4vhig4twkuzyic7uuhji7y7vu2qiyp/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/plink-1.07-xw4vhig4twkuzyic7uuhji7y7vu2qiyp/.}
+setenv PLINK_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/plink-1.07-xw4vhig4twkuzyic7uuhji7y7vu2qiyp}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,41 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:04.864107
+##
+## minimap2@2.26%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/y3vmcty
+##
+
+
+module-whatis {Minimap2 is a versatile sequence alignment program that aligns DNA or mRNA sequences against a large reference database. Mappy provides a convenient interface to minimap2.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : minimap2}
+    puts stderr {Version: 2.26}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Minimap2 is a versatile sequence alignment program that aligns DNA or}
+    puts stderr {mRNA sequences against a large reference database. Mappy provides a}
+    puts stderr {convenient interface to minimap2.}
+}
+
+conflict minimap2
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/minimap2-2.26-y3vmcty55ylj3pkfcqdyfwkcedow4oqq/lib}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/minimap2-2.26-y3vmcty55ylj3pkfcqdyfwkcedow4oqq/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/minimap2-2.26-y3vmcty55ylj3pkfcqdyfwkcedow4oqq/.}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/minimap2-2.26-y3vmcty55ylj3pkfcqdyfwkcedow4oqq/lib/python3.11/site-packages}
+setenv MINIMAP2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/minimap2-2.26-y3vmcty55ylj3pkfcqdyfwkcedow4oqq}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

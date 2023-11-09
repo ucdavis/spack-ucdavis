@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:05.864919
+##
+## ncbi-rmblastn@2.14.0%gcc@11.4.0 build_system=autotools patches=cd083f2 arch=linux-ubuntu22.04-x86_64_v3/yt4rv4f
+##
+## Configure options: --with-mt --without-debug --without-krb5 --without-openssl --without-libuv --with-projects=scripts/projects/rmblastn/project.lst
+##
+
+
+module-whatis {RMBlast search engine for NCBI}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : ncbi-rmblastn}
+    puts stderr {Version: 2.14.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {RMBlast search engine for NCBI}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load bzip2/1.0.8
+} else {
+    depends-on bzip2/1.0.8
+}
+prereq bzip2/1.0.8
+conflict ncbi-rmblastn
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-rmblastn-2.14.0-yt4rv4f7c3mljyw4sojgskrowfftw42o/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-rmblastn-2.14.0-yt4rv4f7c3mljyw4sojgskrowfftw42o/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-rmblastn-2.14.0-yt4rv4f7c3mljyw4sojgskrowfftw42o/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-rmblastn-2.14.0-yt4rv4f7c3mljyw4sojgskrowfftw42o/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-rmblastn-2.14.0-yt4rv4f7c3mljyw4sojgskrowfftw42o/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-rmblastn-2.14.0-yt4rv4f7c3mljyw4sojgskrowfftw42o/.}
+setenv NCBI_RMBLASTN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-rmblastn-2.14.0-yt4rv4f7c3mljyw4sojgskrowfftw42o}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

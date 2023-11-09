@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:55.761539
+##
+## genometools@1.6.2%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/p72a2ai
+##
+
+
+module-whatis {genometools is a free collection of bioinformatics tools (in the realm of genome informatics) combined into a single binary named gt.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : genometools}
+    puts stderr {Version: 1.6.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {genometools is a free collection of bioinformatics tools (in the realm}
+    puts stderr {of genome informatics) combined into a single binary named gt.}
+}
+
+conflict genometools
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/genometools-1.6.2-p72a2aiirwnly5clkbprqeyiw6cvypwg/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/genometools-1.6.2-p72a2aiirwnly5clkbprqeyiw6cvypwg/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/genometools-1.6.2-p72a2aiirwnly5clkbprqeyiw6cvypwg/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/genometools-1.6.2-p72a2aiirwnly5clkbprqeyiw6cvypwg/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/genometools-1.6.2-p72a2aiirwnly5clkbprqeyiw6cvypwg/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/genometools-1.6.2-p72a2aiirwnly5clkbprqeyiw6cvypwg/.}
+prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zaqf7dicjkl3i2sg2ciot74vsehx7k47/share/X11/locale}
+prepend-path --delim {:} XDG_DATA_DIRS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gobject-introspection-1.76.1-p7ovpnwgkhdrynjsf2zetdapj4hwgkkr/share}
+prepend-path --delim {:} GI_TYPELIB_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gobject-introspection-1.76.1-p7ovpnwgkhdrynjsf2zetdapj4hwgkkr/lib/girepository-1.0}
+prepend-path --delim {:} XDG_DATA_DIRS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/harfbuzz-7.3.0-qydks2c5unty2nl6v6ppaloxifbjr6ov/share}
+prepend-path --delim {:} GI_TYPELIB_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/harfbuzz-7.3.0-qydks2c5unty2nl6v6ppaloxifbjr6ov/lib/girepository-1.0}
+prepend-path --delim {:} XDG_DATA_DIRS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pango-1.50.13-ulgoaxm2xovaz4xwfzaxj7vzs4mhlvpx/share}
+prepend-path --delim {:} GI_TYPELIB_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pango-1.50.13-ulgoaxm2xovaz4xwfzaxj7vzs4mhlvpx/lib/girepository-1.0}
+setenv GENOMETOOLS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/genometools-1.6.2-p72a2aiirwnly5clkbprqeyiw6cvypwg}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

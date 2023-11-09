@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:44.074559
+##
+## aragorn@1.2.41%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/pnveeed
+##
+
+
+module-whatis {ARAGORN, a program to detect tRNA genes and tmRNA genes in nucleotide sequences.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : aragorn}
+    puts stderr {Version: 1.2.41}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {ARAGORN, a program to detect tRNA genes and tmRNA genes in nucleotide}
+    puts stderr {sequences.}
+}
+
+conflict aragorn
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aragorn-1.2.41-pnveeed3npsefk226ppz7ogb6is6x3pl/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aragorn-1.2.41-pnveeed3npsefk226ppz7ogb6is6x3pl/.}
+setenv ARAGORN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aragorn-1.2.41-pnveeed3npsefk226ppz7ogb6is6x3pl}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

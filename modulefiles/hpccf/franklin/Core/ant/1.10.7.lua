@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-03-17 11:41:08.431363
+-- Module file created by spack (https://github.com/spack/spack) on 2023-09-12 14:17:16.750024
 --
 -- ant@1.10.7%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/vmddnjt
 --
@@ -14,6 +14,7 @@ drive processes described in build files as targets and extension points
 dependent upon each other]])
 
 
+depends_on("openjdk/11.0.17_8")
 
 prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ant-1.10.7-vmddnjtpa3qgdvxwghk2u33j6bl67rfm/lib", ":")
 prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ant-1.10.7-vmddnjtpa3qgdvxwghk2u33j6bl67rfm/./bin", ":")
@@ -21,8 +22,8 @@ prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux
 setenv("ANT_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ant-1.10.7-vmddnjtpa3qgdvxwghk2u33j6bl67rfm")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

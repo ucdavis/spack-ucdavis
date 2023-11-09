@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:07.519856
+##
+## netlib-xblas@1.0.248%gcc@11.4.0+fortran+plain_blas build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/dripasn
+##
+
+
+module-whatis {XBLAS is a reference implementation for extra precision BLAS.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : netlib-xblas}
+    puts stderr {Version: 1.0.248}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {XBLAS is a reference implementation for extra precision BLAS. XBLAS is a}
+    puts stderr {reference implementation for the dense and banded BLAS routines, along}
+    puts stderr {with extended and mixed precision version. Extended precision is only}
+    puts stderr {used internally; input and output arguments remain the same as in the}
+    puts stderr {existing BLAS. Extra precisions is implemented as double-double (i.e.,}
+    puts stderr {128-bit total, 106-bit significand). Mixed precision permits some}
+    puts stderr {input/output arguments of different types (mixing real and complex) or}
+    puts stderr {precisions (mixing single and double). This implementation is proof of}
+    puts stderr {concept, and no attempt was made to optimize performance; performance}
+    puts stderr {should be as good as straightforward but careful code written by hand.}
+}
+
+conflict netlib-xblas
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-xblas-1.0.248-dripasniip4y4basljwvcx3ifipupufg/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-xblas-1.0.248-dripasniip4y4basljwvcx3ifipupufg/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-xblas-1.0.248-dripasniip4y4basljwvcx3ifipupufg/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-xblas-1.0.248-dripasniip4y4basljwvcx3ifipupufg/include}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-xblas-1.0.248-dripasniip4y4basljwvcx3ifipupufg/.}
+setenv NETLIB_XBLAS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-xblas-1.0.248-dripasniip4y4basljwvcx3ifipupufg}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

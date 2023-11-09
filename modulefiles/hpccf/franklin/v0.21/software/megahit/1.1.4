@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:04.358327
+##
+## megahit@1.1.4%gcc@7.5.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/3w7v62z
+##
+
+
+module-whatis {MEGAHIT: An ultra-fast single-node solution for large and complex metagenomics assembly via succinct de Bruijn graph}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : megahit}
+    puts stderr {Version: 1.1.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {MEGAHIT: An ultra-fast single-node solution for large and complex}
+    puts stderr {metagenomics assembly via succinct de Bruijn graph}
+}
+
+conflict megahit
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/megahit-1.1.4-3w7v62zlisixtu4o4lxj5yuro6b76kbf/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/megahit-1.1.4-3w7v62zlisixtu4o4lxj5yuro6b76kbf/.}
+setenv MEGAHIT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/megahit-1.1.4-3w7v62zlisixtu4o4lxj5yuro6b76kbf}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

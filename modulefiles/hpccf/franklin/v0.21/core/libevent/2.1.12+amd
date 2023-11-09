@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-13 18:13:33.789899
+##
+## libevent@2.1.12%gcc@11.4.0~openssl build_system=autotools arch=linux-ubuntu22.04-zen2/z76nevy
+##
+## Configure options: --disable-openssl
+##
+
+
+module-whatis {The libevent API provides a mechanism to execute a callback function when a specific event occurs on a file descriptor or after a timeout has been reached. Furthermore, libevent also support callbacks due to signals or regular timeouts.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libevent}
+    puts stderr {Version: 2.1.12}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr {The libevent API provides a mechanism to execute a callback function}
+    puts stderr {when a specific event occurs on a file descriptor or after a timeout has}
+    puts stderr {been reached. Furthermore, libevent also support callbacks due to}
+    puts stderr {signals or regular timeouts.}
+}
+
+conflict libevent
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/libevent-2.1.12-z76nevy2pl4uf6qa62i3ttacdxe3ba44/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/libevent-2.1.12-z76nevy2pl4uf6qa62i3ttacdxe3ba44/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/libevent-2.1.12-z76nevy2pl4uf6qa62i3ttacdxe3ba44/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/libevent-2.1.12-z76nevy2pl4uf6qa62i3ttacdxe3ba44/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/libevent-2.1.12-z76nevy2pl4uf6qa62i3ttacdxe3ba44/bin}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/libevent-2.1.12-z76nevy2pl4uf6qa62i3ttacdxe3ba44/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/libevent-2.1.12-z76nevy2pl4uf6qa62i3ttacdxe3ba44/.}
+setenv LIBEVENT_ROOT {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/libevent-2.1.12-z76nevy2pl4uf6qa62i3ttacdxe3ba44}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

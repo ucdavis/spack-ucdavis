@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:44.174969
+##
+## aria2@1.36.0%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/t3wl4qu
+##
+
+
+module-whatis {An ultra fast download utility}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : aria2}
+    puts stderr {Version: 1.36.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {An ultra fast download utility}
+}
+
+conflict aria2
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aria2-1.36.0-t3wl4qur2nk2d2ufal3a2xwckroh7n5k/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aria2-1.36.0-t3wl4qur2nk2d2ufal3a2xwckroh7n5k/share/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aria2-1.36.0-t3wl4qur2nk2d2ufal3a2xwckroh7n5k/.}
+setenv ARIA2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aria2-1.36.0-t3wl4qur2nk2d2ufal3a2xwckroh7n5k}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

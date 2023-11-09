@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:04.283198
+##
+## maven@3.8.4%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/ipu3gb6
+##
+
+
+module-whatis {Apache Maven is a software project management and comprehension tool.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : maven}
+    puts stderr {Version: 3.8.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Apache Maven is a software project management and comprehension tool.}
+}
+
+conflict maven
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/maven-3.8.4-ipu3gb6z6dvqcijyl5g5qtbhwxpfyl3f/lib}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/maven-3.8.4-ipu3gb6z6dvqcijyl5g5qtbhwxpfyl3f/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/maven-3.8.4-ipu3gb6z6dvqcijyl5g5qtbhwxpfyl3f/.}
+setenv MAVEN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/maven-3.8.4-ipu3gb6z6dvqcijyl5g5qtbhwxpfyl3f}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

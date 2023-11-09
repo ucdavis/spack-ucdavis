@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:01.530535
+##
+## lcov@1.16%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/rlquwdh
+##
+
+
+module-whatis {LCOV is a graphical front-end for GCC's coverage testing tool gcov. It collects gcov data for multiple source files and creates HTML pages containing the source code annotated with coverage information. It also adds overview pages for easy navigation within the file structure. LCOV supports statement, function and branch coverage measurement.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : lcov}
+    puts stderr {Version: 1.16}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {LCOV is a graphical front-end for GCC's coverage testing tool gcov. It}
+    puts stderr {collects gcov data for multiple source files and creates HTML pages}
+    puts stderr {containing the source code annotated with coverage information. It also}
+    puts stderr {adds overview pages for easy navigation within the file structure. LCOV}
+    puts stderr {supports statement, function and branch coverage measurement.}
+}
+
+conflict lcov
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lcov-1.16-rlquwdh44eousyvfby3kogzezswitl6e/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lcov-1.16-rlquwdh44eousyvfby3kogzezswitl6e/share/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lcov-1.16-rlquwdh44eousyvfby3kogzezswitl6e/.}
+setenv LCOV_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lcov-1.16-rlquwdh44eousyvfby3kogzezswitl6e}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

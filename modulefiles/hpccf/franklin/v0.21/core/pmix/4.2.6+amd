@@ -1,0 +1,69 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-13 18:13:34.693122
+##
+## pmix@4.2.6%gcc@11.4.0~docs+pmi_backwards_compatibility~python~restful build_system=autotools arch=linux-ubuntu22.04-zen2/osu2gfo
+##
+## Configure options: --enable-shared --enable-static --disable-sphinx --without-munge --with-libevent=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/libevent-2.1.12-z76nevy2pl4uf6qa62i3ttacdxe3ba44 --with-hwloc=/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/hwloc-2.9.1-bhwmug7x3mcrqnqdmjz6sbtmn5ojo3c4 --disable-python-bindings --enable-pmi-backward-compatibility --disable-man-pages
+##
+
+
+module-whatis {The Process Management Interface (PMI) has been used for quite some time as a means of exchanging wireup information needed for interprocess communication. However, meeting the significant orchestration challenges presented by exascale systems requires that the process-to-system interface evolve to permit a tighter integration between the different components of the parallel application and existing and future SMS solutions.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : pmix}
+    puts stderr {Version: 4.2.6}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr {The Process Management Interface (PMI) has been used for quite some time}
+    puts stderr {as a means of exchanging wireup information needed for interprocess}
+    puts stderr {communication. However, meeting the significant orchestration challenges}
+    puts stderr {presented by exascale systems requires that the process-to-system}
+    puts stderr {interface evolve to permit a tighter integration between the different}
+    puts stderr {components of the parallel application and existing and future SMS}
+    puts stderr {solutions. PMI Exascale (PMIx) addresses these needs by providing an}
+    puts stderr {extended version of the PMI definitions specifically designed to support}
+    puts stderr {exascale and beyond environments by: (a) adding flexibility to the}
+    puts stderr {functionality expressed in the existing APIs, (b) augmenting the}
+    puts stderr {interfaces with new APIs that provide extended capabilities, (c) forging}
+    puts stderr {a collaboration between subsystem providers including resource manager,}
+    puts stderr {fabric, file system, and programming library developers, (d)}
+    puts stderr {establishing a standards-like body for maintaining the definitions, and}
+    puts stderr {(e) providing a reference implementation of the PMIx standard that}
+    puts stderr {demonstrates the desired level of scalability while maintaining strict}
+    puts stderr {separation between it and the standard itself.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load libevent/2.1.12+amd
+} else {
+    depends-on libevent/2.1.12+amd
+}
+prereq libevent/2.1.12+amd
+conflict pmix
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/pmix-4.2.6-osu2gfoy3kmmybtac3yvvmyyfrp5hyct/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/pmix-4.2.6-osu2gfoy3kmmybtac3yvvmyyfrp5hyct/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/pmix-4.2.6-osu2gfoy3kmmybtac3yvvmyyfrp5hyct/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/pmix-4.2.6-osu2gfoy3kmmybtac3yvvmyyfrp5hyct/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/pmix-4.2.6-osu2gfoy3kmmybtac3yvvmyyfrp5hyct/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/pmix-4.2.6-osu2gfoy3kmmybtac3yvvmyyfrp5hyct/share/man}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/pmix-4.2.6-osu2gfoy3kmmybtac3yvvmyyfrp5hyct/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/pmix-4.2.6-osu2gfoy3kmmybtac3yvvmyyfrp5hyct/.}
+prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/libx11-1.8.4-5wohrorlcs3ej3ziz77otayh5dswe672/share/X11/locale}
+setenv PMIX_ROOT {/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-zen2/gcc-11.4.0/pmix-4.2.6-osu2gfoy3kmmybtac3yvvmyyfrp5hyct}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

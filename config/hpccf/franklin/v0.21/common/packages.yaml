@@ -1,0 +1,268 @@
+packages:
+
+  ####
+  # Externals: non-buildable
+  ####
+
+  at-spi2-core:
+    externals:
+    - spec: at-spi2-core@2.44.0 %gcc
+      prefix: /usr
+    buildable: false
+
+  at-spi2-atk:
+    externals:
+    - spec: at-spi2-atk@2.38.0 %gcc
+      prefix: /usr
+    buildable: false
+
+  atk:
+    externals:
+    - spec: atk@2.36.0 %gcc
+      prefix: /usr
+    buildable: false
+
+  bash:
+    externals:
+    - spec: bash@5.1.16 %gcc
+      prefix: /usr
+    buildable: false
+
+  # Addresses krb5 oneapi issue: https://github.com/spack/spack/issues/37172
+  bison:
+    buildable: false
+    externals:
+    - spec: bison@3.8.2
+      prefix: /usr
+
+  cvs:
+    buildable: false
+    externals:
+    - spec: cvs@1.12.13 %gcc
+      prefix: /usr
+
+
+  gtkplus:
+    buildable: false
+    externals:
+    - spec: gtkplus@3.24.33 %gcc
+      prefix: /usr
+    - spec: gtkplus@2.24.33 %gcc
+      prefix: /usr
+
+  pkg-config:
+    externals:
+    - spec: pkg-config@0.29.2 %gcc
+      prefix: /usr
+    buildable: false
+
+  linux-pam:
+    buildable: false
+    externals:
+    - spec: linux-pam@1.4.0 %gcc
+      prefix: /usr
+
+  llvm:
+    buildable: false
+    externals:
+    - spec: llvm@14.0.0+clang~lld~lldb %gcc
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          c: /usr/bin/clang-14
+          cxx: /usr/bin/clang++-14
+
+  mariadb:
+    externals:
+    - spec: mariadb@10.8.2 %gcc
+      prefix: /usr
+    buildable: false
+
+  mariadb-c-client:
+    externals:
+    - spec: mariadb-c-client@3 %gcc
+      prefix: /usr
+
+  munge:
+    externals:
+    - spec: munge@0.5.14 %gcc
+      prefix: /usr
+    buildable: false
+
+  opengl:
+    buildable: false
+    externals:
+    - spec: opengl@4.5.0 %gcc
+      prefix: /usr
+
+  openssl:
+    buildable: false
+    externals:
+    - spec: openssl@3.0.2 %gcc
+      prefix: /usr
+
+  subversion:
+    buildable: false
+    externals:
+    - spec: subversion@1.14.1 %gcc
+      prefix: /usr
+
+  wxwidgets:
+    buildable: false
+    externals:
+    - spec: wxwidgets@3.0.2
+      prefix: /usr
+
+  ####
+  # Externals: buildable
+  ####
+  
+  curl:
+    externals:
+    - spec: curl@7.81.0+gssapi+ldap+nghttp2 %gcc
+      prefix: /usr
+
+
+
+  rust:
+    externals:
+    - spec: rust@1.61.0 %gcc
+      prefix: /usr
+
+
+  ####
+  #
+  # Core stack and libraries
+  #
+  ####
+  #
+  
+  amdfftw:
+    require: '@4.1 +openmp'
+    version:
+    - 4.1
+    variants: +openmp
+
+  cuda:
+    require:
+    - any_of:
+      - '@11.7.1'
+      - '@11.2.2'
+      - '@8.0.61'
+    version:
+    - 11.7
+    - 11.2.2
+    - 8.0.61
+
+  fftw:
+    require: '@3.3.10 +openmp'
+    version:
+    - 3.3.10
+    variants: +openmp
+  
+  slurm:
+    require: '@23-02-6-1 +pmix +mariadb +hwloc +restd sysconfdir=/share/apps/22.04/spack/environments/core/view/generic/slurm-23-02-6-1/etc'
+    version:
+    - 23-02-6-1
+    variants: +pmix +mariadb +hwloc +restd sysconfdir=/share/apps/22.04/spack/environments/core/view/generic/slurm-23-02-6-1/etc
+
+  pmix:
+    require: '@4.2.6'
+    version:
+    - 4.2.6
+
+  ucx:
+    require: '@1.14.1 +thread_multiple'
+    version:
+    - 1.14.1
+    variants: +thread_multiple
+  
+  openmpi:
+    require:
+    - any_of:
+      - '@4.1.5 fabrics=ucx schedulers=slurm +legacylaunchers +cuda cuda_arch=75 target=x86_64_v3'
+      - '@4.1.5 fabrics=ucx schedulers=slurm +legacylaunchers +cuda cuda_arch=75 target=zen2'
+      - '@4.1.5 fabrics=ucx schedulers=slurm +legacylaunchers +cuda cuda_arch=75 target=skylake_avx512'
+    version:
+    - 4.1.5
+    variants: fabrics=ucx schedulers=slurm +cuda +legacylaunchers
+
+  # When mpi=openmpi, this introduces an unresolvable dependency.
+  # See https://github.com/spack/spack/issues/15836 for details
+  hwloc:
+    require: '@2.9.1 ~netloc +pci +libxml2 +libudev +nvml +cuda +cairo cuda_arch=75'
+    version:
+      - 2.9.1
+    variants: ~netloc +pci +libxml2 +libudev +nvml +cuda +cairo
+
+  libevent:
+    require: '@2.1.12'
+    version:
+    - 2.1.12
+
+  intel-mkl:
+    require: '@2017.0.098:'
+
+  intel-oneapi-mkl:
+    require: '@2023.2.0'
+    version:
+    - 2023.2.0
+
+  mkl:
+    require: intel-oneapi-mkl
+
+  mpi:
+    require: openmpi
+
+
+  ####
+  #
+  # Other package / build tree constraints
+  #
+  ####
+
+  cairo:
+    require: +X +ft +fc +pdf +png +gobject
+
+  dbus:
+    require: '@1.12.8 local_state_dir=/var/'
+
+  gdal:
+    variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat
+      +gif +jasper +pcre +png +zstd
+
+  gdl:
+    version: [0.9.8]
+    variants: +graphicsmagick +python
+
+  libxml2:
+    require: '@2.10.2: +python'
+
+  python:
+    require: ~libxml2
+
+  sqlite:
+    variants: +rtree
+
+  tbb:
+    require: intel-oneapi-tbb
+
+  # xmlto does not build properly with OneAPI
+  xmlto:
+    require: "%gcc"
+
+  ####
+
+  all:
+    target: [x86_64_v3]
+    compiler:
+    - gcc @11.4.0
+    providers:
+      tbb:
+      - intel-oneapi-tbb
+      fftw-api:
+      - fftw
+    variants:
+    - cuda_arch=75
+
+

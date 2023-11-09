@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:52.611105
+##
+## eigen@3.4.0%gcc@11.4.0~ipo build_system=cmake build_type=RelWithDebInfo generator=make arch=linux-ubuntu22.04-x86_64_v3/erbdmfo
+##
+## Configure options: -DBUILD_TESTING:STRING=ON
+##
+
+
+module-whatis {Eigen is a C++ template library for linear algebra matrices, vectors, numerical solvers, and related algorithms. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : eigen}
+    puts stderr {Version: 3.4.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Eigen is a C++ template library for linear algebra matrices, vectors,}
+    puts stderr {numerical solvers, and related algorithms.}
+}
+
+conflict eigen
+
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/eigen-3.4.0-erbdmfohsxs5fwsclup67liy4br2xxcp/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/eigen-3.4.0-erbdmfohsxs5fwsclup67liy4br2xxcp/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/eigen-3.4.0-erbdmfohsxs5fwsclup67liy4br2xxcp/include}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/eigen-3.4.0-erbdmfohsxs5fwsclup67liy4br2xxcp/share/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/eigen-3.4.0-erbdmfohsxs5fwsclup67liy4br2xxcp/.}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/eigen-3.4.0-erbdmfohsxs5fwsclup67liy4br2xxcp/include/eigen3}
+setenv EIGEN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/eigen-3.4.0-erbdmfohsxs5fwsclup67liy4br2xxcp}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

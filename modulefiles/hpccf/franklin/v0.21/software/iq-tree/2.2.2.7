@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:00.049945
+##
+## iq-tree@2.2.2.7%gcc@11.4.0~ipo+lsd2~mpi+openmp build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/btydlaw
+##
+## Configure options: -DUSE_LSD2=ON -DIQTREE_FLAGS=omp
+##
+
+
+module-whatis {IQ-TREE Efficient software for phylogenomic inference}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : iq-tree}
+    puts stderr {Version: 2.2.2.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {IQ-TREE Efficient software for phylogenomic inference}
+}
+
+conflict iq-tree
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/iq-tree-2.2.2.7-btydlaw5r3eca4vcpyhujnu3fmftv2hd/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/iq-tree-2.2.2.7-btydlaw5r3eca4vcpyhujnu3fmftv2hd/.}
+setenv IQ_TREE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/iq-tree-2.2.2.7-btydlaw5r3eca4vcpyhujnu3fmftv2hd}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

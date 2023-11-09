@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:53.801149
+##
+## fasttree@2.1.11%gcc@11.4.0+openmp build_system=generic arch=linux-ubuntu22.04-x86_64_v3/7fmk4tv
+##
+
+
+module-whatis {FastTree infers approximately-maximum-likelihood phylogenetic trees from alignments of nucleotide or protein sequences. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : fasttree}
+    puts stderr {Version: 2.1.11}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {FastTree infers approximately-maximum-likelihood phylogenetic trees from}
+    puts stderr {alignments of nucleotide or protein sequences.}
+}
+
+conflict fasttree
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fasttree-2.1.11-7fmk4tvprk33yi7pltv6e5rqjuj2js4i/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fasttree-2.1.11-7fmk4tvprk33yi7pltv6e5rqjuj2js4i/.}
+setenv FASTTREE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fasttree-2.1.11-7fmk4tvprk33yi7pltv6e5rqjuj2js4i}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

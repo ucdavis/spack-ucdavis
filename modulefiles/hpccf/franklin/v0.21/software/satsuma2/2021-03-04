@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:18.907255
+##
+## satsuma2@2021-03-04%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/6cdmraj
+##
+
+
+module-whatis {Satsuma2 is an optimsed version of Satsuma, a tool to reliably align large and complex DNA sequences providing maximum sensitivity (to find all there is to find), specificity (to only find real homology) and speed (to accomodate the billions of base pairs in vertebrate genomes). }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : satsuma2}
+    puts stderr {Version: 2021-03-04}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Satsuma2 is an optimsed version of Satsuma, a tool to reliably align}
+    puts stderr {large and complex DNA sequences providing maximum sensitivity (to find}
+    puts stderr {all there is to find), specificity (to only find real homology) and}
+    puts stderr {speed (to accomodate the billions of base pairs in vertebrate genomes).}
+}
+
+conflict satsuma2
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/satsuma2-2021-03-04-6cdmrajqeslumt7sc6gxkknyue7pcc4s/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/satsuma2-2021-03-04-6cdmrajqeslumt7sc6gxkknyue7pcc4s/.}
+setenv SATSUMA2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/satsuma2-2021-03-04-6cdmrajqeslumt7sc6gxkknyue7pcc4s}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

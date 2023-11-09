@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:00.337429
+##
+## jdk@17.0.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/32qgx7v
+##
+
+
+module-whatis {The Java Development Kit (JDK) released by Oracle Corporation in the form of a binary product aimed at Java developers. Includes a complete JRE plus tools for developing, debugging, and monitoring Java applications.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : jdk}
+    puts stderr {Version: 17.0.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The Java Development Kit (JDK) released by Oracle Corporation in the}
+    puts stderr {form of a binary product aimed at Java developers. Includes a complete}
+    puts stderr {JRE plus tools for developing, debugging, and monitoring Java}
+    puts stderr {applications.}
+}
+
+conflict jdk
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jdk-17.0.1-32qgx7v6uo6ewdoii2zgeyanoj2x23ng/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jdk-17.0.1-32qgx7v6uo6ewdoii2zgeyanoj2x23ng/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jdk-17.0.1-32qgx7v6uo6ewdoii2zgeyanoj2x23ng/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jdk-17.0.1-32qgx7v6uo6ewdoii2zgeyanoj2x23ng/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jdk-17.0.1-32qgx7v6uo6ewdoii2zgeyanoj2x23ng/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jdk-17.0.1-32qgx7v6uo6ewdoii2zgeyanoj2x23ng/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jdk-17.0.1-32qgx7v6uo6ewdoii2zgeyanoj2x23ng/.}
+setenv JAVA_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jdk-17.0.1-32qgx7v6uo6ewdoii2zgeyanoj2x23ng}
+setenv JDK_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jdk-17.0.1-32qgx7v6uo6ewdoii2zgeyanoj2x23ng}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

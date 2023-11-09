@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:47.760382
+##
+## bowtie@1.3.1%gcc@11.4.0~tbb build_system=makefile patches=55bcf00 arch=linux-ubuntu22.04-x86_64_v3/5x5jkvr
+##
+
+
+module-whatis {Bowtie is an ultrafast, memory-efficient short read aligner for short DNA sequences (reads) from next-gen sequencers.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : bowtie}
+    puts stderr {Version: 1.3.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Bowtie is an ultrafast, memory-efficient short read aligner for short}
+    puts stderr {DNA sequences (reads) from next-gen sequencers.}
+}
+
+conflict bowtie
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bowtie-1.3.1-5x5jkvr7khh6h7vx6qayaz677g7sxy37/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bowtie-1.3.1-5x5jkvr7khh6h7vx6qayaz677g7sxy37/.}
+setenv BOWTIE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bowtie-1.3.1-5x5jkvr7khh6h7vx6qayaz677g7sxy37}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

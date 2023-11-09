@@ -1,5 +1,5 @@
 -- -*- lua -*-
--- Module file created by spack (https://github.com/spack/spack) on 2023-03-17 11:41:08.503540
+-- Module file created by spack (https://github.com/spack/spack) on 2023-09-12 14:17:17.890209
 --
 -- openldap@2.4.49%gcc@11.3.0+client_only+dynamic~icu~perl+sasl+shared~static build_system=autotools tls=gnutls arch=linux-ubuntu22.04-x86_64_v3/uwqsms4
 --
@@ -18,14 +18,17 @@ tools, and sample clients.]])
 
 
 prepend_path("LD_LIBRARY_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/openldap-2.4.49-uwqsms4oh7ppsyr5ngjijbrnmnkvfpml/lib", ":")
+prepend_path("CPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/openldap-2.4.49-uwqsms4oh7ppsyr5ngjijbrnmnkvfpml/include", ":")
+prepend_path("C_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/openldap-2.4.49-uwqsms4oh7ppsyr5ngjijbrnmnkvfpml/include", ":")
+prepend_path("CPLUS_INCLUDE_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/openldap-2.4.49-uwqsms4oh7ppsyr5ngjijbrnmnkvfpml/include", ":")
 prepend_path("PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/openldap-2.4.49-uwqsms4oh7ppsyr5ngjijbrnmnkvfpml/./bin", ":")
 prepend_path("MANPATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/openldap-2.4.49-uwqsms4oh7ppsyr5ngjijbrnmnkvfpml/./share/man", ":")
 prepend_path("CMAKE_PREFIX_PATH", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/openldap-2.4.49-uwqsms4oh7ppsyr5ngjijbrnmnkvfpml/./", ":")
 setenv("OPENLDAP_ROOT", "/share/apps/spack/spack-v0.19/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/openldap-2.4.49-uwqsms4oh7ppsyr5ngjijbrnmnkvfpml")
 
 
-local user_email = subprocess([[grep -i "$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
-user_email = string.gsub(user_email, "%s+", " ")
+local user_email = subprocess([[grep -i "^$USER" /etc/passwd | grep -Po '<\K.*?(?=>)']])
+user_email = string.gsub(user_email, "%s+", "")
 setenv("USER_EMAIL", user_email)
 
 if (mode() == "load") then

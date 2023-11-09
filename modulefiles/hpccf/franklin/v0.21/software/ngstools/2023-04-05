@@ -1,0 +1,61 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:07.760482
+##
+## ngstools@2023-04-05%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/2zjs4o2
+##
+
+
+module-whatis {ngsTools is a collection of programs for population genetics analyses from NGS data, taking into account data statistical uncertainty. The methods implemented in these programs do not rely on SNP or genotype calling, and are particularly suitable for low sequencing depth data. An application note illustrating its application has published (Fumagalli et al. 2014).}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : ngstools}
+    puts stderr {Version: 2023-04-05}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {ngsTools is a collection of programs for population genetics analyses}
+    puts stderr {from NGS data, taking into account data statistical uncertainty. The}
+    puts stderr {methods implemented in these programs do not rely on SNP or genotype}
+    puts stderr {calling, and are particularly suitable for low sequencing depth data. An}
+    puts stderr {application note illustrating its application has published (Fumagalli}
+    puts stderr {et al. 2014).}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load bzip2/1.0.8
+    module load gsl/2.7.1
+    module load htslib/1.17
+} else {
+    depends-on bzip2/1.0.8
+    depends-on gsl/2.7.1
+    depends-on htslib/1.17
+}
+prereq bzip2/1.0.8
+prereq gsl/2.7.1
+prereq htslib/1.17
+conflict ngstools
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ngstools-2023-04-05-2zjs4o2jcrp5zed7rkk5q6szvpu7sdl7/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ngstools-2023-04-05-2zjs4o2jcrp5zed7rkk5q6szvpu7sdl7/.}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ngstools-2023-04-05-2zjs4o2jcrp5zed7rkk5q6szvpu7sdl7/bin/ngsSim}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ngstools-2023-04-05-2zjs4o2jcrp5zed7rkk5q6szvpu7sdl7/bin/ngsPopGen}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ngstools-2023-04-05-2zjs4o2jcrp5zed7rkk5q6szvpu7sdl7/bin/ngsUtils}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ngstools-2023-04-05-2zjs4o2jcrp5zed7rkk5q6szvpu7sdl7/bin/ngsDist}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ngstools-2023-04-05-2zjs4o2jcrp5zed7rkk5q6szvpu7sdl7/bin/ngsLD}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ngstools-2023-04-05-2zjs4o2jcrp5zed7rkk5q6szvpu7sdl7/bin/ngsF}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ngstools-2023-04-05-2zjs4o2jcrp5zed7rkk5q6szvpu7sdl7/bin/ngsF-HMM}
+setenv NGSTOOLS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ngstools-2023-04-05-2zjs4o2jcrp5zed7rkk5q6szvpu7sdl7}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,37 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:07.571629
+##
+## nextflow@23.04.3%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/2icfqau
+##
+
+
+module-whatis {Data-driven computational pipelines.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : nextflow}
+    puts stderr {Version: 23.04.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Data-driven computational pipelines.}
+}
+
+conflict nextflow
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nextflow-23.04.3-2icfqauxq25sm5bssi5knqodddu7fbir/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nextflow-23.04.3-2icfqauxq25sm5bssi5knqodddu7fbir/.}
+setenv NEXTFLOW_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nextflow-23.04.3-2icfqauxq25sm5bssi5knqodddu7fbir}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

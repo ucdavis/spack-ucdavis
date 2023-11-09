@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:53.727253
+##
+## fastqc@0.12.1%gcc@11.4.0 build_system=generic patches=886aba9 arch=linux-ubuntu22.04-x86_64_v3/maid4z7
+##
+
+
+module-whatis {A quality control tool for high throughput sequence data.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : fastqc}
+    puts stderr {Version: 0.12.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A quality control tool for high throughput sequence data.}
+}
+
+conflict fastqc
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastqc-0.12.1-maid4z7dkedkn2awswts7hfp4opuz5fm/lib}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastqc-0.12.1-maid4z7dkedkn2awswts7hfp4opuz5fm/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastqc-0.12.1-maid4z7dkedkn2awswts7hfp4opuz5fm/.}
+setenv FASTQC_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastqc-0.12.1-maid4z7dkedkn2awswts7hfp4opuz5fm}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

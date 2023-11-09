@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:19.783058
+##
+## subread@2.0.2%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/occubno
+##
+
+
+module-whatis {The Subread software package is a tool kit for processing next-gen sequencing data.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : subread}
+    puts stderr {Version: 2.0.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The Subread software package is a tool kit for processing next-gen}
+    puts stderr {sequencing data.}
+}
+
+conflict subread
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/subread-2.0.2-occubno3rdusbn526i5nj7qfqsindrsg/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/subread-2.0.2-occubno3rdusbn526i5nj7qfqsindrsg/.}
+setenv SUBREAD_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/subread-2.0.2-occubno3rdusbn526i5nj7qfqsindrsg}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:55.291445
+##
+## gatk@3.8.1%gcc@11.4.0~r build_system=generic arch=linux-ubuntu22.04-x86_64_v3/27xn2fd
+##
+
+
+module-whatis { Genome Analysis Toolkit Variant Discovery in High-Throughput Sequencing Data }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gatk}
+    puts stderr {Version: 3.8.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr { Genome Analysis Toolkit Variant Discovery in High-Throughput Sequencing}
+    puts stderr {Data}
+}
+
+conflict gatk
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gatk-3.8.1-27xn2fdgrcnyrl6gjrjqscrdujv3ahal/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gatk-3.8.1-27xn2fdgrcnyrl6gjrjqscrdujv3ahal/.}
+prepend-path --delim {:} GATK {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gatk-3.8.1-27xn2fdgrcnyrl6gjrjqscrdujv3ahal/bin/GenomeAnalysisTK.jar}
+setenv GATK_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gatk-3.8.1-27xn2fdgrcnyrl6gjrjqscrdujv3ahal}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

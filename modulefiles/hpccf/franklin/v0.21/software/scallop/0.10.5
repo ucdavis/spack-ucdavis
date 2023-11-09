@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:18.984266
+##
+## scallop@0.10.5%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/aayp4y2
+##
+## Configure options: --with-clp=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/clp-1.17.7-viqdndk577a5ghvj2yb3q6lpvrual6zl --with-htslib=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/htslib-1.17-vssbqmt2acghbxznq2fpdtgupgxijzyz --with-boost=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.83.0-vwecodracnv6zorfta6367e4suzjlsq6
+##
+
+
+module-whatis {Scallop is a reference-based transcriptome assembler for RNA-seq}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : scallop}
+    puts stderr {Version: 0.10.5}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Scallop is a reference-based transcriptome assembler for RNA-seq}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load htslib/1.17
+} else {
+    depends-on htslib/1.17
+}
+prereq htslib/1.17
+conflict scallop
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/scallop-0.10.5-aayp4y2fms7g7njn5mjf5wb4uy5mgr6s/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/scallop-0.10.5-aayp4y2fms7g7njn5mjf5wb4uy5mgr6s/.}
+setenv SCALLOP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/scallop-0.10.5-aayp4y2fms7g7njn5mjf5wb4uy5mgr6s}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

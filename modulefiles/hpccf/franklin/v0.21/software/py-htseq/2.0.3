@@ -1,0 +1,68 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:12.773024
+##
+## py-htseq@2.0.3%gcc@11.4.0+h5ad+loom+mtx+qa build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/wzbkloc
+##
+
+
+module-whatis {HTSeq is a Python package that provides infrastructure to process data from high-throughput sequencing assays.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-htseq}
+    puts stderr {Version: 2.0.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {HTSeq is a Python package that provides infrastructure to process data}
+    puts stderr {from high-throughput sequencing assays.}
+}
+
+conflict py-htseq
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-htseq-2.0.3-wzbkloc3f6o4p3qemcrvikks3zpytnwa/lib}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-htseq-2.0.3-wzbkloc3f6o4p3qemcrvikks3zpytnwa/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-htseq-2.0.3-wzbkloc3f6o4p3qemcrvikks3zpytnwa/.}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-htseq-2.0.3-wzbkloc3f6o4p3qemcrvikks3zpytnwa/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-anndata-0.8.0-i576ezfahkt62utch5mibel5fn7eiugj/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-h5py-3.8.0-eb6zcaa5vqhsed6nxlldwgavpg2imx5s/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-mpi4py-3.1.4-atslkburqy6hz6u5t5k6fmsvlmfc2h66/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numpy-1.24.4-jhyio2hsudyx2cd7znxdu2tb42x6xmxv/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-setuptools-63.4.3-hsixzjesbrxime2qpwqaxwdkrwbz22vq/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-natsort-7.1.1-vvnqikgfcondkr4etybs3jkyczv4amyd/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-packaging-23.1-puj7vheyx7gkeal4irplmxtrhtxmd6gh/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pandas-2.1.1-l5kp4ryc2pvkvb2hpcazdzkvf46gzrdb/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-bottleneck-1.3.7-7p3y3xsdlxjzqmvxrcwrvpogon2cpfl2/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numba-0.57.0-dasaylkzcarlryfrumcozhk6sgme6axo/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-llvmlite-0.40.0-ltaswfhcaoxptad3h26qzt634d4kxfq4/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numexpr-2.8.4-yca37scboawcokguyvtraf5l5sa5f3a7/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-python-dateutil-2.8.2-xskts2iq7eftwceczwhelweftoeqrkfa/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-six-1.16.0-krosed5wbuefnc6rrkoynveb6x73u4cl/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pytz-2023.3-yolv5egtzsyfcrao27xx3a22udguh6ya/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-tzdata-2023.3-d7u2wvfdka3dh3prcg27r7krohy6f4fz/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-scipy-1.11.2-evdv2agbja332juseh5xvb7wkrrvxijd/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-loompy-3.0.7-kxpdivkbtvihstleicolpylkowup5j3f/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-click-8.1.3-jvyddv4enmzoovs7ujl44eucazbc7act/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numpy-groupies-0.9.20-b6cmwivb2nxatj7pdtpt5q7lxghsyyfx/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-matplotlib-3.8.0-l3sb6b54ivp2fuusb7v4clndyyqio63w/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-contourpy-1.0.7-e6rd5p32wlc3g4tmznrg4j227wxu3rkl/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cycler-0.11.0-rfzhhw4jtannqtrn5mvvx4e2qeda734c/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-fonttools-4.39.4-5wsgyvqunfocfxlae43mc3ozrkls44in/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-kiwisolver-1.4.4-3inmf4glthgyddhf27nleqgegt3epj36/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pillow-10.0.0-hwqzyvwnrywspq5admjcbzhosg4tsmvy/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyparsing-3.0.9-g75v3dpuye46sgmuhsrqhbowqf6r4b4h/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pysam-0.21.0-3mv4ho55ugxtmpsy7zjex5znn5mico5t/lib/python3.11/site-packages}
+setenv PY_HTSEQ_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-htseq-2.0.3-wzbkloc3f6o4p3qemcrvikks3zpytnwa}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

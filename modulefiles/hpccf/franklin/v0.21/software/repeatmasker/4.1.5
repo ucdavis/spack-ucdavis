@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:16.747959
+##
+## repeatmasker@4.1.5%gcc@11.4.0~crossmatch build_system=generic arch=linux-ubuntu22.04-x86_64_v3/3yij42u
+##
+
+
+module-whatis {RepeatMasker is a program that screens DNA sequences for interspersed repeats and low complexity DNA sequences.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : repeatmasker}
+    puts stderr {Version: 4.1.5}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {RepeatMasker is a program that screens DNA sequences for interspersed}
+    puts stderr {repeats and low complexity DNA sequences.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load hmmer/3.4
+    module load ncbi-rmblastn/2.14.0
+} else {
+    depends-on hmmer/3.4
+    depends-on ncbi-rmblastn/2.14.0
+}
+prereq hmmer/3.4
+prereq ncbi-rmblastn/2.14.0
+conflict repeatmasker
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/repeatmasker-4.1.5-3yij42ue5fposxukcjrzne6kvj42v7ky/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/repeatmasker-4.1.5-3yij42ue5fposxukcjrzne6kvj42v7ky/.}
+prepend-path --delim {:} PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-text-soundex-3.05-64jyk3ecnkt6x2dvyatl27zhjyp3pqgw/lib/perl5}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-h5py-3.8.0-zvk5otl7qkbfh2o6y63h6h6zyrwafml4/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-mpi4py-3.1.4-6kh3owfzrfflgq6gy4eiunsfwywdrmyg/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numpy-1.25.2-jo74ex4g5wj34kt6jryzzn2yrazv5vsq/lib/python3.11/site-packages}
+prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-setuptools-63.4.3-oafgc6zoyob2y2qxjelba4p3ykz7b34r/lib/python3.11/site-packages}
+setenv REPEATMASKER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/repeatmasker-4.1.5-3yij42ue5fposxukcjrzne6kvj42v7ky}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

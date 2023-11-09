@@ -1,0 +1,41 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:58.461683
+##
+## igv@2.12.3%gcc@11.4.0~igvtools build_system=generic arch=linux-ubuntu22.04-x86_64_v3/jpb4hsu
+##
+
+
+module-whatis {The Integrative Genomics Viewer (IGV) is a high-performance visualization tool for interactive exploration of large, integrated genomic datasets. It supports a wide variety of data types, including array-based and next-generation sequence data, and genomic annotations.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : igv}
+    puts stderr {Version: 2.12.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The Integrative Genomics Viewer (IGV) is a high-performance}
+    puts stderr {visualization tool for interactive exploration of large, integrated}
+    puts stderr {genomic datasets. It supports a wide variety of data types, including}
+    puts stderr {array-based and next-generation sequence data, and genomic annotations.}
+}
+
+conflict igv
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/igv-2.12.3-jpb4hsuf7g4ndui7tunwuczdg7gi5z2p/lib}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/igv-2.12.3-jpb4hsuf7g4ndui7tunwuczdg7gi5z2p/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/igv-2.12.3-jpb4hsuf7g4ndui7tunwuczdg7gi5z2p/.}
+setenv IGV_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/igv-2.12.3-jpb4hsuf7g4ndui7tunwuczdg7gi5z2p}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

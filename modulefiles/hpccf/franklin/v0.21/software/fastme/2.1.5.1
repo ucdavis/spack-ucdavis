@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:53.538469
+##
+## fastme@2.1.5.1%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/suh4yfr
+##
+
+
+module-whatis {FastME is a distance based phylogeny reconstruction program that works on distance matrices and, as of v2.0, sequence data.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : fastme}
+    puts stderr {Version: 2.1.5.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {FastME is a distance based phylogeny reconstruction program that works}
+    puts stderr {on distance matrices and, as of v2.0, sequence data.}
+}
+
+conflict fastme
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastme-2.1.5.1-suh4yfrsrfnuuzbtkfhoqtwzqf3wi7mi/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastme-2.1.5.1-suh4yfrsrfnuuzbtkfhoqtwzqf3wi7mi/.}
+setenv FASTME_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastme-2.1.5.1-suh4yfrsrfnuuzbtkfhoqtwzqf3wi7mi}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:04.442333
+##
+## meme@5.3.0%gcc@11.4.0~magick+mpi build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/vdplatc
+##
+
+
+module-whatis {The MEME Suite allows the biologist to discover novel motifs in collections of unaligned nucleotide or protein sequences, and to perform a wide variety of other motif-based analyses.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : meme}
+    puts stderr {Version: 5.3.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The MEME Suite allows the biologist to discover novel motifs in}
+    puts stderr {collections of unaligned nucleotide or protein sequences, and to perform}
+    puts stderr {a wide variety of other motif-based analyses.}
+}
+
+conflict meme
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/meme-5.3.0-vdplatcmfondqpmsdk2ssvkszwtattlv/lib}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/meme-5.3.0-vdplatcmfondqpmsdk2ssvkszwtattlv/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/meme-5.3.0-vdplatcmfondqpmsdk2ssvkszwtattlv/.}
+prepend-path --delim {:} XDG_DATA_DIRS {/usr/share}
+prepend-path --delim {:} GI_TYPELIB_PATH {/usr/lib/girepository-1.0}
+prepend-path --delim {:} PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-parser-2.46-4s7gqlvv2qhuwaex7wu364cdy2kpoy7q/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-libwww-perl-6.68-hvqainaa2tmfic7fhrem7ubxm2yk45ij/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-clone-0.46-qvghnmvcsvkjlenivukbbv5ea7zfh7sj/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-encode-locale-1.05-i3yu5cubfljgrfrn2jidhaooexy43d4l/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-file-listing-6.04-fq4m3rsfoc7mue7i6clsqzzgbeonv4ko/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-date-6.02-uj7noibxo6m4lh5nyku7knjhl7xowazv/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-html-parser-3.72-gzf4cxbun4apc2u5jdpculaqsuqexmqu/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-html-tagset-3.20-ethpjczwe6s7uxm63h4umtjmje6abd2n/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-cookies-6.10-xh2s5vjlca6hfuxbete2622tij7gzpng/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-message-6.44-mogcd3b3u6h5scsfv5wqdhvgtrv26yrs/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-html-1.004-aznx2hxrouq2jhbbz2a73o4eb4txalty/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-lwp-mediatypes-6.02-ydjxjaywnstf7lawjacfjlyt5vlj7dhx/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-try-tiny-0.31-l2hiyji7bj3ou3fixu4ed42a3w7ia4kn/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-uri-5.08-m5ahizgcnwspsjcfnzryoy6rxhcf55bg/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-daemon-6.01-gfrosn3r4nbeach6j3wmqbldrmme5scl/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-negotiate-6.01-4coqv76cecnps6mkigbatvlnffxicnpn/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-net-http-6.22-pc245egcgt2yj5bljdxgyhvte2jbirsc/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-www-robotrules-6.02-uplnyrnxrngag76gexmcr3dipz4gksrj/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-simple-2.25-untvqawqxpact47tjomkwwgddfvp5sm6/lib/perl5}
+prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/share/X11/locale}
+setenv MEME_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/meme-5.3.0-vdplatcmfondqpmsdk2ssvkszwtattlv}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

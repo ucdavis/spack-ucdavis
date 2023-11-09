@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:19.866324
+##
+## tabix@2013-12-16%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/nhdodty
+##
+
+
+module-whatis {Generic indexer for TAB-delimited genome position files}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : tabix}
+    puts stderr {Version: 2013-12-16}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Generic indexer for TAB-delimited genome position files}
+}
+
+conflict tabix
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tabix-2013-12-16-nhdodty23wzksle7yqh2ptzzauann67b/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tabix-2013-12-16-nhdodty23wzksle7yqh2ptzzauann67b/share/man}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tabix-2013-12-16-nhdodty23wzksle7yqh2ptzzauann67b/.}
+setenv TABIX_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tabix-2013-12-16-nhdodty23wzksle7yqh2ptzzauann67b}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

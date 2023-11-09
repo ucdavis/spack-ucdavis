@@ -14,9 +14,9 @@ spack:
   - librsvg
   - libszip
   - mpfr
-  - netcdf-c
-  - netcdf-cxx4
-  - netcdf-fortran
+  - netcdf-c +dap +fsync
+  - netcdf-cxx4 ^netcdf-c +dap +fsync
+  - netcdf-fortran ^netcdf-c +dap +fsync
   - nlohmann-json
   - zlib
   view: false

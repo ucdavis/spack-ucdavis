@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:56.601464
+##
+## gmp@6.2.1%gcc@11.4.0+cxx build_system=autotools libs=shared,static patches=69ad2e2 arch=linux-ubuntu22.04-x86_64_v3/wxamwua
+##
+## Configure options: --enable-cxx --enable-shared --enable-static --with-pic
+##
+
+
+module-whatis {GMP is a free library for arbitrary precision arithmetic, operating on signed integers, rational numbers, and floating-point numbers.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gmp}
+    puts stderr {Version: 6.2.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GMP is a free library for arbitrary precision arithmetic, operating on}
+    puts stderr {signed integers, rational numbers, and floating-point numbers.}
+}
+
+conflict gmp
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-wxamwua5b3il22ycpr4xf3auxw2m4ewq/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-wxamwua5b3il22ycpr4xf3auxw2m4ewq/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-wxamwua5b3il22ycpr4xf3auxw2m4ewq/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-wxamwua5b3il22ycpr4xf3auxw2m4ewq/include}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-wxamwua5b3il22ycpr4xf3auxw2m4ewq/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-wxamwua5b3il22ycpr4xf3auxw2m4ewq/.}
+setenv GMP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-wxamwua5b3il22ycpr4xf3auxw2m4ewq}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

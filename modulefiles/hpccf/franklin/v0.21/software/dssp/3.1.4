@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:52.387985
+##
+## dssp@3.1.4%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/feicgsw
+##
+## Configure options: --with-boost=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.83.0-clh2nwr5b3ztnxqcxktlbi5dju3t6u6p
+##
+
+
+module-whatis {'mkdssp' utility. (dictionary of protein secondary structure)}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : dssp}
+    puts stderr {Version: 3.1.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {'mkdssp' utility. (dictionary of protein secondary structure)}
+}
+
+conflict dssp
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dssp-3.1.4-feicgswcm2hinif3fc5gvnktszyw56ws/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dssp-3.1.4-feicgswcm2hinif3fc5gvnktszyw56ws/.}
+setenv DSSP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dssp-3.1.4-feicgswcm2hinif3fc5gvnktszyw56ws}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

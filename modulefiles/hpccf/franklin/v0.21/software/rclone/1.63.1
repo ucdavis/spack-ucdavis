@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:15.155580
+##
+## rclone@1.63.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/w7zwknt
+##
+
+
+module-whatis {Rclone is a command line program to sync files and directories to and from various cloud storage providers}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : rclone}
+    puts stderr {Version: 1.63.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Rclone is a command line program to sync files and directories to and}
+    puts stderr {from various cloud storage providers}
+}
+
+conflict rclone
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/rclone-1.63.1-w7zwknt2cib77ywygzdadkiinndeawfm/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/rclone-1.63.1-w7zwknt2cib77ywygzdadkiinndeawfm/.}
+setenv RCLONE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/rclone-1.63.1-w7zwknt2cib77ywygzdadkiinndeawfm}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

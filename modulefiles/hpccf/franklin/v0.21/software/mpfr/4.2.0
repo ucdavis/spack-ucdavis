@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:05.373440
+##
+## mpfr@4.2.0%gcc@11.4.0 build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3/ixzwbvh
+##
+## Configure options: --with-gmp=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-6vzcan3wt43o7khwtvbakwwv4mib6ilv --enable-shared --enable-static --with-pic
+##
+
+
+module-whatis {The MPFR library is a C library for multiple-precision floating-point computations with correct rounding.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : mpfr}
+    puts stderr {Version: 4.2.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The MPFR library is a C library for multiple-precision floating-point}
+    puts stderr {computations with correct rounding.}
+}
+
+conflict mpfr
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.0-ixzwbvh42mmndfth3fr6kojptuxnpktc/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.0-ixzwbvh42mmndfth3fr6kojptuxnpktc/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.0-ixzwbvh42mmndfth3fr6kojptuxnpktc/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.0-ixzwbvh42mmndfth3fr6kojptuxnpktc/include}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.0-ixzwbvh42mmndfth3fr6kojptuxnpktc/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.0-ixzwbvh42mmndfth3fr6kojptuxnpktc/.}
+setenv MPFR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.0-ixzwbvh42mmndfth3fr6kojptuxnpktc}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:52.286700
+##
+## doxygen@1.9.6%gcc@11.4.0~graphviz~ipo~mscgen build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/ewfnc5b
+##
+## Configure options: -DPYTHON_EXECUTABLE:STRING=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/python-3.11.6-rsiojxhe6noyzj3r3vapbkydvqu33nc2/bin/python3.11
+##
+
+
+module-whatis {Doxygen is the de facto standard tool for generating documentation from annotated C++ sources, but it also supports other popular programming languages such as C, Objective-C, C#, PHP, Java, Python, IDL (Corba, Microsoft, and UNO/OpenOffice flavors), Fortran, VHDL, Tcl, and to some extent D..}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : doxygen}
+    puts stderr {Version: 1.9.6}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Doxygen is the de facto standard tool for generating documentation from}
+    puts stderr {annotated C++ sources, but it also supports other popular programming}
+    puts stderr {languages such as C, Objective-C, C#, PHP, Java, Python, IDL (Corba,}
+    puts stderr {Microsoft, and UNO/OpenOffice flavors), Fortran, VHDL, Tcl, and to some}
+    puts stderr {extent D..}
+}
+
+conflict doxygen
+
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/doxygen-1.9.6-ewfnc5bvzlvlp2vjqci5bkbhquftfxtz/bin}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/doxygen-1.9.6-ewfnc5bvzlvlp2vjqci5bkbhquftfxtz/.}
+setenv DOXYGEN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/doxygen-1.9.6-ewfnc5bvzlvlp2vjqci5bkbhquftfxtz}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

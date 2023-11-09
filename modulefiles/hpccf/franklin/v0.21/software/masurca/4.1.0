@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:04.198626
+##
+## masurca@4.1.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/jgphnzb
+##
+
+
+module-whatis {MaSuRCA is whole genome assembly software. It combines the efficiency of the de Bruijn graph and Overlap-Layout-Consensus (OLC) approaches.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : masurca}
+    puts stderr {Version: 4.1.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {MaSuRCA is whole genome assembly software. It combines the efficiency of}
+    puts stderr {the de Bruijn graph and Overlap-Layout-Consensus (OLC) approaches.}
+}
+
+conflict masurca
+
+prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/masurca-4.1.0-jgphnzbws7ndkzhxoqt62u3ntc2tjwbq/lib}
+prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/masurca-4.1.0-jgphnzbws7ndkzhxoqt62u3ntc2tjwbq/include}
+prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/masurca-4.1.0-jgphnzbws7ndkzhxoqt62u3ntc2tjwbq/include}
+prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/masurca-4.1.0-jgphnzbws7ndkzhxoqt62u3ntc2tjwbq/include}
+prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/masurca-4.1.0-jgphnzbws7ndkzhxoqt62u3ntc2tjwbq/bin}
+prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/masurca-4.1.0-jgphnzbws7ndkzhxoqt62u3ntc2tjwbq/share/man}
+prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/masurca-4.1.0-jgphnzbws7ndkzhxoqt62u3ntc2tjwbq/lib/pkgconfig}
+prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/masurca-4.1.0-jgphnzbws7ndkzhxoqt62u3ntc2tjwbq/.}
+setenv MASURCA_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/masurca-4.1.0-jgphnzbws7ndkzhxoqt62u3ntc2tjwbq}
+append-path --delim {:} MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+
