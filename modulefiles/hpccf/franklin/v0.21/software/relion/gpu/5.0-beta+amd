@@ -1,9 +1,9 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:25.281331
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:26.000532
 ##
-## relion@4.0.1%gcc@11.4.0+allow_ctf_in_sagd+altcpu~cuda+double~double-gpu~external_motioncor2~gpu_delay+gui~ipo~mklfft build_system=cmake build_type=RelWithDebInfo generator=make purpose=cluster arch=linux-ubuntu22.04-zen2/j2cnoem
+## relion@5.0-beta%gcc@11.4.0+allow_ctf_in_sagd+cuda+double~double-gpu~external_motioncor2~gctf~gpu_delay+gui~ipo+mklfft build_system=cmake build_type=RelWithDebInfo conda_python=/share/apps/conda/environments/relion-5.0/bin/python cuda_arch=75 generator=make purpose=cluster torch_home=/share/databases/relion/torch arch=linux-ubuntu22.04-zen2/qm2gvur
 ##
-## Configure options: -DCMAKE_C_FLAGS=-g -DCMAKE_CXX_FLAGS=-g -DGUI=True -DDoublePrec_CPU=True -DDoublePrec_GPU=False -DALLOW_CTF_IN_SAGD=True -DMKLFFT=False -DALTCPU=True -DAMDFFTW=ON -DFORCE_OWN_TBB=OFF -DTBB_INCLUDE_DIR:STRING=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/include -DTBB_LIBRARY:STRING=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/lib/intel64/gcc4.8
+## Configure options: -DCMAKE_C_FLAGS=-g -DCMAKE_CXX_FLAGS=-g -DGUI=True -DDoublePrec_CPU=True -DDoublePrec_GPU=False -DALLOW_CTF_IN_SAGD=True -DMKLFFT=True -DALTCPU=False -DCUDA=ON -DCudaTexture=ON -DCUDA_ARCH=75 -DAMDFFTW=ON -DPYTHON_EXE_PATH:STRING=/share/apps/conda/environments/relion-5.0/bin/python -DTORCH_HOME_PATH:STRING=/share/databases/relion/torch
 ##
 
 
@@ -11,7 +11,7 @@ module-whatis {RELION (for REgularised LIkelihood OptimisatioN, pronounce rely-o
 
 proc ModulesHelp { } {
     puts stderr {Name   : relion}
-    puts stderr {Version: 4.0.1}
+    puts stderr {Version: 5.0-beta}
     puts stderr {Target : zen2}
     puts stderr {}
     puts stderr {RELION (for REgularised LIkelihood OptimisatioN, pronounce rely-on) is a}
@@ -21,21 +21,19 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load intel-oneapi-tbb/2021.10.0+amd
+    module load ctffind/4.1.14+amd
 } else {
-    depends-on intel-oneapi-tbb/2021.10.0+amd
+    depends-on ctffind/4.1.14+amd
 }
-prereq intel-oneapi-tbb/2021.10.0+amd
+prereq ctffind/4.1.14+amd
 conflict relion
 
-prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-4.0.1-j2cnoemolrwoouqftxeicr7p6zkhfvbr/lib}
-prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-4.0.1-j2cnoemolrwoouqftxeicr7p6zkhfvbr/bin}
-prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-4.0.1-j2cnoemolrwoouqftxeicr7p6zkhfvbr/lib/pkgconfig}
-prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-4.0.1-j2cnoemolrwoouqftxeicr7p6zkhfvbr/.}
-setenv RELION_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-4.0.1-j2cnoemolrwoouqftxeicr7p6zkhfvbr}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-qm2gvurbygnr6cgmusyajap2n437msjj/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-qm2gvurbygnr6cgmusyajap2n437msjj/.}
+setenv RELION_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-qm2gvurbygnr6cgmusyajap2n437msjj}
 setenv RELION_TOPAZ_EXECUTABLE {/share/apps/22.04/spack/spack-ucdavis/bin/wrappers/topaz}
-setenv RELION_CTFFIND_EXECUTABLE {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ctffind-4.1.14-mcco7yaew52w3gkj5yod3ceoj2gzc6sd/bin/ctffind}
-setenv RELION_QSUB_TEMPLATE {/share/apps/22.04/spack/spack-ucdavis/templates/hpccf/franklin/relion.4.0.1.cpu.slurm.template.sh}
+setenv RELION_CTFFIND_EXECUTABLE {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ctffind-4.1.14-uqsjztnwxwbiznxk4y7hn25i6f5ycnjz/bin/ctffind}
+setenv RELION_QSUB_TEMPLATE {/share/apps/22.04/spack/spack-ucdavis/templates/hpccf/franklin/relion.5.0-beta.gpu.zen2.slurm.template.sh}
 setenv RELION_QSUB_COMMAND {sbatch --constraint=amd}
 
 
@@ -84,4 +82,12 @@ setenv RELION_QUEUE_USE "yes"
 setenv RELION_SHELL "bash"
 setenv RELION_SCRATCH_DIR "/tmp/"
 setenv RELION_QUEUE_NAME "low"
+
+
+
+setenv RELION_QSUB_EXTRA_COUNT "5"
+
+setenv RELION_QSUB_EXTRA5 "GPU resources:"
+setenv RELION_QSUB_EXTRA5_DEFAULT "2"
+setenv RELION_QSUB_EXTRA5_HELP "Number (and optionally type) of GPUs to request for this job. If only an integer is supplied, will request any GPU. If TYPE:NUM is supplied (example: a4000:4), specific models of GPU will be requested. Note that specific combinations of GPU type and job queue may fail; that is, if you select \"high\" as your queue and \"a4000:4\" as your GPU resources, but your account does not have access to the A4000 nodes' high queue, the job will fail to submit. You can view available GPU resource types by running sinfo -o \"%20N %10c %10m %30G\""
 

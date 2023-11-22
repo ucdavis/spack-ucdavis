@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:07.270027
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:21.260357
 ##
 ## netcdf-cxx4@4.3.1%gcc@11.4.0~doc+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/piz5al6
 ##
@@ -27,13 +27,13 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 prereq netcdf-c/4.9.2
 conflict netcdf-cxx4
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx4-4.3.1-piz5al6i62fzfermf3ukibg7hppbibbh/lib}
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx4-4.3.1-piz5al6i62fzfermf3ukibg7hppbibbh/include}
-prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx4-4.3.1-piz5al6i62fzfermf3ukibg7hppbibbh/include}
-prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx4-4.3.1-piz5al6i62fzfermf3ukibg7hppbibbh/include}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx4-4.3.1-piz5al6i62fzfermf3ukibg7hppbibbh/bin}
-prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx4-4.3.1-piz5al6i62fzfermf3ukibg7hppbibbh/lib/pkgconfig}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx4-4.3.1-piz5al6i62fzfermf3ukibg7hppbibbh/.}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx4-4.3.1-piz5al6i62fzfermf3ukibg7hppbibbh/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx4-4.3.1-piz5al6i62fzfermf3ukibg7hppbibbh/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx4-4.3.1-piz5al6i62fzfermf3ukibg7hppbibbh/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx4-4.3.1-piz5al6i62fzfermf3ukibg7hppbibbh/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx4-4.3.1-piz5al6i62fzfermf3ukibg7hppbibbh/bin}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx4-4.3.1-piz5al6i62fzfermf3ukibg7hppbibbh/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx4-4.3.1-piz5al6i62fzfermf3ukibg7hppbibbh/.}
 setenv NETCDF_CXX4_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx4-4.3.1-piz5al6i62fzfermf3ukibg7hppbibbh}
 
 

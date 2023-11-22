@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:04.123800
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:19.915496
 ##
 ## mash@2.3%gcc@11.4.0 build_system=autotools patches=3e6d6ee arch=linux-ubuntu22.04-x86_64_v3/mbv5ig6
 ##
@@ -25,15 +25,15 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 prereq gsl/2.7.1
 conflict mash
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mash-2.3-mbv5ig6tkro46q2manop62rmouyzlrjp/lib}
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mash-2.3-mbv5ig6tkro46q2manop62rmouyzlrjp/include}
-prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mash-2.3-mbv5ig6tkro46q2manop62rmouyzlrjp/include}
-prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mash-2.3-mbv5ig6tkro46q2manop62rmouyzlrjp/include}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mash-2.3-mbv5ig6tkro46q2manop62rmouyzlrjp/bin}
-prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mash-2.3-mbv5ig6tkro46q2manop62rmouyzlrjp/share/man}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mash-2.3-mbv5ig6tkro46q2manop62rmouyzlrjp/.}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mash-2.3-mbv5ig6tkro46q2manop62rmouyzlrjp/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mash-2.3-mbv5ig6tkro46q2manop62rmouyzlrjp/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mash-2.3-mbv5ig6tkro46q2manop62rmouyzlrjp/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mash-2.3-mbv5ig6tkro46q2manop62rmouyzlrjp/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mash-2.3-mbv5ig6tkro46q2manop62rmouyzlrjp/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mash-2.3-mbv5ig6tkro46q2manop62rmouyzlrjp/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mash-2.3-mbv5ig6tkro46q2manop62rmouyzlrjp/.}
 setenv MASH_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mash-2.3-mbv5ig6tkro46q2manop62rmouyzlrjp}
-append-path --delim {:} MANPATH {}
+append-path MANPATH {}
 
 
 try {

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:57.200296
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:17.201107
 ##
 ## homer@4.11.1%gcc@11.4.0~data build_system=generic arch=linux-ubuntu22.04-x86_64_v3/66jbz3g
 ##
@@ -17,10 +17,9 @@ proc ModulesHelp { } {
 
 conflict homer
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/homer-4.11.1-66jbz3gqjvpauefpmmuzxeorzn5ak2s2/lib}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/homer-4.11.1-66jbz3gqjvpauefpmmuzxeorzn5ak2s2/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/homer-4.11.1-66jbz3gqjvpauefpmmuzxeorzn5ak2s2/.}
-setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/homer-4.11.1-66jbz3gqjvpauefpmmuzxeorzn5ak2s2/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/homer-4.11.1-66jbz3gqjvpauefpmmuzxeorzn5ak2s2/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/homer-4.11.1-66jbz3gqjvpauefpmmuzxeorzn5ak2s2/.}
 setenv HOMER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/homer-4.11.1-66jbz3gqjvpauefpmmuzxeorzn5ak2s2}
 
 

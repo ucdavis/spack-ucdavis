@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:06.325858
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:20.925255
 ##
 ## ncbi-vdb@3.0.2%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/uhy2f7a
 ##
@@ -19,11 +19,11 @@ proc ModulesHelp { } {
 
 conflict ncbi-vdb
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e/lib64}
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e/include}
-prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e/include}
-prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e/include}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e/.}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e/lib64}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e/include}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e/.}
 setenv NCBI_VDB_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-vdb-3.0.2-uhy2f7arc3ptknk3vhng2f76qxufo25e}
 
 

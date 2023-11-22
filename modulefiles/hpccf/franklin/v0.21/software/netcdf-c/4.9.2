@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:07.131787
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:21.208594
 ##
 ## netcdf-c@4.9.2%gcc@11.4.0+blosc~byterange~dap~fsync~hdf4~jna+mpi~nczarr_zip+optimize~parallel-netcdf+pic+shared+szip+zstd build_system=autotools patches=0161eb8 arch=linux-ubuntu22.04-x86_64_v3/hjgmf4q
 ##
@@ -28,17 +28,17 @@ prereq bzip2/1.0.8
 prereq libszip/2.1.1
 conflict netcdf-c
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/lib}
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/include}
-prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/include}
-prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/include}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/bin}
-prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/share/man}
-prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/lib/pkgconfig}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/.}
-append-path --delim {:} HDF5_PLUGIN_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/plugins}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/.}
+append-path HDF5_PLUGIN_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/plugins}
 setenv NETCDF_C_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g}
-append-path --delim {:} MANPATH {}
+append-path MANPATH {}
 
 
 try {

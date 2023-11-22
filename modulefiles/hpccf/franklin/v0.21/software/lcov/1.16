@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:01.530535
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:18.851358
 ##
 ## lcov@1.16%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/rlquwdh
 ##
@@ -21,11 +21,11 @@ proc ModulesHelp { } {
 
 conflict lcov
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lcov-1.16-rlquwdh44eousyvfby3kogzezswitl6e/bin}
-prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lcov-1.16-rlquwdh44eousyvfby3kogzezswitl6e/share/man}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lcov-1.16-rlquwdh44eousyvfby3kogzezswitl6e/.}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lcov-1.16-rlquwdh44eousyvfby3kogzezswitl6e/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lcov-1.16-rlquwdh44eousyvfby3kogzezswitl6e/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lcov-1.16-rlquwdh44eousyvfby3kogzezswitl6e/.}
 setenv LCOV_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lcov-1.16-rlquwdh44eousyvfby3kogzezswitl6e}
-append-path --delim {:} MANPATH {}
+append-path MANPATH {}
 
 
 try {

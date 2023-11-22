@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:53.801149
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:15.735148
 ##
 ## fasttree@2.1.11%gcc@11.4.0+openmp build_system=generic arch=linux-ubuntu22.04-x86_64_v3/7fmk4tv
 ##
@@ -18,8 +18,8 @@ proc ModulesHelp { } {
 
 conflict fasttree
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fasttree-2.1.11-7fmk4tvprk33yi7pltv6e5rqjuj2js4i/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fasttree-2.1.11-7fmk4tvprk33yi7pltv6e5rqjuj2js4i/.}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fasttree-2.1.11-7fmk4tvprk33yi7pltv6e5rqjuj2js4i/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fasttree-2.1.11-7fmk4tvprk33yi7pltv6e5rqjuj2js4i/.}
 setenv FASTTREE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fasttree-2.1.11-7fmk4tvprk33yi7pltv6e5rqjuj2js4i}
 
 

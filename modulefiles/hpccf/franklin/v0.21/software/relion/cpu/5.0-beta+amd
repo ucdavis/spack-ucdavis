@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-26 17:20:16.526997
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:25.676459
 ##
 ## relion@5.0-beta%gcc@11.4.0+allow_ctf_in_sagd+altcpu~cuda+double~double-gpu~external_motioncor2~gpu_delay+gui~ipo~mklfft build_system=cmake build_type=RelWithDebInfo conda_python=/share/apps/conda/environments/relion-5.0/bin/python generator=make purpose=cluster torch_home=/share/databases/relion/torch arch=linux-ubuntu22.04-zen2/u624qdk
 ##
@@ -31,11 +31,10 @@ prereq ctffind/4.1.14+amd
 prereq intel-oneapi-tbb/2021.10.0+amd
 conflict relion
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-u624qdkzezbhcmln5bjftrblj6d6e37w/lib}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-u624qdkzezbhcmln5bjftrblj6d6e37w/bin}
-prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-u624qdkzezbhcmln5bjftrblj6d6e37w/lib/pkgconfig}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-u624qdkzezbhcmln5bjftrblj6d6e37w/.}
-prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/share/X11/locale}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-u624qdkzezbhcmln5bjftrblj6d6e37w/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-u624qdkzezbhcmln5bjftrblj6d6e37w/bin}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-u624qdkzezbhcmln5bjftrblj6d6e37w/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-u624qdkzezbhcmln5bjftrblj6d6e37w/.}
 setenv RELION_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-u624qdkzezbhcmln5bjftrblj6d6e37w}
 setenv RELION_TOPAZ_EXECUTABLE {/share/apps/22.04/spack/spack-ucdavis/bin/wrappers/topaz}
 setenv RELION_CTFFIND_EXECUTABLE {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ctffind-4.1.14-uqsjztnwxwbiznxk4y7hn25i6f5ycnjz/bin/ctffind}

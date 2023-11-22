@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:19.527201
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:27.402056
 ##
 ## spades@3.15.5%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/h2zjbdq
 ##
@@ -24,8 +24,8 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 prereq bzip2/1.0.8
 conflict spades
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/spades-3.15.5-h2zjbdqp7ucyguglsreehixfuflq2miz/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/spades-3.15.5-h2zjbdqp7ucyguglsreehixfuflq2miz/.}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/spades-3.15.5-h2zjbdqp7ucyguglsreehixfuflq2miz/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/spades-3.15.5-h2zjbdqp7ucyguglsreehixfuflq2miz/.}
 setenv SPADES_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/spades-3.15.5-h2zjbdqp7ucyguglsreehixfuflq2miz}
 
 

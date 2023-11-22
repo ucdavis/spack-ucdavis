@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:53.006529
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:15.372362
 ##
 ## exonerate@2.4.0%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/rklohoc
 ##
@@ -19,11 +19,11 @@ proc ModulesHelp { } {
 
 conflict exonerate
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/exonerate-2.4.0-rklohocccgjo2nqqxum7gp5en2qeclyy/bin}
-prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/exonerate-2.4.0-rklohocccgjo2nqqxum7gp5en2qeclyy/share/man}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/exonerate-2.4.0-rklohocccgjo2nqqxum7gp5en2qeclyy/.}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/exonerate-2.4.0-rklohocccgjo2nqqxum7gp5en2qeclyy/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/exonerate-2.4.0-rklohocccgjo2nqqxum7gp5en2qeclyy/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/exonerate-2.4.0-rklohocccgjo2nqqxum7gp5en2qeclyy/.}
 setenv EXONERATE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/exonerate-2.4.0-rklohocccgjo2nqqxum7gp5en2qeclyy}
-append-path --delim {:} MANPATH {}
+append-path MANPATH {}
 
 
 try {

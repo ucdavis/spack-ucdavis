@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:18.984266
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:27.199098
 ##
 ## scallop@0.10.5%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/aayp4y2
 ##
@@ -25,8 +25,8 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 prereq htslib/1.17
 conflict scallop
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/scallop-0.10.5-aayp4y2fms7g7njn5mjf5wb4uy5mgr6s/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/scallop-0.10.5-aayp4y2fms7g7njn5mjf5wb4uy5mgr6s/.}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/scallop-0.10.5-aayp4y2fms7g7njn5mjf5wb4uy5mgr6s/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/scallop-0.10.5-aayp4y2fms7g7njn5mjf5wb4uy5mgr6s/.}
 setenv SCALLOP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/scallop-0.10.5-aayp4y2fms7g7njn5mjf5wb4uy5mgr6s}
 
 

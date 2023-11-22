@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:01.000103
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:18.651892
 ##
 ## kmergenie@1.7051%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/4lu4ya7
 ##
@@ -17,9 +17,8 @@ proc ModulesHelp { } {
 
 conflict kmergenie
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kmergenie-1.7051-4lu4ya7wdp3bfunv2ss343lc42adwxeg/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kmergenie-1.7051-4lu4ya7wdp3bfunv2ss343lc42adwxeg/.}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-setuptools-68.0.0-dkyik7gcew2chhg4lijir22ne7fyl7t7/lib/python3.11/site-packages}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kmergenie-1.7051-4lu4ya7wdp3bfunv2ss343lc42adwxeg/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kmergenie-1.7051-4lu4ya7wdp3bfunv2ss343lc42adwxeg/.}
 setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-odq5bdd2ieghfeux27ir4wq7qi53fmj3/rlib/R}
 setenv KMERGENIE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kmergenie-1.7051-4lu4ya7wdp3bfunv2ss343lc42adwxeg}
 

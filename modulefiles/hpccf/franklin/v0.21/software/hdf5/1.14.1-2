@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:56.868928
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:17.072353
 ##
 ## hdf5@1.14.1-2%gcc@11.4.0~cxx~fortran~hl~ipo~java~map+mpi+shared~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/roj4mq3
 ##
@@ -21,14 +21,14 @@ proc ModulesHelp { } {
 
 conflict hdf5
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/lib}
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/include}
-prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/include}
-prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/include}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/bin}
-prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/lib/pkgconfig}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/.}
-append-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/lib}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/bin}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/.}
+append-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/lib}
 setenv HDF5_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob}
 
 

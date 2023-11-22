@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:56.173028
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:16.773821
 ##
 ## gffread@0.12.7%gcc@11.4.0 build_system=makefile patches=a25b092 arch=linux-ubuntu22.04-x86_64_v3/a6a5d3w
 ##
@@ -19,8 +19,8 @@ proc ModulesHelp { } {
 
 conflict gffread
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gffread-0.12.7-a6a5d3wcngbcz4zstyjsfq7oaf275aab/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gffread-0.12.7-a6a5d3wcngbcz4zstyjsfq7oaf275aab/.}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gffread-0.12.7-a6a5d3wcngbcz4zstyjsfq7oaf275aab/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gffread-0.12.7-a6a5d3wcngbcz4zstyjsfq7oaf275aab/.}
 setenv GFFREAD_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gffread-0.12.7-a6a5d3wcngbcz4zstyjsfq7oaf275aab}
 
 

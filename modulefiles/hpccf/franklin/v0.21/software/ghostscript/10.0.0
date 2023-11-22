@@ -1,7 +1,7 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:56.292992
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:16.803616
 ##
-## ghostscript@10.0.0%gcc@11.4.0~tesseract build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/mvpae5a
+## ghostscript@10.0.0%gcc@11.4.0~tesseract build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/ehhdgse
 ##
 ## Configure options: --disable-compile-inits --enable-dynamic --with-system-libtiff --without-tesseract
 ##
@@ -19,18 +19,17 @@ proc ModulesHelp { } {
 
 conflict ghostscript
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-mvpae5apwxyw6yjbx5thwkcm2ao7tucb/lib}
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-mvpae5apwxyw6yjbx5thwkcm2ao7tucb/include}
-prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-mvpae5apwxyw6yjbx5thwkcm2ao7tucb/include}
-prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-mvpae5apwxyw6yjbx5thwkcm2ao7tucb/include}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-mvpae5apwxyw6yjbx5thwkcm2ao7tucb/bin}
-prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-mvpae5apwxyw6yjbx5thwkcm2ao7tucb/share/man}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-mvpae5apwxyw6yjbx5thwkcm2ao7tucb/.}
-prepend-path --delim {:} XDG_DATA_DIRS {/usr/share}
-prepend-path --delim {:} GI_TYPELIB_PATH {/usr/lib/girepository-1.0}
-prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zaqf7dicjkl3i2sg2ciot74vsehx7k47/share/X11/locale}
-setenv GHOSTSCRIPT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-mvpae5apwxyw6yjbx5thwkcm2ao7tucb}
-append-path --delim {:} MANPATH {}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-ehhdgseuuwlxhhio6tkkzutsuhotxrst/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-ehhdgseuuwlxhhio6tkkzutsuhotxrst/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-ehhdgseuuwlxhhio6tkkzutsuhotxrst/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-ehhdgseuuwlxhhio6tkkzutsuhotxrst/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-ehhdgseuuwlxhhio6tkkzutsuhotxrst/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-ehhdgseuuwlxhhio6tkkzutsuhotxrst/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-ehhdgseuuwlxhhio6tkkzutsuhotxrst/.}
+prepend-path XDG_DATA_DIRS {/usr/share}
+prepend-path GI_TYPELIB_PATH {/usr/lib/girepository-1.0}
+setenv GHOSTSCRIPT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ghostscript-10.0.0-ehhdgseuuwlxhhio6tkkzutsuhotxrst}
+append-path MANPATH {}
 
 
 try {

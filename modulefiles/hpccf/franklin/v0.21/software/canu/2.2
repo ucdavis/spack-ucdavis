@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:49.956377
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:14.256115
 ##
 ## canu@2.2%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/juv33lg
 ##
@@ -23,10 +23,9 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 prereq gnuplot/5.4.3
 conflict canu
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/canu-2.2-juv33lg4nca7tpzz6zdngw34pw52aexh/lib}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/canu-2.2-juv33lg4nca7tpzz6zdngw34pw52aexh/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/canu-2.2-juv33lg4nca7tpzz6zdngw34pw52aexh/.}
-prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/share/X11/locale}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/canu-2.2-juv33lg4nca7tpzz6zdngw34pw52aexh/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/canu-2.2-juv33lg4nca7tpzz6zdngw34pw52aexh/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/canu-2.2-juv33lg4nca7tpzz6zdngw34pw52aexh/.}
 setenv CANU_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/canu-2.2-juv33lg4nca7tpzz6zdngw34pw52aexh}
 
 

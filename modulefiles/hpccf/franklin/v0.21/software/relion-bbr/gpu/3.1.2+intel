@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-17 09:21:13.953657
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:26.207625
 ##
 ## relion-bbr@3.1.2%gcc@7.5.0+allow_ctf_in_sagd+cuda+double~double-gpu~external_motioncor2+gui~ipo+mklfft build_system=cmake build_type=RelWithDebInfo cuda_arch=75 generator=make patches=c1b74ee purpose=cluster arch=linux-ubuntu22.04-skylake_avx512/pkrrenn
 ##
@@ -26,9 +26,8 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 prereq intel-oneapi-mkl/2023.2.0+intel
 conflict relion-bbr
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-7.5.0/relion-bbr-3.1.2-pkrrenn23y56vykulbwpivdzjdzstvbl/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-7.5.0/relion-bbr-3.1.2-pkrrenn23y56vykulbwpivdzjdzstvbl/.}
-prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libx11-1.8.4-dicsz42adjvdqkoeagojkni23levveez/share/X11/locale}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-7.5.0/relion-bbr-3.1.2-pkrrenn23y56vykulbwpivdzjdzstvbl/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-7.5.0/relion-bbr-3.1.2-pkrrenn23y56vykulbwpivdzjdzstvbl/.}
 setenv RELION_BBR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-7.5.0/relion-bbr-3.1.2-pkrrenn23y56vykulbwpivdzjdzstvbl}
 
 

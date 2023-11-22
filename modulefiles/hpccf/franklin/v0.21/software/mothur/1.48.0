@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:05.100955
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:20.412683
 ##
 ## mothur@1.48.0%gcc@11.4.0+boost~gsl~hdf5 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/zunahmc
 ##
@@ -25,11 +25,11 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 prereq usearch/11.0.667
 conflict mothur
 
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr/include}
-prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr/include}
-prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr/include}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr/.}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr/.}
 setenv MOTHUR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr}
 
 

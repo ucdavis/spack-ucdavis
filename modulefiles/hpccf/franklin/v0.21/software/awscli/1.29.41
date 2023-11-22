@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:46.213444
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:12.746114
 ##
 ## awscli@1.29.41%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/fg32zdj
 ##
@@ -18,22 +18,10 @@ proc ModulesHelp { } {
 
 conflict awscli
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/awscli-1.29.41-fg32zdj7swu2igkb5swbeojye2txcwow/lib}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/awscli-1.29.41-fg32zdj7swu2igkb5swbeojye2txcwow/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/awscli-1.29.41-fg32zdj7swu2igkb5swbeojye2txcwow/.}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/awscli-1.29.41-fg32zdj7swu2igkb5swbeojye2txcwow/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-botocore-1.31.41-qrtwcfwlhiq5xbq2j6mli7n7isob3dem/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-jmespath-1.0.1-ylcwtmokumlirsceff3w64nkbec6pt5j/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-python-dateutil-2.8.2-sal43bboln5hfq3pmdr3gncmcumpof5j/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-six-1.16.0-oidvgjb3d7yptdqfpuxvp5zrst3yu4qr/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-urllib3-1.26.12-q5szjxjuclgxf2bpckexnr4xobbiivmv/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-colorama-0.4.4-3pizisvnl4imxx2bxopl6o5ywxlmycw3/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-docutils-0.16-dv55mu77h53x4zfj2beqbuqzqsnaicls/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyyaml-5.4.1-o63w7wrrjjj2uqauipwkoudsvwcltikh/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-rsa-4.7.2-fvqf2646l6n45hvum4asl65ewfkgukfy/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyasn1-0.4.8-2ljong4aphpsdmp5y3kjl3nj4mhn5psb/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-setuptools-68.0.0-dkyik7gcew2chhg4lijir22ne7fyl7t7/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-s3transfer-0.6.0-v5yyytcdvcmylbli4rs2vqoq5bh37xb3/lib/python3.11/site-packages}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/awscli-1.29.41-fg32zdj7swu2igkb5swbeojye2txcwow/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/awscli-1.29.41-fg32zdj7swu2igkb5swbeojye2txcwow/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/awscli-1.29.41-fg32zdj7swu2igkb5swbeojye2txcwow/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/awscli-1.29.41-fg32zdj7swu2igkb5swbeojye2txcwow/lib/python3.11/site-packages}
 setenv AWSCLI_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/awscli-1.29.41-fg32zdj7swu2igkb5swbeojye2txcwow}
 
 

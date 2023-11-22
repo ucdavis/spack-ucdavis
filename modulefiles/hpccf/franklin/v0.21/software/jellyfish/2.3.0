@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:00.428790
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:18.450652
 ##
 ## jellyfish@2.3.0%gcc@11.4.0~ruby build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/pzbyrmc
 ##
@@ -18,16 +18,16 @@ proc ModulesHelp { } {
 
 conflict jellyfish
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/lib}
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/include}
-prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/include}
-prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/include}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/bin}
-prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/share/man}
-prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/lib/pkgconfig}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/.}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/.}
 setenv JELLYFISH_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz}
-append-path --delim {:} MANPATH {}
+append-path MANPATH {}
 
 
 try {

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:09.365491
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:21.967576
 ##
 ## paraview@5.11.1%gcc@11.4.0~adios2~advanced_debug~catalyst~cuda+development_files~examples~eyedomelighting~fortran~hdf5~ipo+kits~libcatalyst+mpi+opengl2~osmesa~pagosa~python~qt~raytracing~rocm+shared~tbb~visitbridge build_edition=canonical build_system=cmake build_type=Release generator=ninja patches=02253c7,acb3805 use_vtkm=default arch=linux-ubuntu22.04-x86_64_v3/4g7fe7v
 ##
@@ -34,19 +34,17 @@ prereq eigen/3.4.0
 prereq nlohmann-json/3.11.2
 conflict paraview
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/lib}
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/include}
-prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/include}
-prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/include}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/.}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/lib/python3.11/site-packages}
-prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zaqf7dicjkl3i2sg2ciot74vsehx7k47/share/X11/locale}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/.}
 setenv PROJ_LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/proj-8.1.0-nrswii6eg6hrbrmqgfc6muprpwufg5j5/share/proj}
 setenv ParaView_DIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd}
 setenv PARAVIEW_VTK_DIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/lib/cmake/paraview-5.11/vtk}
-prepend-path --delim {:} LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/lib}
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/lib}
+prepend-path LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/lib}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/lib}
 setenv PARAVIEW_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd}
 
 

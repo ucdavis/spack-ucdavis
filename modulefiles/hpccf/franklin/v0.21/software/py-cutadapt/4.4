@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:11.566705
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:23.679836
 ##
 ## py-cutadapt@4.4%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/t4yyleg
 ##
@@ -19,14 +19,10 @@ proc ModulesHelp { } {
 
 conflict py-cutadapt
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cutadapt-4.4-t4yyleg4rehhdmuqnlmzi5oiht5j7cj5/lib}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cutadapt-4.4-t4yyleg4rehhdmuqnlmzi5oiht5j7cj5/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cutadapt-4.4-t4yyleg4rehhdmuqnlmzi5oiht5j7cj5/.}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cutadapt-4.4-t4yyleg4rehhdmuqnlmzi5oiht5j7cj5/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-dnaio-0.10.0-xahc7zrz27qxkaug2v43s6ztflagt4s3/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-setuptools-68.0.0-hvwaln64nmuvlkpv6xwqs5cvdhmzygfl/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-xopen-1.6.0-jzuviut4vknvqvgdzipov2djnhb5k6al/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-isal-1.1.0-hzvavlz26bp7bkxdg4zzqchqkg7cy7f2/lib/python3.11/site-packages}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cutadapt-4.4-t4yyleg4rehhdmuqnlmzi5oiht5j7cj5/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cutadapt-4.4-t4yyleg4rehhdmuqnlmzi5oiht5j7cj5/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cutadapt-4.4-t4yyleg4rehhdmuqnlmzi5oiht5j7cj5/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cutadapt-4.4-t4yyleg4rehhdmuqnlmzi5oiht5j7cj5/lib/python3.11/site-packages}
 setenv PY_CUTADAPT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cutadapt-4.4-t4yyleg4rehhdmuqnlmzi5oiht5j7cj5}
 
 

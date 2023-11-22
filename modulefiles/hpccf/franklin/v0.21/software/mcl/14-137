@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:04.319778
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:20.014213
 ##
 ## mcl@14-137%gcc@11.4.0~blast build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/hih5utr
 ##
@@ -19,11 +19,11 @@ proc ModulesHelp { } {
 
 conflict mcl
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mcl-14-137-hih5utroj4nizc7erjx3x62ddamytvi3/bin}
-prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mcl-14-137-hih5utroj4nizc7erjx3x62ddamytvi3/share/man}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mcl-14-137-hih5utroj4nizc7erjx3x62ddamytvi3/.}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mcl-14-137-hih5utroj4nizc7erjx3x62ddamytvi3/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mcl-14-137-hih5utroj4nizc7erjx3x62ddamytvi3/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mcl-14-137-hih5utroj4nizc7erjx3x62ddamytvi3/.}
 setenv MCL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mcl-14-137-hih5utroj4nizc7erjx3x62ddamytvi3}
-append-path --delim {:} MANPATH {}
+append-path MANPATH {}
 
 
 try {

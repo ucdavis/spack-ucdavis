@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:20.415595
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:27.935022
 ##
 ## turbovnc@3.0.3%gcc@11.4.0~ipo+libjpeg-turbo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/qibm27l
 ##
@@ -26,11 +26,11 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 prereq virtualgl/2.5.2
 conflict turbovnc
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/turbovnc-3.0.3-qibm27lbi54stpew5vmuya2g7kz4azgg/bin}
-prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/turbovnc-3.0.3-qibm27lbi54stpew5vmuya2g7kz4azgg/share/man}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/turbovnc-3.0.3-qibm27lbi54stpew5vmuya2g7kz4azgg/.}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/turbovnc-3.0.3-qibm27lbi54stpew5vmuya2g7kz4azgg/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/turbovnc-3.0.3-qibm27lbi54stpew5vmuya2g7kz4azgg/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/turbovnc-3.0.3-qibm27lbi54stpew5vmuya2g7kz4azgg/.}
 setenv TURBOVNC_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/turbovnc-3.0.3-qibm27lbi54stpew5vmuya2g7kz4azgg}
-append-path --delim {:} MANPATH {}
+append-path MANPATH {}
 
 
 try {

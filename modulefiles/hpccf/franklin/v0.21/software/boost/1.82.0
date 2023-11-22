@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:47.710660
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:13.530103
 ##
 ## boost@1.82.0%gcc@11.4.0~atomic~chrono~clanglibcpp~container~context~contract~coroutine~date_time~debug~exception~fiber~filesystem~graph~graph_parallel~icu~iostreams~json~locale~log~math~mpi+multithreaded~nowide~numpy~pic~program_options~python~random~regex~serialization+shared~signals~singlethreaded~stacktrace~system~taggedlayout~test~thread~timer~type_erasure~versionedlayout~wave build_system=generic cxxstd=98 patches=a440f96,a7c807f visibility=hidden arch=linux-ubuntu22.04-x86_64_v3/i2ljonp
 ##
@@ -21,10 +21,10 @@ proc ModulesHelp { } {
 
 conflict boost
 
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.82.0-i2ljonpzqhrz6sajb7mx4hbn6xayptsv/include}
-prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.82.0-i2ljonpzqhrz6sajb7mx4hbn6xayptsv/include}
-prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.82.0-i2ljonpzqhrz6sajb7mx4hbn6xayptsv/include}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.82.0-i2ljonpzqhrz6sajb7mx4hbn6xayptsv/.}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.82.0-i2ljonpzqhrz6sajb7mx4hbn6xayptsv/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.82.0-i2ljonpzqhrz6sajb7mx4hbn6xayptsv/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.82.0-i2ljonpzqhrz6sajb7mx4hbn6xayptsv/include}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.82.0-i2ljonpzqhrz6sajb7mx4hbn6xayptsv/.}
 setenv BOOST_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.82.0-i2ljonpzqhrz6sajb7mx4hbn6xayptsv}
 setenv BOOST_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.82.0-i2ljonpzqhrz6sajb7mx4hbn6xayptsv}
 

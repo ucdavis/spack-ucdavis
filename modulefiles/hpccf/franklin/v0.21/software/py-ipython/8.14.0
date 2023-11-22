@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:13.305884
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:24.235273
 ##
 ## py-ipython@8.14.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/7ytczmt
 ##
@@ -18,31 +18,13 @@ proc ModulesHelp { } {
 
 conflict py-ipython
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-7ytczmtnjlmeiw2b7xh3kt5wadki424k/lib}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-7ytczmtnjlmeiw2b7xh3kt5wadki424k/bin}
-prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-7ytczmtnjlmeiw2b7xh3kt5wadki424k/share/man}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-7ytczmtnjlmeiw2b7xh3kt5wadki424k/.}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-7ytczmtnjlmeiw2b7xh3kt5wadki424k/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-backcall-0.2.0-ru5tilvijeabatnmqpmlggnrykqyj3ih/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-decorator-5.1.1-w4s4zroa3o37clngsjexxdimh55v4uig/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-jedi-0.18.2-2oql5tnmcnrru5o4c4krtrxjdiplblqi/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-parso-0.8.3-udy74zvvjnd4sardjjjrph6lwvn4gsr5/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-setuptools-68.0.0-dkyik7gcew2chhg4lijir22ne7fyl7t7/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-matplotlib-inline-0.1.6-gne7ho4kcglxayjbn7mpgeruczhuvxn4/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-traitlets-5.9.0-wrtzvzqcsjxcdr3mvmwfpc2kmc5dfg5n/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pexpect-4.8.0-fsib2vdd3eiw3s34q5rh7qqjz23ealsw/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ptyprocess-0.7.0-z5gmfdrtllwavyqpqngsukq2vj6z2oyy/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pickleshare-0.7.5-gvda5agohwukxqjtkx577z4zbmxzuboz/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-prompt-toolkit-3.0.38-t33a5xw3iyok2rprfoljjuqes5vq2byp/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-wcwidth-0.2.7-gdt4f3mzqa4qakiylhjfmr4isxtifb62/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pygments-2.16.1-vsxes4r6i7gjeqxucc53wtb4tafsgo3m/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-stack-data-0.6.2-tu3yawig5zuduisb3di4scgxp6kbc5a6/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-asttokens-2.4.0-wtwmok5jtz7tuiipzqjzq2aqyczr5iek/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-six-1.16.0-oidvgjb3d7yptdqfpuxvp5zrst3yu4qr/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-executing-1.2.0-jgxsvsynkeu7ulnn7ju7i7vzwlb3frr7/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pure-eval-0.2.2-ulc663ksqls2j4rye54vobpvgvoq56h2/lib/python3.11/site-packages}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-7ytczmtnjlmeiw2b7xh3kt5wadki424k/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-7ytczmtnjlmeiw2b7xh3kt5wadki424k/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-7ytczmtnjlmeiw2b7xh3kt5wadki424k/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-7ytczmtnjlmeiw2b7xh3kt5wadki424k/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-7ytczmtnjlmeiw2b7xh3kt5wadki424k/lib/python3.11/site-packages}
 setenv PY_IPYTHON_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-7ytczmtnjlmeiw2b7xh3kt5wadki424k}
-append-path --delim {:} MANPATH {}
+append-path MANPATH {}
 
 
 try {

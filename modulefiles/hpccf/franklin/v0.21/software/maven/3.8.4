@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:04.283198
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:19.994035
 ##
 ## maven@3.8.4%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/ipu3gb6
 ##
@@ -17,9 +17,9 @@ proc ModulesHelp { } {
 
 conflict maven
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/maven-3.8.4-ipu3gb6z6dvqcijyl5g5qtbhwxpfyl3f/lib}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/maven-3.8.4-ipu3gb6z6dvqcijyl5g5qtbhwxpfyl3f/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/maven-3.8.4-ipu3gb6z6dvqcijyl5g5qtbhwxpfyl3f/.}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/maven-3.8.4-ipu3gb6z6dvqcijyl5g5qtbhwxpfyl3f/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/maven-3.8.4-ipu3gb6z6dvqcijyl5g5qtbhwxpfyl3f/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/maven-3.8.4-ipu3gb6z6dvqcijyl5g5qtbhwxpfyl3f/.}
 setenv MAVEN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/maven-3.8.4-ipu3gb6z6dvqcijyl5g5qtbhwxpfyl3f}
 
 

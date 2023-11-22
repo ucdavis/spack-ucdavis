@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:18.476654
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:27.080552
 ##
 ## salmon@1.10.1%gcc@11.4.0~ipo build_system=cmake build_type=RELEASE generator=make arch=linux-ubuntu22.04-x86_64_v3/a2rxzka
 ##
@@ -20,18 +20,15 @@ proc ModulesHelp { } {
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load bzip2/1.0.8
-    module load intel-oneapi-tbb/2021.10.0
 } else {
     depends-on bzip2/1.0.8
-    depends-on intel-oneapi-tbb/2021.10.0
 }
 prereq bzip2/1.0.8
-prereq intel-oneapi-tbb/2021.10.0
 conflict salmon
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/salmon-1.10.1-a2rxzkalcako6xay7y46f35tbnpa2zao/lib}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/salmon-1.10.1-a2rxzkalcako6xay7y46f35tbnpa2zao/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/salmon-1.10.1-a2rxzkalcako6xay7y46f35tbnpa2zao/.}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/salmon-1.10.1-a2rxzkalcako6xay7y46f35tbnpa2zao/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/salmon-1.10.1-a2rxzkalcako6xay7y46f35tbnpa2zao/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/salmon-1.10.1-a2rxzkalcako6xay7y46f35tbnpa2zao/.}
 setenv SALMON_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/salmon-1.10.1-a2rxzkalcako6xay7y46f35tbnpa2zao}
 
 

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:07.470683
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:21.342794
 ##
 ## netlib-lapack@3.11.0%gcc@11.4.0~external-blas~ipo+lapacke+shared~xblas build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/g77nxmz
 ##
@@ -21,12 +21,12 @@ proc ModulesHelp { } {
 
 conflict netlib-lapack
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-lapack-3.11.0-g77nxmzqylask34pdk5nwvm7p7zx5esn/lib}
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-lapack-3.11.0-g77nxmzqylask34pdk5nwvm7p7zx5esn/include}
-prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-lapack-3.11.0-g77nxmzqylask34pdk5nwvm7p7zx5esn/include}
-prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-lapack-3.11.0-g77nxmzqylask34pdk5nwvm7p7zx5esn/include}
-prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-lapack-3.11.0-g77nxmzqylask34pdk5nwvm7p7zx5esn/lib/pkgconfig}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-lapack-3.11.0-g77nxmzqylask34pdk5nwvm7p7zx5esn/.}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-lapack-3.11.0-g77nxmzqylask34pdk5nwvm7p7zx5esn/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-lapack-3.11.0-g77nxmzqylask34pdk5nwvm7p7zx5esn/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-lapack-3.11.0-g77nxmzqylask34pdk5nwvm7p7zx5esn/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-lapack-3.11.0-g77nxmzqylask34pdk5nwvm7p7zx5esn/include}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-lapack-3.11.0-g77nxmzqylask34pdk5nwvm7p7zx5esn/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-lapack-3.11.0-g77nxmzqylask34pdk5nwvm7p7zx5esn/.}
 setenv NETLIB_LAPACK_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netlib-lapack-3.11.0-g77nxmzqylask34pdk5nwvm7p7zx5esn}
 
 

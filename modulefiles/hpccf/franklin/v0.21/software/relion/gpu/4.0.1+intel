@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:16.519038
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:25.548253
 ##
 ## relion@4.0.1%gcc@11.4.0+allow_ctf_in_sagd+cuda+double~double-gpu~external_motioncor2+gpu_delay+gui~ipo+mklfft build_system=cmake build_type=RelWithDebInfo cuda_arch=75 generator=make patches=21b9c2c purpose=cluster arch=linux-ubuntu22.04-skylake_avx512/unrz65a
 ##
@@ -28,11 +28,10 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 prereq intel-oneapi-mkl/2023.2.0+intel
 conflict relion
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/relion-4.0.1-unrz65aeoymxlesb3plm4dzjmpsjgipv/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/relion-4.0.1-unrz65aeoymxlesb3plm4dzjmpsjgipv/.}
-prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/share/X11/locale}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/relion-4.0.1-unrz65aeoymxlesb3plm4dzjmpsjgipv/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/relion-4.0.1-unrz65aeoymxlesb3plm4dzjmpsjgipv/.}
 setenv RELION_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/relion-4.0.1-unrz65aeoymxlesb3plm4dzjmpsjgipv}
-setenv RELION_TOPAZ_EXECUTABLE {/share/apps/spack/spack-ucdavis/bin/wrappers/topaz}
+setenv RELION_TOPAZ_EXECUTABLE {/share/apps/22.04/spack/spack-ucdavis/bin/wrappers/topaz}
 setenv RELION_CTFFIND_EXECUTABLE {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/ctffind-4.1.14-fow22zacczmn2xmt2yvtdrupx4vsojzu/bin/ctffind}
 setenv RELION_QSUB_TEMPLATE {/share/apps/22.04/spack/spack-ucdavis/templates/hpccf/franklin/relion.4.0.1.gpu.skylake_avx512.slurm.template.sh}
 setenv RELION_QSUB_COMMAND {sbatch --constraint=intel}

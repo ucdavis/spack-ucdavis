@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:48.127478
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:13.590930
 ##
 ## braker@2.1.6%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/opfddbw
 ##
@@ -16,22 +16,12 @@ proc ModulesHelp { } {
     puts stderr {that combines the advantages of GeneMark-ET and AUGUSTUS}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load augustus/3.5.0
-    module load samtools/1.16.1
-} else {
-    depends-on augustus/3.5.0
-    depends-on samtools/1.16.1
-}
-prereq augustus/3.5.0
-prereq samtools/1.16.1
 conflict braker
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/braker-2.1.6-opfddbwqtbzqsmekdqcx6bb57c36ybgr/lib}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/braker-2.1.6-opfddbwqtbzqsmekdqcx6bb57c36ybgr/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/braker-2.1.6-opfddbwqtbzqsmekdqcx6bb57c36ybgr/.}
-prepend-path --delim {:} PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-file-homedir-1.006-n2rfwdyeyx5rf6qskygh6ael6qt7iavt/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-file-which-1.27-uc7lvhpskdnyg2r75rbna5wcunoosyrq/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-hash-merge-0.300-ofdbndlkyoqkoa355e2a5vwkrg2pd2lg/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-clone-choose-0.010-nvtixdxiiurdwgvx7za4egslyopudnen/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-scalar-list-utils-1.63-fouqtcmk6pmpa75wpmte6fxc2ecpqjvu/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-list-moreutils-0.430-fqd4dxakvhwjq4aequfrg2j32w52xmn4/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-exporter-tiny-1.006002-5c4wtrrgtfejj5i4fk3wxwfvqzpvwxss/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-list-moreutils-xs-0.430-gxciivr6sbvymj5qq7qcs5n5usbcjgmq/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-logger-simple-2.0-3qgr6y35dde33tlre4mkfj7pltgvdg5j/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-object-insideout-4.05-qenkvi5kcceevkkcavxkqsoil5gkqw7z/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-exception-class-1.45-idhnokikrzwsm3gvnac4o25byeuwokvz/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-class-data-inheritable-0.08-2tw2aabplu4s4etzbkznfwajfksjogog/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-devel-stacktrace-2.04-mmfni6wiw3z24io2quwhk3tk4xgvpdxi/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-parallel-forkmanager-2.02-jk37lvekiy5olchkl5hlanvlgnj7wyko/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-scalar-util-numeric-0.40-bvj6ujtduj2jrr2dpap2gu36i36roq5k/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-yaml-1.30-7tappv5e3e7knhpadquuxq373nylcyt6/lib/perl5}
-prepend-path --delim {:} PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/braker-2.1.6-opfddbwqtbzqsmekdqcx6bb57c36ybgr/lib}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/braker-2.1.6-opfddbwqtbzqsmekdqcx6bb57c36ybgr/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/braker-2.1.6-opfddbwqtbzqsmekdqcx6bb57c36ybgr/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/braker-2.1.6-opfddbwqtbzqsmekdqcx6bb57c36ybgr/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/braker-2.1.6-opfddbwqtbzqsmekdqcx6bb57c36ybgr/lib}
 setenv BRAKER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/braker-2.1.6-opfddbwqtbzqsmekdqcx6bb57c36ybgr}
 
 

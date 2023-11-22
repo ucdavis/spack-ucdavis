@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:58.557395
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:17.579041
 ##
 ## intel-oneapi-mkl@2023.2.0%oneapi@2023.2.0~cluster+envmods~ilp64+shared build_system=generic mpi_family=none threads=none arch=linux-ubuntu22.04-skylake_avx512/fktonyd
 ##
@@ -29,20 +29,19 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 prereq intel-oneapi-tbb/2021.10.0+intel
 conflict intel-oneapi-mkl
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/lib}
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/include}
-prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/include}
-prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/include}
-prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/lib/pkgconfig}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/.}
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/include}
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/intel64}
-prepend-path --delim {:} LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/intel64:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/intel64:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-tbb-2021.10.0-k5lvx7b7dqe2w5tn5n333jahyn5zohuf/tbb/2021.10.0/env/../lib/intel64/gcc4.8}
-append-path --delim {:} NLSPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/intel64/locale/%l_%t/%N}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/bin/intel64}
-prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/pkgconfig:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/pkgconfig:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/lib/pkgconfig:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-tbb-2021.10.0-k5lvx7b7dqe2w5tn5n333jahyn5zohuf/tbb/2021.10.0/env/../lib/pkgconfig:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-tbb-2021.10.0-k5lvx7b7dqe2w5tn5n333jahyn5zohuf/lib/pkgconfig:/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-4.1.5-joyc7douqjxwc6rga37uhhrbh34tsod5/lib/pkgconfig:/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ucx-1.14.1-5dulpdsnm3hap6cd4kszsvhqz564po7m/lib/pkgconfig}
-append-path --delim { } __INTEL_POST_CFLAGS {-Wl,-rpath,/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/intel64}
-append-path --delim { } __INTEL_POST_FFLAGS {-Wl,-rpath,/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/intel64}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/include}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/.}
+prepend-path LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/intel64}
+setenv MKLROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0}
+prepend-path NLSPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/intel64/locale/%l_%t/%N}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/pkgconfig}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/include}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/intel64}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/bin/intel64}
 setenv INTEL_ONEAPI_MKL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5}
 
 

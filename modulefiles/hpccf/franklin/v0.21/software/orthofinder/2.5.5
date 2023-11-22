@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:08.375306
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:21.613938
 ##
 ## orthofinder@2.5.5%gcc@11.4.0~blast~iqtree~mmseqs2~muscle~raxml~raxml-ng build_system=generic arch=linux-ubuntu22.04-x86_64_v3/nzgilbi
 ##
@@ -32,13 +32,10 @@ prereq fasttree/2.1.11
 prereq mafft/7.505
 conflict orthofinder
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthofinder-2.5.5-nzgilbilwee4bei4xlchrnjy75e5tkiw/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthofinder-2.5.5-nzgilbilwee4bei4xlchrnjy75e5tkiw/.}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numpy-1.25.2-vcmulzidmbvifm7idcfedcwkrf4p2w44/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-setuptools-63.4.3-hsixzjesbrxime2qpwqaxwdkrwbz22vq/lib/python3.11/site-packages}
-prepend-path --delim {:} PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-scipy-1.11.2-p46kbevbvkrsbexurcsxzv7huk3tbot6/lib/python3.11/site-packages}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthofinder-2.5.5-nzgilbilwee4bei4xlchrnjy75e5tkiw/bin}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthofinder-2.5.5-nzgilbilwee4bei4xlchrnjy75e5tkiw/bin/tools}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthofinder-2.5.5-nzgilbilwee4bei4xlchrnjy75e5tkiw/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthofinder-2.5.5-nzgilbilwee4bei4xlchrnjy75e5tkiw/.}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthofinder-2.5.5-nzgilbilwee4bei4xlchrnjy75e5tkiw/bin}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthofinder-2.5.5-nzgilbilwee4bei4xlchrnjy75e5tkiw/bin/tools}
 setenv ORTHOFINDER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthofinder-2.5.5-nzgilbilwee4bei4xlchrnjy75e5tkiw}
 
 

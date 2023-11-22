@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:53.727253
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:15.704655
 ##
 ## fastqc@0.12.1%gcc@11.4.0 build_system=generic patches=886aba9 arch=linux-ubuntu22.04-x86_64_v3/maid4z7
 ##
@@ -17,9 +17,9 @@ proc ModulesHelp { } {
 
 conflict fastqc
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastqc-0.12.1-maid4z7dkedkn2awswts7hfp4opuz5fm/lib}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastqc-0.12.1-maid4z7dkedkn2awswts7hfp4opuz5fm/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastqc-0.12.1-maid4z7dkedkn2awswts7hfp4opuz5fm/.}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastqc-0.12.1-maid4z7dkedkn2awswts7hfp4opuz5fm/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastqc-0.12.1-maid4z7dkedkn2awswts7hfp4opuz5fm/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastqc-0.12.1-maid4z7dkedkn2awswts7hfp4opuz5fm/.}
 setenv FASTQC_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastqc-0.12.1-maid4z7dkedkn2awswts7hfp4opuz5fm}
 
 

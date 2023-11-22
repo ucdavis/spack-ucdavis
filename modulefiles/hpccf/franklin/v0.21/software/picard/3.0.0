@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:07:10.039132
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:22.179277
 ##
 ## picard@3.0.0%gcc@11.4.0~parameters build_system=generic arch=linux-ubuntu22.04-x86_64_v3/yfymvgt
 ##
@@ -18,9 +18,9 @@ proc ModulesHelp { } {
 
 conflict picard
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/picard-3.0.0-yfymvgtuyyvh5jct4kehwifpdslradnf/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/picard-3.0.0-yfymvgtuyyvh5jct4kehwifpdslradnf/.}
-prepend-path --delim {:} PICARD {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/picard-3.0.0-yfymvgtuyyvh5jct4kehwifpdslradnf/bin/picard.jar}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/picard-3.0.0-yfymvgtuyyvh5jct4kehwifpdslradnf/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/picard-3.0.0-yfymvgtuyyvh5jct4kehwifpdslradnf/.}
+prepend-path PICARD {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/picard-3.0.0-yfymvgtuyyvh5jct4kehwifpdslradnf/bin/picard.jar}
 setenv PICARD_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/picard-3.0.0-yfymvgtuyyvh5jct4kehwifpdslradnf}
 
 

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:56.789276
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:17.038598
 ##
 ## gsl@2.7.1%gcc@11.4.0~external-cblas+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/62tbson
 ##
@@ -23,18 +23,18 @@ proc ModulesHelp { } {
 
 conflict gsl
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/lib}
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/include}
-prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/include}
-prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/include}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/bin}
-prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/share/man}
-prepend-path --delim {:} ACLOCAL_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/share/aclocal}
-prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/lib/pkgconfig}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/.}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/share/man}
+prepend-path ACLOCAL_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev/.}
 setenv GSL_ROOT_DIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev}
 setenv GSL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gsl-2.7.1-62tbsonbxsd6dhe3jpct2jzlsvf7u5ev}
-append-path --delim {:} MANPATH {}
+append-path MANPATH {}
 
 
 try {

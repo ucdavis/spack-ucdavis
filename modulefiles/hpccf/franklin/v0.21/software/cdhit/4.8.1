@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:50.549410
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:14.420508
 ##
 ## cdhit@4.8.1%gcc@11.4.0+openmp+zlib build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/kauufsl
 ##
@@ -18,9 +18,8 @@ proc ModulesHelp { } {
 
 conflict cdhit
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cdhit-4.8.1-kauufslqxf67f74pbrrtv3w3f6iwq5zr/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cdhit-4.8.1-kauufslqxf67f74pbrrtv3w3f6iwq5zr/.}
-prepend-path --delim {:} PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-text-nsp-1.31-c6p746cnsfbai3zr7hmurdvn7u37ltqm/lib/perl5}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cdhit-4.8.1-kauufslqxf67f74pbrrtv3w3f6iwq5zr/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cdhit-4.8.1-kauufslqxf67f74pbrrtv3w3f6iwq5zr/.}
 setenv CDHIT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cdhit-4.8.1-kauufslqxf67f74pbrrtv3w3f6iwq5zr}
 
 

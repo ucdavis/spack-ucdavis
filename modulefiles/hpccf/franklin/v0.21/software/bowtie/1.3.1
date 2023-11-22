@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:47.760382
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:13.546017
 ##
 ## bowtie@1.3.1%gcc@11.4.0~tbb build_system=makefile patches=55bcf00 arch=linux-ubuntu22.04-x86_64_v3/5x5jkvr
 ##
@@ -18,8 +18,8 @@ proc ModulesHelp { } {
 
 conflict bowtie
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bowtie-1.3.1-5x5jkvr7khh6h7vx6qayaz677g7sxy37/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bowtie-1.3.1-5x5jkvr7khh6h7vx6qayaz677g7sxy37/.}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bowtie-1.3.1-5x5jkvr7khh6h7vx6qayaz677g7sxy37/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bowtie-1.3.1-5x5jkvr7khh6h7vx6qayaz677g7sxy37/.}
 setenv BOWTIE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bowtie-1.3.1-5x5jkvr7khh6h7vx6qayaz677g7sxy37}
 
 

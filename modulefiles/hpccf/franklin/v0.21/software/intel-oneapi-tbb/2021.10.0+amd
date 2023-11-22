@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:59.031532
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:17.742486
 ##
 ## intel-oneapi-tbb@2021.10.0%gcc@11.4.0+envmods build_system=generic arch=linux-ubuntu22.04-zen2/7rffg26
 ##
@@ -22,18 +22,18 @@ proc ModulesHelp { } {
 
 conflict intel-oneapi-tbb
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/lib}
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/include}
-prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/include}
-prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/include}
-prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/lib/pkgconfig}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/.}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/env/..}
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/env/../include}
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/env/../lib/intel64/gcc4.8}
-prepend-path --delim {:} LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/env/../lib/intel64/gcc4.8}
-prepend-path --delim {:} PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/env/../lib/pkgconfig}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/include}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/.}
+prepend-path LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/env/../lib/intel64/gcc4.8}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/env/../lib/pkgconfig}
 setenv TBBROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/env/..}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/env/..}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/env/../include}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/env/../lib/intel64/gcc4.8}
 setenv INTEL_ONEAPI_TBB_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m}
 
 

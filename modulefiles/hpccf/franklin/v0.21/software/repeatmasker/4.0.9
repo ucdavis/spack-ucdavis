@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:26.420815
+##
+## repeatmasker@4.0.9%gcc@11.4.0~crossmatch build_system=generic patches=b9e0ce5 arch=linux-ubuntu22.04-x86_64_v3/rimwih7
+##
+
+
+module-whatis {RepeatMasker is a program that screens DNA sequences for interspersed repeats and low complexity DNA sequences.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : repeatmasker}
+    puts stderr {Version: 4.0.9}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {RepeatMasker is a program that screens DNA sequences for interspersed}
+    puts stderr {repeats and low complexity DNA sequences.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load hmmer/3.4
+    module load ncbi-rmblastn/2.14.0
+} else {
+    depends-on hmmer/3.4
+    depends-on ncbi-rmblastn/2.14.0
+}
+prereq hmmer/3.4
+prereq ncbi-rmblastn/2.14.0
+conflict repeatmasker
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/repeatmasker-4.0.9-rimwih7trbsu2eqsme2p2mlnwwfr3lxt/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/repeatmasker-4.0.9-rimwih7trbsu2eqsme2p2mlnwwfr3lxt/.}
+setenv REPEATMASKER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/repeatmasker-4.0.9-rimwih7trbsu2eqsme2p2mlnwwfr3lxt}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

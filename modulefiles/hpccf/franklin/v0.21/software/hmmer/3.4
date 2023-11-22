@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:57.112809
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:17.175668
 ##
 ## hmmer@3.4%gcc@11.4.0~gsl+mpi build_system=generic arch=linux-ubuntu22.04-x86_64_v3/dfkhduk
 ##
@@ -19,11 +19,11 @@ proc ModulesHelp { } {
 
 conflict hmmer
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hmmer-3.4-dfkhduk5hl4pjyijcifiln3gkfkljz2m/bin}
-prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hmmer-3.4-dfkhduk5hl4pjyijcifiln3gkfkljz2m/share/man}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hmmer-3.4-dfkhduk5hl4pjyijcifiln3gkfkljz2m/.}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hmmer-3.4-dfkhduk5hl4pjyijcifiln3gkfkljz2m/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hmmer-3.4-dfkhduk5hl4pjyijcifiln3gkfkljz2m/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hmmer-3.4-dfkhduk5hl4pjyijcifiln3gkfkljz2m/.}
 setenv HMMER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hmmer-3.4-dfkhduk5hl4pjyijcifiln3gkfkljz2m}
-append-path --delim {:} MANPATH {}
+append-path MANPATH {}
 
 
 try {

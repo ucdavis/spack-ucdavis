@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:56.679545
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:16.934729
 ##
 ## gnuplot@5.4.3%gcc@11.4.0~X~cairo+gd+libcerf~pbm~qt+readline~wx build_system=autotools patches=ad89f23 arch=linux-ubuntu22.04-x86_64_v3/kxljfwe
 ##
@@ -26,12 +26,11 @@ proc ModulesHelp { } {
 
 conflict gnuplot
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnuplot-5.4.3-kxljfwev3kx37cu2tqw33m4jshjysgbs/bin}
-prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnuplot-5.4.3-kxljfwev3kx37cu2tqw33m4jshjysgbs/share/man}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnuplot-5.4.3-kxljfwev3kx37cu2tqw33m4jshjysgbs/.}
-prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/share/X11/locale}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnuplot-5.4.3-kxljfwev3kx37cu2tqw33m4jshjysgbs/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnuplot-5.4.3-kxljfwev3kx37cu2tqw33m4jshjysgbs/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnuplot-5.4.3-kxljfwev3kx37cu2tqw33m4jshjysgbs/.}
 setenv GNUPLOT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnuplot-5.4.3-kxljfwev3kx37cu2tqw33m4jshjysgbs}
-append-path --delim {:} MANPATH {}
+append-path MANPATH {}
 
 
 try {

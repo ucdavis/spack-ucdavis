@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:52.511798
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:15.174136
 ##
 ## ea-utils@2021-10-20%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/zonslfe
 ##
@@ -25,8 +25,8 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 prereq gsl/2.7.1
 conflict ea-utils
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ea-utils-2021-10-20-zonslfevleeezzwhuvw242cfhjrnctih/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ea-utils-2021-10-20-zonslfevleeezzwhuvw242cfhjrnctih/.}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ea-utils-2021-10-20-zonslfevleeezzwhuvw242cfhjrnctih/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ea-utils-2021-10-20-zonslfevleeezzwhuvw242cfhjrnctih/.}
 setenv EA_UTILS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ea-utils-2021-10-20-zonslfevleeezzwhuvw242cfhjrnctih}
 
 

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:44.174969
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:12.429606
 ##
 ## aria2@1.36.0%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/t3wl4qu
 ##
@@ -17,11 +17,11 @@ proc ModulesHelp { } {
 
 conflict aria2
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aria2-1.36.0-t3wl4qur2nk2d2ufal3a2xwckroh7n5k/bin}
-prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aria2-1.36.0-t3wl4qur2nk2d2ufal3a2xwckroh7n5k/share/man}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aria2-1.36.0-t3wl4qur2nk2d2ufal3a2xwckroh7n5k/.}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aria2-1.36.0-t3wl4qur2nk2d2ufal3a2xwckroh7n5k/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aria2-1.36.0-t3wl4qur2nk2d2ufal3a2xwckroh7n5k/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aria2-1.36.0-t3wl4qur2nk2d2ufal3a2xwckroh7n5k/.}
 setenv ARIA2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aria2-1.36.0-t3wl4qur2nk2d2ufal3a2xwckroh7n5k}
-append-path --delim {:} MANPATH {}
+append-path MANPATH {}
 
 
 try {

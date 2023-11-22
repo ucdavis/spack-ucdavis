@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:50.692678
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:14.470450
 ##
 ## cgal@5.4.1%gcc@11.4.0~core~demos+eigen~header_only~imageio~ipo+shared build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/c3capt5
 ##
@@ -33,15 +33,15 @@ prereq eigen/3.4.0
 prereq mpfr/4.2.0
 conflict cgal
 
-prepend-path --delim {:} LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/lib}
-prepend-path --delim {:} CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/include}
-prepend-path --delim {:} C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/include}
-prepend-path --delim {:} CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/include}
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/bin}
-prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/share/man}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/.}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/.}
 setenv CGAL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf}
-append-path --delim {:} MANPATH {}
+append-path MANPATH {}
 
 
 try {

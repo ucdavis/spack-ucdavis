@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:53.947344
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:15.777948
 ##
 ## feh@3.10%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/cgb4zkz
 ##
@@ -20,12 +20,11 @@ proc ModulesHelp { } {
 
 conflict feh
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/feh-3.10-cgb4zkz6np6ys5lisnyvlewaasr3jkbv/bin}
-prepend-path --delim {:} MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/feh-3.10-cgb4zkz6np6ys5lisnyvlewaasr3jkbv/share/man}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/feh-3.10-cgb4zkz6np6ys5lisnyvlewaasr3jkbv/.}
-prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/share/X11/locale}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/feh-3.10-cgb4zkz6np6ys5lisnyvlewaasr3jkbv/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/feh-3.10-cgb4zkz6np6ys5lisnyvlewaasr3jkbv/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/feh-3.10-cgb4zkz6np6ys5lisnyvlewaasr3jkbv/.}
 setenv FEH_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/feh-3.10-cgb4zkz6np6ys5lisnyvlewaasr3jkbv}
-append-path --delim {:} MANPATH {}
+append-path MANPATH {}
 
 
 try {

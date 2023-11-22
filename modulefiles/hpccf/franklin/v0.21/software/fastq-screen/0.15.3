@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:53.595258
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:15.561049
 ##
 ## fastq-screen@0.15.3%gcc@11.4.0~bismark~bowtie~bwa build_system=generic arch=linux-ubuntu22.04-x86_64_v3/mmsjw2e
 ##
@@ -17,18 +17,10 @@ proc ModulesHelp { } {
     puts stderr {the library matches with what you expect.}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load bowtie2/2.5.1
-} else {
-    depends-on bowtie2/2.5.1
-}
-prereq bowtie2/2.5.1
 conflict fastq-screen
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastq-screen-0.15.3-mmsjw2efqko3xqespnjynbbu2wy6fstq/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastq-screen-0.15.3-mmsjw2efqko3xqespnjynbbu2wy6fstq/.}
-prepend-path --delim {:} PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-gdgraph-1.4308-ksru65263nkrezp2gc7ztvcjp7aa6sbz/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-capture-tiny-0.48-buwhsdnlgv5mg4xfdyws2in22fm5pl4q/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-gd-2.77-4wfjknxayw3z7ovanbdu4bpswd4rq6cr/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-makemaker-7.70-cw3bpyg2z3puwtgur5k4nh5dgoec44sx/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-pkgconfig-1.16-wwbrkne64vcsvmz3z7egn3s2ot3xvlqj/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-gdtextutil-0.86-wilv5si6gmhozx5rmk7ondts23b4pg5y/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-test-exception-0.43-q6dchkcg76o2jpo2o6ibkuhy5czvtwwi/lib/perl5:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-sub-uplevel-0.2800-n56v2p6rpuoyifwxhhehp3hvwzho7r2s/lib/perl5}
-prepend-path --delim {:} XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/share/X11/locale}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastq-screen-0.15.3-mmsjw2efqko3xqespnjynbbu2wy6fstq/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastq-screen-0.15.3-mmsjw2efqko3xqespnjynbbu2wy6fstq/.}
 setenv FASTQ_SCREEN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastq-screen-0.15.3-mmsjw2efqko3xqespnjynbbu2wy6fstq}
 
 

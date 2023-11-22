@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:51.878359
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:14.808596
 ##
 ## ctffind@4.1.14%gcc@11.4.0+openmp build_system=autotools patches=d2d349c arch=linux-ubuntu22.04-zen2/uqsjztn
 ##
@@ -19,8 +19,8 @@ proc ModulesHelp { } {
 
 conflict ctffind
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ctffind-4.1.14-uqsjztnwxwbiznxk4y7hn25i6f5ycnjz/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ctffind-4.1.14-uqsjztnwxwbiznxk4y7hn25i6f5ycnjz/.}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ctffind-4.1.14-uqsjztnwxwbiznxk4y7hn25i6f5ycnjz/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ctffind-4.1.14-uqsjztnwxwbiznxk4y7hn25i6f5ycnjz/.}
 setenv CTFFIND_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ctffind-4.1.14-uqsjztnwxwbiznxk4y7hn25i6f5ycnjz}
 
 

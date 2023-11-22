@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-10-16 18:06:57.037348
+## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:17.122475
 ##
 ## hisat2@2.2.1%gcc@11.4.0~sra build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/fvowikc
 ##
@@ -20,8 +20,8 @@ proc ModulesHelp { } {
 
 conflict hisat2
 
-prepend-path --delim {:} PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hisat2-2.2.1-fvowikcqs5syeqrlro6llzzvfyqyhqpn/bin}
-prepend-path --delim {:} CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hisat2-2.2.1-fvowikcqs5syeqrlro6llzzvfyqyhqpn/.}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hisat2-2.2.1-fvowikcqs5syeqrlro6llzzvfyqyhqpn/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hisat2-2.2.1-fvowikcqs5syeqrlro6llzzvfyqyhqpn/.}
 setenv HISAT2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hisat2-2.2.1-fvowikcqs5syeqrlro6llzzvfyqyhqpn}
 
 
