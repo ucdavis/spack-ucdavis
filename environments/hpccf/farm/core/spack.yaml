@@ -59,5 +59,13 @@ spack:
           slurm: slurm/23.02.6
         slurm:
           template: hpccf/slurm.tcl
+        gcc:
+          filter:
+            # Software compiled with system compilers (as of writing, gcc 11.3.0)
+            # does NOT get RPATH for libstdc++; so if you updated LD_LIBRARY_PATH for gcc modules,
+            # it breaks module-loaded software that was compiled with a system gcc of a newer version
+            # than the module-loaded gcc.
+            exclude_env_vars:
+              - LD_LIBRARY_PATH
   concretizer:
     unify: when_possible
