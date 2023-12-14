@@ -2,8 +2,8 @@ spack:
   definitions:
     - relion-cuda:
       - relion @5.0-beta +gui +cuda cuda_arch=75 purpose=cluster torch_home=/share/databases/relion/torch conda_python=/share/apps/conda/environments/relion-5.0/bin/python
-      - relion @4.0.1 +gui +cuda cuda_arch=75 purpose=cluster 
-      - relion @3.1.3 +gui +cuda cuda_arch=75 purpose=cluster
+      - relion @4.0.1 +gui +cuda +gpu_delay cuda_arch=75 purpose=cluster 
+      - relion @3.1.3 +gui +cuda +gpu_delay cuda_arch=75 purpose=cluster
     - relion-cpu:
       - relion @5.0-beta +gui ~cuda +altcpu purpose=cluster torch_home=/share/databases/relion/torch conda_python=/share/apps/conda/environments/relion-5.0/bin/python
       - relion @4.0.1 +gui ~cuda +altcpu purpose=cluster
@@ -245,7 +245,7 @@ spack:
   - matrix:
     - [$relion-cuda]
     - ['%gcc@11.4.0 target=zen2 ^cuda@11.7.1+allow-unsupported-compilers ^amdfftw target=zen2 ^ctffind+openmp target=zen2',
-       '%gcc@11.4.0 +mklfft +gpu_delay target=skylake_avx512 ^cuda@11.7.1+allow-unsupported-compilers ^intel-oneapi-mkl ^ctffind+openmp^intel-oneapi-mkl']
+       '%gcc@11.4.0 target=skylake_avx512 +mklfft ^cuda@11.7.1+allow-unsupported-compilers ^intel-oneapi-mkl ^ctffind+openmp^intel-oneapi-mkl']
 
   - matrix:
     - [$relion-cpu]
@@ -253,7 +253,6 @@ spack:
 
   - relion-bbr @3.1.2 %gcc@7.5.0 +gui +cuda +mklfft cuda_arch=75 purpose=cluster target=skylake_avx512
     ^intel-oneapi-mkl ^ctffind+openmp^intel-oneapi-mkl ^cuda@11.2.2+allow-unsupported-compilers
-  - py-relion-helper @0.3
   - unblur@1.0.2 target=x86_64_v3 ^cuda@11.7.1
   #- cistem@1.0.0-beta target=x86_64_v3 ^cuda@11.7.1
 
@@ -266,7 +265,9 @@ spack:
     default:
       roots:
         tcl: /share/apps/22.04/modulefiles/spack/software
+        #tcl: /share/apps/22.04/modulefiles/spack/testing
       tcl:
+        #hide_implicits: true
         projections:
           relion+cuda target=zen2: relion/gpu/{version}+amd
           relion+cuda target=skylake_avx512: relion/gpu/{version}+intel
@@ -274,16 +275,17 @@ spack:
           relion~cuda target=zen2: relion/cpu/{version}+amd
           ctffind target=skylake_avx512: ctffind/{version}+intel
           ctffind target=zen2: ctffind/{version}+amd
-          py-relion-helper: relion-helper/{version}
           py-alphafold: alphafold/{version}
         include:
-          - intel-oneapi-mkl
-          - intel-oneapi-tbb
+          - intel-oneapi-mkl %oneapi
+          - intel-oneapi-tbb %oneapi
         defaults:
         - target=zen2
         all:
           conflict:
           - '{name}'
+        motioncor2:
+          prerequisites: none
         py-alphafold:
           environment:
             set:
