@@ -21,6 +21,7 @@ spack:
   - rclone
   - rstudio@2022.12.0+server ^curl@7.85.0
   - squashfs @4.5.1
+  - squashfuse @0.1.104
   - stata
   - turbovnc
   - valgrind
@@ -43,6 +44,7 @@ spack:
         apptainer:
           load:
           - squashfs
+          - squashfuse
         rstudio:
           template: hpccf/farm/rstudio-server.tcl
         turbovnc:
