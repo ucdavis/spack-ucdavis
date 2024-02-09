@@ -1,7 +1,7 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:25.804904
+## Module file created by spack (https://github.com/spack/spack) on 2024-01-10 15:34:07.285754
 ##
-## relion@5.0-beta%gcc@11.4.0+allow_ctf_in_sagd+cuda+double~double-gpu~external_motioncor2~gctf~gpu_delay+gui~ipo+mklfft build_system=cmake build_type=RelWithDebInfo conda_python=/share/apps/conda/environments/relion-5.0/bin/python cuda_arch=75 generator=make purpose=cluster torch_home=/share/databases/relion/torch arch=linux-ubuntu22.04-skylake_avx512/fcygsqi
+## relion@5.0-beta%gcc@11.4.0+allow_ctf_in_sagd+cuda+double~double-gpu~external_motioncor2~gctf~gpu_delay+gui~ipo+mklfft build_system=cmake build_type=RelWithDebInfo conda_python=/share/apps/conda/environments/relion-5.0/bin/python cuda_arch=75 generator=make purpose=cluster torch_home=/share/databases/relion/torch arch=linux-ubuntu22.04-skylake_avx512/rekztik
 ##
 ## Configure options: -DCMAKE_C_FLAGS=-g -DCMAKE_CXX_FLAGS=-g -DGUI=True -DDoublePrec_CPU=True -DDoublePrec_GPU=False -DALLOW_CTF_IN_SAGD=True -DMKLFFT=True -DALTCPU=False -DCUDA=ON -DCudaTexture=ON -DCUDA_ARCH=75 -DPYTHON_EXE_PATH:STRING=/share/apps/conda/environments/relion-5.0/bin/python -DTORCH_HOME_PATH:STRING=/share/databases/relion/torch
 ##
@@ -22,9 +22,9 @@ proc ModulesHelp { } {
 
 conflict relion
 
-prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/relion-5.0-beta-fcygsqigs2unxbjjexrlhciz7flgexi7/bin}
-prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/relion-5.0-beta-fcygsqigs2unxbjjexrlhciz7flgexi7/.}
-setenv RELION_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/relion-5.0-beta-fcygsqigs2unxbjjexrlhciz7flgexi7}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/relion-5.0-beta-rekztiku7n2akfo3mref6p4vyamt7izd/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/relion-5.0-beta-rekztiku7n2akfo3mref6p4vyamt7izd/.}
+setenv RELION_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/relion-5.0-beta-rekztiku7n2akfo3mref6p4vyamt7izd}
 setenv RELION_TOPAZ_EXECUTABLE {/share/apps/22.04/spack/spack-ucdavis/bin/wrappers/topaz}
 setenv RELION_CTFFIND_EXECUTABLE {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/ctffind-4.1.14-56ojcpj6va4mtgkfvmdd2swf2pdf4nra/bin/ctffind}
 setenv RELION_QSUB_TEMPLATE {/share/apps/22.04/spack/spack-ucdavis/templates/hpccf/franklin/relion.5.0-beta.gpu.skylake_avx512.slurm.template.sh}

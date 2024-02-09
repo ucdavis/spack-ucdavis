@@ -1,9 +1,9 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:25.676459
+## Module file created by spack (https://github.com/spack/spack) on 2024-01-10 15:34:06.757872
 ##
-## relion@5.0-beta%gcc@11.4.0+allow_ctf_in_sagd+altcpu~cuda+double~double-gpu~external_motioncor2~gpu_delay+gui~ipo~mklfft build_system=cmake build_type=RelWithDebInfo conda_python=/share/apps/conda/environments/relion-5.0/bin/python generator=make purpose=cluster torch_home=/share/databases/relion/torch arch=linux-ubuntu22.04-zen2/u624qdk
+## relion@5.0-beta%gcc@11.4.0+allow_ctf_in_sagd+altcpu~cuda+double~double-gpu~external_motioncor2~gctf~gpu_delay+gui~ipo+mklfft build_system=cmake build_type=RelWithDebInfo conda_python=/share/apps/conda/environments/relion-5.0/bin/python generator=make purpose=cluster torch_home=/share/databases/relion/torch arch=linux-ubuntu22.04-zen2/zmuowwb
 ##
-## Configure options: -DCMAKE_C_FLAGS=-g -DCMAKE_CXX_FLAGS=-g -DGUI=True -DDoublePrec_CPU=True -DDoublePrec_GPU=False -DALLOW_CTF_IN_SAGD=True -DMKLFFT=False -DALTCPU=True -DAMDFFTW=ON -DFORCE_OWN_TBB=OFF -DTBB_INCLUDE_DIR:STRING=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/include -DTBB_LIBRARY:STRING=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/lib/intel64/gcc4.8 -DPYTHON_EXE_PATH:STRING=/share/apps/conda/environments/relion-5.0/bin/python -DTORCH_HOME_PATH:STRING=/share/databases/relion/torch
+## Configure options: -DCMAKE_C_FLAGS=-g -DCMAKE_CXX_FLAGS=-g -DGUI=True -DDoublePrec_CPU=True -DDoublePrec_GPU=False -DALLOW_CTF_IN_SAGD=True -DMKLFFT=True -DALTCPU=True -DAMDFFTW=ON -DFORCE_OWN_TBB=OFF -DTBB_INCLUDE_DIR:STRING=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/include -DTBB_LIBRARY:STRING=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-7rffg26lfrohi6hgwgtm4v36kn7zcr6m/tbb/2021.10.0/lib/intel64/gcc4.8 -DPYTHON_EXE_PATH:STRING=/share/apps/conda/environments/relion-5.0/bin/python -DTORCH_HOME_PATH:STRING=/share/databases/relion/torch
 ##
 
 
@@ -31,11 +31,9 @@ prereq ctffind/4.1.14+amd
 prereq intel-oneapi-tbb/2021.10.0+amd
 conflict relion
 
-prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-u624qdkzezbhcmln5bjftrblj6d6e37w/lib}
-prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-u624qdkzezbhcmln5bjftrblj6d6e37w/bin}
-prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-u624qdkzezbhcmln5bjftrblj6d6e37w/lib/pkgconfig}
-prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-u624qdkzezbhcmln5bjftrblj6d6e37w/.}
-setenv RELION_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-u624qdkzezbhcmln5bjftrblj6d6e37w}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-zmuowwbbxo6bxu7g67dnvqlxif7vgfih/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-zmuowwbbxo6bxu7g67dnvqlxif7vgfih/.}
+setenv RELION_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-zmuowwbbxo6bxu7g67dnvqlxif7vgfih}
 setenv RELION_TOPAZ_EXECUTABLE {/share/apps/22.04/spack/spack-ucdavis/bin/wrappers/topaz}
 setenv RELION_CTFFIND_EXECUTABLE {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ctffind-4.1.14-uqsjztnwxwbiznxk4y7hn25i6f5ycnjz/bin/ctffind}
 setenv RELION_QSUB_TEMPLATE {/share/apps/22.04/spack/spack-ucdavis/templates/hpccf/franklin/relion.5.0-beta.cpu.slurm.template.sh}

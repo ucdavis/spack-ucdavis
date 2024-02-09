@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-01-19 11:52:06.625643
+##
+## dos2unix@7.4.4%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/pdumoad
+##
+
+
+module-whatis {DOS/Mac to Unix and vice versa text file format converter.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : dos2unix}
+    puts stderr {Version: 7.4.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {DOS/Mac to Unix and vice versa text file format converter.}
+}
+
+conflict dos2unix
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dos2unix-7.4.4-pdumoadlclceiopju5unkrisye5tbs4p/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dos2unix-7.4.4-pdumoadlclceiopju5unkrisye5tbs4p/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dos2unix-7.4.4-pdumoadlclceiopju5unkrisye5tbs4p/.}
+setenv DOS2UNIX_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dos2unix-7.4.4-pdumoadlclceiopju5unkrisye5tbs4p}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+
