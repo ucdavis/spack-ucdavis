@@ -27,6 +27,16 @@ class Slurm(AutotoolsPackage):
     url = "https://github.com/SchedMD/slurm/archive/slurm-21-08-8-2.tar.gz"
 
     version(
+        "23-11-1-1",
+        sha256="31506df24c6d24e0ea0329cac1395ab9b645bbde1518f5c469f7711df5e22c11"
+    )
+
+    version(
+        "23-02-7-1",
+        sha256="3f60ad5b5a492312d1febb9f9167caa3aee7f8438bb032590a993f5a65c5e4db"
+    )
+
+    version(
         "23-02-6-1",
         sha256="ed44d4e591c0f91874d535cb8c9ea67dd2a38bfa4e96fa6c71687293f6a1d3bb"
     )
