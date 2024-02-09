@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-09 14:44:14.740031
+##
+## py-macs2@2.2.9.1%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/fl424x2
+##
+
+
+module-whatis {MACS2 Model-based Analysis of ChIP-Seq}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-macs2}
+    puts stderr {Version: 2.2.9.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {MACS2 Model-based Analysis of ChIP-Seq}
+}
+
+conflict py-macs2
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-macs2-2.2.9.1-fl424x2wb5z6cl2afdz65drvbfi6zz3o/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-macs2-2.2.9.1-fl424x2wb5z6cl2afdz65drvbfi6zz3o/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-macs2-2.2.9.1-fl424x2wb5z6cl2afdz65drvbfi6zz3o/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-macs2-2.2.9.1-fl424x2wb5z6cl2afdz65drvbfi6zz3o/lib/python3.11/site-packages}
+setenv PY_MACS2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-macs2-2.2.9.1-fl424x2wb5z6cl2afdz65drvbfi6zz3o}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+
