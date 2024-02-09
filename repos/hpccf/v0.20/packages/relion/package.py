@@ -18,7 +18,7 @@ class Relion(CMakePackage, CudaPackage):
     git = "https://github.com/3dem/relion.git"
     url = "https://github.com/3dem/relion/archive/3.1.3.zip"
 
-    version("5.0-beta", branch="ver5.0")
+    version("5.0-beta", commit="90d239eda870d64834e642aaa19ce3e6d0ab5ab0")
     version("4.0.1",
             commit="ec417f5",
             preferred=True)
