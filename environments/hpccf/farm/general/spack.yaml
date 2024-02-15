@@ -52,10 +52,11 @@ spack:
           - squashfuse
         rstudio:
           template: hpccf/farm/rstudio-server.tcl
+        rstudio@2022.12.0:
+          env:
+            deprecate_on: 2024-06-18
         turbovnc:
           template: hpccf/farm/turbovnc.tcl
-        defaults:
-        - rstudio@2022.12.0-353
         all:
           conflict:
           - '{name}'
