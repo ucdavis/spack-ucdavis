@@ -50,11 +50,16 @@ spack:
           load:
           - squashfs
           - squashfuse
+        cmake@3.24.3:
+          environment:
+            set:
+              deprecate_on: '2024-06-18'
         rstudio:
           template: hpccf/farm/rstudio-server.tcl
         rstudio@2022.12.0:
-          env:
-            deprecate_on: 2024-06-18
+          environment:
+            set:
+              deprecate_on: '2024-06-18'
         turbovnc:
           template: hpccf/farm/turbovnc.tcl
         all:
