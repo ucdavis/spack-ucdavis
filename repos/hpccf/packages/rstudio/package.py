@@ -58,18 +58,20 @@ class Rstudio(CMakePackage):
     # 49      least "1.83.0" (found
 
 
-    with when("@:2022.12.0"):
+    # require EXACT node version to match rstudio expectation
+    with when("@2022.12.0"):
         depends_on("{0}@:1.82.9999+pic".format(Boost.with_default_variants))
         depends_on("node-js@16:")
+        depends_on("yarn@1.22.4:")
+        depends_on("npm@9.8.1")
 
-    # requires EXACT node version
+    # require EXACT node version to match rstudio expectation
     with when("@2023.12.1-402"):
         depends_on("{0}@1.83.0:+pic".format(Boost.with_default_variants))
         depends_on("node-js@18.18.2")
         depends_on("yarn@1.22.4:")
         depends_on("npm@9.8.1")
         depends_on("openssl@3.2:")
-        depends_on("curl@:8")
     
     with when("+notebook"):
         depends_on("r-base64enc")
@@ -119,13 +121,23 @@ class Rstudio(CMakePackage):
         env.set("RSTUDIO_TOOLS_ROOT", self.prefix.tools)
 
     def patch(self):
-        if self.spec.satisfies("@2023.12.1:"):
+        if self.spec.satisfies("@2022.12.0:"):
             filter_file(
                 '<property name="node.dir" value="../../dependencies/common/node/${node.version}"/>',
                 '<property name="node.dir" value="{0}"/>'.format(self.spec["node-js"].prefix),
                 "src/gwt/build.xml",
                 string=True,
             )
+
+        if self.spec.satisfies("@2022.12.0-353"):
+            filter_file(
+                '<condition property="node.bin" value="../../../${node.dir}/bin/node">',
+                '<condition property="node.bin" value="${node.dir}/bin/node">',
+                "src/gwt/build.xml",
+                string=True,
+            )
+
+            
         else:
             # to use node-js provided by spack: first patches this portion of config to a single line
             patch("0004-use-system-node.patch")
@@ -165,7 +177,7 @@ class Rstudio(CMakePackage):
         deps = Executable("./dependencies/common/install-mathjax")
         deps()
 
-        with when("@2023.12.1:"):
+        if self.spec.satisfies("@2023.12.1:"):
             deps = Executable("./dependencies/common/install-panmirror")
             deps()
             
@@ -206,7 +218,7 @@ class Rstudio(CMakePackage):
                 os.path.join(self.spec["pandoc"].prefix.bin, "pandoc-citeproc"), "pandoc-citeproc"
             )
 
-        with when("@2023.12.1:"):
+        if self.spec.satisfies("@2022.12.0:"):
             node_shim_dir = f"dependencies/common/node/{self.spec['node-js'].version}/bin"
             os.makedirs(node_shim_dir)
             with working_dir(node_shim_dir):
