@@ -90,7 +90,7 @@
       "spec": "rclone"
     },
     {
-      "hash": "6fx6piqyued7vce7qhyyk6okjvf3xcqi",
+      "hash": "msbshankhamvue3hgswvk7h4jho7drhi",
       "spec": "rstudio@2022.12.0+server ^curl@7.85.0"
     },
     {
@@ -15931,7 +15931,7 @@
       ],
       "hash": "rwtblp7uhwq6qop25a3jsndbnmpu2asl"
     },
-    "6fx6piqyued7vce7qhyyk6okjvf3xcqi": {
+    "msbshankhamvue3hgswvk7h4jho7drhi": {
       "name": "rstudio",
       "version": "2022.12.0-353",
       "arch": {
@@ -15957,7 +15957,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "d5j6wj4zce6me62w7sx5qo5tnz2wfpl4kpdllqd65js64zoszumq====",
+      "package_hash": "c6hjtkhrfzjuxw7cvamyf2myw6d6guyjxzhimemiiqnqmuwrbxyq====",
       "dependencies": [
         {
           "name": "ant",
@@ -16008,6 +16008,14 @@
         {
           "name": "node-js",
           "hash": "67if7iczk57ndml52lj6mbs4f74ihcsh",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "npm",
+          "hash": "jpyvupnhbdgrtygdqqmvmfivjm3wg5cf",
           "type": [
             "build",
             "link"
@@ -16092,7 +16100,7 @@
           ]
         }
       ],
-      "hash": "6fx6piqyued7vce7qhyyk6okjvf3xcqi"
+      "hash": "msbshankhamvue3hgswvk7h4jho7drhi"
     },
     "2lgwv36f5m3edug2344z5gkr2ukuo6ul": {
       "name": "ant",
@@ -16710,6 +16718,41 @@
         }
       ],
       "hash": "67if7iczk57ndml52lj6mbs4f74ihcsh"
+    },
+    "jpyvupnhbdgrtygdqqmvmfivjm3wg5cf": {
+      "name": "npm",
+      "version": "9.8.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "ucdavis.forked",
+      "parameters": {
+        "build_system": "generic",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "tkyxs43h5grax52yp5s475wbrwcbdprausyfw54a3xuw4blpeayq====",
+      "dependencies": [
+        {
+          "name": "node-js",
+          "hash": "67if7iczk57ndml52lj6mbs4f74ihcsh",
+          "type": [
+            "build",
+            "run"
+          ]
+        }
+      ],
+      "hash": "jpyvupnhbdgrtygdqqmvmfivjm3wg5cf"
     },
     "qjwowekiprmtdbiw5r36jrhksfadlz5e": {
       "name": "pandoc",
