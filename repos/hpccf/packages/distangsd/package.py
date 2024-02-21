@@ -39,11 +39,12 @@ class Distangsd(MakefilePackage):
     depends_on('gsl')
     depends_on('lzma')
     depends_on('openssl')
+    depends_on('libdeflate')
 
 
     def edit(self, spec, prefix):
         makefile = FileFilter('Makefile')
-        makefile.filter('-lgsl', '-lgsl -lgslcblas -lssl -lcrypto')
+        makefile.filter('-lgsl', '-lgsl -lgslcblas -lssl -lcrypto -ldeflate')
 
     @property
     def build_targets(self):
@@ -51,7 +52,7 @@ class Distangsd(MakefilePackage):
 
         return [
             'HTSSRC={0}'.format(spec['htslib'].prefix.lib),
-            'EIGEN={0}'.format(spec['eigen'].prefix)
+            'EIGEN={0}'.format(spec['eigen'].prefix.include)
         ]
 
     def build(self, spec, prefix):
