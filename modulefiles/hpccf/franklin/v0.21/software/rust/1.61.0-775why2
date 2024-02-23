@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:34.142734
+##
+## rust@1.61.0%gcc@11.4.0~analysis+clippy~docs+rustfmt+src build_system=generic arch=linux-ubuntu22.04-x86_64_v3/775why2
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis {The Rust programming language toolchain.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : rust}
+    puts stderr {Version: 1.61.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The Rust programming language toolchain.}
+}
+
+conflict rust
+
+prepend-path MANPATH {/usr/share/man}
+prepend-path ACLOCAL_PATH {/usr/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/usr/lib/pkgconfig}
+prepend-path PKG_CONFIG_PATH {/usr/share/pkgconfig}
+setenv RUST_ROOT {/usr}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:14.190800
+##
+## perl-xml-regexp@0.04%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/po6a3ku
+##
+
+
+module-whatis {This package contains regular expressions for the following XML tokens: BaseChar, Ideographic, Letter, Digit, Extender, CombiningChar, NameChar, EntityRef, CharRef, Reference, Name, NmToken, and AttValue.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-xml-regexp}
+    puts stderr {Version: 0.04}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This package contains regular expressions for the following XML tokens:}
+    puts stderr {BaseChar, Ideographic, Letter, Digit, Extender, CombiningChar, NameChar,}
+    puts stderr {EntityRef, CharRef, Reference, Name, NmToken, and AttValue.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-xml-regexp
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-regexp-0.04-po6a3kus6hl3fozzryxcv2mhp2ouy54y/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-regexp-0.04-po6a3kus6hl3fozzryxcv2mhp2ouy54y/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-regexp-0.04-po6a3kus6hl3fozzryxcv2mhp2ouy54y/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-regexp-0.04-po6a3kus6hl3fozzryxcv2mhp2ouy54y/lib/perl5}
+setenv PERL_XML_REGEXP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-regexp-0.04-po6a3kus6hl3fozzryxcv2mhp2ouy54y}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

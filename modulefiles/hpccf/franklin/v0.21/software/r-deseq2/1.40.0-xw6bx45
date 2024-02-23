@@ -1,0 +1,83 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:21.093422
+##
+## r-deseq2@1.40.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/xw6bx45
+##
+
+
+module-whatis {Differential gene expression analysis based on the negative binomial distribution.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-deseq2}
+    puts stderr {Version: 1.40.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Differential gene expression analysis based on the negative binomial}
+    puts stderr {distribution. Estimate variance-mean dependence in count data from high-}
+    puts stderr {throughput sequencing assays and test for differential expression based}
+    puts stderr {on a model using the negative binomial distribution.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-vcbztcv
+    module load r-biobase/2.60.0-6pvz2lc
+    module load r-biocgenerics/0.46.0-vwgf75t
+    module load r-biocparallel/1.34.0-c4bt6jq
+    module load r-genomicranges/1.52.0-bm6vaks
+    module load r-ggplot2/3.4.2-ncihyba
+    module load r-iranges/2.34.0-wmdqfli
+    module load r-locfit/1.5-9.7-7vqpkcv
+    module load r-matrixstats/0.63.0-525llah
+    module load r-rcpp/1.0.10-qwvlraf
+    module load r-rcpparmadillo/0.12.4.0.0-rzocsgo
+    module load r-s4vectors/0.38.0-mg4qpha
+    module load r-summarizedexperiment/1.30.0-ax3ziew
+} else {
+    depends-on r/4.3.0-vcbztcv
+    depends-on r-biobase/2.60.0-6pvz2lc
+    depends-on r-biocgenerics/0.46.0-vwgf75t
+    depends-on r-biocparallel/1.34.0-c4bt6jq
+    depends-on r-genomicranges/1.52.0-bm6vaks
+    depends-on r-ggplot2/3.4.2-ncihyba
+    depends-on r-iranges/2.34.0-wmdqfli
+    depends-on r-locfit/1.5-9.7-7vqpkcv
+    depends-on r-matrixstats/0.63.0-525llah
+    depends-on r-rcpp/1.0.10-qwvlraf
+    depends-on r-rcpparmadillo/0.12.4.0.0-rzocsgo
+    depends-on r-s4vectors/0.38.0-mg4qpha
+    depends-on r-summarizedexperiment/1.30.0-ax3ziew
+}
+prereq r/4.3.0-vcbztcv
+prereq r-biobase/2.60.0-6pvz2lc
+prereq r-biocgenerics/0.46.0-vwgf75t
+prereq r-biocparallel/1.34.0-c4bt6jq
+prereq r-genomicranges/1.52.0-bm6vaks
+prereq r-ggplot2/3.4.2-ncihyba
+prereq r-iranges/2.34.0-wmdqfli
+prereq r-locfit/1.5-9.7-7vqpkcv
+prereq r-matrixstats/0.63.0-525llah
+prereq r-rcpp/1.0.10-qwvlraf
+prereq r-rcpparmadillo/0.12.4.0.0-rzocsgo
+prereq r-s4vectors/0.38.0-mg4qpha
+prereq r-summarizedexperiment/1.30.0-ax3ziew
+conflict r-deseq2
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-deseq2-1.40.0-xw6bx45eannzaoehsdhtenhxxzh6axwx/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-deseq2-1.40.0-xw6bx45eannzaoehsdhtenhxxzh6axwx/rlib/R/library}
+setenv R_DESEQ2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-deseq2-1.40.0-xw6bx45eannzaoehsdhtenhxxzh6axwx}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

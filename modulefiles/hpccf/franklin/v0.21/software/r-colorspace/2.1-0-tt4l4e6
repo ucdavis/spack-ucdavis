@@ -1,0 +1,59 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:15.068529
+##
+## r-colorspace@2.1-0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/tt4l4e6
+##
+
+
+module-whatis {A Toolbox for Manipulating and Assessing Colors and Palettes.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-colorspace}
+    puts stderr {Version: 2.1-0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A Toolbox for Manipulating and Assessing Colors and Palettes. Carries}
+    puts stderr {out mapping between assorted color spaces including RGB, HSV, HLS,}
+    puts stderr {CIEXYZ, CIELUV, HCL (polar CIELUV), CIELAB, and polar CIELAB.}
+    puts stderr {Qualitative, sequential, and diverging color palettes based on HCL}
+    puts stderr {colors are provided along with corresponding ggplot2 color scales. Color}
+    puts stderr {palette choice is aided by an interactive app (with either a Tcl/Tk or a}
+    puts stderr {shiny graphical user interface) and shiny apps with an HCL color picker}
+    puts stderr {and a color vision deficiency emulator. Plotting functions for}
+    puts stderr {displaying and assessing palettes include color swatches, visualizations}
+    puts stderr {of the HCL space, and trajectories in HCL and/or RGB spectrum. Color}
+    puts stderr {manipulation functions include: desaturation, lightening/darkening,}
+    puts stderr {mixing, and simulation of color vision deficiencies (deutanomaly,}
+    puts stderr {protanomaly, tritanomaly). Details can be found on the project web page}
+    puts stderr {at <https://colorspace.R-Forge.R-project.org/> and in the accompanying}
+    puts stderr {scientific paper: Zeileis et al. (2020, Journal of Statistical Software,}
+    puts stderr {<doi:10.18637/jss.v096.i01>).}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+} else {
+    depends-on r/4.3.0-n6pth5g
+}
+prereq r/4.3.0-n6pth5g
+conflict r-colorspace
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-colorspace-2.1-0-tt4l4e6potbb6dptgauxkp6mfx5i7xvu/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-colorspace-2.1-0-tt4l4e6potbb6dptgauxkp6mfx5i7xvu/rlib/R/library}
+setenv R_COLORSPACE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-colorspace-2.1-0-tt4l4e6potbb6dptgauxkp6mfx5i7xvu}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

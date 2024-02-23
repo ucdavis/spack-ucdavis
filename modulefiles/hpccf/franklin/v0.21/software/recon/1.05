@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:24.832437
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:31.915115
 ##
 ## recon@1.05%gcc@11.4.0~repeatmasker build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/kas6a4p
 ##
@@ -16,6 +16,12 @@ proc ModulesHelp { } {
     puts stderr {from genomic sequences.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-okr4ubb
+} else {
+    depends-on perl/5.38.0-okr4ubb
+}
+prereq perl/5.38.0-okr4ubb
 conflict recon
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/recon-1.05-kas6a4pgm3gb7xdri74xr7rjd777fyh6/bin}

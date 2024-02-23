@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:08.205767
+##
+## perl-extutils-config@0.008%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/2mv6grb
+##
+
+
+module-whatis {ExtUtils::Config - A wrapper for perl's configuration}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-extutils-config}
+    puts stderr {Version: 0.008}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {ExtUtils::Config - A wrapper for perl's configuration}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-extutils-config
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-config-0.008-2mv6grbnkc5qbgb6tutnabs3yc6acqm2/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-config-0.008-2mv6grbnkc5qbgb6tutnabs3yc6acqm2/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-config-0.008-2mv6grbnkc5qbgb6tutnabs3yc6acqm2/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-config-0.008-2mv6grbnkc5qbgb6tutnabs3yc6acqm2/lib/perl5}
+setenv PERL_EXTUTILS_CONFIG_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-config-0.008-2mv6grbnkc5qbgb6tutnabs3yc6acqm2}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

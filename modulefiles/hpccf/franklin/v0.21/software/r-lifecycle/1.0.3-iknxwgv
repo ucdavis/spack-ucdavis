@@ -1,0 +1,60 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:50.039962
+##
+## r-lifecycle@1.0.3%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/iknxwgv
+##
+
+
+module-whatis {Manage the Life Cycle of your Package Functions.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-lifecycle}
+    puts stderr {Version: 1.0.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Manage the Life Cycle of your Package Functions. Manage the life cycle}
+    puts stderr {of your exported functions with shared conventions, documentation}
+    puts stderr {badges, and non-invasive deprecation warnings. The 'lifecycle' package}
+    puts stderr {defines four development stages (experimental, maturing, stable, and}
+    puts stderr {questioning) and three deprecation stages (soft-deprecated, deprecated,}
+    puts stderr {and defunct). It makes it easy to insert badges corresponding to these}
+    puts stderr {stages in your documentation. Usage of deprecated functions are}
+    puts stderr {signalled with increasing levels of non-invasive verbosity.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-vcbztcv
+    module load r-cli/3.6.1-sysq75f
+    module load r-glue/1.6.2-3vek3t4
+    module load r-rlang/1.1.0-na2d4rh
+} else {
+    depends-on r/4.3.0-vcbztcv
+    depends-on r-cli/3.6.1-sysq75f
+    depends-on r-glue/1.6.2-3vek3t4
+    depends-on r-rlang/1.1.0-na2d4rh
+}
+prereq r/4.3.0-vcbztcv
+prereq r-cli/3.6.1-sysq75f
+prereq r-glue/1.6.2-3vek3t4
+prereq r-rlang/1.1.0-na2d4rh
+conflict r-lifecycle
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-lifecycle-1.0.3-iknxwgvm2jmnz6aqnh5exrwa6og65kwn/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-lifecycle-1.0.3-iknxwgvm2jmnz6aqnh5exrwa6og65kwn/rlib/R/library}
+setenv R_LIFECYCLE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-lifecycle-1.0.3-iknxwgvm2jmnz6aqnh5exrwa6og65kwn}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

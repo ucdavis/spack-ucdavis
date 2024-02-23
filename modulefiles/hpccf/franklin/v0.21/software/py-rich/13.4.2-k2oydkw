@@ -1,0 +1,51 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:51.331712
+##
+## py-rich@13.4.2%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/k2oydkw
+##
+
+
+module-whatis {Rich is a Python library for rich text and beautiful formatting in the terminal. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-rich}
+    puts stderr {Version: 13.4.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Rich is a Python library for rich text and beautiful formatting in the}
+    puts stderr {terminal.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-markdown-it-py/3.0.0-yiptxvo
+    module load py-pygments/2.16.1-grjnblu
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on py-markdown-it-py/3.0.0-yiptxvo
+    depends-on py-pygments/2.16.1-grjnblu
+    depends-on python/3.11.6-ht65m6a
+}
+prereq py-markdown-it-py/3.0.0-yiptxvo
+prereq py-pygments/2.16.1-grjnblu
+prereq python/3.11.6-ht65m6a
+conflict py-rich
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-rich-13.4.2-k2oydkwnfq37e2tvjwanu4nhnq7jdtkb/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-rich-13.4.2-k2oydkwnfq37e2tvjwanu4nhnq7jdtkb/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-rich-13.4.2-k2oydkwnfq37e2tvjwanu4nhnq7jdtkb/lib/python3.11/site-packages}
+setenv PY_RICH_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-rich-13.4.2-k2oydkwnfq37e2tvjwanu4nhnq7jdtkb}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

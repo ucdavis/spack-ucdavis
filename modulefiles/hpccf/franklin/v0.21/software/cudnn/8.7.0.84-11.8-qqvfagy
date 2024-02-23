@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:46.835104
+##
+## cudnn@8.7.0.84-11.8%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/qqvfagy
+##
+
+
+module-whatis {NVIDIA cuDNN is a GPU-accelerated library of primitives for deep neural networks}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : cudnn}
+    puts stderr {Version: 8.7.0.84-11.8}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {NVIDIA cuDNN is a GPU-accelerated library of primitives for deep neural}
+    puts stderr {networks}
+}
+
+conflict cudnn
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cudnn-8.7.0.84-11.8-qqvfagyyqmlcx27zya2jkydysap3fgov/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cudnn-8.7.0.84-11.8-qqvfagyyqmlcx27zya2jkydysap3fgov/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cudnn-8.7.0.84-11.8-qqvfagyyqmlcx27zya2jkydysap3fgov/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cudnn-8.7.0.84-11.8-qqvfagyyqmlcx27zya2jkydysap3fgov/include}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cudnn-8.7.0.84-11.8-qqvfagyyqmlcx27zya2jkydysap3fgov/.}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cudnn-8.7.0.84-11.8-qqvfagyyqmlcx27zya2jkydysap3fgov/lib}
+setenv CUDNN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cudnn-8.7.0.84-11.8-qqvfagyyqmlcx27zya2jkydysap3fgov}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

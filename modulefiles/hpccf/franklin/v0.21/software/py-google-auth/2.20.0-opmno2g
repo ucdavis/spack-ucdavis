@@ -1,0 +1,63 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:27.882737
+##
+## py-google-auth@2.20.0%gcc@11.4.0~aiohttp build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/opmno2g
+##
+
+
+module-whatis {This library simplifies using Google's various server-to-server authentication mechanisms to access Google APIs.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-google-auth}
+    puts stderr {Version: 2.20.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This library simplifies using Google's various server-to-server}
+    puts stderr {authentication mechanisms to access Google APIs.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-cachetools/5.2.0-oifwt6v
+    module load py-pyasn1-modules/0.2.8-qmhvmgy
+    module load py-rsa/4.9-mjhfgvm
+    module load py-setuptools/57.4.0-pimnnnh
+    module load py-six/1.16.0-dudvqq4
+    module load py-urllib3/1.26.12-desywko
+    module load python/3.9.18-rt3uhd4
+} else {
+    depends-on py-cachetools/5.2.0-oifwt6v
+    depends-on py-pyasn1-modules/0.2.8-qmhvmgy
+    depends-on py-rsa/4.9-mjhfgvm
+    depends-on py-setuptools/57.4.0-pimnnnh
+    depends-on py-six/1.16.0-dudvqq4
+    depends-on py-urllib3/1.26.12-desywko
+    depends-on python/3.9.18-rt3uhd4
+}
+prereq py-cachetools/5.2.0-oifwt6v
+prereq py-pyasn1-modules/0.2.8-qmhvmgy
+prereq py-rsa/4.9-mjhfgvm
+prereq py-setuptools/57.4.0-pimnnnh
+prereq py-six/1.16.0-dudvqq4
+prereq py-urllib3/1.26.12-desywko
+prereq python/3.9.18-rt3uhd4
+conflict py-google-auth
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-google-auth-2.20.0-opmno2gxp4kzi3xhljomubq4f57bzwia/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-google-auth-2.20.0-opmno2gxp4kzi3xhljomubq4f57bzwia/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-google-auth-2.20.0-opmno2gxp4kzi3xhljomubq4f57bzwia/lib/python3.9/site-packages}
+setenv PY_GOOGLE_AUTH_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-google-auth-2.20.0-opmno2gxp4kzi3xhljomubq4f57bzwia}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

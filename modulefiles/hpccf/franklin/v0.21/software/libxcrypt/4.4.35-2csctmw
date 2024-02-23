@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:58.809365
+##
+## libxcrypt@4.4.35%gcc@11.4.0~obsolete_api build_system=autotools patches=4885da3 arch=linux-ubuntu22.04-x86_64_v3/2csctmw
+##
+## Configure options: ac_cv_path_python3_passlib=not found --disable-werror --disable-obsolete-api
+##
+
+
+module-whatis {libxcrypt is a modern library for one-way hashing of passwords.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libxcrypt}
+    puts stderr {Version: 4.4.35}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {libxcrypt is a modern library for one-way hashing of passwords.}
+}
+
+conflict libxcrypt
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-2csctmw2zyecqvkmztiep7xhfnoonmeb/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-2csctmw2zyecqvkmztiep7xhfnoonmeb/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-2csctmw2zyecqvkmztiep7xhfnoonmeb/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-2csctmw2zyecqvkmztiep7xhfnoonmeb/include}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-2csctmw2zyecqvkmztiep7xhfnoonmeb/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-2csctmw2zyecqvkmztiep7xhfnoonmeb/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-2csctmw2zyecqvkmztiep7xhfnoonmeb/.}
+setenv LIBXCRYPT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-2csctmw2zyecqvkmztiep7xhfnoonmeb}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

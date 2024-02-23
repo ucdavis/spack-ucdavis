@@ -1,0 +1,55 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:14.572933
+##
+## perl-xml-writer@0.900%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/kvc2b3r
+##
+
+
+module-whatis {XML::Writer is a helper module for Perl programs that write an XML document. The module handles all escaping for attribute values and character data and constructs different types of markup, such as tags, comments, and processing instructions.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-xml-writer}
+    puts stderr {Version: 0.900}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {XML::Writer is a helper module for Perl programs that write an XML}
+    puts stderr {document. The module handles all escaping for attribute values and}
+    puts stderr {character data and constructs different types of markup, such as tags,}
+    puts stderr {comments, and processing instructions. By default, the module performs}
+    puts stderr {several well-formedness checks to catch errors during output. This}
+    puts stderr {behaviour can be extremely useful during development and debugging, but}
+    puts stderr {it can be turned off for production-grade code. The module can operate}
+    puts stderr {either in regular mode in or Namespace processing mode. In Namespace}
+    puts stderr {mode, the module will generate Namespace Declarations itself, and will}
+    puts stderr {perform additional checks on the output.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-xml-writer
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-writer-0.900-kvc2b3rvauipwxcqqmlhj7vrzvaezwsj/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-writer-0.900-kvc2b3rvauipwxcqqmlhj7vrzvaezwsj/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-writer-0.900-kvc2b3rvauipwxcqqmlhj7vrzvaezwsj/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-writer-0.900-kvc2b3rvauipwxcqqmlhj7vrzvaezwsj/lib/perl5}
+setenv PERL_XML_WRITER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-writer-0.900-kvc2b3rvauipwxcqqmlhj7vrzvaezwsj}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

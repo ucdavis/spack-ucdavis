@@ -1,0 +1,50 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:55.498951
+##
+## intltool@0.51.0%gcc@11.4.0 build_system=autotools patches=ca9d656 arch=linux-ubuntu22.04-x86_64_v3/dr4dbtr
+##
+
+
+module-whatis {intltool is a set of tools to centralize translation of many different file formats using GNU gettext-compatible PO files.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : intltool}
+    puts stderr {Version: 0.51.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {intltool is a set of tools to centralize translation of many different}
+    puts stderr {file formats using GNU gettext-compatible PO files.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-xml-parser/2.46-4s7gqlv
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-xml-parser/2.46-4s7gqlv
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-xml-parser/2.46-4s7gqlv
+conflict intltool
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intltool-0.51.0-dr4dbtr3rn3pjacramjfiabl6wpx53v3/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intltool-0.51.0-dr4dbtr3rn3pjacramjfiabl6wpx53v3/share/man}
+prepend-path ACLOCAL_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intltool-0.51.0-dr4dbtr3rn3pjacramjfiabl6wpx53v3/share/aclocal}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intltool-0.51.0-dr4dbtr3rn3pjacramjfiabl6wpx53v3/.}
+setenv INTLTOOL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intltool-0.51.0-dr4dbtr3rn3pjacramjfiabl6wpx53v3}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

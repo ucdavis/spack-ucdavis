@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:04.438640
+##
+## netcdf-cxx@4.2%gcc@11.4.0+netcdf4 build_system=autotools patches=8892291 arch=linux-ubuntu22.04-x86_64_v3/tyq2clx
+##
+## Configure options: CPPFLAGS=-DUSE_NETCDF4 LDFLAGS=-L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-uvcnbdqr7ivpqeisyz3gsi2nqkckla56/lib -L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.2-xh4leozvkvrxjyl7udi64natbetvqhyu/lib
+##
+
+
+module-whatis {Deprecated C++ compatibility bindings for NetCDF. These do NOT read or write NetCDF-4 files, and are no longer maintained by Unidata. Developers should migrate to current NetCDF C++ bindings, in Spack package netcdf-cxx4.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : netcdf-cxx}
+    puts stderr {Version: 4.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Deprecated C++ compatibility bindings for NetCDF. These do NOT read or}
+    puts stderr {write NetCDF-4 files, and are no longer maintained by Unidata.}
+    puts stderr {Developers should migrate to current NetCDF C++ bindings, in Spack}
+    puts stderr {package netcdf-cxx4.}
+}
+
+conflict netcdf-cxx
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx-4.2-tyq2clxxxsevyc5mobjdpbrsgkdh5lbq/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx-4.2-tyq2clxxxsevyc5mobjdpbrsgkdh5lbq/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx-4.2-tyq2clxxxsevyc5mobjdpbrsgkdh5lbq/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx-4.2-tyq2clxxxsevyc5mobjdpbrsgkdh5lbq/include}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx-4.2-tyq2clxxxsevyc5mobjdpbrsgkdh5lbq/.}
+setenv NETCDF_CXX_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx-4.2-tyq2clxxxsevyc5mobjdpbrsgkdh5lbq}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:23.466809
+##
+## r-fansi@1.0.4%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/pdhv7jd
+##
+
+
+module-whatis {ANSI Control Sequence Aware String Functions.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-fansi}
+    puts stderr {Version: 1.0.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {ANSI Control Sequence Aware String Functions. Counterparts to R string}
+    puts stderr {manipulation functions that account for the effects of ANSI text}
+    puts stderr {formatting control sequences.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-vcbztcv
+} else {
+    depends-on r/4.3.0-vcbztcv
+}
+prereq r/4.3.0-vcbztcv
+conflict r-fansi
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-fansi-1.0.4-pdhv7jdra3srjcddxmgoix2kqgksqccw/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-fansi-1.0.4-pdhv7jdra3srjcddxmgoix2kqgksqccw/rlib/R/library}
+setenv R_FANSI_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-fansi-1.0.4-pdhv7jdra3srjcddxmgoix2kqgksqccw}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

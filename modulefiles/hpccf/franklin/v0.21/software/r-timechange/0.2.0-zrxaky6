@@ -1,0 +1,54 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:25.015076
+##
+## r-timechange@0.2.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/zrxaky6
+##
+
+
+module-whatis {Efficient Manipulation of Date-Times.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-timechange}
+    puts stderr {Version: 0.2.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Efficient Manipulation of Date-Times. Efficient routines for}
+    puts stderr {manipulation of date-time objects while accounting for time-zones and}
+    puts stderr {daylight saving times. The package includes utilities for updating of}
+    puts stderr {date-time components (year, month, day etc.), modification of time-}
+    puts stderr {zones, rounding of date-times, period addition and subtraction etc.}
+    puts stderr {Parts of the 'CCTZ' source code, released under the Apache 2.0 License,}
+    puts stderr {are included in this package. See <https://github.com/google/cctz> for}
+    puts stderr {more details.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-cpp11/0.4.3-etm435b
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-cpp11/0.4.3-etm435b
+}
+prereq r/4.3.0-n6pth5g
+prereq r-cpp11/0.4.3-etm435b
+conflict r-timechange
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-timechange-0.2.0-zrxaky6icbbyjxn6erifrrzcdsqlhzw2/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-timechange-0.2.0-zrxaky6icbbyjxn6erifrrzcdsqlhzw2/rlib/R/library}
+setenv R_TIMECHANGE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-timechange-0.2.0-zrxaky6icbbyjxn6erifrrzcdsqlhzw2}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

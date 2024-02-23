@@ -1,0 +1,58 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:14.331318
+##
+## perl-xml-sax-writer@0.57%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/oniddrf
+##
+
+
+module-whatis {A new XML Writer was needed to match the SAX2 effort because quite naturally no existing writer understood SAX2. My first intention had been to start patching XML::Handler::YAWriter as it had previously been my favourite writer in the SAX1 world.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-xml-sax-writer}
+    puts stderr {Version: 0.57}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A new XML Writer was needed to match the SAX2 effort because quite}
+    puts stderr {naturally no existing writer understood SAX2. My first intention had}
+    puts stderr {been to start patching XML::Handler::YAWriter as it had previously been}
+    puts stderr {my favourite writer in the SAX1 world.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-xml-filter-buffertext/1.01-wbtfhbg
+    module load perl-xml-namespacesupport/1.12_9-4tqvapo
+    module load perl-xml-sax-base/1.09-43jznrn
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-xml-filter-buffertext/1.01-wbtfhbg
+    depends-on perl-xml-namespacesupport/1.12_9-4tqvapo
+    depends-on perl-xml-sax-base/1.09-43jznrn
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-xml-filter-buffertext/1.01-wbtfhbg
+prereq perl-xml-namespacesupport/1.12_9-4tqvapo
+prereq perl-xml-sax-base/1.09-43jznrn
+conflict perl-xml-sax-writer
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-sax-writer-0.57-oniddrf2xfc4t4254xn7b32ro4ybw4z7/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-sax-writer-0.57-oniddrf2xfc4t4254xn7b32ro4ybw4z7/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-sax-writer-0.57-oniddrf2xfc4t4254xn7b32ro4ybw4z7/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-sax-writer-0.57-oniddrf2xfc4t4254xn7b32ro4ybw4z7/lib/perl5}
+setenv PERL_XML_SAX_WRITER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-sax-writer-0.57-oniddrf2xfc4t4254xn7b32ro4ybw4z7}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

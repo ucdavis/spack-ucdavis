@@ -1,0 +1,60 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:07.446379
+##
+## r-restfulr@0.0.15%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/ijbx5w2
+##
+
+
+module-whatis {R Interface to RESTful Web Services.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-restfulr}
+    puts stderr {Version: 0.0.15}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {R Interface to RESTful Web Services. Models a RESTful service as if it}
+    puts stderr {were a nested R list.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-rcurl/1.98-1.12-ldf5n3x
+    module load r-rjson/0.2.21-dcayvse
+    module load r-s4vectors/0.38.0-ayuftw7
+    module load r-xml/3.99-0.14-yerecb5
+    module load r-yaml/2.3.7-6yxy76t
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-rcurl/1.98-1.12-ldf5n3x
+    depends-on r-rjson/0.2.21-dcayvse
+    depends-on r-s4vectors/0.38.0-ayuftw7
+    depends-on r-xml/3.99-0.14-yerecb5
+    depends-on r-yaml/2.3.7-6yxy76t
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-rcurl/1.98-1.12-ldf5n3x
+prereq r-rjson/0.2.21-dcayvse
+prereq r-s4vectors/0.38.0-ayuftw7
+prereq r-xml/3.99-0.14-yerecb5
+prereq r-yaml/2.3.7-6yxy76t
+conflict r-restfulr
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-restfulr-0.0.15-ijbx5w2sbxa6lvxl6ar3kqd4uaiolvpp/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-restfulr-0.0.15-ijbx5w2sbxa6lvxl6ar3kqd4uaiolvpp/rlib/R/library}
+setenv R_RESTFULR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-restfulr-0.0.15-ijbx5w2sbxa6lvxl6ar3kqd4uaiolvpp}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

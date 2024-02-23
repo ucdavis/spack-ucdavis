@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:27.756073
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:36.440131
 ##
 ## trimgalore@0.6.10%gcc@11.4.0~igzip~pigz build_system=generic arch=linux-ubuntu22.04-x86_64_v3/mhi2ida
 ##
@@ -18,10 +18,13 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
     module load py-cutadapt/4.4
 } else {
+    depends-on perl/5.38.0-lfl2a73
     depends-on py-cutadapt/4.4
 }
+prereq perl/5.38.0-lfl2a73
 prereq py-cutadapt/4.4
 conflict trimgalore
 

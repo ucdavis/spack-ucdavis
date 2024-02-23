@@ -1,0 +1,50 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:14.282455
+##
+## perl-xml-sax-base@1.09%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/43jznrn
+##
+
+
+module-whatis {This module has a very simple task - to be a base class for PerlSAX drivers and filters. It's default behaviour is to pass the input directly to the output unchanged. It can be useful to use this module as a base class so you don't have to, for example, implement the characters() callback.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-xml-sax-base}
+    puts stderr {Version: 1.09}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This module has a very simple task - to be a base class for PerlSAX}
+    puts stderr {drivers and filters. It's default behaviour is to pass the input}
+    puts stderr {directly to the output unchanged. It can be useful to use this module as}
+    puts stderr {a base class so you don't have to, for example, implement the}
+    puts stderr {characters() callback.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-xml-sax-base
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-sax-base-1.09-43jznrnzskeegfrdukry7x3wurcg4p4n/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-sax-base-1.09-43jznrnzskeegfrdukry7x3wurcg4p4n/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-sax-base-1.09-43jznrnzskeegfrdukry7x3wurcg4p4n/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-sax-base-1.09-43jznrnzskeegfrdukry7x3wurcg4p4n/lib/perl5}
+setenv PERL_XML_SAX_BASE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-sax-base-1.09-43jznrnzskeegfrdukry7x3wurcg4p4n}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

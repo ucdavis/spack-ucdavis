@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:04.844374
+##
+## opengl@4.5.0%gcc@11.4.0 build_system=bundle arch=linux-ubuntu22.04-x86_64_v3/xrdkwfa
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis {Placeholder for external OpenGL libraries from hardware vendors}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : opengl}
+    puts stderr {Version: 4.5.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Placeholder for external OpenGL libraries from hardware vendors}
+}
+
+conflict opengl
+
+prepend-path MANPATH {/usr/share/man}
+prepend-path ACLOCAL_PATH {/usr/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/usr/lib/pkgconfig}
+prepend-path PKG_CONFIG_PATH {/usr/share/pkgconfig}
+setenv OPENGL_ROOT {/usr}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

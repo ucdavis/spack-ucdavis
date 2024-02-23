@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:21.733818
+##
+## py-clint@0.5.1%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/trqbbtt
+##
+
+
+module-whatis {Python Command-line Application Tools}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-clint}
+    puts stderr {Version: 0.5.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Python Command-line Application Tools}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-args/0.1.0-5stzjex
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on py-args/0.1.0-5stzjex
+    depends-on python/3.11.6-ht65m6a
+}
+prereq py-args/0.1.0-5stzjex
+prereq python/3.11.6-ht65m6a
+conflict py-clint
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-clint-0.5.1-trqbbttb62brdwphwleb7grf7he2dcx3/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-clint-0.5.1-trqbbttb62brdwphwleb7grf7he2dcx3/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-clint-0.5.1-trqbbttb62brdwphwleb7grf7he2dcx3/lib/python3.11/site-packages}
+setenv PY_CLINT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-clint-0.5.1-trqbbttb62brdwphwleb7grf7he2dcx3}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

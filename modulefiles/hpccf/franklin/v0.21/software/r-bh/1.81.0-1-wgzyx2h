@@ -1,0 +1,58 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:04.659043
+##
+## r-bh@1.81.0-1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/wgzyx2h
+##
+
+
+module-whatis {Boost C++ Header Files.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-bh}
+    puts stderr {Version: 1.81.0-1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Boost C++ Header Files. Boost provides free peer-reviewed portable C++}
+    puts stderr {source libraries. A large part of Boost is provided as C++ template code}
+    puts stderr {which is resolved entirely at compile-time without linking. This package}
+    puts stderr {aims to provide the most useful subset of Boost libraries for template}
+    puts stderr {use among CRAN package. By placing these libraries in this package, we}
+    puts stderr {offer a more efficient distribution system for CRAN as replication of}
+    puts stderr {this code in the sources of other packages is avoided. As of release}
+    puts stderr {1.60.0-2, the following Boost libraries are included: 'algorithm' 'any'}
+    puts stderr {'bimap' 'bind' 'circular_buffer' 'concept' 'config' 'container'}
+    puts stderr {'date'_'time' 'detail' 'dynamic_bitset' 'exception' 'filesystem'}
+    puts stderr {'flyweight' 'foreach' 'functional' 'fusion' 'geometry' 'graph' 'heap'}
+    puts stderr {'icl' 'integer' 'interprocess' 'intrusive' 'io' 'iostreams' 'iterator'}
+    puts stderr {'math' 'move' 'mpl' 'multiprcecision' 'numeric' 'pending' 'phoenix'}
+    puts stderr {'preprocessor' 'random' 'range' 'smart_ptr' 'spirit' 'tuple'}
+    puts stderr {'type_trains' 'typeof' 'unordered' 'utility' 'uuid'.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+} else {
+    depends-on r/4.3.0-n6pth5g
+}
+prereq r/4.3.0-n6pth5g
+conflict r-bh
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-bh-1.81.0-1-wgzyx2huz3dhy3qq3jgv5htkkn6bgw3n/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-bh-1.81.0-1-wgzyx2huz3dhy3qq3jgv5htkkn6bgw3n/rlib/R/library}
+setenv R_BH_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-bh-1.81.0-1-wgzyx2huz3dhy3qq3jgv5htkkn6bgw3n}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

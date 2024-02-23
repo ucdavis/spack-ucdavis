@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:13.459558
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:44.189288
 ##
 ## blast2go@5.2.5%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/t4ea2nl
 ##
@@ -16,6 +16,12 @@ proc ModulesHelp { } {
     puts stderr {annotation and analysis of genomic datasets.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load blast-plus/2.14.1-gcanmgi
+} else {
+    depends-on blast-plus/2.14.1-gcanmgi
+}
+prereq blast-plus/2.14.1-gcanmgi
 conflict blast2go
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/blast2go-5.2.5-t4ea2nl5pxsxejo5xkkxmzgejs52zvtf/bin}

@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:36.585286
+##
+## uchardet@0.0.7%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/w5gau7g
+##
+
+
+module-whatis {uchardet is an encoding detector library, which takes a sequence of bytes in an unknown character encoding without any additional information, and attempts to determine the encoding of the text. Returned encoding names are iconv-compatible.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : uchardet}
+    puts stderr {Version: 0.0.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {uchardet is an encoding detector library, which takes a sequence of}
+    puts stderr {bytes in an unknown character encoding without any additional}
+    puts stderr {information, and attempts to determine the encoding of the text.}
+    puts stderr {Returned encoding names are iconv-compatible.}
+}
+
+conflict uchardet
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/uchardet-0.0.7-w5gau7gtx4b7tirbgtrys4kjfdn7oo4w/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/uchardet-0.0.7-w5gau7gtx4b7tirbgtrys4kjfdn7oo4w/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/uchardet-0.0.7-w5gau7gtx4b7tirbgtrys4kjfdn7oo4w/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/uchardet-0.0.7-w5gau7gtx4b7tirbgtrys4kjfdn7oo4w/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/uchardet-0.0.7-w5gau7gtx4b7tirbgtrys4kjfdn7oo4w/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/uchardet-0.0.7-w5gau7gtx4b7tirbgtrys4kjfdn7oo4w/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/uchardet-0.0.7-w5gau7gtx4b7tirbgtrys4kjfdn7oo4w/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/uchardet-0.0.7-w5gau7gtx4b7tirbgtrys4kjfdn7oo4w/.}
+setenv UCHARDET_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/uchardet-0.0.7-w5gau7gtx4b7tirbgtrys4kjfdn7oo4w}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

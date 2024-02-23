@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2024-01-10 15:34:06.757872
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:32.618301
 ##
 ## relion@5.0-beta%gcc@11.4.0+allow_ctf_in_sagd+altcpu~cuda+double~double-gpu~external_motioncor2~gctf~gpu_delay+gui~ipo+mklfft build_system=cmake build_type=RelWithDebInfo conda_python=/share/apps/conda/environments/relion-5.0/bin/python generator=make purpose=cluster torch_home=/share/databases/relion/torch arch=linux-ubuntu22.04-zen2/zmuowwb
 ##
@@ -22,13 +22,10 @@ proc ModulesHelp { } {
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load ctffind/4.1.14+amd
-    module load intel-oneapi-tbb/2021.10.0+amd
 } else {
     depends-on ctffind/4.1.14+amd
-    depends-on intel-oneapi-tbb/2021.10.0+amd
 }
 prereq ctffind/4.1.14+amd
-prereq intel-oneapi-tbb/2021.10.0+amd
 conflict relion
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-zmuowwbbxo6bxu7g67dnvqlxif7vgfih/bin}

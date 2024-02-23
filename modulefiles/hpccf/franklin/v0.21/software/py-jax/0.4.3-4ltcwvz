@@ -1,0 +1,63 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:31.226042
+##
+## py-jax@0.4.3%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/4ltcwvz
+##
+
+
+module-whatis {JAX is Autograd and XLA, brought together for high-performance machine learning research. With its updated version of Autograd, JAX can automatically differentiate native Python and NumPy functions. It can differentiate through loops, branches, recursion, and closures, and it can take derivatives of derivatives of derivatives. It supports reverse-mode differentiation (a.k.a. backpropagation) via grad as well as forward-mode differentiation, and the two can be composed arbitrarily to any order.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-jax}
+    puts stderr {Version: 0.4.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {JAX is Autograd and XLA, brought together for high-performance machine}
+    puts stderr {learning research. With its updated version of Autograd, JAX can}
+    puts stderr {automatically differentiate native Python and NumPy functions. It can}
+    puts stderr {differentiate through loops, branches, recursion, and closures, and it}
+    puts stderr {can take derivatives of derivatives of derivatives. It supports reverse-}
+    puts stderr {mode differentiation (a.k.a. backpropagation) via grad as well as}
+    puts stderr {forward-mode differentiation, and the two can be composed arbitrarily to}
+    puts stderr {any order.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-jaxlib/0.4.3-mnnluaw
+    module load py-numpy/1.22.4-7bmhfux
+    module load py-opt-einsum/3.3.0-htuc7e2
+    module load py-scipy/1.7.1-qtojezc
+    module load python/3.9.18-rt3uhd4
+} else {
+    depends-on py-jaxlib/0.4.3-mnnluaw
+    depends-on py-numpy/1.22.4-7bmhfux
+    depends-on py-opt-einsum/3.3.0-htuc7e2
+    depends-on py-scipy/1.7.1-qtojezc
+    depends-on python/3.9.18-rt3uhd4
+}
+prereq py-jaxlib/0.4.3-mnnluaw
+prereq py-numpy/1.22.4-7bmhfux
+prereq py-opt-einsum/3.3.0-htuc7e2
+prereq py-scipy/1.7.1-qtojezc
+prereq python/3.9.18-rt3uhd4
+conflict py-jax
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-jax-0.4.3-4ltcwvziamay6c4wj3qnu6xt26ikdtz7/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-jax-0.4.3-4ltcwvziamay6c4wj3qnu6xt26ikdtz7/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-jax-0.4.3-4ltcwvziamay6c4wj3qnu6xt26ikdtz7/lib/python3.9/site-packages}
+setenv PY_JAX_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-jax-0.4.3-4ltcwvziamay6c4wj3qnu6xt26ikdtz7}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

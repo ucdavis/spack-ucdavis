@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:45.764532
+##
+## py-prompt-toolkit@3.0.38%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/o4zjwzv
+##
+
+
+module-whatis {Library for building powerful interactive command lines in Python}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-prompt-toolkit}
+    puts stderr {Version: 3.0.38}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Library for building powerful interactive command lines in Python}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-wcwidth/0.2.7-bv55pz3
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-wcwidth/0.2.7-bv55pz3
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-wcwidth/0.2.7-bv55pz3
+prereq python/3.11.6-rsiojxh
+conflict py-prompt-toolkit
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-prompt-toolkit-3.0.38-o4zjwzvcupvf2d5cpmbcoulbwjelrk44/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-prompt-toolkit-3.0.38-o4zjwzvcupvf2d5cpmbcoulbwjelrk44/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-prompt-toolkit-3.0.38-o4zjwzvcupvf2d5cpmbcoulbwjelrk44/lib/python3.11/site-packages}
+setenv PY_PROMPT_TOOLKIT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-prompt-toolkit-3.0.38-o4zjwzvcupvf2d5cpmbcoulbwjelrk44}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

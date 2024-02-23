@@ -1,0 +1,58 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:38.794127
+##
+## py-nbclient@0.8.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/kiicts6
+##
+
+
+module-whatis {A client library for executing notebooks.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-nbclient}
+    puts stderr {Version: 0.8.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A client library for executing notebooks. Formally nbconvert's}
+    puts stderr {ExecutePreprocessor.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-jupyter-client/8.2.0-2vshdbo
+    module load py-jupyter-core/5.3.0-ltxlwwi
+    module load py-nbformat/5.8.0-yrwxml3
+    module load py-traitlets/5.9.0-pmbefep
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-jupyter-client/8.2.0-2vshdbo
+    depends-on py-jupyter-core/5.3.0-ltxlwwi
+    depends-on py-nbformat/5.8.0-yrwxml3
+    depends-on py-traitlets/5.9.0-pmbefep
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-jupyter-client/8.2.0-2vshdbo
+prereq py-jupyter-core/5.3.0-ltxlwwi
+prereq py-nbformat/5.8.0-yrwxml3
+prereq py-traitlets/5.9.0-pmbefep
+prereq python/3.11.6-rsiojxh
+conflict py-nbclient
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-nbclient-0.8.0-kiicts66hbqojbnfcugrinogq7s4rcdk/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-nbclient-0.8.0-kiicts66hbqojbnfcugrinogq7s4rcdk/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-nbclient-0.8.0-kiicts66hbqojbnfcugrinogq7s4rcdk/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-nbclient-0.8.0-kiicts66hbqojbnfcugrinogq7s4rcdk/lib/python3.11/site-packages}
+setenv PY_NBCLIENT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-nbclient-0.8.0-kiicts66hbqojbnfcugrinogq7s4rcdk}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

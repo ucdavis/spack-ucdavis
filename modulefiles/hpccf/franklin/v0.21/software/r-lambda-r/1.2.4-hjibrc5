@@ -1,0 +1,50 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:49.114055
+##
+## r-lambda-r@1.2.4%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/hjibrc5
+##
+
+
+module-whatis {Modeling Data with Functional Programming.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-lambda-r}
+    puts stderr {Version: 1.2.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Modeling Data with Functional Programming. A language extension to}
+    puts stderr {efficiently write functional programs in R. Syntax extensions include}
+    puts stderr {multi-part function definitions, pattern matching, guard statements,}
+    puts stderr {built-in (optional) type safety.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-formatr/1.14-2w6ukzy
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-formatr/1.14-2w6ukzy
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-formatr/1.14-2w6ukzy
+conflict r-lambda-r
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-lambda-r-1.2.4-hjibrc5emlrahnhv4wyauhxx67bfuj7q/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-lambda-r-1.2.4-hjibrc5emlrahnhv4wyauhxx67bfuj7q/rlib/R/library}
+setenv R_LAMBDA_R_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-lambda-r-1.2.4-hjibrc5emlrahnhv4wyauhxx67bfuj7q}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

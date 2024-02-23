@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:35.003949
+##
+## py-markdown@3.4.1%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/fcaztfi
+##
+
+
+module-whatis {This is a Python implementation of John Gruber's Markdown. It is almost completely compliant with the reference implementation, though there are a few very minor differences. See John's Syntax Documentation for the syntax rules. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-markdown}
+    puts stderr {Version: 3.4.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This is a Python implementation of John Gruber's Markdown. It is almost}
+    puts stderr {completely compliant with the reference implementation, though there are}
+    puts stderr {a few very minor differences. See John's Syntax Documentation for the}
+    puts stderr {syntax rules.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on python/3.11.6-ht65m6a
+}
+prereq python/3.11.6-ht65m6a
+conflict py-markdown
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-markdown-3.4.1-fcaztfiyutntlmm5ygle6yjha2k2ldxj/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-markdown-3.4.1-fcaztfiyutntlmm5ygle6yjha2k2ldxj/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-markdown-3.4.1-fcaztfiyutntlmm5ygle6yjha2k2ldxj/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-markdown-3.4.1-fcaztfiyutntlmm5ygle6yjha2k2ldxj/lib/python3.11/site-packages}
+setenv PY_MARKDOWN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-markdown-3.4.1-fcaztfiyutntlmm5ygle6yjha2k2ldxj}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:18.199879
+##
+## py-beautifulsoup4@4.12.2%gcc@11.4.0~html5lib~lxml build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/tkmwv4g
+##
+
+
+module-whatis {Beautiful Soup is a Python library for pulling data out of HTML and XML files. It works with your favorite parser to provide idiomatic ways of navigating, searching, and modifying the parse tree.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-beautifulsoup4}
+    puts stderr {Version: 4.12.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Beautiful Soup is a Python library for pulling data out of HTML and XML}
+    puts stderr {files. It works with your favorite parser to provide idiomatic ways of}
+    puts stderr {navigating, searching, and modifying the parse tree.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-soupsieve/2.4.1-7dwi5lh
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-soupsieve/2.4.1-7dwi5lh
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-soupsieve/2.4.1-7dwi5lh
+prereq python/3.11.6-rsiojxh
+conflict py-beautifulsoup4
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-beautifulsoup4-4.12.2-tkmwv4gwdeuwptjc3qxpvdv4efeaae7u/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-beautifulsoup4-4.12.2-tkmwv4gwdeuwptjc3qxpvdv4efeaae7u/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-beautifulsoup4-4.12.2-tkmwv4gwdeuwptjc3qxpvdv4efeaae7u/lib/python3.11/site-packages}
+setenv PY_BEAUTIFULSOUP4_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-beautifulsoup4-4.12.2-tkmwv4gwdeuwptjc3qxpvdv4efeaae7u}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

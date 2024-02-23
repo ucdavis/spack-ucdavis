@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:17.698325
+##
+## py-astunparse@1.6.3%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/5spi5mg
+##
+
+
+module-whatis {An AST unparser for Python.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-astunparse}
+    puts stderr {Version: 1.6.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {An AST unparser for Python. This is a factored out version of unparse}
+    puts stderr {found in the Python source distribution; under Demo/parser in Python 2}
+    puts stderr {and under Tools/parser in Python 3.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-six/1.16.0-dudvqq4
+    module load py-wheel/0.37.1-thxqc5k
+    module load python/3.9.18-rt3uhd4
+} else {
+    depends-on py-six/1.16.0-dudvqq4
+    depends-on py-wheel/0.37.1-thxqc5k
+    depends-on python/3.9.18-rt3uhd4
+}
+prereq py-six/1.16.0-dudvqq4
+prereq py-wheel/0.37.1-thxqc5k
+prereq python/3.9.18-rt3uhd4
+conflict py-astunparse
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-astunparse-1.6.3-5spi5mgqsztmszsv4xfu7r7okrvzo7q7/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-astunparse-1.6.3-5spi5mgqsztmszsv4xfu7r7okrvzo7q7/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-astunparse-1.6.3-5spi5mgqsztmszsv4xfu7r7okrvzo7q7/lib/python3.9/site-packages}
+setenv PY_ASTUNPARSE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-astunparse-1.6.3-5spi5mgqsztmszsv4xfu7r7okrvzo7q7}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

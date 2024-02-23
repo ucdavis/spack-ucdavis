@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:18.450652
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:55.714458
 ##
 ## jellyfish@2.3.0%gcc@11.4.0~ruby build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/pzbyrmc
 ##
@@ -16,6 +16,12 @@ proc ModulesHelp { } {
     puts stderr {DNA.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-okr4ubb
+} else {
+    depends-on perl/5.38.0-okr4ubb
+}
+prereq perl/5.38.0-okr4ubb
 conflict jellyfish
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jellyfish-2.3.0-pzbyrmczez6ctabwgzz2icuecookp3zz/lib}

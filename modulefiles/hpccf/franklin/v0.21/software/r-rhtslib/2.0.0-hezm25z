@@ -1,0 +1,61 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:08.252780
+##
+## r-rhtslib@2.0.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/hezm25z
+##
+
+
+module-whatis {HTSlib high-throughput sequencing library as an R package.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-rhtslib}
+    puts stderr {Version: 2.0.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {HTSlib high-throughput sequencing library as an R package. This package}
+    puts stderr {provides version 1.7 of the 'HTSlib' C library for high- throughput}
+    puts stderr {sequence analysis. The package is primarily useful to developers of}
+    puts stderr {other R packages who wish to make use of HTSlib. Motivation and}
+    puts stderr {instructions for use of this package are in the vignette,}
+    puts stderr {vignette(package="Rhtslib", "Rhtslib").}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load bzip2/1.0.8
+    module load curl/8.4.0-zzgh4uj
+    module load r/4.3.0-bzxz5nl
+    module load r-zlibbioc/1.46.0-qsn352m
+    module load xz/5.4.1-bzohayl
+} else {
+    depends-on bzip2/1.0.8
+    depends-on curl/8.4.0-zzgh4uj
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-zlibbioc/1.46.0-qsn352m
+    depends-on xz/5.4.1-bzohayl
+}
+prereq bzip2/1.0.8
+prereq curl/8.4.0-zzgh4uj
+prereq r/4.3.0-bzxz5nl
+prereq r-zlibbioc/1.46.0-qsn352m
+prereq xz/5.4.1-bzohayl
+conflict r-rhtslib
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rhtslib-2.0.0-hezm25zqqn2hnipxeficquyd6kf6hath/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rhtslib-2.0.0-hezm25zqqn2hnipxeficquyd6kf6hath/rlib/R/library}
+setenv R_RHTSLIB_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rhtslib-2.0.0-hezm25zqqn2hnipxeficquyd6kf6hath}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

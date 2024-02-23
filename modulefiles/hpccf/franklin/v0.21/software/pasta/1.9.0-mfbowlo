@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:05.839584
+##
+## pasta@1.9.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/mfbowlo
+##
+
+
+module-whatis {PASTA (Practical Alignment using SATe and Transitivity)}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : pasta}
+    puts stderr {Version: 1.9.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {PASTA (Practical Alignment using SATe and Transitivity)}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load openjdk/11.0.20.1_1-bvzxfaf
+    module load py-dendropy/4.5.2-5q2a3mo
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on openjdk/11.0.20.1_1-bvzxfaf
+    depends-on py-dendropy/4.5.2-5q2a3mo
+    depends-on python/3.11.6-rsiojxh
+}
+prereq openjdk/11.0.20.1_1-bvzxfaf
+prereq py-dendropy/4.5.2-5q2a3mo
+prereq python/3.11.6-rsiojxh
+conflict pasta
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pasta-1.9.0-mfbowlosqmo6hcn3wbxywe7ue3d655vh/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pasta-1.9.0-mfbowlosqmo6hcn3wbxywe7ue3d655vh/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pasta-1.9.0-mfbowlosqmo6hcn3wbxywe7ue3d655vh/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pasta-1.9.0-mfbowlosqmo6hcn3wbxywe7ue3d655vh/lib/python3.11/site-packages}
+setenv PASTA_TOOLS_RUNDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pasta-1.9.0-mfbowlosqmo6hcn3wbxywe7ue3d655vh/bin}
+setenv PASTA_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pasta-1.9.0-mfbowlosqmo6hcn3wbxywe7ue3d655vh}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,68 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:50.128321
+##
+## genemark-et@4.71%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/c2gvxtf
+##
+
+
+module-whatis {Gene Prediction in Bacteria, archaea, Metagenomes and Metatranscriptomes. When downloaded this file is named the same for all versions. Spack will search your current directory for the download file. Alternatively, add this file to a mirror so that Spack can find it. For instructions on how to set up a mirror, see https://spack.readthedocs.io/en/latest/mirrors.html}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : genemark-et}
+    puts stderr {Version: 4.71}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Gene Prediction in Bacteria, archaea, Metagenomes and}
+    puts stderr {Metatranscriptomes. When downloaded this file is named the same for all}
+    puts stderr {versions. Spack will search your current directory for the download}
+    puts stderr {file. Alternatively, add this file to a mirror so that Spack can find}
+    puts stderr {it. For instructions on how to set up a mirror, see}
+    puts stderr {https://spack.readthedocs.io/en/latest/mirrors.html}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-hash-merge/0.300-ofdbndl
+    module load perl-mce/1.884-3zhg35d
+    module load perl-parallel-forkmanager/2.02-jk37lve
+    module load perl-thread-queue/3.13-3zx4wz4
+    module load perl-threads/2.21-nz2quzu
+    module load perl-yaml/1.30-7tappv5
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-hash-merge/0.300-ofdbndl
+    depends-on perl-mce/1.884-3zhg35d
+    depends-on perl-parallel-forkmanager/2.02-jk37lve
+    depends-on perl-thread-queue/3.13-3zx4wz4
+    depends-on perl-threads/2.21-nz2quzu
+    depends-on perl-yaml/1.30-7tappv5
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-hash-merge/0.300-ofdbndl
+prereq perl-mce/1.884-3zhg35d
+prereq perl-parallel-forkmanager/2.02-jk37lve
+prereq perl-thread-queue/3.13-3zx4wz4
+prereq perl-threads/2.21-nz2quzu
+prereq perl-yaml/1.30-7tappv5
+conflict genemark-et
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/genemark-et-4.71-c2gvxtfztfug6tg2tlmhucxbqk2nlr7k/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/genemark-et-4.71-c2gvxtfztfug6tg2tlmhucxbqk2nlr7k/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/genemark-et-4.71-c2gvxtfztfug6tg2tlmhucxbqk2nlr7k/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/genemark-et-4.71-c2gvxtfztfug6tg2tlmhucxbqk2nlr7k/lib}
+setenv GENEMARK_ET_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/genemark-et-4.71-c2gvxtfztfug6tg2tlmhucxbqk2nlr7k}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

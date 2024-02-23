@@ -1,0 +1,59 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:36.228992
+##
+## tk@8.6.11%gcc@11.4.0+xft+xss build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/mpacfbu
+##
+## Configure options: --with-tcl=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-ifxq3uzdmxfxhmu3broezupol3j2f6qn/lib --x-includes=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/include --x-libraries=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/lib --enable-xft --enable-xss
+##
+
+
+module-whatis {Tk is a graphical user interface toolkit that takes developing desktop applications to a higher level than conventional approaches. Tk is the standard GUI not only for Tcl, but for many other dynamic languages, and can produce rich, native applications that run unchanged across Windows, Mac OS X, Linux and more.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : tk}
+    puts stderr {Version: 8.6.11}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Tk is a graphical user interface toolkit that takes developing desktop}
+    puts stderr {applications to a higher level than conventional approaches. Tk is the}
+    puts stderr {standard GUI not only for Tcl, but for many other dynamic languages, and}
+    puts stderr {can produce rich, native applications that run unchanged across Windows,}
+    puts stderr {Mac OS X, Linux and more.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load tcl/8.6.12-ifxq3uz
+} else {
+    depends-on tcl/8.6.12-ifxq3uz
+}
+prereq tcl/8.6.12-ifxq3uz
+conflict tk
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tk-8.6.11-mpacfbuxcdudap6fyizwp3wwwkolt3u3/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tk-8.6.11-mpacfbuxcdudap6fyizwp3wwwkolt3u3/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tk-8.6.11-mpacfbuxcdudap6fyizwp3wwwkolt3u3/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tk-8.6.11-mpacfbuxcdudap6fyizwp3wwwkolt3u3/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tk-8.6.11-mpacfbuxcdudap6fyizwp3wwwkolt3u3/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tk-8.6.11-mpacfbuxcdudap6fyizwp3wwwkolt3u3/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tk-8.6.11-mpacfbuxcdudap6fyizwp3wwwkolt3u3/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tk-8.6.11-mpacfbuxcdudap6fyizwp3wwwkolt3u3/.}
+prepend-path XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/share/X11/locale}
+prepend-path --delim { } TCLLIBPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tk-8.6.11-mpacfbuxcdudap6fyizwp3wwwkolt3u3/lib}
+setenv TK_LIBRARY {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tk-8.6.11-mpacfbuxcdudap6fyizwp3wwwkolt3u3/lib/tk8.6}
+setenv TK_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tk-8.6.11-mpacfbuxcdudap6fyizwp3wwwkolt3u3}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

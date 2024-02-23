@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:59.973987
+##
+## libxrender@0.9.10%gcc@7.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/3y4obs2
+##
+
+
+module-whatis {libXrender - library for the Render Extension to the X11 protocol.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libxrender}
+    puts stderr {Version: 0.9.10}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {libXrender - library for the Render Extension to the X11 protocol.}
+}
+
+conflict libxrender
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxrender-0.9.10-3y4obs2h7ohbj537ftmmq4s7rsatlibn/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxrender-0.9.10-3y4obs2h7ohbj537ftmmq4s7rsatlibn/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxrender-0.9.10-3y4obs2h7ohbj537ftmmq4s7rsatlibn/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxrender-0.9.10-3y4obs2h7ohbj537ftmmq4s7rsatlibn/include}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxrender-0.9.10-3y4obs2h7ohbj537ftmmq4s7rsatlibn/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxrender-0.9.10-3y4obs2h7ohbj537ftmmq4s7rsatlibn/.}
+prepend-path XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libx11-1.8.4-dicsz42adjvdqkoeagojkni23levveez/share/X11/locale}
+setenv LIBXRENDER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxrender-0.9.10-3y4obs2h7ohbj537ftmmq4s7rsatlibn}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

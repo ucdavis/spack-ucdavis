@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:46.525369
+##
+## compositeproto@0.4.2%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/uqf4ang
+##
+
+
+module-whatis {Composite Extension.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : compositeproto}
+    puts stderr {Version: 0.4.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Composite Extension. This package contains header files and}
+    puts stderr {documentation for the composite extension. Library and server}
+    puts stderr {implementations are separate.}
+}
+
+conflict compositeproto
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/compositeproto-0.4.2-uqf4ang2satear3up3qu3jk3n7dg2fhp/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/compositeproto-0.4.2-uqf4ang2satear3up3qu3jk3n7dg2fhp/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/compositeproto-0.4.2-uqf4ang2satear3up3qu3jk3n7dg2fhp/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/compositeproto-0.4.2-uqf4ang2satear3up3qu3jk3n7dg2fhp/include}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/compositeproto-0.4.2-uqf4ang2satear3up3qu3jk3n7dg2fhp/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/compositeproto-0.4.2-uqf4ang2satear3up3qu3jk3n7dg2fhp/.}
+setenv COMPOSITEPROTO_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/compositeproto-0.4.2-uqf4ang2satear3up3qu3jk3n7dg2fhp}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

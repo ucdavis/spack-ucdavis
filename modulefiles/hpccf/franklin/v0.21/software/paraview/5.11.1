@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:21.967576
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:05.696813
 ##
 ## paraview@5.11.1%gcc@11.4.0~adios2~advanced_debug~catalyst~cuda+development_files~examples~eyedomelighting~fortran~hdf5~ipo+kits~libcatalyst+mpi+opengl2~osmesa~pagosa~python~qt~raytracing~rocm+shared~tbb~visitbridge build_edition=canonical build_system=cmake build_type=Release generator=ninja patches=02253c7,acb3805 use_vtkm=default arch=linux-ubuntu22.04-x86_64_v3/4g7fe7v
 ##
@@ -20,18 +20,6 @@ proc ModulesHelp { } {
     puts stderr {package.}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load bzip2/1.0.8
-    module load eigen/3.4.0
-    module load nlohmann-json/3.11.2
-} else {
-    depends-on bzip2/1.0.8
-    depends-on eigen/3.4.0
-    depends-on nlohmann-json/3.11.2
-}
-prereq bzip2/1.0.8
-prereq eigen/3.4.0
-prereq nlohmann-json/3.11.2
 conflict paraview
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/paraview-5.11.1-4g7fe7vzmypadcsobomtwtdcbyjkexnd/lib}

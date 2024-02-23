@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:25.281331
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:32.288659
 ##
 ## relion@4.0.1%gcc@11.4.0+allow_ctf_in_sagd+altcpu~cuda+double~double-gpu~external_motioncor2~gpu_delay+gui~ipo~mklfft build_system=cmake build_type=RelWithDebInfo generator=make purpose=cluster arch=linux-ubuntu22.04-zen2/j2cnoem
 ##
@@ -21,11 +21,11 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load intel-oneapi-tbb/2021.10.0+amd
+    module load ctffind/4.1.14+amd-mcco7ya
 } else {
-    depends-on intel-oneapi-tbb/2021.10.0+amd
+    depends-on ctffind/4.1.14+amd-mcco7ya
 }
-prereq intel-oneapi-tbb/2021.10.0+amd
+prereq ctffind/4.1.14+amd-mcco7ya
 conflict relion
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-4.0.1-j2cnoemolrwoouqftxeicr7p6zkhfvbr/lib}

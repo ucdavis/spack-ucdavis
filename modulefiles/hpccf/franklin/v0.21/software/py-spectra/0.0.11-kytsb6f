@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:55.232491
+##
+## py-spectra@0.0.11%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/kytsb6f
+##
+
+
+module-whatis {Color scales and color conversion made easy for Python.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-spectra}
+    puts stderr {Version: 0.0.11}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Color scales and color conversion made easy for Python.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-colormath/3.0.0-rmuvrrr
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on py-colormath/3.0.0-rmuvrrr
+    depends-on python/3.11.6-ht65m6a
+}
+prereq py-colormath/3.0.0-rmuvrrr
+prereq python/3.11.6-ht65m6a
+conflict py-spectra
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-spectra-0.0.11-kytsb6f7phneegk2ntqpy4lxtckk2c6y/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-spectra-0.0.11-kytsb6f7phneegk2ntqpy4lxtckk2c6y/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-spectra-0.0.11-kytsb6f7phneegk2ntqpy4lxtckk2c6y/lib/python3.11/site-packages}
+setenv PY_SPECTRA_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-spectra-0.0.11-kytsb6f7phneegk2ntqpy4lxtckk2c6y}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

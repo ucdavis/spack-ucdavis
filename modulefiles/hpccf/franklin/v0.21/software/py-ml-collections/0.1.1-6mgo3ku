@@ -1,0 +1,60 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:37.825512
+##
+## py-ml-collections@0.1.1%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/6mgo3ku
+##
+
+
+module-whatis {ML Collections is a library of Python collections designed for ML usecases.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-ml-collections}
+    puts stderr {Version: 0.1.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {ML Collections is a library of Python collections designed for ML}
+    puts stderr {usecases.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-absl-py/1.4.0-i2xc5za
+    module load py-contextlib2/21.6.0-qbbsp2o
+    module load py-pyyaml/6.0-tus2zz2
+    module load py-setuptools/57.4.0-pimnnnh
+    module load py-six/1.16.0-dudvqq4
+    module load python/3.9.18-rt3uhd4
+} else {
+    depends-on py-absl-py/1.4.0-i2xc5za
+    depends-on py-contextlib2/21.6.0-qbbsp2o
+    depends-on py-pyyaml/6.0-tus2zz2
+    depends-on py-setuptools/57.4.0-pimnnnh
+    depends-on py-six/1.16.0-dudvqq4
+    depends-on python/3.9.18-rt3uhd4
+}
+prereq py-absl-py/1.4.0-i2xc5za
+prereq py-contextlib2/21.6.0-qbbsp2o
+prereq py-pyyaml/6.0-tus2zz2
+prereq py-setuptools/57.4.0-pimnnnh
+prereq py-six/1.16.0-dudvqq4
+prereq python/3.9.18-rt3uhd4
+conflict py-ml-collections
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ml-collections-0.1.1-6mgo3kuh5jm32e5tptaqm76v25tjkyis/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ml-collections-0.1.1-6mgo3kuh5jm32e5tptaqm76v25tjkyis/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ml-collections-0.1.1-6mgo3kuh5jm32e5tptaqm76v25tjkyis/lib/python3.9/site-packages}
+setenv PY_ML_COLLECTIONS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ml-collections-0.1.1-6mgo3kuh5jm32e5tptaqm76v25tjkyis}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

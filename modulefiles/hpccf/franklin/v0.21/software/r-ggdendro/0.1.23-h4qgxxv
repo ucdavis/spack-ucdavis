@@ -1,0 +1,57 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:34.176876
+##
+## r-ggdendro@0.1.23%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/h4qgxxv
+##
+
+
+module-whatis {Create Dendrograms and Tree Diagrams Using 'ggplot2'.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-ggdendro}
+    puts stderr {Version: 0.1.23}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Create Dendrograms and Tree Diagrams Using 'ggplot2'. This is a set of}
+    puts stderr {tools for dendrograms and tree plots using 'ggplot2'. The 'ggplot2'}
+    puts stderr {philosophy is to clearly separate data from the presentation.}
+    puts stderr {Unfortunately the plot method for dendrograms plots directly to a plot}
+    puts stderr {device without exposing the data. The 'ggdendro' package resolves this}
+    puts stderr {by making available functions that extract the dendrogram plot data. The}
+    puts stderr {package provides implementations for tree, rpart, as well as diana and}
+    puts stderr {agnes cluster diagrams.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-ggplot2/3.4.2-wkgnum2
+    module load r-mass/7.3-59-4g5c5rb
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-ggplot2/3.4.2-wkgnum2
+    depends-on r-mass/7.3-59-4g5c5rb
+}
+prereq r/4.3.0-n6pth5g
+prereq r-ggplot2/3.4.2-wkgnum2
+prereq r-mass/7.3-59-4g5c5rb
+conflict r-ggdendro
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-ggdendro-0.1.23-h4qgxxvzg557ohaxgpbvawau5a52u67i/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-ggdendro-0.1.23-h4qgxxvzg557ohaxgpbvawau5a52u67i/rlib/R/library}
+setenv R_GGDENDRO_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-ggdendro-0.1.23-h4qgxxvzg557ohaxgpbvawau5a52u67i}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

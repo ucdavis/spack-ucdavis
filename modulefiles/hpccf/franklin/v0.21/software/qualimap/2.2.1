@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:24.722323
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:01.275168
 ##
 ## qualimap@2.2.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/4yr3tg4
 ##
@@ -18,6 +18,12 @@ proc ModulesHelp { } {
     puts stderr {and its derivatives like feature counts.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load openjdk/11.0.20.1_1-bvzxfaf
+} else {
+    depends-on openjdk/11.0.20.1_1-bvzxfaf
+}
+prereq openjdk/11.0.20.1_1-bvzxfaf
 conflict qualimap
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/qualimap-2.2.1-4yr3tg4io4qkicwe3wljiue5joiujegp/lib}

@@ -1,0 +1,50 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:13.888971
+##
+## perl-xml-filter-buffertext@1.01%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/wbtfhbg
+##
+
+
+module-whatis {This is a very simple filter. One common cause of grief (and programmer error) is that XML parsers aren't required to provide character events in one chunk. They can, but are not forced to, and most don't. This filter does the trivial but oft-repeated task of putting all characters into a single event.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-xml-filter-buffertext}
+    puts stderr {Version: 1.01}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This is a very simple filter. One common cause of grief (and programmer}
+    puts stderr {error) is that XML parsers aren't required to provide character events}
+    puts stderr {in one chunk. They can, but are not forced to, and most don't. This}
+    puts stderr {filter does the trivial but oft-repeated task of putting all characters}
+    puts stderr {into a single event.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-xml-filter-buffertext
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-filter-buffertext-1.01-wbtfhbgqdyj5srhaya6zsid56kuncnu5/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-filter-buffertext-1.01-wbtfhbgqdyj5srhaya6zsid56kuncnu5/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-filter-buffertext-1.01-wbtfhbgqdyj5srhaya6zsid56kuncnu5/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-filter-buffertext-1.01-wbtfhbgqdyj5srhaya6zsid56kuncnu5/lib/perl5}
+setenv PERL_XML_FILTER_BUFFERTEXT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-filter-buffertext-1.01-wbtfhbgqdyj5srhaya6zsid56kuncnu5}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

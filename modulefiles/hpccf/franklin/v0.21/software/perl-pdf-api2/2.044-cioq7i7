@@ -1,0 +1,55 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:12.083772
+##
+## perl-pdf-api2@2.044%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/cioq7i7
+##
+
+
+module-whatis {Facilitates the creation and modification of PDF files}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-pdf-api2}
+    puts stderr {Version: 2.044}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Facilitates the creation and modification of PDF files}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-font-ttf/1.06-glydctl
+    module load perl-test-exception/0.43-q6dchkc
+    module load perl-test-memory-cycle/1.06-gwhsxkf
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-font-ttf/1.06-glydctl
+    depends-on perl-test-exception/0.43-q6dchkc
+    depends-on perl-test-memory-cycle/1.06-gwhsxkf
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-font-ttf/1.06-glydctl
+prereq perl-test-exception/0.43-q6dchkc
+prereq perl-test-memory-cycle/1.06-gwhsxkf
+conflict perl-pdf-api2
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-pdf-api2-2.044-cioq7i7v3anftldp2lw7n75whnvrsnps/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-pdf-api2-2.044-cioq7i7v3anftldp2lw7n75whnvrsnps/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-pdf-api2-2.044-cioq7i7v3anftldp2lw7n75whnvrsnps/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-pdf-api2-2.044-cioq7i7v3anftldp2lw7n75whnvrsnps/lib/perl5}
+setenv PERL_PDF_API2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-pdf-api2-2.044-cioq7i7v3anftldp2lw7n75whnvrsnps}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

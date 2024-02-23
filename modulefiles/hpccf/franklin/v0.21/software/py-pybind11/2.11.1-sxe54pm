@@ -1,0 +1,54 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:47.186798
+##
+## py-pybind11@2.11.1%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=ninja arch=linux-ubuntu22.04-x86_64_v3/sxe54pm
+##
+
+
+module-whatis {pybind11 -- Seamless operability between C++11 and Python.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-pybind11}
+    puts stderr {Version: 2.11.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {pybind11 -- Seamless operability between C++11 and Python. pybind11 is a}
+    puts stderr {lightweight header-only library that exposes C++ types in Python and}
+    puts stderr {vice versa, mainly to create Python bindings of existing C++ code. Its}
+    puts stderr {goals and syntax are similar to the excellent Boost.Python library by}
+    puts stderr {David Abrahams: to minimize boilerplate code in traditional extension}
+    puts stderr {modules by inferring type information using compile-time introspection.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on python/3.11.6-ht65m6a
+}
+prereq python/3.11.6-ht65m6a
+conflict py-pybind11
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pybind11-2.11.1-sxe54pmxfakxqe3nu52etp3o6nyykxz2/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pybind11-2.11.1-sxe54pmxfakxqe3nu52etp3o6nyykxz2/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pybind11-2.11.1-sxe54pmxfakxqe3nu52etp3o6nyykxz2/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pybind11-2.11.1-sxe54pmxfakxqe3nu52etp3o6nyykxz2/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pybind11-2.11.1-sxe54pmxfakxqe3nu52etp3o6nyykxz2/bin}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pybind11-2.11.1-sxe54pmxfakxqe3nu52etp3o6nyykxz2/share/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pybind11-2.11.1-sxe54pmxfakxqe3nu52etp3o6nyykxz2/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pybind11-2.11.1-sxe54pmxfakxqe3nu52etp3o6nyykxz2/lib/python3.11/site-packages}
+setenv PY_PYBIND11_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pybind11-2.11.1-sxe54pmxfakxqe3nu52etp3o6nyykxz2}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

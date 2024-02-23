@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:52.822934
+##
+## htscodecs@1.5.0%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/q57b75l
+##
+
+
+module-whatis {This repository implements the custom CRAM codecs used for 'EXTERNAL' block types. These consist of two variants of the rANS codec (8-bit and 16-bit renormalisation, with run-length encoding and bit-packing also supported in the latter), a dynamic arithmetic coder, and custom codecs for name/ID compression and quality score compression derived from fqzcomp.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : htscodecs}
+    puts stderr {Version: 1.5.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This repository implements the custom CRAM codecs used for "EXTERNAL"}
+    puts stderr {block types. These consist of two variants of the rANS codec (8-bit and}
+    puts stderr {16-bit renormalisation, with run-length encoding and bit-packing also}
+    puts stderr {supported in the latter), a dynamic arithmetic coder, and custom codecs}
+    puts stderr {for name/ID compression and quality score compression derived from}
+    puts stderr {fqzcomp.}
+}
+
+conflict htscodecs
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/htscodecs-1.5.0-q57b75lekn4etlkl4mxx4xt3gumu526w/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/htscodecs-1.5.0-q57b75lekn4etlkl4mxx4xt3gumu526w/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/htscodecs-1.5.0-q57b75lekn4etlkl4mxx4xt3gumu526w/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/htscodecs-1.5.0-q57b75lekn4etlkl4mxx4xt3gumu526w/include}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/htscodecs-1.5.0-q57b75lekn4etlkl4mxx4xt3gumu526w/.}
+setenv HTSCODECS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/htscodecs-1.5.0-q57b75lekn4etlkl4mxx4xt3gumu526w}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

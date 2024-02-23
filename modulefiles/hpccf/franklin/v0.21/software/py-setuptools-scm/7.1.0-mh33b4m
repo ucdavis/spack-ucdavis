@@ -1,0 +1,59 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:54.331551
+##
+## py-setuptools-scm@7.1.0%gcc@11.4.0+toml build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/mh33b4m
+##
+
+
+module-whatis {The blessed package to manage your versions by scm tags.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-setuptools-scm}
+    puts stderr {Version: 7.1.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The blessed package to manage your versions by scm tags.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load git/2.41.0-mfobhjn
+    module load py-packaging/23.1-qtl5ejm
+    module load py-setuptools/68.0.0-dkyik7g
+    module load py-tomli/2.0.1-uhzcyrt
+    module load py-typing-extensions/4.8.0-zcsj5ux
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on git/2.41.0-mfobhjn
+    depends-on py-packaging/23.1-qtl5ejm
+    depends-on py-setuptools/68.0.0-dkyik7g
+    depends-on py-tomli/2.0.1-uhzcyrt
+    depends-on py-typing-extensions/4.8.0-zcsj5ux
+    depends-on python/3.11.6-rsiojxh
+}
+prereq git/2.41.0-mfobhjn
+prereq py-packaging/23.1-qtl5ejm
+prereq py-setuptools/68.0.0-dkyik7g
+prereq py-tomli/2.0.1-uhzcyrt
+prereq py-typing-extensions/4.8.0-zcsj5ux
+prereq python/3.11.6-rsiojxh
+conflict py-setuptools-scm
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-setuptools-scm-7.1.0-mh33b4miqg4t6arghtb65o7wego456wb/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-setuptools-scm-7.1.0-mh33b4miqg4t6arghtb65o7wego456wb/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-setuptools-scm-7.1.0-mh33b4miqg4t6arghtb65o7wego456wb/lib/python3.11/site-packages}
+setenv PY_SETUPTOOLS_SCM_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-setuptools-scm-7.1.0-mh33b4miqg4t6arghtb65o7wego456wb}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

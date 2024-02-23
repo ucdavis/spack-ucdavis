@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:38.042369
+##
+## py-mpi4py@3.1.4%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/t53tk2a
+##
+
+
+module-whatis {This package provides Python bindings for the Message Passing Interface (MPI) standard. It is implemented on top of the MPI-1/MPI-2 specification and exposes an API which grounds on the standard MPI-2 C++ bindings. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-mpi4py}
+    puts stderr {Version: 3.1.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This package provides Python bindings for the Message Passing Interface}
+    puts stderr {(MPI) standard. It is implemented on top of the MPI-1/MPI-2}
+    puts stderr {specification and exposes an API which grounds on the standard MPI-2 C++}
+    puts stderr {bindings.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on python/3.11.6-ht65m6a
+}
+prereq python/3.11.6-ht65m6a
+conflict py-mpi4py
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-mpi4py-3.1.4-t53tk2aj2ty5462vdd357g6vq3yrox44/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-mpi4py-3.1.4-t53tk2aj2ty5462vdd357g6vq3yrox44/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-mpi4py-3.1.4-t53tk2aj2ty5462vdd357g6vq3yrox44/lib/python3.11/site-packages}
+setenv PY_MPI4PY_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-mpi4py-3.1.4-t53tk2aj2ty5462vdd357g6vq3yrox44}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

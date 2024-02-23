@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:49.049570
+##
+## font-util@1.4.0%gcc@11.4.0 build_system=autotools fonts=encodings,font-adobe-100dpi,font-adobe-75dpi,font-adobe-utopia-100dpi,font-adobe-utopia-75dpi,font-adobe-utopia-type1,font-alias,font-arabic-misc,font-bh-100dpi,font-bh-75dpi,font-bh-lucidatypewriter-100dpi,font-bh-lucidatypewriter-75dpi,font-bh-type1,font-bitstream-100dpi,font-bitstream-75dpi,font-bitstream-speedo,font-bitstream-type1,font-cronyx-cyrillic,font-cursor-misc,font-daewoo-misc,font-dec-misc,font-ibm-type1,font-isas-misc,font-jis-misc,font-micro-misc,font-misc-cyrillic,font-misc-ethiopic,font-misc-meltho,font-misc-misc,font-mutt-misc,font-schumacher-misc,font-screen-cyrillic,font-sun-misc,font-winitzki-cyrillic,font-xfree86-type1 arch=linux-ubuntu22.04-x86_64_v3/joo4mue
+##
+
+
+module-whatis {X.Org font package creation/installation utilities and fonts.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : font-util}
+    puts stderr {Version: 1.4.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {X.Org font package creation/installation utilities and fonts.}
+}
+
+conflict font-util
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/font-util-1.4.0-joo4muebi2r4rxhv2gvgkjluxg4thzmp/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/font-util-1.4.0-joo4muebi2r4rxhv2gvgkjluxg4thzmp/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/font-util-1.4.0-joo4muebi2r4rxhv2gvgkjluxg4thzmp/share/man}
+prepend-path ACLOCAL_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/font-util-1.4.0-joo4muebi2r4rxhv2gvgkjluxg4thzmp/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/font-util-1.4.0-joo4muebi2r4rxhv2gvgkjluxg4thzmp/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/font-util-1.4.0-joo4muebi2r4rxhv2gvgkjluxg4thzmp/.}
+setenv FONT_UTIL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/font-util-1.4.0-joo4muebi2r4rxhv2gvgkjluxg4thzmp}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

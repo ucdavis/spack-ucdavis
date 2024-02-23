@@ -1,0 +1,85 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:06.590268
+##
+## r-reprex@2.0.2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/655ca55
+##
+
+
+module-whatis {Prepare Reproducible Example Code via the Clipboard.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-reprex}
+    puts stderr {Version: 2.0.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Prepare Reproducible Example Code via the Clipboard. Convenience wrapper}
+    puts stderr {that uses the 'rmarkdown' package to render small snippets of code to}
+    puts stderr {target formats that include both code and output. The goal is to}
+    puts stderr {encourage the sharing of small, reproducible, and runnable examples on}
+    puts stderr {code-oriented websites, such as <https://stackoverflow.com/> and}
+    puts stderr {<https://github.com>, or in email. 'reprex' also extracts clean,}
+    puts stderr {runnable R code from various common formats, such as copy/paste from an}
+    puts stderr {R session.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-callr/3.7.3-zqcxgei
+    module load r-cli/3.6.1-u4zzw6m
+    module load r-clipr/0.8.0-mryl6af
+    module load r-fs/1.6.2-xwmk2cd
+    module load r-glue/1.6.2-7jsjoec
+    module load r-knitr/1.42-2llikrf
+    module load r-lifecycle/1.0.3-vlvj6d7
+    module load r-rlang/1.1.0-6ek36pb
+    module load r-rmarkdown/2.21-saazxnl
+    module load r-rstudioapi/0.14-ksxj4ev
+    module load r-withr/2.5.0-ifljewn
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-callr/3.7.3-zqcxgei
+    depends-on r-cli/3.6.1-u4zzw6m
+    depends-on r-clipr/0.8.0-mryl6af
+    depends-on r-fs/1.6.2-xwmk2cd
+    depends-on r-glue/1.6.2-7jsjoec
+    depends-on r-knitr/1.42-2llikrf
+    depends-on r-lifecycle/1.0.3-vlvj6d7
+    depends-on r-rlang/1.1.0-6ek36pb
+    depends-on r-rmarkdown/2.21-saazxnl
+    depends-on r-rstudioapi/0.14-ksxj4ev
+    depends-on r-withr/2.5.0-ifljewn
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-callr/3.7.3-zqcxgei
+prereq r-cli/3.6.1-u4zzw6m
+prereq r-clipr/0.8.0-mryl6af
+prereq r-fs/1.6.2-xwmk2cd
+prereq r-glue/1.6.2-7jsjoec
+prereq r-knitr/1.42-2llikrf
+prereq r-lifecycle/1.0.3-vlvj6d7
+prereq r-rlang/1.1.0-6ek36pb
+prereq r-rmarkdown/2.21-saazxnl
+prereq r-rstudioapi/0.14-ksxj4ev
+prereq r-withr/2.5.0-ifljewn
+conflict r-reprex
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-reprex-2.0.2-655ca55rwcthbel7qvrutmqmz3yt25rx/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-reprex-2.0.2-655ca55rwcthbel7qvrutmqmz3yt25rx/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-reprex-2.0.2-655ca55rwcthbel7qvrutmqmz3yt25rx/rlib/R/library}
+setenv R_REPREX_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-reprex-2.0.2-655ca55rwcthbel7qvrutmqmz3yt25rx}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

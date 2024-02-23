@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:37.848288
+##
+## xclip@0.13%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/2wc64rn
+##
+
+
+module-whatis {xclip is a command line utility that is designed to run on any system with an X11 implementation. It provides an interface to X selections ('the clipboard') from the command line. It can read data from standard in or a file and place it in an X selection for pasting into other X applications. xclip can also print an X selection to standard out, which can then be redirected to a file or another program.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : xclip}
+    puts stderr {Version: 0.13}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {xclip is a command line utility that is designed to run on any system}
+    puts stderr {with an X11 implementation. It provides an interface to X selections}
+    puts stderr {("the clipboard") from the command line. It can read data from standard}
+    puts stderr {in or a file and place it in an X selection for pasting into other X}
+    puts stderr {applications. xclip can also print an X selection to standard out, which}
+    puts stderr {can then be redirected to a file or another program.}
+}
+
+conflict xclip
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xclip-0.13-2wc64rnjoxgrcmhyiyskvfan5f56szmn/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xclip-0.13-2wc64rnjoxgrcmhyiyskvfan5f56szmn/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xclip-0.13-2wc64rnjoxgrcmhyiyskvfan5f56szmn/.}
+prepend-path XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/share/X11/locale}
+setenv XCLIP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xclip-0.13-2wc64rnjoxgrcmhyiyskvfan5f56szmn}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

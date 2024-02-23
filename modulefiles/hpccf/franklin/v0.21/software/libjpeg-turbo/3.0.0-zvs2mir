@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:57.490818
+##
+## libjpeg-turbo@3.0.0%gcc@11.4.0~ipo~jpeg8+shared+static build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/zvs2mir
+##
+
+
+module-whatis {libjpeg-turbo is a fork of the original IJG libjpeg which uses SIMD to accelerate baseline JPEG compression and decompression.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libjpeg-turbo}
+    puts stderr {Version: 3.0.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {libjpeg-turbo is a fork of the original IJG libjpeg which uses SIMD to}
+    puts stderr {accelerate baseline JPEG compression and decompression. libjpeg is a}
+    puts stderr {library that implements JPEG image encoding, decoding and transcoding.}
+}
+
+conflict libjpeg-turbo
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libjpeg-turbo-3.0.0-zvs2mir5fpbyqsdbdw47lo7yoakyxtxd/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libjpeg-turbo-3.0.0-zvs2mir5fpbyqsdbdw47lo7yoakyxtxd/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libjpeg-turbo-3.0.0-zvs2mir5fpbyqsdbdw47lo7yoakyxtxd/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libjpeg-turbo-3.0.0-zvs2mir5fpbyqsdbdw47lo7yoakyxtxd/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libjpeg-turbo-3.0.0-zvs2mir5fpbyqsdbdw47lo7yoakyxtxd/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libjpeg-turbo-3.0.0-zvs2mir5fpbyqsdbdw47lo7yoakyxtxd/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libjpeg-turbo-3.0.0-zvs2mir5fpbyqsdbdw47lo7yoakyxtxd/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libjpeg-turbo-3.0.0-zvs2mir5fpbyqsdbdw47lo7yoakyxtxd/.}
+setenv LIBJPEG_TURBO_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libjpeg-turbo-3.0.0-zvs2mir5fpbyqsdbdw47lo7yoakyxtxd}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

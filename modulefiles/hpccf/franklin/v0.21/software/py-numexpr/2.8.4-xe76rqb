@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:40.568398
+##
+## py-numexpr@2.8.4%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/xe76rqb
+##
+
+
+module-whatis {Fast numerical expression evaluator for NumPy}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-numexpr}
+    puts stderr {Version: 2.8.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Fast numerical expression evaluator for NumPy}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-numpy/1.24.4-xk45izx
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on py-numpy/1.24.4-xk45izx
+    depends-on python/3.11.6-ht65m6a
+}
+prereq py-numpy/1.24.4-xk45izx
+prereq python/3.11.6-ht65m6a
+conflict py-numexpr
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numexpr-2.8.4-xe76rqbnqwtfdvfvti2xwk72az3d6av4/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numexpr-2.8.4-xe76rqbnqwtfdvfvti2xwk72az3d6av4/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numexpr-2.8.4-xe76rqbnqwtfdvfvti2xwk72az3d6av4/lib/python3.11/site-packages}
+setenv PY_NUMEXPR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numexpr-2.8.4-xe76rqbnqwtfdvfvti2xwk72az3d6av4}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

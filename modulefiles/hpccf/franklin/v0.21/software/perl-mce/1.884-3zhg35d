@@ -1,0 +1,51 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:11.402643
+##
+## perl-mce@1.884%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/3zhg35d
+##
+
+
+module-whatis {MCE - Many-Core Engine for Perl providing parallel processing capabilities.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-mce}
+    puts stderr {Version: 1.884}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {MCE - Many-Core Engine for Perl providing parallel processing}
+    puts stderr {capabilities. MCE spawns a pool of workers and therefore does not fork a}
+    puts stderr {new process per each element of data. Instead, MCE follows a bank}
+    puts stderr {queuing model. Imagine the line being the data and bank-tellers the}
+    puts stderr {parallel workers. MCE enhances that model by adding the ability to chunk}
+    puts stderr {the next n elements from the input stream to the next available worker.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-mce
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-mce-1.884-3zhg35dhf2qrktvjcnue7iba7zqeuuwe/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-mce-1.884-3zhg35dhf2qrktvjcnue7iba7zqeuuwe/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-mce-1.884-3zhg35dhf2qrktvjcnue7iba7zqeuuwe/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-mce-1.884-3zhg35dhf2qrktvjcnue7iba7zqeuuwe/lib/perl5}
+setenv PERL_MCE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-mce-1.884-3zhg35dhf2qrktvjcnue7iba7zqeuuwe}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

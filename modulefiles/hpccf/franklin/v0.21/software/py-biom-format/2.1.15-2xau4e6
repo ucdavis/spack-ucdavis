@@ -1,0 +1,62 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:18.794506
+##
+## py-biom-format@2.1.15%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/2xau4e6
+##
+
+
+module-whatis {The BIOM file format (canonically pronounced biome) is designed to be a general-use format for representing biological sample by observation contingency tables.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-biom-format}
+    puts stderr {Version: 2.1.15}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The BIOM file format (canonically pronounced biome) is designed to be a}
+    puts stderr {general-use format for representing biological sample by observation}
+    puts stderr {contingency tables.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-click/8.1.3-erogdp2
+    module load py-h5py/3.8.0-bqrwkmb
+    module load py-numpy/1.24.4-xk45izx
+    module load py-pandas/2.1.1-wlzt6e3
+    module load py-scipy/1.11.2-m6ulg4w
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on py-click/8.1.3-erogdp2
+    depends-on py-h5py/3.8.0-bqrwkmb
+    depends-on py-numpy/1.24.4-xk45izx
+    depends-on py-pandas/2.1.1-wlzt6e3
+    depends-on py-scipy/1.11.2-m6ulg4w
+    depends-on python/3.11.6-ht65m6a
+}
+prereq py-click/8.1.3-erogdp2
+prereq py-h5py/3.8.0-bqrwkmb
+prereq py-numpy/1.24.4-xk45izx
+prereq py-pandas/2.1.1-wlzt6e3
+prereq py-scipy/1.11.2-m6ulg4w
+prereq python/3.11.6-ht65m6a
+conflict py-biom-format
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-biom-format-2.1.15-2xau4e6qmwjayi6sk5vw65aqbvtiqqlo/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-biom-format-2.1.15-2xau4e6qmwjayi6sk5vw65aqbvtiqqlo/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-biom-format-2.1.15-2xau4e6qmwjayi6sk5vw65aqbvtiqqlo/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-biom-format-2.1.15-2xau4e6qmwjayi6sk5vw65aqbvtiqqlo/lib/python3.11/site-packages}
+setenv PY_BIOM_FORMAT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-biom-format-2.1.15-2xau4e6qmwjayi6sk5vw65aqbvtiqqlo}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:24.778785
+##
+## py-deeptoolsintervals@0.1.9%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/xmd6xbp
+##
+
+
+module-whatis {A python module creating/accessing GTF-based interval trees with associated meta-data.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-deeptoolsintervals}
+    puts stderr {Version: 0.1.9}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A python module creating/accessing GTF-based interval trees with}
+    puts stderr {associated meta-data.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on python/3.11.6-rsiojxh
+}
+prereq python/3.11.6-rsiojxh
+conflict py-deeptoolsintervals
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-deeptoolsintervals-0.1.9-xmd6xbpzu7ciw2cf72zpve6bdblxdcrh/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-deeptoolsintervals-0.1.9-xmd6xbpzu7ciw2cf72zpve6bdblxdcrh/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-deeptoolsintervals-0.1.9-xmd6xbpzu7ciw2cf72zpve6bdblxdcrh/lib/python3.11/site-packages}
+setenv PY_DEEPTOOLSINTERVALS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-deeptoolsintervals-0.1.9-xmd6xbpzu7ciw2cf72zpve6bdblxdcrh}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

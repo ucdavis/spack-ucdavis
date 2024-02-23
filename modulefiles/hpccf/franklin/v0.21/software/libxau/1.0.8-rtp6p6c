@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:58.481154
+##
+## libxau@1.0.8%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/rtp6p6c
+##
+
+
+module-whatis {The libXau package contains a library implementing the X11 Authorization Protocol. This is useful for restricting client access to the display.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libxau}
+    puts stderr {Version: 1.0.8}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The libXau package contains a library implementing the X11 Authorization}
+    puts stderr {Protocol. This is useful for restricting client access to the display.}
+}
+
+conflict libxau
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxau-1.0.8-rtp6p6c7jgcqotrfco7zamilxloc6app/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxau-1.0.8-rtp6p6c7jgcqotrfco7zamilxloc6app/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxau-1.0.8-rtp6p6c7jgcqotrfco7zamilxloc6app/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxau-1.0.8-rtp6p6c7jgcqotrfco7zamilxloc6app/include}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxau-1.0.8-rtp6p6c7jgcqotrfco7zamilxloc6app/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxau-1.0.8-rtp6p6c7jgcqotrfco7zamilxloc6app/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxau-1.0.8-rtp6p6c7jgcqotrfco7zamilxloc6app/.}
+setenv LIBXAU_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxau-1.0.8-rtp6p6c7jgcqotrfco7zamilxloc6app}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

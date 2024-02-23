@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:57.272907
+##
+## libgtextutils@0.7%gcc@11.4.0 build_system=autotools patches=ba9e181 arch=linux-ubuntu22.04-x86_64_v3/divp54b
+##
+
+
+module-whatis {Gordon's Text utils Library.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libgtextutils}
+    puts stderr {Version: 0.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Gordon's Text utils Library.}
+}
+
+conflict libgtextutils
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libgtextutils-0.7-divp54buviroj7retxiyw6rm4gvvzn3t/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libgtextutils-0.7-divp54buviroj7retxiyw6rm4gvvzn3t/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libgtextutils-0.7-divp54buviroj7retxiyw6rm4gvvzn3t/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libgtextutils-0.7-divp54buviroj7retxiyw6rm4gvvzn3t/include}
+prepend-path ACLOCAL_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libgtextutils-0.7-divp54buviroj7retxiyw6rm4gvvzn3t/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libgtextutils-0.7-divp54buviroj7retxiyw6rm4gvvzn3t/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libgtextutils-0.7-divp54buviroj7retxiyw6rm4gvvzn3t/.}
+setenv LIBGTEXTUTILS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libgtextutils-0.7-divp54buviroj7retxiyw6rm4gvvzn3t}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

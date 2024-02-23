@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:48.246777
+##
+## py-pyproject-metadata@0.7.1%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/nwlfpwt
+##
+
+
+module-whatis {PEP 621 metadata parsing.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-pyproject-metadata}
+    puts stderr {Version: 0.7.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {PEP 621 metadata parsing.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-packaging/23.1-qtl5ejm
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-packaging/23.1-qtl5ejm
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-packaging/23.1-qtl5ejm
+prereq python/3.11.6-rsiojxh
+conflict py-pyproject-metadata
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyproject-metadata-0.7.1-nwlfpwtrl25zguvrg2gz24yikdf7uobj/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyproject-metadata-0.7.1-nwlfpwtrl25zguvrg2gz24yikdf7uobj/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyproject-metadata-0.7.1-nwlfpwtrl25zguvrg2gz24yikdf7uobj/lib/python3.11/site-packages}
+setenv PY_PYPROJECT_METADATA_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyproject-metadata-0.7.1-nwlfpwtrl25zguvrg2gz24yikdf7uobj}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

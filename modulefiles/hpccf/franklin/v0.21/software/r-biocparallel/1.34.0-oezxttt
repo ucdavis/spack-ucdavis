@@ -1,0 +1,61 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:07.547522
+##
+## r-biocparallel@1.34.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/oezxttt
+##
+
+
+module-whatis {Bioconductor facilities for parallel evaluation.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-biocparallel}
+    puts stderr {Version: 1.34.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Bioconductor facilities for parallel evaluation. This package provides}
+    puts stderr {modified versions and novel implementation of functions for parallel}
+    puts stderr {evaluation, tailored to use with Bioconductor objects.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-bh/1.81.0-1-zll45av
+    module load r-codetools/0.2-19-vpix3h6
+    module load r-cpp11/0.4.3-bldj6tp
+    module load r-futile-logger/1.4.3-dephthg
+    module load r-snow/0.4-4-zfz2qyr
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-bh/1.81.0-1-zll45av
+    depends-on r-codetools/0.2-19-vpix3h6
+    depends-on r-cpp11/0.4.3-bldj6tp
+    depends-on r-futile-logger/1.4.3-dephthg
+    depends-on r-snow/0.4-4-zfz2qyr
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-bh/1.81.0-1-zll45av
+prereq r-codetools/0.2-19-vpix3h6
+prereq r-cpp11/0.4.3-bldj6tp
+prereq r-futile-logger/1.4.3-dephthg
+prereq r-snow/0.4-4-zfz2qyr
+conflict r-biocparallel
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-biocparallel-1.34.0-oezxttt6xhwupqidpoml4xlhvp2bqnq3/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-biocparallel-1.34.0-oezxttt6xhwupqidpoml4xlhvp2bqnq3/rlib/R/library}
+setenv R_BIOCPARALLEL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-biocparallel-1.34.0-oezxttt6xhwupqidpoml4xlhvp2bqnq3}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

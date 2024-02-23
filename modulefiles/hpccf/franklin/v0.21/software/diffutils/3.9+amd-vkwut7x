@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:47.072059
+##
+## diffutils@3.9%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-zen2/vkwut7x
+##
+
+
+module-whatis {GNU Diffutils is a package of several programs related to finding differences between files.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : diffutils}
+    puts stderr {Version: 3.9}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr {GNU Diffutils is a package of several programs related to finding}
+    puts stderr {differences between files.}
+}
+
+conflict diffutils
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/diffutils-3.9-vkwut7xjvtl6vvd72inc5b4xxtxsnmyk/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/diffutils-3.9-vkwut7xjvtl6vvd72inc5b4xxtxsnmyk/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/diffutils-3.9-vkwut7xjvtl6vvd72inc5b4xxtxsnmyk/.}
+setenv DIFFUTILS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/diffutils-3.9-vkwut7xjvtl6vvd72inc5b4xxtxsnmyk}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:36.684398
+##
+## util-macros@1.19.3%gcc@7.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/g4jhrsn
+##
+
+
+module-whatis {This is a set of autoconf macros used by the configure.ac scripts in other Xorg modular packages, and is needed to generate new versions of their configure scripts with autoconf.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : util-macros}
+    puts stderr {Version: 1.19.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This is a set of autoconf macros used by the configure.ac scripts in}
+    puts stderr {other Xorg modular packages, and is needed to generate new versions of}
+    puts stderr {their configure scripts with autoconf.}
+}
+
+conflict util-macros
+
+prepend-path ACLOCAL_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/util-macros-1.19.3-g4jhrsnfcworpn5en5zluranyoiyuriz/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/util-macros-1.19.3-g4jhrsnfcworpn5en5zluranyoiyuriz/share/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/util-macros-1.19.3-g4jhrsnfcworpn5en5zluranyoiyuriz/.}
+setenv UTIL_MACROS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/util-macros-1.19.3-g4jhrsnfcworpn5en5zluranyoiyuriz}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

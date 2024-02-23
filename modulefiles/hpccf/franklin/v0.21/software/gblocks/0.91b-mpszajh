@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:49.801531
+##
+## gblocks@0.91b%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/mpszajh
+##
+
+
+module-whatis {Gblocks is a computer program written in ANSI C language that eliminates poorly aligned positions and divergent regions of an alignment of DNA or protein sequences}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gblocks}
+    puts stderr {Version: 0.91b}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Gblocks is a computer program written in ANSI C language that eliminates}
+    puts stderr {poorly aligned positions and divergent regions of an alignment of DNA or}
+    puts stderr {protein sequences}
+}
+
+conflict gblocks
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gblocks-0.91b-mpszajhwlcmeiulyp3tnvc3yfpzdnm4r/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gblocks-0.91b-mpszajhwlcmeiulyp3tnvc3yfpzdnm4r/.}
+setenv GBLOCKS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gblocks-0.91b-mpszajhwlcmeiulyp3tnvc3yfpzdnm4r}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

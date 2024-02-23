@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:04.894977
+##
+## openjdk@17.0.8.1_1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/y4rwayq
+##
+
+
+module-whatis {The free and opensource java implementation}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : openjdk}
+    puts stderr {Version: 17.0.8.1_1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The free and opensource java implementation}
+}
+
+conflict openjdk
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openjdk-17.0.8.1_1-y4rwayqtcukmpwvlvz5mtezovlacx5zf/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openjdk-17.0.8.1_1-y4rwayqtcukmpwvlvz5mtezovlacx5zf/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openjdk-17.0.8.1_1-y4rwayqtcukmpwvlvz5mtezovlacx5zf/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openjdk-17.0.8.1_1-y4rwayqtcukmpwvlvz5mtezovlacx5zf/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openjdk-17.0.8.1_1-y4rwayqtcukmpwvlvz5mtezovlacx5zf/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openjdk-17.0.8.1_1-y4rwayqtcukmpwvlvz5mtezovlacx5zf/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openjdk-17.0.8.1_1-y4rwayqtcukmpwvlvz5mtezovlacx5zf/.}
+setenv JAVA_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openjdk-17.0.8.1_1-y4rwayqtcukmpwvlvz5mtezovlacx5zf}
+setenv OPENJDK_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openjdk-17.0.8.1_1-y4rwayqtcukmpwvlvz5mtezovlacx5zf}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:17.577252
+##
+## py-asttokens@2.4.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/4xan2hd
+##
+
+
+module-whatis {Annotate AST trees with source code positions.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-asttokens}
+    puts stderr {Version: 2.4.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Annotate AST trees with source code positions.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-six/1.16.0-2gamlcd
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-six/1.16.0-2gamlcd
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-six/1.16.0-2gamlcd
+prereq python/3.11.6-rsiojxh
+conflict py-asttokens
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-asttokens-2.4.0-4xan2hdyvxp2sivsvx7yw456fzut5paw/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-asttokens-2.4.0-4xan2hdyvxp2sivsvx7yw456fzut5paw/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-asttokens-2.4.0-4xan2hdyvxp2sivsvx7yw456fzut5paw/lib/python3.11/site-packages}
+setenv PY_ASTTOKENS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-asttokens-2.4.0-4xan2hdyvxp2sivsvx7yw456fzut5paw}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

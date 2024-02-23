@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:27.546063
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:35.559954
 ##
 ## tabix@2013-12-16%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/nhdodty
 ##
@@ -15,6 +15,15 @@ proc ModulesHelp { } {
     puts stderr {Generic indexer for TAB-delimited genome position files}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on python/3.11.6-rsiojxh
+}
+prereq perl/5.38.0-lfl2a73
+prereq python/3.11.6-rsiojxh
 conflict tabix
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tabix-2013-12-16-nhdodty23wzksle7yqh2ptzzauann67b/bin}

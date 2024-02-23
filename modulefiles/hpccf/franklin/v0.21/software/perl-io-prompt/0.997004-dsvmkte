@@ -1,0 +1,62 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:10.462309
+##
+## perl-io-prompt@0.997004%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/dsvmkte
+##
+
+
+module-whatis {By default, this module exports a single function prompt. It prompts the user to enter some input, and returns an object that represents the user input.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-io-prompt}
+    puts stderr {Version: 0.997004}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {By default, this module exports a single function prompt. It prompts the}
+    puts stderr {user to enter some input, and returns an object that represents the user}
+    puts stderr {input. You may specify various flags to the function to affect its}
+    puts stderr {behaviour; most notably, it defaults to automatically chomp the input,}
+    puts stderr {unless the -line flag is specified. Two other functions are exported at}
+    puts stderr {request: hand_print, which simulates hand-typing to the console; and}
+    puts stderr {get_input, which is the lower-level function that actually prompts the}
+    puts stderr {user for a suitable input. Note that this is an interim re-release. A}
+    puts stderr {full release with better documentation will follow in the near future.}
+    puts stderr {Meanwhile, please consult the examples directory from this module's CPAN}
+    puts stderr {distribution to better understand how to make use of this module.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-termreadkey/2.38-3qbcilj
+    module load perl-want/0.29-knacaai
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-termreadkey/2.38-3qbcilj
+    depends-on perl-want/0.29-knacaai
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-termreadkey/2.38-3qbcilj
+prereq perl-want/0.29-knacaai
+conflict perl-io-prompt
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-prompt-0.997004-dsvmkteeganlnpf3cyuk5lmajd2qw5me/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-prompt-0.997004-dsvmkteeganlnpf3cyuk5lmajd2qw5me/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-prompt-0.997004-dsvmkteeganlnpf3cyuk5lmajd2qw5me/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-prompt-0.997004-dsvmkteeganlnpf3cyuk5lmajd2qw5me/lib/perl5}
+setenv PERL_IO_PROMPT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-prompt-0.997004-dsvmkteeganlnpf3cyuk5lmajd2qw5me}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

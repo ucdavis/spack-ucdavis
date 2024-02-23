@@ -1,0 +1,54 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:52.949862
+##
+## r-matrixgenerics@1.12.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/xnbllrk
+##
+
+
+module-whatis {S4 Generic Summary Statistic Functions that Operate on Matrix-Like Objects.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-matrixgenerics}
+    puts stderr {Version: 1.12.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {S4 Generic Summary Statistic Functions that Operate on Matrix-Like}
+    puts stderr {Objects. S4 generic functions modeled after the 'matrixStats' API for}
+    puts stderr {alternative matrix implementations. Packages with alternative matrix}
+    puts stderr {implementation can depend on this package and implement the generic}
+    puts stderr {functions that are defined here for a useful set of row and column}
+    puts stderr {summary statistics. Other package developers can import this package and}
+    puts stderr {handle a different matrix implementations without worrying about}
+    puts stderr {incompatibilities.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-vcbztcv
+    module load r-matrixstats/0.63.0-525llah
+} else {
+    depends-on r/4.3.0-vcbztcv
+    depends-on r-matrixstats/0.63.0-525llah
+}
+prereq r/4.3.0-vcbztcv
+prereq r-matrixstats/0.63.0-525llah
+conflict r-matrixgenerics
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-matrixgenerics-1.12.0-xnbllrku7xgqqetp2n4r7r73h7edfl7s/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-matrixgenerics-1.12.0-xnbllrku7xgqqetp2n4r7r73h7edfl7s/rlib/R/library}
+setenv R_MATRIXGENERICS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-matrixgenerics-1.12.0-xnbllrku7xgqqetp2n4r7r73h7edfl7s}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

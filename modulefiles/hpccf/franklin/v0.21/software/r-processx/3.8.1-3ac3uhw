@@ -1,0 +1,56 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:59.538577
+##
+## r-processx@3.8.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/3ac3uhw
+##
+
+
+module-whatis {Execute and Control System Processes.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-processx}
+    puts stderr {Version: 3.8.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Execute and Control System Processes. Tools to run system processes in}
+    puts stderr {the background. It can check if a background process is running; wait on}
+    puts stderr {a background process to finish; get the exit status of finished}
+    puts stderr {processes; kill background processes. It can read the standard output}
+    puts stderr {and error of the processes, using non-blocking connections. 'processx'}
+    puts stderr {can poll a process for standard output or error, with a timeout. It can}
+    puts stderr {also poll several processes at once.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-ps/1.7.5-e532qmx
+    module load r-r6/2.5.1-5ovuzwq
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-ps/1.7.5-e532qmx
+    depends-on r-r6/2.5.1-5ovuzwq
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-ps/1.7.5-e532qmx
+prereq r-r6/2.5.1-5ovuzwq
+conflict r-processx
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-processx-3.8.1-3ac3uhwemjic37oppmojkusv26gko6uc/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-processx-3.8.1-3ac3uhwemjic37oppmojkusv26gko6uc/rlib/R/library}
+setenv R_PROCESSX_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-processx-3.8.1-3ac3uhwemjic37oppmojkusv26gko6uc}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

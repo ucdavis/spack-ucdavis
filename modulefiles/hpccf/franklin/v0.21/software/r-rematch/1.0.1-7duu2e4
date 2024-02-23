@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:05.525518
+##
+## r-rematch@1.0.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/7duu2e4
+##
+
+
+module-whatis {Match Regular Expressions with a Nicer 'API'.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-rematch}
+    puts stderr {Version: 1.0.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Match Regular Expressions with a Nicer 'API'. A small wrapper on}
+    puts stderr {'regexpr' to extract the matches and captured groups from the match of a}
+    puts stderr {regular expression to a character vector.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+}
+prereq r/4.3.0-bzxz5nl
+conflict r-rematch
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rematch-1.0.1-7duu2e4a4pyd5x6m2olzs5p6kr3b2hpr/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rematch-1.0.1-7duu2e4a4pyd5x6m2olzs5p6kr3b2hpr/rlib/R/library}
+setenv R_REMATCH_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rematch-1.0.1-7duu2e4a4pyd5x6m2olzs5p6kr3b2hpr}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

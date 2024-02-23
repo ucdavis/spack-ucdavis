@@ -1,7 +1,7 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2024-01-10 15:34:07.644270
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:32.832450
 ##
-## relion@5.0-beta%gcc@11.4.0+allow_ctf_in_sagd+cuda+double~double-gpu~external_motioncor2~gctf~gpu_delay+gui~ipo+mklfft build_system=cmake build_type=RelWithDebInfo conda_python=/share/apps/conda/environments/relion-5.0/bin/python cuda_arch=75 generator=make purpose=cluster torch_home=/share/databases/relion/torch arch=linux-ubuntu22.04-zen2/5ln2u2s
+## relion@5.0-beta%gcc@11.4.0+allow_ctf_in_sagd+cuda+double~double-gpu~external_motioncor2~gctf~gpu_delay+gui~ipo+mklfft build_system=cmake build_type=RelWithDebInfo conda_python=/share/apps/conda/environments/relion-5.0/bin/python cuda_arch=75 generator=make purpose=cluster torch_home=/share/databases/relion/torch arch=linux-ubuntu22.04-zen2/qm2gvur
 ##
 ## Configure options: -DCMAKE_C_FLAGS=-g -DCMAKE_CXX_FLAGS=-g -DGUI=True -DDoublePrec_CPU=True -DDoublePrec_GPU=False -DALLOW_CTF_IN_SAGD=True -DMKLFFT=True -DALTCPU=False -DCUDA=ON -DCudaTexture=ON -DCUDA_ARCH=75 -DAMDFFTW=ON -DPYTHON_EXE_PATH:STRING=/share/apps/conda/environments/relion-5.0/bin/python -DTORCH_HOME_PATH:STRING=/share/databases/relion/torch
 ##
@@ -20,13 +20,19 @@ proc ModulesHelp { } {
     puts stderr {electron cryo-microscopy (cryo-EM).}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load ctffind/4.1.14+amd
+} else {
+    depends-on ctffind/4.1.14+amd
+}
+prereq ctffind/4.1.14+amd
 conflict relion
 
-prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-5ln2u2silzjyynepzjtlssajuejyfs6u/bin}
-prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-5ln2u2silzjyynepzjtlssajuejyfs6u/.}
-setenv RELION_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-5ln2u2silzjyynepzjtlssajuejyfs6u}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-qm2gvurbygnr6cgmusyajap2n437msjj/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-qm2gvurbygnr6cgmusyajap2n437msjj/.}
+setenv RELION_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-5.0-beta-qm2gvurbygnr6cgmusyajap2n437msjj}
 setenv RELION_TOPAZ_EXECUTABLE {/share/apps/22.04/spack/spack-ucdavis/bin/wrappers/topaz}
-setenv RELION_CTFFIND_EXECUTABLE {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ctffind-4.1.14-mcco7yaew52w3gkj5yod3ceoj2gzc6sd/bin/ctffind}
+setenv RELION_CTFFIND_EXECUTABLE {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ctffind-4.1.14-uqsjztnwxwbiznxk4y7hn25i6f5ycnjz/bin/ctffind}
 setenv RELION_QSUB_TEMPLATE {/share/apps/22.04/spack/spack-ucdavis/templates/hpccf/franklin/relion.5.0-beta.gpu.zen2.slurm.template.sh}
 setenv RELION_QSUB_COMMAND {sbatch --constraint=amd}
 

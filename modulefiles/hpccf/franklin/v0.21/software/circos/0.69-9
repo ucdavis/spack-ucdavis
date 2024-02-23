@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:14.548093
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:46.072284
 ##
 ## circos@0.69-9%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/csche5b
 ##
@@ -15,6 +15,63 @@ proc ModulesHelp { } {
     puts stderr {Circos is a software package for visualizing data and information.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-clone/0.46-qvghnmv
+    module load perl-config-general/2.65-n2ozij4
+    module load perl-exporter-tiny/1.006002-5c4wtrr
+    module load perl-font-ttf/1.06-glydctl
+    module load perl-gd/2.77-4wfjknx
+    module load perl-io-string/1.08-epoalwv
+    module load perl-list-moreutils/0.430-fqd4dxa
+    module load perl-math-bezier/0.01-vtlkylz
+    module load perl-math-round/0.07-vxdfvxn
+    module load perl-math-vecstat/0.08-ycemjsi
+    module load perl-params-validate/1.31-5rpdvnx
+    module load perl-readonly/2.05-usrqf5e
+    module load perl-regexp-common/2017060201-dhcwbnf
+    module load perl-set-intspan/1.19-7ymxni6
+    module load perl-statistics-basic/1.6611-iphrrll
+    module load perl-svg/2.87-yw3y4qf
+    module load perl-text-format/0.62-7va4eif
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-clone/0.46-qvghnmv
+    depends-on perl-config-general/2.65-n2ozij4
+    depends-on perl-exporter-tiny/1.006002-5c4wtrr
+    depends-on perl-font-ttf/1.06-glydctl
+    depends-on perl-gd/2.77-4wfjknx
+    depends-on perl-io-string/1.08-epoalwv
+    depends-on perl-list-moreutils/0.430-fqd4dxa
+    depends-on perl-math-bezier/0.01-vtlkylz
+    depends-on perl-math-round/0.07-vxdfvxn
+    depends-on perl-math-vecstat/0.08-ycemjsi
+    depends-on perl-params-validate/1.31-5rpdvnx
+    depends-on perl-readonly/2.05-usrqf5e
+    depends-on perl-regexp-common/2017060201-dhcwbnf
+    depends-on perl-set-intspan/1.19-7ymxni6
+    depends-on perl-statistics-basic/1.6611-iphrrll
+    depends-on perl-svg/2.87-yw3y4qf
+    depends-on perl-text-format/0.62-7va4eif
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-clone/0.46-qvghnmv
+prereq perl-config-general/2.65-n2ozij4
+prereq perl-exporter-tiny/1.006002-5c4wtrr
+prereq perl-font-ttf/1.06-glydctl
+prereq perl-gd/2.77-4wfjknx
+prereq perl-io-string/1.08-epoalwv
+prereq perl-list-moreutils/0.430-fqd4dxa
+prereq perl-math-bezier/0.01-vtlkylz
+prereq perl-math-round/0.07-vxdfvxn
+prereq perl-math-vecstat/0.08-ycemjsi
+prereq perl-params-validate/1.31-5rpdvnx
+prereq perl-readonly/2.05-usrqf5e
+prereq perl-regexp-common/2017060201-dhcwbnf
+prereq perl-set-intspan/1.19-7ymxni6
+prereq perl-statistics-basic/1.6611-iphrrll
+prereq perl-svg/2.87-yw3y4qf
+prereq perl-text-format/0.62-7va4eif
 conflict circos
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/circos-0.69-9-csche5beb4ncyqheoggxbchykahhyprk/lib}

@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:53.301351
+##
+## icu4c@67.1%gcc@11.4.0 build_system=autotools cxxstd=11 arch=linux-ubuntu22.04-x86_64_v3/2z6hogw
+##
+## Configure options: PYTHON=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/python-3.11.6-lv2yt6wsh6dfj4wfl3sisynfl4t2ihyg/bin/python3.11
+##
+
+
+module-whatis {ICU is a mature, widely used set of C/C++ and Java libraries providing Unicode and Globalization support for software applications. ICU4C is the C/C++ interface.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : icu4c}
+    puts stderr {Version: 67.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {ICU is a mature, widely used set of C/C++ and Java libraries providing}
+    puts stderr {Unicode and Globalization support for software applications. ICU4C is}
+    puts stderr {the C/C++ interface.}
+}
+
+conflict icu4c
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/icu4c-67.1-2z6hogwjzgra4gcp6hbowxmmqsjgkkfr/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/icu4c-67.1-2z6hogwjzgra4gcp6hbowxmmqsjgkkfr/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/icu4c-67.1-2z6hogwjzgra4gcp6hbowxmmqsjgkkfr/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/icu4c-67.1-2z6hogwjzgra4gcp6hbowxmmqsjgkkfr/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/icu4c-67.1-2z6hogwjzgra4gcp6hbowxmmqsjgkkfr/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/icu4c-67.1-2z6hogwjzgra4gcp6hbowxmmqsjgkkfr/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/icu4c-67.1-2z6hogwjzgra4gcp6hbowxmmqsjgkkfr/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/icu4c-67.1-2z6hogwjzgra4gcp6hbowxmmqsjgkkfr/.}
+setenv ICU4C_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/icu4c-67.1-2z6hogwjzgra4gcp6hbowxmmqsjgkkfr}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

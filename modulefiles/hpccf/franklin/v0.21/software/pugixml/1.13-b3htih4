@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:15.772882
+##
+## pugixml@1.13%gcc@11.4.0~ipo+pic+shared build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/b3htih4
+##
+## Configure options: -DBUILD_SHARED_AND_STATIC_LIBS:BOOL=OFF -DBUILD_SHARED_LIBS:BOOL=ON -DCMAKE_POSITION_INDEPENDENT_CODE:BOOL=ON
+##
+
+
+module-whatis {Light-weight, simple, and fast XML parser for C++ with XPath support}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : pugixml}
+    puts stderr {Version: 1.13}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Light-weight, simple, and fast XML parser for C++ with XPath support}
+}
+
+conflict pugixml
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pugixml-1.13-b3htih4adwhvgefbucawurt43db2f2gs/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pugixml-1.13-b3htih4adwhvgefbucawurt43db2f2gs/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pugixml-1.13-b3htih4adwhvgefbucawurt43db2f2gs/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pugixml-1.13-b3htih4adwhvgefbucawurt43db2f2gs/include}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pugixml-1.13-b3htih4adwhvgefbucawurt43db2f2gs/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pugixml-1.13-b3htih4adwhvgefbucawurt43db2f2gs/.}
+setenv PUGIXML_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pugixml-1.13-b3htih4adwhvgefbucawurt43db2f2gs}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

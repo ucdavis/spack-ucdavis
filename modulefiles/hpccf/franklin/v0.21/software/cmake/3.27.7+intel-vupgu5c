@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:46.469363
+##
+## cmake@3.27.7%oneapi@2023.2.0~doc+ncurses+ownlibs build_system=generic build_type=Release arch=linux-ubuntu22.04-skylake_avx512/vupgu5c
+##
+
+
+module-whatis {A cross-platform, open-source build system. CMake is a family of tools designed to build, test and package software. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : cmake}
+    puts stderr {Version: 3.27.7}
+    puts stderr {Target : skylake_avx512}
+    puts stderr {}
+    puts stderr {A cross-platform, open-source build system. CMake is a family of tools}
+    puts stderr {designed to build, test and package software.}
+}
+
+conflict cmake
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/cmake-3.27.7-vupgu5cuocrddy3li42lzqzxrrwuskrh/bin}
+prepend-path ACLOCAL_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/cmake-3.27.7-vupgu5cuocrddy3li42lzqzxrrwuskrh/share/aclocal}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/cmake-3.27.7-vupgu5cuocrddy3li42lzqzxrrwuskrh/.}
+setenv CMAKE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/cmake-3.27.7-vupgu5cuocrddy3li42lzqzxrrwuskrh}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

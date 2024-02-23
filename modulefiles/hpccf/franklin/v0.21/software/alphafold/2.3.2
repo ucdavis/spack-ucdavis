@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2024-02-22 13:18:15.795213
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:16.021986
 ##
 ## py-alphafold@2.3.2%gcc@11.4.0~cuda build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/d2ctrwo
 ##
@@ -18,17 +18,71 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load aria2/1.36.0-ugqg2ab
     module load hh-suite/3.3.0
     module load hmmer/3.4
     module load kalign/3.3.1
+    module load openmm/7.5.1-3glgila
+    module load py-absl-py/1.4.0-i2xc5za
+    module load py-biopython/1.81-hujswz3
+    module load py-chex/0.1.5-ge7oxtr
+    module load py-dm-haiku/0.0.10-bquhb5l
+    module load py-dm-tree/0.1.8-n25vf77
+    module load py-docker/6.0.1-qnwvu4m
+    module load py-immutabledict/2.2.1-xg3qn2c
+    module load py-jax/0.4.3-4ltcwvz
+    module load py-ml-collections/0.1.1-6mgo3ku
+    module load py-numpy/1.22.4-7bmhfux
+    module load py-pandas/2.1.1-tt2jxz2
+    module load py-pdbfixer/1.7-dm7ilsj
+    module load py-protobuf/4.24.3-abwlhfi
+    module load py-scipy/1.7.1-qtojezc
+    module load py-tensorflow/2.13.0-wjccdup
+    module load python/3.9.18-rt3uhd4
 } else {
+    depends-on aria2/1.36.0-ugqg2ab
     depends-on hh-suite/3.3.0
     depends-on hmmer/3.4
     depends-on kalign/3.3.1
+    depends-on openmm/7.5.1-3glgila
+    depends-on py-absl-py/1.4.0-i2xc5za
+    depends-on py-biopython/1.81-hujswz3
+    depends-on py-chex/0.1.5-ge7oxtr
+    depends-on py-dm-haiku/0.0.10-bquhb5l
+    depends-on py-dm-tree/0.1.8-n25vf77
+    depends-on py-docker/6.0.1-qnwvu4m
+    depends-on py-immutabledict/2.2.1-xg3qn2c
+    depends-on py-jax/0.4.3-4ltcwvz
+    depends-on py-ml-collections/0.1.1-6mgo3ku
+    depends-on py-numpy/1.22.4-7bmhfux
+    depends-on py-pandas/2.1.1-tt2jxz2
+    depends-on py-pdbfixer/1.7-dm7ilsj
+    depends-on py-protobuf/4.24.3-abwlhfi
+    depends-on py-scipy/1.7.1-qtojezc
+    depends-on py-tensorflow/2.13.0-wjccdup
+    depends-on python/3.9.18-rt3uhd4
 }
+prereq aria2/1.36.0-ugqg2ab
 prereq hh-suite/3.3.0
 prereq hmmer/3.4
 prereq kalign/3.3.1
+prereq openmm/7.5.1-3glgila
+prereq py-absl-py/1.4.0-i2xc5za
+prereq py-biopython/1.81-hujswz3
+prereq py-chex/0.1.5-ge7oxtr
+prereq py-dm-haiku/0.0.10-bquhb5l
+prereq py-dm-tree/0.1.8-n25vf77
+prereq py-docker/6.0.1-qnwvu4m
+prereq py-immutabledict/2.2.1-xg3qn2c
+prereq py-jax/0.4.3-4ltcwvz
+prereq py-ml-collections/0.1.1-6mgo3ku
+prereq py-numpy/1.22.4-7bmhfux
+prereq py-pandas/2.1.1-tt2jxz2
+prereq py-pdbfixer/1.7-dm7ilsj
+prereq py-protobuf/4.24.3-abwlhfi
+prereq py-scipy/1.7.1-qtojezc
+prereq py-tensorflow/2.13.0-wjccdup
+prereq python/3.9.18-rt3uhd4
 conflict py-alphafold
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-alphafold-2.3.2-d2ctrwoctto4i6m7gj44o7xkt3agyw7z/lib}
@@ -39,6 +93,7 @@ setenv CUDA_HOST_COMPILER {/share/apps/22.04/spack/environments/core/view/compil
 prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-alphafold-2.3.2-d2ctrwoctto4i6m7gj44o7xkt3agyw7z/lib/python3.9/site-packages}
 setenv PY_ALPHAFOLD_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-alphafold-2.3.2-d2ctrwoctto4i6m7gj44o7xkt3agyw7z}
 setenv ALPHAFOLD_DB_ROOT {/share/databases/alphafold}
+prepend-path PATH {/share/apps/22.04/spack/spack-ucdavis/bin/wrappers/py-alphafold}
 
 
 try {

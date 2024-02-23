@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:25.368388
+##
+## py-dm-tree@0.1.8%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/n25vf77
+##
+
+
+module-whatis {tree is a library for working with nested data structures. In a way, tree generalizes the builtin map() function which only supports flat sequences, and allows to apply a function to each leaf preserving the overall structure.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-dm-tree}
+    puts stderr {Version: 0.1.8}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {tree is a library for working with nested data structures. In a way,}
+    puts stderr {tree generalizes the builtin map() function which only supports flat}
+    puts stderr {sequences, and allows to apply a function to each leaf preserving the}
+    puts stderr {overall structure.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.9.18-rt3uhd4
+} else {
+    depends-on python/3.9.18-rt3uhd4
+}
+prereq python/3.9.18-rt3uhd4
+conflict py-dm-tree
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-dm-tree-0.1.8-n25vf77hcgl4eoqvnoz4gxj3g53py4xp/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-dm-tree-0.1.8-n25vf77hcgl4eoqvnoz4gxj3g53py4xp/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-dm-tree-0.1.8-n25vf77hcgl4eoqvnoz4gxj3g53py4xp/lib/python3.9/site-packages}
+setenv PY_DM_TREE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-dm-tree-0.1.8-n25vf77hcgl4eoqvnoz4gxj3g53py4xp}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

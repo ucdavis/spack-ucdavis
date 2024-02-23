@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:29.791879
+##
+## r-xml@3.99-0.14%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/yerecb5
+##
+
+
+module-whatis {Tools for Parsing and Generating XML Within R and S-Plus.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-xml}
+    puts stderr {Version: 3.99-0.14}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Tools for Parsing and Generating XML Within R and S-Plus. Many}
+    puts stderr {approaches for both reading and creating XML (and HTML) documents}
+    puts stderr {(including DTDs), both local and accessible via HTTP or FTP. Also offers}
+    puts stderr {access to an 'XPath' "interpreter".}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+}
+prereq r/4.3.0-bzxz5nl
+conflict r-xml
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-xml-3.99-0.14-yerecb5qrv6dtctvicuu3smqvqka5b44/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-xml-3.99-0.14-yerecb5qrv6dtctvicuu3smqvqka5b44/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-xml-3.99-0.14-yerecb5qrv6dtctvicuu3smqvqka5b44/rlib/R/library}
+setenv R_XML_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-xml-3.99-0.14-yerecb5qrv6dtctvicuu3smqvqka5b44}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

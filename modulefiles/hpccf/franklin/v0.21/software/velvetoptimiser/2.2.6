@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:28.104008
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:36.839678
 ##
 ## velvetoptimiser@2.2.6%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/hhv5yqa
 ##
@@ -16,10 +16,16 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-bioperl/1.7.6-xvvpo2g
     module load velvet/1.2.10
 } else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-bioperl/1.7.6-xvvpo2g
     depends-on velvet/1.2.10
 }
+prereq perl/5.38.0-lfl2a73
+prereq perl-bioperl/1.7.6-xvvpo2g
 prereq velvet/1.2.10
 conflict velvetoptimiser
 

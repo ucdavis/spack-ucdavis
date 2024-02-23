@@ -1,0 +1,74 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:19.939500
+##
+## r-summarizedexperiment@1.30.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/ax3ziew
+##
+
+
+module-whatis {SummarizedExperiment container.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-summarizedexperiment}
+    puts stderr {Version: 1.30.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {SummarizedExperiment container. The SummarizedExperiment container}
+    puts stderr {contains one or more assays, each represented by a matrix-like object of}
+    puts stderr {numeric or other mode. The rows typically represent genomic ranges of}
+    puts stderr {interest and the columns represent samples.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-vcbztcv
+    module load r-biobase/2.60.0-6pvz2lc
+    module load r-biocgenerics/0.46.0-vwgf75t
+    module load r-delayedarray/0.26.0-ofp273w
+    module load r-genomeinfodb/1.35.4-znrjfwh
+    module load r-genomicranges/1.52.0-bm6vaks
+    module load r-iranges/2.34.0-wmdqfli
+    module load r-matrix/1.5-4-2olwypl
+    module load r-matrixgenerics/1.12.0-xnbllrk
+    module load r-s4vectors/0.38.0-mg4qpha
+} else {
+    depends-on r/4.3.0-vcbztcv
+    depends-on r-biobase/2.60.0-6pvz2lc
+    depends-on r-biocgenerics/0.46.0-vwgf75t
+    depends-on r-delayedarray/0.26.0-ofp273w
+    depends-on r-genomeinfodb/1.35.4-znrjfwh
+    depends-on r-genomicranges/1.52.0-bm6vaks
+    depends-on r-iranges/2.34.0-wmdqfli
+    depends-on r-matrix/1.5-4-2olwypl
+    depends-on r-matrixgenerics/1.12.0-xnbllrk
+    depends-on r-s4vectors/0.38.0-mg4qpha
+}
+prereq r/4.3.0-vcbztcv
+prereq r-biobase/2.60.0-6pvz2lc
+prereq r-biocgenerics/0.46.0-vwgf75t
+prereq r-delayedarray/0.26.0-ofp273w
+prereq r-genomeinfodb/1.35.4-znrjfwh
+prereq r-genomicranges/1.52.0-bm6vaks
+prereq r-iranges/2.34.0-wmdqfli
+prereq r-matrix/1.5-4-2olwypl
+prereq r-matrixgenerics/1.12.0-xnbllrk
+prereq r-s4vectors/0.38.0-mg4qpha
+conflict r-summarizedexperiment
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-summarizedexperiment-1.30.0-ax3ziewltgsytsls6bcn4grhwr467jrv/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-summarizedexperiment-1.30.0-ax3ziewltgsytsls6bcn4grhwr467jrv/rlib/R/library}
+setenv R_SUMMARIZEDEXPERIMENT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-summarizedexperiment-1.30.0-ax3ziewltgsytsls6bcn4grhwr467jrv}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,51 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:52.565176
+##
+## r-matrix@1.5-4%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/2olwypl
+##
+
+
+module-whatis {Sparse and Dense Matrix Classes and Methods.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-matrix}
+    puts stderr {Version: 1.5-4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Sparse and Dense Matrix Classes and Methods. A rich hierarchy of matrix}
+    puts stderr {classes, including triangular, symmetric, and diagonal matrices, both}
+    puts stderr {dense and sparse and with pattern, logical and numeric entries. Numerous}
+    puts stderr {methods for and operations on these matrices, using 'LAPACK' and}
+    puts stderr {'SuiteSparse' libraries.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-vcbztcv
+    module load r-lattice/0.21-8-gbm56sx
+} else {
+    depends-on r/4.3.0-vcbztcv
+    depends-on r-lattice/0.21-8-gbm56sx
+}
+prereq r/4.3.0-vcbztcv
+prereq r-lattice/0.21-8-gbm56sx
+conflict r-matrix
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-matrix-1.5-4-2olwyplyzauzeb3srap3n7rpffwly6wm/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-matrix-1.5-4-2olwyplyzauzeb3srap3n7rpffwly6wm/rlib/R/library}
+setenv R_MATRIX_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-matrix-1.5-4-2olwyplyzauzeb3srap3n7rpffwly6wm}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

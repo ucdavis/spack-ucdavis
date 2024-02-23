@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:45.654533
+##
+## cairo@1.16.0%gcc@11.4.0+X+fc+ft+gobject+pdf+png~svg build_system=autotools patches=7c4da77 arch=linux-ubuntu22.04-x86_64_v3/hrwxpbg
+##
+## Configure options: --disable-trace --enable-tee --enable-xlib --enable-xcb --enable-pdf --enable-gobject --enable-ft --enable-fc
+##
+
+
+module-whatis {Cairo is a 2D graphics library with support for multiple output devices.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : cairo}
+    puts stderr {Version: 1.16.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Cairo is a 2D graphics library with support for multiple output devices.}
+}
+
+conflict cairo
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cairo-1.16.0-hrwxpbg3vikt4zyuptjhhvpz67ndbjk2/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cairo-1.16.0-hrwxpbg3vikt4zyuptjhhvpz67ndbjk2/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cairo-1.16.0-hrwxpbg3vikt4zyuptjhhvpz67ndbjk2/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cairo-1.16.0-hrwxpbg3vikt4zyuptjhhvpz67ndbjk2/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cairo-1.16.0-hrwxpbg3vikt4zyuptjhhvpz67ndbjk2/bin}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cairo-1.16.0-hrwxpbg3vikt4zyuptjhhvpz67ndbjk2/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cairo-1.16.0-hrwxpbg3vikt4zyuptjhhvpz67ndbjk2/.}
+prepend-path XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/share/X11/locale}
+setenv CAIRO_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cairo-1.16.0-hrwxpbg3vikt4zyuptjhhvpz67ndbjk2}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

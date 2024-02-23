@@ -1,0 +1,56 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:50.948636
+##
+## py-requests@2.31.0%gcc@11.4.0~socks build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/6kmtsdd
+##
+
+
+module-whatis {Python HTTP for Humans.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-requests}
+    puts stderr {Version: 2.31.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Python HTTP for Humans.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-certifi/2023.5.7-xamj4ef
+    module load py-charset-normalizer/3.1.0-kxadpd5
+    module load py-idna/3.4-jfvixjg
+    module load py-urllib3/1.26.12-desywko
+    module load python/3.9.18-rt3uhd4
+} else {
+    depends-on py-certifi/2023.5.7-xamj4ef
+    depends-on py-charset-normalizer/3.1.0-kxadpd5
+    depends-on py-idna/3.4-jfvixjg
+    depends-on py-urllib3/1.26.12-desywko
+    depends-on python/3.9.18-rt3uhd4
+}
+prereq py-certifi/2023.5.7-xamj4ef
+prereq py-charset-normalizer/3.1.0-kxadpd5
+prereq py-idna/3.4-jfvixjg
+prereq py-urllib3/1.26.12-desywko
+prereq python/3.9.18-rt3uhd4
+conflict py-requests
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-requests-2.31.0-6kmtsdd7nkuonklo6pfws2otc56wp4vd/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-requests-2.31.0-6kmtsdd7nkuonklo6pfws2otc56wp4vd/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-requests-2.31.0-6kmtsdd7nkuonklo6pfws2otc56wp4vd/lib/python3.9/site-packages}
+setenv PY_REQUESTS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-requests-2.31.0-6kmtsdd7nkuonklo6pfws2otc56wp4vd}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

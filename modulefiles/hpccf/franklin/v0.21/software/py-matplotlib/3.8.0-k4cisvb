@@ -1,0 +1,72 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:36.728247
+##
+## py-matplotlib@3.8.0%gcc@11.4.0~animation~fonts~latex~movies backend=agg build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/k4cisvb
+##
+
+
+module-whatis {Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-matplotlib}
+    puts stderr {Version: 3.8.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Matplotlib is a comprehensive library for creating static, animated, and}
+    puts stderr {interactive visualizations in Python.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-contourpy/1.0.7-rm6tzjq
+    module load py-cycler/0.11.0-hk3oqjb
+    module load py-fonttools/4.39.4-wa7df6h
+    module load py-kiwisolver/1.4.4-olajlkp
+    module load py-numpy/1.25.2-sea6nxl
+    module load py-packaging/23.1-qdlu6do
+    module load py-pillow/10.0.0-wd6ujtm
+    module load py-pyparsing/3.0.9-jlxr7of
+    module load py-python-dateutil/2.8.2-sbetw75
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-contourpy/1.0.7-rm6tzjq
+    depends-on py-cycler/0.11.0-hk3oqjb
+    depends-on py-fonttools/4.39.4-wa7df6h
+    depends-on py-kiwisolver/1.4.4-olajlkp
+    depends-on py-numpy/1.25.2-sea6nxl
+    depends-on py-packaging/23.1-qdlu6do
+    depends-on py-pillow/10.0.0-wd6ujtm
+    depends-on py-pyparsing/3.0.9-jlxr7of
+    depends-on py-python-dateutil/2.8.2-sbetw75
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-contourpy/1.0.7-rm6tzjq
+prereq py-cycler/0.11.0-hk3oqjb
+prereq py-fonttools/4.39.4-wa7df6h
+prereq py-kiwisolver/1.4.4-olajlkp
+prereq py-numpy/1.25.2-sea6nxl
+prereq py-packaging/23.1-qdlu6do
+prereq py-pillow/10.0.0-wd6ujtm
+prereq py-pyparsing/3.0.9-jlxr7of
+prereq py-python-dateutil/2.8.2-sbetw75
+prereq python/3.11.6-rsiojxh
+conflict py-matplotlib
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-matplotlib-3.8.0-k4cisvbify3f3xhetm74nm6vneg4fgvt/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-matplotlib-3.8.0-k4cisvbify3f3xhetm74nm6vneg4fgvt/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-matplotlib-3.8.0-k4cisvbify3f3xhetm74nm6vneg4fgvt/lib/python3.11/site-packages}
+setenv PY_MATPLOTLIB_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-matplotlib-3.8.0-k4cisvbify3f3xhetm74nm6vneg4fgvt}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

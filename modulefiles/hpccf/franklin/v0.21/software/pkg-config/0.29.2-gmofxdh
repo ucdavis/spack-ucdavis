@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:14.915885
+##
+## pkg-config@0.29.2%gcc@7.5.0+internal_glib build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/gmofxdh
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis {pkg-config is a helper tool used when compiling applications and libraries}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : pkg-config}
+    puts stderr {Version: 0.29.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {pkg-config is a helper tool used when compiling applications and}
+    puts stderr {libraries}
+}
+
+conflict pkg-config
+
+prepend-path MANPATH {/usr/share/man}
+prepend-path ACLOCAL_PATH {/usr/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/usr/lib/pkgconfig}
+prepend-path PKG_CONFIG_PATH {/usr/share/pkgconfig}
+setenv PKG_CONFIG_ROOT {/usr}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

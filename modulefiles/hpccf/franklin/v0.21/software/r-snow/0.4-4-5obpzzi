@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:18.139323
+##
+## r-snow@0.4-4%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/5obpzzi
+##
+
+
+module-whatis {Simple Network of Workstations.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-snow}
+    puts stderr {Version: 0.4-4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Simple Network of Workstations. Support for simple parallel computing in}
+    puts stderr {R.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-vcbztcv
+} else {
+    depends-on r/4.3.0-vcbztcv
+}
+prereq r/4.3.0-vcbztcv
+conflict r-snow
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-snow-0.4-4-5obpzziheqdrwcokupdnq2yqikgftz4w/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-snow-0.4-4-5obpzziheqdrwcokupdnq2yqikgftz4w/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-snow-0.4-4-5obpzziheqdrwcokupdnq2yqikgftz4w/rlib/R/library}
+setenv R_SNOW_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-snow-0.4-4-5obpzziheqdrwcokupdnq2yqikgftz4w}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

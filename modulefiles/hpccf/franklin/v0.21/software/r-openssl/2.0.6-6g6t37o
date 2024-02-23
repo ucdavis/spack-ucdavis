@@ -1,0 +1,57 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:56.085427
+##
+## r-openssl@2.0.6%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/6g6t37o
+##
+
+
+module-whatis {Toolkit for Encryption, Signatures and Certificates Based on OpenSSL.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-openssl}
+    puts stderr {Version: 2.0.6}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Toolkit for Encryption, Signatures and Certificates Based on OpenSSL.}
+    puts stderr {Bindings to OpenSSL libssl and libcrypto, plus custom SSH pubkey}
+    puts stderr {parsers. Supports RSA, DSA and EC curves P-256, P-384 and P-521.}
+    puts stderr {Cryptographic signatures can either be created and verified manually or}
+    puts stderr {via x509 certificates. AES can be used in cbc, ctr or gcm mode for}
+    puts stderr {symmetric encryption; RSA for asymmetric (public key) encryption or EC}
+    puts stderr {for Diffie Hellman. High-level envelope functions combine RSA and AES}
+    puts stderr {for encrypting arbitrary sized data. Other utilities include key}
+    puts stderr {generators, hash functions (md5, sha1, sha256, etc), base64 encoder, a}
+    puts stderr {secure random number generator, and 'bignum' math methods for manually}
+    puts stderr {performing crypto calculations on large multibyte integers.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-askpass/1.1-pdhdik7
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-askpass/1.1-pdhdik7
+}
+prereq r/4.3.0-n6pth5g
+prereq r-askpass/1.1-pdhdik7
+conflict r-openssl
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-openssl-2.0.6-6g6t37ovi4g64u3jb2spa2dtw2hylsvl/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-openssl-2.0.6-6g6t37ovi4g64u3jb2spa2dtw2hylsvl/rlib/R/library}
+setenv R_OPENSSL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-openssl-2.0.6-6g6t37ovi4g64u3jb2spa2dtw2hylsvl}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

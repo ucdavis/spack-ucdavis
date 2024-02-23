@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:24.584555
+##
+## r-fastmap@1.1.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/2acqkmm
+##
+
+
+module-whatis {Fast Implementation of a Key-Value Store.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-fastmap}
+    puts stderr {Version: 1.1.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Fast Implementation of a Key-Value Store. Fast implementation of a key-}
+    puts stderr {value store. Environments are commonly used as key-value stores, but}
+    puts stderr {every time a new key is used, it is added to R's global symbol table,}
+    puts stderr {causing a small amount of memory leakage. This can be problematic in}
+    puts stderr {cases where many different keys are used. Fastmap avoids this memory}
+    puts stderr {leak issue by implementing the map using data structures in C++.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+}
+prereq r/4.3.0-bzxz5nl
+conflict r-fastmap
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-fastmap-1.1.1-2acqkmmezx3f3eyhlpgk4b52ilp6zq37/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-fastmap-1.1.1-2acqkmmezx3f3eyhlpgk4b52ilp6zq37/rlib/R/library}
+setenv R_FASTMAP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-fastmap-1.1.1-2acqkmmezx3f3eyhlpgk4b52ilp6zq37}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

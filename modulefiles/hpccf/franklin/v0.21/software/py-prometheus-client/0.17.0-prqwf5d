@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:45.702778
+##
+## py-prometheus-client@0.17.0%gcc@11.4.0~twisted build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/prqwf5d
+##
+
+
+module-whatis {Prometheus instrumentation library for Python applications.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-prometheus-client}
+    puts stderr {Version: 0.17.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Prometheus instrumentation library for Python applications.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on python/3.11.6-rsiojxh
+}
+prereq python/3.11.6-rsiojxh
+conflict py-prometheus-client
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-prometheus-client-0.17.0-prqwf5dru7wjysmfgqdq2bw7itkqewlv/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-prometheus-client-0.17.0-prqwf5dru7wjysmfgqdq2bw7itkqewlv/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-prometheus-client-0.17.0-prqwf5dru7wjysmfgqdq2bw7itkqewlv/lib/python3.11/site-packages}
+setenv PY_PROMETHEUS_CLIENT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-prometheus-client-0.17.0-prqwf5dru7wjysmfgqdq2bw7itkqewlv}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

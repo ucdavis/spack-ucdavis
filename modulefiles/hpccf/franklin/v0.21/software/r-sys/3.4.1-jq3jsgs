@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:20.120075
+##
+## r-sys@3.4.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/jq3jsgs
+##
+
+
+module-whatis {Powerful and Reliable Tools for Running System Commands in R.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-sys}
+    puts stderr {Version: 3.4.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Powerful and Reliable Tools for Running System Commands in R. Drop-in}
+    puts stderr {replacements for the base system2() function with fine control and}
+    puts stderr {consistent behavior across platforms. Supports clean interruption,}
+    puts stderr {timeout, background tasks, and streaming STDIN / STDOUT / STDERR over}
+    puts stderr {binary or text connections. Arguments on Windows automatically get}
+    puts stderr {encoded and quoted to work on different locales.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+}
+prereq r/4.3.0-bzxz5nl
+conflict r-sys
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-sys-3.4.1-jq3jsgs6vwtsytrmm56uboqjq4srhj3w/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-sys-3.4.1-jq3jsgs6vwtsytrmm56uboqjq4srhj3w/rlib/R/library}
+setenv R_SYS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-sys-3.4.1-jq3jsgs6vwtsytrmm56uboqjq4srhj3w}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:39.936933
+##
+## r-gridextra@2.3%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/h2cbhii
+##
+
+
+module-whatis {Miscellaneous Functions for 'Grid' Graphics.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-gridextra}
+    puts stderr {Version: 2.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Miscellaneous Functions for "Grid" Graphics. Provides a number of user-}
+    puts stderr {level functions to work with "grid" graphics, notably to arrange}
+    puts stderr {multiple grid-based plots on a page, and draw tables.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-gtable/0.3.3-e33k6v7
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-gtable/0.3.3-e33k6v7
+}
+prereq r/4.3.0-n6pth5g
+prereq r-gtable/0.3.3-e33k6v7
+conflict r-gridextra
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-gridextra-2.3-h2cbhiiwqzkyn5accgvgy2midp7oem62/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-gridextra-2.3-h2cbhiiwqzkyn5accgvgy2midp7oem62/rlib/R/library}
+setenv R_GRIDEXTRA_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-gridextra-2.3-h2cbhiiwqzkyn5accgvgy2midp7oem62}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

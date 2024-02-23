@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:24.235273
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:30.726979
 ##
 ## py-ipython@8.14.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/7ytczmt
 ##
@@ -16,6 +16,42 @@ proc ModulesHelp { } {
     puts stderr {Python interactively.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-backcall/0.2.0-ru5tilv
+    module load py-decorator/5.1.1-w4s4zro
+    module load py-jedi/0.18.2-2oql5tn
+    module load py-matplotlib-inline/0.1.6-gne7ho4
+    module load py-pexpect/4.8.0-fsib2vd
+    module load py-pickleshare/0.7.5-gvda5ag
+    module load py-prompt-toolkit/3.0.38-t33a5xw
+    module load py-pygments/2.16.1-vsxes4r
+    module load py-stack-data/0.6.2-tu3yawi
+    module load py-traitlets/5.9.0-wrtzvzq
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-backcall/0.2.0-ru5tilv
+    depends-on py-decorator/5.1.1-w4s4zro
+    depends-on py-jedi/0.18.2-2oql5tn
+    depends-on py-matplotlib-inline/0.1.6-gne7ho4
+    depends-on py-pexpect/4.8.0-fsib2vd
+    depends-on py-pickleshare/0.7.5-gvda5ag
+    depends-on py-prompt-toolkit/3.0.38-t33a5xw
+    depends-on py-pygments/2.16.1-vsxes4r
+    depends-on py-stack-data/0.6.2-tu3yawi
+    depends-on py-traitlets/5.9.0-wrtzvzq
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-backcall/0.2.0-ru5tilv
+prereq py-decorator/5.1.1-w4s4zro
+prereq py-jedi/0.18.2-2oql5tn
+prereq py-matplotlib-inline/0.1.6-gne7ho4
+prereq py-pexpect/4.8.0-fsib2vd
+prereq py-pickleshare/0.7.5-gvda5ag
+prereq py-prompt-toolkit/3.0.38-t33a5xw
+prereq py-pygments/2.16.1-vsxes4r
+prereq py-stack-data/0.6.2-tu3yawi
+prereq py-traitlets/5.9.0-wrtzvzq
+prereq python/3.11.6-rsiojxh
 conflict py-ipython
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-7ytczmtnjlmeiw2b7xh3kt5wadki424k/lib}

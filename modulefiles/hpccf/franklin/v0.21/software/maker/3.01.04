@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:19.315798
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:00.983315
 ##
 ## maker@3.01.04%gcc@11.4.0+mpi build_system=generic patches=4e875dd,77bd88b,92e6c02 arch=linux-ubuntu22.04-x86_64_v3/im6o7ev
 ##
@@ -36,14 +36,44 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load exonerate/2.4.0
-    module load interproscan/4.8
+    module load perl/5.38.0-lfl2a73
+    module load perl-bioperl/1.7.6-xvvpo2g
+    module load perl-bit-vector/7.4-kof7pgu
+    module load perl-dbd-pg/3.16.1-cv2gamg
+    module load perl-dbd-sqlite/1.72-utjmbht
+    module load perl-dbi/1.643-uzxn5rg
+    module load perl-file-which/1.27-uc7lvhp
+    module load perl-forks/0.36-s65q4wg
+    module load perl-inline-c/0.81-ihjgdve
+    module load perl-io-all/0.87-jrfufur
+    module load perl-io-prompt/0.997004-dsvmkte
+    module load perl-perl-unsafe-signals/0.03-tr2mma4
 } else {
-    depends-on exonerate/2.4.0
-    depends-on interproscan/4.8
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-bioperl/1.7.6-xvvpo2g
+    depends-on perl-bit-vector/7.4-kof7pgu
+    depends-on perl-dbd-pg/3.16.1-cv2gamg
+    depends-on perl-dbd-sqlite/1.72-utjmbht
+    depends-on perl-dbi/1.643-uzxn5rg
+    depends-on perl-file-which/1.27-uc7lvhp
+    depends-on perl-forks/0.36-s65q4wg
+    depends-on perl-inline-c/0.81-ihjgdve
+    depends-on perl-io-all/0.87-jrfufur
+    depends-on perl-io-prompt/0.997004-dsvmkte
+    depends-on perl-perl-unsafe-signals/0.03-tr2mma4
 }
-prereq exonerate/2.4.0
-prereq interproscan/4.8
+prereq perl/5.38.0-lfl2a73
+prereq perl-bioperl/1.7.6-xvvpo2g
+prereq perl-bit-vector/7.4-kof7pgu
+prereq perl-dbd-pg/3.16.1-cv2gamg
+prereq perl-dbd-sqlite/1.72-utjmbht
+prereq perl-dbi/1.643-uzxn5rg
+prereq perl-file-which/1.27-uc7lvhp
+prereq perl-forks/0.36-s65q4wg
+prereq perl-inline-c/0.81-ihjgdve
+prereq perl-io-all/0.87-jrfufur
+prereq perl-io-prompt/0.997004-dsvmkte
+prereq perl-perl-unsafe-signals/0.03-tr2mma4
 conflict maker
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/maker-3.01.04-im6o7evc6uk2dy2nlnz2lfgzfw5tjcr4/lib}

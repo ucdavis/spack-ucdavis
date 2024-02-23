@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:37.100884
+##
+## vsearch@2.22.1%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/bdoizpq
+##
+
+
+module-whatis {VSEARCH is a versatile open-source tool for metagenomics.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : vsearch}
+    puts stderr {Version: 2.22.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {VSEARCH is a versatile open-source tool for metagenomics.}
+}
+
+conflict vsearch
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/vsearch-2.22.1-bdoizpqfdto7gpstgkgvrntxrohadbxt/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/vsearch-2.22.1-bdoizpqfdto7gpstgkgvrntxrohadbxt/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/vsearch-2.22.1-bdoizpqfdto7gpstgkgvrntxrohadbxt/.}
+setenv VSEARCH_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/vsearch-2.22.1-bdoizpqfdto7gpstgkgvrntxrohadbxt}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

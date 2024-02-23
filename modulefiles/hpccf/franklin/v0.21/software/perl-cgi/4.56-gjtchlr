@@ -1,0 +1,51 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:07.349980
+##
+## perl-cgi@4.56%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/gjtchlr
+##
+
+
+module-whatis {CGI - Handle Common Gateway Interface requests and responses}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-cgi}
+    puts stderr {Version: 4.56}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {CGI - Handle Common Gateway Interface requests and responses CGI was}
+    puts stderr {included in the Perl distribution from 5.4 to 5.20 but has since been}
+    puts stderr {removed.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-html-parser/3.72-gzf4cxb
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-html-parser/3.72-gzf4cxb
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-html-parser/3.72-gzf4cxb
+conflict perl-cgi
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-cgi-4.56-gjtchlrq7tvukywcxghc6omqwwvujcha/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-cgi-4.56-gjtchlrq7tvukywcxghc6omqwwvujcha/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-cgi-4.56-gjtchlrq7tvukywcxghc6omqwwvujcha/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-cgi-4.56-gjtchlrq7tvukywcxghc6omqwwvujcha/lib/perl5}
+setenv PERL_CGI_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-cgi-4.56-gjtchlrq7tvukywcxghc6omqwwvujcha}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

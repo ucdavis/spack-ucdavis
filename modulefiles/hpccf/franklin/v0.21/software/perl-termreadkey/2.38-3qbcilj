@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:12.572206
+##
+## perl-termreadkey@2.38%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/3qbcilj
+##
+
+
+module-whatis {Term::ReadKey is a compiled perl module dedicated to providing simple control over terminal driver modes (cbreak, raw, cooked, etc.,) support for non-blocking reads, if the architecture allows, and some generalized handy functions for working with terminals. One of the main goals is to have the functions as portable as possible, so you can just plug in 'use Term::ReadKey' on any architecture and have a good likelihood of it working.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-termreadkey}
+    puts stderr {Version: 2.38}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Term::ReadKey is a compiled perl module dedicated to providing simple}
+    puts stderr {control over terminal driver modes (cbreak, raw, cooked, etc.,) support}
+    puts stderr {for non-blocking reads, if the architecture allows, and some generalized}
+    puts stderr {handy functions for working with terminals. One of the main goals is to}
+    puts stderr {have the functions as portable as possible, so you can just plug in "use}
+    puts stderr {Term::ReadKey" on any architecture and have a good likelihood of it}
+    puts stderr {working.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-termreadkey
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-termreadkey-2.38-3qbciljk6bygdtg2nld2gp5hymaf67c6/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-termreadkey-2.38-3qbciljk6bygdtg2nld2gp5hymaf67c6/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-termreadkey-2.38-3qbciljk6bygdtg2nld2gp5hymaf67c6/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-termreadkey-2.38-3qbciljk6bygdtg2nld2gp5hymaf67c6/lib/perl5}
+setenv PERL_TERMREADKEY_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-termreadkey-2.38-3qbciljk6bygdtg2nld2gp5hymaf67c6}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

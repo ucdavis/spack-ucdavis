@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:57.959646
+##
+## libsodium@1.0.18%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/kzdvzir
+##
+
+
+module-whatis {Sodium is a modern, easy-to-use software library for encryption, decryption, signatures, password hashing and more.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libsodium}
+    puts stderr {Version: 1.0.18}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Sodium is a modern, easy-to-use software library for encryption,}
+    puts stderr {decryption, signatures, password hashing and more.}
+}
+
+conflict libsodium
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsodium-1.0.18-kzdvziro76d5lonif2h6xoxc24r6g46f/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsodium-1.0.18-kzdvziro76d5lonif2h6xoxc24r6g46f/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsodium-1.0.18-kzdvziro76d5lonif2h6xoxc24r6g46f/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsodium-1.0.18-kzdvziro76d5lonif2h6xoxc24r6g46f/include}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsodium-1.0.18-kzdvziro76d5lonif2h6xoxc24r6g46f/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsodium-1.0.18-kzdvziro76d5lonif2h6xoxc24r6g46f/.}
+setenv LIBSODIUM_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsodium-1.0.18-kzdvziro76d5lonif2h6xoxc24r6g46f}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

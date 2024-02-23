@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:07.590555
+##
+## perl-clone-choose@0.010%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/nvtixdx
+##
+
+
+module-whatis {Checks several different modules which provides a clone() function and selects an appropriate one.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-clone-choose}
+    puts stderr {Version: 0.010}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Checks several different modules which provides a clone() function and}
+    puts stderr {selects an appropriate one.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-clone-choose
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-clone-choose-0.010-nvtixdxiiurdwgvx7za4egslyopudnen/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-clone-choose-0.010-nvtixdxiiurdwgvx7za4egslyopudnen/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-clone-choose-0.010-nvtixdxiiurdwgvx7za4egslyopudnen/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-clone-choose-0.010-nvtixdxiiurdwgvx7za4egslyopudnen/lib/perl5}
+setenv PERL_CLONE_CHOOSE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-clone-choose-0.010-nvtixdxiiurdwgvx7za4egslyopudnen}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

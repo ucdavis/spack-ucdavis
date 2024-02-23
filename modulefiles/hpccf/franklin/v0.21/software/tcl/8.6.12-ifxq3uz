@@ -1,0 +1,51 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:36.052159
+##
+## tcl@8.6.12%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/ifxq3uz
+##
+
+
+module-whatis {Tcl (Tool Command Language) is a very powerful but easy to learn dynamic programming language, suitable for a very wide range of uses, including web and desktop applications, networking, administration, testing and many more. Open source and business-friendly, Tcl is a mature yet evolving language that is truly cross platform, easily deployed and highly extensible.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : tcl}
+    puts stderr {Version: 8.6.12}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Tcl (Tool Command Language) is a very powerful but easy to learn dynamic}
+    puts stderr {programming language, suitable for a very wide range of uses, including}
+    puts stderr {web and desktop applications, networking, administration, testing and}
+    puts stderr {many more. Open source and business-friendly, Tcl is a mature yet}
+    puts stderr {evolving language that is truly cross platform, easily deployed and}
+    puts stderr {highly extensible.}
+}
+
+conflict tcl
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-ifxq3uzdmxfxhmu3broezupol3j2f6qn/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-ifxq3uzdmxfxhmu3broezupol3j2f6qn/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-ifxq3uzdmxfxhmu3broezupol3j2f6qn/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-ifxq3uzdmxfxhmu3broezupol3j2f6qn/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-ifxq3uzdmxfxhmu3broezupol3j2f6qn/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-ifxq3uzdmxfxhmu3broezupol3j2f6qn/man}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-ifxq3uzdmxfxhmu3broezupol3j2f6qn/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-ifxq3uzdmxfxhmu3broezupol3j2f6qn/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-ifxq3uzdmxfxhmu3broezupol3j2f6qn/.}
+setenv TCL_LIBRARY {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-ifxq3uzdmxfxhmu3broezupol3j2f6qn/lib/tcl8.6}
+setenv TCL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-ifxq3uzdmxfxhmu3broezupol3j2f6qn}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

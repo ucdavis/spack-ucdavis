@@ -1,0 +1,55 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:17.422298
+##
+## r-selectr@0.4-2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/uzxstx5
+##
+
+
+module-whatis {Translate CSS Selectors to XPath Expressions.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-selectr}
+    puts stderr {Version: 0.4-2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Translate CSS Selectors to XPath Expressions. Translates a CSS3 selector}
+    puts stderr {into an equivalent XPath expression. This allows us to use CSS selectors}
+    puts stderr {when working with the XML package as it can only evaluate XPath}
+    puts stderr {expressions. Also provided are convenience functions useful for using}
+    puts stderr {CSS selectors on XML nodes. This package is a port of the Python package}
+    puts stderr {'cssselect' (<https://cssselect.readthedocs.io/>).}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-r6/2.5.1-5ovuzwq
+    module load r-stringr/1.5.0-7odt3kf
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-r6/2.5.1-5ovuzwq
+    depends-on r-stringr/1.5.0-7odt3kf
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-r6/2.5.1-5ovuzwq
+prereq r-stringr/1.5.0-7odt3kf
+conflict r-selectr
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-selectr-0.4-2-uzxstx53nbytuihc5k4wes5kon4oezcn/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-selectr-0.4-2-uzxstx53nbytuihc5k4wes5kon4oezcn/rlib/R/library}
+setenv R_SELECTR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-selectr-0.4-2-uzxstx53nbytuihc5k4wes5kon4oezcn}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

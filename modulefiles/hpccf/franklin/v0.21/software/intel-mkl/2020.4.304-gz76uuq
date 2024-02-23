@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:53.535791
+##
+## intel-mkl@2020.4.304%gcc@11.4.0~ilp64+shared build_system=generic threads=none arch=linux-ubuntu22.04-x86_64_v3/gz76uuq
+##
+
+
+module-whatis {Intel Math Kernel Library. This package has been replaced by intel-oneapi-mkl.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : intel-mkl}
+    puts stderr {Version: 2020.4.304}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Intel Math Kernel Library. This package has been replaced by intel-}
+    puts stderr {oneapi-mkl. LICENSE INFORMATION: By downloading and using this software,}
+    puts stderr {you agree to the terms and conditions of the software license agreements}
+    puts stderr {at https://intel.ly/393CijO.}
+}
+
+conflict intel-mkl
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-mkl-2020.4.304-gz76uuqigemcbedryzt22kcatjdsdryh/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-mkl-2020.4.304-gz76uuqigemcbedryzt22kcatjdsdryh/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-mkl-2020.4.304-gz76uuqigemcbedryzt22kcatjdsdryh/.}
+prepend-path LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-mkl-2020.4.304-gz76uuqigemcbedryzt22kcatjdsdryh/compilers_and_libraries_2020.4.304/linux/tbb/lib/intel64_lin/gcc4.1:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-mkl-2020.4.304-gz76uuqigemcbedryzt22kcatjdsdryh/compilers_and_libraries_2020.4.304/linux/compiler/lib/intel64_lin:/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-mkl-2020.4.304-gz76uuqigemcbedryzt22kcatjdsdryh/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64_lin}
+setenv MKLROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-mkl-2020.4.304-gz76uuqigemcbedryzt22kcatjdsdryh/compilers_and_libraries_2020.4.304/linux/mkl}
+prepend-path NLSPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-mkl-2020.4.304-gz76uuqigemcbedryzt22kcatjdsdryh/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64_lin/locale/%l_%t/%N}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-mkl-2020.4.304-gz76uuqigemcbedryzt22kcatjdsdryh/compilers_and_libraries_2020.4.304/linux/mkl/include}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-mkl-2020.4.304-gz76uuqigemcbedryzt22kcatjdsdryh/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64_lin}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-mkl-2020.4.304-gz76uuqigemcbedryzt22kcatjdsdryh/compilers_and_libraries_2020.4.304/linux/compiler/lib/intel64_lin}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-mkl-2020.4.304-gz76uuqigemcbedryzt22kcatjdsdryh/compilers_and_libraries_2020.4.304/linux/tbb/lib/intel64_lin/gcc4.1}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-mkl-2020.4.304-gz76uuqigemcbedryzt22kcatjdsdryh/compilers_and_libraries_2020.4.304/linux/mkl/bin/pkgconfig}
+setenv INTEL_MKL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-mkl-2020.4.304-gz76uuqigemcbedryzt22kcatjdsdryh}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

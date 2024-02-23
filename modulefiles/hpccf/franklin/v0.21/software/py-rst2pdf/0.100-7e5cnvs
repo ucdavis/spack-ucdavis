@@ -1,0 +1,72 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:51.767131
+##
+## py-rst2pdf@0.100%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/7e5cnvs
+##
+
+
+module-whatis {Convert reStructured Text to PDF via ReportLab.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-rst2pdf}
+    puts stderr {Version: 0.100}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Convert reStructured Text to PDF via ReportLab. The usual way of}
+    puts stderr {creating PDF from reStructuredText is by going through LaTeX. This tool}
+    puts stderr {provides an alternative by producing PDF directly using the ReportLab}
+    puts stderr {library.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-docutils/0.20.1-g74ypdb
+    module load py-importlib-metadata/6.6.0-ncmuphn
+    module load py-jinja2/3.1.2-6bfyuvc
+    module load py-packaging/23.1-qtl5ejm
+    module load py-pygments/2.16.1-qoo462i
+    module load py-pyyaml/6.0-bju76z6
+    module load py-reportlab/4.0.4-3my4thg
+    module load py-smartypants/2.0.1-iodmxjo
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-docutils/0.20.1-g74ypdb
+    depends-on py-importlib-metadata/6.6.0-ncmuphn
+    depends-on py-jinja2/3.1.2-6bfyuvc
+    depends-on py-packaging/23.1-qtl5ejm
+    depends-on py-pygments/2.16.1-qoo462i
+    depends-on py-pyyaml/6.0-bju76z6
+    depends-on py-reportlab/4.0.4-3my4thg
+    depends-on py-smartypants/2.0.1-iodmxjo
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-docutils/0.20.1-g74ypdb
+prereq py-importlib-metadata/6.6.0-ncmuphn
+prereq py-jinja2/3.1.2-6bfyuvc
+prereq py-packaging/23.1-qtl5ejm
+prereq py-pygments/2.16.1-qoo462i
+prereq py-pyyaml/6.0-bju76z6
+prereq py-reportlab/4.0.4-3my4thg
+prereq py-smartypants/2.0.1-iodmxjo
+prereq python/3.11.6-rsiojxh
+conflict py-rst2pdf
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-rst2pdf-0.100-7e5cnvsisuijl3h3iafuo55wvzd3l3nu/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-rst2pdf-0.100-7e5cnvsisuijl3h3iafuo55wvzd3l3nu/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-rst2pdf-0.100-7e5cnvsisuijl3h3iafuo55wvzd3l3nu/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-rst2pdf-0.100-7e5cnvsisuijl3h3iafuo55wvzd3l3nu/lib/python3.11/site-packages}
+setenv PY_RST2PDF_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-rst2pdf-0.100-7e5cnvsisuijl3h3iafuo55wvzd3l3nu}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,57 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:05.039144
+##
+## openmpi@4.1.5%gcc@11.4.0~atomics+cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~internal-pmix~java+legacylaunchers~lustre~memchecker~openshmem~orterunprefix~pmi+romio+rsh~singularity+static+vt+wrapper-rpath build_system=autotools cuda_arch=75 fabrics=ucx schedulers=slurm arch=linux-ubuntu22.04-x86_64_v3/hkmjkwg
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis {An open source Message Passing Interface implementation.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : openmpi}
+    puts stderr {Version: 4.1.5}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {An open source Message Passing Interface implementation. The Open MPI}
+    puts stderr {Project is an open source Message Passing Interface implementation that}
+    puts stderr {is developed and maintained by a consortium of academic, research, and}
+    puts stderr {industry partners. Open MPI is therefore able to combine the expertise,}
+    puts stderr {technologies, and resources from all across the High Performance}
+    puts stderr {Computing community in order to build the best MPI library available.}
+    puts stderr {Open MPI offers advantages for system and software vendors, application}
+    puts stderr {developers and computer science researchers.}
+}
+
+conflict openmpi
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/lib}
+prepend-path CPATH {/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/include}
+prepend-path PATH {/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/.}
+setenv MPICC {/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/bin/mpicc}
+setenv MPICXX {/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/bin/mpic++}
+setenv MPIF77 {/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/bin/mpif77}
+setenv MPIF90 {/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5/bin/mpif90}
+setenv OPENMPI_ROOT {/share/apps/22.04/spack/environments/core/view/generic/openmpi-4.1.5}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

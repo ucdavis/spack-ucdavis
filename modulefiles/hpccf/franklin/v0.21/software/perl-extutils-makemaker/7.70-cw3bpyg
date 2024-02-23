@@ -1,0 +1,50 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:08.426804
+##
+## perl-extutils-makemaker@7.70%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/cw3bpyg
+##
+
+
+module-whatis {ExtUtils::MakeMaker - Create a module Makefile. This utility is designed to write a Makefile for an extension module from a Makefile.PL. It is based on the Makefile.SH model provided by Andy Dougherty and the perl5-porters. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-extutils-makemaker}
+    puts stderr {Version: 7.70}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {ExtUtils::MakeMaker - Create a module Makefile. This utility is designed}
+    puts stderr {to write a Makefile for an extension module from a Makefile.PL. It is}
+    puts stderr {based on the Makefile.SH model provided by Andy Dougherty and the}
+    puts stderr {perl5-porters.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-extutils-makemaker
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-makemaker-7.70-cw3bpyg2z3puwtgur5k4nh5dgoec44sx/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-makemaker-7.70-cw3bpyg2z3puwtgur5k4nh5dgoec44sx/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-makemaker-7.70-cw3bpyg2z3puwtgur5k4nh5dgoec44sx/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-makemaker-7.70-cw3bpyg2z3puwtgur5k4nh5dgoec44sx/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-makemaker-7.70-cw3bpyg2z3puwtgur5k4nh5dgoec44sx/lib/perl5}
+setenv PERL_EXTUTILS_MAKEMAKER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-makemaker-7.70-cw3bpyg2z3puwtgur5k4nh5dgoec44sx}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:50.934176
+##
+## glew@2.2.0%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make gl=glx patches=7992e52 arch=linux-ubuntu22.04-x86_64_v3/ta5rasv
+##
+## Configure options: -DBUILD_UTILS:BOOL=ON -DGLEW_REGAL:BOOL=OFF -DGLEW_EGL:BOOL=OFF -DOpenGL_GL_PREFERENCE:STRING=LEGACY -DOPENGL_INCLUDE_DIR:STRING=/usr/include -DOPENGL_gl_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libGL.so -DOPENGL_opengl_LIBRARY:STRING=IGNORE -DOPENGL_glx_LIBRARY:STRING=IGNORE -DOPENGL_egl_LIBRARY:STRING=IGNORE -DOPENGL_glu_LIBRARY:STRING=IGNORE -DGLEW_OSMESA:BOOL=OFF -DGLEW_X11:BOOL=ON -DCMAKE_DISABLE_FIND_PACKAGE_X11:BOOL=OFF
+##
+
+
+module-whatis {The OpenGL Extension Wrangler Library.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : glew}
+    puts stderr {Version: 2.2.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The OpenGL Extension Wrangler Library.}
+}
+
+conflict glew
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/glew-2.2.0-ta5rasv4xux3rmbtxomhf7olt4prcezi/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/glew-2.2.0-ta5rasv4xux3rmbtxomhf7olt4prcezi/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/glew-2.2.0-ta5rasv4xux3rmbtxomhf7olt4prcezi/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/glew-2.2.0-ta5rasv4xux3rmbtxomhf7olt4prcezi/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/glew-2.2.0-ta5rasv4xux3rmbtxomhf7olt4prcezi/bin}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/glew-2.2.0-ta5rasv4xux3rmbtxomhf7olt4prcezi/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/glew-2.2.0-ta5rasv4xux3rmbtxomhf7olt4prcezi/.}
+prepend-path XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zaqf7dicjkl3i2sg2ciot74vsehx7k47/share/X11/locale}
+setenv GLEW_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/glew-2.2.0-ta5rasv4xux3rmbtxomhf7olt4prcezi}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

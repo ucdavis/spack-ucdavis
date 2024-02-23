@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:35.029604
+##
+## shared-mime-info@1.10%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/dstkd5i
+##
+
+
+module-whatis {Database of common MIME types.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : shared-mime-info}
+    puts stderr {Version: 1.10}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Database of common MIME types.}
+}
+
+conflict shared-mime-info
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/shared-mime-info-1.10-dstkd5iu3aqbrgwtgbaoz5dfg6sph33k/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/shared-mime-info-1.10-dstkd5iu3aqbrgwtgbaoz5dfg6sph33k/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/shared-mime-info-1.10-dstkd5iu3aqbrgwtgbaoz5dfg6sph33k/share/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/shared-mime-info-1.10-dstkd5iu3aqbrgwtgbaoz5dfg6sph33k/.}
+setenv SHARED_MIME_INFO_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/shared-mime-info-1.10-dstkd5iu3aqbrgwtgbaoz5dfg6sph33k}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

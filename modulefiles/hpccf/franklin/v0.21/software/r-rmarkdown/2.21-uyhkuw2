@@ -1,0 +1,79 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:09.736889
+##
+## r-rmarkdown@2.21%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/uyhkuw2
+##
+
+
+module-whatis {Dynamic Documents for R.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-rmarkdown}
+    puts stderr {Version: 2.21}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Dynamic Documents for R. Convert R Markdown documents into a variety of}
+    puts stderr {formats.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-bslib/0.4.2-5dos2q3
+    module load r-evaluate/0.20-txbtbj4
+    module load r-fontawesome/0.5.1-tlyafzk
+    module load r-htmltools/0.5.5-fwhv4oh
+    module load r-jquerylib/0.1.4-mqlui5g
+    module load r-jsonlite/1.8.4-jbrhwx3
+    module load r-knitr/1.42-f64q3tb
+    module load r-stringr/1.5.0-hbdlimo
+    module load r-tinytex/0.45-fx3ifg5
+    module load r-xfun/0.39-vfwpwp5
+    module load r-yaml/2.3.7-m4pgln5
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-bslib/0.4.2-5dos2q3
+    depends-on r-evaluate/0.20-txbtbj4
+    depends-on r-fontawesome/0.5.1-tlyafzk
+    depends-on r-htmltools/0.5.5-fwhv4oh
+    depends-on r-jquerylib/0.1.4-mqlui5g
+    depends-on r-jsonlite/1.8.4-jbrhwx3
+    depends-on r-knitr/1.42-f64q3tb
+    depends-on r-stringr/1.5.0-hbdlimo
+    depends-on r-tinytex/0.45-fx3ifg5
+    depends-on r-xfun/0.39-vfwpwp5
+    depends-on r-yaml/2.3.7-m4pgln5
+}
+prereq r/4.3.0-n6pth5g
+prereq r-bslib/0.4.2-5dos2q3
+prereq r-evaluate/0.20-txbtbj4
+prereq r-fontawesome/0.5.1-tlyafzk
+prereq r-htmltools/0.5.5-fwhv4oh
+prereq r-jquerylib/0.1.4-mqlui5g
+prereq r-jsonlite/1.8.4-jbrhwx3
+prereq r-knitr/1.42-f64q3tb
+prereq r-stringr/1.5.0-hbdlimo
+prereq r-tinytex/0.45-fx3ifg5
+prereq r-xfun/0.39-vfwpwp5
+prereq r-yaml/2.3.7-m4pgln5
+conflict r-rmarkdown
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rmarkdown-2.21-uyhkuw2sf3mkqwza6qkwix7wsb2rkqdy/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rmarkdown-2.21-uyhkuw2sf3mkqwza6qkwix7wsb2rkqdy/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rmarkdown-2.21-uyhkuw2sf3mkqwza6qkwix7wsb2rkqdy/rlib/R/library}
+setenv R_RMARKDOWN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rmarkdown-2.21-uyhkuw2sf3mkqwza6qkwix7wsb2rkqdy}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

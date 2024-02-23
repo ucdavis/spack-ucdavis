@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:18.162892
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:55.242791
 ##
 ## interproscan@4.8%gcc@11.4.0~databases build_system=generic patches=a243277,c90e3d6 arch=linux-ubuntu22.04-x86_64_v3/cth5dhw
 ##
@@ -21,6 +21,33 @@ proc ModulesHelp { } {
     puts stderr {location and modify interproscan.properties}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-cgi/4.56-gjtchlr
+    module load perl-db-file/1.858-eo6fici
+    module load perl-io-string/1.08-epoalwv
+    module load perl-io-stringy/2.111-qwb6tnj
+    module load perl-mailtools/2.21-tpdmvql
+    module load perl-xml-parser/2.46-4s7gqlv
+    module load perl-xml-quote/1.02-pvkivlg
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-cgi/4.56-gjtchlr
+    depends-on perl-db-file/1.858-eo6fici
+    depends-on perl-io-string/1.08-epoalwv
+    depends-on perl-io-stringy/2.111-qwb6tnj
+    depends-on perl-mailtools/2.21-tpdmvql
+    depends-on perl-xml-parser/2.46-4s7gqlv
+    depends-on perl-xml-quote/1.02-pvkivlg
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-cgi/4.56-gjtchlr
+prereq perl-db-file/1.858-eo6fici
+prereq perl-io-string/1.08-epoalwv
+prereq perl-io-stringy/2.111-qwb6tnj
+prereq perl-mailtools/2.21-tpdmvql
+prereq perl-xml-parser/2.46-4s7gqlv
+prereq perl-xml-quote/1.02-pvkivlg
 conflict interproscan
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/interproscan-4.8-cth5dhwkgtro4awba4jkyb36tsufdyhq/lib}

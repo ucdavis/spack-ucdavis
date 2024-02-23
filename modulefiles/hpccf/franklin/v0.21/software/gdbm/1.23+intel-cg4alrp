@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:49.915828
+##
+## gdbm@1.23%oneapi@2023.2.0 build_system=autotools arch=linux-ubuntu22.04-skylake_avx512/cg4alrp
+##
+## Configure options: --enable-libgdbm-compat CPPFLAGS=-D_GNU_SOURCE
+##
+
+
+module-whatis {GNU dbm (or GDBM, for short) is a library of database functions that use extensible hashing and work similar to the standard UNIX dbm. These routines are provided to a programmer needing to create and manipulate a hashed database.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gdbm}
+    puts stderr {Version: 1.23}
+    puts stderr {Target : skylake_avx512}
+    puts stderr {}
+    puts stderr {GNU dbm (or GDBM, for short) is a library of database functions that use}
+    puts stderr {extensible hashing and work similar to the standard UNIX dbm. These}
+    puts stderr {routines are provided to a programmer needing to create and manipulate a}
+    puts stderr {hashed database.}
+}
+
+conflict gdbm
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/gdbm-1.23-cg4alrpkagta446soeun4k2ozixfhbq7/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/gdbm-1.23-cg4alrpkagta446soeun4k2ozixfhbq7/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/gdbm-1.23-cg4alrpkagta446soeun4k2ozixfhbq7/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/gdbm-1.23-cg4alrpkagta446soeun4k2ozixfhbq7/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/gdbm-1.23-cg4alrpkagta446soeun4k2ozixfhbq7/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/gdbm-1.23-cg4alrpkagta446soeun4k2ozixfhbq7/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/gdbm-1.23-cg4alrpkagta446soeun4k2ozixfhbq7/.}
+setenv GDBM_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/gdbm-1.23-cg4alrpkagta446soeun4k2ozixfhbq7}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

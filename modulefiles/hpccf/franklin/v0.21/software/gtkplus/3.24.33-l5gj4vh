@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:51.962555
+##
+## gtkplus@3.24.33%gcc@11.4.0~cups~strip build_system=meson buildtype=release default_library=shared arch=linux-ubuntu22.04-x86_64_v3/l5gj4vh
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis {The GTK+ package contains libraries used for creating graphical user interfaces for applications.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gtkplus}
+    puts stderr {Version: 3.24.33}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The GTK+ package contains libraries used for creating graphical user}
+    puts stderr {interfaces for applications.}
+}
+
+conflict gtkplus
+
+prepend-path MANPATH {/usr/share/man}
+prepend-path ACLOCAL_PATH {/usr/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/usr/lib/pkgconfig}
+prepend-path PKG_CONFIG_PATH {/usr/share/pkgconfig}
+prepend-path GI_TYPELIB_PATH {/usr/lib/girepository-1.0}
+setenv GTKPLUS_ROOT {/usr}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

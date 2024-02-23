@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:37.143033
+##
+## which@2.21%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/kr7mlsx
+##
+
+
+module-whatis {GNU which - is a utility that is used to find which executable (or alias or shell function) is executed when entered on the shell prompt.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : which}
+    puts stderr {Version: 2.21}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GNU which - is a utility that is used to find which executable (or alias}
+    puts stderr {or shell function) is executed when entered on the shell prompt.}
+}
+
+conflict which
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/which-2.21-kr7mlsxtljatveudamkabbcdaxooodnq/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/which-2.21-kr7mlsxtljatveudamkabbcdaxooodnq/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/which-2.21-kr7mlsxtljatveudamkabbcdaxooodnq/.}
+setenv WHICH_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/which-2.21-kr7mlsxtljatveudamkabbcdaxooodnq}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

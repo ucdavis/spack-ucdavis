@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:12.313167
+##
+## perl-scalar-util-numeric@0.40%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/bvj6ujt
+##
+
+
+module-whatis {This module exports a number of wrappers around perl's builtin grok_number function, which returns the numeric type of its argument, or 0 if it isn't numeric.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-scalar-util-numeric}
+    puts stderr {Version: 0.40}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This module exports a number of wrappers around perl's builtin}
+    puts stderr {grok_number function, which returns the numeric type of its argument, or}
+    puts stderr {0 if it isn't numeric.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-scalar-util-numeric
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-scalar-util-numeric-0.40-bvj6ujtduj2jrr2dpap2gu36i36roq5k/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-scalar-util-numeric-0.40-bvj6ujtduj2jrr2dpap2gu36i36roq5k/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-scalar-util-numeric-0.40-bvj6ujtduj2jrr2dpap2gu36i36roq5k/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-scalar-util-numeric-0.40-bvj6ujtduj2jrr2dpap2gu36i36roq5k/lib/perl5}
+setenv PERL_SCALAR_UTIL_NUMERIC_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-scalar-util-numeric-0.40-bvj6ujtduj2jrr2dpap2gu36i36roq5k}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,60 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:22.656713
+##
+## r-edger@3.42.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/bxercdi
+##
+
+
+module-whatis {Empirical Analysis of Digital Gene Expression Data in R.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-edger}
+    puts stderr {Version: 3.42.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Empirical Analysis of Digital Gene Expression Data in R. Differential}
+    puts stderr {expression analysis of RNA-seq expression profiles with biological}
+    puts stderr {replication. Implements a range of statistical methodology based on the}
+    puts stderr {negative binomial distributions, including empirical Bayes estimation,}
+    puts stderr {exact tests, generalized linear models and quasi-likelihood tests. As}
+    puts stderr {well as RNA-seq, it be applied to differential signal analysis of other}
+    puts stderr {types of genomic data that produce counts, including ChIP-seq,}
+    puts stderr {Bisulfite-seq, SAGE and CAGE.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-limma/3.56.0-uza56hp
+    module load r-locfit/1.5-9.7-xy5m5dj
+    module load r-rcpp/1.0.10-w6mz3zg
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-limma/3.56.0-uza56hp
+    depends-on r-locfit/1.5-9.7-xy5m5dj
+    depends-on r-rcpp/1.0.10-w6mz3zg
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-limma/3.56.0-uza56hp
+prereq r-locfit/1.5-9.7-xy5m5dj
+prereq r-rcpp/1.0.10-w6mz3zg
+conflict r-edger
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-edger-3.42.0-bxercdizqht4lrktyyd6ffhsv6q673nk/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-edger-3.42.0-bxercdizqht4lrktyyd6ffhsv6q673nk/rlib/R/library}
+setenv R_EDGER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-edger-3.42.0-bxercdizqht4lrktyyd6ffhsv6q673nk}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

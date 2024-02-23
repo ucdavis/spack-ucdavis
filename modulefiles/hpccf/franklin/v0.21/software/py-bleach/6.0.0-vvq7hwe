@@ -1,0 +1,53 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:19.402201
+##
+## py-bleach@6.0.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/vvq7hwe
+##
+
+
+module-whatis {An easy whitelist-based HTML-sanitizing tool.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-bleach}
+    puts stderr {Version: 6.0.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {An easy whitelist-based HTML-sanitizing tool.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-setuptools/63.4.3-wu7zlrx
+    module load py-six/1.16.0-2gamlcd
+    module load py-webencodings/0.5.1-apdbnas
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-setuptools/63.4.3-wu7zlrx
+    depends-on py-six/1.16.0-2gamlcd
+    depends-on py-webencodings/0.5.1-apdbnas
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-setuptools/63.4.3-wu7zlrx
+prereq py-six/1.16.0-2gamlcd
+prereq py-webencodings/0.5.1-apdbnas
+prereq python/3.11.6-rsiojxh
+conflict py-bleach
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-bleach-6.0.0-vvq7hwe4gzjsigigwznqrk72owou3ppp/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-bleach-6.0.0-vvq7hwe4gzjsigigwznqrk72owou3ppp/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-bleach-6.0.0-vvq7hwe4gzjsigigwznqrk72owou3ppp/lib/python3.11/site-packages}
+setenv PY_BLEACH_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-bleach-6.0.0-vvq7hwe4gzjsigigwznqrk72owou3ppp}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

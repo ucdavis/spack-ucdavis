@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:50.768331
+##
+## git@2.41.0%gcc@11.4.0+man+nls+perl+subtree~svn~tcltk build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/uvw3b7e
+##
+## Configure options: --with-curl=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/curl-8.4.0-zzgh4ujrsazd7pn6rtose5rfzv5jpli3 --with-expat=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/expat-2.5.0-twtd522e3g3xrdctuq5yiwedomwrio4f --with-openssl=/usr --with-zlib=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.3-6bawsidwttj6jecmtk6u24gmu6wypvbp --with-iconv=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiconv-1.17-55xyhggxa2zmut7tj2rieuoptmu3mbhb --with-perl=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.38.0-lfl2a73mxtea55vpdeecal5tjmgr3plf/bin/perl --with-libpcre2=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pcre2-10.42-b4bkdk2fdggx5x4duknyqycamfmbvt5g --without-tcltk
+##
+
+
+module-whatis {Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : git}
+    puts stderr {Version: 2.41.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Git is a free and open source distributed version control system}
+    puts stderr {designed to handle everything from small to very large projects with}
+    puts stderr {speed and efficiency.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load openssh/9.5p1-ix4czkh
+} else {
+    depends-on openssh/9.5p1-ix4czkh
+}
+prereq openssh/9.5p1-ix4czkh
+conflict git
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/git-2.41.0-uvw3b7ezwhiqscj3rs4rchhy3uecpfqr/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/git-2.41.0-uvw3b7ezwhiqscj3rs4rchhy3uecpfqr/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/git-2.41.0-uvw3b7ezwhiqscj3rs4rchhy3uecpfqr/.}
+setenv GIT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/git-2.41.0-uvw3b7ezwhiqscj3rs4rchhy3uecpfqr}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

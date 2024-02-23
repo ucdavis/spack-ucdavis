@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:13.364285
+##
+## perl-timedate@2.30%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/taj7egx
+##
+
+
+module-whatis {The parser contained here will only parse absolute dates, if you want a date parser that can parse relative dates then take a look at the Time modules by David Muir on CPAN.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-timedate}
+    puts stderr {Version: 2.30}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The parser contained here will only parse absolute dates, if you want a}
+    puts stderr {date parser that can parse relative dates then take a look at the Time}
+    puts stderr {modules by David Muir on CPAN.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-timedate
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-timedate-2.30-taj7egxtg47izfq7khzzffhm5s5moops/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-timedate-2.30-taj7egxtg47izfq7khzzffhm5s5moops/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-timedate-2.30-taj7egxtg47izfq7khzzffhm5s5moops/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-timedate-2.30-taj7egxtg47izfq7khzzffhm5s5moops/lib/perl5}
+setenv PERL_TIMEDATE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-timedate-2.30-taj7egxtg47izfq7khzzffhm5s5moops}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

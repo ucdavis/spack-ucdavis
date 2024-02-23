@@ -1,0 +1,62 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:48.282824
+##
+## r-knitr@1.42%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/2llikrf
+##
+
+
+module-whatis {A General-Purpose Package for Dynamic Report Generation in R.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-knitr}
+    puts stderr {Version: 1.42}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A General-Purpose Package for Dynamic Report Generation in R. Provides a}
+    puts stderr {general-purpose tool for dynamic report generation in R using Literate}
+    puts stderr {Programming techniques.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-rst2pdf/0.100-7e5cnvs
+    module load r/4.3.0-bzxz5nl
+    module load r-evaluate/0.20-j55fpgb
+    module load r-highr/0.10-huwhcoc
+    module load r-xfun/0.39-sief74y
+    module load r-yaml/2.3.7-6yxy76t
+} else {
+    depends-on py-rst2pdf/0.100-7e5cnvs
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-evaluate/0.20-j55fpgb
+    depends-on r-highr/0.10-huwhcoc
+    depends-on r-xfun/0.39-sief74y
+    depends-on r-yaml/2.3.7-6yxy76t
+}
+prereq py-rst2pdf/0.100-7e5cnvs
+prereq r/4.3.0-bzxz5nl
+prereq r-evaluate/0.20-j55fpgb
+prereq r-highr/0.10-huwhcoc
+prereq r-xfun/0.39-sief74y
+prereq r-yaml/2.3.7-6yxy76t
+conflict r-knitr
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-knitr-1.42-2llikrfstbfy7twitxmfv5kogljalb5e/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-knitr-1.42-2llikrfstbfy7twitxmfv5kogljalb5e/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-knitr-1.42-2llikrfstbfy7twitxmfv5kogljalb5e/rlib/R/library}
+setenv R_KNITR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-knitr-1.42-2llikrfstbfy7twitxmfv5kogljalb5e}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

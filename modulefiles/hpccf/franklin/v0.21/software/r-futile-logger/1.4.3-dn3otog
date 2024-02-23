@@ -1,0 +1,53 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:27.486743
+##
+## r-futile-logger@1.4.3%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/dn3otog
+##
+
+
+module-whatis {A Logging Utility for R.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-futile-logger}
+    puts stderr {Version: 1.4.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A Logging Utility for R. Provides a simple yet powerful logging utility.}
+    puts stderr {Based loosely on log4j, futile.logger takes advantage of R idioms to}
+    puts stderr {make logging a convenient and easy to use replacement for cat and print}
+    puts stderr {statements.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-futile-options/1.0.1-cb7etbn
+    module load r-lambda-r/1.2.4-m6rhaws
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-futile-options/1.0.1-cb7etbn
+    depends-on r-lambda-r/1.2.4-m6rhaws
+}
+prereq r/4.3.0-n6pth5g
+prereq r-futile-options/1.0.1-cb7etbn
+prereq r-lambda-r/1.2.4-m6rhaws
+conflict r-futile-logger
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-futile-logger-1.4.3-dn3otogtchjxvtexeoq4rnv4risqdqsz/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-futile-logger-1.4.3-dn3otogtchjxvtexeoq4rnv4risqdqsz/rlib/R/library}
+setenv R_FUTILE_LOGGER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-futile-logger-1.4.3-dn3otogtchjxvtexeoq4rnv4risqdqsz}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:14.029186
+##
+## perl-xml-namespacesupport@1.12_9%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/4tqvapo
+##
+
+
+module-whatis {This module offers a simple to process namespaced XML names (unames) from within any application that may need them. It also helps maintain a prefix to namespace URI map, and provides a number of basic checks.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-xml-namespacesupport}
+    puts stderr {Version: 1.12_9}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This module offers a simple to process namespaced XML names (unames)}
+    puts stderr {from within any application that may need them. It also helps maintain a}
+    puts stderr {prefix to namespace URI map, and provides a number of basic checks.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-xml-namespacesupport
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-namespacesupport-1.12_9-4tqvapoilqdpiah5mz4snebscs7dkwnu/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-namespacesupport-1.12_9-4tqvapoilqdpiah5mz4snebscs7dkwnu/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-namespacesupport-1.12_9-4tqvapoilqdpiah5mz4snebscs7dkwnu/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-namespacesupport-1.12_9-4tqvapoilqdpiah5mz4snebscs7dkwnu/lib/perl5}
+setenv PERL_XML_NAMESPACESUPPORT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-namespacesupport-1.12_9-4tqvapoilqdpiah5mz4snebscs7dkwnu}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:08.344828
+##
+## perl-extutils-installpaths@0.012%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/4mckwov
+##
+
+
+module-whatis {ExtUtils::InstallPaths - Build.PL install path logic made easy}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-extutils-installpaths}
+    puts stderr {Version: 0.012}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {ExtUtils::InstallPaths - Build.PL install path logic made easy}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-extutils-config/0.008-2mv6grb
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-extutils-config/0.008-2mv6grb
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-extutils-config/0.008-2mv6grb
+conflict perl-extutils-installpaths
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-installpaths-0.012-4mckwovpf7oarihvlr2x5xkuxofoaylj/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-installpaths-0.012-4mckwovpf7oarihvlr2x5xkuxofoaylj/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-installpaths-0.012-4mckwovpf7oarihvlr2x5xkuxofoaylj/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-installpaths-0.012-4mckwovpf7oarihvlr2x5xkuxofoaylj/lib/perl5}
+setenv PERL_EXTUTILS_INSTALLPATHS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-extutils-installpaths-0.012-4mckwovpf7oarihvlr2x5xkuxofoaylj}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

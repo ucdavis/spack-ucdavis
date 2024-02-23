@@ -1,0 +1,76 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:41.789219
+##
+## r-haven@2.5.2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/p4davbh
+##
+
+
+module-whatis {Import and Export 'SPSS', 'Stata' and 'SAS' Files.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-haven}
+    puts stderr {Version: 2.5.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Import and Export 'SPSS', 'Stata' and 'SAS' Files. Import foreign}
+    puts stderr {statistical formats into R via the embedded 'ReadStat' C library,}
+    puts stderr {<https://github.com/WizardMac/ReadStat>.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-cli/3.6.1-75actrg
+    module load r-cpp11/0.4.3-etm435b
+    module load r-forcats/1.0.0-mr24cbs
+    module load r-hms/1.1.3-mujajev
+    module load r-lifecycle/1.0.3-u6wfegg
+    module load r-readr/2.1.4-omcdcrj
+    module load r-rlang/1.1.0-exexgvx
+    module load r-tibble/3.2.1-qxvx2yi
+    module load r-tidyselect/1.2.0-bi4vywi
+    module load r-vctrs/0.6.2-2fduwfe
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-cli/3.6.1-75actrg
+    depends-on r-cpp11/0.4.3-etm435b
+    depends-on r-forcats/1.0.0-mr24cbs
+    depends-on r-hms/1.1.3-mujajev
+    depends-on r-lifecycle/1.0.3-u6wfegg
+    depends-on r-readr/2.1.4-omcdcrj
+    depends-on r-rlang/1.1.0-exexgvx
+    depends-on r-tibble/3.2.1-qxvx2yi
+    depends-on r-tidyselect/1.2.0-bi4vywi
+    depends-on r-vctrs/0.6.2-2fduwfe
+}
+prereq r/4.3.0-n6pth5g
+prereq r-cli/3.6.1-75actrg
+prereq r-cpp11/0.4.3-etm435b
+prereq r-forcats/1.0.0-mr24cbs
+prereq r-hms/1.1.3-mujajev
+prereq r-lifecycle/1.0.3-u6wfegg
+prereq r-readr/2.1.4-omcdcrj
+prereq r-rlang/1.1.0-exexgvx
+prereq r-tibble/3.2.1-qxvx2yi
+prereq r-tidyselect/1.2.0-bi4vywi
+prereq r-vctrs/0.6.2-2fduwfe
+conflict r-haven
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-haven-2.5.2-p4davbhnea6lhqsib2cz3gtkj5qd3gbq/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-haven-2.5.2-p4davbhnea6lhqsib2cz3gtkj5qd3gbq/rlib/R/library}
+setenv R_HAVEN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-haven-2.5.2-p4davbhnea6lhqsib2cz3gtkj5qd3gbq}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

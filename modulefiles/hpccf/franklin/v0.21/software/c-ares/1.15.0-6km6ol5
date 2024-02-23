@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:45.465275
+##
+## c-ares@1.15.0%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/6km6ol5
+##
+
+
+module-whatis {c-ares: A C library for asynchronous DNS requests}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : c-ares}
+    puts stderr {Version: 1.15.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {c-ares: A C library for asynchronous DNS requests}
+}
+
+conflict c-ares
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/c-ares-1.15.0-6km6ol5wxi4dv4rjaorxrrobsx5yiw3e/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/c-ares-1.15.0-6km6ol5wxi4dv4rjaorxrrobsx5yiw3e/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/c-ares-1.15.0-6km6ol5wxi4dv4rjaorxrrobsx5yiw3e/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/c-ares-1.15.0-6km6ol5wxi4dv4rjaorxrrobsx5yiw3e/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/c-ares-1.15.0-6km6ol5wxi4dv4rjaorxrrobsx5yiw3e/bin}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/c-ares-1.15.0-6km6ol5wxi4dv4rjaorxrrobsx5yiw3e/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/c-ares-1.15.0-6km6ol5wxi4dv4rjaorxrrobsx5yiw3e/.}
+setenv C_ARES_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/c-ares-1.15.0-6km6ol5wxi4dv4rjaorxrrobsx5yiw3e}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

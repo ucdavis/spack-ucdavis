@@ -1,0 +1,67 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:56.279146
+##
+## r-pillar@1.9.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/zrywzru
+##
+
+
+module-whatis {Coloured Formatting for Columns.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-pillar}
+    puts stderr {Version: 1.9.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Coloured Formatting for Columns. Provides a 'pillar' generic designed}
+    puts stderr {for formatting columns of data using the full range of colours provided}
+    puts stderr {by modern terminals.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-cli/3.6.1-u4zzw6m
+    module load r-fansi/1.0.4-y3n5hmm
+    module load r-glue/1.6.2-7jsjoec
+    module load r-lifecycle/1.0.3-vlvj6d7
+    module load r-rlang/1.1.0-6ek36pb
+    module load r-utf8/1.2.3-kp6zbku
+    module load r-vctrs/0.6.2-lpcos7o
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-cli/3.6.1-u4zzw6m
+    depends-on r-fansi/1.0.4-y3n5hmm
+    depends-on r-glue/1.6.2-7jsjoec
+    depends-on r-lifecycle/1.0.3-vlvj6d7
+    depends-on r-rlang/1.1.0-6ek36pb
+    depends-on r-utf8/1.2.3-kp6zbku
+    depends-on r-vctrs/0.6.2-lpcos7o
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-cli/3.6.1-u4zzw6m
+prereq r-fansi/1.0.4-y3n5hmm
+prereq r-glue/1.6.2-7jsjoec
+prereq r-lifecycle/1.0.3-vlvj6d7
+prereq r-rlang/1.1.0-6ek36pb
+prereq r-utf8/1.2.3-kp6zbku
+prereq r-vctrs/0.6.2-lpcos7o
+conflict r-pillar
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-pillar-1.9.0-zrywzruveh4ii6xeevrtirnwpx5vpc7k/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-pillar-1.9.0-zrywzruveh4ii6xeevrtirnwpx5vpc7k/rlib/R/library}
+setenv R_PILLAR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-pillar-1.9.0-zrywzruveh4ii6xeevrtirnwpx5vpc7k}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

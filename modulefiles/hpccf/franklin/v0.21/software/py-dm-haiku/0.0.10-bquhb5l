@@ -1,0 +1,59 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:25.259874
+##
+## py-dm-haiku@0.0.10%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/bquhb5l
+##
+
+
+module-whatis {JAX-based neural network library}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-dm-haiku}
+    puts stderr {Version: 0.0.10}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {JAX-based neural network library}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-absl-py/1.4.0-i2xc5za
+    module load py-jax/0.4.3-4ltcwvz
+    module load py-jmp/0.0.2-inl2ray
+    module load py-numpy/1.22.4-7bmhfux
+    module load py-tabulate/0.8.9-y5zrgfi
+    module load python/3.9.18-rt3uhd4
+} else {
+    depends-on py-absl-py/1.4.0-i2xc5za
+    depends-on py-jax/0.4.3-4ltcwvz
+    depends-on py-jmp/0.0.2-inl2ray
+    depends-on py-numpy/1.22.4-7bmhfux
+    depends-on py-tabulate/0.8.9-y5zrgfi
+    depends-on python/3.9.18-rt3uhd4
+}
+prereq py-absl-py/1.4.0-i2xc5za
+prereq py-jax/0.4.3-4ltcwvz
+prereq py-jmp/0.0.2-inl2ray
+prereq py-numpy/1.22.4-7bmhfux
+prereq py-tabulate/0.8.9-y5zrgfi
+prereq python/3.9.18-rt3uhd4
+conflict py-dm-haiku
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-dm-haiku-0.0.10-bquhb5lriyyp6yrcvbjfqis6jds2bduj/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-dm-haiku-0.0.10-bquhb5lriyyp6yrcvbjfqis6jds2bduj/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-dm-haiku-0.0.10-bquhb5lriyyp6yrcvbjfqis6jds2bduj/lib/python3.9/site-packages}
+setenv PY_DM_HAIKU_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-dm-haiku-0.0.10-bquhb5lriyyp6yrcvbjfqis6jds2bduj}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

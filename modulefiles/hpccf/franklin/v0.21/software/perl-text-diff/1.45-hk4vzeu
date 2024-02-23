@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:13.094525
+##
+## perl-text-diff@1.45%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/hk4vzeu
+##
+
+
+module-whatis {Provides a basic set of services akin to the GNU diff utility.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-text-diff}
+    puts stderr {Version: 1.45}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Provides a basic set of services akin to the GNU diff utility.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-algorithm-diff/1.1903-ntjqev2
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-algorithm-diff/1.1903-ntjqev2
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-algorithm-diff/1.1903-ntjqev2
+conflict perl-text-diff
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-text-diff-1.45-hk4vzeum4d45lzhhewqkhzuuz4n7cjly/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-text-diff-1.45-hk4vzeum4d45lzhhewqkhzuuz4n7cjly/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-text-diff-1.45-hk4vzeum4d45lzhhewqkhzuuz4n7cjly/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-text-diff-1.45-hk4vzeum4d45lzhhewqkhzuuz4n7cjly/lib/perl5}
+setenv PERL_TEXT_DIFF_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-text-diff-1.45-hk4vzeum4d45lzhhewqkhzuuz4n7cjly}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

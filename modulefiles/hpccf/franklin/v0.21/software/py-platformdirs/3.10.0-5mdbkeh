@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:44.789846
+##
+## py-platformdirs@3.10.0%gcc@11.4.0~wheel build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/5mdbkeh
+##
+
+
+module-whatis {A small Python module for determining appropriate platform-specific dirs, e.g. a 'user data dir' }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-platformdirs}
+    puts stderr {Version: 3.10.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A small Python module for determining appropriate platform-specific}
+    puts stderr {dirs, e.g. a "user data dir"}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on python/3.11.6-rsiojxh
+}
+prereq python/3.11.6-rsiojxh
+conflict py-platformdirs
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-platformdirs-3.10.0-5mdbkehvhej2cejlavqk5ajzr5hkaujx/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-platformdirs-3.10.0-5mdbkehvhej2cejlavqk5ajzr5hkaujx/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-platformdirs-3.10.0-5mdbkehvhej2cejlavqk5ajzr5hkaujx/lib/python3.11/site-packages}
+setenv PY_PLATFORMDIRS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-platformdirs-3.10.0-5mdbkehvhej2cejlavqk5ajzr5hkaujx}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

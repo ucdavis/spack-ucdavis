@@ -1,0 +1,55 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:02.986696
+##
+## r-rcpp@1.0.10%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/qwvlraf
+##
+
+
+module-whatis {Seamless R and C++ Integration.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-rcpp}
+    puts stderr {Version: 1.0.10}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Seamless R and C++ Integration. The 'Rcpp' package provides R functions}
+    puts stderr {as well as C++ classes which; offer a seamless integration of R and C++.}
+    puts stderr {Many R data types and objects can be; mapped back and forth to C++}
+    puts stderr {equivalents which facilitates both writing of new; code as well as}
+    puts stderr {easier integration of third-party libraries. Documentation; about 'Rcpp'}
+    puts stderr {is provided by several vignettes included in this package, via the;}
+    puts stderr {'Rcpp Gallery' site at <https://gallery.rcpp.org>, the paper by}
+    puts stderr {Eddelbuettel and; Francois (2011, <doi:10.18637/jss.v040.i08>), the book}
+    puts stderr {by Eddelbuettel (2013,; <doi:10.1007/978-1-4614-6868-4>) and the paper}
+    puts stderr {by Eddelbuettel and Balamuta (2018,;}
+    puts stderr {<doi:10.1080/00031305.2017.1375990>); see 'citation("Rcpp")' for}
+    puts stderr {details.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-vcbztcv
+} else {
+    depends-on r/4.3.0-vcbztcv
+}
+prereq r/4.3.0-vcbztcv
+conflict r-rcpp
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rcpp-1.0.10-qwvlraflnnn2f5xhu5k6p6fuqkxqs3dx/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rcpp-1.0.10-qwvlraflnnn2f5xhu5k6p6fuqkxqs3dx/rlib/R/library}
+setenv R_RCPP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rcpp-1.0.10-qwvlraflnnn2f5xhu5k6p6fuqkxqs3dx}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

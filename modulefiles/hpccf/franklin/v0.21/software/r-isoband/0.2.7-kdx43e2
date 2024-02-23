@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:46.451656
+##
+## r-isoband@0.2.7%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/kdx43e2
+##
+
+
+module-whatis {Generate Isolines and Isobands from Regularly Spaced Elevation Grids.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-isoband}
+    puts stderr {Version: 0.2.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Generate Isolines and Isobands from Regularly Spaced Elevation Grids. A}
+    puts stderr {fast C++ implementation to generate contour lines (isolines) and contour}
+    puts stderr {polygons (isobands) from regularly spaced grids containing elevation}
+    puts stderr {data.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+} else {
+    depends-on r/4.3.0-n6pth5g
+}
+prereq r/4.3.0-n6pth5g
+conflict r-isoband
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-isoband-0.2.7-kdx43e2stpfbfvupcpp2uicu4ev6gzf7/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-isoband-0.2.7-kdx43e2stpfbfvupcpp2uicu4ev6gzf7/rlib/R/library}
+setenv R_ISOBAND_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-isoband-0.2.7-kdx43e2stpfbfvupcpp2uicu4ev6gzf7}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

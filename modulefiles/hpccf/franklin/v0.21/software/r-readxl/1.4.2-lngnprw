@@ -1,0 +1,60 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:05.089714
+##
+## r-readxl@1.4.2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/lngnprw
+##
+
+
+module-whatis {Read Excel Files.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-readxl}
+    puts stderr {Version: 1.4.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Read Excel Files. Import excel files into R. Supports '.xls' via the}
+    puts stderr {embedded 'libxls' C library <https://sourceforge.net/projects/libxls/>}
+    puts stderr {and '.xlsx' via the embedded 'RapidXML' C++ library}
+    puts stderr {<https://rapidxml.sourceforge.net>. Works on Windows, Mac and Linux}
+    puts stderr {without external dependencies.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-cellranger/1.1.0-ckgvty4
+    module load r-cpp11/0.4.3-etm435b
+    module load r-progress/1.2.2-ukslnb5
+    module load r-tibble/3.2.1-qxvx2yi
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-cellranger/1.1.0-ckgvty4
+    depends-on r-cpp11/0.4.3-etm435b
+    depends-on r-progress/1.2.2-ukslnb5
+    depends-on r-tibble/3.2.1-qxvx2yi
+}
+prereq r/4.3.0-n6pth5g
+prereq r-cellranger/1.1.0-ckgvty4
+prereq r-cpp11/0.4.3-etm435b
+prereq r-progress/1.2.2-ukslnb5
+prereq r-tibble/3.2.1-qxvx2yi
+conflict r-readxl
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-readxl-1.4.2-lngnprwq4uooaw2nhhl2v2pl25z2bbql/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-readxl-1.4.2-lngnprwq4uooaw2nhhl2v2pl25z2bbql/rlib/R/library}
+setenv R_READXL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-readxl-1.4.2-lngnprwq4uooaw2nhhl2v2pl25z2bbql}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

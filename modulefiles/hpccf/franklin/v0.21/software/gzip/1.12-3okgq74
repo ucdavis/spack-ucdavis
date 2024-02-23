@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:51.975701
+##
+## gzip@1.12%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/3okgq74
+##
+
+
+module-whatis {GNU Gzip is a popular data compression program originally written by Jean-loup Gailly for the GNU project.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gzip}
+    puts stderr {Version: 1.12}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GNU Gzip is a popular data compression program originally written by}
+    puts stderr {Jean-loup Gailly for the GNU project.}
+}
+
+conflict gzip
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gzip-1.12-3okgq7427pvsboak7ur5wvjrn47j4voo/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gzip-1.12-3okgq7427pvsboak7ur5wvjrn47j4voo/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gzip-1.12-3okgq7427pvsboak7ur5wvjrn47j4voo/.}
+setenv GZIP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gzip-1.12-3okgq7427pvsboak7ur5wvjrn47j4voo}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,50 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:46.808965
+##
+## cuda@11.7.1%gcc@11.4.0+allow-unsupported-compilers~dev build_system=generic arch=linux-ubuntu22.04-zen2/hujj4ji
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis {CUDA is a parallel computing platform and programming model invented by NVIDIA. It enables dramatic increases in computing performance by harnessing the power of the graphics processing unit (GPU).}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : cuda}
+    puts stderr {Version: 11.7.1}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr {CUDA is a parallel computing platform and programming model invented by}
+    puts stderr {NVIDIA. It enables dramatic increases in computing performance by}
+    puts stderr {harnessing the power of the graphics processing unit (GPU). Note: This}
+    puts stderr {package does not currently install the drivers necessary to run CUDA.}
+    puts stderr {These will need to be installed manually. See:}
+    puts stderr {https://docs.nvidia.com/cuda/ for details.}
+}
+
+conflict cuda
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/environments/core/view/generic/cuda-11.7.1/lib64}
+prepend-path CPATH {/share/apps/22.04/spack/environments/core/view/generic/cuda-11.7.1/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/environments/core/view/generic/cuda-11.7.1/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/environments/core/view/generic/cuda-11.7.1/include}
+prepend-path PATH {/share/apps/22.04/spack/environments/core/view/generic/cuda-11.7.1/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/environments/core/view/generic/cuda-11.7.1/.}
+setenv CUDA_HOME {/share/apps/22.04/spack/environments/core/view/generic/cuda-11.7.1}
+setenv NVHPC_CUDA_HOME {/share/apps/22.04/spack/environments/core/view/generic/cuda-11.7.1}
+setenv CUDA_ROOT {/share/apps/22.04/spack/environments/core/view/generic/cuda-11.7.1}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

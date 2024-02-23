@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:49.956925
+##
+## gdk-pixbuf@2.42.10%gcc@11.4.0~man~tiff~x11 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/4acmq2o
+##
+## Configure options: --disable-gtk-doc-html GTKDOC_CHECK=/usr/bin/true GTKDOC_CHECK_PATH=/usr/bin/true GTKDOC_MKPDF=/usr/bin/true GTKDOC_REBASE=/usr/bin/true
+##
+
+
+module-whatis {The Gdk Pixbuf is a toolkit for image loading and pixel buffer manipulation. It is used by GTK+ 2 and GTK+ 3 to load and manipulate images. In the past it was distributed as part of GTK+ 2 but it was split off into a separate package in preparation for the change to GTK+ 3.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gdk-pixbuf}
+    puts stderr {Version: 2.42.10}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The Gdk Pixbuf is a toolkit for image loading and pixel buffer}
+    puts stderr {manipulation. It is used by GTK+ 2 and GTK+ 3 to load and manipulate}
+    puts stderr {images. In the past it was distributed as part of GTK+ 2 but it was}
+    puts stderr {split off into a separate package in preparation for the change to GTK+}
+    puts stderr {3.}
+}
+
+conflict gdk-pixbuf
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdk-pixbuf-2.42.10-4acmq2ozgbu5gjch5p54fthaowwu43zf/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdk-pixbuf-2.42.10-4acmq2ozgbu5gjch5p54fthaowwu43zf/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdk-pixbuf-2.42.10-4acmq2ozgbu5gjch5p54fthaowwu43zf/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdk-pixbuf-2.42.10-4acmq2ozgbu5gjch5p54fthaowwu43zf/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdk-pixbuf-2.42.10-4acmq2ozgbu5gjch5p54fthaowwu43zf/bin}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdk-pixbuf-2.42.10-4acmq2ozgbu5gjch5p54fthaowwu43zf/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdk-pixbuf-2.42.10-4acmq2ozgbu5gjch5p54fthaowwu43zf/.}
+prepend-path XDG_DATA_DIRS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gobject-introspection-1.76.1-p7ovpnwgkhdrynjsf2zetdapj4hwgkkr/share}
+prepend-path GI_TYPELIB_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gobject-introspection-1.76.1-p7ovpnwgkhdrynjsf2zetdapj4hwgkkr/lib/girepository-1.0}
+prepend-path XDG_DATA_DIRS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/shared-mime-info-1.10-dstkd5iu3aqbrgwtgbaoz5dfg6sph33k/share}
+prepend-path GI_TYPELIB_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdk-pixbuf-2.42.10-4acmq2ozgbu5gjch5p54fthaowwu43zf/lib/girepository-1.0}
+setenv GDK_PIXBUF_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdk-pixbuf-2.42.10-4acmq2ozgbu5gjch5p54fthaowwu43zf}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

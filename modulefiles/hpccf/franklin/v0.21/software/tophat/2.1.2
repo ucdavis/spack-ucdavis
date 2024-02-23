@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:27.655087
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:36.341386
 ##
 ## tophat@2.1.2%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/5cehxe5
 ##
@@ -17,6 +17,12 @@ proc ModulesHelp { } {
     puts stderr {Spliced read mapper for RNA-Seq.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load bowtie2/2.5.1-fblre7e
+} else {
+    depends-on bowtie2/2.5.1-fblre7e
+}
+prereq bowtie2/2.5.1-fblre7e
 conflict tophat
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tophat-2.1.2-5cehxe5jqu624z47v3wmtqgi7ad7imov/lib}

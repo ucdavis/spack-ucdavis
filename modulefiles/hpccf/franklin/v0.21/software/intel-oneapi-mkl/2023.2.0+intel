@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:17.579041
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:54.140789
 ##
 ## intel-oneapi-mkl@2023.2.0%oneapi@2023.2.0~cluster+envmods~ilp64+shared build_system=generic mpi_family=none threads=none arch=linux-ubuntu22.04-skylake_avx512/fktonyd
 ##
@@ -21,12 +21,6 @@ proc ModulesHelp { } {
     puts stderr {software license agreements at https://intel.ly/393CijO.}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load intel-oneapi-tbb/2021.10.0+intel
-} else {
-    depends-on intel-oneapi-tbb/2021.10.0+intel
-}
-prereq intel-oneapi-tbb/2021.10.0+intel
 conflict intel-oneapi-mkl
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/lib}
@@ -38,10 +32,10 @@ prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubunt
 prepend-path LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/intel64}
 setenv MKLROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0}
 prepend-path NLSPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/intel64/locale/%l_%t/%N}
-prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/pkgconfig}
 prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/include}
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/intel64}
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/bin/intel64}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/pkgconfig}
 setenv INTEL_ONEAPI_MKL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5}
 
 

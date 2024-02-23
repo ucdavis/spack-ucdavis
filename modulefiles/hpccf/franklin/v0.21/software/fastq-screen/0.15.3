@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:15.561049
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:48.065233
 ##
 ## fastq-screen@0.15.3%gcc@11.4.0~bismark~bowtie~bwa build_system=generic arch=linux-ubuntu22.04-x86_64_v3/mmsjw2e
 ##
@@ -17,6 +17,21 @@ proc ModulesHelp { } {
     puts stderr {the library matches with what you expect.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load bowtie2/2.5.1-belpcno
+    module load perl/5.38.0-lfl2a73
+    module load perl-gdgraph/1.4308-ksru652
+    module load samtools/1.17-wqufa6q
+} else {
+    depends-on bowtie2/2.5.1-belpcno
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-gdgraph/1.4308-ksru652
+    depends-on samtools/1.17-wqufa6q
+}
+prereq bowtie2/2.5.1-belpcno
+prereq perl/5.38.0-lfl2a73
+prereq perl-gdgraph/1.4308-ksru652
+prereq samtools/1.17-wqufa6q
 conflict fastq-screen
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastq-screen-0.15.3-mmsjw2efqko3xqespnjynbbu2wy6fstq/bin}

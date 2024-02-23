@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:26.420815
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:33.090744
 ##
 ## repeatmasker@4.0.9%gcc@11.4.0~crossmatch build_system=generic patches=b9e0ce5 arch=linux-ubuntu22.04-x86_64_v3/rimwih7
 ##
@@ -17,14 +17,14 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load hmmer/3.4
-    module load ncbi-rmblastn/2.14.0
+    module load perl/5.38.0-okr4ubb
+    module load perl-text-soundex/3.05-rimuigd
 } else {
-    depends-on hmmer/3.4
-    depends-on ncbi-rmblastn/2.14.0
+    depends-on perl/5.38.0-okr4ubb
+    depends-on perl-text-soundex/3.05-rimuigd
 }
-prereq hmmer/3.4
-prereq ncbi-rmblastn/2.14.0
+prereq perl/5.38.0-okr4ubb
+prereq perl-text-soundex/3.05-rimuigd
 conflict repeatmasker
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/repeatmasker-4.0.9-rimwih7trbsu2eqsme2p2mlnwwfr3lxt/bin}

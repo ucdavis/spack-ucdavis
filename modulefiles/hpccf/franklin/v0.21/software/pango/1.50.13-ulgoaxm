@@ -1,0 +1,50 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:05.358994
+##
+## pango@1.50.13%gcc@11.4.0+X~strip build_system=meson buildtype=release default_library=shared arch=linux-ubuntu22.04-x86_64_v3/ulgoaxm
+##
+
+
+module-whatis {Pango is a library for laying out and rendering of text, with an emphasis on internationalization. It can be used anywhere that text layout is needed, though most of the work on Pango so far has been done in the context of the GTK+ widget toolkit.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : pango}
+    puts stderr {Version: 1.50.13}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Pango is a library for laying out and rendering of text, with an}
+    puts stderr {emphasis on internationalization. It can be used anywhere that text}
+    puts stderr {layout is needed, though most of the work on Pango so far has been done}
+    puts stderr {in the context of the GTK+ widget toolkit.}
+}
+
+conflict pango
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pango-1.50.13-ulgoaxm2xovaz4xwfzaxj7vzs4mhlvpx/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pango-1.50.13-ulgoaxm2xovaz4xwfzaxj7vzs4mhlvpx/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pango-1.50.13-ulgoaxm2xovaz4xwfzaxj7vzs4mhlvpx/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pango-1.50.13-ulgoaxm2xovaz4xwfzaxj7vzs4mhlvpx/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pango-1.50.13-ulgoaxm2xovaz4xwfzaxj7vzs4mhlvpx/bin}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pango-1.50.13-ulgoaxm2xovaz4xwfzaxj7vzs4mhlvpx/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pango-1.50.13-ulgoaxm2xovaz4xwfzaxj7vzs4mhlvpx/.}
+prepend-path XDG_DATA_DIRS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gobject-introspection-1.76.1-p7ovpnwgkhdrynjsf2zetdapj4hwgkkr/share}
+prepend-path GI_TYPELIB_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gobject-introspection-1.76.1-p7ovpnwgkhdrynjsf2zetdapj4hwgkkr/lib/girepository-1.0}
+prepend-path XDG_DATA_DIRS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/harfbuzz-7.3.0-qydks2c5unty2nl6v6ppaloxifbjr6ov/share}
+prepend-path GI_TYPELIB_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/harfbuzz-7.3.0-qydks2c5unty2nl6v6ppaloxifbjr6ov/lib/girepository-1.0}
+prepend-path GI_TYPELIB_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pango-1.50.13-ulgoaxm2xovaz4xwfzaxj7vzs4mhlvpx/lib/girepository-1.0}
+setenv PANGO_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pango-1.50.13-ulgoaxm2xovaz4xwfzaxj7vzs4mhlvpx}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

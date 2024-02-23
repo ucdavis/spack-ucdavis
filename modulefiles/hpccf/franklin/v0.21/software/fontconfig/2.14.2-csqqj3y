@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:49.066042
+##
+## fontconfig@2.14.2%gcc@7.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/csqqj3y
+##
+## Configure options: --enable-libxml2 --disable-docs --with-default-fonts=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/font-util-1.4.0-mjzfkayfzusffok64kq4aqqmeqh7mroo/share/fonts
+##
+
+
+module-whatis {Fontconfig is a library for configuring/customizing font access}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : fontconfig}
+    puts stderr {Version: 2.14.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Fontconfig is a library for configuring/customizing font access}
+}
+
+conflict fontconfig
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/fontconfig-2.14.2-csqqj3ypyczoy4f2zcq6fymjtes3pddu/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/fontconfig-2.14.2-csqqj3ypyczoy4f2zcq6fymjtes3pddu/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/fontconfig-2.14.2-csqqj3ypyczoy4f2zcq6fymjtes3pddu/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/fontconfig-2.14.2-csqqj3ypyczoy4f2zcq6fymjtes3pddu/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/fontconfig-2.14.2-csqqj3ypyczoy4f2zcq6fymjtes3pddu/bin}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/fontconfig-2.14.2-csqqj3ypyczoy4f2zcq6fymjtes3pddu/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/fontconfig-2.14.2-csqqj3ypyczoy4f2zcq6fymjtes3pddu/.}
+setenv FONTCONFIG_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/fontconfig-2.14.2-csqqj3ypyczoy4f2zcq6fymjtes3pddu}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

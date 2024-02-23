@@ -1,0 +1,53 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:10.340279
+##
+## perl-io-compress@2.204%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/mb6d544
+##
+
+
+module-whatis {A perl library for uncompressing gzip, zip, bzip2 or lzop file/buffer.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-io-compress}
+    puts stderr {Version: 2.204}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A perl library for uncompressing gzip, zip, bzip2 or lzop file/buffer.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-compress-raw-bzip2/2.204-eep2jc7
+    module load perl-compress-raw-zlib/2.204-zem4a7q
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-compress-raw-bzip2/2.204-eep2jc7
+    depends-on perl-compress-raw-zlib/2.204-zem4a7q
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-compress-raw-bzip2/2.204-eep2jc7
+prereq perl-compress-raw-zlib/2.204-zem4a7q
+conflict perl-io-compress
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-compress-2.204-mb6d544vnjtsy2cfcn6p5v3bee2cns62/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-compress-2.204-mb6d544vnjtsy2cfcn6p5v3bee2cns62/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-compress-2.204-mb6d544vnjtsy2cfcn6p5v3bee2cns62/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-compress-2.204-mb6d544vnjtsy2cfcn6p5v3bee2cns62/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-compress-2.204-mb6d544vnjtsy2cfcn6p5v3bee2cns62/lib/perl5}
+setenv PERL_IO_COMPRESS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-compress-2.204-mb6d544vnjtsy2cfcn6p5v3bee2cns62}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

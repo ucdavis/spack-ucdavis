@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:55.777552
+##
+## py-sphinxcontrib-qthelp@1.0.3%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/rqaw2nx
+##
+
+
+module-whatis {sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp document.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-sphinxcontrib-qthelp}
+    puts stderr {Version: 1.0.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp}
+    puts stderr {document.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on python/3.11.6-rsiojxh
+}
+prereq python/3.11.6-rsiojxh
+conflict py-sphinxcontrib-qthelp
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-sphinxcontrib-qthelp-1.0.3-rqaw2nxowjdtb2hqzovxg4ijnac3zfhj/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-sphinxcontrib-qthelp-1.0.3-rqaw2nxowjdtb2hqzovxg4ijnac3zfhj/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-sphinxcontrib-qthelp-1.0.3-rqaw2nxowjdtb2hqzovxg4ijnac3zfhj/lib/python3.11/site-packages}
+setenv PY_SPHINXCONTRIB_QTHELP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-sphinxcontrib-qthelp-1.0.3-rqaw2nxowjdtb2hqzovxg4ijnac3zfhj}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

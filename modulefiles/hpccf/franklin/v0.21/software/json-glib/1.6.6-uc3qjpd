@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:55.871300
+##
+## json-glib@1.6.6%gcc@11.4.0~strip build_system=meson buildtype=release default_library=shared arch=linux-ubuntu22.04-x86_64_v3/uc3qjpd
+##
+
+
+module-whatis {JSON-GLib is a library for reading and parsing JSON using GLib and GObject data types and API.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : json-glib}
+    puts stderr {Version: 1.6.6}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {JSON-GLib is a library for reading and parsing JSON using GLib and}
+    puts stderr {GObject data types and API.}
+}
+
+conflict json-glib
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/json-glib-1.6.6-uc3qjpdbwulhlav4e3ig6ahx4kllqahx/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/json-glib-1.6.6-uc3qjpdbwulhlav4e3ig6ahx4kllqahx/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/json-glib-1.6.6-uc3qjpdbwulhlav4e3ig6ahx4kllqahx/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/json-glib-1.6.6-uc3qjpdbwulhlav4e3ig6ahx4kllqahx/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/json-glib-1.6.6-uc3qjpdbwulhlav4e3ig6ahx4kllqahx/bin}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/json-glib-1.6.6-uc3qjpdbwulhlav4e3ig6ahx4kllqahx/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/json-glib-1.6.6-uc3qjpdbwulhlav4e3ig6ahx4kllqahx/.}
+prepend-path XDG_DATA_DIRS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gobject-introspection-1.76.1-p7ovpnwgkhdrynjsf2zetdapj4hwgkkr/share}
+prepend-path GI_TYPELIB_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gobject-introspection-1.76.1-p7ovpnwgkhdrynjsf2zetdapj4hwgkkr/lib/girepository-1.0}
+setenv JSON_GLIB_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/json-glib-1.6.6-uc3qjpdbwulhlav4e3ig6ahx4kllqahx}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

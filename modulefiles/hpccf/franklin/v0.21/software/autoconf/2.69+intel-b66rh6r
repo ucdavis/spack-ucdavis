@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:42.315047
+##
+## autoconf@2.69%oneapi@2023.2.0 build_system=autotools patches=35c4492,7793209,a49dd5b arch=linux-ubuntu22.04-skylake_avx512/b66rh6r
+##
+
+
+module-whatis {Autoconf -- system configuration part of autotools}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : autoconf}
+    puts stderr {Version: 2.69}
+    puts stderr {Target : skylake_avx512}
+    puts stderr {}
+    puts stderr {Autoconf -- system configuration part of autotools}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load m4/1.4.19+intel-5qpsa7p
+    module load perl/5.38.0+intel-2z6pitm
+} else {
+    depends-on m4/1.4.19+intel-5qpsa7p
+    depends-on perl/5.38.0+intel-2z6pitm
+}
+prereq m4/1.4.19+intel-5qpsa7p
+prereq perl/5.38.0+intel-2z6pitm
+conflict autoconf
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/autoconf-2.69-b66rh6rrel4vbs7k6zveqyh7kz74pgo6/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/autoconf-2.69-b66rh6rrel4vbs7k6zveqyh7kz74pgo6/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/autoconf-2.69-b66rh6rrel4vbs7k6zveqyh7kz74pgo6/.}
+setenv AUTOCONF_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/autoconf-2.69-b66rh6rrel4vbs7k6zveqyh7kz74pgo6}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

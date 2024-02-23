@@ -1,0 +1,36 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:51.250469
+##
+## glx@1.4%gcc@7.5.0 build_system=bundle arch=linux-ubuntu22.04-x86_64_v3/ivpl4gv
+##
+
+
+module-whatis {Shim package for the GLX library.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : glx}
+    puts stderr {Version: 1.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Shim package for the GLX library.}
+}
+
+conflict glx
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/glx-1.4-ivpl4gvh7emb6k2qina3dqclgxqidj7w/.}
+setenv GLX_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/glx-1.4-ivpl4gvh7emb6k2qina3dqclgxqidj7w}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

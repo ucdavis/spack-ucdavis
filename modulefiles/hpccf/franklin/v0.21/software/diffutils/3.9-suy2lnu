@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:47.054750
+##
+## diffutils@3.9%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/suy2lnu
+##
+
+
+module-whatis {GNU Diffutils is a package of several programs related to finding differences between files.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : diffutils}
+    puts stderr {Version: 3.9}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GNU Diffutils is a package of several programs related to finding}
+    puts stderr {differences between files.}
+}
+
+conflict diffutils
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/diffutils-3.9-suy2lnu46o4zaq3clojmd6b7j6olfyst/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/diffutils-3.9-suy2lnu46o4zaq3clojmd6b7j6olfyst/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/diffutils-3.9-suy2lnu46o4zaq3clojmd6b7j6olfyst/.}
+setenv DIFFUTILS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/diffutils-3.9-suy2lnu46o4zaq3clojmd6b7j6olfyst}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,51 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:07.770542
+##
+## perl-db-file@1.858%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/eo6fici
+##
+
+
+module-whatis {DB_File is a module which allows Perl programs to make use of the facilities provided by Berkeley DB version 1.x (if you have a newer version of DB, see 'Using DB_File with Berkeley DB version 2 or greater'). It is assumed that you have a copy of the Berkeley DB manual pages at hand when reading this documentation. The interface defined here mirrors the Berkeley DB interface closely.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-db-file}
+    puts stderr {Version: 1.858}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {DB_File is a module which allows Perl programs to make use of the}
+    puts stderr {facilities provided by Berkeley DB version 1.x (if you have a newer}
+    puts stderr {version of DB, see "Using DB_File with Berkeley DB version 2 or}
+    puts stderr {greater"). It is assumed that you have a copy of the Berkeley DB manual}
+    puts stderr {pages at hand when reading this documentation. The interface defined}
+    puts stderr {here mirrors the Berkeley DB interface closely.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-db-file
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-db-file-1.858-eo6ficiriej7ozy2jwvk4fglymub5dnj/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-db-file-1.858-eo6ficiriej7ozy2jwvk4fglymub5dnj/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-db-file-1.858-eo6ficiriej7ozy2jwvk4fglymub5dnj/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-db-file-1.858-eo6ficiriej7ozy2jwvk4fglymub5dnj/lib/perl5}
+setenv PERL_DB_FILE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-db-file-1.858-eo6ficiriej7ozy2jwvk4fglymub5dnj}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

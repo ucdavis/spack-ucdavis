@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:55.509393
+##
+## r-nlme@3.1-162%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/wg5firr
+##
+
+
+module-whatis {Linear and Nonlinear Mixed Effects Models.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-nlme}
+    puts stderr {Version: 3.1-162}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Linear and Nonlinear Mixed Effects Models. Fit and compare Gaussian}
+    puts stderr {linear and nonlinear mixed-effects models.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-lattice/0.21-8-mib3fkt
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-lattice/0.21-8-mib3fkt
+}
+prereq r/4.3.0-n6pth5g
+prereq r-lattice/0.21-8-mib3fkt
+conflict r-nlme
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-nlme-3.1-162-wg5firr44tr3bzmy7bgyujqjvlq7w6jp/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-nlme-3.1-162-wg5firr44tr3bzmy7bgyujqjvlq7w6jp/rlib/R/library}
+setenv R_NLME_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-nlme-3.1-162-wg5firr44tr3bzmy7bgyujqjvlq7w6jp}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

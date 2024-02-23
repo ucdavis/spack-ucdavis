@@ -1,0 +1,70 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:17.084344
+##
+## r-scales@1.2.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/urn4ggn
+##
+
+
+module-whatis {Scale Functions for Visualization.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-scales}
+    puts stderr {Version: 1.2.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Scale Functions for Visualization. Graphical scales map data to}
+    puts stderr {aesthetics, and provide methods for automatically determining breaks and}
+    puts stderr {labels for axes and legends.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-vcbztcv
+    module load r-farver/2.1.1-iv5e6ey
+    module load r-labeling/0.4.2-uxclqr4
+    module load r-lifecycle/1.0.3-iknxwgv
+    module load r-munsell/0.5.0-pnm5zpv
+    module load r-r6/2.5.1-dyrzqwy
+    module load r-rcolorbrewer/1.1-3-cdykitb
+    module load r-rlang/1.1.0-na2d4rh
+    module load r-viridislite/0.4.1-dcehx3d
+} else {
+    depends-on r/4.3.0-vcbztcv
+    depends-on r-farver/2.1.1-iv5e6ey
+    depends-on r-labeling/0.4.2-uxclqr4
+    depends-on r-lifecycle/1.0.3-iknxwgv
+    depends-on r-munsell/0.5.0-pnm5zpv
+    depends-on r-r6/2.5.1-dyrzqwy
+    depends-on r-rcolorbrewer/1.1-3-cdykitb
+    depends-on r-rlang/1.1.0-na2d4rh
+    depends-on r-viridislite/0.4.1-dcehx3d
+}
+prereq r/4.3.0-vcbztcv
+prereq r-farver/2.1.1-iv5e6ey
+prereq r-labeling/0.4.2-uxclqr4
+prereq r-lifecycle/1.0.3-iknxwgv
+prereq r-munsell/0.5.0-pnm5zpv
+prereq r-r6/2.5.1-dyrzqwy
+prereq r-rcolorbrewer/1.1-3-cdykitb
+prereq r-rlang/1.1.0-na2d4rh
+prereq r-viridislite/0.4.1-dcehx3d
+conflict r-scales
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-scales-1.2.1-urn4ggnrx2fdygxikl6prtkwvqa3cupg/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-scales-1.2.1-urn4ggnrx2fdygxikl6prtkwvqa3cupg/rlib/R/library}
+setenv R_SCALES_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-scales-1.2.1-urn4ggnrx2fdygxikl6prtkwvqa3cupg}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

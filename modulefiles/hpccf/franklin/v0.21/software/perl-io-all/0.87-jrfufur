@@ -1,0 +1,59 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:10.298019
+##
+## perl-io-all@0.87%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/jrfufur
+##
+
+
+module-whatis {IO::All combines all of the best Perl IO modules into a single nifty object oriented interface to greatly simplify your everyday Perl IO idioms. It exports a single function called io, which returns a new IO::All object. And that object can do it all!}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-io-all}
+    puts stderr {Version: 0.87}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {IO::All combines all of the best Perl IO modules into a single nifty}
+    puts stderr {object oriented interface to greatly simplify your everyday Perl IO}
+    puts stderr {idioms. It exports a single function called io, which returns a new}
+    puts stderr {IO::All object. And that object can do it all! The IO::All object is a}
+    puts stderr {proxy for IO::File, IO::Dir, IO::Socket, Tie::File, File::Spec,}
+    puts stderr {File::Path, File::MimeInfo and File::ReadBackwards; as well as all the}
+    puts stderr {DBM and MLDBM modules. You can use most of the methods found in these}
+    puts stderr {classes and in IO::Handle (which they inherit from). IO::All adds dozens}
+    puts stderr {of other helpful idiomatic methods including file stat and manipulation}
+    puts stderr {functions. IO::All is pluggable, and modules like IO::All::LWP and}
+    puts stderr {IO::All::Mailto add even more functionality. Optionally, every IO::All}
+    puts stderr {object can be tied to itself. This means that you can use most perl IO}
+    puts stderr {builtins on it: readline, <>, getc, print, printf, syswrite, sysread,}
+    puts stderr {close.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-io-all
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-all-0.87-jrfufurnb7sfplhfn6tvgm5hp7qbilw7/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-all-0.87-jrfufurnb7sfplhfn6tvgm5hp7qbilw7/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-all-0.87-jrfufurnb7sfplhfn6tvgm5hp7qbilw7/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-all-0.87-jrfufurnb7sfplhfn6tvgm5hp7qbilw7/lib/perl5}
+setenv PERL_IO_ALL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-all-0.87-jrfufurnb7sfplhfn6tvgm5hp7qbilw7}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

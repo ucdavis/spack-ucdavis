@@ -1,0 +1,67 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:13.193246
+##
+## r-rsqlite@2.3.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/gx2kzcw
+##
+
+
+module-whatis {'SQLite' Interface for R.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-rsqlite}
+    puts stderr {Version: 2.3.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {'SQLite' Interface for R. This package embeds the SQLite database engine}
+    puts stderr {in R and provides an interface compliant with the DBI package. The}
+    puts stderr {source for the SQLite engine (version 3.8.6) is included.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-bit64/4.0.5-6pvuj2h
+    module load r-blob/1.2.4-gcagd3k
+    module load r-cpp11/0.4.3-etm435b
+    module load r-dbi/1.1.3-7aeshxt
+    module load r-memoise/2.0.1-4op4rdj
+    module load r-pkgconfig/2.0.3-n7aanlc
+    module load r-plogr/0.2.0-ogweyd6
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-bit64/4.0.5-6pvuj2h
+    depends-on r-blob/1.2.4-gcagd3k
+    depends-on r-cpp11/0.4.3-etm435b
+    depends-on r-dbi/1.1.3-7aeshxt
+    depends-on r-memoise/2.0.1-4op4rdj
+    depends-on r-pkgconfig/2.0.3-n7aanlc
+    depends-on r-plogr/0.2.0-ogweyd6
+}
+prereq r/4.3.0-n6pth5g
+prereq r-bit64/4.0.5-6pvuj2h
+prereq r-blob/1.2.4-gcagd3k
+prereq r-cpp11/0.4.3-etm435b
+prereq r-dbi/1.1.3-7aeshxt
+prereq r-memoise/2.0.1-4op4rdj
+prereq r-pkgconfig/2.0.3-n7aanlc
+prereq r-plogr/0.2.0-ogweyd6
+conflict r-rsqlite
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rsqlite-2.3.1-gx2kzcwwe7izwpiglbopcjys2n2hkpfz/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rsqlite-2.3.1-gx2kzcwwe7izwpiglbopcjys2n2hkpfz/rlib/R/library}
+setenv R_RSQLITE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rsqlite-2.3.1-gx2kzcwwe7izwpiglbopcjys2n2hkpfz}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:11.235314
+##
+## perl-lwp-mediatypes@6.02%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/ydjxjay
+##
+
+
+module-whatis {Guess media type for a file or a URL}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-lwp-mediatypes}
+    puts stderr {Version: 6.02}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Guess media type for a file or a URL}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-lwp-mediatypes
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-lwp-mediatypes-6.02-ydjxjaywnstf7lawjacfjlyt5vlj7dhx/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-lwp-mediatypes-6.02-ydjxjaywnstf7lawjacfjlyt5vlj7dhx/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-lwp-mediatypes-6.02-ydjxjaywnstf7lawjacfjlyt5vlj7dhx/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-lwp-mediatypes-6.02-ydjxjaywnstf7lawjacfjlyt5vlj7dhx/lib/perl5}
+setenv PERL_LWP_MEDIATYPES_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-lwp-mediatypes-6.02-ydjxjaywnstf7lawjacfjlyt5vlj7dhx}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

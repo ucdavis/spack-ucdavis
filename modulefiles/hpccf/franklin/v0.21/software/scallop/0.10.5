@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:27.199098
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:34.810893
 ##
 ## scallop@0.10.5%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/aayp4y2
 ##
@@ -17,12 +17,6 @@ proc ModulesHelp { } {
     puts stderr {Scallop is a reference-based transcriptome assembler for RNA-seq}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load htslib/1.17
-} else {
-    depends-on htslib/1.17
-}
-prereq htslib/1.17
 conflict scallop
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/scallop-0.10.5-aayp4y2fms7g7njn5mjf5wb4uy5mgr6s/bin}

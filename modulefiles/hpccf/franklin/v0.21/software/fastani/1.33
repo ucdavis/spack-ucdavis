@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:15.514117
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:47.990804
 ##
 ## fastani@1.33%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/gp5q2ps
 ##
@@ -16,12 +16,6 @@ proc ModulesHelp { } {
     puts stderr {Identity (ANI)}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load gsl/2.7.1
-} else {
-    depends-on gsl/2.7.1
-}
-prereq gsl/2.7.1
 conflict fastani
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fastani-1.33-gp5q2psudf7okbf6omu5penuwvozxu6t/bin}

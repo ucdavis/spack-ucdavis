@@ -1,0 +1,59 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:12.184875
+##
+## perl-perl-unsafe-signals@0.03%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/tr2mma4
+##
+
+
+module-whatis {Quoting perl581delta:}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-perl-unsafe-signals}
+    puts stderr {Version: 0.03}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Quoting perl581delta: In Perl 5.8.0 the so-called "safe signals" were}
+    puts stderr {introduced. This means that Perl no longer handles signals immediately}
+    puts stderr {but instead "between opcodes", when it is safe to do so. The earlier}
+    puts stderr {immediate handling easily could corrupt the internal state of Perl,}
+    puts stderr {resulting in mysterious crashes. It's possible since perl 5.8.1 to}
+    puts stderr {globally disable this feature by using the PERL_SIGNALS environment}
+    puts stderr {variables (as specified in "PERL_SIGNALS" in perlrun); but there's no}
+    puts stderr {way to disable it locally, for a short period of time. That's however}
+    puts stderr {something you might want to do, if, for example, your Perl program calls}
+    puts stderr {a C routine that will potentially run for a long time and for which you}
+    puts stderr {want to set a timeout. This module therefore allows you to define}
+    puts stderr {UNSAFE_SIGNALS blocks in which signals will be handled "unsafely". Note}
+    puts stderr {that, no matter how short you make the unsafe block, it will still be}
+    puts stderr {unsafe. Use with caution.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-perl-unsafe-signals
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-perl-unsafe-signals-0.03-tr2mma4hkc6n2bxtzhls34keoqznrhhm/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-perl-unsafe-signals-0.03-tr2mma4hkc6n2bxtzhls34keoqznrhhm/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-perl-unsafe-signals-0.03-tr2mma4hkc6n2bxtzhls34keoqznrhhm/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-perl-unsafe-signals-0.03-tr2mma4hkc6n2bxtzhls34keoqznrhhm/lib/perl5}
+setenv PERL_PERL_UNSAFE_SIGNALS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-perl-unsafe-signals-0.03-tr2mma4hkc6n2bxtzhls34keoqznrhhm}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

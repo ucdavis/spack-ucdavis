@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:33.731571
+##
+## py-jupyterlab-pygments@0.2.2%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/327y2rz
+##
+
+
+module-whatis {Pygments theme using JupyterLab CSS variables.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-jupyterlab-pygments}
+    puts stderr {Version: 0.2.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Pygments theme using JupyterLab CSS variables.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-pygments/2.16.1-opyvscq
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-pygments/2.16.1-opyvscq
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-pygments/2.16.1-opyvscq
+prereq python/3.11.6-rsiojxh
+conflict py-jupyterlab-pygments
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-jupyterlab-pygments-0.2.2-327y2rztkoeuxue3rnhnis4q5lbpcx6k/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-jupyterlab-pygments-0.2.2-327y2rztkoeuxue3rnhnis4q5lbpcx6k/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-jupyterlab-pygments-0.2.2-327y2rztkoeuxue3rnhnis4q5lbpcx6k/lib/python3.11/site-packages}
+setenv PY_JUPYTERLAB_PYGMENTS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-jupyterlab-pygments-0.2.2-327y2rztkoeuxue3rnhnis4q5lbpcx6k}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:24.033706
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:29.496034
 ##
 ## py-htseq@2.0.3%gcc@11.4.0+h5ad+loom+mtx+qa build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/wzbkloc
 ##
@@ -16,6 +16,30 @@ proc ModulesHelp { } {
     puts stderr {from high-throughput sequencing assays.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-anndata/0.8.0-i576ezf
+    module load py-loompy/3.0.7-kxpdivk
+    module load py-matplotlib/3.8.0-l3sb6b5
+    module load py-numpy/1.24.4-jhyio2h
+    module load py-pysam/0.21.0-3mv4ho5
+    module load py-scipy/1.11.2-evdv2ag
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on py-anndata/0.8.0-i576ezf
+    depends-on py-loompy/3.0.7-kxpdivk
+    depends-on py-matplotlib/3.8.0-l3sb6b5
+    depends-on py-numpy/1.24.4-jhyio2h
+    depends-on py-pysam/0.21.0-3mv4ho5
+    depends-on py-scipy/1.11.2-evdv2ag
+    depends-on python/3.11.6-ht65m6a
+}
+prereq py-anndata/0.8.0-i576ezf
+prereq py-loompy/3.0.7-kxpdivk
+prereq py-matplotlib/3.8.0-l3sb6b5
+prereq py-numpy/1.24.4-jhyio2h
+prereq py-pysam/0.21.0-3mv4ho5
+prereq py-scipy/1.11.2-evdv2ag
+prereq python/3.11.6-ht65m6a
 conflict py-htseq
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-htseq-2.0.3-wzbkloc3f6o4p3qemcrvikks3zpytnwa/lib}

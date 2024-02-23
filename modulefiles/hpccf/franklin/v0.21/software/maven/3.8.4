@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:19.994035
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:01.660960
 ##
 ## maven@3.8.4%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/ipu3gb6
 ##
@@ -15,6 +15,12 @@ proc ModulesHelp { } {
     puts stderr {Apache Maven is a software project management and comprehension tool.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load openjdk/11.0.20.1_1-bvzxfaf
+} else {
+    depends-on openjdk/11.0.20.1_1-bvzxfaf
+}
+prereq openjdk/11.0.20.1_1-bvzxfaf
 conflict maven
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/maven-3.8.4-ipu3gb6z6dvqcijyl5g5qtbhwxpfyl3f/lib}

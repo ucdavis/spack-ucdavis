@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:31.809860
+##
+## readline@8.2%gcc@11.4.0 build_system=autotools patches=bbf97f1 arch=linux-ubuntu22.04-x86_64_v3/qukhevg
+##
+
+
+module-whatis {The GNU Readline library provides a set of functions for use by applications that allow users to edit command lines as they are typed in. Both Emacs and vi editing modes are available. The Readline library includes additional functions to maintain a list of previously-entered command lines, to recall and perhaps reedit those lines, and perform csh-like history expansion on previous commands.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : readline}
+    puts stderr {Version: 8.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The GNU Readline library provides a set of functions for use by}
+    puts stderr {applications that allow users to edit command lines as they are typed}
+    puts stderr {in. Both Emacs and vi editing modes are available. The Readline library}
+    puts stderr {includes additional functions to maintain a list of previously-entered}
+    puts stderr {command lines, to recall and perhaps reedit those lines, and perform}
+    puts stderr {csh-like history expansion on previous commands.}
+}
+
+conflict readline
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-qukhevgzo2ldp5xox5bg3uz2c5dq2oqb/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-qukhevgzo2ldp5xox5bg3uz2c5dq2oqb/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-qukhevgzo2ldp5xox5bg3uz2c5dq2oqb/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-qukhevgzo2ldp5xox5bg3uz2c5dq2oqb/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-qukhevgzo2ldp5xox5bg3uz2c5dq2oqb/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-qukhevgzo2ldp5xox5bg3uz2c5dq2oqb/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-qukhevgzo2ldp5xox5bg3uz2c5dq2oqb/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-qukhevgzo2ldp5xox5bg3uz2c5dq2oqb/.}
+setenv READLINE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-qukhevgzo2ldp5xox5bg3uz2c5dq2oqb}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

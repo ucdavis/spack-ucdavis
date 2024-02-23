@@ -1,0 +1,59 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:26.494458
+##
+## r-vctrs@0.6.2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/lpcos7o
+##
+
+
+module-whatis {Vector Helpers.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-vctrs}
+    puts stderr {Version: 0.6.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Vector Helpers. Defines new notions of prototype and size that are used}
+    puts stderr {to provide tools for consistent and well-founded type-coercion and size-}
+    puts stderr {recycling, and are in turn connected to ideas of type- and size-}
+    puts stderr {stability useful for analyzing function interfaces.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-cli/3.6.1-u4zzw6m
+    module load r-glue/1.6.2-7jsjoec
+    module load r-lifecycle/1.0.3-vlvj6d7
+    module load r-rlang/1.1.0-6ek36pb
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-cli/3.6.1-u4zzw6m
+    depends-on r-glue/1.6.2-7jsjoec
+    depends-on r-lifecycle/1.0.3-vlvj6d7
+    depends-on r-rlang/1.1.0-6ek36pb
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-cli/3.6.1-u4zzw6m
+prereq r-glue/1.6.2-7jsjoec
+prereq r-lifecycle/1.0.3-vlvj6d7
+prereq r-rlang/1.1.0-6ek36pb
+conflict r-vctrs
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-vctrs-0.6.2-lpcos7oxywu4qiz4h6egxwr6iitzzzmz/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-vctrs-0.6.2-lpcos7oxywu4qiz4h6egxwr6iitzzzmz/rlib/R/library}
+setenv R_VCTRS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-vctrs-0.6.2-lpcos7oxywu4qiz4h6egxwr6iitzzzmz}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

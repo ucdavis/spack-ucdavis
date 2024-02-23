@@ -1,0 +1,66 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:49.442597
+##
+## py-pythran@0.9.11%gcc@11.4.0 build_system=python_pip patches=b427dca arch=linux-ubuntu22.04-x86_64_v3/zkbucfo
+##
+
+
+module-whatis {Ahead of Time compiler for numeric kernels.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-pythran}
+    puts stderr {Version: 0.9.11}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Ahead of Time compiler for numeric kernels.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-beniget/0.3.0-pes2qfs
+    module load py-decorator/5.1.1-32jtmpx
+    module load py-gast/0.4.0-foym6lc
+    module load py-networkx/2.7.1-bvk2to7
+    module load py-numpy/1.22.4-7bmhfux
+    module load py-ply/3.11-ectf45n
+    module load py-six/1.16.0-dudvqq4
+    module load python/3.9.18-rt3uhd4
+} else {
+    depends-on py-beniget/0.3.0-pes2qfs
+    depends-on py-decorator/5.1.1-32jtmpx
+    depends-on py-gast/0.4.0-foym6lc
+    depends-on py-networkx/2.7.1-bvk2to7
+    depends-on py-numpy/1.22.4-7bmhfux
+    depends-on py-ply/3.11-ectf45n
+    depends-on py-six/1.16.0-dudvqq4
+    depends-on python/3.9.18-rt3uhd4
+}
+prereq py-beniget/0.3.0-pes2qfs
+prereq py-decorator/5.1.1-32jtmpx
+prereq py-gast/0.4.0-foym6lc
+prereq py-networkx/2.7.1-bvk2to7
+prereq py-numpy/1.22.4-7bmhfux
+prereq py-ply/3.11-ectf45n
+prereq py-six/1.16.0-dudvqq4
+prereq python/3.9.18-rt3uhd4
+conflict py-pythran
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pythran-0.9.11-zkbucfon5xr6d5wxfxaxcjd7pa5s4bvq/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pythran-0.9.11-zkbucfon5xr6d5wxfxaxcjd7pa5s4bvq/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pythran-0.9.11-zkbucfon5xr6d5wxfxaxcjd7pa5s4bvq/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pythran-0.9.11-zkbucfon5xr6d5wxfxaxcjd7pa5s4bvq/lib/python3.9/site-packages}
+setenv PY_PYTHRAN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pythran-0.9.11-zkbucfon5xr6d5wxfxaxcjd7pa5s4bvq}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

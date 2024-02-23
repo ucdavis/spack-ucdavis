@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:37.744210
+##
+## py-mistune@2.0.5%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/gzv7bno
+##
+
+
+module-whatis {A sane Markdown parser with useful plugins and renderers.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-mistune}
+    puts stderr {Version: 2.0.5}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A sane Markdown parser with useful plugins and renderers.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on python/3.11.6-rsiojxh
+}
+prereq python/3.11.6-rsiojxh
+conflict py-mistune
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-mistune-2.0.5-gzv7bnomzeoaxjkjbwl2aw7hq2pe2yrq/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-mistune-2.0.5-gzv7bnomzeoaxjkjbwl2aw7hq2pe2yrq/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-mistune-2.0.5-gzv7bnomzeoaxjkjbwl2aw7hq2pe2yrq/lib/python3.11/site-packages}
+setenv PY_MISTUNE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-mistune-2.0.5-gzv7bnomzeoaxjkjbwl2aw7hq2pe2yrq}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

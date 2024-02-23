@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:41.026164
+##
+## antlr@2.7.7%gcc@11.4.0+cxx~java~pic~python build_system=autotools patches=33897ad arch=linux-ubuntu22.04-x86_64_v3/3a2wjvg
+##
+## Configure options: --disable-csharp --enable-cxx --disable-java --disable-python
+##
+
+
+module-whatis {ANTLR (ANother Tool for Language Recognition) is a powerful parser generator for reading, processing, executing, or translating structured text or binary files. It's widely used to build languages, tools, and frameworks. From a grammar, ANTLR generates a parser that can build and walk parse trees.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : antlr}
+    puts stderr {Version: 2.7.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {ANTLR (ANother Tool for Language Recognition) is a powerful parser}
+    puts stderr {generator for reading, processing, executing, or translating structured}
+    puts stderr {text or binary files. It's widely used to build languages, tools, and}
+    puts stderr {frameworks. From a grammar, ANTLR generates a parser that can build and}
+    puts stderr {walk parse trees.}
+}
+
+conflict antlr
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/antlr-2.7.7-3a2wjvggsnp7l5ebdq6r73f2vbqxdtpq/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/antlr-2.7.7-3a2wjvggsnp7l5ebdq6r73f2vbqxdtpq/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/antlr-2.7.7-3a2wjvggsnp7l5ebdq6r73f2vbqxdtpq/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/antlr-2.7.7-3a2wjvggsnp7l5ebdq6r73f2vbqxdtpq/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/antlr-2.7.7-3a2wjvggsnp7l5ebdq6r73f2vbqxdtpq/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/antlr-2.7.7-3a2wjvggsnp7l5ebdq6r73f2vbqxdtpq/.}
+setenv ANTLR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/antlr-2.7.7-3a2wjvggsnp7l5ebdq6r73f2vbqxdtpq}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

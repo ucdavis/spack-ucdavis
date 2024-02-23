@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:07.670664
+##
+## perl-compress-raw-zlib@2.204%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/zem4a7q
+##
+
+
+module-whatis {A low-Level Interface to zlib compression library.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-compress-raw-zlib}
+    puts stderr {Version: 2.204}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A low-Level Interface to zlib compression library.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-compress-raw-zlib
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-compress-raw-zlib-2.204-zem4a7qaejfdy55vhsahzhausmsnmigh/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-compress-raw-zlib-2.204-zem4a7qaejfdy55vhsahzhausmsnmigh/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-compress-raw-zlib-2.204-zem4a7qaejfdy55vhsahzhausmsnmigh/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-compress-raw-zlib-2.204-zem4a7qaejfdy55vhsahzhausmsnmigh/lib/perl5}
+setenv PERL_COMPRESS_RAW_ZLIB_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-compress-raw-zlib-2.204-zem4a7qaejfdy55vhsahzhausmsnmigh}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

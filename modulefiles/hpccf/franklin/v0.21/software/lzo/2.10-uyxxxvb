@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:00.823220
+##
+## lzo@2.10%gcc@11.4.0 build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3/uyxxxvb
+##
+## Configure options: --disable-dependency-tracking --enable-shared --enable-static
+##
+
+
+module-whatis {Real-time data compression library}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : lzo}
+    puts stderr {Version: 2.10}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Real-time data compression library}
+}
+
+conflict lzo
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lzo-2.10-uyxxxvbl6adxw7kh4v532ttmmjonfr54/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lzo-2.10-uyxxxvbl6adxw7kh4v532ttmmjonfr54/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lzo-2.10-uyxxxvbl6adxw7kh4v532ttmmjonfr54/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lzo-2.10-uyxxxvbl6adxw7kh4v532ttmmjonfr54/include}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lzo-2.10-uyxxxvbl6adxw7kh4v532ttmmjonfr54/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lzo-2.10-uyxxxvbl6adxw7kh4v532ttmmjonfr54/.}
+setenv LZO_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lzo-2.10-uyxxxvbl6adxw7kh4v532ttmmjonfr54}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:55.664372
+##
+## jbigkit@2.1%oneapi@2023.2.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/nepzdmw
+##
+
+
+module-whatis {JBIG-Kit is a software implementation of the JBIG1 data compression standard.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : jbigkit}
+    puts stderr {Version: 2.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {JBIG-Kit is a software implementation of the JBIG1 data compression}
+    puts stderr {standard.}
+}
+
+conflict jbigkit
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/jbigkit-2.1-nepzdmwyuxagekbprrlzceh3vonl7cqa/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/jbigkit-2.1-nepzdmwyuxagekbprrlzceh3vonl7cqa/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/jbigkit-2.1-nepzdmwyuxagekbprrlzceh3vonl7cqa/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/jbigkit-2.1-nepzdmwyuxagekbprrlzceh3vonl7cqa/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/jbigkit-2.1-nepzdmwyuxagekbprrlzceh3vonl7cqa/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/jbigkit-2.1-nepzdmwyuxagekbprrlzceh3vonl7cqa/.}
+setenv JBIGKIT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/jbigkit-2.1-nepzdmwyuxagekbprrlzceh3vonl7cqa}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

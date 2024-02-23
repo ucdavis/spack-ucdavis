@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:17.072353
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:52.235880
 ##
 ## hdf5@1.14.1-2%gcc@11.4.0~cxx~fortran~hl~ipo~java~map+mpi+shared~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/roj4mq3
 ##
@@ -19,6 +19,12 @@ proc ModulesHelp { } {
     puts stderr {flexible and efficient I/O and for high volume and complex data.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load pkgconf/1.9.5-c2sha2w
+} else {
+    depends-on pkgconf/1.9.5-c2sha2w
+}
+prereq pkgconf/1.9.5-c2sha2w
 conflict hdf5
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.1-2-roj4mq3hnrrs6drwcfjrxxbhs3zakjob/lib}

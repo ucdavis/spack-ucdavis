@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:36.400052
+##
+## trf@4.09.1%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/ee62ayh
+##
+
+
+module-whatis {Tandem Repeats Finder is a program to locate and display tandem repeats in DNA sequences.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : trf}
+    puts stderr {Version: 4.09.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Tandem Repeats Finder is a program to locate and display tandem repeats}
+    puts stderr {in DNA sequences. Note: A manual download is required for TRF. Spack}
+    puts stderr {will search your current directory for the download file. Alternatively,}
+    puts stderr {add this file to a mirror so that Spack can find it. For instructions on}
+    puts stderr {how to set up a mirror, see}
+    puts stderr {https://spack.readthedocs.io/en/latest/mirrors.html}
+}
+
+conflict trf
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/trf-4.09.1-ee62ayh5tvjzlirpke6be6oslcxhgipk/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/trf-4.09.1-ee62ayh5tvjzlirpke6be6oslcxhgipk/.}
+setenv TRF_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/trf-4.09.1-ee62ayh5tvjzlirpke6be6oslcxhgipk}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

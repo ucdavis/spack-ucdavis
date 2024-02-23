@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:51.886682
+##
+## gperf@3.1%gcc@11.4.0 build_system=autotools patches=3dd36db arch=linux-ubuntu22.04-x86_64_v3/2jqth2h
+##
+
+
+module-whatis {GNU gperf is a perfect hash function generator. For a given list of strings, it produces a hash function and hash table, in form of C or C++ code, for looking up a value depending on the input string. The hash function is perfect, which means that the hash table has no collisions, and the hash table lookup needs a single string comparison only.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gperf}
+    puts stderr {Version: 3.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GNU gperf is a perfect hash function generator. For a given list of}
+    puts stderr {strings, it produces a hash function and hash table, in form of C or C++}
+    puts stderr {code, for looking up a value depending on the input string. The hash}
+    puts stderr {function is perfect, which means that the hash table has no collisions,}
+    puts stderr {and the hash table lookup needs a single string comparison only.}
+}
+
+conflict gperf
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gperf-3.1-2jqth2hzpabqmqczwnie342f7kyikqgb/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gperf-3.1-2jqth2hzpabqmqczwnie342f7kyikqgb/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gperf-3.1-2jqth2hzpabqmqczwnie342f7kyikqgb/.}
+setenv GPERF_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gperf-3.1-2jqth2hzpabqmqczwnie342f7kyikqgb}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

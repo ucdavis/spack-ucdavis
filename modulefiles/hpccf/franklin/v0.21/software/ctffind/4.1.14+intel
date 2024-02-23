@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:14.875907
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:46.715283
 ##
 ## ctffind@4.1.14%oneapi@2023.2.0+openmp build_system=autotools patches=d2d349c arch=linux-ubuntu22.04-skylake_avx512/myhgc3z
 ##
@@ -17,12 +17,6 @@ proc ModulesHelp { } {
     puts stderr {Fast and accurate defocus estimation from electron micrographs.}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load intel-oneapi-mkl/2023.2.0+intel
-} else {
-    depends-on intel-oneapi-mkl/2023.2.0+intel
-}
-prereq intel-oneapi-mkl/2023.2.0+intel
 conflict ctffind
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/ctffind-4.1.14-myhgc3zqfoozdugyysirndf5kbgt77ez/bin}

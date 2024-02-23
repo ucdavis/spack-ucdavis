@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:16.994967
+##
+## py-argh@0.26.2%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/cvqvtyu
+##
+
+
+module-whatis {An argparse wrapper that doesn't make you say 'argh' each time you deal with it.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-argh}
+    puts stderr {Version: 0.26.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {An argparse wrapper that doesn't make you say "argh" each time you deal}
+    puts stderr {with it. Building a command-line interface? Found yourself uttering}
+    puts stderr {"argh!" while struggling with the API of argparse? Don't like the}
+    puts stderr {complexity but need the power? Argh is a smart wrapper for argparse.}
+    puts stderr {Argparse is a very powerful tool; Argh just makes it easy to use.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on python/3.11.6-ht65m6a
+}
+prereq python/3.11.6-ht65m6a
+conflict py-argh
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-argh-0.26.2-cvqvtyuy4fmnk54hqks25mptyz5kryxa/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-argh-0.26.2-cvqvtyuy4fmnk54hqks25mptyz5kryxa/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-argh-0.26.2-cvqvtyuy4fmnk54hqks25mptyz5kryxa/lib/python3.11/site-packages}
+setenv PY_ARGH_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-argh-0.26.2-cvqvtyuy4fmnk54hqks25mptyz5kryxa}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

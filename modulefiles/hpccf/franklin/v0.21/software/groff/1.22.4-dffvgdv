@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:51.927757
+##
+## groff@1.22.4%gcc@11.4.0~pdf+uchardet~x build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/dffvgdv
+##
+## Configure options: --disable-silent-rules --without-x --with-uchardet --with-libiconv-prefix=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiconv-1.17-55xyhggxa2zmut7tj2rieuoptmu3mbhb
+##
+
+
+module-whatis {Groff (GNU troff) is a typesetting system that reads plain text mixed with formatting commands and produces formatted output. Output may be PostScript or PDF, html, or ASCII/UTF8 for display at the terminal.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : groff}
+    puts stderr {Version: 1.22.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Groff (GNU troff) is a typesetting system that reads plain text mixed}
+    puts stderr {with formatting commands and produces formatted output. Output may be}
+    puts stderr {PostScript or PDF, html, or ASCII/UTF8 for display at the terminal.}
+}
+
+conflict groff
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/groff-1.22.4-dffvgdv3se2m2erdrascyvp3pjr44uip/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/groff-1.22.4-dffvgdv3se2m2erdrascyvp3pjr44uip/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/groff-1.22.4-dffvgdv3se2m2erdrascyvp3pjr44uip/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/groff-1.22.4-dffvgdv3se2m2erdrascyvp3pjr44uip/.}
+setenv GROFF_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/groff-1.22.4-dffvgdv3se2m2erdrascyvp3pjr44uip}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

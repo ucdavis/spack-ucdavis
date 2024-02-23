@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:21.260357
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:04.472150
 ##
 ## netcdf-cxx4@4.3.1%gcc@11.4.0~doc+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/piz5al6
 ##
@@ -19,12 +19,6 @@ proc ModulesHelp { } {
     puts stderr {sharing of array-oriented scientific data. This is the C++ distribution.}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load netcdf-c/4.9.2
-} else {
-    depends-on netcdf-c/4.9.2
-}
-prereq netcdf-c/4.9.2
 conflict netcdf-cxx4
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-cxx4-4.3.1-piz5al6i62fzfermf3ukibg7hppbibbh/lib}

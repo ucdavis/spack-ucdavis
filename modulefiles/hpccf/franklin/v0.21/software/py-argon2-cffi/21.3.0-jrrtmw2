@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:17.102404
+##
+## py-argon2-cffi@21.3.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/jrrtmw2
+##
+
+
+module-whatis {The secure Argon2 password hashing algorithm..}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-argon2-cffi}
+    puts stderr {Version: 21.3.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The secure Argon2 password hashing algorithm..}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-argon2-cffi-bindings/21.2.0-ppvdzbx
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-argon2-cffi-bindings/21.2.0-ppvdzbx
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-argon2-cffi-bindings/21.2.0-ppvdzbx
+prereq python/3.11.6-rsiojxh
+conflict py-argon2-cffi
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-argon2-cffi-21.3.0-jrrtmw2qg5kh3v6lkmbclryklz4xgzuu/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-argon2-cffi-21.3.0-jrrtmw2qg5kh3v6lkmbclryklz4xgzuu/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-argon2-cffi-21.3.0-jrrtmw2qg5kh3v6lkmbclryklz4xgzuu/lib/python3.11/site-packages}
+setenv PY_ARGON2_CFFI_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-argon2-cffi-21.3.0-jrrtmw2qg5kh3v6lkmbclryklz4xgzuu}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

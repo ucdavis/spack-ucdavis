@@ -1,0 +1,103 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:56.755213
+##
+## py-tensorflow@2.13.0%gcc@11.4.0~android~aws~computecpp+cuda+dynamic_kernels~gcp~gdr~hdfs~ignite~ios~jemalloc~kafka~mkl~monolithic~mpi+nccl~ngraph~numa~opencl~rocm~tensorrt~verbs+xla build_system=generic cuda_arch=75 patches=2017b3e arch=linux-ubuntu22.04-x86_64_v3/wjccdup
+##
+
+
+module-whatis {TensorFlow is an open source machine learning framework for everyone.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-tensorflow}
+    puts stderr {Version: 2.13.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {TensorFlow is an open source machine learning framework for everyone.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-absl-py/1.4.0-i2xc5za
+    module load py-astunparse/1.6.3-5spi5mg
+    module load py-flatbuffers/23.5.26-bp6z2qp
+    module load py-gast/0.4.0-foym6lc
+    module load py-google-pasta/0.2.0-t7jbyou
+    module load py-grpcio/1.52.0-w5peil2
+    module load py-h5py/3.8.0-2zi5gif
+    module load py-libclang/14.0.6-e7ejm2y
+    module load py-numpy/1.22.4-7bmhfux
+    module load py-opt-einsum/3.3.0-htuc7e2
+    module load py-packaging/23.1-vq6b5ju
+    module load py-protobuf/4.24.3-abwlhfi
+    module load py-requests/2.31.0-6kmtsdd
+    module load py-setuptools/57.4.0-pimnnnh
+    module load py-six/1.16.0-dudvqq4
+    module load py-tensorboard/2.13.0-ddabwhd
+    module load py-termcolor/1.1.0-n7o4cdq
+    module load py-typing-extensions/4.5.0-rq63xqs
+    module load py-wrapt/1.15.0-oerfayg
+    module load python/3.9.18-rt3uhd4
+} else {
+    depends-on py-absl-py/1.4.0-i2xc5za
+    depends-on py-astunparse/1.6.3-5spi5mg
+    depends-on py-flatbuffers/23.5.26-bp6z2qp
+    depends-on py-gast/0.4.0-foym6lc
+    depends-on py-google-pasta/0.2.0-t7jbyou
+    depends-on py-grpcio/1.52.0-w5peil2
+    depends-on py-h5py/3.8.0-2zi5gif
+    depends-on py-libclang/14.0.6-e7ejm2y
+    depends-on py-numpy/1.22.4-7bmhfux
+    depends-on py-opt-einsum/3.3.0-htuc7e2
+    depends-on py-packaging/23.1-vq6b5ju
+    depends-on py-protobuf/4.24.3-abwlhfi
+    depends-on py-requests/2.31.0-6kmtsdd
+    depends-on py-setuptools/57.4.0-pimnnnh
+    depends-on py-six/1.16.0-dudvqq4
+    depends-on py-tensorboard/2.13.0-ddabwhd
+    depends-on py-termcolor/1.1.0-n7o4cdq
+    depends-on py-typing-extensions/4.5.0-rq63xqs
+    depends-on py-wrapt/1.15.0-oerfayg
+    depends-on python/3.9.18-rt3uhd4
+}
+prereq py-absl-py/1.4.0-i2xc5za
+prereq py-astunparse/1.6.3-5spi5mg
+prereq py-flatbuffers/23.5.26-bp6z2qp
+prereq py-gast/0.4.0-foym6lc
+prereq py-google-pasta/0.2.0-t7jbyou
+prereq py-grpcio/1.52.0-w5peil2
+prereq py-h5py/3.8.0-2zi5gif
+prereq py-libclang/14.0.6-e7ejm2y
+prereq py-numpy/1.22.4-7bmhfux
+prereq py-opt-einsum/3.3.0-htuc7e2
+prereq py-packaging/23.1-vq6b5ju
+prereq py-protobuf/4.24.3-abwlhfi
+prereq py-requests/2.31.0-6kmtsdd
+prereq py-setuptools/57.4.0-pimnnnh
+prereq py-six/1.16.0-dudvqq4
+prereq py-tensorboard/2.13.0-ddabwhd
+prereq py-termcolor/1.1.0-n7o4cdq
+prereq py-typing-extensions/4.5.0-rq63xqs
+prereq py-wrapt/1.15.0-oerfayg
+prereq python/3.9.18-rt3uhd4
+conflict py-tensorflow
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-tensorflow-2.13.0-wjccdupkmtj73gisq7hh2y7jyt52mazu/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-tensorflow-2.13.0-wjccdupkmtj73gisq7hh2y7jyt52mazu/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-tensorflow-2.13.0-wjccdupkmtj73gisq7hh2y7jyt52mazu/.}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cudnn-8.7.0.84-11.8-qqvfagyyqmlcx27zya2jkydysap3fgov/lib}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-tensorflow-2.13.0-wjccdupkmtj73gisq7hh2y7jyt52mazu/lib/python3.9/site-packages}
+setenv PY_TENSORFLOW_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-tensorflow-2.13.0-wjccdupkmtj73gisq7hh2y7jyt52mazu}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

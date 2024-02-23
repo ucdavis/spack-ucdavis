@@ -1,0 +1,92 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:10.747970
+##
+## perl-libwww-perl@6.68%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/o55j427
+##
+
+
+module-whatis {The libwww-perl collection is a set of Perl modules which provides a simple and consistent application programming interface to the World-Wide Web. The main focus of the library is to provide classes and functions that allow you to write WWW clients.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-libwww-perl}
+    puts stderr {Version: 6.68}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The libwww-perl collection is a set of Perl modules which provides a}
+    puts stderr {simple and consistent application programming interface to the World-}
+    puts stderr {Wide Web. The main focus of the library is to provide classes and}
+    puts stderr {functions that allow you to write WWW clients.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-okr4ubb
+    module load perl-clone/0.46-ewzkiq6
+    module load perl-encode-locale/1.05-t7dzfez
+    module load perl-file-listing/6.04-k646ofv
+    module load perl-html-parser/3.72-4kare2i
+    module load perl-http-cookies/6.10-mwsjvjo
+    module load perl-http-daemon/6.01-uewtnvk
+    module load perl-http-date/6.02-bykoq7n
+    module load perl-http-message/6.44-jqlirdi
+    module load perl-http-negotiate/6.01-vvwjp5p
+    module load perl-lwp-mediatypes/6.02-wv4s3ye
+    module load perl-net-http/6.22-ts7b52f
+    module load perl-try-tiny/0.31-a7y5gc4
+    module load perl-uri/5.08-wwxtrl4
+    module load perl-www-robotrules/6.02-tphlec4
+} else {
+    depends-on perl/5.38.0-okr4ubb
+    depends-on perl-clone/0.46-ewzkiq6
+    depends-on perl-encode-locale/1.05-t7dzfez
+    depends-on perl-file-listing/6.04-k646ofv
+    depends-on perl-html-parser/3.72-4kare2i
+    depends-on perl-http-cookies/6.10-mwsjvjo
+    depends-on perl-http-daemon/6.01-uewtnvk
+    depends-on perl-http-date/6.02-bykoq7n
+    depends-on perl-http-message/6.44-jqlirdi
+    depends-on perl-http-negotiate/6.01-vvwjp5p
+    depends-on perl-lwp-mediatypes/6.02-wv4s3ye
+    depends-on perl-net-http/6.22-ts7b52f
+    depends-on perl-try-tiny/0.31-a7y5gc4
+    depends-on perl-uri/5.08-wwxtrl4
+    depends-on perl-www-robotrules/6.02-tphlec4
+}
+prereq perl/5.38.0-okr4ubb
+prereq perl-clone/0.46-ewzkiq6
+prereq perl-encode-locale/1.05-t7dzfez
+prereq perl-file-listing/6.04-k646ofv
+prereq perl-html-parser/3.72-4kare2i
+prereq perl-http-cookies/6.10-mwsjvjo
+prereq perl-http-daemon/6.01-uewtnvk
+prereq perl-http-date/6.02-bykoq7n
+prereq perl-http-message/6.44-jqlirdi
+prereq perl-http-negotiate/6.01-vvwjp5p
+prereq perl-lwp-mediatypes/6.02-wv4s3ye
+prereq perl-net-http/6.22-ts7b52f
+prereq perl-try-tiny/0.31-a7y5gc4
+prereq perl-uri/5.08-wwxtrl4
+prereq perl-www-robotrules/6.02-tphlec4
+conflict perl-libwww-perl
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-libwww-perl-6.68-o55j4274cvgoohhoiepchstuzy2rbvuo/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-libwww-perl-6.68-o55j4274cvgoohhoiepchstuzy2rbvuo/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-libwww-perl-6.68-o55j4274cvgoohhoiepchstuzy2rbvuo/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-libwww-perl-6.68-o55j4274cvgoohhoiepchstuzy2rbvuo/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-libwww-perl-6.68-o55j4274cvgoohhoiepchstuzy2rbvuo/lib/perl5}
+setenv PERL_LIBWWW_PERL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-libwww-perl-6.68-o55j4274cvgoohhoiepchstuzy2rbvuo}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

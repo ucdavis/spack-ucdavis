@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:28.644959
+##
+## py-hatch-fancy-pypi-readme@23.1.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/bu4eotf
+##
+
+
+module-whatis {Fancy PyPI READMEs with Hatch.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-hatch-fancy-pypi-readme}
+    puts stderr {Version: 23.1.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Fancy PyPI READMEs with Hatch.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-hatchling/1.18.0-pfxokzw
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-hatchling/1.18.0-pfxokzw
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-hatchling/1.18.0-pfxokzw
+prereq python/3.11.6-rsiojxh
+conflict py-hatch-fancy-pypi-readme
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-hatch-fancy-pypi-readme-23.1.0-bu4eotfnmiklzi264qxyvy4jjq7zxulb/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-hatch-fancy-pypi-readme-23.1.0-bu4eotfnmiklzi264qxyvy4jjq7zxulb/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-hatch-fancy-pypi-readme-23.1.0-bu4eotfnmiklzi264qxyvy4jjq7zxulb/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-hatch-fancy-pypi-readme-23.1.0-bu4eotfnmiklzi264qxyvy4jjq7zxulb/lib/python3.11/site-packages}
+setenv PY_HATCH_FANCY_PYPI_README_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-hatch-fancy-pypi-readme-23.1.0-bu4eotfnmiklzi264qxyvy4jjq7zxulb}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

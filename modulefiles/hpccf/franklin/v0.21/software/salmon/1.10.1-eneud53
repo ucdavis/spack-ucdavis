@@ -1,0 +1,41 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:34.225743
+##
+## salmon@1.10.1%gcc@11.4.0~ipo build_system=cmake build_type=RELEASE generator=make arch=linux-ubuntu22.04-x86_64_v3/eneud53
+##
+## Configure options: -DBOOST_ROOT=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.83.0-6ivkjgq5tlf2uz3hednw6zpy3f36qvex
+##
+
+
+module-whatis {Salmon is a tool for quantifying the expression of transcripts using RNA-seq data.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : salmon}
+    puts stderr {Version: 1.10.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Salmon is a tool for quantifying the expression of transcripts using}
+    puts stderr {RNA-seq data.}
+}
+
+conflict salmon
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/salmon-1.10.1-eneud53oehmuzky2kqw3q3iycl637vlq/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/salmon-1.10.1-eneud53oehmuzky2kqw3q3iycl637vlq/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/salmon-1.10.1-eneud53oehmuzky2kqw3q3iycl637vlq/.}
+setenv SALMON_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/salmon-1.10.1-eneud53oehmuzky2kqw3q3iycl637vlq}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

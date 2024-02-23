@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:05.344803
+##
+## pandoc@2.19.2%gcc@11.4.0~texlive build_system=generic arch=linux-ubuntu22.04-x86_64_v3/plpba43
+##
+
+
+module-whatis {If you need to convert files from one markup format into another, pandoc is your swiss-army knife.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : pandoc}
+    puts stderr {Version: 2.19.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {If you need to convert files from one markup format into another, pandoc}
+    puts stderr {is your swiss-army knife.}
+}
+
+conflict pandoc
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pandoc-2.19.2-plpba436qjz3h57toyccy7idjzayou6c/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pandoc-2.19.2-plpba436qjz3h57toyccy7idjzayou6c/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pandoc-2.19.2-plpba436qjz3h57toyccy7idjzayou6c/.}
+setenv PANDOC_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pandoc-2.19.2-plpba436qjz3h57toyccy7idjzayou6c}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

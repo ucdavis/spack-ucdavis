@@ -1,0 +1,41 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:31.762538
+##
+## re2c@2.2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/cxbojc6
+##
+## Configure options: --disable-benchmarks --disable-debug --disable-dependency-tracking --disable-docs --disable-lexers --disable-libs --enable-golang
+##
+
+
+module-whatis {re2c: a free and open-source lexer generator for C and C++}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : re2c}
+    puts stderr {Version: 2.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {re2c: a free and open-source lexer generator for C and C++}
+}
+
+conflict re2c
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/re2c-2.2-cxbojc654subbjuafzr5hpmcywcnasqp/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/re2c-2.2-cxbojc654subbjuafzr5hpmcywcnasqp/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/re2c-2.2-cxbojc654subbjuafzr5hpmcywcnasqp/.}
+setenv RE2C_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/re2c-2.2-cxbojc654subbjuafzr5hpmcywcnasqp}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

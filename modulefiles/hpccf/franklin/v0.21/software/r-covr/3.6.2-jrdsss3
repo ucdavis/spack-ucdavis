@@ -1,0 +1,72 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:15.733108
+##
+## r-covr@3.6.2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/jrdsss3
+##
+
+
+module-whatis {Test Coverage for Packages.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-covr}
+    puts stderr {Version: 3.6.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Test Coverage for Packages. Track and report code coverage for your}
+    puts stderr {package and (optionally) upload the results to a coverage service like}
+    puts stderr {'Codecov' <http://codecov.io> or 'Coveralls' <https://coveralls.io/>.}
+    puts stderr {Code coverage is a measure of the amount of code being exercised by a}
+    puts stderr {set of tests. It is an indirect measure of test quality and}
+    puts stderr {completeness. This package is compatible with any testing methodology or}
+    puts stderr {framework and tracks coverage of both R code and compiled C/C++/FORTRAN}
+    puts stderr {code.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-crayon/1.5.2-pj4wyc4
+    module load r-digest/0.6.31-iz4w6gl
+    module load r-httr/1.4.5-3eelhq2
+    module load r-jsonlite/1.8.4-jbrhwx3
+    module load r-rex/1.2.1-nvudbps
+    module load r-withr/2.5.0-o5w5apx
+    module load r-yaml/2.3.7-m4pgln5
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-crayon/1.5.2-pj4wyc4
+    depends-on r-digest/0.6.31-iz4w6gl
+    depends-on r-httr/1.4.5-3eelhq2
+    depends-on r-jsonlite/1.8.4-jbrhwx3
+    depends-on r-rex/1.2.1-nvudbps
+    depends-on r-withr/2.5.0-o5w5apx
+    depends-on r-yaml/2.3.7-m4pgln5
+}
+prereq r/4.3.0-n6pth5g
+prereq r-crayon/1.5.2-pj4wyc4
+prereq r-digest/0.6.31-iz4w6gl
+prereq r-httr/1.4.5-3eelhq2
+prereq r-jsonlite/1.8.4-jbrhwx3
+prereq r-rex/1.2.1-nvudbps
+prereq r-withr/2.5.0-o5w5apx
+prereq r-yaml/2.3.7-m4pgln5
+conflict r-covr
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-covr-3.6.2-jrdsss3oszpygifusu4wsd6iekr4lofo/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-covr-3.6.2-jrdsss3oszpygifusu4wsd6iekr4lofo/rlib/R/library}
+setenv R_COVR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-covr-3.6.2-jrdsss3oszpygifusu4wsd6iekr4lofo}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

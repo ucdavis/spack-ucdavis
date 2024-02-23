@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:16.556112
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:50.068877
 ##
 ## gemma@0.98.5%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/5j6g4hh
 ##
@@ -17,12 +17,6 @@ proc ModulesHelp { } {
     puts stderr {other large-scale data sets.}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load gsl/2.7.1
-} else {
-    depends-on gsl/2.7.1
-}
-prereq gsl/2.7.1
 conflict gemma
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gemma-0.98.5-5j6g4hhnvbkyctqtd5opsv4b3mvcxafe/bin}

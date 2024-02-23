@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:35.337155
+##
+## sqlite@3.42.0%gcc@11.4.0+column_metadata+dynamic_extensions+fts~functions+rtree build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/nmfs24r
+##
+## Configure options: --enable-fts4 --enable-fts5 --enable-rtree --enable-dynamic-extensions CPPFLAGS=-DSQLITE_ENABLE_COLUMN_METADATA=1
+##
+
+
+module-whatis {SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : sqlite}
+    puts stderr {Version: 3.42.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {SQLite is a C-language library that implements a small, fast, self-}
+    puts stderr {contained, high-reliability, full-featured, SQL database engine.}
+}
+
+conflict sqlite
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sqlite-3.42.0-nmfs24rz5wwavy6d5pmbn66etb3tgdpn/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sqlite-3.42.0-nmfs24rz5wwavy6d5pmbn66etb3tgdpn/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sqlite-3.42.0-nmfs24rz5wwavy6d5pmbn66etb3tgdpn/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sqlite-3.42.0-nmfs24rz5wwavy6d5pmbn66etb3tgdpn/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sqlite-3.42.0-nmfs24rz5wwavy6d5pmbn66etb3tgdpn/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sqlite-3.42.0-nmfs24rz5wwavy6d5pmbn66etb3tgdpn/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sqlite-3.42.0-nmfs24rz5wwavy6d5pmbn66etb3tgdpn/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sqlite-3.42.0-nmfs24rz5wwavy6d5pmbn66etb3tgdpn/.}
+setenv SQLITE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sqlite-3.42.0-nmfs24rz5wwavy6d5pmbn66etb3tgdpn}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

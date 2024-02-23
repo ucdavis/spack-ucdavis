@@ -1,0 +1,60 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:14.485706
+##
+## perl-xml-twig@3.52%gcc@11.4.0 build_system=perl patches=e73f49a arch=linux-ubuntu22.04-x86_64_v3/opu4gqj
+##
+
+
+module-whatis {This module provides a way to process XML documents. It is build on top of XML::Parser.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-xml-twig}
+    puts stderr {Version: 3.52}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This module provides a way to process XML documents. It is build on top}
+    puts stderr {of XML::Parser. The module offers a tree interface to the document,}
+    puts stderr {while allowing you to output the parts of it that have been completely}
+    puts stderr {processed. It allows minimal resource (CPU and memory) usage by building}
+    puts stderr {the tree only for the parts of the documents that need actual}
+    puts stderr {processing, through the use of the twig_roots and}
+    puts stderr {twig_print_outside_roots options. The finish and finish_print methods}
+    puts stderr {also help to increase performances. XML::Twig tries to make simple}
+    puts stderr {things easy so it tries its best to takes care of a lot of the (usually)}
+    puts stderr {annoying (but sometimes necessary) features that come with XML and}
+    puts stderr {XML::Parser.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-xml-parser/2.46-4s7gqlv
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-xml-parser/2.46-4s7gqlv
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-xml-parser/2.46-4s7gqlv
+conflict perl-xml-twig
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-twig-3.52-opu4gqjopyjwfctlhhal7y7mznywbd2u/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-twig-3.52-opu4gqjopyjwfctlhhal7y7mznywbd2u/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-twig-3.52-opu4gqjopyjwfctlhhal7y7mznywbd2u/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-twig-3.52-opu4gqjopyjwfctlhhal7y7mznywbd2u/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-twig-3.52-opu4gqjopyjwfctlhhal7y7mznywbd2u/lib/perl5}
+setenv PERL_XML_TWIG_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-twig-3.52-opu4gqjopyjwfctlhhal7y7mznywbd2u}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

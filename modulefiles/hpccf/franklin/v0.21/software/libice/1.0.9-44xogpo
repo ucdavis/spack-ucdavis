@@ -1,0 +1,41 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:57.288968
+##
+## libice@1.0.9%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/44xogpo
+##
+
+
+module-whatis {libICE - Inter-Client Exchange Library.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libice}
+    puts stderr {Version: 1.0.9}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {libICE - Inter-Client Exchange Library.}
+}
+
+conflict libice
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libice-1.0.9-44xogpolk2u6dfrmni3r3daqog6clrjl/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libice-1.0.9-44xogpolk2u6dfrmni3r3daqog6clrjl/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libice-1.0.9-44xogpolk2u6dfrmni3r3daqog6clrjl/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libice-1.0.9-44xogpolk2u6dfrmni3r3daqog6clrjl/include}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libice-1.0.9-44xogpolk2u6dfrmni3r3daqog6clrjl/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libice-1.0.9-44xogpolk2u6dfrmni3r3daqog6clrjl/.}
+setenv LIBICE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libice-1.0.9-44xogpolk2u6dfrmni3r3daqog6clrjl}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

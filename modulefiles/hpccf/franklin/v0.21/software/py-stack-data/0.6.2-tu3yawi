@@ -1,0 +1,54 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:55.995059
+##
+## py-stack-data@0.6.2%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/tu3yawi
+##
+
+
+module-whatis {Extract data from python stack frames and tracebacks for informative displays.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-stack-data}
+    puts stderr {Version: 0.6.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Extract data from python stack frames and tracebacks for informative}
+    puts stderr {displays.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-asttokens/2.4.0-wtwmok5
+    module load py-executing/1.2.0-jgxsvsy
+    module load py-pure-eval/0.2.2-ulc663k
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-asttokens/2.4.0-wtwmok5
+    depends-on py-executing/1.2.0-jgxsvsy
+    depends-on py-pure-eval/0.2.2-ulc663k
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-asttokens/2.4.0-wtwmok5
+prereq py-executing/1.2.0-jgxsvsy
+prereq py-pure-eval/0.2.2-ulc663k
+prereq python/3.11.6-rsiojxh
+conflict py-stack-data
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-stack-data-0.6.2-tu3yawig5zuduisb3di4scgxp6kbc5a6/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-stack-data-0.6.2-tu3yawig5zuduisb3di4scgxp6kbc5a6/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-stack-data-0.6.2-tu3yawig5zuduisb3di4scgxp6kbc5a6/lib/python3.11/site-packages}
+setenv PY_STACK_DATA_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-stack-data-0.6.2-tu3yawig5zuduisb3di4scgxp6kbc5a6}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

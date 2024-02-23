@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:38.216168
+##
+## zip@3.0%gcc@11.4.0 build_system=makefile patches=14dc880,3bc30ba,5068e7c,51f48db,66ab4ce,a92fc4e,a95ed93,eb83fc8,f7d0bc4,fa8312c arch=linux-ubuntu22.04-x86_64_v3/udiuotl
+##
+
+
+module-whatis {Zip is a compression and file packaging/archive utility.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : zip}
+    puts stderr {Version: 3.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Zip is a compression and file packaging/archive utility.}
+}
+
+conflict zip
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zip-3.0-udiuotlm2hocgbbhy6twfbuvgvgldzdq/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zip-3.0-udiuotlm2hocgbbhy6twfbuvgvgldzdq/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zip-3.0-udiuotlm2hocgbbhy6twfbuvgvgldzdq/.}
+setenv ZIP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zip-3.0-udiuotlm2hocgbbhy6twfbuvgvgldzdq}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

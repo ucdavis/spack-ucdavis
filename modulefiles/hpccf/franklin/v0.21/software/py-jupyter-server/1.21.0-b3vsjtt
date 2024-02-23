@@ -1,0 +1,93 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:33.013775
+##
+## py-jupyter-server@1.21.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/b3vsjtt
+##
+
+
+module-whatis {The Jupyter Server provides the backend (i.e. the core services, APIs, and REST endpoints) for Jupyter web applications like Jupyter notebook, JupyterLab, and Voila.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-jupyter-server}
+    puts stderr {Version: 1.21.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The Jupyter Server provides the backend (i.e. the core services, APIs,}
+    puts stderr {and REST endpoints) for Jupyter web applications like Jupyter notebook,}
+    puts stderr {JupyterLab, and Voila.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-anyio/3.6.2-l3wnhod
+    module load py-argon2-cffi/21.3.0-jrrtmw2
+    module load py-jinja2/3.1.2-va5qws5
+    module load py-jupyter-client/8.2.0-2vshdbo
+    module load py-jupyter-core/5.3.0-ltxlwwi
+    module load py-nbconvert/7.4.0-sg6slsw
+    module load py-nbformat/5.8.0-yrwxml3
+    module load py-packaging/23.1-qdlu6do
+    module load py-prometheus-client/0.17.0-prqwf5d
+    module load py-pyzmq/25.0.2-krqsm2m
+    module load py-send2trash/1.8.0-v2vnqfi
+    module load py-terminado/0.17.1-kdokcwq
+    module load py-tornado/6.3.3-lu2kmpg
+    module load py-traitlets/5.9.0-pmbefep
+    module load py-websocket-client/1.6.3-6oafz44
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-anyio/3.6.2-l3wnhod
+    depends-on py-argon2-cffi/21.3.0-jrrtmw2
+    depends-on py-jinja2/3.1.2-va5qws5
+    depends-on py-jupyter-client/8.2.0-2vshdbo
+    depends-on py-jupyter-core/5.3.0-ltxlwwi
+    depends-on py-nbconvert/7.4.0-sg6slsw
+    depends-on py-nbformat/5.8.0-yrwxml3
+    depends-on py-packaging/23.1-qdlu6do
+    depends-on py-prometheus-client/0.17.0-prqwf5d
+    depends-on py-pyzmq/25.0.2-krqsm2m
+    depends-on py-send2trash/1.8.0-v2vnqfi
+    depends-on py-terminado/0.17.1-kdokcwq
+    depends-on py-tornado/6.3.3-lu2kmpg
+    depends-on py-traitlets/5.9.0-pmbefep
+    depends-on py-websocket-client/1.6.3-6oafz44
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-anyio/3.6.2-l3wnhod
+prereq py-argon2-cffi/21.3.0-jrrtmw2
+prereq py-jinja2/3.1.2-va5qws5
+prereq py-jupyter-client/8.2.0-2vshdbo
+prereq py-jupyter-core/5.3.0-ltxlwwi
+prereq py-nbconvert/7.4.0-sg6slsw
+prereq py-nbformat/5.8.0-yrwxml3
+prereq py-packaging/23.1-qdlu6do
+prereq py-prometheus-client/0.17.0-prqwf5d
+prereq py-pyzmq/25.0.2-krqsm2m
+prereq py-send2trash/1.8.0-v2vnqfi
+prereq py-terminado/0.17.1-kdokcwq
+prereq py-tornado/6.3.3-lu2kmpg
+prereq py-traitlets/5.9.0-pmbefep
+prereq py-websocket-client/1.6.3-6oafz44
+prereq python/3.11.6-rsiojxh
+conflict py-jupyter-server
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-jupyter-server-1.21.0-b3vsjttylpy7aclfbi5wlibvqvko6jxd/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-jupyter-server-1.21.0-b3vsjttylpy7aclfbi5wlibvqvko6jxd/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-jupyter-server-1.21.0-b3vsjttylpy7aclfbi5wlibvqvko6jxd/.}
+prepend-path JUPYTER_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-nbconvert-7.4.0-sg6slswepp5eosrngeq6iaa7j5sxfn5e/share/jupyter}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-jupyter-server-1.21.0-b3vsjttylpy7aclfbi5wlibvqvko6jxd/lib/python3.11/site-packages}
+setenv PY_JUPYTER_SERVER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-jupyter-server-1.21.0-b3vsjttylpy7aclfbi5wlibvqvko6jxd}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

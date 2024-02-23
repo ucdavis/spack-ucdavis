@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:13.133284
+##
+## perl-text-format@0.62%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/7va4eif
+##
+
+
+module-whatis {Text::Format - Various subroutines to format text}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-text-format}
+    puts stderr {Version: 0.62}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Text::Format - Various subroutines to format text}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-text-format
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-text-format-0.62-7va4eifen3fw6wrn2xgilzso63l7imvl/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-text-format-0.62-7va4eifen3fw6wrn2xgilzso63l7imvl/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-text-format-0.62-7va4eifen3fw6wrn2xgilzso63l7imvl/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-text-format-0.62-7va4eifen3fw6wrn2xgilzso63l7imvl/lib/perl5}
+setenv PERL_TEXT_FORMAT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-text-format-0.62-7va4eifen3fw6wrn2xgilzso63l7imvl}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

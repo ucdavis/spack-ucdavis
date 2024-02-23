@@ -1,0 +1,60 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:21.619367
+##
+## r-digest@0.6.31%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/2az4nzm
+##
+
+
+module-whatis {Create Compact Hash Digests of R Objects.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-digest}
+    puts stderr {Version: 0.6.31}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Create Compact Hash Digests of R Objects. Implementation of a function}
+    puts stderr {'digest()' for the creation of hash digests of arbitrary R objects}
+    puts stderr {(using the md5, sha-1, sha-256, crc32, xxhash and murmurhash algorithms)}
+    puts stderr {permitting easy comparison of R language objects, as well as a function}
+    puts stderr {'hmac()' to create hash-based message authentication code. The md5}
+    puts stderr {algorithm by Ron Rivest is specified in RFC 1321, the sha-1 and sha-256}
+    puts stderr {algorithms are specified in FIPS-180-1 and FIPS-180-2, and the crc32}
+    puts stderr {algorithm is described in}
+    puts stderr {ftp://ftp.rocksoft.com/cliens/rocksoft/papers/crc_v3.txt. For md5,}
+    puts stderr {sha-1, sha-256 and aes, this package uses small standalone}
+    puts stderr {implementations that were provided by Christophe Devine. For crc32, code}
+    puts stderr {from the zlib library is used. For sha-512, an implementation by Aaron}
+    puts stderr {D. Gifford is used. For xxhash, the implementation by Yann Collet is}
+    puts stderr {used. For murmurhash, an implementation by Shane Day is used. Please}
+    puts stderr {note that this package is not meant to be deployed for cryptographic}
+    puts stderr {purposes for which more comprehensive (and widely tested) libraries such}
+    puts stderr {as OpenSSL should be used.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+}
+prereq r/4.3.0-bzxz5nl
+conflict r-digest
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-digest-0.6.31-2az4nzmj5jouvkuz6noozu72m34bkpf7/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-digest-0.6.31-2az4nzmj5jouvkuz6noozu72m34bkpf7/rlib/R/library}
+setenv R_DIGEST_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-digest-0.6.31-2az4nzmj5jouvkuz6noozu72m34bkpf7}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

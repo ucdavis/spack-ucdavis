@@ -1,0 +1,84 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:34.709474
+##
+## r-ggplot2@3.4.2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/wkgnum2
+##
+
+
+module-whatis {Create Elegant Data Visualisations Using the Grammar of Graphics.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-ggplot2}
+    puts stderr {Version: 3.4.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Create Elegant Data Visualisations Using the Grammar of Graphics. A}
+    puts stderr {system for 'declaratively' creating graphics, based on "The Grammar of}
+    puts stderr {Graphics". You provide the data, tell 'ggplot2' how to map variables to}
+    puts stderr {aesthetics, what graphical primitives to use, and it takes care of the}
+    puts stderr {details.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-cli/3.6.1-75actrg
+    module load r-glue/1.6.2-g2mk77f
+    module load r-gtable/0.3.3-e33k6v7
+    module load r-isoband/0.2.7-kdx43e2
+    module load r-lifecycle/1.0.3-u6wfegg
+    module load r-mass/7.3-59-4g5c5rb
+    module load r-mgcv/1.8-42-bcso6er
+    module load r-rlang/1.1.0-exexgvx
+    module load r-scales/1.2.1-im4g3cc
+    module load r-tibble/3.2.1-qxvx2yi
+    module load r-vctrs/0.6.2-2fduwfe
+    module load r-withr/2.5.0-o5w5apx
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-cli/3.6.1-75actrg
+    depends-on r-glue/1.6.2-g2mk77f
+    depends-on r-gtable/0.3.3-e33k6v7
+    depends-on r-isoband/0.2.7-kdx43e2
+    depends-on r-lifecycle/1.0.3-u6wfegg
+    depends-on r-mass/7.3-59-4g5c5rb
+    depends-on r-mgcv/1.8-42-bcso6er
+    depends-on r-rlang/1.1.0-exexgvx
+    depends-on r-scales/1.2.1-im4g3cc
+    depends-on r-tibble/3.2.1-qxvx2yi
+    depends-on r-vctrs/0.6.2-2fduwfe
+    depends-on r-withr/2.5.0-o5w5apx
+}
+prereq r/4.3.0-n6pth5g
+prereq r-cli/3.6.1-75actrg
+prereq r-glue/1.6.2-g2mk77f
+prereq r-gtable/0.3.3-e33k6v7
+prereq r-isoband/0.2.7-kdx43e2
+prereq r-lifecycle/1.0.3-u6wfegg
+prereq r-mass/7.3-59-4g5c5rb
+prereq r-mgcv/1.8-42-bcso6er
+prereq r-rlang/1.1.0-exexgvx
+prereq r-scales/1.2.1-im4g3cc
+prereq r-tibble/3.2.1-qxvx2yi
+prereq r-vctrs/0.6.2-2fduwfe
+prereq r-withr/2.5.0-o5w5apx
+conflict r-ggplot2
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-ggplot2-3.4.2-wkgnum2mt75pvb7auh6d4vn44nqnavrk/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-ggplot2-3.4.2-wkgnum2mt75pvb7auh6d4vn44nqnavrk/rlib/R/library}
+setenv R_GGPLOT2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-ggplot2-3.4.2-wkgnum2mt75pvb7auh6d4vn44nqnavrk}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:18.481728
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:56.023887
 ##
 ## kaiju@1.6.2%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/gnplutc
 ##
@@ -16,6 +16,15 @@ proc ModulesHelp { } {
     puts stderr {sequencing reads.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl-io-compress/2.204-mb6d544
+    module load py-htseq/0.11.2-dc3zkgh
+} else {
+    depends-on perl-io-compress/2.204-mb6d544
+    depends-on py-htseq/0.11.2-dc3zkgh
+}
+prereq perl-io-compress/2.204-mb6d544
+prereq py-htseq/0.11.2-dc3zkgh
 conflict kaiju
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kaiju-1.6.2-gnplutcsw4lpbgpn4q2eca2kfvtyqzsc/bin}

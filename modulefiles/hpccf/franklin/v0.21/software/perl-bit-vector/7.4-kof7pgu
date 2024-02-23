@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:07.111494
+##
+## perl-bit-vector@7.4%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/kof7pgu
+##
+
+
+module-whatis {Efficient bit vector, set of integers and 'big int' math library}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-bit-vector}
+    puts stderr {Version: 7.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Efficient bit vector, set of integers and "big int" math library}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-carp-clan/6.06-7cm4wo3
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-carp-clan/6.06-7cm4wo3
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-carp-clan/6.06-7cm4wo3
+conflict perl-bit-vector
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bit-vector-7.4-kof7pguvwqetydp2tktv7oelmibqks3b/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bit-vector-7.4-kof7pguvwqetydp2tktv7oelmibqks3b/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bit-vector-7.4-kof7pguvwqetydp2tktv7oelmibqks3b/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bit-vector-7.4-kof7pguvwqetydp2tktv7oelmibqks3b/lib/perl5}
+setenv PERL_BIT_VECTOR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bit-vector-7.4-kof7pguvwqetydp2tktv7oelmibqks3b}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

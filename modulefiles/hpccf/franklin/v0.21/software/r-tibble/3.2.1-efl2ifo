@@ -1,0 +1,67 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:21.295787
+##
+## r-tibble@3.2.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/efl2ifo
+##
+
+
+module-whatis {Simple Data Frames.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-tibble}
+    puts stderr {Version: 3.2.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Simple Data Frames. Provides a 'tbl_df' class (the 'tibble') that}
+    puts stderr {provides stricter checking and better formatting than the traditional}
+    puts stderr {data frame.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-fansi/1.0.4-y3n5hmm
+    module load r-lifecycle/1.0.3-vlvj6d7
+    module load r-magrittr/2.0.3-rabxttn
+    module load r-pillar/1.9.0-zrywzru
+    module load r-pkgconfig/2.0.3-ghntq2b
+    module load r-rlang/1.1.0-6ek36pb
+    module load r-vctrs/0.6.2-lpcos7o
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-fansi/1.0.4-y3n5hmm
+    depends-on r-lifecycle/1.0.3-vlvj6d7
+    depends-on r-magrittr/2.0.3-rabxttn
+    depends-on r-pillar/1.9.0-zrywzru
+    depends-on r-pkgconfig/2.0.3-ghntq2b
+    depends-on r-rlang/1.1.0-6ek36pb
+    depends-on r-vctrs/0.6.2-lpcos7o
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-fansi/1.0.4-y3n5hmm
+prereq r-lifecycle/1.0.3-vlvj6d7
+prereq r-magrittr/2.0.3-rabxttn
+prereq r-pillar/1.9.0-zrywzru
+prereq r-pkgconfig/2.0.3-ghntq2b
+prereq r-rlang/1.1.0-6ek36pb
+prereq r-vctrs/0.6.2-lpcos7o
+conflict r-tibble
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-tibble-3.2.1-efl2ifohuwjli7wzvpvdkb75syxzueil/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-tibble-3.2.1-efl2ifohuwjli7wzvpvdkb75syxzueil/rlib/R/library}
+setenv R_TIBBLE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-tibble-3.2.1-efl2ifohuwjli7wzvpvdkb75syxzueil}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

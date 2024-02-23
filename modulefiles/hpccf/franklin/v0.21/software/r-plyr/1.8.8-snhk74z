@@ -1,0 +1,54 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:58.119552
+##
+## r-plyr@1.8.8%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/snhk74z
+##
+
+
+module-whatis {Tools for Splitting, Applying and Combining Data.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-plyr}
+    puts stderr {Version: 1.8.8}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Tools for Splitting, Applying and Combining Data. A set of tools that}
+    puts stderr {solves a common set of problems: you need to break a big problem down}
+    puts stderr {into manageable pieces, operate on each piece and then put all the}
+    puts stderr {pieces back together. For example, you might want to fit a model to each}
+    puts stderr {spatial location or time point in your study, summarise data by panels}
+    puts stderr {or collapse high-dimensional arrays to simpler summary statistics. The}
+    puts stderr {development of 'plyr' has been generously supported by 'Becton}
+    puts stderr {Dickinson'.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-rcpp/1.0.10-w6mz3zg
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-rcpp/1.0.10-w6mz3zg
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-rcpp/1.0.10-w6mz3zg
+conflict r-plyr
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-plyr-1.8.8-snhk74zgkagfjjlueeruivavzgphjnby/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-plyr-1.8.8-snhk74zgkagfjjlueeruivavzgphjnby/rlib/R/library}
+setenv R_PLYR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-plyr-1.8.8-snhk74zgkagfjjlueeruivavzgphjnby}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

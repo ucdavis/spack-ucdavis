@@ -1,0 +1,61 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:10.229553
+##
+## perl-inline-c@0.81%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/ihjgdve
+##
+
+
+module-whatis {C Language Support for Inline}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-inline-c}
+    puts stderr {Version: 0.81}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {C Language Support for Inline}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-file-copy-recursive/0.45-tkg3khg
+    module load perl-inline/0.86-rfdlp36
+    module load perl-parse-recdescent/1.967015-fumtl6r
+    module load perl-pegex/0.75-4juflkc
+    module load perl-yaml-libyaml/0.84-vifi6aa
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-file-copy-recursive/0.45-tkg3khg
+    depends-on perl-inline/0.86-rfdlp36
+    depends-on perl-parse-recdescent/1.967015-fumtl6r
+    depends-on perl-pegex/0.75-4juflkc
+    depends-on perl-yaml-libyaml/0.84-vifi6aa
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-file-copy-recursive/0.45-tkg3khg
+prereq perl-inline/0.86-rfdlp36
+prereq perl-parse-recdescent/1.967015-fumtl6r
+prereq perl-pegex/0.75-4juflkc
+prereq perl-yaml-libyaml/0.84-vifi6aa
+conflict perl-inline-c
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-inline-c-0.81-ihjgdve7bify24irxhwc4nf5mywcxcu5/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-inline-c-0.81-ihjgdve7bify24irxhwc4nf5mywcxcu5/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-inline-c-0.81-ihjgdve7bify24irxhwc4nf5mywcxcu5/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-inline-c-0.81-ihjgdve7bify24irxhwc4nf5mywcxcu5/lib/perl5}
+setenv PERL_INLINE_C_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-inline-c-0.81-ihjgdve7bify24irxhwc4nf5mywcxcu5}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:45.395166
+##
+## bzip2@1.0.8%gcc@7.5.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3/nujrrhb
+##
+
+
+module-whatis {bzip2 is a freely available, patent free high-quality data compressor. It typically compresses files to within 10% to 15% of the best available techniques (the PPM family of statistical compressors), whilst being around twice as fast at compression and six times faster at decompression.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : bzip2}
+    puts stderr {Version: 1.0.8}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {bzip2 is a freely available, patent free high-quality data compressor.}
+    puts stderr {It typically compresses files to within 10% to 15% of the best available}
+    puts stderr {techniques (the PPM family of statistical compressors), whilst being}
+    puts stderr {around twice as fast at compression and six times faster at}
+    puts stderr {decompression.}
+}
+
+conflict bzip2
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/bzip2-1.0.8-nujrrhbcr7zvokcfd7nss6mfijcq55i7/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/bzip2-1.0.8-nujrrhbcr7zvokcfd7nss6mfijcq55i7/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/bzip2-1.0.8-nujrrhbcr7zvokcfd7nss6mfijcq55i7/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/bzip2-1.0.8-nujrrhbcr7zvokcfd7nss6mfijcq55i7/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/bzip2-1.0.8-nujrrhbcr7zvokcfd7nss6mfijcq55i7/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/bzip2-1.0.8-nujrrhbcr7zvokcfd7nss6mfijcq55i7/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/bzip2-1.0.8-nujrrhbcr7zvokcfd7nss6mfijcq55i7/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/bzip2-1.0.8-nujrrhbcr7zvokcfd7nss6mfijcq55i7/.}
+setenv BZIP2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/bzip2-1.0.8-nujrrhbcr7zvokcfd7nss6mfijcq55i7}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

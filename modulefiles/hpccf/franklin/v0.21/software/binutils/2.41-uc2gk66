@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:43.810669
+##
+## binutils@2.41%gcc@11.4.0~gas~gprofng~headers~interwork~ld~libiberty~lto~nls~pgo+plugins build_system=autotools compress_debug_sections=zlib libs=shared,static arch=linux-ubuntu22.04-x86_64_v3/uc2gk66
+##
+
+
+module-whatis {GNU binutils, which contain the linker, assembler, objdump and others}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : binutils}
+    puts stderr {Version: 2.41}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GNU binutils, which contain the linker, assembler, objdump and others}
+}
+
+conflict binutils
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/binutils-2.41-uc2gk66gz2eqvocvm7ulb27sf7khsbdx/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/binutils-2.41-uc2gk66gz2eqvocvm7ulb27sf7khsbdx/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/binutils-2.41-uc2gk66gz2eqvocvm7ulb27sf7khsbdx/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/binutils-2.41-uc2gk66gz2eqvocvm7ulb27sf7khsbdx/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/binutils-2.41-uc2gk66gz2eqvocvm7ulb27sf7khsbdx/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/binutils-2.41-uc2gk66gz2eqvocvm7ulb27sf7khsbdx/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/binutils-2.41-uc2gk66gz2eqvocvm7ulb27sf7khsbdx/.}
+setenv BINUTILS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/binutils-2.41-uc2gk66gz2eqvocvm7ulb27sf7khsbdx}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

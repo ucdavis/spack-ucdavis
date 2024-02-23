@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:47.957812
+##
+## express@1.5.3%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/jrbveuq
+##
+
+
+module-whatis {eXpress is a streaming tool for quantifying the abundances of a set of target sequences from sampled subsequences.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : express}
+    puts stderr {Version: 1.5.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {eXpress is a streaming tool for quantifying the abundances of a set of}
+    puts stderr {target sequences from sampled subsequences.}
+}
+
+conflict express
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/express-1.5.3-jrbveuq3cqqjpa6ckpulurm4whpy66ap/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/express-1.5.3-jrbveuq3cqqjpa6ckpulurm4whpy66ap/.}
+setenv EXPRESS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/express-1.5.3-jrbveuq3cqqjpa6ckpulurm4whpy66ap}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:16.335487
+##
+## r-crayon@1.5.2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/pj4wyc4
+##
+
+
+module-whatis {Colored Terminal Output.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-crayon}
+    puts stderr {Version: 1.5.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Colored Terminal Output. Colored terminal output on terminals that}
+    puts stderr {support 'ANSI' color and highlight codes. It also works in 'Emacs'}
+    puts stderr {'ESS'. 'ANSI' color support is automatically detected. Colors and}
+    puts stderr {highlighting can be combined and nested. New styles can also be created}
+    puts stderr {easily. This package was inspired by the 'chalk' 'JavaScript' project.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+} else {
+    depends-on r/4.3.0-n6pth5g
+}
+prereq r/4.3.0-n6pth5g
+conflict r-crayon
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-crayon-1.5.2-pj4wyc4ppiahxs2emmiuinsvbc4vyrtu/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-crayon-1.5.2-pj4wyc4ppiahxs2emmiuinsvbc4vyrtu/rlib/R/library}
+setenv R_CRAYON_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-crayon-1.5.2-pj4wyc4ppiahxs2emmiuinsvbc4vyrtu}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

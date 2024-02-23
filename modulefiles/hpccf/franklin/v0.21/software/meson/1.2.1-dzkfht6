@@ -1,0 +1,54 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:02.170158
+##
+## meson@1.2.1%gcc@11.4.0 build_system=python_pip patches=0f0b1bd,ae59765 arch=linux-ubuntu22.04-x86_64_v3/dzkfht6
+##
+
+
+module-whatis {Meson is a portable open source build system meant to be both extremely fast, and as user friendly as possible.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : meson}
+    puts stderr {Version: 1.2.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Meson is a portable open source build system meant to be both extremely}
+    puts stderr {fast, and as user friendly as possible.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load ninja/1.11.1-shmjrke
+    module load py-setuptools/63.4.3-hsixzje
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on ninja/1.11.1-shmjrke
+    depends-on py-setuptools/63.4.3-hsixzje
+    depends-on python/3.11.6-ht65m6a
+}
+prereq ninja/1.11.1-shmjrke
+prereq py-setuptools/63.4.3-hsixzje
+prereq python/3.11.6-ht65m6a
+conflict meson
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/meson-1.2.1-dzkfht6zbztq36hlygmn3is5vr4hfq4o/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/meson-1.2.1-dzkfht6zbztq36hlygmn3is5vr4hfq4o/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/meson-1.2.1-dzkfht6zbztq36hlygmn3is5vr4hfq4o/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/meson-1.2.1-dzkfht6zbztq36hlygmn3is5vr4hfq4o/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/meson-1.2.1-dzkfht6zbztq36hlygmn3is5vr4hfq4o/lib/python3.11/site-packages}
+setenv MESON_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/meson-1.2.1-dzkfht6zbztq36hlygmn3is5vr4hfq4o}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

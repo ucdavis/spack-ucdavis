@@ -1,0 +1,58 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:53.703185
+##
+## r-mgcv@1.8-42%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/bncfotj
+##
+
+
+module-whatis {Mixed GAM Computation Vehicle with Automatic Smoothness Estimation.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-mgcv}
+    puts stderr {Version: 1.8-42}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Mixed GAM Computation Vehicle with Automatic Smoothness Estimation.}
+    puts stderr {Generalized additive (mixed) models, some of their extensions and other}
+    puts stderr {generalized ridge regression with multiple smoothing parameter}
+    puts stderr {estimation by (Restricted) Marginal Likelihood, Generalized Cross}
+    puts stderr {Validation and similar, or using iterated nested Laplace approximation}
+    puts stderr {for fully Bayesian inference. See Wood (2017)}
+    puts stderr {<doi:10.1201/9781315370279> for an overview. Includes a gam() function,}
+    puts stderr {a wide variety of smoothers, 'JAGS' support and distributions beyond the}
+    puts stderr {exponential family.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-vcbztcv
+    module load r-matrix/1.5-4-2olwypl
+    module load r-nlme/3.1-162-nue4rml
+} else {
+    depends-on r/4.3.0-vcbztcv
+    depends-on r-matrix/1.5-4-2olwypl
+    depends-on r-nlme/3.1-162-nue4rml
+}
+prereq r/4.3.0-vcbztcv
+prereq r-matrix/1.5-4-2olwypl
+prereq r-nlme/3.1-162-nue4rml
+conflict r-mgcv
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-mgcv-1.8-42-bncfotjgurxlbzp5p3qdww5xm24b5omr/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-mgcv-1.8-42-bncfotjgurxlbzp5p3qdww5xm24b5omr/rlib/R/library}
+setenv R_MGCV_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-mgcv-1.8-42-bncfotjgurxlbzp5p3qdww5xm24b5omr}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

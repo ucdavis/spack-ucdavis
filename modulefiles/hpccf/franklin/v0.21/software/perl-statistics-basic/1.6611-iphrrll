@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:12.423094
+##
+## perl-statistics-basic@1.6611%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/iphrrll
+##
+
+
+module-whatis {Statistics::Basic - A collection of very basic statistics modules}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-statistics-basic}
+    puts stderr {Version: 1.6611}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Statistics::Basic - A collection of very basic statistics modules}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-number-format/1.75-pdiscz4
+    module load perl-scalar-list-utils/1.63-fouqtcm
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-number-format/1.75-pdiscz4
+    depends-on perl-scalar-list-utils/1.63-fouqtcm
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-number-format/1.75-pdiscz4
+prereq perl-scalar-list-utils/1.63-fouqtcm
+conflict perl-statistics-basic
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-statistics-basic-1.6611-iphrrllxi7nseryskuacejg2vnx3ms2v/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-statistics-basic-1.6611-iphrrllxi7nseryskuacejg2vnx3ms2v/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-statistics-basic-1.6611-iphrrllxi7nseryskuacejg2vnx3ms2v/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-statistics-basic-1.6611-iphrrllxi7nseryskuacejg2vnx3ms2v/lib/perl5}
+setenv PERL_STATISTICS_BASIC_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-statistics-basic-1.6611-iphrrllxi7nseryskuacejg2vnx3ms2v}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

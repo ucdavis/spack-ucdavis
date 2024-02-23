@@ -1,0 +1,54 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:47.340899
+##
+## r-jsonlite@1.8.4%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/h3mu75v
+##
+
+
+module-whatis {A Simple and Robust JSON Parser and Generator for R.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-jsonlite}
+    puts stderr {Version: 1.8.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A Simple and Robust JSON Parser and Generator for R. A fast JSON parser}
+    puts stderr {and generator optimized for statistical data and the web. Started out as}
+    puts stderr {a fork of 'RJSONIO', but has been completely rewritten in recent}
+    puts stderr {versions. The package offers flexible, robust, high performance tools}
+    puts stderr {for working with JSON in R and is particularly powerful for building}
+    puts stderr {pipelines and interacting with a web API. The implementation is based on}
+    puts stderr {the mapping described in the vignette (Ooms, 2014). In addition to}
+    puts stderr {converting JSON data from/to R objects, 'jsonlite' contains functions to}
+    puts stderr {stream, validate, and prettify JSON data. The unit tests included with}
+    puts stderr {the package verify that all edge cases are encoded and decoded}
+    puts stderr {consistently for use with dynamic data in systems and applications.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+}
+prereq r/4.3.0-bzxz5nl
+conflict r-jsonlite
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-jsonlite-1.8.4-h3mu75vzgnwayvuspgwdko46alpbvbij/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-jsonlite-1.8.4-h3mu75vzgnwayvuspgwdko46alpbvbij/rlib/R/library}
+setenv R_JSONLITE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-jsonlite-1.8.4-h3mu75vzgnwayvuspgwdko46alpbvbij}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

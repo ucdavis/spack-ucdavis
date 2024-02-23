@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:46.309970
+##
+## clblast@1.5.2%oneapi@2023.2.0~ipo+netlib+shared~tuners build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/3crfual
+##
+## Configure options: -DBUILD_SHARED_LIBS:BOOL=ON -DTESTS:BOOL=OFF -DTUNERS:BOOL=OFF -DNETLIB:BOOL=ON
+##
+
+
+module-whatis {CLBlast is a modern, lightweight, performant and tunable OpenCL BLAS library written in C++11. It is designed to leverage the full performance potential of a wide variety of OpenCL devices from different vendors, including desktop and laptop GPUs, embedded GPUs, and other accelerators. CLBlast implements BLAS routines: basic linear algebra subprograms operating on vectors and matrices.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : clblast}
+    puts stderr {Version: 1.5.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {CLBlast is a modern, lightweight, performant and tunable OpenCL BLAS}
+    puts stderr {library written in C++11. It is designed to leverage the full}
+    puts stderr {performance potential of a wide variety of OpenCL devices from different}
+    puts stderr {vendors, including desktop and laptop GPUs, embedded GPUs, and other}
+    puts stderr {accelerators. CLBlast implements BLAS routines: basic linear algebra}
+    puts stderr {subprograms operating on vectors and matrices.}
+}
+
+conflict clblast
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/clblast-1.5.2-3crfualgduhu5g6mpqr46h2k5sasjcxe/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/clblast-1.5.2-3crfualgduhu5g6mpqr46h2k5sasjcxe/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/clblast-1.5.2-3crfualgduhu5g6mpqr46h2k5sasjcxe/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/clblast-1.5.2-3crfualgduhu5g6mpqr46h2k5sasjcxe/include}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/clblast-1.5.2-3crfualgduhu5g6mpqr46h2k5sasjcxe/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/clblast-1.5.2-3crfualgduhu5g6mpqr46h2k5sasjcxe/.}
+setenv CLBLAST_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/clblast-1.5.2-3crfualgduhu5g6mpqr46h2k5sasjcxe}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:20.513818
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:03.753972
 ##
 ## mummer@3.23%gcc@11.4.0 build_system=generic patches=05f53ea,c23ea85 arch=linux-ubuntu22.04-x86_64_v3/qof6hft
 ##
@@ -16,11 +16,11 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load gnuplot/5.4.3
+    module load perl/5.38.0-lfl2a73
 } else {
-    depends-on gnuplot/5.4.3
+    depends-on perl/5.38.0-lfl2a73
 }
-prereq gnuplot/5.4.3
+prereq perl/5.38.0-lfl2a73
 conflict mummer
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mummer-3.23-qof6hftirtgtdrctlufkudmqe6sloqf7/bin}

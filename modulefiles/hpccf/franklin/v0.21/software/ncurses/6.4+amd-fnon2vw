@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:04.318699
+##
+## ncurses@6.4%gcc@11.4.0~symlinks+termlib abi=none build_system=autotools arch=linux-ubuntu22.04-zen2/fnon2vw
+##
+
+
+module-whatis {The ncurses (new curses) library is a free software emulation of curses in System V Release 4.0, and more. It uses terminfo format, supports pads and color and multiple highlights and forms characters and function-key mapping, and has all the other SYSV-curses enhancements over BSD curses.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : ncurses}
+    puts stderr {Version: 6.4}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr {The ncurses (new curses) library is a free software emulation of curses}
+    puts stderr {in System V Release 4.0, and more. It uses terminfo format, supports}
+    puts stderr {pads and color and multiple highlights and forms characters and}
+    puts stderr {function-key mapping, and has all the other SYSV-curses enhancements}
+    puts stderr {over BSD curses.}
+}
+
+conflict ncurses
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ncurses-6.4-fnon2vwxhsceind2ec5qolhagbyijlvt/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ncurses-6.4-fnon2vwxhsceind2ec5qolhagbyijlvt/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ncurses-6.4-fnon2vwxhsceind2ec5qolhagbyijlvt/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ncurses-6.4-fnon2vwxhsceind2ec5qolhagbyijlvt/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ncurses-6.4-fnon2vwxhsceind2ec5qolhagbyijlvt/bin}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ncurses-6.4-fnon2vwxhsceind2ec5qolhagbyijlvt/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ncurses-6.4-fnon2vwxhsceind2ec5qolhagbyijlvt/.}
+setenv NCURSES_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ncurses-6.4-fnon2vwxhsceind2ec5qolhagbyijlvt}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:08.696784
+##
+## perl-file-listing@6.04%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/fq4m3rs
+##
+
+
+module-whatis {Parse directory listing}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-file-listing}
+    puts stderr {Version: 6.04}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Parse directory listing}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-http-date/6.02-uj7noib
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-http-date/6.02-uj7noib
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-http-date/6.02-uj7noib
+conflict perl-file-listing
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-file-listing-6.04-fq4m3rsfoc7mue7i6clsqzzgbeonv4ko/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-file-listing-6.04-fq4m3rsfoc7mue7i6clsqzzgbeonv4ko/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-file-listing-6.04-fq4m3rsfoc7mue7i6clsqzzgbeonv4ko/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-file-listing-6.04-fq4m3rsfoc7mue7i6clsqzzgbeonv4ko/lib/perl5}
+setenv PERL_FILE_LISTING_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-file-listing-6.04-fq4m3rsfoc7mue7i6clsqzzgbeonv4ko}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

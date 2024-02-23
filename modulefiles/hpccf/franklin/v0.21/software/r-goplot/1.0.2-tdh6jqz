@@ -1,0 +1,65 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:37.815829
+##
+## r-goplot@1.0.2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/tdh6jqz
+##
+
+
+module-whatis {Visualization of Functional Analysis Data.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-goplot}
+    puts stderr {Version: 1.0.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Visualization of Functional Analysis Data. Implementation of}
+    puts stderr {multilayered visualizations for enhanced graphical representation of}
+    puts stderr {functional analysis data. It combines and integrates omics data derived}
+    puts stderr {from expression and functional annotation enrichment analyses. Its}
+    puts stderr {plotting functions have been developed with an hierarchical structure in}
+    puts stderr {mind: starting from a general overview to identify the most enriched}
+    puts stderr {categories (modified bar plot, bubble plot) to a more detailed one}
+    puts stderr {displaying different types of relevant information for the molecules in}
+    puts stderr {a given set of categories (circle plot, chord plot, cluster plot, Venn}
+    puts stderr {diagram, heatmap).}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-ggdendro/0.1.23-cmco7vs
+    module load r-ggplot2/3.4.2-xlqyrdq
+    module load r-gridextra/2.3-tslk3tb
+    module load r-rcolorbrewer/1.1-3-sy4cppk
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-ggdendro/0.1.23-cmco7vs
+    depends-on r-ggplot2/3.4.2-xlqyrdq
+    depends-on r-gridextra/2.3-tslk3tb
+    depends-on r-rcolorbrewer/1.1-3-sy4cppk
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-ggdendro/0.1.23-cmco7vs
+prereq r-ggplot2/3.4.2-xlqyrdq
+prereq r-gridextra/2.3-tslk3tb
+prereq r-rcolorbrewer/1.1-3-sy4cppk
+conflict r-goplot
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-goplot-1.0.2-tdh6jqzalxbmli2347n5svzmsxvpq4zi/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-goplot-1.0.2-tdh6jqzalxbmli2347n5svzmsxvpq4zi/rlib/R/library}
+setenv R_GOPLOT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-goplot-1.0.2-tdh6jqzalxbmli2347n5svzmsxvpq4zi}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

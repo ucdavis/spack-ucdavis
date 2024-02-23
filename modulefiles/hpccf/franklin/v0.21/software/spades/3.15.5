@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:27.402056
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:35.250972
 ##
 ## spades@3.15.5%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/h2zjbdq
 ##
@@ -17,11 +17,11 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load bzip2/1.0.8
+    module load python/3.11.6-rsiojxh
 } else {
-    depends-on bzip2/1.0.8
+    depends-on python/3.11.6-rsiojxh
 }
-prereq bzip2/1.0.8
+prereq python/3.11.6-rsiojxh
 conflict spades
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/spades-3.15.5-h2zjbdqp7ucyguglsreehixfuflq2miz/bin}

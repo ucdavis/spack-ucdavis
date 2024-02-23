@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:46.566076
+##
+## ctffind@4.1.14%gcc@7.5.0+openmp build_system=autotools patches=d2d349c arch=linux-ubuntu22.04-skylake_avx512/v762bvw
+##
+## Configure options: --disable-debugmode --enable-mkl CPPFLAGS=-I/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/include -I/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/include/fftw LDFLAGS=-L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/intel-oneapi-mkl-2023.2.0-fktonydcczkb4imn52isghi2xogyein5/mkl/2023.2.0/lib/intel64 -L/lib/x86_64-linux-gnu -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lm --enable-openmp
+##
+
+
+module-whatis {Fast and accurate defocus estimation from electron micrographs.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : ctffind}
+    puts stderr {Version: 4.1.14}
+    puts stderr {Target : skylake_avx512}
+    puts stderr {}
+    puts stderr {Fast and accurate defocus estimation from electron micrographs.}
+}
+
+conflict ctffind
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-7.5.0/ctffind-4.1.14-v762bvwe7ipxtwp5img4de37cqhlgpke/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-7.5.0/ctffind-4.1.14-v762bvwe7ipxtwp5img4de37cqhlgpke/.}
+setenv CTFFIND_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-7.5.0/ctffind-4.1.14-v762bvwe7ipxtwp5img4de37cqhlgpke}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

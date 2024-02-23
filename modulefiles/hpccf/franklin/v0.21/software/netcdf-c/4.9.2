@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:21.208594
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:04.377484
 ##
 ## netcdf-c@4.9.2%gcc@11.4.0+blosc~byterange~dap~fsync~hdf4~jna+mpi~nczarr_zip+optimize~parallel-netcdf+pic+shared+szip+zstd build_system=autotools patches=0161eb8 arch=linux-ubuntu22.04-x86_64_v3/hjgmf4q
 ##
@@ -17,15 +17,6 @@ proc ModulesHelp { } {
     puts stderr {sharing of array-oriented scientific data. This is the C distribution.}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load bzip2/1.0.8
-    module load libszip/2.1.1
-} else {
-    depends-on bzip2/1.0.8
-    depends-on libszip/2.1.1
-}
-prereq bzip2/1.0.8
-prereq libszip/2.1.1
 conflict netcdf-c
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-c-4.9.2-hjgmf4qnwzoyitqw72njohbdki26zi6g/lib}

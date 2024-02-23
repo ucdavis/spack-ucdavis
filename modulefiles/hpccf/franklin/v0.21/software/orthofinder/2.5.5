@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:21.613938
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:05.144129
 ##
 ## orthofinder@2.5.5%gcc@11.4.0~blast~iqtree~mmseqs2~muscle~raxml~raxml-ng build_system=generic arch=linux-ubuntu22.04-x86_64_v3/nzgilbi
 ##
@@ -22,14 +22,29 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load diamond/2.1.7-eme3zbw
+    module load fastme/2.1.5.1-dnrhx4g
     module load fasttree/2.1.11
     module load mafft/7.505
+    module load mcl/14-137-dg3c6eg
+    module load py-numpy/1.25.2-vcmulzi
+    module load py-scipy/1.11.2-p46kbev
 } else {
+    depends-on diamond/2.1.7-eme3zbw
+    depends-on fastme/2.1.5.1-dnrhx4g
     depends-on fasttree/2.1.11
     depends-on mafft/7.505
+    depends-on mcl/14-137-dg3c6eg
+    depends-on py-numpy/1.25.2-vcmulzi
+    depends-on py-scipy/1.11.2-p46kbev
 }
+prereq diamond/2.1.7-eme3zbw
+prereq fastme/2.1.5.1-dnrhx4g
 prereq fasttree/2.1.11
 prereq mafft/7.505
+prereq mcl/14-137-dg3c6eg
+prereq py-numpy/1.25.2-vcmulzi
+prereq py-scipy/1.11.2-p46kbev
 conflict orthofinder
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/orthofinder-2.5.5-nzgilbilwee4bei4xlchrnjy75e5tkiw/bin}

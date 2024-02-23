@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:46.554870
+##
+## py-pyasn1-modules@0.2.8%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/qmhvmgy
+##
+
+
+module-whatis {A collection of ASN.1 modules expressed in form of pyasn1 classes. Includes protocols PDUs definition (SNMP, LDAP etc.) and various data structures (X.509, PKCS etc.).}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-pyasn1-modules}
+    puts stderr {Version: 0.2.8}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A collection of ASN.1 modules expressed in form of pyasn1 classes.}
+    puts stderr {Includes protocols PDUs definition (SNMP, LDAP etc.) and various data}
+    puts stderr {structures (X.509, PKCS etc.).}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-pyasn1/0.4.8-rczlb4e
+    module load python/3.9.18-rt3uhd4
+} else {
+    depends-on py-pyasn1/0.4.8-rczlb4e
+    depends-on python/3.9.18-rt3uhd4
+}
+prereq py-pyasn1/0.4.8-rczlb4e
+prereq python/3.9.18-rt3uhd4
+conflict py-pyasn1-modules
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyasn1-modules-0.2.8-qmhvmgyuibyrb764yg24aebfkcygpo4z/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyasn1-modules-0.2.8-qmhvmgyuibyrb764yg24aebfkcygpo4z/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyasn1-modules-0.2.8-qmhvmgyuibyrb764yg24aebfkcygpo4z/lib/python3.9/site-packages}
+setenv PY_PYASN1_MODULES_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyasn1-modules-0.2.8-qmhvmgyuibyrb764yg24aebfkcygpo4z}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

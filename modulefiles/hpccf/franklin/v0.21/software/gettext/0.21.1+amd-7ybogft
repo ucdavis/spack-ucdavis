@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:50.467541
+##
+## gettext@0.21.1%gcc@11.4.0+bzip2+curses+git~libunistring~libxml2+pic+shared+tar+xz build_system=autotools arch=linux-ubuntu22.04-zen2/7ybogft
+##
+## Configure options: --disable-java --disable-csharp --with-included-glib --with-included-gettext --with-included-libcroco --without-emacs --with-lispdir=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/gettext-0.21.1-7ybogftogmjax2eossbxqc6snwzowtir/share/emacs/site-lisp/gettext --without-cvs --enable-shared --with-libiconv-prefix=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/libiconv-1.17-wio2pa2xeu3p73lqgfri53artkc7jvu4 --with-ncurses-prefix=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ncurses-6.4-fnon2vwxhsceind2ec5qolhagbyijlvt --with-included-libxml --with-included-libunistring --with-pic
+##
+
+
+module-whatis {GNU internationalization (i18n) and localization (l10n) library.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gettext}
+    puts stderr {Version: 0.21.1}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr {GNU internationalization (i18n) and localization (l10n) library.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load xz/5.4.1+amd-2nzkuuc
+} else {
+    depends-on xz/5.4.1+amd-2nzkuuc
+}
+prereq xz/5.4.1+amd-2nzkuuc
+conflict gettext
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/gettext-0.21.1-7ybogftogmjax2eossbxqc6snwzowtir/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/gettext-0.21.1-7ybogftogmjax2eossbxqc6snwzowtir/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/gettext-0.21.1-7ybogftogmjax2eossbxqc6snwzowtir/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/gettext-0.21.1-7ybogftogmjax2eossbxqc6snwzowtir/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/gettext-0.21.1-7ybogftogmjax2eossbxqc6snwzowtir/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/gettext-0.21.1-7ybogftogmjax2eossbxqc6snwzowtir/share/man}
+prepend-path ACLOCAL_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/gettext-0.21.1-7ybogftogmjax2eossbxqc6snwzowtir/share/aclocal}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/gettext-0.21.1-7ybogftogmjax2eossbxqc6snwzowtir/.}
+setenv GETTEXT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/gettext-0.21.1-7ybogftogmjax2eossbxqc6snwzowtir}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

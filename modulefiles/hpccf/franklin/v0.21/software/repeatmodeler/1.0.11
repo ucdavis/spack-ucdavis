@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:26.552550
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:33.306335
 ##
 ## repeatmodeler@1.0.11%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/epix5ib
 ##
@@ -18,16 +18,37 @@ proc ModulesHelp { } {
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load ncbi-rmblastn/2.14.0
+    module load nseg/1.0-s4oplf7
+    module load perl/5.38.0-okr4ubb
+    module load perl-json/4.10-dj3fvol
+    module load perl-libwww-perl/6.68-o55j427
+    module load perl-uri/5.08-wwxtrl4
+    module load recon/1.05-4g4nlww
     module load repeatmasker/4.0.9
     module load repeatscout/1.0.5
+    module load trf/4.09.1-ee62ayh
 } else {
     depends-on ncbi-rmblastn/2.14.0
+    depends-on nseg/1.0-s4oplf7
+    depends-on perl/5.38.0-okr4ubb
+    depends-on perl-json/4.10-dj3fvol
+    depends-on perl-libwww-perl/6.68-o55j427
+    depends-on perl-uri/5.08-wwxtrl4
+    depends-on recon/1.05-4g4nlww
     depends-on repeatmasker/4.0.9
     depends-on repeatscout/1.0.5
+    depends-on trf/4.09.1-ee62ayh
 }
 prereq ncbi-rmblastn/2.14.0
+prereq nseg/1.0-s4oplf7
+prereq perl/5.38.0-okr4ubb
+prereq perl-json/4.10-dj3fvol
+prereq perl-libwww-perl/6.68-o55j427
+prereq perl-uri/5.08-wwxtrl4
+prereq recon/1.05-4g4nlww
 prereq repeatmasker/4.0.9
 prereq repeatscout/1.0.5
+prereq trf/4.09.1-ee62ayh
 conflict repeatmodeler
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/repeatmodeler-1.0.11-epix5ibegxko73qljaz7voiqvx2at7ts/bin}

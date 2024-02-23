@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:15.174136
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:47.246131
 ##
 ## ea-utils@2021-10-20%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/zonslfe
 ##
@@ -18,11 +18,11 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load gsl/2.7.1
+    module load perl/5.38.0-lfl2a73
 } else {
-    depends-on gsl/2.7.1
+    depends-on perl/5.38.0-lfl2a73
 }
-prereq gsl/2.7.1
+prereq perl/5.38.0-lfl2a73
 conflict ea-utils
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ea-utils-2021-10-20-zonslfevleeezzwhuvw242cfhjrnctih/bin}

@@ -1,0 +1,50 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:01.787326
+##
+## r-r6@2.5.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/5ovuzwq
+##
+
+
+module-whatis {Encapsulated Classes with Reference Semantics.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-r6}
+    puts stderr {Version: 2.5.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Encapsulated Classes with Reference Semantics. The R6 package allows the}
+    puts stderr {creation of classes with reference semantics, similar to R's built-in}
+    puts stderr {reference classes. Compared to reference classes, R6 classes are simpler}
+    puts stderr {and lighter-weight, and they are not built on S4 classes so they do not}
+    puts stderr {require the methods package. These classes allow public and private}
+    puts stderr {members, and they support inheritance, even when the classes are defined}
+    puts stderr {in different packages.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+}
+prereq r/4.3.0-bzxz5nl
+conflict r-r6
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-r6-2.5.1-5ovuzwqk56r6ndl6ettkyl4kui5imuea/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-r6-2.5.1-5ovuzwqk56r6ndl6ettkyl4kui5imuea/rlib/R/library}
+setenv R_R6_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-r6-2.5.1-5ovuzwqk56r6ndl6ettkyl4kui5imuea}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

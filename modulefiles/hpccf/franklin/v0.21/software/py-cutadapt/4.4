@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:23.679836
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:23.225019
 ##
 ## py-cutadapt@4.4%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/t4yyleg
 ##
@@ -17,6 +17,21 @@ proc ModulesHelp { } {
     puts stderr {reads.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-dnaio/0.10.0-xahc7zr
+    module load py-setuptools/68.0.0-hvwaln6
+    module load py-xopen/1.6.0-jzuviut
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on py-dnaio/0.10.0-xahc7zr
+    depends-on py-setuptools/68.0.0-hvwaln6
+    depends-on py-xopen/1.6.0-jzuviut
+    depends-on python/3.11.6-ht65m6a
+}
+prereq py-dnaio/0.10.0-xahc7zr
+prereq py-setuptools/68.0.0-hvwaln6
+prereq py-xopen/1.6.0-jzuviut
+prereq python/3.11.6-ht65m6a
 conflict py-cutadapt
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cutadapt-4.4-t4yyleg4rehhdmuqnlmzi5oiht5j7cj5/lib}

@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:14.154246
+##
+## perl-xml-quote@1.02%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/pvkivlg
+##
+
+
+module-whatis {This module provides functions to quote/dequote strings in 'xml'-way.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-xml-quote}
+    puts stderr {Version: 1.02}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This module provides functions to quote/dequote strings in "xml"-way.}
+    puts stderr {All functions are written in XS and are very fast; they correctly}
+    puts stderr {process utf8, tied, overloaded variables and all the rest of perl}
+    puts stderr {"magic".}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-xml-quote
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-quote-1.02-pvkivlg27asjpgbfvx47wsfd5l6fjizn/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-quote-1.02-pvkivlg27asjpgbfvx47wsfd5l6fjizn/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-quote-1.02-pvkivlg27asjpgbfvx47wsfd5l6fjizn/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-quote-1.02-pvkivlg27asjpgbfvx47wsfd5l6fjizn/lib/perl5}
+setenv PERL_XML_QUOTE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-quote-1.02-pvkivlg27asjpgbfvx47wsfd5l6fjizn}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

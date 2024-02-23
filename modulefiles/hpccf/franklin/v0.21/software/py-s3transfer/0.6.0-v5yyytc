@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:51.950033
+##
+## py-s3transfer@0.6.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/v5yyytc
+##
+
+
+module-whatis {S3transfer is a Python library for managing Amazon S3 transfers.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-s3transfer}
+    puts stderr {Version: 0.6.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {S3transfer is a Python library for managing Amazon S3 transfers.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-botocore/1.31.41-qrtwcfw
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-botocore/1.31.41-qrtwcfw
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-botocore/1.31.41-qrtwcfw
+prereq python/3.11.6-rsiojxh
+conflict py-s3transfer
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-s3transfer-0.6.0-v5yyytcdvcmylbli4rs2vqoq5bh37xb3/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-s3transfer-0.6.0-v5yyytcdvcmylbli4rs2vqoq5bh37xb3/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-s3transfer-0.6.0-v5yyytcdvcmylbli4rs2vqoq5bh37xb3/lib/python3.11/site-packages}
+setenv PY_S3TRANSFER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-s3transfer-0.6.0-v5yyytcdvcmylbli4rs2vqoq5bh37xb3}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

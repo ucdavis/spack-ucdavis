@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:49.409027
+##
+## r-lattice@0.21-8%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/gbm56sx
+##
+
+
+module-whatis {Trellis Graphics for R.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-lattice}
+    puts stderr {Version: 0.21-8}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Trellis Graphics for R. A powerful and elegant high-level data}
+    puts stderr {visualization system inspired by Trellis graphics, with an emphasis on}
+    puts stderr {multivariate data. Lattice is sufficient for typical graphics needs, and}
+    puts stderr {is also flexible enough to handle most nonstandard requirements. See}
+    puts stderr {?Lattice for an introduction.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-vcbztcv
+} else {
+    depends-on r/4.3.0-vcbztcv
+}
+prereq r/4.3.0-vcbztcv
+conflict r-lattice
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-lattice-0.21-8-gbm56sxnxp4dlobddihdfrj7lq4kva35/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-lattice-0.21-8-gbm56sxnxp4dlobddihdfrj7lq4kva35/rlib/R/library}
+setenv R_LATTICE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-lattice-0.21-8-gbm56sxnxp4dlobddihdfrj7lq4kva35}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

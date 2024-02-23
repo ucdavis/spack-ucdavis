@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:26.730195
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:33.453070
 ##
 ## repeatscout@1.0.5%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/awlkjt6
 ##
@@ -16,6 +16,18 @@ proc ModulesHelp { } {
     puts stderr {P.A.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load nseg/1.0-s4oplf7
+    module load perl/5.38.0-okr4ubb
+    module load trf/4.09.1-ee62ayh
+} else {
+    depends-on nseg/1.0-s4oplf7
+    depends-on perl/5.38.0-okr4ubb
+    depends-on trf/4.09.1-ee62ayh
+}
+prereq nseg/1.0-s4oplf7
+prereq perl/5.38.0-okr4ubb
+prereq trf/4.09.1-ee62ayh
 conflict repeatscout
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/repeatscout-1.0.5-awlkjt63q7jfsf5op27zswicizmij6w2/bin}

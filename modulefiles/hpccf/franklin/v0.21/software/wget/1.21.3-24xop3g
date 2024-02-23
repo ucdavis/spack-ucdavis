@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:37.122021
+##
+## wget@1.21.3%gcc@11.4.0~libpsl~pcre~python+zlib build_system=autotools patches=8f50e8a ssl=openssl arch=linux-ubuntu22.04-x86_64_v3/24xop3g
+##
+## Configure options: --with-ssl=openssl --without-included-regex --with-zlib --without-libpsl --disable-pcre --disable-valgrind-tests
+##
+
+
+module-whatis {GNU Wget is a free software package for retrieving files using HTTP, HTTPS and FTP, the most widely-used Internet protocols. It is a non-interactive commandline tool, so it may easily be called from scripts, cron jobs, terminals without X-Windows support, etc.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : wget}
+    puts stderr {Version: 1.21.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GNU Wget is a free software package for retrieving files using HTTP,}
+    puts stderr {HTTPS and FTP, the most widely-used Internet protocols. It is a non-}
+    puts stderr {interactive commandline tool, so it may easily be called from scripts,}
+    puts stderr {cron jobs, terminals without X-Windows support, etc.}
+}
+
+conflict wget
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/wget-1.21.3-24xop3gociiem7ygdqjvb6kcxa625qoh/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/wget-1.21.3-24xop3gociiem7ygdqjvb6kcxa625qoh/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/wget-1.21.3-24xop3gociiem7ygdqjvb6kcxa625qoh/.}
+setenv WGET_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/wget-1.21.3-24xop3gociiem7ygdqjvb6kcxa625qoh}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

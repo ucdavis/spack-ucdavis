@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:31.882530
+##
+## recon@1.05%gcc@11.4.0+repeatmasker build_system=makefile patches=18a7a0b arch=linux-ubuntu22.04-x86_64_v3/4g4nlww
+##
+
+
+module-whatis {RECON: a package for automated de novo identification of repeat families from genomic sequences.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : recon}
+    puts stderr {Version: 1.05}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {RECON: a package for automated de novo identification of repeat families}
+    puts stderr {from genomic sequences.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-okr4ubb
+} else {
+    depends-on perl/5.38.0-okr4ubb
+}
+prereq perl/5.38.0-okr4ubb
+conflict recon
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/recon-1.05-4g4nlww44aznvhtt7pz722hebyw7qm6r/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/recon-1.05-4g4nlww44aznvhtt7pz722hebyw7qm6r/.}
+setenv RECON_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/recon-1.05-4g4nlww44aznvhtt7pz722hebyw7qm6r}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

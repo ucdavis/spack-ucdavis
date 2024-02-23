@@ -1,0 +1,92 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:14.375897
+##
+## r-rtracklayer@1.60.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/pxly6m3
+##
+
+
+module-whatis {R interface to genome annotation files and the UCSC genome browser.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-rtracklayer}
+    puts stderr {Version: 1.60.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {R interface to genome annotation files and the UCSC genome browser.}
+    puts stderr {Extensible framework for interacting with multiple genome browsers}
+    puts stderr {(currently UCSC built-in) and manipulating annotation tracks in various}
+    puts stderr {formats (currently GFF, BED, bedGraph, BED15, WIG, BigWig and 2bit}
+    puts stderr {built-in). The user may export/import tracks to/from the supported}
+    puts stderr {browsers, as well as query and modify the browser state, such as the}
+    puts stderr {current viewport.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-biocgenerics/0.46.0-rw7nuva
+    module load r-biocio/1.10.0-kixu25q
+    module load r-biostrings/2.68.0-43pqt7i
+    module load r-genomeinfodb/1.35.4-wzspug7
+    module load r-genomicalignments/1.36.0-hnfp4wo
+    module load r-genomicranges/1.52.0-2sgr2jg
+    module load r-iranges/2.34.0-25aulpb
+    module load r-rcurl/1.98-1.12-ldf5n3x
+    module load r-restfulr/0.0.15-ijbx5w2
+    module load r-rsamtools/2.16.0-clek5cd
+    module load r-s4vectors/0.38.0-ayuftw7
+    module load r-xml/3.99-0.14-yerecb5
+    module load r-xvector/0.40.0-abx3xrl
+    module load r-zlibbioc/1.46.0-qsn352m
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-biocgenerics/0.46.0-rw7nuva
+    depends-on r-biocio/1.10.0-kixu25q
+    depends-on r-biostrings/2.68.0-43pqt7i
+    depends-on r-genomeinfodb/1.35.4-wzspug7
+    depends-on r-genomicalignments/1.36.0-hnfp4wo
+    depends-on r-genomicranges/1.52.0-2sgr2jg
+    depends-on r-iranges/2.34.0-25aulpb
+    depends-on r-rcurl/1.98-1.12-ldf5n3x
+    depends-on r-restfulr/0.0.15-ijbx5w2
+    depends-on r-rsamtools/2.16.0-clek5cd
+    depends-on r-s4vectors/0.38.0-ayuftw7
+    depends-on r-xml/3.99-0.14-yerecb5
+    depends-on r-xvector/0.40.0-abx3xrl
+    depends-on r-zlibbioc/1.46.0-qsn352m
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-biocgenerics/0.46.0-rw7nuva
+prereq r-biocio/1.10.0-kixu25q
+prereq r-biostrings/2.68.0-43pqt7i
+prereq r-genomeinfodb/1.35.4-wzspug7
+prereq r-genomicalignments/1.36.0-hnfp4wo
+prereq r-genomicranges/1.52.0-2sgr2jg
+prereq r-iranges/2.34.0-25aulpb
+prereq r-rcurl/1.98-1.12-ldf5n3x
+prereq r-restfulr/0.0.15-ijbx5w2
+prereq r-rsamtools/2.16.0-clek5cd
+prereq r-s4vectors/0.38.0-ayuftw7
+prereq r-xml/3.99-0.14-yerecb5
+prereq r-xvector/0.40.0-abx3xrl
+prereq r-zlibbioc/1.46.0-qsn352m
+conflict r-rtracklayer
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rtracklayer-1.60.0-pxly6m3nuqsarbg3ixybty22hdjktb5v/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rtracklayer-1.60.0-pxly6m3nuqsarbg3ixybty22hdjktb5v/rlib/R/library}
+setenv R_RTRACKLAYER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rtracklayer-1.60.0-pxly6m3nuqsarbg3ixybty22hdjktb5v}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

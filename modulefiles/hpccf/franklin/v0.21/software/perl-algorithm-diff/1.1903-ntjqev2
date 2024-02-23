@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:06.216632
+##
+## perl-algorithm-diff@1.1903%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/ntjqev2
+##
+
+
+module-whatis {Compute 'intelligent' differences between two files / lists}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-algorithm-diff}
+    puts stderr {Version: 1.1903}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Compute 'intelligent' differences between two files / lists}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-algorithm-diff
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-algorithm-diff-1.1903-ntjqev2wdzvhc7sgfgximmeryrks2q67/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-algorithm-diff-1.1903-ntjqev2wdzvhc7sgfgximmeryrks2q67/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-algorithm-diff-1.1903-ntjqev2wdzvhc7sgfgximmeryrks2q67/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-algorithm-diff-1.1903-ntjqev2wdzvhc7sgfgximmeryrks2q67/lib/perl5}
+setenv PERL_ALGORITHM_DIFF_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-algorithm-diff-1.1903-ntjqev2wdzvhc7sgfgximmeryrks2q67}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

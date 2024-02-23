@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:13.077952
+##
+## r-callr@3.7.3%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/zqcxgei
+##
+
+
+module-whatis {Call R from R.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-callr}
+    puts stderr {Version: 3.7.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Call R from R. It is sometimes useful to perform a computation in a}
+    puts stderr {separate R process, without affecting the current R process at all. This}
+    puts stderr {packages does exactly that.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-processx/3.8.1-3ac3uhw
+    module load r-r6/2.5.1-5ovuzwq
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-processx/3.8.1-3ac3uhw
+    depends-on r-r6/2.5.1-5ovuzwq
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-processx/3.8.1-3ac3uhw
+prereq r-r6/2.5.1-5ovuzwq
+conflict r-callr
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-callr-3.7.3-zqcxgeit53ae6qzsszt36l5xh5jefylq/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-callr-3.7.3-zqcxgeit53ae6qzsszt36l5xh5jefylq/rlib/R/library}
+setenv R_CALLR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-callr-3.7.3-zqcxgeit53ae6qzsszt36l5xh5jefylq}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

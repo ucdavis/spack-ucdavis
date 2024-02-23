@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:26.783641
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:33.521749
 ##
 ## rnaquast@2.2.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/az7bd7j
 ##
@@ -19,6 +19,27 @@ proc ModulesHelp { } {
     puts stderr {assessment using third-party software.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load blast-plus/2.14.1-p2i4kzy
+    module load gmap-gsnap/2023-07-20-kh3wggo
+    module load py-gffutils/0.10.1-c4sbwcd
+    module load py-joblib/1.2.0-4asqo2q
+    module load py-matplotlib/3.8.0-qkq4nm7
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on blast-plus/2.14.1-p2i4kzy
+    depends-on gmap-gsnap/2023-07-20-kh3wggo
+    depends-on py-gffutils/0.10.1-c4sbwcd
+    depends-on py-joblib/1.2.0-4asqo2q
+    depends-on py-matplotlib/3.8.0-qkq4nm7
+    depends-on python/3.11.6-ht65m6a
+}
+prereq blast-plus/2.14.1-p2i4kzy
+prereq gmap-gsnap/2023-07-20-kh3wggo
+prereq py-gffutils/0.10.1-c4sbwcd
+prereq py-joblib/1.2.0-4asqo2q
+prereq py-matplotlib/3.8.0-qkq4nm7
+prereq python/3.11.6-ht65m6a
 conflict rnaquast
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/rnaquast-2.2.0-az7bd7jvg2ftxaybgidluihsisy4hwxw/bin}

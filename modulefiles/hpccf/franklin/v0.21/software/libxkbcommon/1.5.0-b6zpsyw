@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:59.447557
+##
+## libxkbcommon@1.5.0%gcc@11.4.0~strip~wayland build_system=meson buildtype=release default_library=shared arch=linux-ubuntu22.04-x86_64_v3/b6zpsyw
+##
+
+
+module-whatis {xkbcommon is a library to handle keyboard descriptions, including loading them from disk, parsing them and handling their state. It's mainly meant for client toolkits, window systems, and other system applications.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libxkbcommon}
+    puts stderr {Version: 1.5.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {xkbcommon is a library to handle keyboard descriptions, including}
+    puts stderr {loading them from disk, parsing them and handling their state. It's}
+    puts stderr {mainly meant for client toolkits, window systems, and other system}
+    puts stderr {applications.}
+}
+
+conflict libxkbcommon
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxkbcommon-1.5.0-b6zpsywwgrdvnss52oxnabzsc7etsox5/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxkbcommon-1.5.0-b6zpsywwgrdvnss52oxnabzsc7etsox5/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxkbcommon-1.5.0-b6zpsywwgrdvnss52oxnabzsc7etsox5/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxkbcommon-1.5.0-b6zpsywwgrdvnss52oxnabzsc7etsox5/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxkbcommon-1.5.0-b6zpsywwgrdvnss52oxnabzsc7etsox5/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxkbcommon-1.5.0-b6zpsywwgrdvnss52oxnabzsc7etsox5/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxkbcommon-1.5.0-b6zpsywwgrdvnss52oxnabzsc7etsox5/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxkbcommon-1.5.0-b6zpsywwgrdvnss52oxnabzsc7etsox5/.}
+setenv LIBXKBCOMMON_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxkbcommon-1.5.0-b6zpsywwgrdvnss52oxnabzsc7etsox5}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

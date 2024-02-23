@@ -1,0 +1,51 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:00.418524
+##
+## libxslt@1.1.33%gcc@11.4.0+crypto~python build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/4uhx4lb
+##
+## Configure options: --with-crypto --without-python
+##
+
+
+module-whatis {Libxslt is the XSLT C library developed for the GNOME project. XSLT itself is a an XML language to define transformation for XML. Libxslt is based on libxml2 the XML C library developed for the GNOME project. It also implements most of the EXSLT set of processor-portable extensions functions and some of Saxon's evaluate and expressions extensions.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libxslt}
+    puts stderr {Version: 1.1.33}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Libxslt is the XSLT C library developed for the GNOME project. XSLT}
+    puts stderr {itself is a an XML language to define transformation for XML. Libxslt is}
+    puts stderr {based on libxml2 the XML C library developed for the GNOME project. It}
+    puts stderr {also implements most of the EXSLT set of processor-portable extensions}
+    puts stderr {functions and some of Saxon's evaluate and expressions extensions.}
+}
+
+conflict libxslt
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxslt-1.1.33-4uhx4lbaub3q6gpzwu6p4r6ww26mmaxk/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxslt-1.1.33-4uhx4lbaub3q6gpzwu6p4r6ww26mmaxk/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxslt-1.1.33-4uhx4lbaub3q6gpzwu6p4r6ww26mmaxk/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxslt-1.1.33-4uhx4lbaub3q6gpzwu6p4r6ww26mmaxk/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxslt-1.1.33-4uhx4lbaub3q6gpzwu6p4r6ww26mmaxk/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxslt-1.1.33-4uhx4lbaub3q6gpzwu6p4r6ww26mmaxk/share/man}
+prepend-path ACLOCAL_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxslt-1.1.33-4uhx4lbaub3q6gpzwu6p4r6ww26mmaxk/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxslt-1.1.33-4uhx4lbaub3q6gpzwu6p4r6ww26mmaxk/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxslt-1.1.33-4uhx4lbaub3q6gpzwu6p4r6ww26mmaxk/.}
+setenv LIBXSLT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxslt-1.1.33-4uhx4lbaub3q6gpzwu6p4r6ww26mmaxk}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:08.041946
+##
+## r-rex@1.2.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/4ucgk7h
+##
+
+
+module-whatis {Friendly Regular Expressions.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-rex}
+    puts stderr {Version: 1.2.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Friendly Regular Expressions. A friendly interface for the construction}
+    puts stderr {of regular expressions.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-lazyeval/0.2.2-z2lshfl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-lazyeval/0.2.2-z2lshfl
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-lazyeval/0.2.2-z2lshfl
+conflict r-rex
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rex-1.2.1-4ucgk7hwcoolx3f7m4zm75t3obe5b65z/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rex-1.2.1-4ucgk7hwcoolx3f7m4zm75t3obe5b65z/rlib/R/library}
+setenv R_REX_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rex-1.2.1-4ucgk7hwcoolx3f7m4zm75t3obe5b65z}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

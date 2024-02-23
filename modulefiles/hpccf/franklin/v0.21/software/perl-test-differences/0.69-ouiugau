@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:12.654854
+##
+## perl-test-differences@0.69%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/ouiugau
+##
+
+
+module-whatis {Test strings and data structures and show differences if not ok}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-test-differences}
+    puts stderr {Version: 0.69}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Test strings and data structures and show differences if not ok}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-capture-tiny/0.48-buwhsdn
+    module load perl-text-diff/1.45-hk4vzeu
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-capture-tiny/0.48-buwhsdn
+    depends-on perl-text-diff/1.45-hk4vzeu
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-capture-tiny/0.48-buwhsdn
+prereq perl-text-diff/1.45-hk4vzeu
+conflict perl-test-differences
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-test-differences-0.69-ouiugauwam6gn64nevbyrifa55bhmafq/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-test-differences-0.69-ouiugauwam6gn64nevbyrifa55bhmafq/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-test-differences-0.69-ouiugauwam6gn64nevbyrifa55bhmafq/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-test-differences-0.69-ouiugauwam6gn64nevbyrifa55bhmafq/lib/perl5}
+setenv PERL_TEST_DIFFERENCES_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-test-differences-0.69-ouiugauwam6gn64nevbyrifa55bhmafq}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

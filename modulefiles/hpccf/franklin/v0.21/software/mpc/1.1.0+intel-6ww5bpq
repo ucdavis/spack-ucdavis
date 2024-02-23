@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:03.697691
+##
+## mpc@1.1.0%oneapi@2023.2.0 build_system=autotools libs=shared,static arch=linux-ubuntu22.04-skylake_avx512/6ww5bpq
+##
+## Configure options: --with-mpfr=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/mpfr-3.1.6-xhozidqy7yltuzavhlecqpzhayndd25i --with-gmp=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/gmp-6.2.1-rivvtjdayqaxstmsudblbgi5liqvmoiq --enable-shared --enable-static
+##
+
+
+module-whatis {Gnu Mpc is a C library for the arithmetic of complex numbers with arbitrarily high precision and correct rounding of the result.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : mpc}
+    puts stderr {Version: 1.1.0}
+    puts stderr {Target : skylake_avx512}
+    puts stderr {}
+    puts stderr {Gnu Mpc is a C library for the arithmetic of complex numbers with}
+    puts stderr {arbitrarily high precision and correct rounding of the result.}
+}
+
+conflict mpc
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/mpc-1.1.0-6ww5bpqqz3ioqp7lxpcqezdgo3pdhsg4/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/mpc-1.1.0-6ww5bpqqz3ioqp7lxpcqezdgo3pdhsg4/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/mpc-1.1.0-6ww5bpqqz3ioqp7lxpcqezdgo3pdhsg4/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/mpc-1.1.0-6ww5bpqqz3ioqp7lxpcqezdgo3pdhsg4/include}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/mpc-1.1.0-6ww5bpqqz3ioqp7lxpcqezdgo3pdhsg4/.}
+setenv MPC_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/mpc-1.1.0-6ww5bpqqz3ioqp7lxpcqezdgo3pdhsg4}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

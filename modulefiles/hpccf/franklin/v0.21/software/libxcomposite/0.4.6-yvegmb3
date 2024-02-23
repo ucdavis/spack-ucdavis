@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:58.705285
+##
+## libxcomposite@0.4.6%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/yvegmb3
+##
+
+
+module-whatis {libXcomposite - client library for the Composite extension to the X11 protocol.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libxcomposite}
+    puts stderr {Version: 0.4.6}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {libXcomposite - client library for the Composite extension to the X11}
+    puts stderr {protocol.}
+}
+
+conflict libxcomposite
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcomposite-0.4.6-yvegmb3ydfba7tuc62sobrdxyhcl2gfi/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcomposite-0.4.6-yvegmb3ydfba7tuc62sobrdxyhcl2gfi/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcomposite-0.4.6-yvegmb3ydfba7tuc62sobrdxyhcl2gfi/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcomposite-0.4.6-yvegmb3ydfba7tuc62sobrdxyhcl2gfi/include}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcomposite-0.4.6-yvegmb3ydfba7tuc62sobrdxyhcl2gfi/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcomposite-0.4.6-yvegmb3ydfba7tuc62sobrdxyhcl2gfi/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcomposite-0.4.6-yvegmb3ydfba7tuc62sobrdxyhcl2gfi/.}
+prepend-path XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/share/X11/locale}
+setenv LIBXCOMPOSITE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcomposite-0.4.6-yvegmb3ydfba7tuc62sobrdxyhcl2gfi}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

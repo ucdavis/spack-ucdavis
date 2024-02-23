@@ -1,0 +1,57 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:41.578568
+##
+## py-numpy-groupies@0.9.20%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/b6cmwiv
+##
+
+
+module-whatis {This package consists of a couple of optimised tools for doing things that can roughly be considered 'group-indexing operations'. The most prominent tool is `aggregate`. `aggregate` takes an array of values, and an array giving the group number for each of those values. It then returns the sum (or mean, or std, or any, ...etc.) of the values in each group. You have probably come across this idea before, using `matlab` accumarray, `pandas` groupby, or generally MapReduce algorithms and histograms. There are different implementations of `aggregate` provided, based on plain `numpy`, `numba` and `weave`. Performance is a main concern, and so far we comfortably beat similar implementations in other packages (check the benchmarks).}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-numpy-groupies}
+    puts stderr {Version: 0.9.20}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This package consists of a couple of optimised tools for doing things}
+    puts stderr {that can roughly be considered "group-indexing operations". The most}
+    puts stderr {prominent tool is `aggregate`. `aggregate` takes an array of values, and}
+    puts stderr {an array giving the group number for each of those values. It then}
+    puts stderr {returns the sum (or mean, or std, or any, ...etc.) of the values in each}
+    puts stderr {group. You have probably come across this idea before, using `matlab`}
+    puts stderr {accumarray, `pandas` groupby, or generally MapReduce algorithms and}
+    puts stderr {histograms. There are different implementations of `aggregate` provided,}
+    puts stderr {based on plain `numpy`, `numba` and `weave`. Performance is a main}
+    puts stderr {concern, and so far we comfortably beat similar implementations in other}
+    puts stderr {packages (check the benchmarks).}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-numpy/1.24.4-jhyio2h
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on py-numpy/1.24.4-jhyio2h
+    depends-on python/3.11.6-ht65m6a
+}
+prereq py-numpy/1.24.4-jhyio2h
+prereq python/3.11.6-ht65m6a
+conflict py-numpy-groupies
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numpy-groupies-0.9.20-b6cmwivb2nxatj7pdtpt5q7lxghsyyfx/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numpy-groupies-0.9.20-b6cmwivb2nxatj7pdtpt5q7lxghsyyfx/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numpy-groupies-0.9.20-b6cmwivb2nxatj7pdtpt5q7lxghsyyfx/lib/python3.11/site-packages}
+setenv PY_NUMPY_GROUPIES_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numpy-groupies-0.9.20-b6cmwivb2nxatj7pdtpt5q7lxghsyyfx}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:43.658281
+##
+## bdftopcf@1.1%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/adypsrn
+##
+
+
+module-whatis {bdftopcf is a font compiler for the X server and font server. Fonts in Portable Compiled Format can be read by any architecture, although the file is structured to allow one particular architecture to read them directly without reformatting. This allows fast reading on the appropriate machine, but the files are still portable (but read more slowly) on other machines.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : bdftopcf}
+    puts stderr {Version: 1.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {bdftopcf is a font compiler for the X server and font server. Fonts in}
+    puts stderr {Portable Compiled Format can be read by any architecture, although the}
+    puts stderr {file is structured to allow one particular architecture to read them}
+    puts stderr {directly without reformatting. This allows fast reading on the}
+    puts stderr {appropriate machine, but the files are still portable (but read more}
+    puts stderr {slowly) on other machines.}
+}
+
+conflict bdftopcf
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bdftopcf-1.1-adypsrnd4pkdtchfvqhrrzdnilrib2wa/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bdftopcf-1.1-adypsrnd4pkdtchfvqhrrzdnilrib2wa/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bdftopcf-1.1-adypsrnd4pkdtchfvqhrrzdnilrib2wa/.}
+setenv BDFTOPCF_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bdftopcf-1.1-adypsrnd4pkdtchfvqhrrzdnilrib2wa}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

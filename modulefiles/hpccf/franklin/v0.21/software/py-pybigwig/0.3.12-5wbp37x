@@ -1,0 +1,50 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:46.631334
+##
+## py-pybigwig@0.3.12%gcc@11.4.0+numpy build_system=python_pip patches=25a465b arch=linux-ubuntu22.04-x86_64_v3/5wbp37x
+##
+
+
+module-whatis {A package for accessing bigWig files using libBigWig.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-pybigwig}
+    puts stderr {Version: 0.3.12}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A package for accessing bigWig files using libBigWig.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load curl/8.4.0-qe2p3o3
+    module load py-numpy/1.25.2-sea6nxl
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on curl/8.4.0-qe2p3o3
+    depends-on py-numpy/1.25.2-sea6nxl
+    depends-on python/3.11.6-rsiojxh
+}
+prereq curl/8.4.0-qe2p3o3
+prereq py-numpy/1.25.2-sea6nxl
+prereq python/3.11.6-rsiojxh
+conflict py-pybigwig
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pybigwig-0.3.12-5wbp37xhiwsz6jay6g7t2wzq2dljbhhk/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pybigwig-0.3.12-5wbp37xhiwsz6jay6g7t2wzq2dljbhhk/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pybigwig-0.3.12-5wbp37xhiwsz6jay6g7t2wzq2dljbhhk/lib/python3.11/site-packages}
+setenv PY_PYBIGWIG_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pybigwig-0.3.12-5wbp37xhiwsz6jay6g7t2wzq2dljbhhk}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

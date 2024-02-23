@@ -1,0 +1,94 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:38.975109
+##
+## py-nbconvert@7.4.0%gcc@11.4.0+serve build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/sg6slsw
+##
+
+
+module-whatis {Jupyter Notebook Conversion}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-nbconvert}
+    puts stderr {Version: 7.4.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Jupyter Notebook Conversion}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-beautifulsoup4/4.12.2-tkmwv4g
+    module load py-bleach/6.0.0-vvq7hwe
+    module load py-defusedxml/0.7.1-d4p5o2j
+    module load py-jinja2/3.1.2-va5qws5
+    module load py-jupyter-core/5.3.0-ltxlwwi
+    module load py-jupyterlab-pygments/0.2.2-327y2rz
+    module load py-markupsafe/2.1.3-zjqft7p
+    module load py-mistune/2.0.5-gzv7bno
+    module load py-nbclient/0.8.0-kiicts6
+    module load py-nbformat/5.8.0-yrwxml3
+    module load py-packaging/23.1-qdlu6do
+    module load py-pandocfilters/1.5.0-mcvr3b7
+    module load py-pygments/2.16.1-opyvscq
+    module load py-tinycss2/1.2.1-k4giv3k
+    module load py-tornado/6.3.3-lu2kmpg
+    module load py-traitlets/5.9.0-pmbefep
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-beautifulsoup4/4.12.2-tkmwv4g
+    depends-on py-bleach/6.0.0-vvq7hwe
+    depends-on py-defusedxml/0.7.1-d4p5o2j
+    depends-on py-jinja2/3.1.2-va5qws5
+    depends-on py-jupyter-core/5.3.0-ltxlwwi
+    depends-on py-jupyterlab-pygments/0.2.2-327y2rz
+    depends-on py-markupsafe/2.1.3-zjqft7p
+    depends-on py-mistune/2.0.5-gzv7bno
+    depends-on py-nbclient/0.8.0-kiicts6
+    depends-on py-nbformat/5.8.0-yrwxml3
+    depends-on py-packaging/23.1-qdlu6do
+    depends-on py-pandocfilters/1.5.0-mcvr3b7
+    depends-on py-pygments/2.16.1-opyvscq
+    depends-on py-tinycss2/1.2.1-k4giv3k
+    depends-on py-tornado/6.3.3-lu2kmpg
+    depends-on py-traitlets/5.9.0-pmbefep
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-beautifulsoup4/4.12.2-tkmwv4g
+prereq py-bleach/6.0.0-vvq7hwe
+prereq py-defusedxml/0.7.1-d4p5o2j
+prereq py-jinja2/3.1.2-va5qws5
+prereq py-jupyter-core/5.3.0-ltxlwwi
+prereq py-jupyterlab-pygments/0.2.2-327y2rz
+prereq py-markupsafe/2.1.3-zjqft7p
+prereq py-mistune/2.0.5-gzv7bno
+prereq py-nbclient/0.8.0-kiicts6
+prereq py-nbformat/5.8.0-yrwxml3
+prereq py-packaging/23.1-qdlu6do
+prereq py-pandocfilters/1.5.0-mcvr3b7
+prereq py-pygments/2.16.1-opyvscq
+prereq py-tinycss2/1.2.1-k4giv3k
+prereq py-tornado/6.3.3-lu2kmpg
+prereq py-traitlets/5.9.0-pmbefep
+prereq python/3.11.6-rsiojxh
+conflict py-nbconvert
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-nbconvert-7.4.0-sg6slswepp5eosrngeq6iaa7j5sxfn5e/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-nbconvert-7.4.0-sg6slswepp5eosrngeq6iaa7j5sxfn5e/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-nbconvert-7.4.0-sg6slswepp5eosrngeq6iaa7j5sxfn5e/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-nbconvert-7.4.0-sg6slswepp5eosrngeq6iaa7j5sxfn5e/lib/python3.11/site-packages}
+prepend-path JUPYTER_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-nbconvert-7.4.0-sg6slswepp5eosrngeq6iaa7j5sxfn5e/share/jupyter}
+setenv PY_NBCONVERT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-nbconvert-7.4.0-sg6slswepp5eosrngeq6iaa7j5sxfn5e}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

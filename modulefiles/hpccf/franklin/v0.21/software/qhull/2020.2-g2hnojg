@@ -1,0 +1,50 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:00.454774
+##
+## qhull@2020.2%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/g2hnojg
+##
+
+
+module-whatis {Qhull computes the convex hull, Delaunay triangulation, Voronoi diagram, halfspace intersection about a point, furt hest-site Delaunay triangulation, and furthest-site Voronoi diagram. The source code runs in 2-d, 3-d, 4-d, and higher dimensions. Qhull implements the Quickhull algorithm for computing the convex hull. It handles roundoff errors from floating point arithmetic. It computes volumes, surface areas, and approximations to the convex hull.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : qhull}
+    puts stderr {Version: 2020.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Qhull computes the convex hull, Delaunay triangulation, Voronoi diagram,}
+    puts stderr {halfspace intersection about a point, furt hest-site Delaunay}
+    puts stderr {triangulation, and furthest-site Voronoi diagram. The source code runs}
+    puts stderr {in 2-d, 3-d, 4-d, and higher dimensions. Qhull implements the Quickhull}
+    puts stderr {algorithm for computing the convex hull. It handles roundoff errors from}
+    puts stderr {floating point arithmetic. It computes volumes, surface areas, and}
+    puts stderr {approximations to the convex hull.}
+}
+
+conflict qhull
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/qhull-2020.2-g2hnojg6ftd4p2v7clmeuzyho24o4epz/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/qhull-2020.2-g2hnojg6ftd4p2v7clmeuzyho24o4epz/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/qhull-2020.2-g2hnojg6ftd4p2v7clmeuzyho24o4epz/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/qhull-2020.2-g2hnojg6ftd4p2v7clmeuzyho24o4epz/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/qhull-2020.2-g2hnojg6ftd4p2v7clmeuzyho24o4epz/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/qhull-2020.2-g2hnojg6ftd4p2v7clmeuzyho24o4epz/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/qhull-2020.2-g2hnojg6ftd4p2v7clmeuzyho24o4epz/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/qhull-2020.2-g2hnojg6ftd4p2v7clmeuzyho24o4epz/.}
+setenv QHULL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/qhull-2020.2-g2hnojg6ftd4p2v7clmeuzyho24o4epz}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

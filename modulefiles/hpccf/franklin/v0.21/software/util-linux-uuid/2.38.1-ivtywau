@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:36.637626
+##
+## util-linux-uuid@2.38.1%gcc@7.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/ivtywau
+##
+## Configure options: --disable-use-tty-group --disable-makeinstall-chown --without-systemd --disable-all-programs --without-python --enable-libuuid --disable-bash-completion
+##
+
+
+module-whatis {Util-linux is a suite of essential utilities for any Linux system.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : util-linux-uuid}
+    puts stderr {Version: 2.38.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Util-linux is a suite of essential utilities for any Linux system.}
+}
+
+conflict util-linux-uuid
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/util-linux-uuid-2.38.1-ivtywaupttckl5bmk3clzaec3cwq5mvf/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/util-linux-uuid-2.38.1-ivtywaupttckl5bmk3clzaec3cwq5mvf/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/util-linux-uuid-2.38.1-ivtywaupttckl5bmk3clzaec3cwq5mvf/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/util-linux-uuid-2.38.1-ivtywaupttckl5bmk3clzaec3cwq5mvf/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/util-linux-uuid-2.38.1-ivtywaupttckl5bmk3clzaec3cwq5mvf/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/util-linux-uuid-2.38.1-ivtywaupttckl5bmk3clzaec3cwq5mvf/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/util-linux-uuid-2.38.1-ivtywaupttckl5bmk3clzaec3cwq5mvf/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/util-linux-uuid-2.38.1-ivtywaupttckl5bmk3clzaec3cwq5mvf/.}
+setenv UTIL_LINUX_UUID_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/util-linux-uuid-2.38.1-ivtywaupttckl5bmk3clzaec3cwq5mvf}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

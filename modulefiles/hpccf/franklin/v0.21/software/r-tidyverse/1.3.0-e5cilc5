@@ -1,0 +1,124 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:24.289143
+##
+## r-tidyverse@1.3.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/e5cilc5
+##
+
+
+module-whatis {Easily Install and Load the 'Tidyverse'.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-tidyverse}
+    puts stderr {Version: 1.3.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Easily Install and Load the 'Tidyverse'. The 'tidyverse' is a set of}
+    puts stderr {packages that work in harmony because they share common data}
+    puts stderr {representations and 'API' design. This package is designed to make it}
+    puts stderr {easy to install and load multiple 'tidyverse' packages in a single step.}
+    puts stderr {Learn more about the 'tidyverse' at <https://tidyverse.org>.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-broom/1.0.4-22gko4z
+    module load r-cli/3.6.1-u4zzw6m
+    module load r-dbplyr/2.3.2-w25d2ee
+    module load r-dplyr/1.1.2-tk4eviy
+    module load r-forcats/1.0.0-num6cp6
+    module load r-ggplot2/3.4.2-xlqyrdq
+    module load r-haven/2.5.2-xjurz4p
+    module load r-hms/1.1.3-6654x6r
+    module load r-httr/1.4.5-7jf4qpi
+    module load r-jsonlite/1.8.4-h3mu75v
+    module load r-lubridate/1.9.2-kfw4jza
+    module load r-magrittr/2.0.3-rabxttn
+    module load r-modelr/0.1.11-rfg3qgn
+    module load r-pillar/1.9.0-zrywzru
+    module load r-purrr/1.0.1-nzzcjhd
+    module load r-readr/2.1.4-5yoa5dv
+    module load r-readxl/1.4.2-7lmsths
+    module load r-reprex/2.0.2-655ca55
+    module load r-rlang/1.1.0-6ek36pb
+    module load r-rstudioapi/0.14-ksxj4ev
+    module load r-rvest/1.0.3-4cxsnfj
+    module load r-stringr/1.5.0-7odt3kf
+    module load r-tibble/3.2.1-efl2ifo
+    module load r-tidyr/1.3.0-vh777la
+    module load r-xml2/1.3.3-tewgpt5
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-broom/1.0.4-22gko4z
+    depends-on r-cli/3.6.1-u4zzw6m
+    depends-on r-dbplyr/2.3.2-w25d2ee
+    depends-on r-dplyr/1.1.2-tk4eviy
+    depends-on r-forcats/1.0.0-num6cp6
+    depends-on r-ggplot2/3.4.2-xlqyrdq
+    depends-on r-haven/2.5.2-xjurz4p
+    depends-on r-hms/1.1.3-6654x6r
+    depends-on r-httr/1.4.5-7jf4qpi
+    depends-on r-jsonlite/1.8.4-h3mu75v
+    depends-on r-lubridate/1.9.2-kfw4jza
+    depends-on r-magrittr/2.0.3-rabxttn
+    depends-on r-modelr/0.1.11-rfg3qgn
+    depends-on r-pillar/1.9.0-zrywzru
+    depends-on r-purrr/1.0.1-nzzcjhd
+    depends-on r-readr/2.1.4-5yoa5dv
+    depends-on r-readxl/1.4.2-7lmsths
+    depends-on r-reprex/2.0.2-655ca55
+    depends-on r-rlang/1.1.0-6ek36pb
+    depends-on r-rstudioapi/0.14-ksxj4ev
+    depends-on r-rvest/1.0.3-4cxsnfj
+    depends-on r-stringr/1.5.0-7odt3kf
+    depends-on r-tibble/3.2.1-efl2ifo
+    depends-on r-tidyr/1.3.0-vh777la
+    depends-on r-xml2/1.3.3-tewgpt5
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-broom/1.0.4-22gko4z
+prereq r-cli/3.6.1-u4zzw6m
+prereq r-dbplyr/2.3.2-w25d2ee
+prereq r-dplyr/1.1.2-tk4eviy
+prereq r-forcats/1.0.0-num6cp6
+prereq r-ggplot2/3.4.2-xlqyrdq
+prereq r-haven/2.5.2-xjurz4p
+prereq r-hms/1.1.3-6654x6r
+prereq r-httr/1.4.5-7jf4qpi
+prereq r-jsonlite/1.8.4-h3mu75v
+prereq r-lubridate/1.9.2-kfw4jza
+prereq r-magrittr/2.0.3-rabxttn
+prereq r-modelr/0.1.11-rfg3qgn
+prereq r-pillar/1.9.0-zrywzru
+prereq r-purrr/1.0.1-nzzcjhd
+prereq r-readr/2.1.4-5yoa5dv
+prereq r-readxl/1.4.2-7lmsths
+prereq r-reprex/2.0.2-655ca55
+prereq r-rlang/1.1.0-6ek36pb
+prereq r-rstudioapi/0.14-ksxj4ev
+prereq r-rvest/1.0.3-4cxsnfj
+prereq r-stringr/1.5.0-7odt3kf
+prereq r-tibble/3.2.1-efl2ifo
+prereq r-tidyr/1.3.0-vh777la
+prereq r-xml2/1.3.3-tewgpt5
+conflict r-tidyverse
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-tidyverse-1.3.0-e5cilc5xcvbxebsg5klwfohoa73brb5q/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-tidyverse-1.3.0-e5cilc5xcvbxebsg5klwfohoa73brb5q/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-tidyverse-1.3.0-e5cilc5xcvbxebsg5klwfohoa73brb5q/rlib/R/library}
+setenv R_TIDYVERSE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-tidyverse-1.3.0-e5cilc5xcvbxebsg5klwfohoa73brb5q}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

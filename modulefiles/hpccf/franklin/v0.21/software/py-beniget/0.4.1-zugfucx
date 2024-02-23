@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:18.426442
+##
+## py-beniget@0.4.1%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/zugfucx
+##
+
+
+module-whatis {Extract semantic information about static Python code.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-beniget}
+    puts stderr {Version: 0.4.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Extract semantic information about static Python code.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-gast/0.5.3-2yrcmhf
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-gast/0.5.3-2yrcmhf
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-gast/0.5.3-2yrcmhf
+prereq python/3.11.6-rsiojxh
+conflict py-beniget
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-beniget-0.4.1-zugfucx4veofmanbngmyvnofags7hoel/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-beniget-0.4.1-zugfucx4veofmanbngmyvnofags7hoel/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-beniget-0.4.1-zugfucx4veofmanbngmyvnofags7hoel/lib/python3.11/site-packages}
+setenv PY_BENIGET_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-beniget-0.4.1-zugfucx4veofmanbngmyvnofags7hoel}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

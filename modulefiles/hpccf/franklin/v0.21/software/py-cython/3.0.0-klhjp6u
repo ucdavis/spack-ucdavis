@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:23.967897
+##
+## py-cython@3.0.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/klhjp6u
+##
+
+
+module-whatis {The Cython compiler for writing C extensions for the Python language.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-cython}
+    puts stderr {Version: 3.0.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The Cython compiler for writing C extensions for the Python language.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-setuptools/68.0.0-dkyik7g
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-setuptools/68.0.0-dkyik7g
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-setuptools/68.0.0-dkyik7g
+prereq python/3.11.6-rsiojxh
+conflict py-cython
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cython-3.0.0-klhjp6usgsd2626ukdl43zvg4awe27m7/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cython-3.0.0-klhjp6usgsd2626ukdl43zvg4awe27m7/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cython-3.0.0-klhjp6usgsd2626ukdl43zvg4awe27m7/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cython-3.0.0-klhjp6usgsd2626ukdl43zvg4awe27m7/lib/python3.11/site-packages}
+setenv PY_CYTHON_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-cython-3.0.0-klhjp6usgsd2626ukdl43zvg4awe27m7}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

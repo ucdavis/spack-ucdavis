@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:50.910056
+##
+## gl2ps@1.4.2%gcc@11.4.0~doc~ipo+png+zlib build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/besry7a
+##
+## Configure options: -DCMAKE_DISABLE_FIND_PACKAGE_GLUT:BOOL=ON -DENABLE_PNG:BOOL=ON -DENABLE_ZLIB:BOOL=ON -DOpenGL_GL_PREFERENCE:STRING=LEGACY -DOPENGL_INCLUDE_DIR:STRING=/usr/include -DOPENGL_gl_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libGL.so -DOPENGL_opengl_LIBRARY:STRING=IGNORE -DOPENGL_glx_LIBRARY:STRING=IGNORE -DOPENGL_egl_LIBRARY:STRING=IGNORE -DOPENGL_glu_LIBRARY:STRING=IGNORE -DCMAKE_DISABLE_FIND_PACKAGE_LATEX:BOOL=ON
+##
+
+
+module-whatis {GL2PS is a C library providing high quality vector output for any OpenGL application.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gl2ps}
+    puts stderr {Version: 1.4.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GL2PS is a C library providing high quality vector output for any OpenGL}
+    puts stderr {application.}
+}
+
+conflict gl2ps
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gl2ps-1.4.2-besry7atmbanvg5ogpjisqjlbiizf3uj/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gl2ps-1.4.2-besry7atmbanvg5ogpjisqjlbiizf3uj/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gl2ps-1.4.2-besry7atmbanvg5ogpjisqjlbiizf3uj/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gl2ps-1.4.2-besry7atmbanvg5ogpjisqjlbiizf3uj/include}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gl2ps-1.4.2-besry7atmbanvg5ogpjisqjlbiizf3uj/.}
+setenv GL2PS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gl2ps-1.4.2-besry7atmbanvg5ogpjisqjlbiizf3uj}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,55 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:03.667797
+##
+## r-askpass@1.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/i4kwvxy
+##
+
+
+module-whatis {Safe Password Entry for R, Git, and SSH.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-askpass}
+    puts stderr {Version: 1.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Safe Password Entry for R, Git, and SSH. Cross-platform utilities for}
+    puts stderr {prompting the user for credentials or a passphrase, for example to}
+    puts stderr {authenticate with a server or read a protected key. Includes native}
+    puts stderr {programs for MacOS and Windows, hence no 'tcltk' is required. Password}
+    puts stderr {entry can be invoked in two different ways: directly from R via the}
+    puts stderr {askpass() function, or indirectly as password-entry back-end for 'ssh-}
+    puts stderr {agent' or 'git-credential' via the SSH_ASKPASS and GIT_ASKPASS}
+    puts stderr {environment variables. Thereby the user can be prompted for credentials}
+    puts stderr {or a passphrase if needed when R calls out to git or ssh.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-sys/3.4.1-jq3jsgs
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-sys/3.4.1-jq3jsgs
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-sys/3.4.1-jq3jsgs
+conflict r-askpass
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-askpass-1.1-i4kwvxy4tilfsamu365oq35xuy352stz/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-askpass-1.1-i4kwvxy4tilfsamu365oq35xuy352stz/rlib/R/library}
+setenv R_ASKPASS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-askpass-1.1-i4kwvxy4tilfsamu365oq35xuy352stz}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

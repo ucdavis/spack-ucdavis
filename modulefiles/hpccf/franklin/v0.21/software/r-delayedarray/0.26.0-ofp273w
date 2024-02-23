@@ -1,0 +1,67 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:18.501850
+##
+## r-delayedarray@0.26.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/ofp273w
+##
+
+
+module-whatis {A unified framework for working transparently with on-disk and in-memory array-like datasets.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-delayedarray}
+    puts stderr {Version: 0.26.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A unified framework for working transparently with on-disk and in-memory}
+    puts stderr {array-like datasets. Wrapping an array-like object (typically an on-disk}
+    puts stderr {object) in a DelayedArray object allows one to perform common array}
+    puts stderr {operations on it without loading the object in memory. In order to}
+    puts stderr {reduce memory usage and optimize performance, operations on the object}
+    puts stderr {are either delayed or executed using a block processing mechanism. Note}
+    puts stderr {that this also works on in-memory array-like objects like DataFrame}
+    puts stderr {objects (typically with Rle columns), Matrix objects, and ordinary}
+    puts stderr {arrays and data frames.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-vcbztcv
+    module load r-biocgenerics/0.46.0-vwgf75t
+    module load r-iranges/2.34.0-wmdqfli
+    module load r-matrix/1.5-4-2olwypl
+    module load r-matrixgenerics/1.12.0-xnbllrk
+    module load r-s4vectors/0.38.0-mg4qpha
+} else {
+    depends-on r/4.3.0-vcbztcv
+    depends-on r-biocgenerics/0.46.0-vwgf75t
+    depends-on r-iranges/2.34.0-wmdqfli
+    depends-on r-matrix/1.5-4-2olwypl
+    depends-on r-matrixgenerics/1.12.0-xnbllrk
+    depends-on r-s4vectors/0.38.0-mg4qpha
+}
+prereq r/4.3.0-vcbztcv
+prereq r-biocgenerics/0.46.0-vwgf75t
+prereq r-iranges/2.34.0-wmdqfli
+prereq r-matrix/1.5-4-2olwypl
+prereq r-matrixgenerics/1.12.0-xnbllrk
+prereq r-s4vectors/0.38.0-mg4qpha
+conflict r-delayedarray
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-delayedarray-0.26.0-ofp273w2sb2jjyfd2z32sjovgbpewxmz/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-delayedarray-0.26.0-ofp273w2sb2jjyfd2z32sjovgbpewxmz/rlib/R/library}
+setenv R_DELAYEDARRAY_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-delayedarray-0.26.0-ofp273w2sb2jjyfd2z32sjovgbpewxmz}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

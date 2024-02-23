@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:28.043369
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:36.739705
 ##
 ## vcftools@0.1.14%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/rvel6c5
 ##
@@ -20,6 +20,12 @@ proc ModulesHelp { } {
     puts stderr {variation data in the form of VCF files.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-okr4ubb
+} else {
+    depends-on perl/5.38.0-okr4ubb
+}
+prereq perl/5.38.0-okr4ubb
 conflict vcftools
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/vcftools-0.1.14-rvel6c5ca65htqv3zkro3oq4bbdgru2x/lib}

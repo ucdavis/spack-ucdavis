@@ -1,0 +1,61 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:40.670755
+##
+## r-gtable@0.3.3%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/e33k6v7
+##
+
+
+module-whatis {Arrange 'Grobs' in Tables.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-gtable}
+    puts stderr {Version: 0.3.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Arrange 'Grobs' in Tables. Tools to make it easier to work with "tables"}
+    puts stderr {of 'grobs'. The 'gtable' package defines a 'gtable' grob class that}
+    puts stderr {specifies a grid along with a list of grobs and their placement in the}
+    puts stderr {grid. Further the package makes it easy to manipulate and combine}
+    puts stderr {'gtable' objects so that complex compositions can be build up}
+    puts stderr {sequentially.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-cli/3.6.1-75actrg
+    module load r-glue/1.6.2-g2mk77f
+    module load r-lifecycle/1.0.3-u6wfegg
+    module load r-rlang/1.1.0-exexgvx
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-cli/3.6.1-75actrg
+    depends-on r-glue/1.6.2-g2mk77f
+    depends-on r-lifecycle/1.0.3-u6wfegg
+    depends-on r-rlang/1.1.0-exexgvx
+}
+prereq r/4.3.0-n6pth5g
+prereq r-cli/3.6.1-75actrg
+prereq r-glue/1.6.2-g2mk77f
+prereq r-lifecycle/1.0.3-u6wfegg
+prereq r-rlang/1.1.0-exexgvx
+conflict r-gtable
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-gtable-0.3.3-e33k6v7jaixzwk26rk7ydzsbcesttyq6/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-gtable-0.3.3-e33k6v7jaixzwk26rk7ydzsbcesttyq6/rlib/R/library}
+setenv R_GTABLE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-gtable-0.3.3-e33k6v7jaixzwk26rk7ydzsbcesttyq6}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

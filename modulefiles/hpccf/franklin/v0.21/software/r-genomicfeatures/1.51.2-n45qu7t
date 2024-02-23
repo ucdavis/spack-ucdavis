@@ -1,0 +1,97 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:32.494668
+##
+## r-genomicfeatures@1.51.2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/n45qu7t
+##
+
+
+module-whatis {Conveniently import and query gene models.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-genomicfeatures}
+    puts stderr {Version: 1.51.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Conveniently import and query gene models. A set of tools and methods}
+    puts stderr {for making and manipulating transcript centric annotations. With these}
+    puts stderr {tools the user can easily download the genomic locations of the}
+    puts stderr {transcripts, exons and cds of a given organism, from either the UCSC}
+    puts stderr {Genome Browser or a BioMart database (more sources will be supported in}
+    puts stderr {the future). This information is then stored in a local database that}
+    puts stderr {keeps track of the relationship between transcripts, exons, cds and}
+    puts stderr {genes. Flexible methods are provided for extracting the desired features}
+    puts stderr {in a convenient format.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-annotationdbi/1.62.0-qranwdo
+    module load r-biobase/2.60.0-6dhztck
+    module load r-biocgenerics/0.46.0-msgdmac
+    module load r-biocio/1.10.0-bqyp5uc
+    module load r-biomart/2.56.0-xkwjjh4
+    module load r-biostrings/2.68.0-hvus7om
+    module load r-dbi/1.1.3-7aeshxt
+    module load r-genomeinfodb/1.35.4-xaaprui
+    module load r-genomicranges/1.52.0-vf5hpev
+    module load r-iranges/2.34.0-ymbnnoq
+    module load r-rcurl/1.98-1.12-jes35pb
+    module load r-rsqlite/2.3.1-gx2kzcw
+    module load r-rtracklayer/1.60.0-3mo2nsr
+    module load r-s4vectors/0.38.0-2nj6k5f
+    module load r-xvector/0.40.0-xyhwfey
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-annotationdbi/1.62.0-qranwdo
+    depends-on r-biobase/2.60.0-6dhztck
+    depends-on r-biocgenerics/0.46.0-msgdmac
+    depends-on r-biocio/1.10.0-bqyp5uc
+    depends-on r-biomart/2.56.0-xkwjjh4
+    depends-on r-biostrings/2.68.0-hvus7om
+    depends-on r-dbi/1.1.3-7aeshxt
+    depends-on r-genomeinfodb/1.35.4-xaaprui
+    depends-on r-genomicranges/1.52.0-vf5hpev
+    depends-on r-iranges/2.34.0-ymbnnoq
+    depends-on r-rcurl/1.98-1.12-jes35pb
+    depends-on r-rsqlite/2.3.1-gx2kzcw
+    depends-on r-rtracklayer/1.60.0-3mo2nsr
+    depends-on r-s4vectors/0.38.0-2nj6k5f
+    depends-on r-xvector/0.40.0-xyhwfey
+}
+prereq r/4.3.0-n6pth5g
+prereq r-annotationdbi/1.62.0-qranwdo
+prereq r-biobase/2.60.0-6dhztck
+prereq r-biocgenerics/0.46.0-msgdmac
+prereq r-biocio/1.10.0-bqyp5uc
+prereq r-biomart/2.56.0-xkwjjh4
+prereq r-biostrings/2.68.0-hvus7om
+prereq r-dbi/1.1.3-7aeshxt
+prereq r-genomeinfodb/1.35.4-xaaprui
+prereq r-genomicranges/1.52.0-vf5hpev
+prereq r-iranges/2.34.0-ymbnnoq
+prereq r-rcurl/1.98-1.12-jes35pb
+prereq r-rsqlite/2.3.1-gx2kzcw
+prereq r-rtracklayer/1.60.0-3mo2nsr
+prereq r-s4vectors/0.38.0-2nj6k5f
+prereq r-xvector/0.40.0-xyhwfey
+conflict r-genomicfeatures
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-genomicfeatures-1.51.2-n45qu7ttptlo45jjeuvr2mbasflhlmzi/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-genomicfeatures-1.51.2-n45qu7ttptlo45jjeuvr2mbasflhlmzi/rlib/R/library}
+setenv R_GENOMICFEATURES_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-genomicfeatures-1.51.2-n45qu7ttptlo45jjeuvr2mbasflhlmzi}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

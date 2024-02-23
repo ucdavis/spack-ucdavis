@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:36.602382
+##
+## udunits@2.2.28%gcc@11.4.0+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/hd2eecv
+##
+## Configure options: --enable-shared
+##
+
+
+module-whatis {Automated units conversion}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : udunits}
+    puts stderr {Version: 2.2.28}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Automated units conversion}
+}
+
+conflict udunits
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/udunits-2.2.28-hd2eecvdqq5roi77whybmgnp565z5qjl/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/udunits-2.2.28-hd2eecvdqq5roi77whybmgnp565z5qjl/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/udunits-2.2.28-hd2eecvdqq5roi77whybmgnp565z5qjl/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/udunits-2.2.28-hd2eecvdqq5roi77whybmgnp565z5qjl/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/udunits-2.2.28-hd2eecvdqq5roi77whybmgnp565z5qjl/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/udunits-2.2.28-hd2eecvdqq5roi77whybmgnp565z5qjl/.}
+setenv UDUNITS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/udunits-2.2.28-hd2eecvdqq5roi77whybmgnp565z5qjl}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,58 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:10.152981
+##
+## r-bit64@4.0.5%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/6pvuj2h
+##
+
+
+module-whatis {A S3 Class for Vectors of 64bit Integers.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-bit64}
+    puts stderr {Version: 4.0.5}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A S3 Class for Vectors of 64bit Integers. Package 'bit64' provides}
+    puts stderr {serializable S3 atomic 64bit (signed) integers. These are useful for}
+    puts stderr {handling database keys and exact counting in +-2^63. WARNING: do not use}
+    puts stderr {them as replacement for 32bit integers, integer64 are not supported for}
+    puts stderr {subscripting by R-core and they have different semantics when combined}
+    puts stderr {with double, e.g. integer64 + double => integer64. Class integer64 can}
+    puts stderr {be used in vectors, matrices, arrays and data.frames. Methods are}
+    puts stderr {available for coercion from and to logicals, integers, doubles,}
+    puts stderr {characters and factors as well as many elementwise and summary}
+    puts stderr {functions. Many fast algorithmic operations such as 'match' and 'order'}
+    puts stderr {support inter- active data exploration and manipulation and optionally}
+    puts stderr {leverage caching.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-bit/4.0.5-vqbrlii
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-bit/4.0.5-vqbrlii
+}
+prereq r/4.3.0-n6pth5g
+prereq r-bit/4.0.5-vqbrlii
+conflict r-bit64
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-bit64-4.0.5-6pvuj2hrsgexffpo2wmr4pkqsjckgurj/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-bit64-4.0.5-6pvuj2hrsgexffpo2wmr4pkqsjckgurj/rlib/R/library}
+setenv R_BIT64_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-bit64-4.0.5-6pvuj2hrsgexffpo2wmr4pkqsjckgurj}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

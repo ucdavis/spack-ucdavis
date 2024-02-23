@@ -1,0 +1,68 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:22.784882
+##
+## r-tidyselect@1.2.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/bi4vywi
+##
+
+
+module-whatis {Select from a Set of Strings.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-tidyselect}
+    puts stderr {Version: 1.2.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Select from a Set of Strings. A backend for the selecting functions of}
+    puts stderr {the 'tidyverse'. It makes it easy to implement select-like functions in}
+    puts stderr {your own packages in a way that is consistent with other 'tidyverse'}
+    puts stderr {interfaces for selection.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-cli/3.6.1-75actrg
+    module load r-glue/1.6.2-g2mk77f
+    module load r-lifecycle/1.0.3-u6wfegg
+    module load r-purrr/1.0.1-u3qs4vq
+    module load r-rlang/1.1.0-exexgvx
+    module load r-vctrs/0.6.2-2fduwfe
+    module load r-withr/2.5.0-o5w5apx
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-cli/3.6.1-75actrg
+    depends-on r-glue/1.6.2-g2mk77f
+    depends-on r-lifecycle/1.0.3-u6wfegg
+    depends-on r-purrr/1.0.1-u3qs4vq
+    depends-on r-rlang/1.1.0-exexgvx
+    depends-on r-vctrs/0.6.2-2fduwfe
+    depends-on r-withr/2.5.0-o5w5apx
+}
+prereq r/4.3.0-n6pth5g
+prereq r-cli/3.6.1-75actrg
+prereq r-glue/1.6.2-g2mk77f
+prereq r-lifecycle/1.0.3-u6wfegg
+prereq r-purrr/1.0.1-u3qs4vq
+prereq r-rlang/1.1.0-exexgvx
+prereq r-vctrs/0.6.2-2fduwfe
+prereq r-withr/2.5.0-o5w5apx
+conflict r-tidyselect
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-tidyselect-1.2.0-bi4vywilnxlkyrhyhi4kea2j7kbydg2e/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-tidyselect-1.2.0-bi4vywilnxlkyrhyhi4kea2j7kbydg2e/rlib/R/library}
+setenv R_TIDYSELECT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-tidyselect-1.2.0-bi4vywilnxlkyrhyhi4kea2j7kbydg2e}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

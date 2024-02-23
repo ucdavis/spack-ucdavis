@@ -1,0 +1,51 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:51.492872
+##
+## gnutls@3.7.8%gcc@11.4.0~guile+zlib build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/tl3tykv
+##
+## Configure options: --enable-static --with-included-libtasn1 --with-included-unistring --without-p11-kit --with-zlib --disable-guile --disable-tests --disable-valgrind-tests --disable-full-test-suite
+##
+
+
+module-whatis {GnuTLS is a secure communications library implementing the SSL, TLS and DTLS protocols and technologies around them. It provides a simple C language application programming interface (API) to access the secure communications protocols as well as APIs to parse and write X.509, PKCS #12, OpenPGP and other required structures. It is aimed to be portable and efficient with focus on security and interoperability.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gnutls}
+    puts stderr {Version: 3.7.8}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GnuTLS is a secure communications library implementing the SSL, TLS and}
+    puts stderr {DTLS protocols and technologies around them. It provides a simple C}
+    puts stderr {language application programming interface (API) to access the secure}
+    puts stderr {communications protocols as well as APIs to parse and write X.509, PKCS}
+    puts stderr {#12, OpenPGP and other required structures. It is aimed to be portable}
+    puts stderr {and efficient with focus on security and interoperability.}
+}
+
+conflict gnutls
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnutls-3.7.8-tl3tykvgbmtkp3oxi54sousv4zigghha/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnutls-3.7.8-tl3tykvgbmtkp3oxi54sousv4zigghha/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnutls-3.7.8-tl3tykvgbmtkp3oxi54sousv4zigghha/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnutls-3.7.8-tl3tykvgbmtkp3oxi54sousv4zigghha/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnutls-3.7.8-tl3tykvgbmtkp3oxi54sousv4zigghha/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnutls-3.7.8-tl3tykvgbmtkp3oxi54sousv4zigghha/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnutls-3.7.8-tl3tykvgbmtkp3oxi54sousv4zigghha/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnutls-3.7.8-tl3tykvgbmtkp3oxi54sousv4zigghha/.}
+setenv GNUTLS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gnutls-3.7.8-tl3tykvgbmtkp3oxi54sousv4zigghha}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

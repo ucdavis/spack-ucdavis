@@ -1,0 +1,78 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:30.919747
+##
+## py-ipython@8.14.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/ihqelzg
+##
+
+
+module-whatis {IPython provides a rich toolkit to help you make the most out of using Python interactively.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-ipython}
+    puts stderr {Version: 8.14.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {IPython provides a rich toolkit to help you make the most out of using}
+    puts stderr {Python interactively.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-backcall/0.2.0-exb6da2
+    module load py-decorator/5.1.1-vgqhf5v
+    module load py-jedi/0.18.2-sq266s5
+    module load py-matplotlib-inline/0.1.6-do4cm24
+    module load py-pexpect/4.8.0-dx2igxg
+    module load py-pickleshare/0.7.5-bkwf4xy
+    module load py-prompt-toolkit/3.0.38-o4zjwzv
+    module load py-pygments/2.16.1-opyvscq
+    module load py-stack-data/0.6.2-v7jvvmc
+    module load py-traitlets/5.9.0-pmbefep
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-backcall/0.2.0-exb6da2
+    depends-on py-decorator/5.1.1-vgqhf5v
+    depends-on py-jedi/0.18.2-sq266s5
+    depends-on py-matplotlib-inline/0.1.6-do4cm24
+    depends-on py-pexpect/4.8.0-dx2igxg
+    depends-on py-pickleshare/0.7.5-bkwf4xy
+    depends-on py-prompt-toolkit/3.0.38-o4zjwzv
+    depends-on py-pygments/2.16.1-opyvscq
+    depends-on py-stack-data/0.6.2-v7jvvmc
+    depends-on py-traitlets/5.9.0-pmbefep
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-backcall/0.2.0-exb6da2
+prereq py-decorator/5.1.1-vgqhf5v
+prereq py-jedi/0.18.2-sq266s5
+prereq py-matplotlib-inline/0.1.6-do4cm24
+prereq py-pexpect/4.8.0-dx2igxg
+prereq py-pickleshare/0.7.5-bkwf4xy
+prereq py-prompt-toolkit/3.0.38-o4zjwzv
+prereq py-pygments/2.16.1-opyvscq
+prereq py-stack-data/0.6.2-v7jvvmc
+prereq py-traitlets/5.9.0-pmbefep
+prereq python/3.11.6-rsiojxh
+conflict py-ipython
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-ihqelzglwudfau2jzoswudyaeuvsp22i/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-ihqelzglwudfau2jzoswudyaeuvsp22i/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-ihqelzglwudfau2jzoswudyaeuvsp22i/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-ihqelzglwudfau2jzoswudyaeuvsp22i/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-ihqelzglwudfau2jzoswudyaeuvsp22i/lib/python3.11/site-packages}
+setenv PY_IPYTHON_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-ipython-8.14.0-ihqelzglwudfau2jzoswudyaeuvsp22i}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

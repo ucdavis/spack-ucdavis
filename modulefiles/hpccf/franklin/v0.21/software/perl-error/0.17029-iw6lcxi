@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:08.088051
+##
+## perl-error@0.17029%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/iw6lcxi
+##
+
+
+module-whatis {The Error package provides two interfaces. Firstly Error provides a procedural interface to exception handling. Secondly Error is a base class for errors/exceptions that can either be thrown, for subsequent catch, or can simply be recorded.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-error}
+    puts stderr {Version: 0.17029}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The Error package provides two interfaces. Firstly Error provides a}
+    puts stderr {procedural interface to exception handling. Secondly Error is a base}
+    puts stderr {class for errors/exceptions that can either be thrown, for subsequent}
+    puts stderr {catch, or can simply be recorded.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-error
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-error-0.17029-iw6lcxi7qojbkaoz6yzgjt2hvz2zjs6h/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-error-0.17029-iw6lcxi7qojbkaoz6yzgjt2hvz2zjs6h/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-error-0.17029-iw6lcxi7qojbkaoz6yzgjt2hvz2zjs6h/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-error-0.17029-iw6lcxi7qojbkaoz6yzgjt2hvz2zjs6h/lib/perl5}
+setenv PERL_ERROR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-error-0.17029-iw6lcxi7qojbkaoz6yzgjt2hvz2zjs6h}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

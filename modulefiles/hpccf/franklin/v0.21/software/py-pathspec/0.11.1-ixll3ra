@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:43.688848
+##
+## py-pathspec@0.11.1%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/ixll3ra
+##
+
+
+module-whatis {pathspec extends the test loading and running features of unittest, making it easier to write, find and run tests.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-pathspec}
+    puts stderr {Version: 0.11.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {pathspec extends the test loading and running features of unittest,}
+    puts stderr {making it easier to write, find and run tests.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on python/3.11.6-rsiojxh
+}
+prereq python/3.11.6-rsiojxh
+conflict py-pathspec
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pathspec-0.11.1-ixll3ra6cybamap4e7gbaixlgkl445w4/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pathspec-0.11.1-ixll3ra6cybamap4e7gbaixlgkl445w4/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pathspec-0.11.1-ixll3ra6cybamap4e7gbaixlgkl445w4/lib/python3.11/site-packages}
+setenv PY_PATHSPEC_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pathspec-0.11.1-ixll3ra6cybamap4e7gbaixlgkl445w4}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,101 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:20.511780
+##
+## r-testthat@3.1.7%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/o2vmqo3
+##
+
+
+module-whatis {Unit Testing for R.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-testthat}
+    puts stderr {Version: 3.1.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Unit Testing for R. Software testing is important, but, in part because}
+    puts stderr {it is frustrating and boring, many of us avoid it. 'testthat' is a}
+    puts stderr {testing framework for R that is easy to learn and use, and integrates}
+    puts stderr {with your existing 'workflow'.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-brio/1.1.3-jl6hhvp
+    module load r-callr/3.7.3-5y7ppbq
+    module load r-cli/3.6.1-75actrg
+    module load r-desc/1.4.2-4peztn4
+    module load r-digest/0.6.31-iz4w6gl
+    module load r-ellipsis/0.3.2-jgx3wra
+    module load r-evaluate/0.20-txbtbj4
+    module load r-jsonlite/1.8.4-jbrhwx3
+    module load r-lifecycle/1.0.3-u6wfegg
+    module load r-magrittr/2.0.3-mvovjyx
+    module load r-pkgload/1.3.2-bdoy7a2
+    module load r-praise/1.0.0-cjb5v4a
+    module load r-processx/3.8.1-zhoowbz
+    module load r-ps/1.7.5-zytxxoc
+    module load r-r6/2.5.1-cvj3byn
+    module load r-rlang/1.1.0-exexgvx
+    module load r-waldo/0.4.0-t3sohrk
+    module load r-withr/2.5.0-o5w5apx
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-brio/1.1.3-jl6hhvp
+    depends-on r-callr/3.7.3-5y7ppbq
+    depends-on r-cli/3.6.1-75actrg
+    depends-on r-desc/1.4.2-4peztn4
+    depends-on r-digest/0.6.31-iz4w6gl
+    depends-on r-ellipsis/0.3.2-jgx3wra
+    depends-on r-evaluate/0.20-txbtbj4
+    depends-on r-jsonlite/1.8.4-jbrhwx3
+    depends-on r-lifecycle/1.0.3-u6wfegg
+    depends-on r-magrittr/2.0.3-mvovjyx
+    depends-on r-pkgload/1.3.2-bdoy7a2
+    depends-on r-praise/1.0.0-cjb5v4a
+    depends-on r-processx/3.8.1-zhoowbz
+    depends-on r-ps/1.7.5-zytxxoc
+    depends-on r-r6/2.5.1-cvj3byn
+    depends-on r-rlang/1.1.0-exexgvx
+    depends-on r-waldo/0.4.0-t3sohrk
+    depends-on r-withr/2.5.0-o5w5apx
+}
+prereq r/4.3.0-n6pth5g
+prereq r-brio/1.1.3-jl6hhvp
+prereq r-callr/3.7.3-5y7ppbq
+prereq r-cli/3.6.1-75actrg
+prereq r-desc/1.4.2-4peztn4
+prereq r-digest/0.6.31-iz4w6gl
+prereq r-ellipsis/0.3.2-jgx3wra
+prereq r-evaluate/0.20-txbtbj4
+prereq r-jsonlite/1.8.4-jbrhwx3
+prereq r-lifecycle/1.0.3-u6wfegg
+prereq r-magrittr/2.0.3-mvovjyx
+prereq r-pkgload/1.3.2-bdoy7a2
+prereq r-praise/1.0.0-cjb5v4a
+prereq r-processx/3.8.1-zhoowbz
+prereq r-ps/1.7.5-zytxxoc
+prereq r-r6/2.5.1-cvj3byn
+prereq r-rlang/1.1.0-exexgvx
+prereq r-waldo/0.4.0-t3sohrk
+prereq r-withr/2.5.0-o5w5apx
+conflict r-testthat
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-testthat-3.1.7-o2vmqo3zotsj4znmq6euzdhlnphwpuep/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-testthat-3.1.7-o2vmqo3zotsj4znmq6euzdhlnphwpuep/rlib/R/library}
+setenv R_TESTTHAT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-testthat-3.1.7-o2vmqo3zotsj4znmq6euzdhlnphwpuep}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

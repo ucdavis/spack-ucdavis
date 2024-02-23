@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:25.381582
+##
+## r-tinytex@0.45%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/64noe6a
+##
+
+
+module-whatis {Helper Functions to Install and Maintain TeX Live, and Compile LaTeX Documents.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-tinytex}
+    puts stderr {Version: 0.45}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Helper Functions to Install and Maintain TeX Live, and Compile LaTeX}
+    puts stderr {Documents. Helper functions to install and maintain the 'LaTeX'}
+    puts stderr {distribution named 'TinyTeX' (<https://yihui.name/tinytex/>), a}
+    puts stderr {lightweight, cross-platform, portable, and easy-to-maintain version of}
+    puts stderr {'TeX Live'. This package also contains helper functions to compile}
+    puts stderr {'LaTeX' documents, and install missing 'LaTeX' packages automatically.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-xfun/0.39-sief74y
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-xfun/0.39-sief74y
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-xfun/0.39-sief74y
+conflict r-tinytex
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-tinytex-0.45-64noe6a4qvd3cncnp5nwktm6ka4de65b/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-tinytex-0.45-64noe6a4qvd3cncnp5nwktm6ka4de65b/rlib/R/library}
+setenv R_TINYTEX_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-tinytex-0.45-64noe6a4qvd3cncnp5nwktm6ka4de65b}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

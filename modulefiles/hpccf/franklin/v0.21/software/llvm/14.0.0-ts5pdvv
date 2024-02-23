@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:00.749166
+##
+## llvm@14.0.0%gcc@11.4.0+clang~cuda~flang+gold+libomptarget~libomptarget_debug~link_llvm_dylib~lld~lldb+llvm_dylib+lua~mlir+polly~python~split_dwarf~z3 build_system=cmake build_type=Release compiler-rt=runtime generator=ninja libcxx=runtime libunwind=runtime openmp=runtime patches=1f42874,25bc503,6379168,8248141,b216cff,cb8e645 shlib_symbol_version=none targets=all version_suffix=none arch=linux-ubuntu22.04-x86_64_v3/ts5pdvv
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis {The LLVM Project is a collection of modular and reusable compiler and toolchain technologies. Despite its name, LLVM has little to do with traditional virtual machines, though it does provide helpful libraries that can be used to build them. The name 'LLVM' itself is not an acronym; it is the full name of the project. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : llvm}
+    puts stderr {Version: 14.0.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The LLVM Project is a collection of modular and reusable compiler and}
+    puts stderr {toolchain technologies. Despite its name, LLVM has little to do with}
+    puts stderr {traditional virtual machines, though it does provide helpful libraries}
+    puts stderr {that can be used to build them. The name "LLVM" itself is not an}
+    puts stderr {acronym; it is the full name of the project.}
+}
+
+conflict llvm
+
+prepend-path MANPATH {/usr/share/man}
+prepend-path ACLOCAL_PATH {/usr/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/usr/lib/pkgconfig}
+prepend-path PKG_CONFIG_PATH {/usr/share/pkgconfig}
+setenv CC {/usr/bin/clang}
+setenv CXX {/usr/bin/clang++}
+setenv LLVM_ROOT {/usr}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:13.448421
+##
+## r-rstudioapi@0.14%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/ksxj4ev
+##
+
+
+module-whatis {Safely Access the RStudio API.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-rstudioapi}
+    puts stderr {Version: 0.14}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Safely Access the RStudio API. Access the RStudio API (if available) and}
+    puts stderr {provide informative error messages when it's not.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+}
+prereq r/4.3.0-bzxz5nl
+conflict r-rstudioapi
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rstudioapi-0.14-ksxj4evdtd34xfbkl5sihho2xihwzcqp/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rstudioapi-0.14-ksxj4evdtd34xfbkl5sihho2xihwzcqp/rlib/R/library}
+setenv R_RSTUDIOAPI_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rstudioapi-0.14-ksxj4evdtd34xfbkl5sihho2xihwzcqp}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

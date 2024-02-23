@@ -1,0 +1,61 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:01.481658
+##
+## r-qvalue@2.32.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/stildcc
+##
+
+
+module-whatis {Q-value estimation for false discovery rate control.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-qvalue}
+    puts stderr {Version: 2.32.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Q-value estimation for false discovery rate control. This package takes}
+    puts stderr {a list of p-values resulting from the simultaneous testing of many}
+    puts stderr {hypotheses and estimates their q-values and local FDR values. The}
+    puts stderr {q-value of a test measures the proportion of false positives incurred}
+    puts stderr {(called the false discovery rate) when that particular test is called}
+    puts stderr {significant. The local FDR measures the posterior probability the null}
+    puts stderr {hypothesis is true given the test's p-value. Various plots are}
+    puts stderr {automatically generated, allowing one to make sensible significance cut-}
+    puts stderr {offs. Several mathematical results have recently been shown on the}
+    puts stderr {conservative accuracy of the estimated q-values from this software. The}
+    puts stderr {software can be applied to problems in genomics, brain imaging,}
+    puts stderr {astrophysics, and data mining.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-ggplot2/3.4.2-xlqyrdq
+    module load r-reshape2/1.4.4-llxuoib
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-ggplot2/3.4.2-xlqyrdq
+    depends-on r-reshape2/1.4.4-llxuoib
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-ggplot2/3.4.2-xlqyrdq
+prereq r-reshape2/1.4.4-llxuoib
+conflict r-qvalue
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-qvalue-2.32.0-stildccxhu5xjlz4msvqiay2dg553f4b/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-qvalue-2.32.0-stildccxhu5xjlz4msvqiay2dg553f4b/rlib/R/library}
+setenv R_QVALUE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-qvalue-2.32.0-stildccxhu5xjlz4msvqiay2dg553f4b}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,50 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:12.041170
+##
+## perl-path-tiny@0.144%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/bslouuy
+##
+
+
+module-whatis {This module provides a small, fast utility for working with file paths. It is friendlier to use than File::Spec and provides easy access to functions from several other core file handling modules. It aims to be smaller and faster than many alternatives on CPAN, while helping people do many common things in consistent and less error-prone ways.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-path-tiny}
+    puts stderr {Version: 0.144}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This module provides a small, fast utility for working with file paths.}
+    puts stderr {It is friendlier to use than File::Spec and provides easy access to}
+    puts stderr {functions from several other core file handling modules. It aims to be}
+    puts stderr {smaller and faster than many alternatives on CPAN, while helping people}
+    puts stderr {do many common things in consistent and less error-prone ways.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-path-tiny
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-path-tiny-0.144-bslouuyg7lcwkdi4lmhmlfb6nw2skwxe/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-path-tiny-0.144-bslouuyg7lcwkdi4lmhmlfb6nw2skwxe/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-path-tiny-0.144-bslouuyg7lcwkdi4lmhmlfb6nw2skwxe/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-path-tiny-0.144-bslouuyg7lcwkdi4lmhmlfb6nw2skwxe/lib/perl5}
+setenv PERL_PATH_TINY_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-path-tiny-0.144-bslouuyg7lcwkdi4lmhmlfb6nw2skwxe}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

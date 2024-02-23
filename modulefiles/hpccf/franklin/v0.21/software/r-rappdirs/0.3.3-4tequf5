@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:02.311724
+##
+## r-rappdirs@0.3.3%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/4tequf5
+##
+
+
+module-whatis {Application Directories: Determine Where to Save Data, Caches, and Logs.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-rappdirs}
+    puts stderr {Version: 0.3.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Application Directories: Determine Where to Save Data, Caches, and Logs.}
+    puts stderr {An easy way to determine which directories on the users computer you}
+    puts stderr {should use to save data, caches and logs. A port of Python's 'Appdirs'}
+    puts stderr {(<https://github.com/ActiveState/appdirs>) to R.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+} else {
+    depends-on r/4.3.0-n6pth5g
+}
+prereq r/4.3.0-n6pth5g
+conflict r-rappdirs
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rappdirs-0.3.3-4tequf5zex7k7q5tzhu4bzn6sjazuz6u/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rappdirs-0.3.3-4tequf5zex7k7q5tzhu4bzn6sjazuz6u/rlib/R/library}
+setenv R_RAPPDIRS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rappdirs-0.3.3-4tequf5zex7k7q5tzhu4bzn6sjazuz6u}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

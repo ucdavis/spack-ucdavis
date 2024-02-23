@@ -1,0 +1,60 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:13.678634
+##
+## perl-xml-dom@1.46%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/ymefgrd
+##
+
+
+module-whatis {This module extends the XML::Parser module by Clark Cooper. The XML::Parser module is built on top of XML::Parser::Expat, which is a lower level interface to James Clark's expat library.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-xml-dom}
+    puts stderr {Version: 1.46}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This module extends the XML::Parser module by Clark Cooper. The}
+    puts stderr {XML::Parser module is built on top of XML::Parser::Expat, which is a}
+    puts stderr {lower level interface to James Clark's expat library.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-libwww-perl/6.68-hvqaina
+    module load perl-libxml-perl/0.08-5baff73
+    module load perl-xml-parser/2.46-4s7gqlv
+    module load perl-xml-regexp/0.04-po6a3ku
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-libwww-perl/6.68-hvqaina
+    depends-on perl-libxml-perl/0.08-5baff73
+    depends-on perl-xml-parser/2.46-4s7gqlv
+    depends-on perl-xml-regexp/0.04-po6a3ku
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-libwww-perl/6.68-hvqaina
+prereq perl-libxml-perl/0.08-5baff73
+prereq perl-xml-parser/2.46-4s7gqlv
+prereq perl-xml-regexp/0.04-po6a3ku
+conflict perl-xml-dom
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-dom-1.46-ymefgrdp6ijfdmhm6ubepkm4lrmb2zwr/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-dom-1.46-ymefgrdp6ijfdmhm6ubepkm4lrmb2zwr/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-dom-1.46-ymefgrdp6ijfdmhm6ubepkm4lrmb2zwr/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-dom-1.46-ymefgrdp6ijfdmhm6ubepkm4lrmb2zwr/lib/perl5}
+setenv PERL_XML_DOM_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-dom-1.46-ymefgrdp6ijfdmhm6ubepkm4lrmb2zwr}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:54.343629
+##
+## intel-oneapi-tbb@2021.10.0%gcc@11.4.0+envmods build_system=generic arch=linux-ubuntu22.04-skylake_avx512/y4263b3
+##
+
+
+module-whatis {Intel oneAPI Threading Building Blocks (oneTBB) is a flexible performance library that simplifies the work of adding parallelism to complex applications across accelerated architectures, even if you are not a threading expert.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : intel-oneapi-tbb}
+    puts stderr {Version: 2021.10.0}
+    puts stderr {Target : skylake_avx512}
+    puts stderr {}
+    puts stderr {Intel oneAPI Threading Building Blocks (oneTBB) is a flexible}
+    puts stderr {performance library that simplifies the work of adding parallelism to}
+    puts stderr {complex applications across accelerated architectures, even if you are}
+    puts stderr {not a threading expert. LICENSE INFORMATION: By downloading and using}
+    puts stderr {this software, you agree to the terms and conditions of the software}
+    puts stderr {license agreements at https://intel.ly/393CijO.}
+}
+
+conflict intel-oneapi-tbb
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-y4263b3ymq26mtcrcysozs6vwxa3erm2/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-y4263b3ymq26mtcrcysozs6vwxa3erm2/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-y4263b3ymq26mtcrcysozs6vwxa3erm2/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-y4263b3ymq26mtcrcysozs6vwxa3erm2/include}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-y4263b3ymq26mtcrcysozs6vwxa3erm2/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-y4263b3ymq26mtcrcysozs6vwxa3erm2/.}
+prepend-path LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-y4263b3ymq26mtcrcysozs6vwxa3erm2/tbb/2021.10.0/env/../lib/intel64/gcc4.8}
+setenv TBBROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-y4263b3ymq26mtcrcysozs6vwxa3erm2/tbb/2021.10.0/env/..}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-y4263b3ymq26mtcrcysozs6vwxa3erm2/tbb/2021.10.0/env/..}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-y4263b3ymq26mtcrcysozs6vwxa3erm2/tbb/2021.10.0/env/../include}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-y4263b3ymq26mtcrcysozs6vwxa3erm2/tbb/2021.10.0/env/../lib/intel64/gcc4.8}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-y4263b3ymq26mtcrcysozs6vwxa3erm2/tbb/2021.10.0/env/../lib/pkgconfig}
+setenv INTEL_ONEAPI_TBB_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/intel-oneapi-tbb-2021.10.0-y4263b3ymq26mtcrcysozs6vwxa3erm2}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

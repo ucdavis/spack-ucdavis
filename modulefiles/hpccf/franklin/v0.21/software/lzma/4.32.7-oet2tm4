@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:00.808107
+##
+## lzma@4.32.7%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/oet2tm4
+##
+
+
+module-whatis {LZMA Utils are legacy data compression software with high compression ratio. LZMA Utils are no longer developed, although critical bugs may be fixed as long as fixing them doesn't require huge changes to the code.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : lzma}
+    puts stderr {Version: 4.32.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {LZMA Utils are legacy data compression software with high compression}
+    puts stderr {ratio. LZMA Utils are no longer developed, although critical bugs may be}
+    puts stderr {fixed as long as fixing them doesn't require huge changes to the code.}
+    puts stderr {Users of LZMA Utils should move to XZ Utils. XZ Utils support the legacy}
+    puts stderr {.lzma format used by LZMA Utils, and can also emulate the command line}
+    puts stderr {tools of LZMA Utils. This should make transition from LZMA Utils to XZ}
+    puts stderr {Utils relatively easy.}
+}
+
+conflict lzma
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lzma-4.32.7-oet2tm4svqj6mmbmccuuoeroqgvux5aa/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lzma-4.32.7-oet2tm4svqj6mmbmccuuoeroqgvux5aa/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lzma-4.32.7-oet2tm4svqj6mmbmccuuoeroqgvux5aa/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lzma-4.32.7-oet2tm4svqj6mmbmccuuoeroqgvux5aa/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lzma-4.32.7-oet2tm4svqj6mmbmccuuoeroqgvux5aa/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lzma-4.32.7-oet2tm4svqj6mmbmccuuoeroqgvux5aa/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lzma-4.32.7-oet2tm4svqj6mmbmccuuoeroqgvux5aa/.}
+setenv LZMA_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lzma-4.32.7-oet2tm4svqj6mmbmccuuoeroqgvux5aa}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

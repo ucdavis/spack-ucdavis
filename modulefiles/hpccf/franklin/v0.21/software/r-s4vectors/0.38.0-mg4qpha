@@ -1,0 +1,55 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:15.589860
+##
+## r-s4vectors@0.38.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/mg4qpha
+##
+
+
+module-whatis {Foundation of vector-like and list-like containers in Bioconductor.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-s4vectors}
+    puts stderr {Version: 0.38.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Foundation of vector-like and list-like containers in Bioconductor. The}
+    puts stderr {S4Vectors package defines the Vector and List virtual classes and a set}
+    puts stderr {of generic functions that extend the semantic of ordinary vectors and}
+    puts stderr {lists in R. Package developers can easily implement vector-like or list-}
+    puts stderr {like objects as concrete subclasses of Vector or List. In addition, a}
+    puts stderr {few low-level concrete subclasses of general interest (e.g. DataFrame,}
+    puts stderr {Rle, and Hits) are implemented in the S4Vectors package itself (many}
+    puts stderr {more are implemented in the IRanges package and in other Bioconductor}
+    puts stderr {infrastructure packages).}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-vcbztcv
+    module load r-biocgenerics/0.46.0-vwgf75t
+} else {
+    depends-on r/4.3.0-vcbztcv
+    depends-on r-biocgenerics/0.46.0-vwgf75t
+}
+prereq r/4.3.0-vcbztcv
+prereq r-biocgenerics/0.46.0-vwgf75t
+conflict r-s4vectors
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-s4vectors-0.38.0-mg4qphanikrwoi7y3chexlb4whog2kue/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-s4vectors-0.38.0-mg4qphanikrwoi7y3chexlb4whog2kue/rlib/R/library}
+setenv R_S4VECTORS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-s4vectors-0.38.0-mg4qphanikrwoi7y3chexlb4whog2kue}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

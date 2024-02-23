@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:24.408370
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:38.171568
 ##
 ## py-multiqc@1.15%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/kc5enzd
 ##
@@ -17,6 +17,57 @@ proc ModulesHelp { } {
     puts stderr {modules for a large number of common bioinformatics tools.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-click/8.1.3-mx7ccji
+    module load py-coloredlogs/15.0.1-ugykrtb
+    module load py-future/0.18.3-nokrwzl
+    module load py-jinja2/3.1.2-43gufyt
+    module load py-lzstring/1.0.3-ky4mlnm
+    module load py-markdown/3.4.1-fcaztfi
+    module load py-matplotlib/3.8.0-qkq4nm7
+    module load py-networkx/2.7.1-lnen6yw
+    module load py-numpy/1.25.2-wnu35gl
+    module load py-pyyaml/6.0-depulkc
+    module load py-requests/2.31.0-hcu4y6y
+    module load py-rich/13.4.2-k2oydkw
+    module load py-rich-click/1.5.2-vc2lf4x
+    module load py-simplejson/3.19.1-23u7yii
+    module load py-spectra/0.0.11-kytsb6f
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on py-click/8.1.3-mx7ccji
+    depends-on py-coloredlogs/15.0.1-ugykrtb
+    depends-on py-future/0.18.3-nokrwzl
+    depends-on py-jinja2/3.1.2-43gufyt
+    depends-on py-lzstring/1.0.3-ky4mlnm
+    depends-on py-markdown/3.4.1-fcaztfi
+    depends-on py-matplotlib/3.8.0-qkq4nm7
+    depends-on py-networkx/2.7.1-lnen6yw
+    depends-on py-numpy/1.25.2-wnu35gl
+    depends-on py-pyyaml/6.0-depulkc
+    depends-on py-requests/2.31.0-hcu4y6y
+    depends-on py-rich/13.4.2-k2oydkw
+    depends-on py-rich-click/1.5.2-vc2lf4x
+    depends-on py-simplejson/3.19.1-23u7yii
+    depends-on py-spectra/0.0.11-kytsb6f
+    depends-on python/3.11.6-ht65m6a
+}
+prereq py-click/8.1.3-mx7ccji
+prereq py-coloredlogs/15.0.1-ugykrtb
+prereq py-future/0.18.3-nokrwzl
+prereq py-jinja2/3.1.2-43gufyt
+prereq py-lzstring/1.0.3-ky4mlnm
+prereq py-markdown/3.4.1-fcaztfi
+prereq py-matplotlib/3.8.0-qkq4nm7
+prereq py-networkx/2.7.1-lnen6yw
+prereq py-numpy/1.25.2-wnu35gl
+prereq py-pyyaml/6.0-depulkc
+prereq py-requests/2.31.0-hcu4y6y
+prereq py-rich/13.4.2-k2oydkw
+prereq py-rich-click/1.5.2-vc2lf4x
+prereq py-simplejson/3.19.1-23u7yii
+prereq py-spectra/0.0.11-kytsb6f
+prereq python/3.11.6-ht65m6a
 conflict py-multiqc
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-multiqc-1.15-kc5enzd6ftzxdilgvoqpvnwogcthodek/lib}

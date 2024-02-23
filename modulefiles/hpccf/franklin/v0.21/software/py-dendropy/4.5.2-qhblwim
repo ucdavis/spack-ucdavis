@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:24.975593
+##
+## py-dendropy@4.5.2%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/qhblwim
+##
+
+
+module-whatis {DendroPy is a Python library for phylogenetic computing. It provides classes and functions for the simulation, processing, and manipulation of phylogenetic trees and character matrices, and supports the reading and writing of phylogenetic data in a range of formats, such as NEXUS, NEWICK, NeXML, Phylip, FASTA, etc.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-dendropy}
+    puts stderr {Version: 4.5.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {DendroPy is a Python library for phylogenetic computing. It provides}
+    puts stderr {classes and functions for the simulation, processing, and manipulation}
+    puts stderr {of phylogenetic trees and character matrices, and supports the reading}
+    puts stderr {and writing of phylogenetic data in a range of formats, such as NEXUS,}
+    puts stderr {NEWICK, NeXML, Phylip, FASTA, etc.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-setuptools/63.4.3-hsixzje
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on py-setuptools/63.4.3-hsixzje
+    depends-on python/3.11.6-ht65m6a
+}
+prereq py-setuptools/63.4.3-hsixzje
+prereq python/3.11.6-ht65m6a
+conflict py-dendropy
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-dendropy-4.5.2-qhblwim3xjcp75oyeba5ljfie7qfszas/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-dendropy-4.5.2-qhblwim3xjcp75oyeba5ljfie7qfszas/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-dendropy-4.5.2-qhblwim3xjcp75oyeba5ljfie7qfszas/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-dendropy-4.5.2-qhblwim3xjcp75oyeba5ljfie7qfszas/lib/python3.11/site-packages}
+setenv PY_DENDROPY_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-dendropy-4.5.2-qhblwim3xjcp75oyeba5ljfie7qfszas}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

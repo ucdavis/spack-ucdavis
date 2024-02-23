@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:57.664098
+##
+## libpng@1.6.39%gcc@7.5.0~ipo~pic build_system=cmake build_type=Release generator=make libs=shared,static arch=linux-ubuntu22.04-x86_64_v3/qnsomen
+##
+
+
+module-whatis {libpng is the official PNG reference library.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libpng}
+    puts stderr {Version: 1.6.39}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {libpng is the official PNG reference library.}
+}
+
+conflict libpng
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libpng-1.6.39-qnsomen4i3ii4omxqpyuovu5ao2mrrw5/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libpng-1.6.39-qnsomen4i3ii4omxqpyuovu5ao2mrrw5/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libpng-1.6.39-qnsomen4i3ii4omxqpyuovu5ao2mrrw5/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libpng-1.6.39-qnsomen4i3ii4omxqpyuovu5ao2mrrw5/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libpng-1.6.39-qnsomen4i3ii4omxqpyuovu5ao2mrrw5/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libpng-1.6.39-qnsomen4i3ii4omxqpyuovu5ao2mrrw5/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libpng-1.6.39-qnsomen4i3ii4omxqpyuovu5ao2mrrw5/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libpng-1.6.39-qnsomen4i3ii4omxqpyuovu5ao2mrrw5/.}
+setenv LIBPNG_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libpng-1.6.39-qnsomen4i3ii4omxqpyuovu5ao2mrrw5}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

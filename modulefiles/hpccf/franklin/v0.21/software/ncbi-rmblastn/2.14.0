@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:20.711682
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:03.989339
 ##
 ## ncbi-rmblastn@2.14.0%gcc@11.4.0 build_system=autotools patches=cd083f2 arch=linux-ubuntu22.04-x86_64_v3/yt4rv4f
 ##
@@ -17,12 +17,6 @@ proc ModulesHelp { } {
     puts stderr {RMBlast search engine for NCBI}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load bzip2/1.0.8
-} else {
-    depends-on bzip2/1.0.8
-}
-prereq bzip2/1.0.8
 conflict ncbi-rmblastn
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncbi-rmblastn-2.14.0-yt4rv4f7c3mljyw4sojgskrowfftw42o/lib}

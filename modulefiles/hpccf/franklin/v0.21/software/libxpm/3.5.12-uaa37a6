@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:59.905185
+##
+## libxpm@3.5.12%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/uaa37a6
+##
+
+
+module-whatis {libXpm - X Pixmap (XPM) image file format library.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libxpm}
+    puts stderr {Version: 3.5.12}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {libXpm - X Pixmap (XPM) image file format library.}
+}
+
+conflict libxpm
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxpm-3.5.12-uaa37a6fiwwfasjpeyzkttfunemly3gd/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxpm-3.5.12-uaa37a6fiwwfasjpeyzkttfunemly3gd/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxpm-3.5.12-uaa37a6fiwwfasjpeyzkttfunemly3gd/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxpm-3.5.12-uaa37a6fiwwfasjpeyzkttfunemly3gd/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxpm-3.5.12-uaa37a6fiwwfasjpeyzkttfunemly3gd/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxpm-3.5.12-uaa37a6fiwwfasjpeyzkttfunemly3gd/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxpm-3.5.12-uaa37a6fiwwfasjpeyzkttfunemly3gd/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxpm-3.5.12-uaa37a6fiwwfasjpeyzkttfunemly3gd/.}
+prepend-path XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/share/X11/locale}
+setenv LIBXPM_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxpm-3.5.12-uaa37a6fiwwfasjpeyzkttfunemly3gd}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

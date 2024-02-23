@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:21.302271
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:04.504994
 ##
 ## netcdf-fortran@4.6.0%gcc@11.4.0~doc+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/xsz7cjg
 ##
@@ -20,12 +20,6 @@ proc ModulesHelp { } {
     puts stderr {distribution.}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load netcdf-c/4.9.2
-} else {
-    depends-on netcdf-c/4.9.2
-}
-prereq netcdf-c/4.9.2
 conflict netcdf-fortran
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/netcdf-fortran-4.6.0-xsz7cjgihikyyfv2zbgnx4rz67ssf5wh/lib}

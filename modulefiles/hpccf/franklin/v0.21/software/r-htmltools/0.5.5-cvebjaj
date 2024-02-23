@@ -1,0 +1,59 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:43.273234
+##
+## r-htmltools@0.5.5%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/cvebjaj
+##
+
+
+module-whatis {Tools for HTML.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-htmltools}
+    puts stderr {Version: 0.5.5}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Tools for HTML. Tools for HTML generation and output.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-base64enc/0.1-3-dnmcos2
+    module load r-digest/0.6.31-2az4nzm
+    module load r-ellipsis/0.3.2-jv7cpeu
+    module load r-fastmap/1.1.1-2acqkmm
+    module load r-rlang/1.1.0-6ek36pb
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-base64enc/0.1-3-dnmcos2
+    depends-on r-digest/0.6.31-2az4nzm
+    depends-on r-ellipsis/0.3.2-jv7cpeu
+    depends-on r-fastmap/1.1.1-2acqkmm
+    depends-on r-rlang/1.1.0-6ek36pb
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-base64enc/0.1-3-dnmcos2
+prereq r-digest/0.6.31-2az4nzm
+prereq r-ellipsis/0.3.2-jv7cpeu
+prereq r-fastmap/1.1.1-2acqkmm
+prereq r-rlang/1.1.0-6ek36pb
+conflict r-htmltools
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-htmltools-0.5.5-cvebjaj3fapsn2kqbqtdfklziqzdoiod/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-htmltools-0.5.5-cvebjaj3fapsn2kqbqtdfklziqzdoiod/rlib/R/library}
+setenv R_HTMLTOOLS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-htmltools-0.5.5-cvebjaj3fapsn2kqbqtdfklziqzdoiod}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

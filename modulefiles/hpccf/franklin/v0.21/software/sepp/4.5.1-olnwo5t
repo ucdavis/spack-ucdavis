@@ -1,0 +1,57 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:34.896921
+##
+## sepp@4.5.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/olnwo5t
+##
+
+
+module-whatis {SEPP stands for SATe-enabled phylogenetic placement}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : sepp}
+    puts stderr {Version: 4.5.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {SEPP stands for SATe-enabled phylogenetic placement}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load blast-plus/2.14.1-gcanmgi
+    module load openjdk/11.0.20.1_1-bvzxfaf
+    module load pasta/1.9.0-mfbowlo
+    module load py-dendropy/4.5.2-5q2a3mo
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on blast-plus/2.14.1-gcanmgi
+    depends-on openjdk/11.0.20.1_1-bvzxfaf
+    depends-on pasta/1.9.0-mfbowlo
+    depends-on py-dendropy/4.5.2-5q2a3mo
+    depends-on python/3.11.6-rsiojxh
+}
+prereq blast-plus/2.14.1-gcanmgi
+prereq openjdk/11.0.20.1_1-bvzxfaf
+prereq pasta/1.9.0-mfbowlo
+prereq py-dendropy/4.5.2-5q2a3mo
+prereq python/3.11.6-rsiojxh
+conflict sepp
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sepp-4.5.1-olnwo5tnoumhtkl4sbx5jotu3sf7o2qr/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sepp-4.5.1-olnwo5tnoumhtkl4sbx5jotu3sf7o2qr/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sepp-4.5.1-olnwo5tnoumhtkl4sbx5jotu3sf7o2qr/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sepp-4.5.1-olnwo5tnoumhtkl4sbx5jotu3sf7o2qr/lib/python3.11/site-packages}
+setenv SEPP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sepp-4.5.1-olnwo5tnoumhtkl4sbx5jotu3sf7o2qr}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

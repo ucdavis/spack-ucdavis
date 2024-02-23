@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:58.709698
+##
+## py-versioneer@0.29%gcc@11.4.0+toml build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/m4jlz6p
+##
+
+
+module-whatis {Versioneer is a tool to automatically update version strings by asking your version-control system about the current tree.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-versioneer}
+    puts stderr {Version: 0.29}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Versioneer is a tool to automatically update version strings by asking}
+    puts stderr {your version-control system about the current tree.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-tomli/2.0.1-za6fygh
+    module load python/3.9.18-rt3uhd4
+} else {
+    depends-on py-tomli/2.0.1-za6fygh
+    depends-on python/3.9.18-rt3uhd4
+}
+prereq py-tomli/2.0.1-za6fygh
+prereq python/3.9.18-rt3uhd4
+conflict py-versioneer
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-versioneer-0.29-m4jlz6pxun7hbhdqc6lw7iy3d47ethho/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-versioneer-0.29-m4jlz6pxun7hbhdqc6lw7iy3d47ethho/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-versioneer-0.29-m4jlz6pxun7hbhdqc6lw7iy3d47ethho/lib/python3.9/site-packages}
+setenv PY_VERSIONEER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-versioneer-0.29-m4jlz6pxun7hbhdqc6lw7iy3d47ethho}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

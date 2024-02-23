@@ -1,0 +1,56 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:46.327932
+##
+## r-iranges@2.34.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/wmdqfli
+##
+
+
+module-whatis {Foundation of integer range manipulation in Bioconductor.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-iranges}
+    puts stderr {Version: 2.34.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Foundation of integer range manipulation in Bioconductor. Provides}
+    puts stderr {efficient low-level and highly reusable S4 classes for storing,}
+    puts stderr {manipulating and aggregating over annotated ranges of integers.}
+    puts stderr {Implements an algebra of range operations, including efficient}
+    puts stderr {algorithms for finding overlaps and nearest neighbors. Defines efficient}
+    puts stderr {list-like classes for storing, transforming and aggregating large}
+    puts stderr {grouped data, i.e., collections of atomic vectors and DataFrames.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-vcbztcv
+    module load r-biocgenerics/0.46.0-vwgf75t
+    module load r-s4vectors/0.38.0-mg4qpha
+} else {
+    depends-on r/4.3.0-vcbztcv
+    depends-on r-biocgenerics/0.46.0-vwgf75t
+    depends-on r-s4vectors/0.38.0-mg4qpha
+}
+prereq r/4.3.0-vcbztcv
+prereq r-biocgenerics/0.46.0-vwgf75t
+prereq r-s4vectors/0.38.0-mg4qpha
+conflict r-iranges
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-iranges-2.34.0-wmdqfliheuypmiv4cy3lgrzgf7rl3uuw/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-iranges-2.34.0-wmdqfliheuypmiv4cy3lgrzgf7rl3uuw/rlib/R/library}
+setenv R_IRANGES_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-iranges-2.34.0-wmdqfliheuypmiv4cy3lgrzgf7rl3uuw}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

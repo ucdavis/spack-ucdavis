@@ -1,0 +1,56 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:25.733258
+##
+## r-tzdb@0.3.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/5gyknm6
+##
+
+
+module-whatis {Time Zone Database Information.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-tzdb}
+    puts stderr {Version: 0.3.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Time Zone Database Information. Provides an up-to-date copy of the}
+    puts stderr {Internet Assigned Numbers Authority (IANA) Time Zone Database. It is}
+    puts stderr {updated periodically to reflect changes made by political bodies to time}
+    puts stderr {zone boundaries, UTC offsets, and daylight saving time rules.}
+    puts stderr {Additionally, this package provides a C++ interface for working with the}
+    puts stderr {'date' library. 'date' provides comprehensive support for working with}
+    puts stderr {dates and date-times, which this package exposes to make it easier for}
+    puts stderr {other R packages to utilize. Headers are provided for calendar specific}
+    puts stderr {calculations, along with a limited interface for time zone}
+    puts stderr {manipulations.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-cpp11/0.4.3-bldj6tp
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-cpp11/0.4.3-bldj6tp
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-cpp11/0.4.3-bldj6tp
+conflict r-tzdb
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-tzdb-0.3.0-5gyknm6pzbwne6xt664dnourbwcfiaa4/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-tzdb-0.3.0-5gyknm6pzbwne6xt664dnourbwcfiaa4/rlib/R/library}
+setenv R_TZDB_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-tzdb-0.3.0-5gyknm6pzbwne6xt664dnourbwcfiaa4}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

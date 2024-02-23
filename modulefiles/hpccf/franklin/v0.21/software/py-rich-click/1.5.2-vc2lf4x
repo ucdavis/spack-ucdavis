@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:51.462956
+##
+## py-rich-click@1.5.2%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/vc2lf4x
+##
+
+
+module-whatis {The intention of rich-click is to provide attractive help output from click, formatted with rich, with minimal customisation required.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-rich-click}
+    puts stderr {Version: 1.5.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The intention of rich-click is to provide attractive help output from}
+    puts stderr {click, formatted with rich, with minimal customisation required.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-click/8.1.3-mx7ccji
+    module load py-rich/13.4.2-k2oydkw
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on py-click/8.1.3-mx7ccji
+    depends-on py-rich/13.4.2-k2oydkw
+    depends-on python/3.11.6-ht65m6a
+}
+prereq py-click/8.1.3-mx7ccji
+prereq py-rich/13.4.2-k2oydkw
+prereq python/3.11.6-ht65m6a
+conflict py-rich-click
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-rich-click-1.5.2-vc2lf4x4hfbw7m66ioyd5lvl3bcz3tvg/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-rich-click-1.5.2-vc2lf4x4hfbw7m66ioyd5lvl3bcz3tvg/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-rich-click-1.5.2-vc2lf4x4hfbw7m66ioyd5lvl3bcz3tvg/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-rich-click-1.5.2-vc2lf4x4hfbw7m66ioyd5lvl3bcz3tvg/lib/python3.11/site-packages}
+setenv PY_RICH_CLICK_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-rich-click-1.5.2-vc2lf4x4hfbw7m66ioyd5lvl3bcz3tvg}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

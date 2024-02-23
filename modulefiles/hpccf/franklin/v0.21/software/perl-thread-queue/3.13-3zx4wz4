@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:13.264722
+##
+## perl-thread-queue@3.13%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/3zx4wz4
+##
+
+
+module-whatis {Thread::Queue - Thread-safe queues.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-thread-queue}
+    puts stderr {Version: 3.13}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Thread::Queue - Thread-safe queues. This module provides thread-safe}
+    puts stderr {FIFO queues that can be accessed safely by any number of threads.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-thread-queue
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-thread-queue-3.13-3zx4wz4z2yhbppex34oqosqmzqdjnlmn/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-thread-queue-3.13-3zx4wz4z2yhbppex34oqosqmzqdjnlmn/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-thread-queue-3.13-3zx4wz4z2yhbppex34oqosqmzqdjnlmn/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-thread-queue-3.13-3zx4wz4z2yhbppex34oqosqmzqdjnlmn/lib/perl5}
+setenv PERL_THREAD_QUEUE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-thread-queue-3.13-3zx4wz4z2yhbppex34oqosqmzqdjnlmn}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,41 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:58.824603
+##
+## libxdmcp@1.1.4%gcc@7.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/l2ftl6p
+##
+
+
+module-whatis {libXdmcp - X Display Manager Control Protocol library.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libxdmcp}
+    puts stderr {Version: 1.1.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {libXdmcp - X Display Manager Control Protocol library.}
+}
+
+conflict libxdmcp
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxdmcp-1.1.4-l2ftl6pum4gofgisykkbxx67vrxj7f3e/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxdmcp-1.1.4-l2ftl6pum4gofgisykkbxx67vrxj7f3e/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxdmcp-1.1.4-l2ftl6pum4gofgisykkbxx67vrxj7f3e/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxdmcp-1.1.4-l2ftl6pum4gofgisykkbxx67vrxj7f3e/include}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxdmcp-1.1.4-l2ftl6pum4gofgisykkbxx67vrxj7f3e/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxdmcp-1.1.4-l2ftl6pum4gofgisykkbxx67vrxj7f3e/.}
+setenv LIBXDMCP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxdmcp-1.1.4-l2ftl6pum4gofgisykkbxx67vrxj7f3e}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

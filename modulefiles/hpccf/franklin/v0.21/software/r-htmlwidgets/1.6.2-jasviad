@@ -1,0 +1,62 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:43.495334
+##
+## r-htmlwidgets@1.6.2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/jasviad
+##
+
+
+module-whatis {HTML Widgets for R.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-htmlwidgets}
+    puts stderr {Version: 1.6.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {HTML Widgets for R. A framework for creating HTML widgets that render in}
+    puts stderr {various contexts including the R console, 'R Markdown' documents, and}
+    puts stderr {'Shiny' web applications.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-htmltools/0.5.5-fwhv4oh
+    module load r-jsonlite/1.8.4-jbrhwx3
+    module load r-knitr/1.42-f64q3tb
+    module load r-rmarkdown/2.21-uyhkuw2
+    module load r-yaml/2.3.7-m4pgln5
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-htmltools/0.5.5-fwhv4oh
+    depends-on r-jsonlite/1.8.4-jbrhwx3
+    depends-on r-knitr/1.42-f64q3tb
+    depends-on r-rmarkdown/2.21-uyhkuw2
+    depends-on r-yaml/2.3.7-m4pgln5
+}
+prereq r/4.3.0-n6pth5g
+prereq r-htmltools/0.5.5-fwhv4oh
+prereq r-jsonlite/1.8.4-jbrhwx3
+prereq r-knitr/1.42-f64q3tb
+prereq r-rmarkdown/2.21-uyhkuw2
+prereq r-yaml/2.3.7-m4pgln5
+conflict r-htmlwidgets
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-htmlwidgets-1.6.2-jasviadwdetruumbq27oq73nted7lrca/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-htmlwidgets-1.6.2-jasviadwdetruumbq27oq73nted7lrca/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-htmlwidgets-1.6.2-jasviadwdetruumbq27oq73nted7lrca/rlib/R/library}
+setenv R_HTMLWIDGETS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-htmlwidgets-1.6.2-jasviadwdetruumbq27oq73nted7lrca}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

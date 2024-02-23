@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:20.320818
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:03.052567
 ##
 ## minimap2@2.26%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/y3vmcty
 ##
@@ -17,6 +17,12 @@ proc ModulesHelp { } {
     puts stderr {convenient interface to minimap2.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on python/3.11.6-rsiojxh
+}
+prereq python/3.11.6-rsiojxh
 conflict minimap2
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/minimap2-2.26-y3vmcty55ylj3pkfcqdyfwkcedow4oqq/lib}

@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:06.180071
+##
+## perl-acme-damn@0.08%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/euea3iy
+##
+
+
+module-whatis {Acme::Damn provides a single routine, damn(), which takes a blessed reference (a Perl object), and unblesses it, to return the original reference.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-acme-damn}
+    puts stderr {Version: 0.08}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Acme::Damn provides a single routine, damn(), which takes a blessed}
+    puts stderr {reference (a Perl object), and unblesses it, to return the original}
+    puts stderr {reference.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-acme-damn
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-acme-damn-0.08-euea3iyqmzdmtu6usrp3i7qkbmrocy3z/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-acme-damn-0.08-euea3iyqmzdmtu6usrp3i7qkbmrocy3z/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-acme-damn-0.08-euea3iyqmzdmtu6usrp3i7qkbmrocy3z/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-acme-damn-0.08-euea3iyqmzdmtu6usrp3i7qkbmrocy3z/lib/perl5}
+setenv PERL_ACME_DAMN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-acme-damn-0.08-euea3iyqmzdmtu6usrp3i7qkbmrocy3z}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

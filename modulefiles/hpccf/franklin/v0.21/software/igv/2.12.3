@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:17.547776
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:53.325758
 ##
 ## igv@2.12.3%gcc@11.4.0~igvtools build_system=generic arch=linux-ubuntu22.04-x86_64_v3/jpb4hsu
 ##
@@ -18,6 +18,12 @@ proc ModulesHelp { } {
     puts stderr {array-based and next-generation sequence data, and genomic annotations.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load openjdk/11.0.20.1_1-bvzxfaf
+} else {
+    depends-on openjdk/11.0.20.1_1-bvzxfaf
+}
+prereq openjdk/11.0.20.1_1-bvzxfaf
 conflict igv
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/igv-2.12.3-jpb4hsuf7g4ndui7tunwuczdg7gi5z2p/lib}

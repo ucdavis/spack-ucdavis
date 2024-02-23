@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:45.960221
+##
+## cereal@1.3.2%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make patches=2dfa0bf arch=linux-ubuntu22.04-x86_64_v3/mkof73p
+##
+## Configure options: -DCMAKE_DISABLE_FIND_PACKAGE_Boost=TRUE -DSKIP_PORTABILITY_TEST=TRUE -DJUST_INSTALL_CEREAL=On -DWITH_WERROR=Off
+##
+
+
+module-whatis {cereal is a header-only C++11 serialization library. cereal takes arbitrary data types and reversibly turns them into different representations, such as compact binary encodings, XML, or JSON. cereal was designed to be fast, light-weight, and easy to extend - it has no external dependencies and can be easily bundled with other code or used standalone.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : cereal}
+    puts stderr {Version: 1.3.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {cereal is a header-only C++11 serialization library. cereal takes}
+    puts stderr {arbitrary data types and reversibly turns them into different}
+    puts stderr {representations, such as compact binary encodings, XML, or JSON. cereal}
+    puts stderr {was designed to be fast, light-weight, and easy to extend - it has no}
+    puts stderr {external dependencies and can be easily bundled with other code or used}
+    puts stderr {standalone.}
+}
+
+conflict cereal
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cereal-1.3.2-mkof73pmptnghrjxojhdcxtljl7y6djg/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cereal-1.3.2-mkof73pmptnghrjxojhdcxtljl7y6djg/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cereal-1.3.2-mkof73pmptnghrjxojhdcxtljl7y6djg/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cereal-1.3.2-mkof73pmptnghrjxojhdcxtljl7y6djg/include}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cereal-1.3.2-mkof73pmptnghrjxojhdcxtljl7y6djg/.}
+setenv CEREAL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cereal-1.3.2-mkof73pmptnghrjxojhdcxtljl7y6djg}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

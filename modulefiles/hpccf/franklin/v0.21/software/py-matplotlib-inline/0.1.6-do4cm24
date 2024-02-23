@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:37.043009
+##
+## py-matplotlib-inline@0.1.6%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/do4cm24
+##
+
+
+module-whatis {Inline Matplotlib backend for Jupyter.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-matplotlib-inline}
+    puts stderr {Version: 0.1.6}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Inline Matplotlib backend for Jupyter.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-traitlets/5.9.0-pmbefep
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-traitlets/5.9.0-pmbefep
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-traitlets/5.9.0-pmbefep
+prereq python/3.11.6-rsiojxh
+conflict py-matplotlib-inline
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-matplotlib-inline-0.1.6-do4cm24asayab4wdue3krafqrmwk3k4u/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-matplotlib-inline-0.1.6-do4cm24asayab4wdue3krafqrmwk3k4u/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-matplotlib-inline-0.1.6-do4cm24asayab4wdue3krafqrmwk3k4u/lib/python3.11/site-packages}
+setenv PY_MATPLOTLIB_INLINE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-matplotlib-inline-0.1.6-do4cm24asayab4wdue3krafqrmwk3k4u}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

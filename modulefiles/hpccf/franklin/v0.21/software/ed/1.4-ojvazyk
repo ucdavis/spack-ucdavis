@@ -1,0 +1,41 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:47.287432
+##
+## ed@1.4%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/ojvazyk
+##
+
+
+module-whatis {GNU ed is a line-oriented text editor. It is used to create, display, modify and otherwise manipulate text files, both interactively and via shell scripts.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : ed}
+    puts stderr {Version: 1.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GNU ed is a line-oriented text editor. It is used to create, display,}
+    puts stderr {modify and otherwise manipulate text files, both interactively and via}
+    puts stderr {shell scripts.}
+}
+
+conflict ed
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ed-1.4-ojvazyktap4ibdyyow64n3fndegjfwdx/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ed-1.4-ojvazyktap4ibdyyow64n3fndegjfwdx/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ed-1.4-ojvazyktap4ibdyyow64n3fndegjfwdx/.}
+setenv ED_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ed-1.4-ojvazyktap4ibdyyow64n3fndegjfwdx}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

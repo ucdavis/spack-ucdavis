@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:19.852432
+##
+## py-bottleneck@1.3.7%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/q3ksqlj
+##
+
+
+module-whatis {A collection of fast NumPy array functions written in Cython.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-bottleneck}
+    puts stderr {Version: 1.3.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A collection of fast NumPy array functions written in Cython.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-numpy/1.24.4-xk45izx
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on py-numpy/1.24.4-xk45izx
+    depends-on python/3.11.6-ht65m6a
+}
+prereq py-numpy/1.24.4-xk45izx
+prereq python/3.11.6-ht65m6a
+conflict py-bottleneck
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-bottleneck-1.3.7-q3ksqljnntxkqnqiotzjgae4ituhz5t2/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-bottleneck-1.3.7-q3ksqljnntxkqnqiotzjgae4ituhz5t2/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-bottleneck-1.3.7-q3ksqljnntxkqnqiotzjgae4ituhz5t2/lib/python3.11/site-packages}
+setenv PY_BOTTLENECK_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-bottleneck-1.3.7-q3ksqljnntxkqnqiotzjgae4ituhz5t2}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

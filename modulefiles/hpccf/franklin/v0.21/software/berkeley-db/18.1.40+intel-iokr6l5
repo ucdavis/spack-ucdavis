@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:43.779852
+##
+## berkeley-db@18.1.40%oneapi@2023.2.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu22.04-skylake_avx512/iokr6l5
+##
+## Configure options: --disable-static --enable-dbm --enable-compat185 --with-repmgr-ssl=no --enable-cxx --enable-stl
+##
+
+
+module-whatis {Oracle Berkeley DB}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : berkeley-db}
+    puts stderr {Version: 18.1.40}
+    puts stderr {Target : skylake_avx512}
+    puts stderr {}
+    puts stderr {Oracle Berkeley DB}
+}
+
+conflict berkeley-db
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/berkeley-db-18.1.40-iokr6l54qgkynmjmkh7xi6fhq27xc3k5/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/berkeley-db-18.1.40-iokr6l54qgkynmjmkh7xi6fhq27xc3k5/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/berkeley-db-18.1.40-iokr6l54qgkynmjmkh7xi6fhq27xc3k5/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/berkeley-db-18.1.40-iokr6l54qgkynmjmkh7xi6fhq27xc3k5/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/berkeley-db-18.1.40-iokr6l54qgkynmjmkh7xi6fhq27xc3k5/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/berkeley-db-18.1.40-iokr6l54qgkynmjmkh7xi6fhq27xc3k5/.}
+setenv BERKELEY_DB_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/berkeley-db-18.1.40-iokr6l54qgkynmjmkh7xi6fhq27xc3k5}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

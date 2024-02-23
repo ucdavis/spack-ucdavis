@@ -1,0 +1,57 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:35.639448
+##
+## tar@1.34%gcc@7.5.0 build_system=autotools zip=pigz arch=linux-ubuntu22.04-x86_64_v3/g2oo377
+##
+## Configure options: --with-xz=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/xz-5.4.1-hlvs43h47bbibxirqnzysqhy4yesrspo/bin/xz --with-lzma=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/xz-5.4.1-hlvs43h47bbibxirqnzysqhy4yesrspo/bin/lzma --with-bzip2=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/bzip2-1.0.8-nujrrhbcr7zvokcfd7nss6mfijcq55i7/bin/bzip2 --with-libiconv-prefix=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libiconv-1.17-cxv6uvnvk2rfaajodgn23kvyekcqddbl --with-zstd=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/zstd-1.5.5-scid4fetxgn2tvggqwt6ygafse4ycd5f/bin/zstd --with-gzip=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/pigz-2.7-rugkycqb6rajhyzycz3pp6yyd3tjx5g2/bin/pigz
+##
+
+
+module-whatis {GNU Tar provides the ability to create tar archives, as well as various other kinds of manipulation.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : tar}
+    puts stderr {Version: 1.34}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GNU Tar provides the ability to create tar archives, as well as various}
+    puts stderr {other kinds of manipulation.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load bzip2/1.0.8-nujrrhb
+    module load pigz/2.7-rugkycq
+    module load xz/5.4.1-hlvs43h
+    module load zstd/1.5.5-scid4fe
+} else {
+    depends-on bzip2/1.0.8-nujrrhb
+    depends-on pigz/2.7-rugkycq
+    depends-on xz/5.4.1-hlvs43h
+    depends-on zstd/1.5.5-scid4fe
+}
+prereq bzip2/1.0.8-nujrrhb
+prereq pigz/2.7-rugkycq
+prereq xz/5.4.1-hlvs43h
+prereq zstd/1.5.5-scid4fe
+conflict tar
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/tar-1.34-g2oo377ugjhgkjwke7q75ff6yxfogerq/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/tar-1.34-g2oo377ugjhgkjwke7q75ff6yxfogerq/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/tar-1.34-g2oo377ugjhgkjwke7q75ff6yxfogerq/.}
+setenv TAR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/tar-1.34-g2oo377ugjhgkjwke7q75ff6yxfogerq}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:18.808503
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:56.511958
 ##
 ## krakenuniq@1.0.4%gcc@11.4.0~jellyfish build_system=generic arch=linux-ubuntu22.04-x86_64_v3/rrutoqs
 ##
@@ -16,12 +16,6 @@ proc ModulesHelp { } {
     puts stderr {results.}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load bzip2/1.0.8
-} else {
-    depends-on bzip2/1.0.8
-}
-prereq bzip2/1.0.8
 conflict krakenuniq
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/krakenuniq-1.0.4-rrutoqseocqirca6xtrrgfnqtomjtqmm/bin}

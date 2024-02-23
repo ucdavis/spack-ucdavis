@@ -1,0 +1,53 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:06.447065
+##
+## perl-bio-searchio-hmmer@1.7.3%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/v5kbnda
+##
+
+
+module-whatis {BioPerl parser to HMMER output.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-bio-searchio-hmmer}
+    puts stderr {Version: 1.7.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {BioPerl parser to HMMER output.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-bioperl/1.7.6-xvvpo2g
+    module load perl-io-string/1.08-epoalwv
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-bioperl/1.7.6-xvvpo2g
+    depends-on perl-io-string/1.08-epoalwv
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-bioperl/1.7.6-xvvpo2g
+prereq perl-io-string/1.08-epoalwv
+conflict perl-bio-searchio-hmmer
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bio-searchio-hmmer-1.7.3-v5kbndaqd3cd6v2xrsppldd6tzv3y6df/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bio-searchio-hmmer-1.7.3-v5kbndaqd3cd6v2xrsppldd6tzv3y6df/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bio-searchio-hmmer-1.7.3-v5kbndaqd3cd6v2xrsppldd6tzv3y6df/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bio-searchio-hmmer-1.7.3-v5kbndaqd3cd6v2xrsppldd6tzv3y6df/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bio-searchio-hmmer-1.7.3-v5kbndaqd3cd6v2xrsppldd6tzv3y6df/lib/perl5}
+setenv PERL_BIO_SEARCHIO_HMMER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bio-searchio-hmmer-1.7.3-v5kbndaqd3cd6v2xrsppldd6tzv3y6df}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

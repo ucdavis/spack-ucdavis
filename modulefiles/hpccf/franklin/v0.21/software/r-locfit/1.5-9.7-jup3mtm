@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:50.809143
+##
+## r-locfit@1.5-9.7%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/jup3mtm
+##
+
+
+module-whatis {Local regression, likelihood and density estimation.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-locfit}
+    puts stderr {Version: 1.5-9.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Local regression, likelihood and density estimation. Local regression,}
+    puts stderr {likelihood and density estimation methods as described in the 1999 book}
+    puts stderr {by Loader.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-lattice/0.21-8-mib3fkt
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-lattice/0.21-8-mib3fkt
+}
+prereq r/4.3.0-n6pth5g
+prereq r-lattice/0.21-8-mib3fkt
+conflict r-locfit
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-locfit-1.5-9.7-jup3mtm4rbuhcm7znoztjw3ll2uqb6gg/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-locfit-1.5-9.7-jup3mtm4rbuhcm7znoztjw3ll2uqb6gg/rlib/R/library}
+setenv R_LOCFIT_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-locfit-1.5-9.7-jup3mtm4rbuhcm7znoztjw3ll2uqb6gg}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

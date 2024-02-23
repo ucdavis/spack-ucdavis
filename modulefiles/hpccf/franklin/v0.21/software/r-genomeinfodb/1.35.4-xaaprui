@@ -1,0 +1,64 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:29.660989
+##
+## r-genomeinfodb@1.35.4%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/xaaprui
+##
+
+
+module-whatis {Utilities for manipulating chromosome names, including modifying them to follow a particular naming style.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-genomeinfodb}
+    puts stderr {Version: 1.35.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Utilities for manipulating chromosome names, including modifying them to}
+    puts stderr {follow a particular naming style. Contains data and functions that}
+    puts stderr {define and allow translation between different chromosome sequence}
+    puts stderr {naming conventions (e.g., "chr1" versus "1"), including a function that}
+    puts stderr {attempts to place sequence names in their natural, rather than}
+    puts stderr {lexicographic, order.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-biocgenerics/0.46.0-msgdmac
+    module load r-genomeinfodbdata/1.2.10-bvhvexe
+    module load r-iranges/2.34.0-ymbnnoq
+    module load r-rcurl/1.98-1.12-jes35pb
+    module load r-s4vectors/0.38.0-2nj6k5f
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-biocgenerics/0.46.0-msgdmac
+    depends-on r-genomeinfodbdata/1.2.10-bvhvexe
+    depends-on r-iranges/2.34.0-ymbnnoq
+    depends-on r-rcurl/1.98-1.12-jes35pb
+    depends-on r-s4vectors/0.38.0-2nj6k5f
+}
+prereq r/4.3.0-n6pth5g
+prereq r-biocgenerics/0.46.0-msgdmac
+prereq r-genomeinfodbdata/1.2.10-bvhvexe
+prereq r-iranges/2.34.0-ymbnnoq
+prereq r-rcurl/1.98-1.12-jes35pb
+prereq r-s4vectors/0.38.0-2nj6k5f
+conflict r-genomeinfodb
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-genomeinfodb-1.35.4-xaapruig7p5f6oxdhzxvop4w3evsqywa/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-genomeinfodb-1.35.4-xaapruig7p5f6oxdhzxvop4w3evsqywa/rlib/R/library}
+setenv R_GENOMEINFODB_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-genomeinfodb-1.35.4-xaapruig7p5f6oxdhzxvop4w3evsqywa}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:44.585401
+##
+## bowtie2@2.5.1%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/belpcno
+##
+
+
+module-whatis {Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : bowtie2}
+    puts stderr {Version: 2.5.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Bowtie 2 is an ultrafast and memory-efficient tool for aligning}
+    puts stderr {sequencing reads to long reference sequences}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on python/3.11.6-rsiojxh
+}
+prereq perl/5.38.0-lfl2a73
+prereq python/3.11.6-rsiojxh
+conflict bowtie2
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bowtie2-2.5.1-belpcno47lzwxzvjp7hmg3lrobmqfqw3/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bowtie2-2.5.1-belpcno47lzwxzvjp7hmg3lrobmqfqw3/.}
+setenv BOWTIE2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bowtie2-2.5.1-belpcno47lzwxzvjp7hmg3lrobmqfqw3}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:10.459983
+##
+## r-bitops@1.0-7%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/rwrbow7
+##
+
+
+module-whatis {Bitwise Operations.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-bitops}
+    puts stderr {Version: 1.0-7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Bitwise Operations. Functions for bitwise operations on integer vectors.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+} else {
+    depends-on r/4.3.0-n6pth5g
+}
+prereq r/4.3.0-n6pth5g
+conflict r-bitops
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-bitops-1.0-7-rwrbow7pcnvdbtyprmrbhkdw2xz63ncy/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-bitops-1.0-7-rwrbow7pcnvdbtyprmrbhkdw2xz63ncy/rlib/R/library}
+setenv R_BITOPS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-bitops-1.0-7-rwrbow7pcnvdbtyprmrbhkdw2xz63ncy}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

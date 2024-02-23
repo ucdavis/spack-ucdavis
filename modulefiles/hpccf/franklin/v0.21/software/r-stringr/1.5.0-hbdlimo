@@ -1,0 +1,70 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:18.691853
+##
+## r-stringr@1.5.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/hbdlimo
+##
+
+
+module-whatis {Simple, Consistent Wrappers for Common String Operations.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-stringr}
+    puts stderr {Version: 1.5.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Simple, Consistent Wrappers for Common String Operations. A consistent,}
+    puts stderr {simple and easy to use set of wrappers around the fantastic 'stringi'}
+    puts stderr {package. All function and argument names (and positions) are consistent,}
+    puts stderr {all functions deal with "NA"'s and zero length vectors in the same way,}
+    puts stderr {and the output from one function is easy to feed into the input of}
+    puts stderr {another.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-cli/3.6.1-75actrg
+    module load r-glue/1.6.2-g2mk77f
+    module load r-lifecycle/1.0.3-u6wfegg
+    module load r-magrittr/2.0.3-mvovjyx
+    module load r-rlang/1.1.0-exexgvx
+    module load r-stringi/1.7.12-aok7pqd
+    module load r-vctrs/0.6.2-2fduwfe
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-cli/3.6.1-75actrg
+    depends-on r-glue/1.6.2-g2mk77f
+    depends-on r-lifecycle/1.0.3-u6wfegg
+    depends-on r-magrittr/2.0.3-mvovjyx
+    depends-on r-rlang/1.1.0-exexgvx
+    depends-on r-stringi/1.7.12-aok7pqd
+    depends-on r-vctrs/0.6.2-2fduwfe
+}
+prereq r/4.3.0-n6pth5g
+prereq r-cli/3.6.1-75actrg
+prereq r-glue/1.6.2-g2mk77f
+prereq r-lifecycle/1.0.3-u6wfegg
+prereq r-magrittr/2.0.3-mvovjyx
+prereq r-rlang/1.1.0-exexgvx
+prereq r-stringi/1.7.12-aok7pqd
+prereq r-vctrs/0.6.2-2fduwfe
+conflict r-stringr
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-stringr-1.5.0-hbdlimogigj57wom4fxrspjtatlodk4d/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-stringr-1.5.0-hbdlimogigj57wom4fxrspjtatlodk4d/rlib/R/library}
+setenv R_STRINGR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-stringr-1.5.0-hbdlimogigj57wom4fxrspjtatlodk4d}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

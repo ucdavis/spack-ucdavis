@@ -1,0 +1,54 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:24.747764
+##
+## r-filelock@1.0.2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/teugvyt
+##
+
+
+module-whatis {Portable File Locking.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-filelock}
+    puts stderr {Version: 1.0.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Portable File Locking. Place an exclusive or shared lock on a file. It}
+    puts stderr {uses 'LockFile' on Windows and 'fcntl' locks on Unix-like systems.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-callr/3.7.3-zqcxgei
+    module load r-covr/3.6.2-kwvj2at
+    module load r-testthat/3.1.7-4c2vefh
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-callr/3.7.3-zqcxgei
+    depends-on r-covr/3.6.2-kwvj2at
+    depends-on r-testthat/3.1.7-4c2vefh
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-callr/3.7.3-zqcxgei
+prereq r-covr/3.6.2-kwvj2at
+prereq r-testthat/3.1.7-4c2vefh
+conflict r-filelock
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-filelock-1.0.2-teugvyty5vq5dhwqu77ik7n5gbv6355k/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-filelock-1.0.2-teugvyty5vq5dhwqu77ik7n5gbv6355k/rlib/R/library}
+setenv R_FILELOCK_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-filelock-1.0.2-teugvyty5vq5dhwqu77ik7n5gbv6355k}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:56.837484
+##
+## libcerf@1.3%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/qa2bdph
+##
+
+
+module-whatis {A self-contained C library providing complex error functions, based on Faddeeva's plasma dispersion function w(z). Also provides Dawson's integral and Voigt's convolution of a Gaussian and a Lorentzian}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libcerf}
+    puts stderr {Version: 1.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A self-contained C library providing complex error functions, based on}
+    puts stderr {Faddeeva's plasma dispersion function w(z). Also provides Dawson's}
+    puts stderr {integral and Voigt's convolution of a Gaussian and a Lorentzian}
+}
+
+conflict libcerf
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libcerf-1.3-qa2bdphgbbvw2ya7457mjyojsvvq5i7i/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libcerf-1.3-qa2bdphgbbvw2ya7457mjyojsvvq5i7i/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libcerf-1.3-qa2bdphgbbvw2ya7457mjyojsvvq5i7i/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libcerf-1.3-qa2bdphgbbvw2ya7457mjyojsvvq5i7i/include}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libcerf-1.3-qa2bdphgbbvw2ya7457mjyojsvvq5i7i/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libcerf-1.3-qa2bdphgbbvw2ya7457mjyojsvvq5i7i/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libcerf-1.3-qa2bdphgbbvw2ya7457mjyojsvvq5i7i/.}
+setenv LIBCERF_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libcerf-1.3-qa2bdphgbbvw2ya7457mjyojsvvq5i7i}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

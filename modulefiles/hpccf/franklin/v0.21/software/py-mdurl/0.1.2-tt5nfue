@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:37.165854
+##
+## py-mdurl@0.1.2%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/tt5nfue
+##
+
+
+module-whatis {Markdown URL utilities.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-mdurl}
+    puts stderr {Version: 0.1.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Markdown URL utilities.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on python/3.11.6-ht65m6a
+}
+prereq python/3.11.6-ht65m6a
+conflict py-mdurl
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-mdurl-0.1.2-tt5nfue2xhvf67elkb6r4ses3jhdnlvk/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-mdurl-0.1.2-tt5nfue2xhvf67elkb6r4ses3jhdnlvk/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-mdurl-0.1.2-tt5nfue2xhvf67elkb6r4ses3jhdnlvk/lib/python3.11/site-packages}
+setenv PY_MDURL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-mdurl-0.1.2-tt5nfue2xhvf67elkb6r4ses3jhdnlvk}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

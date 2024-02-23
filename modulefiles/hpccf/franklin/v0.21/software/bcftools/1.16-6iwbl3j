@@ -1,0 +1,53 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:43.415168
+##
+## bcftools@1.16%gcc@11.4.0~libgsl~perl-filters build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/6iwbl3j
+##
+## Configure options: --with-htslib=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/htslib-1.16-7tl6ln4jjhn4j73ap4u6dnydvc47v4vh --disable-libgsl --disable-perl-filters
+##
+
+
+module-whatis {BCFtools is a set of utilities that manipulate variant calls in the Variant Call Format (VCF) and its binary counterpart BCF. All commands work transparently with both VCFs and BCFs, both uncompressed and BGZF-compressed.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : bcftools}
+    puts stderr {Version: 1.16}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {BCFtools is a set of utilities that manipulate variant calls in the}
+    puts stderr {Variant Call Format (VCF) and its binary counterpart BCF. All commands}
+    puts stderr {work transparently with both VCFs and BCFs, both uncompressed and BGZF-}
+    puts stderr {compressed.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load py-matplotlib/3.8.0-q3vzghf
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on py-matplotlib/3.8.0-q3vzghf
+}
+prereq perl/5.38.0-lfl2a73
+prereq py-matplotlib/3.8.0-q3vzghf
+conflict bcftools
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bcftools-1.16-6iwbl3jjl3awfufrguh224vqkdtfqpqg/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bcftools-1.16-6iwbl3jjl3awfufrguh224vqkdtfqpqg/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bcftools-1.16-6iwbl3jjl3awfufrguh224vqkdtfqpqg/.}
+setenv BCFTOOLS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bcftools-1.16-6iwbl3jjl3awfufrguh224vqkdtfqpqg}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

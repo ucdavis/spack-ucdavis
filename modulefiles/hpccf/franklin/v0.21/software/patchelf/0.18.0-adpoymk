@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:05.906153
+##
+## patchelf@0.18.0%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/adpoymk
+##
+
+
+module-whatis {PatchELF is a small utility to modify the dynamic linker and RPATH of ELF executables.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : patchelf}
+    puts stderr {Version: 0.18.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {PatchELF is a small utility to modify the dynamic linker and RPATH of}
+    puts stderr {ELF executables.}
+}
+
+conflict patchelf
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/patchelf-0.18.0-adpoymk6ih4btjvfbba2bdkkpoljawtl/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/patchelf-0.18.0-adpoymk6ih4btjvfbba2bdkkpoljawtl/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/patchelf-0.18.0-adpoymk6ih4btjvfbba2bdkkpoljawtl/.}
+setenv PATCHELF_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/patchelf-0.18.0-adpoymk6ih4btjvfbba2bdkkpoljawtl}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

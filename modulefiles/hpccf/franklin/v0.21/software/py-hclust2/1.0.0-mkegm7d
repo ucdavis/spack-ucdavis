@@ -1,0 +1,58 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:29.197200
+##
+## py-hclust2@1.0.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/mkegm7d
+##
+
+
+module-whatis {Hclust2 is a handy tool for plotting heat-maps with several useful options to produce high quality figures that can be used in publication.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-hclust2}
+    puts stderr {Version: 1.0.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Hclust2 is a handy tool for plotting heat-maps with several useful}
+    puts stderr {options to produce high quality figures that can be used in publication.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-matplotlib/3.8.0-zjut223
+    module load py-numpy/1.24.4-xk45izx
+    module load py-pandas/2.1.1-wlzt6e3
+    module load py-scipy/1.11.2-m6ulg4w
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on py-matplotlib/3.8.0-zjut223
+    depends-on py-numpy/1.24.4-xk45izx
+    depends-on py-pandas/2.1.1-wlzt6e3
+    depends-on py-scipy/1.11.2-m6ulg4w
+    depends-on python/3.11.6-ht65m6a
+}
+prereq py-matplotlib/3.8.0-zjut223
+prereq py-numpy/1.24.4-xk45izx
+prereq py-pandas/2.1.1-wlzt6e3
+prereq py-scipy/1.11.2-m6ulg4w
+prereq python/3.11.6-ht65m6a
+conflict py-hclust2
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-hclust2-1.0.0-mkegm7drappmig4bd7jqwqoapla7rjxg/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-hclust2-1.0.0-mkegm7drappmig4bd7jqwqoapla7rjxg/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-hclust2-1.0.0-mkegm7drappmig4bd7jqwqoapla7rjxg/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-hclust2-1.0.0-mkegm7drappmig4bd7jqwqoapla7rjxg/lib/python3.11/site-packages}
+setenv PY_HCLUST2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-hclust2-1.0.0-mkegm7drappmig4bd7jqwqoapla7rjxg}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

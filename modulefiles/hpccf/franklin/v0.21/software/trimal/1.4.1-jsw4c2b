@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:36.415677
+##
+## trimal@1.4.1%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/jsw4c2b
+##
+
+
+module-whatis {A tool for automated alignment trimming in large-scale phylogenetic analyses}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : trimal}
+    puts stderr {Version: 1.4.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A tool for automated alignment trimming in large-scale phylogenetic}
+    puts stderr {analyses}
+}
+
+conflict trimal
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/trimal-1.4.1-jsw4c2boj57xmpmekzefc3av2bmsznta/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/trimal-1.4.1-jsw4c2boj57xmpmekzefc3av2bmsznta/.}
+setenv TRIMAL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/trimal-1.4.1-jsw4c2boj57xmpmekzefc3av2bmsznta}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

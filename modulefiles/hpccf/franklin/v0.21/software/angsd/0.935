@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:12.308754
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:40.814906
 ##
 ## angsd@0.935%gcc@11.4.0+r build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/qdrcsu2
 ##
@@ -19,6 +19,12 @@ proc ModulesHelp { } {
     puts stderr {useful for low and medium depth data.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-odq5bdd
+} else {
+    depends-on r/4.3.0-odq5bdd
+}
+prereq r/4.3.0-odq5bdd
 conflict angsd
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/angsd-0.935-qdrcsu2cjawervpofi3pci7sjhmkdovp/bin}

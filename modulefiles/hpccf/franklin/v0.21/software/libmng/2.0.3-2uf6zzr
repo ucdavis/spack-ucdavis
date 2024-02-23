@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:57.606256
+##
+## libmng@2.0.3%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/2uf6zzr
+##
+## Configure options: -DWITH_LCMS2:BOOL=ON -DWITH_LCMS1:BOOL=OFF
+##
+
+
+module-whatis {THE reference library for reading, displaying, writing and examining Multiple-Image Network Graphics. MNG is the animation extension to the popular PNG image format.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libmng}
+    puts stderr {Version: 2.0.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {THE reference library for reading, displaying, writing and examining}
+    puts stderr {Multiple-Image Network Graphics. MNG is the animation extension to the}
+    puts stderr {popular PNG image format.}
+}
+
+conflict libmng
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libmng-2.0.3-2uf6zzrszhtuq5yaawnwes6oad3ibww2/lib64}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libmng-2.0.3-2uf6zzrszhtuq5yaawnwes6oad3ibww2/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libmng-2.0.3-2uf6zzrszhtuq5yaawnwes6oad3ibww2/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libmng-2.0.3-2uf6zzrszhtuq5yaawnwes6oad3ibww2/include}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libmng-2.0.3-2uf6zzrszhtuq5yaawnwes6oad3ibww2/lib64/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libmng-2.0.3-2uf6zzrszhtuq5yaawnwes6oad3ibww2/.}
+setenv LIBMNG_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libmng-2.0.3-2uf6zzrszhtuq5yaawnwes6oad3ibww2}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

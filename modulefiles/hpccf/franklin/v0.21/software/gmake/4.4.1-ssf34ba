@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:51.297432
+##
+## gmake@4.4.1%gcc@11.4.0~guile build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/ssf34ba
+##
+## Configure options: --without-guile --disable-nls
+##
+
+
+module-whatis {GNU Make is a tool which controls the generation of executables and other non-source files of a program from the program's source files.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gmake}
+    puts stderr {Version: 4.4.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GNU Make is a tool which controls the generation of executables and}
+    puts stderr {other non-source files of a program from the program's source files.}
+}
+
+conflict gmake
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-ssf34bawaumtmznzirmjmfj66aty7q6f/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-ssf34bawaumtmznzirmjmfj66aty7q6f/.}
+setenv GMAKE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-ssf34bawaumtmznzirmjmfj66aty7q6f}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

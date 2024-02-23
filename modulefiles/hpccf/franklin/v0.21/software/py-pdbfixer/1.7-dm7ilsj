@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:43.833788
+##
+## py-pdbfixer@1.7%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/dm7ilsj
+##
+
+
+module-whatis {PDBFixer is an easy to use application for fixing problems in Protein Data Bank files in preparation for simulating them.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-pdbfixer}
+    puts stderr {Version: 1.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {PDBFixer is an easy to use application for fixing problems in Protein}
+    puts stderr {Data Bank files in preparation for simulating them.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-numpy/1.22.4-7bmhfux
+    module load python/3.9.18-rt3uhd4
+} else {
+    depends-on py-numpy/1.22.4-7bmhfux
+    depends-on python/3.9.18-rt3uhd4
+}
+prereq py-numpy/1.22.4-7bmhfux
+prereq python/3.9.18-rt3uhd4
+conflict py-pdbfixer
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pdbfixer-1.7-dm7ilsjw5dveczsxfy6abrd7zvf5csv2/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pdbfixer-1.7-dm7ilsjw5dveczsxfy6abrd7zvf5csv2/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pdbfixer-1.7-dm7ilsjw5dveczsxfy6abrd7zvf5csv2/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pdbfixer-1.7-dm7ilsjw5dveczsxfy6abrd7zvf5csv2/lib/python3.9/site-packages}
+setenv PY_PDBFIXER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pdbfixer-1.7-dm7ilsjw5dveczsxfy6abrd7zvf5csv2}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

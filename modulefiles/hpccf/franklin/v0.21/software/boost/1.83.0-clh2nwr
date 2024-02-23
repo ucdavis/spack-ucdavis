@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:44.422274
+##
+## boost@1.83.0%gcc@11.4.0+atomic+chrono~clanglibcpp~container~context~contract~coroutine+date_time~debug+exception~fiber+filesystem+graph~graph_parallel~icu+iostreams~json+locale+log+math~mpi+multithreaded~nowide~numpy~pic+program_options~python+random+regex+serialization+shared+signals~singlethreaded~stacktrace+system~taggedlayout+test+thread+timer~type_erasure~versionedlayout+wave build_system=generic cxxstd=98 patches=a440f96 visibility=hidden arch=linux-ubuntu22.04-x86_64_v3/clh2nwr
+##
+
+
+module-whatis {Boost provides free peer-reviewed portable C++ source libraries, emphasizing libraries that work well with the C++ Standard Library.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : boost}
+    puts stderr {Version: 1.83.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Boost provides free peer-reviewed portable C++ source libraries,}
+    puts stderr {emphasizing libraries that work well with the C++ Standard Library.}
+    puts stderr {Boost libraries are intended to be widely useful, and usable across a}
+    puts stderr {broad spectrum of applications. The Boost license encourages both}
+    puts stderr {commercial and non-commercial use.}
+}
+
+conflict boost
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.83.0-clh2nwr5b3ztnxqcxktlbi5dju3t6u6p/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.83.0-clh2nwr5b3ztnxqcxktlbi5dju3t6u6p/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.83.0-clh2nwr5b3ztnxqcxktlbi5dju3t6u6p/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.83.0-clh2nwr5b3ztnxqcxktlbi5dju3t6u6p/include}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.83.0-clh2nwr5b3ztnxqcxktlbi5dju3t6u6p/.}
+setenv BOOST_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.83.0-clh2nwr5b3ztnxqcxktlbi5dju3t6u6p}
+setenv BOOST_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.83.0-clh2nwr5b3ztnxqcxktlbi5dju3t6u6p}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

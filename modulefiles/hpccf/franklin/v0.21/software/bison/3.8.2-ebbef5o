@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:43.830066
+##
+## bison@3.8.2%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/ebbef5o
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis {Bison is a general-purpose parser generator that converts an annotated context-free grammar into a deterministic LR or generalized LR (GLR) parser employing LALR(1) parser tables.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : bison}
+    puts stderr {Version: 3.8.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Bison is a general-purpose parser generator that converts an annotated}
+    puts stderr {context-free grammar into a deterministic LR or generalized LR (GLR)}
+    puts stderr {parser employing LALR(1) parser tables.}
+}
+
+conflict bison
+
+prepend-path MANPATH {/usr/share/man}
+prepend-path ACLOCAL_PATH {/usr/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/usr/lib/pkgconfig}
+prepend-path PKG_CONFIG_PATH {/usr/share/pkgconfig}
+setenv BISON_ROOT {/usr}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

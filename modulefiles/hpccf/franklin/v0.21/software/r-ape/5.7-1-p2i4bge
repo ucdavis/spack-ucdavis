@@ -1,0 +1,71 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:03.076991
+##
+## r-ape@5.7-1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/p2i4bge
+##
+
+
+module-whatis {Analyses of Phylogenetics and Evolution.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-ape}
+    puts stderr {Version: 5.7-1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Analyses of Phylogenetics and Evolution. Functions for reading, writing,}
+    puts stderr {plotting, and manipulating phylogenetic trees, analyses of comparative}
+    puts stderr {data in a phylogenetic framework, ancestral character analyses, analyses}
+    puts stderr {of diversification and macroevolution, computing distances from DNA}
+    puts stderr {sequences, reading and writing nucleotide sequences as well as importing}
+    puts stderr {from BioConductor, and several tools such as Mantel's test, generalized}
+    puts stderr {skyline plots, graphical exploration of phylogenetic data (alex, trex,}
+    puts stderr {kronoviz), estimation of absolute evolutionary rates and clock-like}
+    puts stderr {trees using mean path lengths and penalized likelihood, dating trees}
+    puts stderr {with non-contemporaneous sequences, translating DNA into AA sequences,}
+    puts stderr {and assessing sequence alignments. Phylogeny estimation can be done with}
+    puts stderr {the NJ, BIONJ, ME, MVR, SDM, and triangle methods, and several methods}
+    puts stderr {handling incomplete distance matrices (NJ*, BIONJ*, MVR*, and the}
+    puts stderr {corresponding triangle method). Some functions call external}
+    puts stderr {applications (PhyML, Clustal, T-Coffee, Muscle) whose results are}
+    puts stderr {returned into R.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-digest/0.6.31-iz4w6gl
+    module load r-lattice/0.21-8-mib3fkt
+    module load r-nlme/3.1-162-wg5firr
+    module load r-rcpp/1.0.10-25ngc3r
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-digest/0.6.31-iz4w6gl
+    depends-on r-lattice/0.21-8-mib3fkt
+    depends-on r-nlme/3.1-162-wg5firr
+    depends-on r-rcpp/1.0.10-25ngc3r
+}
+prereq r/4.3.0-n6pth5g
+prereq r-digest/0.6.31-iz4w6gl
+prereq r-lattice/0.21-8-mib3fkt
+prereq r-nlme/3.1-162-wg5firr
+prereq r-rcpp/1.0.10-25ngc3r
+conflict r-ape
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-ape-5.7-1-p2i4bge26tyml3ji7qkb3jngodqgbq6t/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-ape-5.7-1-p2i4bge26tyml3ji7qkb3jngodqgbq6t/rlib/R/library}
+setenv R_APE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-ape-5.7-1-p2i4bge26tyml3ji7qkb3jngodqgbq6t}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

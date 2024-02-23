@@ -1,0 +1,39 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:57.713415
+##
+## libpthread-stubs@0.4%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/6cy7ucu
+##
+
+
+module-whatis {The libpthread-stubs package provides weak aliases for pthread functions not provided in libc or otherwise available by default.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libpthread-stubs}
+    puts stderr {Version: 0.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The libpthread-stubs package provides weak aliases for pthread functions}
+    puts stderr {not provided in libc or otherwise available by default.}
+}
+
+conflict libpthread-stubs
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libpthread-stubs-0.4-6cy7ucuxjomntmegnrnzpbs2qjyxpduz/lib}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libpthread-stubs-0.4-6cy7ucuxjomntmegnrnzpbs2qjyxpduz/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libpthread-stubs-0.4-6cy7ucuxjomntmegnrnzpbs2qjyxpduz/.}
+setenv LIBPTHREAD_STUBS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libpthread-stubs-0.4-6cy7ucuxjomntmegnrnzpbs2qjyxpduz}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

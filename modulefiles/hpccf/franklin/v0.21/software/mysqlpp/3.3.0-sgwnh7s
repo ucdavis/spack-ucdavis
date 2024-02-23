@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:03.930476
+##
+## mysqlpp@3.3.0%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/sgwnh7s
+##
+## Configure options: --with-mysql=/usr
+##
+
+
+module-whatis {MySQL++ is a C++ wrapper for MySQL and MariaDB C APIs. It is built on the same principles as the Standard C++ Library to make dealing with the database as easy as dealing with std containers. MySQL++ also provides facilities that let you avoid the most repetitive sorts of SQL within your own code, providing native C++ interfaces for these common tasks.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : mysqlpp}
+    puts stderr {Version: 3.3.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {MySQL++ is a C++ wrapper for MySQL and MariaDB C APIs. It is built on}
+    puts stderr {the same principles as the Standard C++ Library to make dealing with the}
+    puts stderr {database as easy as dealing with std containers. MySQL++ also provides}
+    puts stderr {facilities that let you avoid the most repetitive sorts of SQL within}
+    puts stderr {your own code, providing native C++ interfaces for these common tasks.}
+}
+
+conflict mysqlpp
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mysqlpp-3.3.0-sgwnh7sm4c4t323mjvwr4fhbxgkletrd/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mysqlpp-3.3.0-sgwnh7sm4c4t323mjvwr4fhbxgkletrd/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mysqlpp-3.3.0-sgwnh7sm4c4t323mjvwr4fhbxgkletrd/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mysqlpp-3.3.0-sgwnh7sm4c4t323mjvwr4fhbxgkletrd/include}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mysqlpp-3.3.0-sgwnh7sm4c4t323mjvwr4fhbxgkletrd/.}
+setenv MYSQLPP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mysqlpp-3.3.0-sgwnh7sm4c4t323mjvwr4fhbxgkletrd}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

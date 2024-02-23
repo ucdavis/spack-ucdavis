@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:53.345792
+##
+## imlib2@1.7.1%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/thdcfcp
+##
+
+
+module-whatis { Library that does image file loading and saving as well as rendering, manipulation, arbitrary polygon support }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : imlib2}
+    puts stderr {Version: 1.7.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr { Library that does image file loading and saving as well as rendering,}
+    puts stderr {manipulation, arbitrary polygon support}
+}
+
+conflict imlib2
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/imlib2-1.7.1-thdcfcprankaxf4xk4jluygviai5pedd/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/imlib2-1.7.1-thdcfcprankaxf4xk4jluygviai5pedd/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/imlib2-1.7.1-thdcfcprankaxf4xk4jluygviai5pedd/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/imlib2-1.7.1-thdcfcprankaxf4xk4jluygviai5pedd/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/imlib2-1.7.1-thdcfcprankaxf4xk4jluygviai5pedd/bin}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/imlib2-1.7.1-thdcfcprankaxf4xk4jluygviai5pedd/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/imlib2-1.7.1-thdcfcprankaxf4xk4jluygviai5pedd/.}
+setenv IMLIB2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/imlib2-1.7.1-thdcfcprankaxf4xk4jluygviai5pedd}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,50 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:48.715608
+##
+## fltk@1.3.7%gcc@7.5.0+gl+shared+xft build_system=generic arch=linux-ubuntu22.04-x86_64_v3/ol6phwa
+##
+
+
+module-whatis {FLTK (pronounced 'fulltick') is a cross-platform C++ GUI toolkit for UNIX/Linux (X11), Microsoft Windows, and MacOS X. FLTK provides modern GUI functionality without the bloat and supports 3D graphics via OpenGL and its built-in GLUT emulation.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : fltk}
+    puts stderr {Version: 1.3.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {FLTK (pronounced "fulltick") is a cross-platform C++ GUI toolkit for}
+    puts stderr {UNIX/Linux (X11), Microsoft Windows, and MacOS X. FLTK provides modern}
+    puts stderr {GUI functionality without the bloat and supports 3D graphics via OpenGL}
+    puts stderr {and its built-in GLUT emulation. FLTK is designed to be small and}
+    puts stderr {modular enough to be statically linked, but works fine as a shared}
+    puts stderr {library. FLTK also includes an excellent UI builder called FLUID that}
+    puts stderr {can be used to create applications in minutes.}
+}
+
+conflict fltk
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/fltk-1.3.7-ol6phwaptplcwbseug574hxmzjlthmqh/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/fltk-1.3.7-ol6phwaptplcwbseug574hxmzjlthmqh/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/fltk-1.3.7-ol6phwaptplcwbseug574hxmzjlthmqh/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/fltk-1.3.7-ol6phwaptplcwbseug574hxmzjlthmqh/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/fltk-1.3.7-ol6phwaptplcwbseug574hxmzjlthmqh/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/fltk-1.3.7-ol6phwaptplcwbseug574hxmzjlthmqh/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/fltk-1.3.7-ol6phwaptplcwbseug574hxmzjlthmqh/.}
+prepend-path XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libx11-1.8.4-dicsz42adjvdqkoeagojkni23levveez/share/X11/locale}
+setenv FLTK_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/fltk-1.3.7-ol6phwaptplcwbseug574hxmzjlthmqh}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

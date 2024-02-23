@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:57.042085
+##
+## r-pkgconfig@2.0.3%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/6ibtlup
+##
+
+
+module-whatis {Private Configuration for 'R' Packages.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-pkgconfig}
+    puts stderr {Version: 2.0.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Private Configuration for 'R' Packages. Set configuration options on a}
+    puts stderr {per-package basis. Options set by a given package only apply to that}
+    puts stderr {package, other packages are unaffected.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-vcbztcv
+} else {
+    depends-on r/4.3.0-vcbztcv
+}
+prereq r/4.3.0-vcbztcv
+conflict r-pkgconfig
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-pkgconfig-2.0.3-6ibtlupmst25faci54n3v56amt5epxgy/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-vcbztcvlh4dmxlawalqlndetncvnfmer/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-pkgconfig-2.0.3-6ibtlupmst25faci54n3v56amt5epxgy/rlib/R/library}
+setenv R_PKGCONFIG_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-pkgconfig-2.0.3-6ibtlupmst25faci54n3v56amt5epxgy}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

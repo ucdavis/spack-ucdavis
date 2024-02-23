@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:21.034647
+##
+## py-charset-normalizer@3.1.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/byhiqw6
+##
+
+
+module-whatis {The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-charset-normalizer}
+    puts stderr {Version: 3.1.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The Real First Universal Charset Detector. Open, modern and actively}
+    puts stderr {maintained alternative to Chardet.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on python/3.11.6-rsiojxh
+}
+prereq python/3.11.6-rsiojxh
+conflict py-charset-normalizer
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-charset-normalizer-3.1.0-byhiqw6w7rhn7rtjft5n3z4g6dtzd4nm/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-charset-normalizer-3.1.0-byhiqw6w7rhn7rtjft5n3z4g6dtzd4nm/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-charset-normalizer-3.1.0-byhiqw6w7rhn7rtjft5n3z4g6dtzd4nm/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-charset-normalizer-3.1.0-byhiqw6w7rhn7rtjft5n3z4g6dtzd4nm/lib/python3.11/site-packages}
+setenv PY_CHARSET_NORMALIZER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-charset-normalizer-3.1.0-byhiqw6w7rhn7rtjft5n3z4g6dtzd4nm}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

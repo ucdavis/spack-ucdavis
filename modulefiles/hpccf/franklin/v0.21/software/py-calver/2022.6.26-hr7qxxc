@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:20.220949
+##
+## py-calver@2022.6.26%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/hr7qxxc
+##
+
+
+module-whatis {The calver package is a setuptools extension for automatically defining your Python package version as a calendar version.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-calver}
+    puts stderr {Version: 2022.6.26}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The calver package is a setuptools extension for automatically defining}
+    puts stderr {your Python package version as a calendar version.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on python/3.11.6-rsiojxh
+}
+prereq python/3.11.6-rsiojxh
+conflict py-calver
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-calver-2022.6.26-hr7qxxcbu67imnflpozgt46fqquscpgu/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-calver-2022.6.26-hr7qxxcbu67imnflpozgt46fqquscpgu/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-calver-2022.6.26-hr7qxxcbu67imnflpozgt46fqquscpgu/lib/python3.11/site-packages}
+setenv PY_CALVER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-calver-2022.6.26-hr7qxxcbu67imnflpozgt46fqquscpgu}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,37 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:38.065489
+##
+## xkbdata@1.0.1%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/dswjfr2
+##
+
+
+module-whatis {The XKB data files for the various keyboard models, layouts, and locales.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : xkbdata}
+    puts stderr {Version: 1.0.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The XKB data files for the various keyboard models, layouts, and}
+    puts stderr {locales.}
+}
+
+conflict xkbdata
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xkbdata-1.0.1-dswjfr2azvnj37aqnkwwep3ugpfnplci/.}
+setenv XKBDATA_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xkbdata-1.0.1-dswjfr2azvnj37aqnkwwep3ugpfnplci}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

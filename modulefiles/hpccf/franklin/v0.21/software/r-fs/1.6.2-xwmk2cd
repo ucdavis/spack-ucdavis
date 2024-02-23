@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:26.935443
+##
+## r-fs@1.6.2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/xwmk2cd
+##
+
+
+module-whatis {Cross-Platform File System Operations Based on 'libuv'.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-fs}
+    puts stderr {Version: 1.6.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Cross-Platform File System Operations Based on 'libuv'. A cross-platform}
+    puts stderr {interface to file system operations, built on top of the 'libuv' C}
+    puts stderr {library.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+}
+prereq r/4.3.0-bzxz5nl
+conflict r-fs
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-fs-1.6.2-xwmk2cd4htm5ygsdkp4barhth5ax5mmv/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-fs-1.6.2-xwmk2cd4htm5ygsdkp4barhth5ax5mmv/rlib/R/library}
+setenv R_FS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-fs-1.6.2-xwmk2cd4htm5ygsdkp4barhth5ax5mmv}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

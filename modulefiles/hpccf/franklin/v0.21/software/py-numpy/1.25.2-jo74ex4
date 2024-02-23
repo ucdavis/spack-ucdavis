@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:41.255643
+##
+## py-numpy@1.25.2%gcc@11.4.0+blas+lapack build_system=python_pip patches=873745d arch=linux-ubuntu22.04-x86_64_v3/jo74ex4
+##
+
+
+module-whatis {Fundamental package for array computing in Python.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-numpy}
+    puts stderr {Version: 1.25.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Fundamental package for array computing in Python.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-setuptools/63.4.3-oafgc6z
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-setuptools/63.4.3-oafgc6z
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-setuptools/63.4.3-oafgc6z
+prereq python/3.11.6-rsiojxh
+conflict py-numpy
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numpy-1.25.2-jo74ex4g5wj34kt6jryzzn2yrazv5vsq/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numpy-1.25.2-jo74ex4g5wj34kt6jryzzn2yrazv5vsq/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numpy-1.25.2-jo74ex4g5wj34kt6jryzzn2yrazv5vsq/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numpy-1.25.2-jo74ex4g5wj34kt6jryzzn2yrazv5vsq/lib/python3.11/site-packages}
+setenv PY_NUMPY_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-numpy-1.25.2-jo74ex4g5wj34kt6jryzzn2yrazv5vsq}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

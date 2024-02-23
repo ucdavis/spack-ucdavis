@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:48.681816
+##
+## fixesproto@5.0%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/6wvix6p
+##
+
+
+module-whatis {X Fixes Extension.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : fixesproto}
+    puts stderr {Version: 5.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {X Fixes Extension. The extension makes changes to many areas of the}
+    puts stderr {protocol to resolve issues raised by application interaction with core}
+    puts stderr {protocol mechanisms that cannot be adequately worked around on the}
+    puts stderr {client side of the wire.}
+}
+
+conflict fixesproto
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fixesproto-5.0-6wvix6pjtrmfhmgeqqy52luhredzomwy/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fixesproto-5.0-6wvix6pjtrmfhmgeqqy52luhredzomwy/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fixesproto-5.0-6wvix6pjtrmfhmgeqqy52luhredzomwy/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fixesproto-5.0-6wvix6pjtrmfhmgeqqy52luhredzomwy/include}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fixesproto-5.0-6wvix6pjtrmfhmgeqqy52luhredzomwy/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fixesproto-5.0-6wvix6pjtrmfhmgeqqy52luhredzomwy/.}
+setenv FIXESPROTO_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/fixesproto-5.0-6wvix6pjtrmfhmgeqqy52luhredzomwy}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

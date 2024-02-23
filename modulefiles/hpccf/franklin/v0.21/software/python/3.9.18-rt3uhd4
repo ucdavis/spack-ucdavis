@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:00.208726
+##
+## python@3.9.18%gcc@11.4.0+bz2+crypt+ctypes+dbm~debug~libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tkinter+uuid+zlib build_system=generic patches=0d98e93,4c24573,ebdca64,f2fd060 arch=linux-ubuntu22.04-x86_64_v3/rt3uhd4
+##
+## Configure options: CPPFLAGS=-I/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-c3vnkum6unfohk23dfiw4avkknpmx74h/include -I/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/expat-2.5.0-twtd522e3g3xrdctuq5yiwedomwrio4f/include -I/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdbm-1.23-n43ic3ulo5c3tgvymzdedd47f23xy4rq/include -I/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gettext-0.21.1-xwb77cutworvea7vauyfymufd5nedbb6/include -I/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libffi-3.4.4-to5lctawgq4sf5zkyn2mr64ih74ysthm/include -I/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-2csctmw2zyecqvkmztiep7xhfnoonmeb/include -I/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncurses-6.4-queupwqe6er5xax6wwwtyycwbzzvbrgt/include -I/usr/include -I/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-jkh6v5ytaixrf2qoatx4knywvjprnybj/include -I/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sqlite-3.42.0-op3dbpnd5sn7yrci75faabjn3malxmdi/include -I/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/util-linux-uuid-2.38.1-27pr6xnb75jmjumnjf6pyt2nps7qsoyg/include -I/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xz-5.4.1-bzohayleqwuyb7qbvpmh4m4m7whn6rfg/include -I/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.3-6bawsidwttj6jecmtk6u24gmu6wypvbp/include LDFLAGS=-L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-c3vnkum6unfohk23dfiw4avkknpmx74h/lib -L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/expat-2.5.0-twtd522e3g3xrdctuq5yiwedomwrio4f/lib -L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdbm-1.23-n43ic3ulo5c3tgvymzdedd47f23xy4rq/lib -L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gettext-0.21.1-xwb77cutworvea7vauyfymufd5nedbb6/lib -L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libffi-3.4.4-to5lctawgq4sf5zkyn2mr64ih74ysthm/lib64 -L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-2csctmw2zyecqvkmztiep7xhfnoonmeb/lib -L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncurses-6.4-queupwqe6er5xax6wwwtyycwbzzvbrgt/lib -L/usr/lib/x86_64-linux-gnu -L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-jkh6v5ytaixrf2qoatx4knywvjprnybj/lib -L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sqlite-3.42.0-op3dbpnd5sn7yrci75faabjn3malxmdi/lib -L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/util-linux-uuid-2.38.1-27pr6xnb75jmjumnjf6pyt2nps7qsoyg/lib -L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xz-5.4.1-bzohayleqwuyb7qbvpmh4m4m7whn6rfg/lib -L/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.3-6bawsidwttj6jecmtk6u24gmu6wypvbp/lib --without-pydebug --enable-shared --without-ensurepip --with-openssl=/usr --with-dbmliborder=gdbm --with-system-expat --with-system-ffi --enable-loadable-sqlite-extensions CFLAGS=-fPIC
+##
+
+
+module-whatis {The Python programming language.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : python}
+    puts stderr {Version: 3.9.18}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The Python programming language.}
+}
+
+conflict python
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/python-3.9.18-rt3uhd4pdseh4zdl77d7ybvqygocue4k/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/python-3.9.18-rt3uhd4pdseh4zdl77d7ybvqygocue4k/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/python-3.9.18-rt3uhd4pdseh4zdl77d7ybvqygocue4k/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/python-3.9.18-rt3uhd4pdseh4zdl77d7ybvqygocue4k/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/python-3.9.18-rt3uhd4pdseh4zdl77d7ybvqygocue4k/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/python-3.9.18-rt3uhd4pdseh4zdl77d7ybvqygocue4k/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/python-3.9.18-rt3uhd4pdseh4zdl77d7ybvqygocue4k/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/python-3.9.18-rt3uhd4pdseh4zdl77d7ybvqygocue4k/.}
+setenv PYTHON_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/python-3.9.18-rt3uhd4pdseh4zdl77d7ybvqygocue4k}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

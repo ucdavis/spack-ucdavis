@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:13.260057
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:43.689387
 ##
 ## beagle@5.4%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/2ijrtxh
 ##
@@ -16,6 +16,12 @@ proc ModulesHelp { } {
     puts stderr {ungenotyped markers.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load openjdk/11.0.20.1_1-bvzxfaf
+} else {
+    depends-on openjdk/11.0.20.1_1-bvzxfaf
+}
+prereq openjdk/11.0.20.1_1-bvzxfaf
 conflict beagle
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/beagle-5.4-2ijrtxhhubecu54jyecvav532kz3tbmk/bin}

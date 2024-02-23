@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:13.867703
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:45.064840
 ##
 ## busco@5.4.3%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/ircblq4
 ##
@@ -18,16 +18,28 @@ proc ModulesHelp { } {
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load bbmap/39.01
-    module load hmmer/3.4
+    module load metaeuk/6-a5d39d9-lhauklk
     module load prodigal/2.6.3
+    module load py-biopython/1.81-pzc62ts
+    module load py-pandas/2.1.1-4cgmxwt
+    module load python/3.11.6-rsiojxh
+    module load sepp/4.5.1-olnwo5t
 } else {
     depends-on bbmap/39.01
-    depends-on hmmer/3.4
+    depends-on metaeuk/6-a5d39d9-lhauklk
     depends-on prodigal/2.6.3
+    depends-on py-biopython/1.81-pzc62ts
+    depends-on py-pandas/2.1.1-4cgmxwt
+    depends-on python/3.11.6-rsiojxh
+    depends-on sepp/4.5.1-olnwo5t
 }
 prereq bbmap/39.01
-prereq hmmer/3.4
+prereq metaeuk/6-a5d39d9-lhauklk
 prereq prodigal/2.6.3
+prereq py-biopython/1.81-pzc62ts
+prereq py-pandas/2.1.1-4cgmxwt
+prereq python/3.11.6-rsiojxh
+prereq sepp/4.5.1-olnwo5t
 conflict busco
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/busco-5.4.3-ircblq4hyx565euukxx66qlo3q6pcw5p/lib}

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:14.420508
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:45.912439
 ##
 ## cdhit@4.8.1%gcc@11.4.0+openmp+zlib build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/kauufsl
 ##
@@ -16,6 +16,15 @@ proc ModulesHelp { } {
     puts stderr {protein or nucleotide sequences.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-yjij273
+    module load perl-text-nsp/1.31-c6p746c
+} else {
+    depends-on perl/5.38.0-yjij273
+    depends-on perl-text-nsp/1.31-c6p746c
+}
+prereq perl/5.38.0-yjij273
+prereq perl-text-nsp/1.31-c6p746c
 conflict cdhit
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cdhit-4.8.1-kauufslqxf67f74pbrrtv3w3f6iwq5zr/bin}

@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:01.551527
+##
+## mariadb@10.8.2%gcc@11.4.0+nonblocking build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/7ddoegf
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis {MariaDB Server is one of the most popular database servers in the world.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : mariadb}
+    puts stderr {Version: 10.8.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {MariaDB Server is one of the most popular database servers in the world.}
+    puts stderr {MariaDB turns data into structured information in a wide array of}
+    puts stderr {applications, ranging from banking to websites. It is an enhanced, drop-}
+    puts stderr {in replacement for MySQL. MariaDB is used because it is fast, scalable}
+    puts stderr {and robust, with a rich ecosystem of storage engines, plugins and many}
+    puts stderr {other tools make it very versatile for a wide variety of use cases.}
+}
+
+conflict mariadb
+
+prepend-path MANPATH {/usr/share/man}
+prepend-path ACLOCAL_PATH {/usr/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/usr/lib/pkgconfig}
+prepend-path PKG_CONFIG_PATH {/usr/share/pkgconfig}
+setenv MARIADB_ROOT {/usr}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,51 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:23.979331
+##
+## r-farver@2.1.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/3padlq3
+##
+
+
+module-whatis {High Performance Colour Space Manipulation.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-farver}
+    puts stderr {Version: 2.1.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {High Performance Colour Space Manipulation. The encoding of colour can}
+    puts stderr {be handled in many different ways, using different colour spaces. As}
+    puts stderr {different colour spaces have different uses, efficient conversion}
+    puts stderr {between these representations are important. The 'farver' package}
+    puts stderr {provides a set of functions that gives access to very fast colour space}
+    puts stderr {conversion and comparisons implemented in C++, and offers speed}
+    puts stderr {improvements over the 'convertColor' function in the 'grDevices'}
+    puts stderr {package.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+} else {
+    depends-on r/4.3.0-n6pth5g
+}
+prereq r/4.3.0-n6pth5g
+conflict r-farver
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-farver-2.1.1-3padlq3bs5kqlm262rsigdclmjxslx6l/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-farver-2.1.1-3padlq3bs5kqlm262rsigdclmjxslx6l/rlib/R/library}
+setenv R_FARVER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-farver-2.1.1-3padlq3bs5kqlm262rsigdclmjxslx6l}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

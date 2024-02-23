@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:48.699146
+##
+## flex@2.6.3%gcc@11.4.0+lex~nls build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/wbtc3xn
+##
+## Configure options: --disable-nls
+##
+
+
+module-whatis {Flex is a tool for generating scanners.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : flex}
+    puts stderr {Version: 2.6.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Flex is a tool for generating scanners.}
+}
+
+conflict flex
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/flex-2.6.3-wbtc3xnlgci6nfqb5affdmkhq6hiivhu/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/flex-2.6.3-wbtc3xnlgci6nfqb5affdmkhq6hiivhu/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/flex-2.6.3-wbtc3xnlgci6nfqb5affdmkhq6hiivhu/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/flex-2.6.3-wbtc3xnlgci6nfqb5affdmkhq6hiivhu/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/flex-2.6.3-wbtc3xnlgci6nfqb5affdmkhq6hiivhu/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/flex-2.6.3-wbtc3xnlgci6nfqb5affdmkhq6hiivhu/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/flex-2.6.3-wbtc3xnlgci6nfqb5affdmkhq6hiivhu/.}
+setenv FLEX_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/flex-2.6.3-wbtc3xnlgci6nfqb5affdmkhq6hiivhu}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

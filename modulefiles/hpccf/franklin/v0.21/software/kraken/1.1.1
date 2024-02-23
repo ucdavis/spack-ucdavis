@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:18.725451
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:56.357739
 ##
 ## kraken@1.1.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/x5x4gmg
 ##
@@ -16,6 +16,12 @@ proc ModulesHelp { } {
     puts stderr {sequences, usually obtained through metagenomic studies.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-okr4ubb
+} else {
+    depends-on perl/5.38.0-okr4ubb
+}
+prereq perl/5.38.0-okr4ubb
 conflict kraken
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kraken-1.1.1-x5x4gmgnb56en7qe5nttjiymblz4hzjg/bin}

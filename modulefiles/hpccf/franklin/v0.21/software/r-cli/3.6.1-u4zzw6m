@@ -1,0 +1,50 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:14.038748
+##
+## r-cli@3.6.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/u4zzw6m
+##
+
+
+module-whatis {Helpers for Developing Command Line Interfaces.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-cli}
+    puts stderr {Version: 3.6.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Helpers for Developing Command Line Interfaces. A suite of tools to}
+    puts stderr {build attractive command line interfaces ('CLIs'), from semantic}
+    puts stderr {elements: headings, lists, alerts, paragraphs, etc. Supports custom}
+    puts stderr {themes via a 'CSS'-like language. It also contains a number of lower}
+    puts stderr {level 'CLI' elements: rules, boxes, trees, and 'Unicode' symbols with}
+    puts stderr {'ASCII' alternatives. It integrates with the 'crayon' package to support}
+    puts stderr {'ANSI' terminal colors.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+}
+prereq r/4.3.0-bzxz5nl
+conflict r-cli
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-cli-3.6.1-u4zzw6m3ahy5khv3mvv6us7quy672mpd/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-cli-3.6.1-u4zzw6m3ahy5khv3mvv6us7quy672mpd/rlib/R/library}
+setenv R_CLI_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-cli-3.6.1-u4zzw6m3ahy5khv3mvv6us7quy672mpd}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

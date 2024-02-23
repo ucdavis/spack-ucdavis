@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:11.269973
+##
+## perl-mailtools@2.21%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/tpdmvql
+##
+
+
+module-whatis {Perl module for handling mail}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-mailtools}
+    puts stderr {Version: 2.21}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Perl module for handling mail}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-timedate/2.30-taj7egx
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-timedate/2.30-taj7egx
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-timedate/2.30-taj7egx
+conflict perl-mailtools
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-mailtools-2.21-tpdmvqlmwgraaqhvu67s5kml4dqvxwuo/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-mailtools-2.21-tpdmvqlmwgraaqhvu67s5kml4dqvxwuo/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-mailtools-2.21-tpdmvqlmwgraaqhvu67s5kml4dqvxwuo/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-mailtools-2.21-tpdmvqlmwgraaqhvu67s5kml4dqvxwuo/lib/perl5}
+setenv PERL_MAILTOOLS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-mailtools-2.21-tpdmvqlmwgraaqhvu67s5kml4dqvxwuo}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

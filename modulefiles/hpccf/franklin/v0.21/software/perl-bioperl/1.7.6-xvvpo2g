@@ -1,0 +1,138 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:06.758583
+##
+## perl-bioperl@1.7.6%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/xvvpo2g
+##
+
+
+module-whatis {BioPerl is the product of a community effort to produce Perl code which is useful in biology. Examples include Sequence objects, Alignment objects and database searching objects. These objects not only do what they are advertised to do in the documentation, but they also interact - Alignment objects are made from the Sequence objects, Sequence objects have access to Annotation and SeqFeature objects and databases, Blast objects can be converted to Alignment objects, and so on. This means that the objects provide a coordinated and extensible framework to do computational biology.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-bioperl}
+    puts stderr {Version: 1.7.6}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {BioPerl is the product of a community effort to produce Perl code which}
+    puts stderr {is useful in biology. Examples include Sequence objects, Alignment}
+    puts stderr {objects and database searching objects. These objects not only do what}
+    puts stderr {they are advertised to do in the documentation, but they also interact -}
+    puts stderr {Alignment objects are made from the Sequence objects, Sequence objects}
+    puts stderr {have access to Annotation and SeqFeature objects and databases, Blast}
+    puts stderr {objects can be converted to Alignment objects, and so on. This means}
+    puts stderr {that the objects provide a coordinated and extensible framework to do}
+    puts stderr {computational biology. BioPerl development focuses on Perl classes, or}
+    puts stderr {code that is used to create objects representing biological entities.}
+    puts stderr {There are scripts provided in the scripts/ and examples/ directories but}
+    puts stderr {scripts are not the main focus of the BioPerl developers. Of course, as}
+    puts stderr {the objects do most of the hard work for you, all you have to do is}
+    puts stderr {combine a number of objects together sensibly to make useful scripts.}
+    puts stderr {The intent of the BioPerl development effort is to make reusable tools}
+    puts stderr {that aid people in creating their own sites or job-specific}
+    puts stderr {applications. The BioPerl website at https://bioperl.org/ also attempts}
+    puts stderr {to maintain links and archives of standalone bio-related Perl tools that}
+    puts stderr {are not affiliated or related to the core BioPerl effort. Check the site}
+    puts stderr {for useful code ideas and contribute your own if possible.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-data-stag/0.14-k6fuano
+    module load perl-error/0.17029-iw6lcxi
+    module load perl-graph/0.20105-xi3ocjn
+    module load perl-http-message/6.44-mogcd3b
+    module load perl-io-string/1.08-epoalwv
+    module load perl-io-stringy/2.111-qwb6tnj
+    module load perl-ipc-run/20220807.0-22ub7mr
+    module load perl-libwww-perl/6.68-hvqaina
+    module load perl-libxml-perl/0.08-5baff73
+    module load perl-list-moreutils/0.430-fqd4dxa
+    module load perl-module-build/0.4232-p443q7s
+    module load perl-set-scalar/1.29-c43a6w7
+    module load perl-test-most/0.38-xqoual3
+    module load perl-test-requiresinternet/0.05-senkgch
+    module load perl-uri/5.08-m5ahizg
+    module load perl-xml-dom/1.46-ymefgrd
+    module load perl-xml-dom-xpath/0.14-m3735oo
+    module load perl-xml-libxml/2.0201-445tdhy
+    module load perl-xml-sax/1.02-abejbdl
+    module load perl-xml-sax-base/1.09-43jznrn
+    module load perl-xml-sax-writer/0.57-oniddrf
+    module load perl-xml-twig/3.52-opu4gqj
+    module load perl-xml-writer/0.900-kvc2b3r
+    module load perl-yaml/1.30-7tappv5
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-data-stag/0.14-k6fuano
+    depends-on perl-error/0.17029-iw6lcxi
+    depends-on perl-graph/0.20105-xi3ocjn
+    depends-on perl-http-message/6.44-mogcd3b
+    depends-on perl-io-string/1.08-epoalwv
+    depends-on perl-io-stringy/2.111-qwb6tnj
+    depends-on perl-ipc-run/20220807.0-22ub7mr
+    depends-on perl-libwww-perl/6.68-hvqaina
+    depends-on perl-libxml-perl/0.08-5baff73
+    depends-on perl-list-moreutils/0.430-fqd4dxa
+    depends-on perl-module-build/0.4232-p443q7s
+    depends-on perl-set-scalar/1.29-c43a6w7
+    depends-on perl-test-most/0.38-xqoual3
+    depends-on perl-test-requiresinternet/0.05-senkgch
+    depends-on perl-uri/5.08-m5ahizg
+    depends-on perl-xml-dom/1.46-ymefgrd
+    depends-on perl-xml-dom-xpath/0.14-m3735oo
+    depends-on perl-xml-libxml/2.0201-445tdhy
+    depends-on perl-xml-sax/1.02-abejbdl
+    depends-on perl-xml-sax-base/1.09-43jznrn
+    depends-on perl-xml-sax-writer/0.57-oniddrf
+    depends-on perl-xml-twig/3.52-opu4gqj
+    depends-on perl-xml-writer/0.900-kvc2b3r
+    depends-on perl-yaml/1.30-7tappv5
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-data-stag/0.14-k6fuano
+prereq perl-error/0.17029-iw6lcxi
+prereq perl-graph/0.20105-xi3ocjn
+prereq perl-http-message/6.44-mogcd3b
+prereq perl-io-string/1.08-epoalwv
+prereq perl-io-stringy/2.111-qwb6tnj
+prereq perl-ipc-run/20220807.0-22ub7mr
+prereq perl-libwww-perl/6.68-hvqaina
+prereq perl-libxml-perl/0.08-5baff73
+prereq perl-list-moreutils/0.430-fqd4dxa
+prereq perl-module-build/0.4232-p443q7s
+prereq perl-set-scalar/1.29-c43a6w7
+prereq perl-test-most/0.38-xqoual3
+prereq perl-test-requiresinternet/0.05-senkgch
+prereq perl-uri/5.08-m5ahizg
+prereq perl-xml-dom/1.46-ymefgrd
+prereq perl-xml-dom-xpath/0.14-m3735oo
+prereq perl-xml-libxml/2.0201-445tdhy
+prereq perl-xml-sax/1.02-abejbdl
+prereq perl-xml-sax-base/1.09-43jznrn
+prereq perl-xml-sax-writer/0.57-oniddrf
+prereq perl-xml-twig/3.52-opu4gqj
+prereq perl-xml-writer/0.900-kvc2b3r
+prereq perl-yaml/1.30-7tappv5
+conflict perl-bioperl
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bioperl-1.7.6-xvvpo2gyobu4gfnsyeziz7a7wc4b5aun/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bioperl-1.7.6-xvvpo2gyobu4gfnsyeziz7a7wc4b5aun/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bioperl-1.7.6-xvvpo2gyobu4gfnsyeziz7a7wc4b5aun/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bioperl-1.7.6-xvvpo2gyobu4gfnsyeziz7a7wc4b5aun/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bioperl-1.7.6-xvvpo2gyobu4gfnsyeziz7a7wc4b5aun/lib/perl5}
+setenv PERL_BIOPERL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-bioperl-1.7.6-xvvpo2gyobu4gfnsyeziz7a7wc4b5aun}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:13.826393
+##
+## r-cellranger@1.1.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/ckgvty4
+##
+
+
+module-whatis {Translate Spreadsheet Cell Ranges to Rows and Columns.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-cellranger}
+    puts stderr {Version: 1.1.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Translate Spreadsheet Cell Ranges to Rows and Columns. Helper functions}
+    puts stderr {to work with spreadsheets and the "A1:D10" style of cell range}
+    puts stderr {specification.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-rematch/1.0.1-ln2izet
+    module load r-tibble/3.2.1-qxvx2yi
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-rematch/1.0.1-ln2izet
+    depends-on r-tibble/3.2.1-qxvx2yi
+}
+prereq r/4.3.0-n6pth5g
+prereq r-rematch/1.0.1-ln2izet
+prereq r-tibble/3.2.1-qxvx2yi
+conflict r-cellranger
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-cellranger-1.1.0-ckgvty4lvfzo23r3viffq7jbvz5drjhz/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-cellranger-1.1.0-ckgvty4lvfzo23r3viffq7jbvz5drjhz/rlib/R/library}
+setenv R_CELLRANGER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-cellranger-1.1.0-ckgvty4lvfzo23r3viffq7jbvz5drjhz}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

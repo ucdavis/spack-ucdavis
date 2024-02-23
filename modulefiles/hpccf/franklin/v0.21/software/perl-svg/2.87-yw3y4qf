@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:12.504462
+##
+## perl-svg@2.87%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/yw3y4qf
+##
+
+
+module-whatis {Perl extension for generating Scalable Vector Graphics (SVG) documents.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-svg}
+    puts stderr {Version: 2.87}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Perl extension for generating Scalable Vector Graphics (SVG) documents.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-svg
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-svg-2.87-yw3y4qfq5k3cie64ju5ez3eeqkzt444k/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-svg-2.87-yw3y4qfq5k3cie64ju5ez3eeqkzt444k/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-svg-2.87-yw3y4qfq5k3cie64ju5ez3eeqkzt444k/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-svg-2.87-yw3y4qfq5k3cie64ju5ez3eeqkzt444k/lib/perl5}
+setenv PERL_SVG_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-svg-2.87-yw3y4qfq5k3cie64ju5ez3eeqkzt444k}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:16.360776
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:49.692032
 ##
 ## gatk@4.2.6.1%gcc@11.4.0~r build_system=generic arch=linux-ubuntu22.04-x86_64_v3/q35v4j7
 ##
@@ -16,6 +16,15 @@ proc ModulesHelp { } {
     puts stderr {Data}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load openjdk/17.0.8.1_1-y4rwayq
+    module load python/3.11.6-lv2yt6w
+} else {
+    depends-on openjdk/17.0.8.1_1-y4rwayq
+    depends-on python/3.11.6-lv2yt6w
+}
+prereq openjdk/17.0.8.1_1-y4rwayq
+prereq python/3.11.6-lv2yt6w
 conflict gatk
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gatk-4.2.6.1-q35v4j7pchze5wun2ywqv4zgbadb6s2v/bin}

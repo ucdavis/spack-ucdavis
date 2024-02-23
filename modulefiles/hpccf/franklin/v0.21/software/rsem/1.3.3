@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-22 15:33:12.531096
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:33.861102
 ##
 ## rsem@1.3.3%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/ixo7nur
 ##
@@ -17,14 +17,17 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load bowtie/1.3.1
-    module load star/2.7.10b
+    module load perl/5.38.0-lfl2a73
+    module load python/3.11.6-rsiojxh
+    module load r/4.3.0-odq5bdd
 } else {
-    depends-on bowtie/1.3.1
-    depends-on star/2.7.10b
+    depends-on perl/5.38.0-lfl2a73
+    depends-on python/3.11.6-rsiojxh
+    depends-on r/4.3.0-odq5bdd
 }
-prereq bowtie/1.3.1
-prereq star/2.7.10b
+prereq perl/5.38.0-lfl2a73
+prereq python/3.11.6-rsiojxh
+prereq r/4.3.0-odq5bdd
 conflict rsem
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/rsem-1.3.3-ixo7nurd2hibvaaz3c2ljbm3odunwlnv/bin}

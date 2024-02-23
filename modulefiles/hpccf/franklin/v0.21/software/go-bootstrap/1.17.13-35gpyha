@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:51.607343
+##
+## go-bootstrap@1.17.13%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/35gpyha
+##
+
+
+module-whatis {Old C-bootstrapped go to bootstrap real go}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : go-bootstrap}
+    puts stderr {Version: 1.17.13}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Old C-bootstrapped go to bootstrap real go}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load git/2.41.0-mfobhjn
+} else {
+    depends-on git/2.41.0-mfobhjn
+}
+prereq git/2.41.0-mfobhjn
+conflict go-bootstrap
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/go-bootstrap-1.17.13-35gpyhaax443bt4tf7vlaqac32bgwj4g/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/go-bootstrap-1.17.13-35gpyhaax443bt4tf7vlaqac32bgwj4g/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/go-bootstrap-1.17.13-35gpyhaax443bt4tf7vlaqac32bgwj4g/.}
+setenv GO_BOOTSTRAP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/go-bootstrap-1.17.13-35gpyhaax443bt4tf7vlaqac32bgwj4g}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

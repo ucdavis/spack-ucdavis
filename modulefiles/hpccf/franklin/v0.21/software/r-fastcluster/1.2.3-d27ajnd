@@ -1,0 +1,54 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:24.281922
+##
+## r-fastcluster@1.2.3%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/d27ajnd
+##
+
+
+module-whatis {Fast Hierarchical Clustering Routines for R and 'Python'.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-fastcluster}
+    puts stderr {Version: 1.2.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Fast Hierarchical Clustering Routines for R and 'Python'. This is a two-}
+    puts stderr {in-one package which provides interfaces to both R and 'Python'. It}
+    puts stderr {implements fast hierarchical, agglomerative clustering routines. Part of}
+    puts stderr {the functionality is designed as drop-in replacement for existing}
+    puts stderr {routines: linkage() in the 'SciPy' package 'scipy.cluster.hierarchy',}
+    puts stderr {hclust() in R's 'stats' package, and the 'flashClust' package. It}
+    puts stderr {provides the same functionality with the benefit of a much faster}
+    puts stderr {implementation. Moreover, there are memory-saving routines for}
+    puts stderr {clustering of vector data, which go beyond what the existing packages}
+    puts stderr {provide. For information on how to install the 'Python' files, see the}
+    puts stderr {file INSTALL in the source distribution.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+}
+prereq r/4.3.0-bzxz5nl
+conflict r-fastcluster
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-fastcluster-1.2.3-d27ajndhtnhpsusvkbs5jx4i6s4mvdfb/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-fastcluster-1.2.3-d27ajndhtnhpsusvkbs5jx4i6s4mvdfb/rlib/R/library}
+setenv R_FASTCLUSTER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-fastcluster-1.2.3-d27ajndhtnhpsusvkbs5jx4i6s4mvdfb}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

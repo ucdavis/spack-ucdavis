@@ -1,0 +1,61 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:12.844989
+##
+## perl-test-most@0.38%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/xqoual3
+##
+
+
+module-whatis {Most commonly needed test functions and features.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-test-most}
+    puts stderr {Version: 0.38}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Most commonly needed test functions and features.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-exception-class/1.45-idhnoki
+    module load perl-test-deep/1.204-swsyswl
+    module load perl-test-differences/0.69-ouiugau
+    module load perl-test-exception/0.43-q6dchkc
+    module load perl-test-warn/0.30-ueztf6k
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-exception-class/1.45-idhnoki
+    depends-on perl-test-deep/1.204-swsyswl
+    depends-on perl-test-differences/0.69-ouiugau
+    depends-on perl-test-exception/0.43-q6dchkc
+    depends-on perl-test-warn/0.30-ueztf6k
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-exception-class/1.45-idhnoki
+prereq perl-test-deep/1.204-swsyswl
+prereq perl-test-differences/0.69-ouiugau
+prereq perl-test-exception/0.43-q6dchkc
+prereq perl-test-warn/0.30-ueztf6k
+conflict perl-test-most
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-test-most-0.38-xqoual3gikenshk2xc5ic5agt3gzuu2d/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-test-most-0.38-xqoual3gikenshk2xc5ic5agt3gzuu2d/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-test-most-0.38-xqoual3gikenshk2xc5ic5agt3gzuu2d/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-test-most-0.38-xqoual3gikenshk2xc5ic5agt3gzuu2d/lib/perl5}
+setenv PERL_TEST_MOST_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-test-most-0.38-xqoual3gikenshk2xc5ic5agt3gzuu2d}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

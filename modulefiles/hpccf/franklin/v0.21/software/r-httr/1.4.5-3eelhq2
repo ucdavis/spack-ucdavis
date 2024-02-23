@@ -1,0 +1,62 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:44.396583
+##
+## r-httr@1.4.5%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/3eelhq2
+##
+
+
+module-whatis {Tools for Working with URLs and HTTP.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-httr}
+    puts stderr {Version: 1.4.5}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Tools for Working with URLs and HTTP. Useful tools for working with HTTP}
+    puts stderr {organised by HTTP verbs (GET(), POST(), etc). Configuration functions}
+    puts stderr {make it easy to control additional request components (authenticate(),}
+    puts stderr {add_headers() and so on).}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-curl/5.0.0-birqq6m
+    module load r-jsonlite/1.8.4-jbrhwx3
+    module load r-mime/0.12-ckmv4qb
+    module load r-openssl/2.0.6-6g6t37o
+    module load r-r6/2.5.1-cvj3byn
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-curl/5.0.0-birqq6m
+    depends-on r-jsonlite/1.8.4-jbrhwx3
+    depends-on r-mime/0.12-ckmv4qb
+    depends-on r-openssl/2.0.6-6g6t37o
+    depends-on r-r6/2.5.1-cvj3byn
+}
+prereq r/4.3.0-n6pth5g
+prereq r-curl/5.0.0-birqq6m
+prereq r-jsonlite/1.8.4-jbrhwx3
+prereq r-mime/0.12-ckmv4qb
+prereq r-openssl/2.0.6-6g6t37o
+prereq r-r6/2.5.1-cvj3byn
+conflict r-httr
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-httr-1.4.5-3eelhq25im2yarjlnc5t7ojd2zvomiac/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-httr-1.4.5-3eelhq25im2yarjlnc5t7ojd2zvomiac/rlib/R/library}
+setenv R_HTTR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-httr-1.4.5-3eelhq25im2yarjlnc5t7ojd2zvomiac}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

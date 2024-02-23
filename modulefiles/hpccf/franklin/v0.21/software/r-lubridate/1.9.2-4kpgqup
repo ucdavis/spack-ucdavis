@@ -1,0 +1,55 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:51.373991
+##
+## r-lubridate@1.9.2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/4kpgqup
+##
+
+
+module-whatis {Make Dealing with Dates a Little Easier.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-lubridate}
+    puts stderr {Version: 1.9.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Make Dealing with Dates a Little Easier. Functions to work with date-}
+    puts stderr {times and timespans: fast and user friendly parsing of date-time data,}
+    puts stderr {extraction and updating of components of a date-time (years, months,}
+    puts stderr {days, hours, minutes, and seconds), algebraic manipulation on date-time}
+    puts stderr {and timespan objects. The 'lubridate' package has a consistent and}
+    puts stderr {memorable syntax that makes working with dates easy and fun.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-generics/0.1.3-aihzywm
+    module load r-timechange/0.2.0-zrxaky6
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-generics/0.1.3-aihzywm
+    depends-on r-timechange/0.2.0-zrxaky6
+}
+prereq r/4.3.0-n6pth5g
+prereq r-generics/0.1.3-aihzywm
+prereq r-timechange/0.2.0-zrxaky6
+conflict r-lubridate
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-lubridate-1.9.2-4kpgqupcvecgn4o2pc5c7j4m6h2kvt66/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-lubridate-1.9.2-4kpgqupcvecgn4o2pc5c7j4m6h2kvt66/rlib/R/library}
+setenv R_LUBRIDATE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-lubridate-1.9.2-4kpgqupcvecgn4o2pc5c7j4m6h2kvt66}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

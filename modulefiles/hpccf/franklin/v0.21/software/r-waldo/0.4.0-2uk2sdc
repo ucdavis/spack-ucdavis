@@ -1,0 +1,68 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:28.468982
+##
+## r-waldo@0.4.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/2uk2sdc
+##
+
+
+module-whatis {Find Differences Between R Objects.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-waldo}
+    puts stderr {Version: 0.4.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Find Differences Between R Objects. Compare complex R objects and reveal}
+    puts stderr {the key differences. Designed particularly for use in testing packages}
+    puts stderr {where being able to quickly isolate key differences makes understanding}
+    puts stderr {test failures much easier.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-cli/3.6.1-u4zzw6m
+    module load r-diffobj/0.3.5-qrkvnio
+    module load r-fansi/1.0.4-y3n5hmm
+    module load r-glue/1.6.2-7jsjoec
+    module load r-rematch2/2.1.2-3gx2nzv
+    module load r-rlang/1.1.0-6ek36pb
+    module load r-tibble/3.2.1-efl2ifo
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-cli/3.6.1-u4zzw6m
+    depends-on r-diffobj/0.3.5-qrkvnio
+    depends-on r-fansi/1.0.4-y3n5hmm
+    depends-on r-glue/1.6.2-7jsjoec
+    depends-on r-rematch2/2.1.2-3gx2nzv
+    depends-on r-rlang/1.1.0-6ek36pb
+    depends-on r-tibble/3.2.1-efl2ifo
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-cli/3.6.1-u4zzw6m
+prereq r-diffobj/0.3.5-qrkvnio
+prereq r-fansi/1.0.4-y3n5hmm
+prereq r-glue/1.6.2-7jsjoec
+prereq r-rematch2/2.1.2-3gx2nzv
+prereq r-rlang/1.1.0-6ek36pb
+prereq r-tibble/3.2.1-efl2ifo
+conflict r-waldo
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-waldo-0.4.0-2uk2sdc3brpdfvlznxddxpdzvlwhcktl/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-waldo-0.4.0-2uk2sdc3brpdfvlznxddxpdzvlwhcktl/rlib/R/library}
+setenv R_WALDO_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-waldo-0.4.0-2uk2sdc3brpdfvlznxddxpdzvlwhcktl}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

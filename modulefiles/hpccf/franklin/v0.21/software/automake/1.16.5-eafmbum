@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:42.600796
+##
+## automake@1.16.5%oneapi@2023.2.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/eafmbum
+##
+
+
+module-whatis {Automake -- make file builder part of autotools}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : automake}
+    puts stderr {Version: 1.16.5}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Automake -- make file builder part of autotools}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-erzwlze
+} else {
+    depends-on perl/5.38.0-erzwlze
+}
+prereq perl/5.38.0-erzwlze
+conflict automake
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/automake-1.16.5-eafmbumekdheqw7d56s2ae42r7d6f2zu/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/automake-1.16.5-eafmbumekdheqw7d56s2ae42r7d6f2zu/share/man}
+prepend-path ACLOCAL_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/automake-1.16.5-eafmbumekdheqw7d56s2ae42r7d6f2zu/share/aclocal}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/automake-1.16.5-eafmbumekdheqw7d56s2ae42r7d6f2zu/.}
+setenv AUTOMAKE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/oneapi-2023.2.0/automake-1.16.5-eafmbumekdheqw7d56s2ae42r7d6f2zu}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

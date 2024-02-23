@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:09.527375
+##
+## perl-http-cookies@6.10%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/mwsjvjo
+##
+
+
+module-whatis {HTTP cookie jars}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-http-cookies}
+    puts stderr {Version: 6.10}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {HTTP cookie jars}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-okr4ubb
+    module load perl-http-message/6.44-jqlirdi
+    module load perl-uri/5.08-wwxtrl4
+} else {
+    depends-on perl/5.38.0-okr4ubb
+    depends-on perl-http-message/6.44-jqlirdi
+    depends-on perl-uri/5.08-wwxtrl4
+}
+prereq perl/5.38.0-okr4ubb
+prereq perl-http-message/6.44-jqlirdi
+prereq perl-uri/5.08-wwxtrl4
+conflict perl-http-cookies
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-cookies-6.10-mwsjvjof4xa26cjaykmhcofrvesebpgj/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-cookies-6.10-mwsjvjof4xa26cjaykmhcofrvesebpgj/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-cookies-6.10-mwsjvjof4xa26cjaykmhcofrvesebpgj/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-cookies-6.10-mwsjvjof4xa26cjaykmhcofrvesebpgj/lib/perl5}
+setenv PERL_HTTP_COOKIES_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-http-cookies-6.10-mwsjvjof4xa26cjaykmhcofrvesebpgj}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

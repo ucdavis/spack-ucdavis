@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:05.951618
+##
+## pegtl@3.2.0%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/k4k3wgk
+##
+## Configure options: -DPEGTL_BUILD_EXAMPLES=OFF -DPEGTL_BUILD_TESTS=OFF
+##
+
+
+module-whatis {The Parsing Expression Grammar Template Library (PEGTL) is a zero-dependency C++11 header-only library for creating parsers according to a Parsing Expression Grammar (PEG). }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : pegtl}
+    puts stderr {Version: 3.2.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The Parsing Expression Grammar Template Library (PEGTL) is a zero-}
+    puts stderr {dependency C++11 header-only library for creating parsers according to a}
+    puts stderr {Parsing Expression Grammar (PEG).}
+}
+
+conflict pegtl
+
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pegtl-3.2.0-k4k3wgkoopabb7s2itrdhu5wiossydcl/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pegtl-3.2.0-k4k3wgkoopabb7s2itrdhu5wiossydcl/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pegtl-3.2.0-k4k3wgkoopabb7s2itrdhu5wiossydcl/include}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pegtl-3.2.0-k4k3wgkoopabb7s2itrdhu5wiossydcl/.}
+setenv PEGTL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pegtl-3.2.0-k4k3wgkoopabb7s2itrdhu5wiossydcl}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

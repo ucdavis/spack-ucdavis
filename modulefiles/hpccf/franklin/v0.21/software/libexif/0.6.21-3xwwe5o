@@ -1,0 +1,41 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:56.986177
+##
+## libexif@0.6.21%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/3xwwe5o
+##
+
+
+module-whatis {A library to parse an EXIF file and read the data from those tags}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libexif}
+    puts stderr {Version: 0.6.21}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A library to parse an EXIF file and read the data from those tags}
+}
+
+conflict libexif
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libexif-0.6.21-3xwwe5o4t3efp4w3jyx4payjzcb5r74e/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libexif-0.6.21-3xwwe5o4t3efp4w3jyx4payjzcb5r74e/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libexif-0.6.21-3xwwe5o4t3efp4w3jyx4payjzcb5r74e/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libexif-0.6.21-3xwwe5o4t3efp4w3jyx4payjzcb5r74e/include}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libexif-0.6.21-3xwwe5o4t3efp4w3jyx4payjzcb5r74e/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libexif-0.6.21-3xwwe5o4t3efp4w3jyx4payjzcb5r74e/.}
+setenv LIBEXIF_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libexif-0.6.21-3xwwe5o4t3efp4w3jyx4payjzcb5r74e}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

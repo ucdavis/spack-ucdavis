@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:36.029048
+##
+## tbl2asn@2022-04-26%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/5tjh2kh
+##
+
+
+module-whatis {Tbl2asn is a command-line program that automates the creation of sequence records for submission to GenBank.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : tbl2asn}
+    puts stderr {Version: 2022-04-26}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Tbl2asn is a command-line program that automates the creation of}
+    puts stderr {sequence records for submission to GenBank.}
+}
+
+conflict tbl2asn
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tbl2asn-2022-04-26-5tjh2khen33futz7epue6sppd55lw2ag/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tbl2asn-2022-04-26-5tjh2khen33futz7epue6sppd55lw2ag/.}
+setenv TBL2ASN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tbl2asn-2022-04-26-5tjh2khen33futz7epue6sppd55lw2ag}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

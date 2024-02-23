@@ -1,0 +1,82 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:56.321833
+##
+## py-tensorboard@2.13.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/ddabwhd
+##
+
+
+module-whatis {TensorBoard is a suite of web applications for inspecting and understanding your TensorFlow runs and graphs.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-tensorboard}
+    puts stderr {Version: 2.13.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {TensorBoard is a suite of web applications for inspecting and}
+    puts stderr {understanding your TensorFlow runs and graphs.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-absl-py/1.4.0-i2xc5za
+    module load py-google-auth/2.20.0-opmno2g
+    module load py-google-auth-oauthlib/0.5.2-ejy65q2
+    module load py-grpcio/1.52.0-w5peil2
+    module load py-markdown/3.4.1-yjbioci
+    module load py-numpy/1.22.4-7bmhfux
+    module load py-protobuf/4.24.3-abwlhfi
+    module load py-requests/2.31.0-6kmtsdd
+    module load py-setuptools/57.4.0-pimnnnh
+    module load py-tensorboard-data-server/0.7.0-5dcctcw
+    module load py-tensorboard-plugin-wit/1.8.1-t6rvc35
+    module load py-werkzeug/3.0.0-taj6z67
+    module load python/3.9.18-rt3uhd4
+} else {
+    depends-on py-absl-py/1.4.0-i2xc5za
+    depends-on py-google-auth/2.20.0-opmno2g
+    depends-on py-google-auth-oauthlib/0.5.2-ejy65q2
+    depends-on py-grpcio/1.52.0-w5peil2
+    depends-on py-markdown/3.4.1-yjbioci
+    depends-on py-numpy/1.22.4-7bmhfux
+    depends-on py-protobuf/4.24.3-abwlhfi
+    depends-on py-requests/2.31.0-6kmtsdd
+    depends-on py-setuptools/57.4.0-pimnnnh
+    depends-on py-tensorboard-data-server/0.7.0-5dcctcw
+    depends-on py-tensorboard-plugin-wit/1.8.1-t6rvc35
+    depends-on py-werkzeug/3.0.0-taj6z67
+    depends-on python/3.9.18-rt3uhd4
+}
+prereq py-absl-py/1.4.0-i2xc5za
+prereq py-google-auth/2.20.0-opmno2g
+prereq py-google-auth-oauthlib/0.5.2-ejy65q2
+prereq py-grpcio/1.52.0-w5peil2
+prereq py-markdown/3.4.1-yjbioci
+prereq py-numpy/1.22.4-7bmhfux
+prereq py-protobuf/4.24.3-abwlhfi
+prereq py-requests/2.31.0-6kmtsdd
+prereq py-setuptools/57.4.0-pimnnnh
+prereq py-tensorboard-data-server/0.7.0-5dcctcw
+prereq py-tensorboard-plugin-wit/1.8.1-t6rvc35
+prereq py-werkzeug/3.0.0-taj6z67
+prereq python/3.9.18-rt3uhd4
+conflict py-tensorboard
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-tensorboard-2.13.0-ddabwhdjl7zywhvzgdeq5fbt4soy2ang/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-tensorboard-2.13.0-ddabwhdjl7zywhvzgdeq5fbt4soy2ang/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-tensorboard-2.13.0-ddabwhdjl7zywhvzgdeq5fbt4soy2ang/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-tensorboard-2.13.0-ddabwhdjl7zywhvzgdeq5fbt4soy2ang/lib/python3.9/site-packages}
+setenv PY_TENSORBOARD_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-tensorboard-2.13.0-ddabwhdjl7zywhvzgdeq5fbt4soy2ang}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:58.134463
+##
+## py-typing-extensions@4.8.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/zcsj5ux
+##
+
+
+module-whatis {The typing_extensions module contains both backports of these changes as well as experimental types that will eventually be added to the typing module, such as Protocol (see PEP 544 for details about protocols and static duck typing).}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-typing-extensions}
+    puts stderr {Version: 4.8.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The typing_extensions module contains both backports of these changes as}
+    puts stderr {well as experimental types that will eventually be added to the typing}
+    puts stderr {module, such as Protocol (see PEP 544 for details about protocols and}
+    puts stderr {static duck typing).}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on python/3.11.6-rsiojxh
+}
+prereq python/3.11.6-rsiojxh
+conflict py-typing-extensions
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-typing-extensions-4.8.0-zcsj5uxrfuq4ullk3zb5yq5urmgayvcl/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-typing-extensions-4.8.0-zcsj5uxrfuq4ullk3zb5yq5urmgayvcl/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-typing-extensions-4.8.0-zcsj5uxrfuq4ullk3zb5yq5urmgayvcl/lib/python3.11/site-packages}
+setenv PY_TYPING_EXTENSIONS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-typing-extensions-4.8.0-zcsj5uxrfuq4ullk3zb5yq5urmgayvcl}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

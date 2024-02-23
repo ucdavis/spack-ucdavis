@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:31.128527
+##
+## r-yaml@2.3.7%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/6yxy76t
+##
+
+
+module-whatis {Methods to Convert R Data to YAML and Back.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-yaml}
+    puts stderr {Version: 2.3.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Methods to Convert R Data to YAML and Back. Implements the 'libyaml'}
+    puts stderr {'YAML' 1.1 parser and emitter (<https://pyyaml.org/wiki/LibYAML>) for R.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+}
+prereq r/4.3.0-bzxz5nl
+conflict r-yaml
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-yaml-2.3.7-6yxy76tbxlzz6vjbzu2d4jbhxso6kfvr/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-yaml-2.3.7-6yxy76tbxlzz6vjbzu2d4jbhxso6kfvr/rlib/R/library}
+setenv R_YAML_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-yaml-2.3.7-6yxy76tbxlzz6vjbzu2d4jbhxso6kfvr}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

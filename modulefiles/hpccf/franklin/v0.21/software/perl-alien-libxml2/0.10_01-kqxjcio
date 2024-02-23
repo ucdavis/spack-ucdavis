@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:06.354295
+##
+## perl-alien-libxml2@0.10_01%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/kqxjcio
+##
+
+
+module-whatis {This module provides libxml2 for other modules to use.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-alien-libxml2}
+    puts stderr {Version: 0.10_01}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This module provides libxml2 for other modules to use.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-alien-build/2.78-p5dnppc
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-alien-build/2.78-p5dnppc
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-alien-build/2.78-p5dnppc
+conflict perl-alien-libxml2
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-alien-libxml2-0.10_01-kqxjciouavdwamo6tjfkik2b52herqxd/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-alien-libxml2-0.10_01-kqxjciouavdwamo6tjfkik2b52herqxd/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-alien-libxml2-0.10_01-kqxjciouavdwamo6tjfkik2b52herqxd/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-alien-libxml2-0.10_01-kqxjciouavdwamo6tjfkik2b52herqxd/lib/perl5}
+setenv PERL_ALIEN_LIBXML2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-alien-libxml2-0.10_01-kqxjciouavdwamo6tjfkik2b52herqxd}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

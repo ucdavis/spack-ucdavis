@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:45.481750
+##
+## c-blosc@1.21.4%gcc@11.4.0+avx2~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/lsrxt44
+##
+## Configure options: -DDEACTIVATE_AVX2=OFF -DPREFER_EXTERNAL_SNAPPY=ON -DPREFER_EXTERNAL_ZLIB=ON -DPREFER_EXTERNAL_ZSTD=ON -DPREFER_EXTERNAL_LZ4=ON -DBUILD_TESTS=OFF -DBUILD_BENCHMARKS=OFF
+##
+
+
+module-whatis {Blosc, an extremely fast, multi-threaded, meta-compressor library}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : c-blosc}
+    puts stderr {Version: 1.21.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Blosc, an extremely fast, multi-threaded, meta-compressor library}
+}
+
+conflict c-blosc
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/c-blosc-1.21.4-lsrxt44osvcav24zsfxids3aswfvzcnn/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/c-blosc-1.21.4-lsrxt44osvcav24zsfxids3aswfvzcnn/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/c-blosc-1.21.4-lsrxt44osvcav24zsfxids3aswfvzcnn/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/c-blosc-1.21.4-lsrxt44osvcav24zsfxids3aswfvzcnn/include}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/c-blosc-1.21.4-lsrxt44osvcav24zsfxids3aswfvzcnn/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/c-blosc-1.21.4-lsrxt44osvcav24zsfxids3aswfvzcnn/.}
+setenv C_BLOSC_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/c-blosc-1.21.4-lsrxt44osvcav24zsfxids3aswfvzcnn}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

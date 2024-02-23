@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:52.088294
+##
+## r-mass@7.3-59%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/42yaxby
+##
+
+
+module-whatis {Support Functions and Datasets for Venables and Ripley's MASS.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-mass}
+    puts stderr {Version: 7.3-59}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Support Functions and Datasets for Venables and Ripley's MASS. Functions}
+    puts stderr {and datasets to support Venables and Ripley, "Modern Applied Statistics}
+    puts stderr {with S" (4th edition, 2002).}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+}
+prereq r/4.3.0-bzxz5nl
+conflict r-mass
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-mass-7.3-59-42yaxby4rexfhs6kitnjfuidgpkmlwld/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-mass-7.3-59-42yaxby4rexfhs6kitnjfuidgpkmlwld/rlib/R/library}
+setenv R_MASS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-mass-7.3-59-42yaxby4rexfhs6kitnjfuidgpkmlwld}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

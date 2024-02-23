@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:47.825606
+##
+## py-pyparsing@3.0.9%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/gxq3vmd
+##
+
+
+module-whatis {A Python Parsing Module.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-pyparsing}
+    puts stderr {Version: 3.0.9}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A Python Parsing Module.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on python/3.11.6-ht65m6a
+}
+prereq python/3.11.6-ht65m6a
+conflict py-pyparsing
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyparsing-3.0.9-gxq3vmdndt3ovo5y4tsvdpq2piwyed3g/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyparsing-3.0.9-gxq3vmdndt3ovo5y4tsvdpq2piwyed3g/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyparsing-3.0.9-gxq3vmdndt3ovo5y4tsvdpq2piwyed3g/lib/python3.11/site-packages}
+setenv PY_PYPARSING_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pyparsing-3.0.9-gxq3vmdndt3ovo5y4tsvdpq2piwyed3g}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

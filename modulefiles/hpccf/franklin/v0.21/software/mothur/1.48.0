@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:20.412683
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:03.251704
 ##
 ## mothur@1.48.0%gcc@11.4.0+boost~gsl~hdf5 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/zunahmc
 ##
@@ -19,10 +19,13 @@ proc ModulesHelp { } {
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load usearch/11.0.667
+    module load vsearch/2.22.1-bdoizpq
 } else {
     depends-on usearch/11.0.667
+    depends-on vsearch/2.22.1-bdoizpq
 }
 prereq usearch/11.0.667
+prereq vsearch/2.22.1-bdoizpq
 conflict mothur
 
 prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mothur-1.48.0-zunahmcmg44eizgkx3dvxj2gl6aikywr/include}

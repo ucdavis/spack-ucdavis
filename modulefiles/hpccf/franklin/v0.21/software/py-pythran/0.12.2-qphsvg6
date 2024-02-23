@@ -1,0 +1,57 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:49.738279
+##
+## py-pythran@0.12.2%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/qphsvg6
+##
+
+
+module-whatis {Ahead of Time compiler for numeric kernels.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-pythran}
+    puts stderr {Version: 0.12.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Ahead of Time compiler for numeric kernels.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-beniget/0.4.1-6xmfxln
+    module load py-gast/0.5.3-w4ll2fm
+    module load py-numpy/1.25.2-vcmulzi
+    module load py-ply/3.11-jw6qq5b
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on py-beniget/0.4.1-6xmfxln
+    depends-on py-gast/0.5.3-w4ll2fm
+    depends-on py-numpy/1.25.2-vcmulzi
+    depends-on py-ply/3.11-jw6qq5b
+    depends-on python/3.11.6-ht65m6a
+}
+prereq py-beniget/0.4.1-6xmfxln
+prereq py-gast/0.5.3-w4ll2fm
+prereq py-numpy/1.25.2-vcmulzi
+prereq py-ply/3.11-jw6qq5b
+prereq python/3.11.6-ht65m6a
+conflict py-pythran
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pythran-0.12.2-qphsvg6fqivpq5bgoily3a2i642y2jzf/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pythran-0.12.2-qphsvg6fqivpq5bgoily3a2i642y2jzf/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pythran-0.12.2-qphsvg6fqivpq5bgoily3a2i642y2jzf/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pythran-0.12.2-qphsvg6fqivpq5bgoily3a2i642y2jzf/lib/python3.11/site-packages}
+setenv PY_PYTHRAN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pythran-0.12.2-qphsvg6fqivpq5bgoily3a2i642y2jzf}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

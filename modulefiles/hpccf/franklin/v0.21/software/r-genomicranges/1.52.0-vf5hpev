@@ -1,0 +1,69 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:33.212830
+##
+## r-genomicranges@1.52.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/vf5hpev
+##
+
+
+module-whatis {Representation and manipulation of genomic intervals.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-genomicranges}
+    puts stderr {Version: 1.52.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Representation and manipulation of genomic intervals. The ability to}
+    puts stderr {efficiently represent and manipulate genomic annotations and alignments}
+    puts stderr {is playing a central role when it comes to analyzing high-throughput}
+    puts stderr {sequencing data (a.k.a. NGS data). The GenomicRanges package defines}
+    puts stderr {general purpose containers for storing and manipulating genomic}
+    puts stderr {intervals and variables defined along a genome. More specialized}
+    puts stderr {containers for representing and manipulating short alignments against a}
+    puts stderr {reference genome, or a matrix-like summarization of an experiment, are}
+    puts stderr {defined in the GenomicAlignments and SummarizedExperiment packages,}
+    puts stderr {respectively. Both packages build on top of the GenomicRanges}
+    puts stderr {infrastructure.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-biocgenerics/0.46.0-msgdmac
+    module load r-genomeinfodb/1.35.4-xaaprui
+    module load r-iranges/2.34.0-ymbnnoq
+    module load r-s4vectors/0.38.0-2nj6k5f
+    module load r-xvector/0.40.0-xyhwfey
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-biocgenerics/0.46.0-msgdmac
+    depends-on r-genomeinfodb/1.35.4-xaaprui
+    depends-on r-iranges/2.34.0-ymbnnoq
+    depends-on r-s4vectors/0.38.0-2nj6k5f
+    depends-on r-xvector/0.40.0-xyhwfey
+}
+prereq r/4.3.0-n6pth5g
+prereq r-biocgenerics/0.46.0-msgdmac
+prereq r-genomeinfodb/1.35.4-xaaprui
+prereq r-iranges/2.34.0-ymbnnoq
+prereq r-s4vectors/0.38.0-2nj6k5f
+prereq r-xvector/0.40.0-xyhwfey
+conflict r-genomicranges
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-genomicranges-1.52.0-vf5hpevqefaarsuxkroju4a6zka2qkgs/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-genomicranges-1.52.0-vf5hpevqefaarsuxkroju4a6zka2qkgs/rlib/R/library}
+setenv R_GENOMICRANGES_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-genomicranges-1.52.0-vf5hpevqefaarsuxkroju4a6zka2qkgs}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

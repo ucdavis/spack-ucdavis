@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:06.074344
+##
+## perl@5.38.0%oneapi@2023.2.0+cpanm+opcode+open+shared+threads build_system=generic patches=714e4d1 arch=linux-ubuntu22.04-skylake_avx512/2z6pitm
+##
+## Configure options: -des -Dprefix=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/perl-5.38.0-2z6pitmnml2ezw5gaa42cwpe5jpr63s6 -Dlocincpth=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/gdbm-1.23-cg4alrpkagta446soeun4k2ozixfhbq7/include -Dloclibpth=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/gdbm-1.23-cg4alrpkagta446soeun4k2ozixfhbq7/lib -Accflags=-DAPPLLIB_EXP=\"/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/perl-5.38.0-2z6pitmnml2ezw5gaa42cwpe5jpr63s6/lib/perl5\" -Duseshrplib -Dusethreads
+##
+
+
+module-whatis {Perl 5 is a highly capable, feature-rich programming language with over 27 years of development.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl}
+    puts stderr {Version: 5.38.0}
+    puts stderr {Target : skylake_avx512}
+    puts stderr {}
+    puts stderr {Perl 5 is a highly capable, feature-rich programming language with over}
+    puts stderr {27 years of development.}
+}
+
+conflict perl
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/perl-5.38.0-2z6pitmnml2ezw5gaa42cwpe5jpr63s6/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/perl-5.38.0-2z6pitmnml2ezw5gaa42cwpe5jpr63s6/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/perl-5.38.0-2z6pitmnml2ezw5gaa42cwpe5jpr63s6/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/perl-5.38.0-2z6pitmnml2ezw5gaa42cwpe5jpr63s6/.}
+setenv PERL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/perl-5.38.0-2z6pitmnml2ezw5gaa42cwpe5jpr63s6}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:34.303949
+##
+## py-kiwisolver@1.4.4%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/olajlkp
+##
+
+
+module-whatis {A fast implementation of the Cassowary constraint solver}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-kiwisolver}
+    puts stderr {Version: 1.4.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A fast implementation of the Cassowary constraint solver}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on python/3.11.6-rsiojxh
+}
+prereq python/3.11.6-rsiojxh
+conflict py-kiwisolver
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-kiwisolver-1.4.4-olajlkpm2wlrgyehhlz555qk3ysuybha/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-kiwisolver-1.4.4-olajlkpm2wlrgyehhlz555qk3ysuybha/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-kiwisolver-1.4.4-olajlkpm2wlrgyehhlz555qk3ysuybha/lib/python3.11/site-packages}
+setenv PY_KIWISOLVER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-kiwisolver-1.4.4-olajlkpm2wlrgyehhlz555qk3ysuybha}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

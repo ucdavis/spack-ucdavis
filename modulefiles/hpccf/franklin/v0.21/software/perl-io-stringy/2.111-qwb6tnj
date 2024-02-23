@@ -1,0 +1,55 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:10.543344
+##
+## perl-io-stringy@2.111%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/qwb6tnj
+##
+
+
+module-whatis {This toolkit primarily provides modules for performing both traditional and object-oriented i/o) on things other than normal filehandles; in particular, IO::Scalar, IO::ScalarArray, and IO::Lines.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-io-stringy}
+    puts stderr {Version: 2.111}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This toolkit primarily provides modules for performing both traditional}
+    puts stderr {and object-oriented i/o) on things other than normal filehandles; in}
+    puts stderr {particular, IO::Scalar, IO::ScalarArray, and IO::Lines. In the more-}
+    puts stderr {traditional IO::Handle front, we have IO::AtomicFile which may be used}
+    puts stderr {to painlessly create files which are updated atomically. And in the}
+    puts stderr {"this-may-prove-useful" corner, we have IO::Wrap, whose exported}
+    puts stderr {wraphandle() function will clothe anything that's not a blessed object}
+    puts stderr {in an IO::Handle-like wrapper... so you can just use OO syntax and stop}
+    puts stderr {worrying about whether your function's caller handed you a string, a}
+    puts stderr {globref, or a FileHandle.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-io-stringy
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-stringy-2.111-qwb6tnjliwgaup6vweh4vz45k5kc22qd/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-stringy-2.111-qwb6tnjliwgaup6vweh4vz45k5kc22qd/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-stringy-2.111-qwb6tnjliwgaup6vweh4vz45k5kc22qd/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-stringy-2.111-qwb6tnjliwgaup6vweh4vz45k5kc22qd/lib/perl5}
+setenv PERL_IO_STRINGY_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-io-stringy-2.111-qwb6tnjliwgaup6vweh4vz45k5kc22qd}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:14.717556
+##
+## perl-yaml-libyaml@0.84%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/vifi6aa
+##
+
+
+module-whatis {Perl YAML Serialization using XS and libyaml}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-yaml-libyaml}
+    puts stderr {Version: 0.84}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Perl YAML Serialization using XS and libyaml}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-yaml-libyaml
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-yaml-libyaml-0.84-vifi6aaetewehvokkwouquf4jqcbiomw/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-yaml-libyaml-0.84-vifi6aaetewehvokkwouquf4jqcbiomw/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-yaml-libyaml-0.84-vifi6aaetewehvokkwouquf4jqcbiomw/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-yaml-libyaml-0.84-vifi6aaetewehvokkwouquf4jqcbiomw/lib/perl5}
+setenv PERL_YAML_LIBYAML_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-yaml-libyaml-0.84-vifi6aaetewehvokkwouquf4jqcbiomw}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

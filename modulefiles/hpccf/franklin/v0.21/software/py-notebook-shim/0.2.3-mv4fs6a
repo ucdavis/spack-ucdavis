@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:39.977058
+##
+## py-notebook-shim@0.2.3%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/mv4fs6a
+##
+
+
+module-whatis {A shim layer for notebook traits and config.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-notebook-shim}
+    puts stderr {Version: 0.2.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A shim layer for notebook traits and config.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-jupyter-server/1.21.0-b3vsjtt
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-jupyter-server/1.21.0-b3vsjtt
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-jupyter-server/1.21.0-b3vsjtt
+prereq python/3.11.6-rsiojxh
+conflict py-notebook-shim
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-notebook-shim-0.2.3-mv4fs6afn7afcyhjkic4vgam7zpjmfn6/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-notebook-shim-0.2.3-mv4fs6afn7afcyhjkic4vgam7zpjmfn6/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-notebook-shim-0.2.3-mv4fs6afn7afcyhjkic4vgam7zpjmfn6/lib/python3.11/site-packages}
+setenv PY_NOTEBOOK_SHIM_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-notebook-shim-0.2.3-mv4fs6afn7afcyhjkic4vgam7zpjmfn6}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

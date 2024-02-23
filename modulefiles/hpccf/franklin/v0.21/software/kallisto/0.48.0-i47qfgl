@@ -1,0 +1,38 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:56.200477
+##
+## kallisto@0.48.0%gcc@11.4.0~hdf5~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/i47qfgl
+##
+
+
+module-whatis {kallisto is a program for quantifying abundances of transcripts from RNA-Seq data.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : kallisto}
+    puts stderr {Version: 0.48.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {kallisto is a program for quantifying abundances of transcripts from}
+    puts stderr {RNA-Seq data.}
+}
+
+conflict kallisto
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kallisto-0.48.0-i47qfglgpukpjclmqzvvdewwhg7m4nii/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kallisto-0.48.0-i47qfglgpukpjclmqzvvdewwhg7m4nii/.}
+setenv KALLISTO_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kallisto-0.48.0-i47qfglgpukpjclmqzvvdewwhg7m4nii}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

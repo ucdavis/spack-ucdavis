@@ -1,0 +1,56 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:47.493623
+##
+## r-keggrest@1.40.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/tesdyzi
+##
+
+
+module-whatis {Client-side REST access to KEGG.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-keggrest}
+    puts stderr {Version: 1.40.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Client-side REST access to KEGG. A package that provides a client}
+    puts stderr {interface to the KEGG REST server. Based on KEGGSOAP by J. Zhang, R.}
+    puts stderr {Gentleman, and Marc Carlson, and KEGG (python package) by Aurelien}
+    puts stderr {Mazurie.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-biostrings/2.68.0-hvus7om
+    module load r-httr/1.4.5-3eelhq2
+    module load r-png/0.1-8-d4svjs7
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-biostrings/2.68.0-hvus7om
+    depends-on r-httr/1.4.5-3eelhq2
+    depends-on r-png/0.1-8-d4svjs7
+}
+prereq r/4.3.0-n6pth5g
+prereq r-biostrings/2.68.0-hvus7om
+prereq r-httr/1.4.5-3eelhq2
+prereq r-png/0.1-8-d4svjs7
+conflict r-keggrest
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-keggrest-1.40.0-tesdyziaw5iv5qx2jmsaqdonyuyw3jgk/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-keggrest-1.40.0-tesdyziaw5iv5qx2jmsaqdonyuyw3jgk/rlib/R/library}
+setenv R_KEGGREST_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-keggrest-1.40.0-tesdyziaw5iv5qx2jmsaqdonyuyw3jgk}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

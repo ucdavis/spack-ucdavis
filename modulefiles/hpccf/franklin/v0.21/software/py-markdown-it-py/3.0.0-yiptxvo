@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:35.160984
+##
+## py-markdown-it-py@3.0.0%gcc@11.4.0~linkify build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/yiptxvo
+##
+
+
+module-whatis {Markdown parser, done right. 100% CommonMark support, extensions, syntax plugins & high speed}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-markdown-it-py}
+    puts stderr {Version: 3.0.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Markdown parser, done right. 100% CommonMark support, extensions, syntax}
+    puts stderr {plugins & high speed}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-mdurl/0.1.2-tt5nfue
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on py-mdurl/0.1.2-tt5nfue
+    depends-on python/3.11.6-ht65m6a
+}
+prereq py-mdurl/0.1.2-tt5nfue
+prereq python/3.11.6-ht65m6a
+conflict py-markdown-it-py
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-markdown-it-py-3.0.0-yiptxvo5vtwppndesqsopxq3hfvvqfsd/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-markdown-it-py-3.0.0-yiptxvo5vtwppndesqsopxq3hfvvqfsd/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-markdown-it-py-3.0.0-yiptxvo5vtwppndesqsopxq3hfvvqfsd/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-markdown-it-py-3.0.0-yiptxvo5vtwppndesqsopxq3hfvvqfsd/lib/python3.11/site-packages}
+setenv PY_MARKDOWN_IT_PY_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-markdown-it-py-3.0.0-yiptxvo5vtwppndesqsopxq3hfvvqfsd}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

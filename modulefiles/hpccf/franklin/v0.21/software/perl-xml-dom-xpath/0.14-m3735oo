@@ -1,0 +1,53 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:13.792953
+##
+## perl-xml-dom-xpath@0.14%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/m3735oo
+##
+
+
+module-whatis {XML::DOM::XPath allows you to use XML::XPath methods to query a DOM. This is often much easier than relying only on getElementsByTagName.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-xml-dom-xpath}
+    puts stderr {Version: 0.14}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {XML::DOM::XPath allows you to use XML::XPath methods to query a DOM.}
+    puts stderr {This is often much easier than relying only on getElementsByTagName.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+    module load perl-xml-dom/1.46-ymefgrd
+    module load perl-xml-xpathengine/0.14-237tgua
+} else {
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-xml-dom/1.46-ymefgrd
+    depends-on perl-xml-xpathengine/0.14-237tgua
+}
+prereq perl/5.38.0-lfl2a73
+prereq perl-xml-dom/1.46-ymefgrd
+prereq perl-xml-xpathengine/0.14-237tgua
+conflict perl-xml-dom-xpath
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-dom-xpath-0.14-m3735oobgyg7wmholxfud5nhkvkbs77c/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-dom-xpath-0.14-m3735oobgyg7wmholxfud5nhkvkbs77c/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-dom-xpath-0.14-m3735oobgyg7wmholxfud5nhkvkbs77c/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-dom-xpath-0.14-m3735oobgyg7wmholxfud5nhkvkbs77c/lib/perl5}
+setenv PERL_XML_DOM_XPATH_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-xml-dom-xpath-0.14-m3735oobgyg7wmholxfud5nhkvkbs77c}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

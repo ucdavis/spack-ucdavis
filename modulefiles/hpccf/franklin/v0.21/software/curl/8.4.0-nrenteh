@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:46.899094
+##
+## curl@8.4.0%gcc@7.5.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs=shared,static tls=openssl arch=linux-ubuntu22.04-x86_64_v3/nrenteh
+##
+
+
+module-whatis {cURL is an open source command line tool and library for transferring data with URL syntax}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : curl}
+    puts stderr {Version: 8.4.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {cURL is an open source command line tool and library for transferring}
+    puts stderr {data with URL syntax}
+}
+
+conflict curl
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/curl-8.4.0-nrentehf5gdisywi2qvnuq5ipa3ucs4j/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/curl-8.4.0-nrentehf5gdisywi2qvnuq5ipa3ucs4j/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/curl-8.4.0-nrentehf5gdisywi2qvnuq5ipa3ucs4j/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/curl-8.4.0-nrentehf5gdisywi2qvnuq5ipa3ucs4j/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/curl-8.4.0-nrentehf5gdisywi2qvnuq5ipa3ucs4j/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/curl-8.4.0-nrentehf5gdisywi2qvnuq5ipa3ucs4j/share/man}
+prepend-path ACLOCAL_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/curl-8.4.0-nrentehf5gdisywi2qvnuq5ipa3ucs4j/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/curl-8.4.0-nrentehf5gdisywi2qvnuq5ipa3ucs4j/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/curl-8.4.0-nrentehf5gdisywi2qvnuq5ipa3ucs4j/.}
+setenv CURL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/curl-8.4.0-nrentehf5gdisywi2qvnuq5ipa3ucs4j}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

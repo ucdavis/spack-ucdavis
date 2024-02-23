@@ -1,0 +1,64 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:38.829381
+##
+## r-goseq@1.52.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/qylh7do
+##
+
+
+module-whatis {Gene Ontology analyser for RNA-seq and other length biased data.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-goseq}
+    puts stderr {Version: 1.52.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Gene Ontology analyser for RNA-seq and other length biased data. Detects}
+    puts stderr {Gene Ontology and/or other user defined categories which are over/under}
+    puts stderr {represented in RNA-seq data}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-annotationdbi/1.62.0-qranwdo
+    module load r-biasedurn/2.0.9-cr7sh7u
+    module load r-biocgenerics/0.46.0-msgdmac
+    module load r-genelendatabase/1.36.0-pizqmke
+    module load r-go-db/3.17.0-ojmlu5f
+    module load r-mgcv/1.8-42-bcso6er
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-annotationdbi/1.62.0-qranwdo
+    depends-on r-biasedurn/2.0.9-cr7sh7u
+    depends-on r-biocgenerics/0.46.0-msgdmac
+    depends-on r-genelendatabase/1.36.0-pizqmke
+    depends-on r-go-db/3.17.0-ojmlu5f
+    depends-on r-mgcv/1.8-42-bcso6er
+}
+prereq r/4.3.0-n6pth5g
+prereq r-annotationdbi/1.62.0-qranwdo
+prereq r-biasedurn/2.0.9-cr7sh7u
+prereq r-biocgenerics/0.46.0-msgdmac
+prereq r-genelendatabase/1.36.0-pizqmke
+prereq r-go-db/3.17.0-ojmlu5f
+prereq r-mgcv/1.8-42-bcso6er
+conflict r-goseq
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-goseq-1.52.0-qylh7do7inyg3yg2csxkpu6uufhdopwa/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-goseq-1.52.0-qylh7do7inyg3yg2csxkpu6uufhdopwa/rlib/R/library}
+setenv R_GOSEQ_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-goseq-1.52.0-qylh7do7inyg3yg2csxkpu6uufhdopwa}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

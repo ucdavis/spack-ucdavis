@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:45.446674
+##
+## py-poetry-core@1.6.1%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/2akc4ey
+##
+
+
+module-whatis {Poetry PEP 517 Build Backend.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-poetry-core}
+    puts stderr {Version: 1.6.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Poetry PEP 517 Build Backend.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.9.18-rt3uhd4
+} else {
+    depends-on python/3.9.18-rt3uhd4
+}
+prereq python/3.9.18-rt3uhd4
+conflict py-poetry-core
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-poetry-core-1.6.1-2akc4eyq4ncwynxgpoyyrv2rcr4t6hzr/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-poetry-core-1.6.1-2akc4eyq4ncwynxgpoyyrv2rcr4t6hzr/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-poetry-core-1.6.1-2akc4eyq4ncwynxgpoyyrv2rcr4t6hzr/lib/python3.9/site-packages}
+setenv PY_POETRY_CORE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-poetry-core-1.6.1-2akc4eyq4ncwynxgpoyyrv2rcr4t6hzr}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

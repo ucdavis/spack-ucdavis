@@ -1,0 +1,51 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:27.269313
+##
+## r-viridislite@0.4.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/er6yffz
+##
+
+
+module-whatis {Colorblind-Friendly Color Maps (Lite Version).}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-viridislite}
+    puts stderr {Version: 0.4.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Colorblind-Friendly Color Maps (Lite Version). Color maps designed to}
+    puts stderr {improve graph readability for readers with common forms of color}
+    puts stderr {blindness and/or color vision deficiency. The color maps are also}
+    puts stderr {perceptually-uniform, both in regular form and also when converted to}
+    puts stderr {black-and-white for printing. This is the 'lite' version of the}
+    puts stderr {'viridis' package that also contains 'ggplot2' bindings for discrete and}
+    puts stderr {continuous color and fill scales and can be found at}
+    puts stderr {<https://cran.r-project.org/package=viridis>.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+} else {
+    depends-on r/4.3.0-n6pth5g
+}
+prereq r/4.3.0-n6pth5g
+conflict r-viridislite
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-viridislite-0.4.1-er6yffzqc4472optx2d663rn6buzsttl/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-viridislite-0.4.1-er6yffzqc4472optx2d663rn6buzsttl/rlib/R/library}
+setenv R_VIRIDISLITE_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-viridislite-0.4.1-er6yffzqc4472optx2d663rn6buzsttl}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

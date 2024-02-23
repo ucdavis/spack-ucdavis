@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:20.624673
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:03.858659
 ##
 ## mummer4@4.0.0rc1%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/7nmrdqb
 ##
@@ -15,6 +15,18 @@ proc ModulesHelp { } {
     puts stderr {MUMmer is a versatil alignment tool for DNA and protein sequences.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load gawk/5.2.2-asewlji
+    module load perl/5.38.0-yjij273
+    module load sed/4.9-2h2yavf
+} else {
+    depends-on gawk/5.2.2-asewlji
+    depends-on perl/5.38.0-yjij273
+    depends-on sed/4.9-2h2yavf
+}
+prereq gawk/5.2.2-asewlji
+prereq perl/5.38.0-yjij273
+prereq sed/4.9-2h2yavf
 conflict mummer4
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mummer4-4.0.0rc1-7nmrdqb5baia4tex6bz2kdlkgwckhg5y/lib}

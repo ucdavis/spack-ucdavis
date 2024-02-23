@@ -1,0 +1,60 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:29.085753
+##
+## py-hatchling@1.18.0%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/zlldt6g
+##
+
+
+module-whatis {Modern, extensible Python build backend.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-hatchling}
+    puts stderr {Version: 1.18.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Modern, extensible Python build backend.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-editables/0.3-rs7omrt
+    module load py-packaging/23.1-qtl5ejm
+    module load py-pathspec/0.11.1-cse2n5q
+    module load py-pluggy/1.0.0-db7i4zl
+    module load py-trove-classifiers/2023.8.7-fjfioea
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-editables/0.3-rs7omrt
+    depends-on py-packaging/23.1-qtl5ejm
+    depends-on py-pathspec/0.11.1-cse2n5q
+    depends-on py-pluggy/1.0.0-db7i4zl
+    depends-on py-trove-classifiers/2023.8.7-fjfioea
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-editables/0.3-rs7omrt
+prereq py-packaging/23.1-qtl5ejm
+prereq py-pathspec/0.11.1-cse2n5q
+prereq py-pluggy/1.0.0-db7i4zl
+prereq py-trove-classifiers/2023.8.7-fjfioea
+prereq python/3.11.6-rsiojxh
+conflict py-hatchling
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-hatchling-1.18.0-zlldt6gft4at3fb5qr5v2konl3cyjsu6/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-hatchling-1.18.0-zlldt6gft4at3fb5qr5v2konl3cyjsu6/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-hatchling-1.18.0-zlldt6gft4at3fb5qr5v2konl3cyjsu6/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-hatchling-1.18.0-zlldt6gft4at3fb5qr5v2konl3cyjsu6/lib/python3.11/site-packages}
+setenv PY_HATCHLING_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-hatchling-1.18.0-zlldt6gft4at3fb5qr5v2konl3cyjsu6}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

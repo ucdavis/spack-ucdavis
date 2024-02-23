@@ -1,0 +1,37 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:04.748352
+##
+## nseg@1.0%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/s4oplf7
+##
+
+
+module-whatis {NSEG - Low complexity sequence identification}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : nseg}
+    puts stderr {Version: 1.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {NSEG - Low complexity sequence identification}
+}
+
+conflict nseg
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nseg-1.0-s4oplf7mruxhzpijzne64tong4pb3ksh/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nseg-1.0-s4oplf7mruxhzpijzne64tong4pb3ksh/.}
+setenv NSEG_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nseg-1.0-s4oplf7mruxhzpijzne64tong4pb3ksh}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

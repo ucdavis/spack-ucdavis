@@ -1,0 +1,55 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:11.580254
+##
+## perl-module-build-tiny@0.044%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/6lwnys4
+##
+
+
+module-whatis {Module::Build::Tiny - A tiny replacement for Module::Build}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-module-build-tiny}
+    puts stderr {Version: 0.044}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Module::Build::Tiny - A tiny replacement for Module::Build}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-okr4ubb
+    module load perl-extutils-config/0.008-tfe6icl
+    module load perl-extutils-helpers/0.026-p2n6bck
+    module load perl-extutils-installpaths/0.012-cd4v2gl
+} else {
+    depends-on perl/5.38.0-okr4ubb
+    depends-on perl-extutils-config/0.008-tfe6icl
+    depends-on perl-extutils-helpers/0.026-p2n6bck
+    depends-on perl-extutils-installpaths/0.012-cd4v2gl
+}
+prereq perl/5.38.0-okr4ubb
+prereq perl-extutils-config/0.008-tfe6icl
+prereq perl-extutils-helpers/0.026-p2n6bck
+prereq perl-extutils-installpaths/0.012-cd4v2gl
+conflict perl-module-build-tiny
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-module-build-tiny-0.044-6lwnys4vilorgrwifvskavm2cwcru5f6/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-module-build-tiny-0.044-6lwnys4vilorgrwifvskavm2cwcru5f6/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-module-build-tiny-0.044-6lwnys4vilorgrwifvskavm2cwcru5f6/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-module-build-tiny-0.044-6lwnys4vilorgrwifvskavm2cwcru5f6/lib/perl5}
+setenv PERL_MODULE_BUILD_TINY_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-module-build-tiny-0.044-6lwnys4vilorgrwifvskavm2cwcru5f6}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

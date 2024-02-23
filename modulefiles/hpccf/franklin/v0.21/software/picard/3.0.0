@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:22.179277
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:14.789781
 ##
 ## picard@3.0.0%gcc@11.4.0~parameters build_system=generic arch=linux-ubuntu22.04-x86_64_v3/yfymvgt
 ##
@@ -16,6 +16,12 @@ proc ModulesHelp { } {
     puts stderr {sequencing (HTS) data and formats such as SAM/BAM/CRAM and VCF.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load openjdk/17.0.8.1_1-y4rwayq
+} else {
+    depends-on openjdk/17.0.8.1_1-y4rwayq
+}
+prereq openjdk/17.0.8.1_1-y4rwayq
 conflict picard
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/picard-3.0.0-yfymvgtuyyvh5jct4kehwifpdslradnf/bin}

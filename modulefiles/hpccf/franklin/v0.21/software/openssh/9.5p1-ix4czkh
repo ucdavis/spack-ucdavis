@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:05.065427
+##
+## openssh@9.5p1%gcc@11.4.0+gssapi build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/ix4czkh
+##
+## Configure options: --with-privsep-path=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssh-9.5p1-ix4czkhgpeqbznpznagqmveyispqdom7/var/empty --with-kerberos5=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/krb5-1.20.1-ptljuetku4tc5e63vepv5qfqc4yqtlcs
+##
+
+
+module-whatis {OpenSSH is the premier connectivity tool for remote login with the SSH protocol. It encrypts all traffic to eliminate eavesdropping, connection hijacking, and other attacks. In addition, OpenSSH provides a large suite of secure tunneling capabilities, several authentication methods, and sophisticated configuration options. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : openssh}
+    puts stderr {Version: 9.5p1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {OpenSSH is the premier connectivity tool for remote login with the SSH}
+    puts stderr {protocol. It encrypts all traffic to eliminate eavesdropping, connection}
+    puts stderr {hijacking, and other attacks. In addition, OpenSSH provides a large}
+    puts stderr {suite of secure tunneling capabilities, several authentication methods,}
+    puts stderr {and sophisticated configuration options.}
+}
+
+conflict openssh
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssh-9.5p1-ix4czkhgpeqbznpznagqmveyispqdom7/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssh-9.5p1-ix4czkhgpeqbznpznagqmveyispqdom7/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssh-9.5p1-ix4czkhgpeqbznpznagqmveyispqdom7/.}
+setenv OPENSSH_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssh-9.5p1-ix4czkhgpeqbznpznagqmveyispqdom7}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

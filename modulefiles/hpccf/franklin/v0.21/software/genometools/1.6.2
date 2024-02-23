@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:16.619948
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:50.211189
 ##
 ## genometools@1.6.2%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/p72a2ai
 ##
@@ -16,6 +16,12 @@ proc ModulesHelp { } {
     puts stderr {of genome informatics) combined into a single binary named gt.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
 conflict genometools
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/genometools-1.6.2-p72a2aiirwnly5clkbprqeyiw6cvypwg/lib}

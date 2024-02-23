@@ -1,0 +1,66 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:26.128142
+##
+## r-forcats@1.0.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/mr24cbs
+##
+
+
+module-whatis {Tools for Working with Categorical Variables (Factors).}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-forcats}
+    puts stderr {Version: 1.0.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Tools for Working with Categorical Variables (Factors). Helpers for}
+    puts stderr {reordering factor levels (including moving specified levels to front,}
+    puts stderr {ordering by first appearance, reversing, and randomly shuffling), and}
+    puts stderr {tools for modifying factor levels (including collapsing rare levels into}
+    puts stderr {other, 'anonymising', and manually 'recoding').}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-cli/3.6.1-75actrg
+    module load r-glue/1.6.2-g2mk77f
+    module load r-lifecycle/1.0.3-u6wfegg
+    module load r-magrittr/2.0.3-mvovjyx
+    module load r-rlang/1.1.0-exexgvx
+    module load r-tibble/3.2.1-qxvx2yi
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-cli/3.6.1-75actrg
+    depends-on r-glue/1.6.2-g2mk77f
+    depends-on r-lifecycle/1.0.3-u6wfegg
+    depends-on r-magrittr/2.0.3-mvovjyx
+    depends-on r-rlang/1.1.0-exexgvx
+    depends-on r-tibble/3.2.1-qxvx2yi
+}
+prereq r/4.3.0-n6pth5g
+prereq r-cli/3.6.1-75actrg
+prereq r-glue/1.6.2-g2mk77f
+prereq r-lifecycle/1.0.3-u6wfegg
+prereq r-magrittr/2.0.3-mvovjyx
+prereq r-rlang/1.1.0-exexgvx
+prereq r-tibble/3.2.1-qxvx2yi
+conflict r-forcats
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-forcats-1.0.0-mr24cbsobbv6qlh5drwtzswlft7yuhif/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-forcats-1.0.0-mr24cbsobbv6qlh5drwtzswlft7yuhif/rlib/R/library}
+setenv R_FORCATS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-forcats-1.0.0-mr24cbsobbv6qlh5drwtzswlft7yuhif}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

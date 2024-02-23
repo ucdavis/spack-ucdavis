@@ -1,0 +1,57 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:42.600831
+##
+## r-hms@1.1.3%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/mujajev
+##
+
+
+module-whatis {Pretty Time of Day.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-hms}
+    puts stderr {Version: 1.1.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Pretty Time of Day. Implements an S3 class for storing and formatting}
+    puts stderr {time-of-day values, based on the 'difftime' class.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-lifecycle/1.0.3-u6wfegg
+    module load r-pkgconfig/2.0.3-n7aanlc
+    module load r-rlang/1.1.0-exexgvx
+    module load r-vctrs/0.6.2-2fduwfe
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-lifecycle/1.0.3-u6wfegg
+    depends-on r-pkgconfig/2.0.3-n7aanlc
+    depends-on r-rlang/1.1.0-exexgvx
+    depends-on r-vctrs/0.6.2-2fduwfe
+}
+prereq r/4.3.0-n6pth5g
+prereq r-lifecycle/1.0.3-u6wfegg
+prereq r-pkgconfig/2.0.3-n7aanlc
+prereq r-rlang/1.1.0-exexgvx
+prereq r-vctrs/0.6.2-2fduwfe
+conflict r-hms
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-hms-1.1.3-mujajevmgegyalwyhsrcyjykdcocomvt/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-hms-1.1.3-mujajevmgegyalwyhsrcyjykdcocomvt/rlib/R/library}
+setenv R_HMS_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-hms-1.1.3-mujajevmgegyalwyhsrcyjykdcocomvt}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

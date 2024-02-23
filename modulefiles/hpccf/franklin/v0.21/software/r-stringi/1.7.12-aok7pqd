@@ -1,0 +1,52 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:18.349454
+##
+## r-stringi@1.7.12%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/aok7pqd
+##
+
+
+module-whatis {Character String Processing Facilities.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-stringi}
+    puts stderr {Version: 1.7.12}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Character String Processing Facilities. A multitude of character}
+    puts stderr {string/text/natural language processing tools: pattern searching (e.g.,}
+    puts stderr {with 'Java'-like regular expressions or the 'Unicode' collation}
+    puts stderr {algorithm), random string generation, case mapping, string}
+    puts stderr {transliteration, concatenation, sorting, padding, wrapping, Unicode}
+    puts stderr {normalisation, date-time formatting and parsing, and many more. They are}
+    puts stderr {fast, consistent, convenient, and - owing to the use of the 'ICU'}
+    puts stderr {(International Components for Unicode) library - portable across all}
+    puts stderr {locales and platforms.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+} else {
+    depends-on r/4.3.0-n6pth5g
+}
+prereq r/4.3.0-n6pth5g
+conflict r-stringi
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-stringi-1.7.12-aok7pqdkoislfe4yp6nfu6n5pdw4nhiz/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-stringi-1.7.12-aok7pqdkoislfe4yp6nfu6n5pdw4nhiz/rlib/R/library}
+setenv R_STRINGI_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-stringi-1.7.12-aok7pqdkoislfe4yp6nfu6n5pdw4nhiz}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:35.405462
+##
+## staden-io-lib@1.14.8%gcc@11.4.0~curl build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/qp572ci
+##
+## Configure options: --without-libcurl
+##
+
+
+module-whatis {Io_lib is a library for reading/writing various bioinformatics file formats.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : staden-io-lib}
+    puts stderr {Version: 1.14.8}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Io_lib is a library for reading/writing various bioinformatics file}
+    puts stderr {formats.}
+}
+
+conflict staden-io-lib
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/staden-io-lib-1.14.8-qp572cilrpwqqcgcbwdfytfdpurh4wpy/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/staden-io-lib-1.14.8-qp572cilrpwqqcgcbwdfytfdpurh4wpy/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/staden-io-lib-1.14.8-qp572cilrpwqqcgcbwdfytfdpurh4wpy/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/staden-io-lib-1.14.8-qp572cilrpwqqcgcbwdfytfdpurh4wpy/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/staden-io-lib-1.14.8-qp572cilrpwqqcgcbwdfytfdpurh4wpy/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/staden-io-lib-1.14.8-qp572cilrpwqqcgcbwdfytfdpurh4wpy/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/staden-io-lib-1.14.8-qp572cilrpwqqcgcbwdfytfdpurh4wpy/.}
+setenv STADEN_IO_LIB_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/staden-io-lib-1.14.8-qp572cilrpwqqcgcbwdfytfdpurh4wpy}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

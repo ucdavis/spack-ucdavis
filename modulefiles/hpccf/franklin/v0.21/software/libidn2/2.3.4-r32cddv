@@ -1,0 +1,46 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:57.407382
+##
+## libidn2@2.3.4%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/r32cddv
+##
+
+
+module-whatis {Libidn2 is a free software implementation of IDNA2008, Punycode and TR46. Its purpose is to encode and decode internationalized domain names.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libidn2}
+    puts stderr {Version: 2.3.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Libidn2 is a free software implementation of IDNA2008, Punycode and}
+    puts stderr {TR46. Its purpose is to encode and decode internationalized domain}
+    puts stderr {names.}
+}
+
+conflict libidn2
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libidn2-2.3.4-r32cddvaoc3noofv7htdhokqfposaybe/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libidn2-2.3.4-r32cddvaoc3noofv7htdhokqfposaybe/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libidn2-2.3.4-r32cddvaoc3noofv7htdhokqfposaybe/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libidn2-2.3.4-r32cddvaoc3noofv7htdhokqfposaybe/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libidn2-2.3.4-r32cddvaoc3noofv7htdhokqfposaybe/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libidn2-2.3.4-r32cddvaoc3noofv7htdhokqfposaybe/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libidn2-2.3.4-r32cddvaoc3noofv7htdhokqfposaybe/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libidn2-2.3.4-r32cddvaoc3noofv7htdhokqfposaybe/.}
+setenv LIBIDN2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libidn2-2.3.4-r32cddvaoc3noofv7htdhokqfposaybe}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

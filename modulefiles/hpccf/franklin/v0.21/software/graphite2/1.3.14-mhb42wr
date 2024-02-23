@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:51.902518
+##
+## graphite2@1.3.14%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make patches=39e58d6 arch=linux-ubuntu22.04-x86_64_v3/mhb42wr
+##
+
+
+module-whatis {Graphite is a system that can be used to create 'smart fonts' capable of displaying writing systems with various complex behaviors. A smart font contains not only letter shapes but also additional instructions indicating how to combine and position the letters in complex ways.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : graphite2}
+    puts stderr {Version: 1.3.14}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Graphite is a system that can be used to create "smart fonts" capable of}
+    puts stderr {displaying writing systems with various complex behaviors. A smart font}
+    puts stderr {contains not only letter shapes but also additional instructions}
+    puts stderr {indicating how to combine and position the letters in complex ways.}
+}
+
+conflict graphite2
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/graphite2-1.3.14-mhb42wrd2epktxjlbhbtmltqydhth4qz/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/graphite2-1.3.14-mhb42wrd2epktxjlbhbtmltqydhth4qz/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/graphite2-1.3.14-mhb42wrd2epktxjlbhbtmltqydhth4qz/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/graphite2-1.3.14-mhb42wrd2epktxjlbhbtmltqydhth4qz/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/graphite2-1.3.14-mhb42wrd2epktxjlbhbtmltqydhth4qz/bin}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/graphite2-1.3.14-mhb42wrd2epktxjlbhbtmltqydhth4qz/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/graphite2-1.3.14-mhb42wrd2epktxjlbhbtmltqydhth4qz/.}
+setenv GRAPHITE2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/graphite2-1.3.14-mhb42wrd2epktxjlbhbtmltqydhth4qz}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

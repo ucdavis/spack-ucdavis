@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:48.722255
+##
+## r-labeling@0.4.2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/ymnuisb
+##
+
+
+module-whatis {Axis Labeling.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-labeling}
+    puts stderr {Version: 0.4.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Axis Labeling. Provides a range of axis labeling algorithms.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+}
+prereq r/4.3.0-bzxz5nl
+conflict r-labeling
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-labeling-0.4.2-ymnuisb2rdc6sly4cs47wbwaa2fbsd4d/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-labeling-0.4.2-ymnuisb2rdc6sly4cs47wbwaa2fbsd4d/rlib/R/library}
+setenv R_LABELING_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-labeling-0.4.2-ymnuisb2rdc6sly4cs47wbwaa2fbsd4d}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

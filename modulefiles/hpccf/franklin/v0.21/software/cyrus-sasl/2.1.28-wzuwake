@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:46.977646
+##
+## cyrus-sasl@2.1.28%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/wzuwake
+##
+
+
+module-whatis {This is the Cyrus SASL API implementation. It can be used on the client or server side to provide authentication and authorization services.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : cyrus-sasl}
+    puts stderr {Version: 2.1.28}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This is the Cyrus SASL API implementation. It can be used on the client}
+    puts stderr {or server side to provide authentication and authorization services.}
+}
+
+conflict cyrus-sasl
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cyrus-sasl-2.1.28-wzuwakeqa3ryn6le2i6n6ezxo3oohiez/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cyrus-sasl-2.1.28-wzuwakeqa3ryn6le2i6n6ezxo3oohiez/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cyrus-sasl-2.1.28-wzuwakeqa3ryn6le2i6n6ezxo3oohiez/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cyrus-sasl-2.1.28-wzuwakeqa3ryn6le2i6n6ezxo3oohiez/include}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cyrus-sasl-2.1.28-wzuwakeqa3ryn6le2i6n6ezxo3oohiez/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cyrus-sasl-2.1.28-wzuwakeqa3ryn6le2i6n6ezxo3oohiez/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cyrus-sasl-2.1.28-wzuwakeqa3ryn6le2i6n6ezxo3oohiez/.}
+setenv CYRUS_SASL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cyrus-sasl-2.1.28-wzuwakeqa3ryn6le2i6n6ezxo3oohiez}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

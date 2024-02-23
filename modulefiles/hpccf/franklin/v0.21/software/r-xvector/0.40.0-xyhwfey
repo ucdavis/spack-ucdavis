@@ -1,0 +1,58 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:30.452846
+##
+## r-xvector@0.40.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/xyhwfey
+##
+
+
+module-whatis {Foundation of external vector representation and manipulation in Bioconductor.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-xvector}
+    puts stderr {Version: 0.40.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Foundation of external vector representation and manipulation in}
+    puts stderr {Bioconductor. Provides memory efficient S4 classes for storing sequences}
+    puts stderr {"externally" (e.g. behind an R external pointer, or on disk).}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-biocgenerics/0.46.0-msgdmac
+    module load r-iranges/2.34.0-ymbnnoq
+    module load r-s4vectors/0.38.0-2nj6k5f
+    module load r-zlibbioc/1.46.0-f5n6y2d
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-biocgenerics/0.46.0-msgdmac
+    depends-on r-iranges/2.34.0-ymbnnoq
+    depends-on r-s4vectors/0.38.0-2nj6k5f
+    depends-on r-zlibbioc/1.46.0-f5n6y2d
+}
+prereq r/4.3.0-n6pth5g
+prereq r-biocgenerics/0.46.0-msgdmac
+prereq r-iranges/2.34.0-ymbnnoq
+prereq r-s4vectors/0.38.0-2nj6k5f
+prereq r-zlibbioc/1.46.0-f5n6y2d
+conflict r-xvector
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-xvector-0.40.0-xyhwfeykho7ibjsg34qcwe6ydxuzeibq/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-xvector-0.40.0-xyhwfeykho7ibjsg34qcwe6ydxuzeibq/rlib/R/library}
+setenv R_XVECTOR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-xvector-0.40.0-xyhwfeykho7ibjsg34qcwe6ydxuzeibq}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,49 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:09.420855
+##
+## perl-html-parser@3.72%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/4kare2i
+##
+
+
+module-whatis {HTML parser class}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-html-parser}
+    puts stderr {Version: 3.72}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {HTML parser class}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-okr4ubb
+    module load perl-html-tagset/3.20-fnhmxhc
+} else {
+    depends-on perl/5.38.0-okr4ubb
+    depends-on perl-html-tagset/3.20-fnhmxhc
+}
+prereq perl/5.38.0-okr4ubb
+prereq perl-html-tagset/3.20-fnhmxhc
+conflict perl-html-parser
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-html-parser-3.72-4kare2ib5bucxon32wmvv2z2meyxfioh/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-html-parser-3.72-4kare2ib5bucxon32wmvv2z2meyxfioh/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-html-parser-3.72-4kare2ib5bucxon32wmvv2z2meyxfioh/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-html-parser-3.72-4kare2ib5bucxon32wmvv2z2meyxfioh/lib/perl5}
+setenv PERL_HTML_PARSER_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-html-parser-3.72-4kare2ib5bucxon32wmvv2z2meyxfioh}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

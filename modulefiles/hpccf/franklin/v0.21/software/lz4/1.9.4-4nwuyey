@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:00.793408
+##
+## lz4@1.9.4%gcc@11.4.0+pic build_system=makefile libs=shared,static arch=linux-ubuntu22.04-x86_64_v3/4nwuyey
+##
+
+
+module-whatis {LZ4 is lossless compression algorithm, providing compression speed at 400 MB/s per core, scalable with multi-cores CPU. It also features an extremely fast decoder, with speed in multiple GB/s per core, typically reaching RAM speed limits on multi-core systems.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : lz4}
+    puts stderr {Version: 1.9.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {LZ4 is lossless compression algorithm, providing compression speed at}
+    puts stderr {400 MB/s per core, scalable with multi-cores CPU. It also features an}
+    puts stderr {extremely fast decoder, with speed in multiple GB/s per core, typically}
+    puts stderr {reaching RAM speed limits on multi-core systems.}
+}
+
+conflict lz4
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lz4-1.9.4-4nwuyeyqfhu3firmfnar3yc6onsy2brx/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lz4-1.9.4-4nwuyeyqfhu3firmfnar3yc6onsy2brx/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lz4-1.9.4-4nwuyeyqfhu3firmfnar3yc6onsy2brx/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lz4-1.9.4-4nwuyeyqfhu3firmfnar3yc6onsy2brx/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lz4-1.9.4-4nwuyeyqfhu3firmfnar3yc6onsy2brx/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lz4-1.9.4-4nwuyeyqfhu3firmfnar3yc6onsy2brx/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lz4-1.9.4-4nwuyeyqfhu3firmfnar3yc6onsy2brx/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lz4-1.9.4-4nwuyeyqfhu3firmfnar3yc6onsy2brx/.}
+setenv LZ4_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lz4-1.9.4-4nwuyeyqfhu3firmfnar3yc6onsy2brx}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

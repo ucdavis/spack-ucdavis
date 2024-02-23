@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:26.583291
+##
+## r-formatr@1.14%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/be62bhc
+##
+
+
+module-whatis {Format R Code Automatically.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-formatr}
+    puts stderr {Version: 1.14}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Format R Code Automatically. Provides a function tidy_source() to format}
+    puts stderr {R source code. Spaces and indent will be added to the code}
+    puts stderr {automatically, and comments will be preserved under certain conditions,}
+    puts stderr {so that R code will be more human-readable and tidy. There is also a}
+    puts stderr {Shiny app as a user interface in this package.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+} else {
+    depends-on r/4.3.0-n6pth5g
+}
+prereq r/4.3.0-n6pth5g
+conflict r-formatr
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-formatr-1.14-be62bhcqknphrg3eg6bbmpd5bsrug7x2/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-formatr-1.14-be62bhcqknphrg3eg6bbmpd5bsrug7x2/rlib/R/library}
+setenv R_FORMATR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-formatr-1.14-be62bhcqknphrg3eg6bbmpd5bsrug7x2}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

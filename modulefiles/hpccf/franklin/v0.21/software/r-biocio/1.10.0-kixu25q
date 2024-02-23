@@ -1,0 +1,61 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:07.240609
+##
+## r-biocio@1.10.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/kixu25q
+##
+
+
+module-whatis {Standard Input and Output for Bioconductor Packages.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-biocio}
+    puts stderr {Version: 1.10.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Standard Input and Output for Bioconductor Packages. Implements}
+    puts stderr {`import()` and `export()` standard generics for importing and exporting}
+    puts stderr {biological data formats. `import()` supports whole-file as well as}
+    puts stderr {chunk-wise iterative import. The `import()` interface optionally}
+    puts stderr {provides a standard mechanism for 'lazy' access via `filter()` (on row}
+    puts stderr {or element-like components of the file resource), `select()` (on column-}
+    puts stderr {like components of the file resource) and `collect()`. The `import()`}
+    puts stderr {interface optionally provides transparent access to remote (e.g. via}
+    puts stderr {https) as well as local access. Developers can register a file}
+    puts stderr {extension, e.g., `.loom` for dispatch from character-based URIs to}
+    puts stderr {specific `import()` / `export()` methods based on classes representing}
+    puts stderr {file types, e.g., `LoomFile()`.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-biocgenerics/0.46.0-rw7nuva
+    module load r-s4vectors/0.38.0-ayuftw7
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-biocgenerics/0.46.0-rw7nuva
+    depends-on r-s4vectors/0.38.0-ayuftw7
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-biocgenerics/0.46.0-rw7nuva
+prereq r-s4vectors/0.38.0-ayuftw7
+conflict r-biocio
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-biocio-1.10.0-kixu25q6njy4oneurwhwns45udiiuguc/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-biocio-1.10.0-kixu25q6njy4oneurwhwns45udiiuguc/rlib/R/library}
+setenv R_BIOCIO_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-biocio-1.10.0-kixu25q6njy4oneurwhwns45udiiuguc}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

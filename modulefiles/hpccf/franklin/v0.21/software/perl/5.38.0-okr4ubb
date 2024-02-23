@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:06.124388
+##
+## perl@5.38.0%gcc@11.4.0+cpanm+opcode+open+shared+threads build_system=generic arch=linux-ubuntu22.04-x86_64_v3/okr4ubb
+##
+## Configure options: -des -Dprefix=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.38.0-okr4ubbodn5fuvkz3mdbaqdmp4elqvfx -Dlocincpth=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdbm-1.23-74hitcywex3oa52spn57eo7bvj3pkpr7/include -Dloclibpth=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdbm-1.23-74hitcywex3oa52spn57eo7bvj3pkpr7/lib -Accflags=-DAPPLLIB_EXP=\"/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.38.0-okr4ubbodn5fuvkz3mdbaqdmp4elqvfx/lib/perl5\" -Duseshrplib -Dusethreads
+##
+
+
+module-whatis {Perl 5 is a highly capable, feature-rich programming language with over 27 years of development.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl}
+    puts stderr {Version: 5.38.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Perl 5 is a highly capable, feature-rich programming language with over}
+    puts stderr {27 years of development.}
+}
+
+conflict perl
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.38.0-okr4ubbodn5fuvkz3mdbaqdmp4elqvfx/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.38.0-okr4ubbodn5fuvkz3mdbaqdmp4elqvfx/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.38.0-okr4ubbodn5fuvkz3mdbaqdmp4elqvfx/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.38.0-okr4ubbodn5fuvkz3mdbaqdmp4elqvfx/.}
+setenv PERL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.38.0-okr4ubbodn5fuvkz3mdbaqdmp4elqvfx}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

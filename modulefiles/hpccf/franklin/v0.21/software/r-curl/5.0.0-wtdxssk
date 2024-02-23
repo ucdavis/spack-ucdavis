@@ -1,0 +1,53 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:17.029239
+##
+## r-curl@5.0.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/wtdxssk
+##
+
+
+module-whatis {A Modern and Flexible Web Client for R.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-curl}
+    puts stderr {Version: 5.0.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A Modern and Flexible Web Client for R. The curl() and curl_download()}
+    puts stderr {functions provide highly configurable drop-in replacements for base}
+    puts stderr {url() and download.file() with better performance, support for}
+    puts stderr {encryption (https, ftps), gzip compression, authentication, and other}
+    puts stderr {libcurl goodies. The core of the package implements a framework for}
+    puts stderr {performing fully customized requests where data can be processed either}
+    puts stderr {in memory, on disk, or streaming via the callback or connection}
+    puts stderr {interfaces. Some knowledge of libcurl is recommended; for a more-user-}
+    puts stderr {friendly web client see the 'httr' package which builds on this package}
+    puts stderr {with http specific tools and logic.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+}
+prereq r/4.3.0-bzxz5nl
+conflict r-curl
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-curl-5.0.0-wtdxssk6pljtcvllunc3ffbi7mzmquz5/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-curl-5.0.0-wtdxssk6pljtcvllunc3ffbi7mzmquz5/rlib/R/library}
+setenv R_CURL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-curl-5.0.0-wtdxssk6pljtcvllunc3ffbi7mzmquz5}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

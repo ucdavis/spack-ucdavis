@@ -1,0 +1,57 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:03.689818
+##
+## r-rcurl@1.98-1.12%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/jes35pb
+##
+
+
+module-whatis {General Network (HTTP/FTP/...) Client Interface for R.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-rcurl}
+    puts stderr {Version: 1.98-1.12}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {General Network (HTTP/FTP/...) Client Interface for R. A wrapper for}
+    puts stderr {'libcurl' <http://curl.haxx.se/libcurl/> Provides functions to allow one}
+    puts stderr {to compose general HTTP requests and provides convenient functions to}
+    puts stderr {fetch URIs, get & post forms, etc. and process the results returned by}
+    puts stderr {the Web server. This provides a great deal of control over the}
+    puts stderr {HTTP/FTP/... connection and the form of the request while providing a}
+    puts stderr {higher-level interface than is available just using R socket}
+    puts stderr {connections. Additionally, the underlying implementation is robust and}
+    puts stderr {extensive, supporting FTP/FTPS/TFTP (uploads and downloads), SSL/HTTPS,}
+    puts stderr {telnet, dict, ldap, and also supports cookies, redirects,}
+    puts stderr {authentication, etc.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-n6pth5g
+    module load r-bitops/1.0-7-rwrbow7
+} else {
+    depends-on r/4.3.0-n6pth5g
+    depends-on r-bitops/1.0-7-rwrbow7
+}
+prereq r/4.3.0-n6pth5g
+prereq r-bitops/1.0-7-rwrbow7
+conflict r-rcurl
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rcurl-1.98-1.12-jes35pbjko7jbpojp3rogvyuhevhv2iu/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-n6pth5gvii6fo5fpg6qsxer65h43xlq2/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rcurl-1.98-1.12-jes35pbjko7jbpojp3rogvyuhevhv2iu/rlib/R/library}
+setenv R_RCURL_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-rcurl-1.98-1.12-jes35pbjko7jbpojp3rogvyuhevhv2iu}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:51.542971
+##
+## r-magrittr@2.0.3%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/rabxttn
+##
+
+
+module-whatis {A Forward-Pipe Operator for R.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-magrittr}
+    puts stderr {Version: 2.0.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A Forward-Pipe Operator for R. Provides a mechanism for chaining}
+    puts stderr {commands with a new forward-pipe operator, %>%. This operator will}
+    puts stderr {forward a value, or the result of an expression, into the next function}
+    puts stderr {call/expression. There is flexible support for the type of right-hand}
+    puts stderr {side expressions. For more information, see package vignette.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+} else {
+    depends-on r/4.3.0-bzxz5nl
+}
+prereq r/4.3.0-bzxz5nl
+conflict r-magrittr
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-magrittr-2.0.3-rabxttnc6q67xya775ruv3vudo55emii/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-magrittr-2.0.3-rabxttnc6q67xya775ruv3vudo55emii/rlib/R/library}
+setenv R_MAGRITTR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-magrittr-2.0.3-rabxttnc6q67xya775ruv3vudo55emii}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

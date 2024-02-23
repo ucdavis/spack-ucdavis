@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:56.186702
+##
+## py-tenacity@8.2.2%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/32bbj2o
+##
+
+
+module-whatis {Retrying library for Python}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-tenacity}
+    puts stderr {Version: 8.2.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Retrying library for Python}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on python/3.11.6-rsiojxh
+}
+prereq python/3.11.6-rsiojxh
+conflict py-tenacity
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-tenacity-8.2.2-32bbj2oqqfa5mndz322f5fq7gaada5hx/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-tenacity-8.2.2-32bbj2oqqfa5mndz322f5fq7gaada5hx/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-tenacity-8.2.2-32bbj2oqqfa5mndz322f5fq7gaada5hx/lib/python3.11/site-packages}
+setenv PY_TENACITY_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-tenacity-8.2.2-32bbj2oqqfa5mndz322f5fq7gaada5hx}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

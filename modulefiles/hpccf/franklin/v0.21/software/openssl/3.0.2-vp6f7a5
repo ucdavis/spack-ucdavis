@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:05.101756
+##
+## openssl@3.0.2%gcc@11.4.0~docs+shared build_system=generic certs=mozilla arch=linux-ubuntu22.04-x86_64_v3/vp6f7a5
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis {OpenSSL is an open source project that provides a robust, commercial-grade, and full-featured toolkit for the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols. It is also a general-purpose cryptography library.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : openssl}
+    puts stderr {Version: 3.0.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {OpenSSL is an open source project that provides a robust, commercial-}
+    puts stderr {grade, and full-featured toolkit for the Transport Layer Security (TLS)}
+    puts stderr {and Secure Sockets Layer (SSL) protocols. It is also a general-purpose}
+    puts stderr {cryptography library.}
+}
+
+conflict openssl
+
+prepend-path MANPATH {/usr/share/man}
+prepend-path ACLOCAL_PATH {/usr/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/usr/lib/pkgconfig}
+prepend-path PKG_CONFIG_PATH {/usr/share/pkgconfig}
+setenv OPENSSL_ROOT {/usr}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

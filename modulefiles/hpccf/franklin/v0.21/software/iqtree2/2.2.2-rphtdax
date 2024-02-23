@@ -1,0 +1,37 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:55.625340
+##
+## iqtree2@2.2.2%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/rphtdax
+##
+
+
+module-whatis {Efficient and versatile phylogenomic software by maximum likelihood}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : iqtree2}
+    puts stderr {Version: 2.2.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Efficient and versatile phylogenomic software by maximum likelihood}
+}
+
+conflict iqtree2
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/iqtree2-2.2.2-rphtdax4w6kahcdua7qlg5im2d3ccqjd/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/iqtree2-2.2.2-rphtdax4w6kahcdua7qlg5im2d3ccqjd/.}
+setenv IQTREE2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/iqtree2-2.2.2-rphtdax4w6kahcdua7qlg5im2d3ccqjd}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

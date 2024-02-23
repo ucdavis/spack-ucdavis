@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:08.172534
+##
+## perl-exporter-tiny@1.006002%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/5c4wtrr
+##
+
+
+module-whatis {An exporter with the features of Sub::Exporter but only core dependencies}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-exporter-tiny}
+    puts stderr {Version: 1.006002}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {An exporter with the features of Sub::Exporter but only core}
+    puts stderr {dependencies}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.38.0-lfl2a73
+} else {
+    depends-on perl/5.38.0-lfl2a73
+}
+prereq perl/5.38.0-lfl2a73
+conflict perl-exporter-tiny
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-exporter-tiny-1.006002-5c4wtrrgtfejj5i4fk3wxwfvqzpvwxss/lib}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-exporter-tiny-1.006002-5c4wtrrgtfejj5i4fk3wxwfvqzpvwxss/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-exporter-tiny-1.006002-5c4wtrrgtfejj5i4fk3wxwfvqzpvwxss/.}
+prepend-path PERL5LIB {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-exporter-tiny-1.006002-5c4wtrrgtfejj5i4fk3wxwfvqzpvwxss/lib/perl5}
+setenv PERL_EXPORTER_TINY_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-exporter-tiny-1.006002-5c4wtrrgtfejj5i4fk3wxwfvqzpvwxss}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:59.001263
+##
+## libxfixes@5.0.2%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/akxdxv2
+##
+
+
+module-whatis {This package contains header files and documentation for the XFIXES extension. Library and server implementations are separate.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libxfixes}
+    puts stderr {Version: 5.0.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This package contains header files and documentation for the XFIXES}
+    puts stderr {extension. Library and server implementations are separate.}
+}
+
+conflict libxfixes
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxfixes-5.0.2-akxdxv27iegkn2275tkow5vl4sqoe3ro/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxfixes-5.0.2-akxdxv27iegkn2275tkow5vl4sqoe3ro/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxfixes-5.0.2-akxdxv27iegkn2275tkow5vl4sqoe3ro/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxfixes-5.0.2-akxdxv27iegkn2275tkow5vl4sqoe3ro/include}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxfixes-5.0.2-akxdxv27iegkn2275tkow5vl4sqoe3ro/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxfixes-5.0.2-akxdxv27iegkn2275tkow5vl4sqoe3ro/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxfixes-5.0.2-akxdxv27iegkn2275tkow5vl4sqoe3ro/.}
+prepend-path XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zkd3h7btls3gx3c3akcrwrwqd46l43i6/share/X11/locale}
+setenv LIBXFIXES_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxfixes-5.0.2-akxdxv27iegkn2275tkow5vl4sqoe3ro}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

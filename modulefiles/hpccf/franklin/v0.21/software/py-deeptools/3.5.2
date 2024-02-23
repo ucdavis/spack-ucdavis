@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:23.779487
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:24.503524
 ##
 ## py-deeptools@3.5.2%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/j5u7ey6
 ##
@@ -16,6 +16,39 @@ proc ModulesHelp { } {
     puts stderr {that are now routinely generated from DNA sequencing centers.}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-deeptoolsintervals/0.1.9-xmd6xbp
+    module load py-matplotlib/3.8.0-k4cisvb
+    module load py-numpy/1.25.2-sea6nxl
+    module load py-numpydoc/1.5.0-pfuur3b
+    module load py-plotly/5.14.1-daqh5k2
+    module load py-py2bit/0.2.1-yrsgpvh
+    module load py-pybigwig/0.3.12-5wbp37x
+    module load py-pysam/0.21.0-ettyx3i
+    module load py-scipy/1.11.2-pln6ofd
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-deeptoolsintervals/0.1.9-xmd6xbp
+    depends-on py-matplotlib/3.8.0-k4cisvb
+    depends-on py-numpy/1.25.2-sea6nxl
+    depends-on py-numpydoc/1.5.0-pfuur3b
+    depends-on py-plotly/5.14.1-daqh5k2
+    depends-on py-py2bit/0.2.1-yrsgpvh
+    depends-on py-pybigwig/0.3.12-5wbp37x
+    depends-on py-pysam/0.21.0-ettyx3i
+    depends-on py-scipy/1.11.2-pln6ofd
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-deeptoolsintervals/0.1.9-xmd6xbp
+prereq py-matplotlib/3.8.0-k4cisvb
+prereq py-numpy/1.25.2-sea6nxl
+prereq py-numpydoc/1.5.0-pfuur3b
+prereq py-plotly/5.14.1-daqh5k2
+prereq py-py2bit/0.2.1-yrsgpvh
+prereq py-pybigwig/0.3.12-5wbp37x
+prereq py-pysam/0.21.0-ettyx3i
+prereq py-scipy/1.11.2-pln6ofd
+prereq python/3.11.6-rsiojxh
 conflict py-deeptools
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-deeptools-3.5.2-j5u7ey6lwidw46uazk5nllcn5shhg5kb/lib}

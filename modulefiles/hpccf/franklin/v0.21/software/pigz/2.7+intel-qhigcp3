@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:14.855317
+##
+## pigz@2.7%oneapi@2023.2.0 build_system=makefile arch=linux-ubuntu22.04-skylake_avx512/qhigcp3
+##
+
+
+module-whatis {A parallel implementation of gzip for modern multi-processor, multi-core machines.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : pigz}
+    puts stderr {Version: 2.7}
+    puts stderr {Target : skylake_avx512}
+    puts stderr {}
+    puts stderr {A parallel implementation of gzip for modern multi-processor, multi-core}
+    puts stderr {machines.}
+}
+
+conflict pigz
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/pigz-2.7-qhigcp3avk2kg6q5a2dlalqirn7f5qcf/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/pigz-2.7-qhigcp3avk2kg6q5a2dlalqirn7f5qcf/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/pigz-2.7-qhigcp3avk2kg6q5a2dlalqirn7f5qcf/.}
+setenv PIGZ_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/pigz-2.7-qhigcp3avk2kg6q5a2dlalqirn7f5qcf}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

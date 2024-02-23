@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:36.111162
+##
+## texinfo@7.0.3%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/osk5rrh
+##
+
+
+module-whatis {Texinfo is the official documentation format of the GNU project.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : texinfo}
+    puts stderr {Version: 7.0.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Texinfo is the official documentation format of the GNU project. It was}
+    puts stderr {invented by Richard Stallman and Bob Chassell many years ago, loosely}
+    puts stderr {based on Brian Reid's Scribe and other formatting languages of the time.}
+    puts stderr {It is used by many non-GNU projects as well.}
+}
+
+conflict texinfo
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/texinfo-7.0.3-osk5rrhu7ok5jl5txbkw23ow6it7bwbl/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/texinfo-7.0.3-osk5rrhu7ok5jl5txbkw23ow6it7bwbl/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/texinfo-7.0.3-osk5rrhu7ok5jl5txbkw23ow6it7bwbl/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/texinfo-7.0.3-osk5rrhu7ok5jl5txbkw23ow6it7bwbl/.}
+setenv TEXINFO_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/texinfo-7.0.3-osk5rrhu7ok5jl5txbkw23ow6it7bwbl}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

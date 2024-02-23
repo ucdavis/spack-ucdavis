@@ -1,0 +1,86 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:11.398523
+##
+## r-broom@1.0.4%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/22gko4z
+##
+
+
+module-whatis {Convert Statistical Objects into Tidy Tibbles.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-broom}
+    puts stderr {Version: 1.0.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Convert Statistical Objects into Tidy Tibbles. Summarizes key}
+    puts stderr {information about statistical objects in tidy tibbles. This makes it}
+    puts stderr {easy to report results, create plots and consistently work with large}
+    puts stderr {numbers of models at once. Broom provides three verbs that each provide}
+    puts stderr {different types of information about a model. tidy() summarizes}
+    puts stderr {information about model components such as coefficients of a regression.}
+    puts stderr {glance() reports information about an entire model, such as goodness of}
+    puts stderr {fit measures like AIC and BIC. augment() adds information about}
+    puts stderr {individual observations to a dataset, such as fitted values or influence}
+    puts stderr {measures.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-backports/1.4.1-id4medu
+    module load r-dplyr/1.1.2-tk4eviy
+    module load r-ellipsis/0.3.2-jv7cpeu
+    module load r-generics/0.1.3-tydqbe2
+    module load r-glue/1.6.2-7jsjoec
+    module load r-lifecycle/1.0.3-vlvj6d7
+    module load r-purrr/1.0.1-nzzcjhd
+    module load r-rlang/1.1.0-6ek36pb
+    module load r-stringr/1.5.0-7odt3kf
+    module load r-tibble/3.2.1-efl2ifo
+    module load r-tidyr/1.3.0-vh777la
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-backports/1.4.1-id4medu
+    depends-on r-dplyr/1.1.2-tk4eviy
+    depends-on r-ellipsis/0.3.2-jv7cpeu
+    depends-on r-generics/0.1.3-tydqbe2
+    depends-on r-glue/1.6.2-7jsjoec
+    depends-on r-lifecycle/1.0.3-vlvj6d7
+    depends-on r-purrr/1.0.1-nzzcjhd
+    depends-on r-rlang/1.1.0-6ek36pb
+    depends-on r-stringr/1.5.0-7odt3kf
+    depends-on r-tibble/3.2.1-efl2ifo
+    depends-on r-tidyr/1.3.0-vh777la
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-backports/1.4.1-id4medu
+prereq r-dplyr/1.1.2-tk4eviy
+prereq r-ellipsis/0.3.2-jv7cpeu
+prereq r-generics/0.1.3-tydqbe2
+prereq r-glue/1.6.2-7jsjoec
+prereq r-lifecycle/1.0.3-vlvj6d7
+prereq r-purrr/1.0.1-nzzcjhd
+prereq r-rlang/1.1.0-6ek36pb
+prereq r-stringr/1.5.0-7odt3kf
+prereq r-tibble/3.2.1-efl2ifo
+prereq r-tidyr/1.3.0-vh777la
+conflict r-broom
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-broom-1.0.4-22gko4zgpqx7y6j636e5hcmqrxl76c6l/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-broom-1.0.4-22gko4zgpqx7y6j636e5hcmqrxl76c6l/rlib/R/library}
+setenv R_BROOM_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-broom-1.0.4-22gko4zgpqx7y6j636e5hcmqrxl76c6l}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

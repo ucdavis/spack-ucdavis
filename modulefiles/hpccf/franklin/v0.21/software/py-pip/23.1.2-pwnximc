@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:44.403214
+##
+## py-pip@23.1.2%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/pwnximc
+##
+
+
+module-whatis {The PyPA recommended tool for installing Python packages.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-pip}
+    puts stderr {Version: 23.1.2}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The PyPA recommended tool for installing Python packages.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.9.18-rt3uhd4
+} else {
+    depends-on python/3.9.18-rt3uhd4
+}
+prereq python/3.9.18-rt3uhd4
+conflict py-pip
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pip-23.1.2-pwnximcuwz5zupn67sonlsibj27xwt5z/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pip-23.1.2-pwnximcuwz5zupn67sonlsibj27xwt5z/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pip-23.1.2-pwnximcuwz5zupn67sonlsibj27xwt5z/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pip-23.1.2-pwnximcuwz5zupn67sonlsibj27xwt5z/lib/python3.9/site-packages}
+setenv PY_PIP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-pip-23.1.2-pwnximcuwz5zupn67sonlsibj27xwt5z}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

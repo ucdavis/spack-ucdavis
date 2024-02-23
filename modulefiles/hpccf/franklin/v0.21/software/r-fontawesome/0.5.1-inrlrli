@@ -1,0 +1,54 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:25:25.908565
+##
+## r-fontawesome@0.5.1%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/inrlrli
+##
+
+
+module-whatis {Easily Work with 'Font Awesome' Icons.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : r-fontawesome}
+    puts stderr {Version: 0.5.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Easily Work with 'Font Awesome' Icons. Easily and flexibly insert 'Font}
+    puts stderr {Awesome' icons into 'R Markdown' documents and 'Shiny' apps. These icons}
+    puts stderr {can be inserted into HTML content through inline 'SVG' tags or 'i' tags.}
+    puts stderr {There is also a utility function for exporting 'Font Awesome' icons as}
+    puts stderr {'PNG' images for those situations where raster graphics are needed.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load r/4.3.0-bzxz5nl
+    module load r-htmltools/0.5.5-cvebjaj
+    module load r-rlang/1.1.0-6ek36pb
+} else {
+    depends-on r/4.3.0-bzxz5nl
+    depends-on r-htmltools/0.5.5-cvebjaj
+    depends-on r-rlang/1.1.0-6ek36pb
+}
+prereq r/4.3.0-bzxz5nl
+prereq r-htmltools/0.5.5-cvebjaj
+prereq r-rlang/1.1.0-6ek36pb
+conflict r-fontawesome
+
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-fontawesome-0.5.1-inrlrlinpxbqr57l3matpulk6ngwl36e/.}
+setenv R_HOME {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-4.3.0-bzxz5nlvbtblgnjhv43q7gpznyc7rsqe/rlib/R}
+prepend-path R_LIBS {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-fontawesome-0.5.1-inrlrlinpxbqr57l3matpulk6ngwl36e/rlib/R/library}
+setenv R_FONTAWESOME_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/r-fontawesome-0.5.1-inrlrlinpxbqr57l3matpulk6ngwl36e}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

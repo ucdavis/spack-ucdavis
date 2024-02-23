@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:22.258035
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:15.001674
 ##
 ## plumed@2.8.2%gcc@11.4.0+gsl+mpi+shared arrayfire=none build_system=autotools optional_modules=all arch=linux-ubuntu22.04-x86_64_v3/ckuff42
 ##
@@ -24,12 +24,6 @@ proc ModulesHelp { } {
     puts stderr {and C/C++ codes.}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load gsl/2.7.1
-} else {
-    depends-on gsl/2.7.1
-}
-prereq gsl/2.7.1
 conflict plumed
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/plumed-2.8.2-ckuff4235jmqkzzwjtp6qqo5pgjaqhu4/lib}

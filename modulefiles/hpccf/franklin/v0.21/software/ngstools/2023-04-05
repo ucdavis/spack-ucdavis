@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:21.429453
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:04.670131
 ##
 ## ngstools@2023-04-05%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/2zjs4o2
 ##
@@ -20,18 +20,6 @@ proc ModulesHelp { } {
     puts stderr {et al. 2014).}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load bzip2/1.0.8
-    module load gsl/2.7.1
-    module load htslib/1.17
-} else {
-    depends-on bzip2/1.0.8
-    depends-on gsl/2.7.1
-    depends-on htslib/1.17
-}
-prereq bzip2/1.0.8
-prereq gsl/2.7.1
-prereq htslib/1.17
 conflict ngstools
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ngstools-2023-04-05-2zjs4o2jcrp5zed7rkk5q6szvpu7sdl7/bin}

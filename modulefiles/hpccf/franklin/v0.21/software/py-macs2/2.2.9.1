@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2024-02-09 14:44:14.740031
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:34.936277
 ##
 ## py-macs2@2.2.9.1%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/fl424x2
 ##
@@ -15,6 +15,15 @@ proc ModulesHelp { } {
     puts stderr {MACS2 Model-based Analysis of ChIP-Seq}
 }
 
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-numpy/1.25.2-jo74ex4
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on py-numpy/1.25.2-jo74ex4
+    depends-on python/3.11.6-rsiojxh
+}
+prereq py-numpy/1.25.2-jo74ex4
+prereq python/3.11.6-rsiojxh
 conflict py-macs2
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-macs2-2.2.9.1-fl424x2wb5z6cl2afdz65drvbfi6zz3o/lib}

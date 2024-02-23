@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:42.276201
+##
+## autoconf@2.69%gcc@11.4.0 build_system=autotools patches=35c4492,7793209,a49dd5b arch=linux-ubuntu22.04-x86_64_v3/w357dt5
+##
+
+
+module-whatis {Autoconf -- system configuration part of autotools}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : autoconf}
+    puts stderr {Version: 2.69}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Autoconf -- system configuration part of autotools}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load m4/1.4.19-44wclvy
+    module load perl/5.38.0-okr4ubb
+} else {
+    depends-on m4/1.4.19-44wclvy
+    depends-on perl/5.38.0-okr4ubb
+}
+prereq m4/1.4.19-44wclvy
+prereq perl/5.38.0-okr4ubb
+conflict autoconf
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.69-w357dt5dlhxvpgmdhp6obzh3pvba3fqz/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.69-w357dt5dlhxvpgmdhp6obzh3pvba3fqz/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.69-w357dt5dlhxvpgmdhp6obzh3pvba3fqz/.}
+setenv AUTOCONF_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.69-w357dt5dlhxvpgmdhp6obzh3pvba3fqz}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

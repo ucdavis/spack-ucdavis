@@ -1,0 +1,43 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:03.716045
+##
+## mpfr@3.1.6%oneapi@2023.2.0 build_system=autotools libs=shared,static patches=7a6dd71 arch=linux-ubuntu22.04-skylake_avx512/xhozidq
+##
+## Configure options: --with-gmp=/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/gmp-6.2.1-rivvtjdayqaxstmsudblbgi5liqvmoiq --enable-shared --enable-static --with-pic
+##
+
+
+module-whatis {The MPFR library is a C library for multiple-precision floating-point computations with correct rounding.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : mpfr}
+    puts stderr {Version: 3.1.6}
+    puts stderr {Target : skylake_avx512}
+    puts stderr {}
+    puts stderr {The MPFR library is a C library for multiple-precision floating-point}
+    puts stderr {computations with correct rounding.}
+}
+
+conflict mpfr
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/mpfr-3.1.6-xhozidqy7yltuzavhlecqpzhayndd25i/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/mpfr-3.1.6-xhozidqy7yltuzavhlecqpzhayndd25i/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/mpfr-3.1.6-xhozidqy7yltuzavhlecqpzhayndd25i/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/mpfr-3.1.6-xhozidqy7yltuzavhlecqpzhayndd25i/include}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/mpfr-3.1.6-xhozidqy7yltuzavhlecqpzhayndd25i/.}
+setenv MPFR_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/oneapi-2023.2.0/mpfr-3.1.6-xhozidqy7yltuzavhlecqpzhayndd25i}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

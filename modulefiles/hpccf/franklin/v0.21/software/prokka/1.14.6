@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:22.335011
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:15.171847
 ##
 ## prokka@1.14.6%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/gcu4ose
 ##
@@ -17,14 +17,32 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load blast-plus/2.14.1-p2i4kzy
     module load hmmer/3.4
+    module load perl/5.38.0-lfl2a73
+    module load perl-bio-searchio-hmmer/1.7.3-v5kbnda
+    module load perl-bioperl/1.7.6-xvvpo2g
+    module load perl-xml-simple/2.25-untvqaw
     module load prodigal/2.6.3
+    module load tbl2asn/2022-04-26-5tjh2kh
 } else {
+    depends-on blast-plus/2.14.1-p2i4kzy
     depends-on hmmer/3.4
+    depends-on perl/5.38.0-lfl2a73
+    depends-on perl-bio-searchio-hmmer/1.7.3-v5kbnda
+    depends-on perl-bioperl/1.7.6-xvvpo2g
+    depends-on perl-xml-simple/2.25-untvqaw
     depends-on prodigal/2.6.3
+    depends-on tbl2asn/2022-04-26-5tjh2kh
 }
+prereq blast-plus/2.14.1-p2i4kzy
 prereq hmmer/3.4
+prereq perl/5.38.0-lfl2a73
+prereq perl-bio-searchio-hmmer/1.7.3-v5kbnda
+prereq perl-bioperl/1.7.6-xvvpo2g
+prereq perl-xml-simple/2.25-untvqaw
 prereq prodigal/2.6.3
+prereq tbl2asn/2022-04-26-5tjh2kh
 conflict prokka
 
 prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/prokka-1.14.6-gcu4oset5tujg3htcgeb6bsg6ino3432/bin}

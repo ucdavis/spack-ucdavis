@@ -1,0 +1,41 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:46.551541
+##
+## cpio@2.14%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/zqhtlmu
+##
+
+
+module-whatis {GNU cpio copies files into or out of a cpio or tar archive and the file system. The archive can be another file on the disk, a magnetic tape, or a pipe. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : cpio}
+    puts stderr {Version: 2.14}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GNU cpio copies files into or out of a cpio or tar archive and the file}
+    puts stderr {system. The archive can be another file on the disk, a magnetic tape, or}
+    puts stderr {a pipe.}
+}
+
+conflict cpio
+
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cpio-2.14-zqhtlmu7s3shkg6wi2anh6adxz4i7ojh/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cpio-2.14-zqhtlmu7s3shkg6wi2anh6adxz4i7ojh/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cpio-2.14-zqhtlmu7s3shkg6wi2anh6adxz4i7ojh/.}
+setenv CPIO_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cpio-2.14-zqhtlmu7s3shkg6wi2anh6adxz4i7ojh}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

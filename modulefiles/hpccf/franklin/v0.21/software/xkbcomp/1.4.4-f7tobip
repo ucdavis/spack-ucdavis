@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:37.996902
+##
+## xkbcomp@1.4.4%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/f7tobip
+##
+
+
+module-whatis {The X Keyboard (XKB) Extension essentially replaces the core protocol definition of a keyboard. The extension makes it possible to specify clearly and explicitly most aspects of keyboard behaviour on a per-key basis, and to track more closely the logical and physical state of a keyboard. It also includes a number of keyboard controls designed to make keyboards more accessible to people with physical impairments.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : xkbcomp}
+    puts stderr {Version: 1.4.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The X Keyboard (XKB) Extension essentially replaces the core protocol}
+    puts stderr {definition of a keyboard. The extension makes it possible to specify}
+    puts stderr {clearly and explicitly most aspects of keyboard behaviour on a per-key}
+    puts stderr {basis, and to track more closely the logical and physical state of a}
+    puts stderr {keyboard. It also includes a number of keyboard controls designed to}
+    puts stderr {make keyboards more accessible to people with physical impairments.}
+}
+
+conflict xkbcomp
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xkbcomp-1.4.4-f7tobipgs3yszkjmpvkjpcil2b7nf57v/lib}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xkbcomp-1.4.4-f7tobipgs3yszkjmpvkjpcil2b7nf57v/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xkbcomp-1.4.4-f7tobipgs3yszkjmpvkjpcil2b7nf57v/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xkbcomp-1.4.4-f7tobipgs3yszkjmpvkjpcil2b7nf57v/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xkbcomp-1.4.4-f7tobipgs3yszkjmpvkjpcil2b7nf57v/.}
+prepend-path XLOCALEDIR {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.4-zaqf7dicjkl3i2sg2ciot74vsehx7k47/share/X11/locale}
+setenv XKBCOMP_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xkbcomp-1.4.4-f7tobipgs3yszkjmpvkjpcil2b7nf57v}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

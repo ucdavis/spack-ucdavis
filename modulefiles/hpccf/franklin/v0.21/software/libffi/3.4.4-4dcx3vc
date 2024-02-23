@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:57.048447
+##
+## libffi@3.4.4%gcc@7.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/4dcx3vc
+##
+## Configure options: --without-gcc-arch
+##
+
+
+module-whatis {The libffi library provides a portable, high level programming interface to various calling conventions. This allows a programmer to call any function specified by a call interface description at run time.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libffi}
+    puts stderr {Version: 3.4.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The libffi library provides a portable, high level programming interface}
+    puts stderr {to various calling conventions. This allows a programmer to call any}
+    puts stderr {function specified by a call interface description at run time.}
+}
+
+conflict libffi
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libffi-3.4.4-4dcx3vcqvcokikdvdzax2ehnwmfoiblq/lib64}
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libffi-3.4.4-4dcx3vcqvcokikdvdzax2ehnwmfoiblq/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libffi-3.4.4-4dcx3vcqvcokikdvdzax2ehnwmfoiblq/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libffi-3.4.4-4dcx3vcqvcokikdvdzax2ehnwmfoiblq/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libffi-3.4.4-4dcx3vcqvcokikdvdzax2ehnwmfoiblq/include}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libffi-3.4.4-4dcx3vcqvcokikdvdzax2ehnwmfoiblq/share/man}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libffi-3.4.4-4dcx3vcqvcokikdvdzax2ehnwmfoiblq/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libffi-3.4.4-4dcx3vcqvcokikdvdzax2ehnwmfoiblq/.}
+setenv LIBFFI_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libffi-3.4.4-4dcx3vcqvcokikdvdzax2ehnwmfoiblq}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

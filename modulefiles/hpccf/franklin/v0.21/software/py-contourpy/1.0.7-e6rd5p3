@@ -1,0 +1,47 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:22.825951
+##
+## py-contourpy@1.0.7%gcc@11.4.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/e6rd5p3
+##
+
+
+module-whatis {Python library for calculating contours of 2D quadrilateral grids.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-contourpy}
+    puts stderr {Version: 1.0.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Python library for calculating contours of 2D quadrilateral grids.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-numpy/1.24.4-jhyio2h
+    module load python/3.11.6-ht65m6a
+} else {
+    depends-on py-numpy/1.24.4-jhyio2h
+    depends-on python/3.11.6-ht65m6a
+}
+prereq py-numpy/1.24.4-jhyio2h
+prereq python/3.11.6-ht65m6a
+conflict py-contourpy
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-contourpy-1.0.7-e6rd5p32wlc3g4tmznrg4j227wxu3rkl/lib}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-contourpy-1.0.7-e6rd5p32wlc3g4tmznrg4j227wxu3rkl/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-contourpy-1.0.7-e6rd5p32wlc3g4tmznrg4j227wxu3rkl/lib/python3.11/site-packages}
+setenv PY_CONTOURPY_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/py-contourpy-1.0.7-e6rd5p32wlc3g4tmznrg4j227wxu3rkl}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

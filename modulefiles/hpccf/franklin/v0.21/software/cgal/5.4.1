@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2023-11-21 14:50:14.470450
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:45.976961
 ##
 ## cgal@5.4.1%gcc@11.4.0~core~demos+eigen~header_only~imageio~ipo+shared build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/c3capt5
 ##
@@ -22,15 +22,6 @@ proc ModulesHelp { } {
     puts stderr {robotics.}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load eigen/3.4.0
-    module load mpfr/4.2.0
-} else {
-    depends-on eigen/3.4.0
-    depends-on mpfr/4.2.0
-}
-prereq eigen/3.4.0
-prereq mpfr/4.2.0
 conflict cgal
 
 prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cgal-5.4.1-c3capt52tvmkftfonagdn33y5nxbmdtf/lib}

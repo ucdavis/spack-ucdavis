@@ -1,0 +1,54 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:59.771913
+##
+## libxml2@2.10.3%gcc@11.4.0+ftp+python build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/tbdfxxh
+##
+
+
+module-whatis {Libxml2 is the XML C parser and toolkit developed for the Gnome project (but usable outside of the Gnome platform), it is free software available under the MIT License.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libxml2}
+    puts stderr {Version: 2.10.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Libxml2 is the XML C parser and toolkit developed for the Gnome project}
+    puts stderr {(but usable outside of the Gnome platform), it is free software}
+    puts stderr {available under the MIT License.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.6-rsiojxh
+} else {
+    depends-on python/3.11.6-rsiojxh
+}
+prereq python/3.11.6-rsiojxh
+conflict libxml2
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-tbdfxxhlxspasx7atzz2kl2dfoj6vjex/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-tbdfxxhlxspasx7atzz2kl2dfoj6vjex/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-tbdfxxhlxspasx7atzz2kl2dfoj6vjex/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-tbdfxxhlxspasx7atzz2kl2dfoj6vjex/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-tbdfxxhlxspasx7atzz2kl2dfoj6vjex/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-tbdfxxhlxspasx7atzz2kl2dfoj6vjex/share/man}
+prepend-path ACLOCAL_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-tbdfxxhlxspasx7atzz2kl2dfoj6vjex/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-tbdfxxhlxspasx7atzz2kl2dfoj6vjex/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-tbdfxxhlxspasx7atzz2kl2dfoj6vjex/.}
+prepend-path PYTHONPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-tbdfxxhlxspasx7atzz2kl2dfoj6vjex/lib/python3.11/site-packages}
+setenv LIBXML2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-tbdfxxhlxspasx7atzz2kl2dfoj6vjex}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+
