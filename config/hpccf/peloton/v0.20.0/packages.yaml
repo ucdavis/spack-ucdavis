@@ -68,6 +68,12 @@ packages:
     - spec: hwloc@2.9.3 target=x86_64_v2
       prefix: /share/apps/22.04/manual/hwloc/2.9.3
 
+  matlab:
+    buildable: false
+    externals:
+      - spec: matlab@R2023a
+        prefix: /share/apps/22.04/manual/matlab/R2023a
+
   pkg-config:
     externals:
     - spec: pkg-config@0.29.2
@@ -138,16 +144,8 @@ packages:
   slurm:
     buildable: false
     externals:
-    - spec: slurm@22-05-9 +pmix +mariadb +hwloc +restd
-      prefix: /share/apps/22.04/manual/slurm/22.05.9
-    - spec: slurm@22-05-9-p1 +pmix +mariadb +hwloc +restd
-      prefix: /share/apps/22.04/manual/slurm/22.05.9.p1
-    - spec: slurm@22-05-9-p2 +pmix +mariadb +hwloc +restd
-      prefix: /share/apps/22.04/manual/slurm/22.05.9.p2
-    - spec: slurm@23-02-5 +pmix +mariadb +hwloc +restd
-      prefix: /share/apps/22.04/manual/slurm/23.02.5
-    - spec: slurm@23-02-6 +pmix +mariadb +hwloc +restd
-      prefix: /share/apps/22.04/manual/slurm/23.02.6
+    - spec: slurm@23-02-7 +pmix +mariadb +hwloc +restd
+      prefix: /share/apps/22.04/manual/slurm/23.02.7
 
 
   subversion:

@@ -343,10 +343,6 @@
       "spec": "lcov@1.16"
     },
     {
-      "hash": "cinuvpml6waacspth3kezymibz7fad2s",
-      "spec": "matlab@R2018a"
-    },
-    {
       "hash": "rrd5gkol2vz77ebs45inat2qz33tvsee",
       "spec": "mark"
     },
@@ -1079,16 +1075,24 @@
       "spec": "vsearch"
     },
     {
-      "hash": "ppxjotnamkhhjsyocel44um2v3urskun",
-      "spec": "slurm@23-02-6"
-    },
-    {
       "hash": "parhxxuo3cpgfqdzaaqwows4wzgrrndg",
       "spec": "apptainer@1.1.9"
     },
     {
       "hash": "xr25ryf63te3hgey5gkyubyilemvgd3b",
       "spec": "yaml-cpp"
+    },
+    {
+      "hash": "2rtzax3orvdvexurn43uhfxbvik6y5or",
+      "spec": "matlab@R2023a"
+    },
+    {
+      "hash": "aa4w42v75uultpizfnwjnpsjo3xwudmi",
+      "spec": "slurm@23-02-7"
+    },
+    {
+      "hash": "odexfswjealfsw4g5mu43h5bc24bf2ww",
+      "spec": "fpart@1.5.1"
     }
   ],
   "concrete_specs": {
@@ -30112,33 +30116,6 @@
       },
       "package_hash": "5duz4fu5kjt5v2orczigdzrut7sqwrhmp4zxbowgsgkb7ab5phpa====",
       "hash": "wd2mmgsuvkoaeelzh4sw4kgylrs36ixg"
-    },
-    "cinuvpml6waacspth3kezymibz7fad2s": {
-      "name": "matlab",
-      "version": "R2018a",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "ucdavis.hpccf",
-      "parameters": {
-        "build_system": "generic",
-        "key": "<installation-key-here>",
-        "mode": "interactive",
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "package_hash": "g6tey3ab725k5uyll47mo43bpuacod5rxbdls5exkogf3pekraiq====",
-      "hash": "cinuvpml6waacspth3kezymibz7fad2s"
     },
     "rrd5gkol2vz77ebs45inat2qz33tvsee": {
       "name": "mark",
@@ -99291,44 +99268,6 @@
       ],
       "hash": "mw67rnmdblrostrhnczjgv3iee76rmcq"
     },
-    "ppxjotnamkhhjsyocel44um2v3urskun": {
-      "name": "slurm",
-      "version": "23-02-6",
-      "arch": {
-        "platform": "linux",
-        "platform_os": "ubuntu22.04",
-        "target": "x86_64_v2"
-      },
-      "compiler": {
-        "name": "gcc",
-        "version": "11.3.0"
-      },
-      "namespace": "ucdavis.hpccf",
-      "parameters": {
-        "build_system": "autotools",
-        "gtk": false,
-        "hdf5": false,
-        "hwloc": true,
-        "mariadb": true,
-        "pmix": true,
-        "readline": true,
-        "restd": true,
-        "sysconfdir": "PREFIX/etc",
-        "cflags": [],
-        "cppflags": [],
-        "cxxflags": [],
-        "fflags": [],
-        "ldflags": [],
-        "ldlibs": []
-      },
-      "external": {
-        "path": "/share/apps/22.04/manual/slurm/23.02.6",
-        "module": null,
-        "extra_attributes": {}
-      },
-      "package_hash": "u6juiyit2cdw7ec5ndixzlrh5ilfophuo55gncphec7wbt5a5wga====",
-      "hash": "ppxjotnamkhhjsyocel44um2v3urskun"
-    },
     "parhxxuo3cpgfqdzaaqwows4wzgrrndg": {
       "name": "apptainer",
       "version": "1.1.9",
@@ -100159,6 +100098,220 @@
         }
       ],
       "hash": "xr25ryf63te3hgey5gkyubyilemvgd3b"
+    },
+    "2rtzax3orvdvexurn43uhfxbvik6y5or": {
+      "name": "matlab",
+      "version": "R2023a",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "ucdavis.hpccf",
+      "parameters": {
+        "build_system": "generic",
+        "key": "<installation-key-here>",
+        "mode": "interactive",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/share/apps/22.04/manual/matlab/R2023a",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "36xtnrna2pdhgcgj2sfjkza4n4vngtgnjvkrgx2unp3x3q2eu5dq====",
+      "hash": "2rtzax3orvdvexurn43uhfxbvik6y5or"
+    },
+    "aa4w42v75uultpizfnwjnpsjo3xwudmi": {
+      "name": "slurm",
+      "version": "23-02-7",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "ucdavis.hpccf",
+      "parameters": {
+        "build_system": "autotools",
+        "gtk": false,
+        "hdf5": false,
+        "hwloc": true,
+        "mariadb": true,
+        "pmix": true,
+        "readline": true,
+        "restd": true,
+        "sysconfdir": "PREFIX/etc",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "external": {
+        "path": "/share/apps/22.04/manual/slurm/23.02.7",
+        "module": null,
+        "extra_attributes": {}
+      },
+      "package_hash": "u6juiyit2cdw7ec5ndixzlrh5ilfophuo55gncphec7wbt5a5wga====",
+      "hash": "aa4w42v75uultpizfnwjnpsjo3xwudmi"
+    },
+    "odexfswjealfsw4g5mu43h5bc24bf2ww": {
+      "name": "fpart",
+      "version": "1.5.1",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "xoo2omam2wn6vuulh656zefddewlkxvxuv3xukjvmhilahhlhsea====",
+      "dependencies": [
+        {
+          "name": "autoconf",
+          "hash": "icetmhexft72vus4wbmby3f5z4yd7ujt",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "automake",
+          "hash": "bmp22z22dw4qbz6efcayvdn4gyvtlugc",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "cpio",
+          "hash": "asrjqbbgsicp2zzlcuqmr2h2eldu4snj",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "libtool",
+          "hash": "bfz3kcwla5ndovam2tvq7fttzcx7y3rx",
+          "type": [
+            "build"
+          ]
+        },
+        {
+          "name": "rsync",
+          "hash": "gcsku2rsqgtsfqeyv4ud6rowdvjeknrn",
+          "type": [
+            "run"
+          ]
+        },
+        {
+          "name": "tar",
+          "hash": "ngzw5zri5ayrgysl645qa74a3zwuq7bz",
+          "type": [
+            "run"
+          ]
+        }
+      ],
+      "hash": "odexfswjealfsw4g5mu43h5bc24bf2ww"
+    },
+    "gcsku2rsqgtsfqeyv4ud6rowdvjeknrn": {
+      "name": "rsync",
+      "version": "3.2.7",
+      "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu22.04",
+        "target": "x86_64_v2"
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.3.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "build_system": "autotools",
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "package_hash": "dzh25rpsncathyzx4kijojqadnqqhjgzl32ypdowfwzphncbszwa====",
+      "dependencies": [
+        {
+          "name": "lz4",
+          "hash": "y7wzz4h3hqytwsb4mvkznapgcvljcwt5",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "openssl",
+          "hash": "jssfmfv3ivgfcwga24e7jo7wxi2gmjdz",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "popt",
+          "hash": "wr6z36uhwqg7zc7u5kwogv5yeefrnqov",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "xxhash",
+          "hash": "feakyobpnhlahurswd5exqmae4757sz4",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zlib",
+          "hash": "77qi6rvrwc4iwqziogd6vdxucahcm5qe",
+          "type": [
+            "build",
+            "link"
+          ]
+        },
+        {
+          "name": "zstd",
+          "hash": "qjrrg3esbkloxigc53fdiqvubqq2kk6s",
+          "type": [
+            "build",
+            "link"
+          ]
+        }
+      ],
+      "hash": "gcsku2rsqgtsfqeyv4ud6rowdvjeknrn"
     }
   }
 }
