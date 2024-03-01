@@ -1,7 +1,9 @@
 spack:
   specs:
   - amdfftw target=zen
-  - boost
+  - boost +atomic +chrono +context +coroutine +date_time +exception +filesystem +graph
+    +graph_parallel +iostreams +json +locale +log +math +program_options +random +regex
+    +serialization +signals +stacktrace +system +test +thread +timer +wave
   - bzip2@1.0.8
   - cgal
   - eigen
@@ -21,6 +23,7 @@ spack:
   - netlib-lapack @3.10.1
   - netlib-xblas @1.0.248
   - nlohmann-json
+  - openblas
   - zlib
   view: false
   modules:
