@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:32.396105
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 15:07:56.264200
 ##
 ## relion@4.0.1%gcc@11.4.0+allow_ctf_in_sagd+cuda+double~double-gpu~external_motioncor2~gctf+gpu_delay+gui~ipo+mklfft build_system=cmake build_type=RelWithDebInfo cuda_arch=75 generator=make patches=21b9c2c purpose=cluster arch=linux-ubuntu22.04-zen2/io2gdw2
 ##
@@ -33,6 +33,7 @@ prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubunt
 setenv RELION_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/relion-4.0.1-io2gdw2h5y4t7a4beyj4dkbjjfgpynqs}
 setenv RELION_TOPAZ_EXECUTABLE {/share/apps/22.04/spack/spack-ucdavis/bin/wrappers/topaz}
 setenv RELION_CTFFIND_EXECUTABLE {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-zen2/gcc-11.4.0/ctffind-4.1.14-uqsjztnwxwbiznxk4y7hn25i6f5ycnjz/bin/ctffind}
+setenv RELION_PYTHON_EXECUTABLE {/share/apps/conda/environments/topaz-0.2.5/bin/python}
 setenv RELION_QSUB_TEMPLATE {/share/apps/22.04/spack/spack-ucdavis/templates/hpccf/franklin/relion.4.0.1.gpu.zen2.slurm.template.sh}
 setenv RELION_QSUB_COMMAND {sbatch --constraint=amd}
 

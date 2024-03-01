@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:26:32.727264
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 15:07:56.588099
 ##
 ## relion@5.0-beta%gcc@11.4.0+allow_ctf_in_sagd+cuda+double~double-gpu~external_motioncor2~gctf~gpu_delay+gui~ipo+mklfft build_system=cmake build_type=RelWithDebInfo conda_python=/share/apps/conda/environments/relion-5.0/bin/python cuda_arch=75 generator=make purpose=cluster torch_home=/share/databases/relion/torch arch=linux-ubuntu22.04-skylake_avx512/fcygsqi
 ##
@@ -33,6 +33,7 @@ prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubunt
 setenv RELION_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/relion-5.0-beta-fcygsqigs2unxbjjexrlhciz7flgexi7}
 setenv RELION_TOPAZ_EXECUTABLE {/share/apps/22.04/spack/spack-ucdavis/bin/wrappers/topaz}
 setenv RELION_CTFFIND_EXECUTABLE {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-skylake_avx512/gcc-11.4.0/ctffind-4.1.14-56ojcpj6va4mtgkfvmdd2swf2pdf4nra/bin/ctffind}
+setenv RELION_PYTHON_EXECUTABLE {/share/apps/conda/environments/topaz-0.2.5/bin/python}
 setenv RELION_QSUB_TEMPLATE {/share/apps/22.04/spack/spack-ucdavis/templates/hpccf/franklin/relion.5.0-beta.gpu.skylake_avx512.slurm.template.sh}
 setenv RELION_QSUB_COMMAND {sbatch --constraint=intel}
 

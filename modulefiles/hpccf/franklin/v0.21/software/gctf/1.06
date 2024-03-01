@@ -1,7 +1,7 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:23:49.820976
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 16:32:44.537635
 ##
-## gctf@1.06%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/7qivncf
+## gctf@1.06%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/v2ephta
 ##
 
 
@@ -16,17 +16,11 @@ proc ModulesHelp { } {
     puts stderr {evaluation and correction.}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load cuda/8.0.61-b7ijy5o
-} else {
-    depends-on cuda/8.0.61-b7ijy5o
-}
-prereq cuda/8.0.61-b7ijy5o
 conflict gctf
 
-prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gctf-1.06-7qivncfbeb2loemvr3ntod457xlzrccs/bin}
-prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gctf-1.06-7qivncfbeb2loemvr3ntod457xlzrccs/.}
-setenv GCTF_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gctf-1.06-7qivncfbeb2loemvr3ntod457xlzrccs}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gctf-1.06-v2ephtaiusebtqjojxbc4vie73xjyifc/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gctf-1.06-v2ephtaiusebtqjojxbc4vie73xjyifc/.}
+setenv GCTF_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gctf-1.06-v2ephtaiusebtqjojxbc4vie73xjyifc}
 
 
 try {

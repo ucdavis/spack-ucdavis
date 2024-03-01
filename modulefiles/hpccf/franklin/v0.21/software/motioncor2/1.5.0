@@ -1,7 +1,7 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 12:24:03.668277
+## Module file created by spack (https://github.com/spack/spack) on 2024-02-23 16:32:44.654334
 ##
-## motioncor2@1.5.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/liclxyt
+## motioncor2@1.5.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/5ec32qv
 ##
 
 
@@ -21,18 +21,11 @@ proc ModulesHelp { } {
     puts stderr {collection.}
 }
 
-if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load cuda/11.2.2-fzz6vpy
-    module load libtiff/4.5.1-bkllr34
-} else {
-    depends-on cuda/11.2.2-fzz6vpy
-    depends-on libtiff/4.5.1-bkllr34
-}
 conflict motioncor2
 
-prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/motioncor2-1.5.0-liclxyt6xde324m4pj5h5efreimi7iih/bin}
-prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/motioncor2-1.5.0-liclxyt6xde324m4pj5h5efreimi7iih/.}
-setenv MOTIONCOR2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/motioncor2-1.5.0-liclxyt6xde324m4pj5h5efreimi7iih}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/motioncor2-1.5.0-5ec32qvj4uyn5s6kum3fprsgtpwe7xna/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/motioncor2-1.5.0-5ec32qvj4uyn5s6kum3fprsgtpwe7xna/.}
+setenv MOTIONCOR2_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/motioncor2-1.5.0-5ec32qvj4uyn5s6kum3fprsgtpwe7xna}
 
 
 try {
