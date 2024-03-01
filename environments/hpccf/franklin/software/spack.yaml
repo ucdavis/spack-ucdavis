@@ -269,7 +269,7 @@ spack:
         tcl: /share/apps/22.04/modulefiles/spack/software
         #tcl: /share/apps/22.04/modulefiles/spack/testing
       tcl:
-        #hide_implicits: true
+        hide_implicits: true
         projections:
           relion+cuda target=zen2: relion/gpu/{version}+amd
           relion+cuda target=skylake_avx512: relion/gpu/{version}+intel
