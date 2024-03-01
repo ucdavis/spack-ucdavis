@@ -46,8 +46,8 @@ class Motioncor2(Package):
     def url_for_version(self, version):
         return "file://{0}/MotionCor2_{1}.zip".format(os.getcwd(), version)
 
-    depends_on("cuda@10.2,11.1:11.5", type="run")
-    depends_on("libtiff", type="run")
+    depends_on("cuda@10.2,11.1:11.5", type=("build", "link"))
+    depends_on("libtiff", type=("build", "link"))
     depends_on("patchelf", type="build")
 
     def install(self, spec, prefix):

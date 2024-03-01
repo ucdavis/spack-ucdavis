@@ -14,7 +14,7 @@ class Gctf(Package):
             url="https://yale.app.box.com/shared/static/t5xp7nkkpx71iarqudl46j7id5tri9n0",
             extension='tar.gz')
 
-    depends_on("cuda@:8", type="run")
+    depends_on("cuda@:8", type=("build", "link"))
     depends_on("patchelf", type="build")
 
     def install(self, spec, prefix):
