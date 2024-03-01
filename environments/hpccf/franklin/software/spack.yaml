@@ -183,7 +183,7 @@ spack:
       - pplacer @1.1.alpha19
       - prodigal @2.6.3
       - prokka
-      - py-alphafold @2.3.2
+      - py-alphafold @2.3.2 cuda_arch=75,86
       - py-biopython
       - py-checkm-genome
       - py-cutadapt
@@ -292,12 +292,15 @@ spack:
           environment:
             set:
               ALPHAFOLD_DB_ROOT: /share/databases/alphafold
+            prepend_path:
+              PATH: /share/apps/22.04/spack/spack-ucdavis/bin/wrappers/py-alphafold
         relion:
           environment:
             set:
               RELION_TOPAZ_EXECUTABLE: /share/apps/22.04/spack/spack-ucdavis/bin/wrappers/topaz
               #RELION_MOTIONCOR2_EXECUTABLE: '{^motioncor2.prefix}/bin/MotionCor2'
               RELION_CTFFIND_EXECUTABLE: '{^ctffind.prefix}/bin/ctffind'
+              RELION_PYTHON_EXECUTABLE: /share/apps/conda/environments/topaz-0.2.5/bin/python
         relion+cuda:
           template: hpccf/franklin/relion.gpu.tcl
           environment:
