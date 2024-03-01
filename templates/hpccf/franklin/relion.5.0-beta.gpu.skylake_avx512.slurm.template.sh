@@ -53,9 +53,9 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 #
 
 module unload openmpi
-module load openmpi/4.1.5+intel
-module load intel-oneapi-mkl
-module load relion/gpu/5.0-beta+intel
+module load -f openmpi/4.1.5+intel
+module load -f intel-oneapi-mkl
+module load -f relion/gpu/5.0-beta+intel
 
 which relion_refine_mpi
 

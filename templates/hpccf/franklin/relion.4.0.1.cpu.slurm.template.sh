@@ -40,8 +40,8 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 #
 
 module unload openmpi
-module load openmpi/4.1.5+amd
-module load relion/cpu/4.0.1+amd
+module load -f openmpi/4.1.5+amd
+module load -f relion/cpu/4.0.1+amd
 
 which relion_refine_mpi
 
