@@ -1,4 +1,4 @@
-# Copyright 2013-2022 Lawrence Livermore National Security, LLC and other
+# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
 # Spack Project Developers. See the top-level COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
@@ -18,7 +18,7 @@ class Gffcompare(MakefilePackage):
     homepage = "https://github.com/gpertea/gffcompare"
     url = "https://github.com/gpertea/gffcompare/archive/refs/tags/v0.12.6.tar.gz"
 
-    maintainers = ["camillescott"]
+    maintainers("camillescott")
 
     version("0.12.6", sha256="4e01344c533987a0a8227bfcca9d180504c1a1392aa343e1f6b0752341e712cf")
 
@@ -27,6 +27,9 @@ class Gffcompare(MakefilePackage):
              tag="v0.12.7")
 
     patch("Makefile.patch")
+
+    def build(self, spec, prefix):
+        make("release")
 
     def install(self, spec, prefix):
         mkdirp(prefix.bin)
