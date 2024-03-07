@@ -19,21 +19,20 @@ You need to run it on a node through srun and use SSH to do port forwarding.
 
 For example: srun --partition=gpu-a100-h --gres=gpu:1 --time=9:00:00 --ntasks=1 --cpus-per-task=4 --mem=50G --pty /bin/bash -l
 
-After your srun has been allocated resources you can then: module load [module-info name]
+After your srun has been allocated resources you can then run the following two commands:
 
-The wrapper script will automatically run, but you can rerun it if necessary: turbovnc-farm
+module load [module-info name]
+turbovnc-farm
+
 "
       exit
    }
 
    puts stderr "
 
-Automatically running the wrapper, you may rerun it if necessary: turbovnc-farm
+Now, run the wrapper script, you may rerun it if necessary: turbovnc-farm
 
 "
-   
-   puts stdout "turbovnc-farm"
-
 }
 
 {% endblock %}
