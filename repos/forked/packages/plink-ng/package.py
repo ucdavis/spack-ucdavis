@@ -1,4 +1,4 @@
-# Copyright 2013-2023 Lawrence Livermore National Security, LLC and other
+# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
 # Spack Project Developers. See the top-level COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
@@ -16,7 +16,7 @@ class PlinkNg(Package):
 
     version('2.00a3.7', sha256='145717350205f5562a01292a0fcbd617b7500758f20cad0393c7cc54665a614e')
 
-    depends_on("zlib")
+    depends_on("zlib-api")
     depends_on("zstd@1.4.4:")
     depends_on("cblas")
     depends_on("blas")
@@ -25,7 +25,7 @@ class PlinkNg(Package):
     conflicts("%gcc@:4")
 
     def setup_build_environment(self, env):
-        zlib = join_path(self.spec["zlib"].prefix.lib, "libz.a")
+        zlib = join_path(self.spec["zlib-api"].prefix.lib, "libz.a")
         env.set("ZLIB", zlib)
 
     def install(self, spec, prefix):
