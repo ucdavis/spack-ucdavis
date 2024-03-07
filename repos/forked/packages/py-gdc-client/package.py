@@ -1,4 +1,4 @@
-# Copyright 2013-2021 Lawrence Livermore National Security, LLC and other
+# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
 # Spack Project Developers. See the top-level COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
@@ -12,6 +12,8 @@ class PyGdcClient(PythonPackage):
 
     homepage = "https://github.com/NCI-GDC/gdc-client"
     url      = "https://github.com/NCI-GDC/gdc-client/archive/1.4.0.tar.gz"
+
+    license("Apache-2.0")
     
     # HPCCF: we add version 1.6.0
     version('1.6.0', sha256='021c54ff63babff59d15b5f3e9763f0fd18bb64a4a34bc273237e3571fb24889')
