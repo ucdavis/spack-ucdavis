@@ -1,4 +1,4 @@
-# Copyright 2013-2021 Lawrence Livermore National Security, LLC and other
+# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
 # Spack Project Developers. See the top-level COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
@@ -30,7 +30,7 @@ class Distangsd(MakefilePackage):
     homepage = "https://github.com/lz398/distAngsd"
     git      = "https://github.com/lz398/distAngsd.git"
 
-    maintainers = ['camillescott']
+    maintainers('camillescott')
 
     version('main', branch='main')
 
@@ -39,11 +39,11 @@ class Distangsd(MakefilePackage):
     depends_on('gsl')
     depends_on('lzma')
     depends_on('openssl')
-
+    depends_on('libdeflate')
 
     def edit(self, spec, prefix):
         makefile = FileFilter('Makefile')
-        makefile.filter('-lgsl', '-lgsl -lgslcblas -lssl -lcrypto')
+        makefile.filter('-lgsl', '-lgsl -lgslcblas -lssl -lcrypto -ldeflate')
 
     @property
     def build_targets(self):
@@ -51,7 +51,7 @@ class Distangsd(MakefilePackage):
 
         return [
             'HTSSRC={0}'.format(spec['htslib'].prefix.lib),
-            'EIGEN={0}'.format(spec['eigen'].prefix)
+            'EIGEN={0}'.format(spec['eigen'].prefix.include)
         ]
 
     def build(self, spec, prefix):
