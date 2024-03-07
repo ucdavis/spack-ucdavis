@@ -1,4 +1,4 @@
-# Copyright 2013-2023 Lawrence Livermore National Security, LLC and other
+# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
 # Spack Project Developers. See the top-level COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
@@ -12,6 +12,8 @@ class PyDmHaiku(PythonPackage):
 
     homepage = "https://github.com/deepmind/dm-haiku"
     pypi = "dm-haiku/dm-haiku-0.0.5.tar.gz"
+
+    license("Apache-2.0")
 
     version("0.0.10", sha256="ca85e0a5eaafb2eb9111b954e56eff1595e55511482434a4d41e7969a0f31a20")
     version("0.0.7", sha256="86c34af6952a305a4bbfda6b9925998577acc4aa2ad9333da3d6047f4f8ed7c1")
