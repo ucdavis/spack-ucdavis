@@ -1,4 +1,4 @@
-# Copyright 2013-2023 Lawrence Livermore National Security, LLC and other
+# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
 # Spack Project Developers. See the top-level COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
@@ -12,6 +12,8 @@ class BppSeqOmics(CMakePackage):
     homepage = "http://biopp.univ-montp2.fr/wiki/index.php/Installation"
     url = "https://github.com/BioPP/bpp-seq-omics/archive/v2.4.1.tar.gz"
     git = "https://github.com/BioPP/bpp-seq-omics.git"
+
+    license("CECILL-2.0")
 
     version("2023-05-07", commit="65451f6b8484ba8fa747a9b97322a27a7bdcbe11")
     version("2.4.1", sha256="200da925b42065998d825f0b2a37e26b00a865883c85bc332beb3a94cae1e08b")
