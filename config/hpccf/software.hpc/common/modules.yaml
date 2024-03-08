@@ -1,0 +1,33 @@
+modules:
+  prefix_inspections:
+    lib64:
+    - LD_LIBRARY_PATH
+    lib:
+    - LD_LIBRARY_PATH
+    include:
+    - CPATH
+    - C_INCLUDE_PATH
+    - CPLUS_INCLUDE_PATH
+  default:
+    arch_folder: false
+    enable::
+      - tcl
+    tcl:
+      verbose: true
+      hash_length: 0
+      hide_implicits: true
+      projections:
+        target=x86_64_v3: 'generic/{name}/{version}'
+        target=skylake_avx512: 'skylake_avx512/{name}/{version}'
+        target=zen2: 'zen2/{name}/{version}'
+        target=zen3: 'zen3/{name}/{version}'
+      all:
+        autoload: run
+        template: hpccf/default.tcl
+        prerequisites: direct
+        conflict:
+        - '{name}'
+        environment:
+          set:
+            '{name}_ROOT': '{prefix}'
+

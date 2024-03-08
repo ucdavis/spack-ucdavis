@@ -1,0 +1,72 @@
+packages:
+
+  hwloc:
+    buildable: false
+    externals:
+    - spec: hwloc@2.9.1 target=x86_64_v2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/hwloc-2.9.1
+    - spec: hwloc@2.9.1 target=skylake_avx512
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/skylake_avx512/hwloc-2.9.1
+    - spec: hwloc@2.9.1 target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/hwloc-2.9.1
+
+  libevent:
+    buildable: false
+    externals:
+    - spec: libevent@2.1.12 target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/libevent-2.1.12
+    - spec: libevent@2.1.12 target=skylake_avx512
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/skylake_avx512/libevent-2.1.12
+    - spec: libevent@2.1.12 target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/libevent-2.1.12
+
+  openmpi:
+    buildable: false
+    externals:
+    - spec: openmpi@4.1.6 fabrics=ucx schedulers=slurm +legacylaunchers +cuda cuda_arch=75 target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5
+    - spec: openmpi@4.1.6 fabrics=ucx schedulers=slurm +legacylaunchers +cuda cuda_arch=75 target=skylake_avx512
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/skylake_avx512/openmpi-4.1.5
+    - spec: openmpi@4.1.6 fabrics=ucx schedulers=slurm +legacylaunchers +cuda cuda_arch=75 target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-4.1.5
+
+  pmix:
+    buildable: false
+    externals:
+    - spec: pmix@4.2.6 target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/pmix-4.2.6
+    - spec: pmix@4.2.6 target=skylake_avx512
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/skylake_avx512/pmix-4.2.6
+    - spec: pmix@4.2.6 target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/pmix-4.2.6
+
+  ucx:
+    buildable: false
+    externals:
+    - spec: ucx@1.14.1 +thread_multiple target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/ucx-1.14.1
+    - spec: ucx@1.14.1 +thread_multiple target=skylake_avx512
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/skylake_avx512/ucx-1.14.1
+    - spec: ucx@1.14.1 +thread_multiple target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/ucx-1.14.1
+
+  slurm:
+    buildable: false
+    externals:
+    - spec: slurm@23-02-6-1 target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm-23-02-6-1
+    - spec: slurm@23-02-6-1 target=skylake_avx512
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/skylake_avx512/slurm-23-02-6-1
+    - spec: slurm@23-02-6-1 target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/slurm-23-02-6-1
+
+  cuda:
+    buildable: false
+    externals:
+    - spec: cuda@11.7.1
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-11.7.1
+    - spec: cuda@11.2.2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-11.2.2
+    - spec: cuda@8.0.61
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-8.0.61
+
