@@ -6,11 +6,10 @@ spack:
     - gcc @13.2.0 %gcc@=11.4.0
     - gcc @11.4.0 %gcc@=9.5.0
     - gcc @7.5.0 %gcc@=11.4.0
-    - gcc @4.9.4 %gcc@=11.4.0
     - intel-oneapi-compilers @2024.0.2 %gcc@=11.4.0
     - intel-oneapi-compilers @2023.2.1 %gcc@=11.4.0
-    - llvm @17.0.6 %gcc@=11.4.0
-    - llvm @14.0.6 %gcc@=11.4.0
+    - llvm +clang +flang @17.0.6 %gcc@=11.4.0
+    - llvm +clang +flang @14.0.6 %gcc@=11.4.0
     - nvhpc @24.1 %gcc@=11.4.0
     - nvhpc @22.9 %gcc@=11.4.0
   - multiarch:
@@ -18,36 +17,44 @@ spack:
     - pmix
     - libevent
     - ucx
+  - generic:
+    - environment-modules @5.4.0
+    - slurm
+    - hwloc
+    - cuda @12.3.0
+    - cuda @11.7
+    - cuda @11.2.2
+    - cuda @8.0.61
   - targets:
     - '%gcc@=11.4.0 arch=linux-ubuntu22.04-x86_64_v3'
     - '%gcc@=11.4.0 arch=linux-ubuntu22.04-zen2'
     - '%gcc@=11.4.0 arch=linux-ubuntu22.04-zen3'
     #- '%oneapi arch=linux-ubuntu22.04-skylake_avx512'
   specs:
-  - environment-modules @5.4.0
-  - slurm
-  - hwloc
-  - cuda @12.3.0
-  - cuda @11.7
-  - cuda @11.2.2
-  - cuda @8.0.61
   - $compilers
+  - matrix:
+    - [$generic]
+    - ['%gcc@=11.4.0 arch=linux-ubuntu22.04-x86_64_v3']
   - matrix:
     - [$multiarch]
     - [$targets]
   view:
     default:
       root: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view
+      exclude:
+        - llvm
       projections:
         gcc: 'compilers/{name}-{version}'
         aocc: 'compilers/{name}-{version}'
         intel-oneapi-compilers: 'compilers/{name}-{version}'
+        llvm: 'compilers/{name}-{version}'
+        nvhpc: 'compilers/{name}-{version}'
         tcl: 'generic/{name}-{version}'
         target=x86_64_v3: 'generic/{name}-{version}'
         target=zen2: 'zen2/{name}-{version}'
         target=zen3: 'zen3/{name}-{version}'
         #target=skylake_avx512: 'skylake_avx512/{name}-{version}'
-      link: run
+      link: roots
       link_type: symlink
   modules:
     default:
@@ -62,17 +69,10 @@ spack:
           #- ucx target=x86_64_v3
         exclude:
         - mariadb
-        #include:
-        #- slurm
-        #- pmix
-        #- ucx
-        #- openmpi
-        #- cuda
-        #- aocc
-        #- gcc @13.2.0
-        #- gcc @11.4.0
-        #- gcc @7.5.0
-        #- intel-oneapi-compilers
+        - environment-modules
+        projections:
+          intel-oneapi-compilers: oneapi/{version}
+          llvm: clang/{version}
   concretizer:
     unify: false
     reuse: false
