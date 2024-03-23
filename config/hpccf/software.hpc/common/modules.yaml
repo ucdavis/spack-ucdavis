@@ -9,7 +9,7 @@ modules:
     - C_INCLUDE_PATH
     - CPLUS_INCLUDE_PATH
   default:
-    arch_folder: false
+    arch_folder: true
     enable::
       - tcl
     tcl:
@@ -17,10 +17,11 @@ modules:
       hash_length: 0
       hide_implicits: true
       projections:
-        target=x86_64_v3: 'generic/{name}/{version}'
-        target=skylake_avx512: 'skylake_avx512/{name}/{version}'
-        target=zen2: 'zen2/{name}/{version}'
-        target=zen3: 'zen3/{name}/{version}'
+        all: '{name}/{version}'
+      #  target=x86_64_v3: 'generic/{name}/{version}'
+      #  target=skylake_avx512: 'skylake_avx512/{name}/{version}'
+      #  target=zen2: 'zen2/{name}/{version}'
+      #  target=zen3: 'zen3/{name}/{version}'
       all:
         autoload: run
         template: hpccf/default.tcl
