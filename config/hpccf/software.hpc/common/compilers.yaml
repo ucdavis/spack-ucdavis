@@ -25,71 +25,179 @@ compilers:
     modules: []
     environment: {}
     extra_rpaths: []
-#- compiler:
-#    spec: gcc@=13.2.0
-#    paths:
-#      cc: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-y5biuspnetqjxpbwgrulzk2lyncskm6c/bin/gcc
-#      cxx: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-y5biuspnetqjxpbwgrulzk2lyncskm6c/bin/g++
-#      f77: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-y5biuspnetqjxpbwgrulzk2lyncskm6c/bin/gfortran
-#      fc: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-y5biuspnetqjxpbwgrulzk2lyncskm6c/bin/gfortran
-#    flags: {}
-#    operating_system: ubuntu22.04
-#    target: x86_64
-#    modules: []
-#    environment: {}
-#    extra_rpaths: []
-#- compiler:
-#    spec: gcc@=11.4.0
-#    paths:
-#      cc: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-11.4.0-cxjhlgyxdo4ibtgmh2gwz3yfklafv7fb/bin/gcc
-#      cxx: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-11.4.0-cxjhlgyxdo4ibtgmh2gwz3yfklafv7fb/bin/g++
-#      f77: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-11.4.0-cxjhlgyxdo4ibtgmh2gwz3yfklafv7fb/bin/gfortran
-#      fc: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-11.4.0-cxjhlgyxdo4ibtgmh2gwz3yfklafv7fb/bin/gfortran
-#    flags: {}
-#    operating_system: ubuntu22.04
-#    target: x86_64
-#    modules: []
-#    environment: {}
-#    extra_rpaths: []
-#- compiler:
-#    spec: dpcpp@=2023.2.0
-#    paths:
-#      cc: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-73sl4rcnnjvfa6p5b67n32w2xejl275l/compiler/latest/linux/bin/icx
-#      cxx: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-73sl4rcnnjvfa6p5b67n32w2xejl275l/compiler/latest/linux/bin/dpcpp
-#      f77: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-73sl4rcnnjvfa6p5b67n32w2xejl275l/compiler/latest/linux/bin/ifx
-#      fc: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-73sl4rcnnjvfa6p5b67n32w2xejl275l/compiler/latest/linux/bin/ifx
-#    flags: {}
-#    operating_system: ubuntu22.04
-#    target: x86_64
-#    modules: []
-#    environment: {}
-#    extra_rpaths: []
-#- compiler:
-#    spec: oneapi@=2023.2.0
-#    paths:
-#      cc: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-73sl4rcnnjvfa6p5b67n32w2xejl275l/compiler/latest/linux/bin/icx
-#      cxx: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-73sl4rcnnjvfa6p5b67n32w2xejl275l/compiler/latest/linux/bin/icpx
-#      f77: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-73sl4rcnnjvfa6p5b67n32w2xejl275l/compiler/latest/linux/bin/ifx
-#      fc: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-73sl4rcnnjvfa6p5b67n32w2xejl275l/compiler/latest/linux/bin/ifx
-#    flags: {}
-#    operating_system: ubuntu22.04
-#    target: x86_64
-#    modules: []
-#    environment: {}
-#    extra_rpaths: ['/share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-73sl4rcnnjvfa6p5b67n32w2xejl275l/compiler/2023.2.1/linux/compiler/lib/intel64_lin']
-#- compiler:
-#    spec: aocc@=4.1.0
-#    paths:
-#      cc: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.1.0-4tyg3vta4lskiwned4ova5fa2ocmnikl/bin/clang
-#      cxx: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.1.0-4tyg3vta4lskiwned4ova5fa2ocmnikl/bin/clang++
-#      f77: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.1.0-4tyg3vta4lskiwned4ova5fa2ocmnikl/bin/flang
-#      fc: /share/apps/22.04/spack/opt/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.1.0-4tyg3vta4lskiwned4ova5fa2ocmnikl/bin/flang
-#    flags:
-#      cflags: null
-#      cxxflags: null
-#      fflags: null
-#    operating_system: ubuntu22.04
-#    target: x86_64
-#    modules: []
-#    environment: {}
-#    extra_rpaths: []
+- compiler:
+    spec: dpcpp@=2024.0.2
+    paths:
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2024.0.2-6xgtm3xgdy5fyrqmghzn5552anusprxr/compiler/latest/bin/icx
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2024.0.2-6xgtm3xgdy5fyrqmghzn5552anusprxr/compiler/latest/bin/dpcpp
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2024.0.2-6xgtm3xgdy5fyrqmghzn5552anusprxr/compiler/latest/bin/ifx
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2024.0.2-6xgtm3xgdy5fyrqmghzn5552anusprxr/compiler/latest/bin/ifx
+    flags: {}
+    operating_system: ubuntu22.04
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: intel@=2021.11.1
+    paths:
+      cc: null
+      cxx: null
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2024.0.2-6xgtm3xgdy5fyrqmghzn5552anusprxr/compiler/latest/bin/ifort
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2024.0.2-6xgtm3xgdy5fyrqmghzn5552anusprxr/compiler/latest/bin/ifort
+    flags: {}
+    operating_system: ubuntu22.04
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: oneapi@=2024.0.2
+    paths:
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2024.0.2-6xgtm3xgdy5fyrqmghzn5552anusprxr/compiler/latest/bin/icx
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2024.0.2-6xgtm3xgdy5fyrqmghzn5552anusprxr/compiler/latest/bin/icpx
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2024.0.2-6xgtm3xgdy5fyrqmghzn5552anusprxr/compiler/latest/bin/ifx
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2024.0.2-6xgtm3xgdy5fyrqmghzn5552anusprxr/compiler/latest/bin/ifx
+    flags: {}
+    operating_system: ubuntu22.04
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: clang@=14.0.6
+    paths:
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/llvm-14.0.6-4ybvil6qqguplgnoqxmxk2xomej62yao/bin/clang
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/llvm-14.0.6-4ybvil6qqguplgnoqxmxk2xomej62yao/bin/clang++
+      f77: null
+      fc: null
+    flags: {}
+    operating_system: ubuntu22.04
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: clang@=17.0.6
+    paths:
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/llvm-17.0.6-2vdvqku4jv42upbdypstqzn72ilryu4t/bin/clang
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/llvm-17.0.6-2vdvqku4jv42upbdypstqzn72ilryu4t/bin/clang++
+      f77: null
+      fc: null
+    flags: {}
+    operating_system: ubuntu22.04
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: gcc@=13.2.0
+    paths:
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-bgpyat6sg5dd6efa5mn4r22fy4iotwnz/bin/gcc
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-bgpyat6sg5dd6efa5mn4r22fy4iotwnz/bin/g++
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-bgpyat6sg5dd6efa5mn4r22fy4iotwnz/bin/gfortran
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-13.2.0-bgpyat6sg5dd6efa5mn4r22fy4iotwnz/bin/gfortran
+    flags: {}
+    operating_system: ubuntu22.04
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: gcc@=7.5.0
+    paths:
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-3djfwwvz6ahc6ad5fdyaq3sht4zr4ufc/bin/gcc
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-3djfwwvz6ahc6ad5fdyaq3sht4zr4ufc/bin/g++
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-3djfwwvz6ahc6ad5fdyaq3sht4zr4ufc/bin/gfortran
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-7.5.0-3djfwwvz6ahc6ad5fdyaq3sht4zr4ufc/bin/gfortran
+    flags: {}
+    operating_system: ubuntu22.04
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: dpcpp@=2023.2.0
+    paths:
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-3h7myyvunsjja2325owuo5hb7fezyc3t/compiler/latest/linux/bin/icx
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-3h7myyvunsjja2325owuo5hb7fezyc3t/compiler/latest/linux/bin/dpcpp
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-3h7myyvunsjja2325owuo5hb7fezyc3t/compiler/latest/linux/bin/ifx
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-3h7myyvunsjja2325owuo5hb7fezyc3t/compiler/latest/linux/bin/ifx
+    flags: {}
+    operating_system: ubuntu22.04
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: oneapi@=2023.2.0
+    paths:
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-3h7myyvunsjja2325owuo5hb7fezyc3t/compiler/latest/linux/bin/icx
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-3h7myyvunsjja2325owuo5hb7fezyc3t/compiler/latest/linux/bin/icpx
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-3h7myyvunsjja2325owuo5hb7fezyc3t/compiler/latest/linux/bin/ifx
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-3h7myyvunsjja2325owuo5hb7fezyc3t/compiler/latest/linux/bin/ifx
+    flags: {}
+    operating_system: ubuntu22.04
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: aocc@=3.2.0
+    paths:
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-3.2.0-7kebmrh3fx542wchzx6ooklwvlqfc6rn/bin/clang
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-3.2.0-7kebmrh3fx542wchzx6ooklwvlqfc6rn/bin/clang++
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-3.2.0-7kebmrh3fx542wchzx6ooklwvlqfc6rn/bin/flang
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-3.2.0-7kebmrh3fx542wchzx6ooklwvlqfc6rn/bin/flang
+    flags:
+      cflags: null
+      cxxflags: null
+      fflags: null
+    operating_system: ubuntu22.04
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: aocc@=4.2.0
+    paths:
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.2.0-uguotiu4jgfzpolhjluhkrdpzw3kc5aq/bin/clang
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.2.0-uguotiu4jgfzpolhjluhkrdpzw3kc5aq/bin/clang++
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.2.0-uguotiu4jgfzpolhjluhkrdpzw3kc5aq/bin/flang
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.2.0-uguotiu4jgfzpolhjluhkrdpzw3kc5aq/bin/flang
+    flags:
+      cflags: null
+      cxxflags: null
+      fflags: null
+    operating_system: ubuntu22.04
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: nvhpc@=24.1
+    paths:
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-f7m6orivwro2uyskqhuqrz3aitygju7e/Linux_x86_64/2024/compilers/bin/nvc
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-f7m6orivwro2uyskqhuqrz3aitygju7e/Linux_x86_64/2024/compilers/bin/nvc++
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-f7m6orivwro2uyskqhuqrz3aitygju7e/Linux_x86_64/2024/compilers/bin/nvfortran
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-f7m6orivwro2uyskqhuqrz3aitygju7e/Linux_x86_64/2024/compilers/bin/nvfortran
+    flags: {}
+    operating_system: ubuntu22.04
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: nvhpc@=22.9
+    paths:
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-vsgfdktyg7xf5fj346c7mv4djz3mq6vf/Linux_x86_64/2022/compilers/bin/nvc
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-vsgfdktyg7xf5fj346c7mv4djz3mq6vf/Linux_x86_64/2022/compilers/bin/nvc++
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-vsgfdktyg7xf5fj346c7mv4djz3mq6vf/Linux_x86_64/2022/compilers/bin/nvfortran
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-vsgfdktyg7xf5fj346c7mv4djz3mq6vf/Linux_x86_64/2022/compilers/bin/nvfortran
+    flags: {}
+    operating_system: ubuntu22.04
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+
