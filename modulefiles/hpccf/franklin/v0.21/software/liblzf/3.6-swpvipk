@@ -1,0 +1,44 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-04-18 17:29:32.422663
+##
+## liblzf@3.6%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/swpvipk
+##
+
+
+module-whatis {LibLZF is a very small data compression library.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : liblzf}
+    puts stderr {Version: 3.6}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {LibLZF is a very small data compression library. It consists of only two}
+    puts stderr {.c and two .h files and is very easy to incorporate into your own}
+    puts stderr {programs. The compression algorithm is very, very fast, yet still}
+    puts stderr {written in portable C.}
+}
+
+conflict liblzf
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/liblzf-3.6-swpvipkpqqkvrmtyng4jd53fuiiwx6ru/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/liblzf-3.6-swpvipkpqqkvrmtyng4jd53fuiiwx6ru/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/liblzf-3.6-swpvipkpqqkvrmtyng4jd53fuiiwx6ru/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/liblzf-3.6-swpvipkpqqkvrmtyng4jd53fuiiwx6ru/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/liblzf-3.6-swpvipkpqqkvrmtyng4jd53fuiiwx6ru/bin}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/liblzf-3.6-swpvipkpqqkvrmtyng4jd53fuiiwx6ru/.}
+setenv LIBLZF_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/liblzf-3.6-swpvipkpqqkvrmtyng4jd53fuiiwx6ru}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

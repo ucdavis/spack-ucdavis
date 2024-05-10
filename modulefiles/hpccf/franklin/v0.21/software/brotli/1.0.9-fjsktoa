@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-04-18 17:29:03.426193
+##
+## brotli@1.0.9%gcc@11.4.0~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/fjsktoa
+##
+
+
+module-whatis {Brotli is a generic-purpose lossless compression algorithm}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : brotli}
+    puts stderr {Version: 1.0.9}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Brotli is a generic-purpose lossless compression algorithm}
+}
+
+conflict brotli
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/brotli-1.0.9-fjsktoap7m4rrwo5ujm2tm5p2nciagqn/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/brotli-1.0.9-fjsktoap7m4rrwo5ujm2tm5p2nciagqn/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/brotli-1.0.9-fjsktoap7m4rrwo5ujm2tm5p2nciagqn/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/brotli-1.0.9-fjsktoap7m4rrwo5ujm2tm5p2nciagqn/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/brotli-1.0.9-fjsktoap7m4rrwo5ujm2tm5p2nciagqn/bin}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/brotli-1.0.9-fjsktoap7m4rrwo5ujm2tm5p2nciagqn/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/brotli-1.0.9-fjsktoap7m4rrwo5ujm2tm5p2nciagqn/.}
+setenv BROTLI_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/brotli-1.0.9-fjsktoap7m4rrwo5ujm2tm5p2nciagqn}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

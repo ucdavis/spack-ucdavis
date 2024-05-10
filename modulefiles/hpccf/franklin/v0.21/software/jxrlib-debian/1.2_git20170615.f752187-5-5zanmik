@@ -1,0 +1,45 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-04-18 17:29:29.113503
+##
+## jxrlib-debian@1.2_git20170615.f752187-5%gcc@11.4.0+shared build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/5zanmik
+##
+
+
+module-whatis {JPEG XR is a still image format based on technology originally developed by Mirosoft under the name HD Photo (formerly Windows Media Photo). The JPEG XR format is similar, but not identical, to the HD Photo/Windows Media Photo format.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : jxrlib-debian}
+    puts stderr {Version: 1.2_git20170615.f752187-5}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {JPEG XR is a still image format based on technology originally developed}
+    puts stderr {by Mirosoft under the name HD Photo (formerly Windows Media Photo). The}
+    puts stderr {JPEG XR format is similar, but not identical, to the HD Photo/Windows}
+    puts stderr {Media Photo format.}
+}
+
+conflict jxrlib-debian
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jxrlib-debian-1.2_git20170615.f752187-5-5zanmikyqibre4hocycnawu3l7skipka/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jxrlib-debian-1.2_git20170615.f752187-5-5zanmikyqibre4hocycnawu3l7skipka/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jxrlib-debian-1.2_git20170615.f752187-5-5zanmikyqibre4hocycnawu3l7skipka/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jxrlib-debian-1.2_git20170615.f752187-5-5zanmikyqibre4hocycnawu3l7skipka/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jxrlib-debian-1.2_git20170615.f752187-5-5zanmikyqibre4hocycnawu3l7skipka/bin}
+prepend-path PKG_CONFIG_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jxrlib-debian-1.2_git20170615.f752187-5-5zanmikyqibre4hocycnawu3l7skipka/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jxrlib-debian-1.2_git20170615.f752187-5-5zanmikyqibre4hocycnawu3l7skipka/.}
+setenv JXRLIB_DEBIAN_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/jxrlib-debian-1.2_git20170615.f752187-5-5zanmikyqibre4hocycnawu3l7skipka}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

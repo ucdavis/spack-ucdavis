@@ -1,0 +1,48 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2024-04-18 17:29:29.906296
+##
+## libaec@1.0.6%gcc@11.4.0~ipo+shared build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/f75zkjm
+##
+## Configure options: -DBUILD_SHARED_LIBS:BOOL=ON
+##
+
+
+module-whatis {Libaec provides fast lossless compression of 1 up to 32 bit wide signed or unsigned integers (samples). It implements Golomb-Rice compression method under the BSD license and includes a free drop-in replacement for the SZIP library. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libaec}
+    puts stderr {Version: 1.0.6}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Libaec provides fast lossless compression of 1 up to 32 bit wide signed}
+    puts stderr {or unsigned integers (samples). It implements Golomb-Rice compression}
+    puts stderr {method under the BSD license and includes a free drop-in replacement for}
+    puts stderr {the SZIP library.}
+}
+
+conflict libaec
+
+prepend-path LD_LIBRARY_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libaec-1.0.6-f75zkjmaqdkabzaxrosn7yqbhot4jjkx/lib}
+prepend-path CPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libaec-1.0.6-f75zkjmaqdkabzaxrosn7yqbhot4jjkx/include}
+prepend-path C_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libaec-1.0.6-f75zkjmaqdkabzaxrosn7yqbhot4jjkx/include}
+prepend-path CPLUS_INCLUDE_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libaec-1.0.6-f75zkjmaqdkabzaxrosn7yqbhot4jjkx/include}
+prepend-path PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libaec-1.0.6-f75zkjmaqdkabzaxrosn7yqbhot4jjkx/bin}
+prepend-path MANPATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libaec-1.0.6-f75zkjmaqdkabzaxrosn7yqbhot4jjkx/share/man}
+prepend-path CMAKE_PREFIX_PATH {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libaec-1.0.6-f75zkjmaqdkabzaxrosn7yqbhot4jjkx/.}
+setenv LIBAEC_ROOT {/share/apps/22.04/spack/opt/software/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libaec-1.0.6-f75zkjmaqdkabzaxrosn7yqbhot4jjkx}
+append-path MANPATH {}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+
