@@ -1,0 +1,219 @@
+  definitions:
+    - general-specs:
+      - abyss @2.3.7
+      - amber @20 +cuda +openmp
+      - angsd @0.935
+      - apptainer @1.1.9
+      - aragorn @1.2.41
+      - aria2 @1.37
+      - aspera-cli @3.7.7
+      - atlas @3.10.3 threads=pthreads
+      - augustus @3.5.0
+      - awscli @1.29.41
+      - bayenv2 @2.0
+      - bbmap @39.01
+      - bcftools @1.19 +libgsl +perl-filters
+      - beagle @5.4
+      - bedops @2.4.41
+      - bedtools2 @2.31.1
+      - blast-plus @2.13.0
+      - blast2go @5.2.5
+      - bowtie @1.3.1
+      - bowtie2 @2.5.2
+      - braker @2.1.6
+      - busco @5.4.3
+      - bwa @0.7.17
+      #- bwa-mem2 @2.2.1 %oneapi target=x86_64_v3
+      - bwtool @1.0
+      - canu @2.2
+      - cap3 @2015-02-11
+      - cdhit @4.8.1
+      - cdo @2.4.0
+      - circos @0.69-9
+      - clustal-omega @1.2.4
+      - clustalw @2.1
+      - cmake @3.10.3
+      - cmake @3.16.9
+      - cmake @3.28.1
+      - cmake @3.3.1
+      - corset @1.09
+      - coverm @0.6.1 %gcc@11.4.0 ^bwa-mem2%oneapi
+      - cp2k @2024.1 +cuda cuda_arch=70
+      - cplex @12.10.0
+      - cufflinks @2.2.1
+      - dashing @0.4.0 %gcc@7.5.0 # used by coverm
+      - dashing @1.0.3
+      - deml @1.1.4
+      - diamond @2.1.7
+      - doxygen @1.9.8
+      - dssp @3.1.4
+      - ea-utils @2021-10-20
+      - elk @8.3.22
+      - emboss @6.6.0
+      - exciting @oxygen +mpi
+      - exonerate @2.4.0
+      - exonerate-gff3 @2.3.0
+      - fastani @1.33
+      - fastme @2.1.5.1
+      - fastq-screen @0.15.3
+      - fastqc @0.12.1
+      - fasttree @2.1.11
+      - fastx-toolkit @0.0.14
+      - feh @3.10
+      - fpart @1.6.0
+      - fplo @22.00-62
+      - freebayes @1.3.6
+      - freesurfer @7.4.1
+      - gatk @4.5.0.0
+      - gaussian @16-B.01
+      - geant4 @11.2.1
+      - gemma @0.98.5
+      - genie @3.0.6
+      - genometools @1.6.2
+      - genrich @0.6.1
+      - gffcompare @0.12.6
+      - gffread @0.12.7
+      - glimmer @3.02b
+      - gmt @6.4.0 +blas +ffmpeg +fftw +geos +glib +graphicsmagick +lapack +pcre
+      - gnuplot @6.0.0
+      - gromacs @2019.6 +cuda
+      - gromacs @2023.4 +cp2k +cuda
+      - hh-suite @3.3.0
+      - hisat2 @2.2.1
+      - hmmer @3.4
+      - homer @4.11.1
+      - htslib @1.19.1
+      - hypre @2.31.0 +cuda +openmp
+      - idl @8.7.3
+      - igv @2.16.2
+      - imagemagick @7.1.1-29
+      - infernal @1.1.4
+      - interproscan @5.63-95.0
+      - iq-tree @2.2.2.7
+      - iqtree2 @2.2.2.7
+      - jags @4.3.2
+      - jellyfish @1.1.11
+      - jellyfish @2.3.0
+      - kaiju @1.6.2
+      - kalign @3.4.0
+      - kallisto @0.48.0
+      - kmergenie @1.7051
+      - kraken @1.1.1
+      - kraken2 @2.1.2
+      - krakenuniq @1.0.4
+      - lammps @20240207 +cuda 
+      - last @1499
+      - lcov @2.0
+      - mafft @7.505
+      - maker @3.01.04
+      - mash @2.3
+      - masurca @4.1.0
+      - maven @3.8.4
+      - mcl @14-137
+      - megahit @1.1.4 %gcc@7.5.0
+      - meme @5.3.0
+      - metabat @2.15
+      - metaeuk @6-a5d39d9
+      - minced @0.4.2
+      - miniasm @2018-3-30
+      - minimap2 @2.26
+      - mirdeep2 @0.0.8
+      - mmseqs2 @14-7e284
+      - mothur @1.48.0
+      - mummer @3.23
+      - mummer4 @4.0.0rc1
+      - muscle @3.8.1551
+      - muscle5 @5.1.0
+      - ncbi-rmblastn @2.14.0
+      - ncbi-toolkit @26_0_1
+      - ncbi-vdb @3.0.2
+      - nco @5.1.9
+      - nextflow @23.10.1
+      - ngsadmix @2018-03-19
+      - ngstools @2023-04-05
+      - numactl @2.0.14
+      - octave @8.2.0 +fftw
+      - octopus @7.3 +cuda ^fftw
+      - ont-guppy @6.1.7
+      - openldap@2.4.49
+      - orthofinder @2.5.5
+      - orthomcl @2.0.9
+      - paml @4.10.7
+      - parallel @20220522
+      - paraview @5.11.2 +cuda +tbb +hdf5
+      - phylip @3.697
+      - phyluce @1.6.7
+      - picard @3.1.1
+      - pigz @2.8
+      - pilon @1.22
+      - planck-likelihood @2.00
+      - plink @1.07
+      - plink-ng @2.00a3.7
+      - pplacer @1.1.alpha19
+      - prodigal @2.6.3
+      - prokka @1.14.6
+      - py-alphafold @2.3.2
+      - py-biopython @1.81
+      - py-checkm-genome @1.2.1
+      - py-cutadapt @4.7
+      - py-deeptools @3.5.3
+      - py-htseq @2.0.3
+      - py-ipython @8.14.0
+      - py-metaphlan @4.0.2
+      - py-multiqc @1.15
+      - py-quast @4.6.3
+      - py-vcf-kit @0.1.6
+      - pythia6 @6.4.28
+      - pythia8 @8.310
+      - qualimap @2.2.1
+      - quantum-espresso @7.3.1 ^fftw
+      - racon @1.4.3
+      - raxml @8.2.12
+      - raxml-ng @1.1.0
+      - ray @2.3.1
+      - rclone @1.65.1
+      - recon @1.05
+      - repeatmasker @4.1.5
+      #- repeatmodeler @2.0.4 ^repeatmasker@4.0.9
+      - repeatscout @1.0.5
+      - rnaquast @2.2.0
+      - root @6.28.04 +pythia6 +pythia8 +python +fortran +fftw
+      - rsem @1.3.3
+      - rstudio@2023.12.1+server
+      - sabre @2013-09-27
+      - salmon @1.10.2
+      - samtools @1.16.1
+      - satsuma2 @2021-03-04
+      - scallop @0.10.5
+      - seqprep @1.3.2
+      - seqtk @1.4
+      - shengbte @1.1.1-8a63749
+      - shoremap @3.6
+      - sickle @1.33
+      - slim @4.0.1
+      - smartdenovo @master
+      - snap-korf @2021-11-04
+      - sortmerna @2017-07-13
+      - spades @3.15.5
+      - sratoolkit @3.0.0
+      - star @2.7.11a
+      - stringtie @2.2.1
+      - subread @2.0.2
+      - tabix @2013-12-16
+      - tassel @5.2.86
+      - tophat @2.1.2
+      - trilinos @15.0.0 # +cuda +uvm +wrapper
+      - trimgalore @0.6.10
+      - trimmomatic @0.39
+      - trinity @2.15.1.FULL
+      - turbovnc @3.0.3
+      - usearch @11.0.667
+      - valgrind @3.20.0
+      - vcftools @0.1.16
+      - velvet @1.2.10
+      - velvetoptimiser
+      - velvetoptimiser @2.2.6
+      - virtualgl @2.5.2
+      - vsearch @2.22.1
+      - yasm @1.3.0
+
