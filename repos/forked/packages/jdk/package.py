@@ -107,6 +107,7 @@ class Jdk(Package):
         url="https://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz",
     )
 
+    provides("java@17", when="@17.0:17")
     provides("java@14", when="@14.0:14")
     provides("java@13", when="@13.0:13")
     provides("java@12", when="@12.0:12")

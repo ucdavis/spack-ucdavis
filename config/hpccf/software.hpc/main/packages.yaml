@@ -1,4 +1,21 @@
 packages:
+  aocc:
+    externals:
+      - spec: aocc@3.2.0%gcc@=11.4.0+license-agreed target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0
+        extra_attributes:
+          compilers:
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0/bin/clang
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0/bin/clang++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0/bin/flang
+      - spec: aocc@4.2.0%gcc@=11.4.0+license-agreed target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.2.0
+        extra_attributes:
+          compilers:
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.1.0/bin/clang
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.1.0/bin/clang++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.1.0/bin/flang
+    buildable: false
   openssl:
     externals:
       - spec: openssl@3.2.1%gcc@=11.4.0~docs+shared certs=mozilla target=x86_64_v3
@@ -32,6 +49,54 @@ packages:
       - spec: openssl@3.1.5%gcc@=11.4.0~docs+shared certs=mozilla target=zen3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openssl-3.1.5
     buildable: false
+  gcc:
+    externals:
+      - spec: gcc@13.2.0%gcc@=11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_type=RelWithDebInfo languages='c,c++,fortran' target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0
+        extra_attributes:
+          compilers:
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/gcc
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/g++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/gfortran
+      - spec: gcc@11.4.0%gcc@=9.5.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_type=RelWithDebInfo languages='c,c++,fortran' target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-11.4.0
+        extra_attributes:
+          compilers:
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-11.4.0/bin/gcc
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-11.4.0/bin/g++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-11.4.0/bin/gfortran
+      - spec: gcc@7.5.0%gcc@=11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_type=RelWithDebInfo languages='c,c++,fortran' target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0
+        extra_attributes:
+          compilers:
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0/bin/gcc
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0/bin/g++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0/bin/gfortran
+      - spec: gcc@=9.5.0
+        prefix: /usr
+        extra_attributes:
+          compilers:
+            c: /usr/bin/gcc-9
+            cxx: /usr/bin/g++-9
+            fortran: /usr/bin/gfortran-9
+    buildable: false
+  intel-oneapi-compilers:
+    externals:
+      - spec: intel-oneapi-compilers@2024.0.2%gcc@=11.4.0+envmods target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2
+        extra_attributes:
+          compilers:
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/icx
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/icpx
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/ifx
+      - spec: intel-oneapi-compilers@2023.2.1%gcc@=11.4.0+envmods target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.1
+        extra_attributes:
+          compilers:
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.1/compiler/latest/linux/bin/icx
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.1/compiler/latest/linux/bin/icpx
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.1/compiler/latest/linux/bin/ifx
+    buildable: false
   # When mpi=openmpi, this introduces an unresolvable dependency.
   # See https://github.com/spack/spack/issues/15836 for details
   hwloc:
@@ -42,6 +107,30 @@ packages:
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/hwloc-2.9.1
     buildable: false
     require: '~netloc +pci +libxml2 +libudev +nvml +cuda +cairo cuda_arch=75,86'
+  ####
+  #
+  # Core stack and libraries
+  #
+  ####
+  #
+  nvhpc:
+    externals:
+      - spec: nvhpc@24.1%gcc@=11.4.0+blas+lapack+mpi default_cuda=default install_type=single target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1
+        extra_attributes:
+          compilers:
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-f7m6orivwro2uyskqhuqrz3aitygju7e/Linux_x86_64/2024/compilers/bin/nvc
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-f7m6orivwro2uyskqhuqrz3aitygju7e/Linux_x86_64/2024/compilers/bin/nvc++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-f7m6orivwro2uyskqhuqrz3aitygju7e/Linux_x86_64/2024/compilers/bin/nvfortran
+      - spec: nvhpc@22.9%gcc@=11.4.0+blas+lapack+mpi default_cuda=default install_type=single target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9
+        extra_attributes:
+          compilers:
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-vsgfdktyg7xf5fj346c7mv4djz3mq6vf/Linux_x86_64/2022/compilers/bin/nvc
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-vsgfdktyg7xf5fj346c7mv4djz3mq6vf/Linux_x86_64/2022/compilers/bin/nvc++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-vsgfdktyg7xf5fj346c7mv4djz3mq6vf/Linux_x86_64/2022/compilers/bin/nvfortran
+    buildable: false
+    require: '+blas +lapack +mpi'
   environment-modules:
     externals:
       - spec: environment-modules@5.4.0%gcc@=11.4.0+X etcdir=/etc/environment-modules target=x86_64_v3
@@ -154,14 +243,6 @@ packages:
     externals:
       - spec: mariadb-c-client@3 %gcc
         prefix: /usr
-  ####
-  #
-  # Core stack and libraries
-  #
-  ####
-  #
-  nvhpc:
-    require: '+blas +lapack +mpi'
   mkl:
     require: intel-oneapi-mkl
   mpi:
