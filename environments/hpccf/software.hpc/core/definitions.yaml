@@ -1,0 +1,67 @@
+  definitions:
+    - compilers:
+      - aocc @3.2.0 +license-agreed %gcc@=11.4.0
+      - aocc @4.2.0 +license-agreed %gcc@=11.4.0
+      - gcc @13.2.0 %gcc@=11.4.0
+      - gcc @11.4.0 %gcc@=9.5.0
+      - gcc @7.5.0 %gcc@=11.4.0
+      - intel-oneapi-compilers @2024.0.2 %gcc@=11.4.0
+      - intel-oneapi-compilers @2023.2.1 %gcc@=11.4.0
+      - llvm +clang +flang @17.0.6 %gcc@=11.4.0
+      - llvm +clang +flang @14.0.6 %gcc@=11.4.0
+      - nvhpc @24.1 %gcc@=11.4.0
+      - nvhpc @22.9 %gcc@=11.4.0
+    - messaging-pkgs:
+      - openmpi @4.1.6
+      - pmix @4.2.6
+      - libevent @2.1.12
+      - ucx @1.15.0
+    - generic-pkgs:
+      - environment-modules @5.4.0
+      - slurm @23-11-1-1
+      - hwloc @2.9.1
+      - julia @1.9.3
+      - jdk @17.0.1
+      - openjdk @11.0.17_8
+      - openjdk @16.0.2
+      - openjdk @17.0.8.1_1
+      - rust @1.76.0
+      - rust @1.65.0
+    - cuda-versions:
+      - '@12.3.0'
+      - '@11.7'
+      - '@11.2.2'
+      - '@10.2.89'
+      - '@9.2.88'
+      - '@8.0.61'
+    - openssl-versions:
+      - '@1.0.2u'
+      - '@1.1.1w'
+      - '@3.0.11'
+      - '@3.1.5'
+      - '@3.2.1'
+    - targets:
+      - arch=linux-ubuntu22.04-x86_64_v3
+      - arch=linux-ubuntu22.04-zen2
+      - arch=linux-ubuntu22.04-zen3
+      #- '%oneapi arch=linux-ubuntu22.04-skylake_avx512'
+    - generic-specs:
+      - matrix:
+        - [$generic-pkgs]
+        - ['%gcc@=11.4.0 arch=linux-ubuntu22.04-x86_64_v3']
+    - cuda-specs:
+      - matrix:
+        - [cuda]
+        - [$cuda-versions]
+        - ['%gcc@=11.4.0 arch=linux-ubuntu22.04-x86_64_v3']
+    - messaging-specs:
+      - matrix:
+        - [$messaging-pkgs]
+        - [$targets]
+        - ['%gcc@=11.4.0']
+    - openssl-specs:
+      - matrix:
+        - [openssl]
+        - [$openssl-versions]
+        - [$targets]
+        - ['%gcc@=11.4.0']
