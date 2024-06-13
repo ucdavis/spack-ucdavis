@@ -143,10 +143,14 @@ class R(AutotoolsPackage):
 
         # R uses LAPACK in Fortran, which requires libmkl_gf_* when gfortran is used.
         # TODO: cleaning this up seem to require both compilers as dependencies and use variants.
-        if spec["lapack"].name in INTEL_MATH_LIBRARIES and "gfortran" in self.compiler.fc:
-            xlp64 = "ilp64" if spec["lapack"].satisfies("+ilp64") else "lp64"
-            blas_flags = blas_flags.replace(f"mkl_intel_{xlp64}", f"mkl_gf_{xlp64}")
-            lapack_flags = lapack_flags.replace(f"mkl_intel_{xlp64}", f"mkl_gf_{xlp64}")
+        try:
+            if spec["lapack"].name in INTEL_MATH_LIBRARIES and "gfortran" in self.compiler.fc:
+                xlp64 = "ilp64" if spec["lapack"].satisfies("+ilp64") else "lp64"
+                blas_flags = blas_flags.replace(f"mkl_intel_{xlp64}", f"mkl_gf_{xlp64}")
+                lapack_flags = lapack_flags.replace(f"mkl_intel_{xlp64}", f"mkl_gf_{xlp64}")
+        except NameError:
+            # 2024-06-13: OW: INTEL_MATH_LIBRARIES is not defined in Farm's spack setup.
+            pass
 
         config_args = [
             "--with-internal-tzcode",
