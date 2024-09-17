@@ -36,6 +36,12 @@ class Jdk(Package):
     # symbol in version with '_', otherwise it will be interpreted as a variant
 
     version(
+        "21.0.4",
+        sha256="dc0d14d5cf1b44e02832a7e85d0d5eb1f4623dc389a2b7fb3d21089b84fc7eb1",
+        url="https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz"
+        )
+    
+    version(
         "17.0.1",
         sha256="6f25bcb94d3e22fb52a4632c74e03b403834e81b68701ab7ecd900fb9cd89f43",
         url="https://download.oracle.com/java/17/archive/jdk-17.0.1_linux-x64_bin.tar.gz"
