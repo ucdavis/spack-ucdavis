@@ -10,8 +10,8 @@ spack:
   view:
     default:
       root: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view
-      #exclude:
-      #- llvm
+      exclude:
+      - llvm
       projections:
         llvm: compilers/{name}-{version}
         gcc: compilers/{name}-{version}
@@ -19,13 +19,14 @@ spack:
         intel-oneapi-compilers: compilers/{name}-{version}
         nvhpc: compilers/{name}-{version}
         tcl: generic/{name}-{version}
+        environment-modules: generic/environment-modules
         target=x86_64_v3: generic/{name}-{version}
         target=zen2: zen2/{name}-{version}
         target=zen3: zen3/{name}-{version}
         #target=skylake_avx512: 'skylake_avx512/{name}-{version}'
       link: roots
       link_type: symlink
-  modules:
+  #modules:
     #prefix_inspections:
     #  lib64:
     #  - LD_LIBRARY_PATH
@@ -35,27 +36,25 @@ spack:
     #  - CPATH
     #  - C_INCLUDE_PATH
     #  - CPLUS_INCLUDE_PATH
-    default:
-      roots:
-        tcl: /cvmfs/hpc.ucdavis.edu/sw/spack/modulefiles/core
-      tcl:
-        all:
-          autoload: run
-        #hide_implicits: false
-        defaults:
-        - cuda @12.3
-          #- openmpi target=x86_64_v3
-          #- pmix target=x86_64_v3
-          #- libevent target=x86_64_v3
-          #- ucx target=x86_64_v3
-        include:
-        - $generic-specs
-        exclude:
-        - mariadb
-        - environment-modules
-        projections:
-          intel-oneapi-compilers: oneapi/{version}
-          llvm: clang/{version}
+    #default:
+    #  roots:
+    #    tcl: /cvmfs/hpc.ucdavis.edu/sw/spack/modulefiles/core
+    #  tcl:
+    #    all:
+    #      autoload: run
+    #    #hide_implicits: false
+    #    defaults:
+    #    - cuda @12.3
+    #      #- openmpi target=x86_64_v3
+    #      #- pmix target=x86_64_v3
+    #      #- libevent target=x86_64_v3
+    #      #- ucx target=x86_64_v3
+    #    exclude:
+    #    - mariadb
+    #    - environment-modules
+    #    projections:
+    #      intel-oneapi-compilers: oneapi/{version}
+    #      llvm: clang/{version}
   concretizer:
     unify: false
     reuse: false
