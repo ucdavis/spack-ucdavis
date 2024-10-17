@@ -33,13 +33,16 @@ class Turbovnc(CMakePackage):
     # notify when the package is updated.
     # maintainers = ["github_user1", "github_user2"]
 
+    version("3.1.2", sha256="09809ac107ac038bd896c3a89d3988d5222e8d0f26bcbb62e92b65bced5b30e8")
     version("3.0.3", sha256="3a3e1bce1d6d41b33b52c51c8546c849db1226f42255f4cef306e7bd9e1cced4")
 
     variant("libjpeg-turbo", default=True, description="build with libjpeg-turbo support")
 
     depends_on("libjpeg-turbo@2.1:")
-    depends_on("openjdk@11:")
+    depends_on("libjpeg-turbo@3.0.4:", when="@3.1.2:")
+    depends_on("openjdk@17:")
     depends_on("virtualgl", type="run")
+    depends_on("virtualgl@3.1.1:", type="run", when="@3.1.2:")
 
     def cmake_args(self):
         args = [
