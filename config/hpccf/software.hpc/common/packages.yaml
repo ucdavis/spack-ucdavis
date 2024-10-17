@@ -74,6 +74,9 @@ packages:
   dbus:
     require: '@1.13.6 system-socket=/var/run/dbus/system_bus_socket'
 
+  gettext:
+    require: +libxml2
+
   #gdal:
   #  variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat +gif +jasper +pcre +png +zstd
 
@@ -81,12 +84,12 @@ packages:
   #  version: [0.9.9]
   #  variants: +graphicsmagick +python
 
-  libxml2:
-    require: +python
-    #require: '@2.10.2: +python'
+  #libxml2:
+  #  require: +python
+  #require: '@2.10.2: +python'
 
-  python:
-    require: ~libxml2
+  #python:
+  #require: ~libxml2
 
   sqlite:
     variants: +rtree

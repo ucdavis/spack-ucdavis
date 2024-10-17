@@ -1,20 +1,20 @@
 packages:
   aocc:
     externals:
-      - spec: aocc@3.2.0%gcc@=11.4.0+license-agreed target=x86_64_v3
+      - spec: aocc@=3.2.0%gcc@=11.4.0+license-agreed target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0
         extra_attributes:
           compilers:
             c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0/bin/clang
             cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0/bin/clang++
             fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0/bin/flang
-      - spec: aocc@4.2.0%gcc@=11.4.0+license-agreed target=x86_64_v3
+      - spec: aocc@=4.2.0%gcc@=11.4.0+license-agreed target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.2.0
         extra_attributes:
           compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.1.0/bin/clang
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.1.0/bin/clang++
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.1.0/bin/flang
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.2.0/bin/clang
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.2.0/bin/clang++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.2.0/bin/flang
     buildable: false
   openssl:
     externals:
@@ -51,21 +51,21 @@ packages:
     buildable: false
   gcc:
     externals:
-      - spec: gcc@13.2.0%gcc@=11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_type=RelWithDebInfo languages='c,c++,fortran' target=x86_64_v3
+      - spec: gcc@=13.2.0%gcc@=11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_type=RelWithDebInfo languages='c,c++,fortran' target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0
         extra_attributes:
           compilers:
             c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/gcc
             cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/g++
             fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/gfortran
-      - spec: gcc@11.4.0%gcc@=9.5.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_type=RelWithDebInfo languages='c,c++,fortran' target=x86_64_v3
+      - spec: gcc@=11.4.0%gcc@=9.5.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_type=RelWithDebInfo languages='c,c++,fortran' target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-11.4.0
         extra_attributes:
           compilers:
             c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-11.4.0/bin/gcc
             cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-11.4.0/bin/g++
             fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-11.4.0/bin/gfortran
-      - spec: gcc@7.5.0%gcc@=11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_type=RelWithDebInfo languages='c,c++,fortran' target=x86_64_v3
+      - spec: gcc@=7.5.0%gcc@=11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_type=RelWithDebInfo languages='c,c++,fortran' target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0
         extra_attributes:
           compilers:
@@ -82,14 +82,14 @@ packages:
     buildable: false
   intel-oneapi-compilers:
     externals:
-      - spec: intel-oneapi-compilers@2024.0.2%gcc@=11.4.0+envmods target=x86_64_v3
+      - spec: intel-oneapi-compilers@=2024.0.2%gcc@=11.4.0+envmods target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2
         extra_attributes:
           compilers:
             c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/icx
             cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/icpx
             fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/ifx
-      - spec: intel-oneapi-compilers@2023.2.1%gcc@=11.4.0+envmods target=x86_64_v3
+      - spec: intel-oneapi-compilers@=2023.2.1%gcc@=11.4.0+envmods target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.1
         extra_attributes:
           compilers:
@@ -134,7 +134,7 @@ packages:
   environment-modules:
     externals:
       - spec: environment-modules@5.4.0%gcc@=11.4.0+X etcdir=/etc/environment-modules target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/environment-modules-5.4.0
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/environment-modules
     buildable: false
     variants: etcdir=/etc/environment-modules
   slurm:
@@ -173,8 +173,8 @@ packages:
     buildable: false
   rust:
     externals:
-      - spec: rust@1.76.0%gcc@=11.4.0+dev~docs+src target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.76.0
+      - spec: rust@1.78.0%gcc@=11.4.0+dev~docs+src target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.78.0
       - spec: rust@1.65.0%gcc@=11.4.0+dev~docs+src target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.65.0
     buildable: false
@@ -256,17 +256,21 @@ packages:
     require: +X +ft +fc +pdf +png +gobject
   dbus:
     require: '@1.13.6 system-socket=/var/run/dbus/system_bus_socket'
+  gettext:
+    require: +libxml2
   #gdal:
   #  variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat +gif +jasper +pcre +png +zstd
 
   #gdl:
   #  version: [0.9.9]
   #  variants: +graphicsmagick +python
-  libxml2:
-    require: +python
-    #require: '@2.10.2: +python'
-  python:
-    require: ~libxml2
+
+  #libxml2:
+  #  require: +python
+  #require: '@2.10.2: +python'
+
+  #python:
+  #require: ~libxml2
   sqlite:
     variants: +rtree
   tbb:
