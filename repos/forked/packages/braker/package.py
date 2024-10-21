@@ -18,6 +18,7 @@ class Braker(Package):
 
     #license("Artistic-1.0")
 
+    version("3.0.8", sha256="f2623290c3007a3e42719a0bb2713bec7226db222bfef742895a9d5d0b4ee526")
     version("2.1.6", sha256="eef3c4037364472988a010322cbd79b5171158f9c016f4383809adade4866c06")
     version("2.1.4", sha256="d48af5649cc879343046f9ddf180fe2c709b5810e0b78cf314bf298514d31d52")
     version(
@@ -54,7 +55,11 @@ class Braker(Package):
             install_tree("docs", prefix.docs)
             install_tree("example", prefix.example)
             with working_dir("scripts"):
-                install("helpMod.pm", prefix.lib)
+                if self.spec.satisfies("@2.1.6"):
+                    install("helpMod.pm", prefix.lib)
+                elif self.spec.satisfies("@3.0.8:"):
+                    install("helpMod_braker.pm", prefix.lib)
+                    
                 install("*.pl", prefix.bin)
 
     @run_after("install")
