@@ -14,6 +14,9 @@ class Rstudio(CMakePackage):
 
     homepage = "www.rstudio.com/products/rstudio/"
 
+    version("2024.09.0-375",
+            sha256="8a29b77c53a3db8379d824a9f4a491843036003d105ed71981cd40fe39d2c8c8")
+
     version("2023.12.1-402",
             sha256="196d31094d580a74737fbf689d2d0b302da5fec13694aa1d63f8875d3e45e4dd")
 
@@ -26,11 +29,7 @@ class Rstudio(CMakePackage):
 
     # https://github.com/rstudio/rstudio/archive/refs/tags/2023.12.1+402.tar.gz
     def url_for_version(self, version):
-        if version >= Version("2023.12.1"):
-            url = "https://github.com/rstudio/rstudio/archive/refs/tags/{0}.tar.gz"
-        else:
-            url = "https://github.com/rstudio/rstudio/archive/refs/tags/v{0}.tar.gz"
-        
+        url = "https://github.com/rstudio/rstudio/archive/refs/tags/v{0}.tar.gz"
         return url.format(str(version).replace('-', '+'))
 
     variant("notebook", default=False, description="Enable notebook support.")
@@ -53,11 +52,6 @@ class Rstudio(CMakePackage):
     depends_on("openssl@3:")
     depends_on("gettext")
 
-    # depends_on("{0}+pic".format(Boost.with_default_variants))
-    # 48      Could NOT find Boost: Found unsuitable version "1.80.0", but required is at
-    # 49      least "1.83.0" (found
-
-
     # require EXACT node version to match rstudio expectation
     with when("@2022.12.0"):
         depends_on("{0}@:1.82.9999+pic".format(Boost.with_default_variants))
@@ -67,12 +61,22 @@ class Rstudio(CMakePackage):
 
     # require EXACT node version to match rstudio expectation
     with when("@2023.12.1-402"):
-        depends_on("{0}@1.83.0:+pic".format(Boost.with_default_variants))
+        depends_on("{0}@1.83.0 +pic".format(Boost.with_default_variants))
         depends_on("node-js@18.18.2")
         depends_on("yarn@1.22.4:")
         depends_on("npm@9.8.1")
         depends_on("openssl@3.2:")
-    
+
+    # require EXACT node version to match rstudio expectation
+    with when("@2024.09.0-375"):
+        depends_on("{0}@1.83.0 +pic".format(Boost.with_default_variants)) # grep 'set(RSTUDIO_BOOST_REQUESTED_VERSION' src/cpp/CMakeLists.txt
+        depends_on("node-js@20.15.1") # grep 'set(RSTUDIO_INSTALLED_NODE_VERSION' cmake/globals.cmake
+        depends_on("yarn@1.22.4:")
+        depends_on("npm@10.9.0") # Not specified in rstudio source, grabbing newest.
+        depends_on("openssl@3.2:")
+        #Necessary to exactly match?# depends_on("pandoc@2.18") # grep PANDOC_VERSION= dependencies/common/install-pandoc
+        
+        
     with when("+notebook"):
         depends_on("r-base64enc")
         depends_on("r-digest")
@@ -136,8 +140,6 @@ class Rstudio(CMakePackage):
                 "src/gwt/build.xml",
                 string=True,
             )
-
-            
         else:
             # to use node-js provided by spack: first patches this portion of config to a single line
             patch("0004-use-system-node.patch")
@@ -163,12 +165,12 @@ class Rstudio(CMakePackage):
         )
 
         # unbundle icu libraries
-        filter_file(
-            "${QT_LIBRARY_DIR}/${ICU_LIBRARY}.so",
-            join_path(self.spec["icu4c"].prefix.lib, "${ICU_LIBRARY}.so"),
-            "src/cpp/desktop/CMakeLists.txt",
-            string=True,
-        )
+        #filter_file(
+        #    "${QT_LIBRARY_DIR}/${ICU_LIBRARY}.so",
+        #    join_path(self.spec["icu4c"].prefix.lib, "${ICU_LIBRARY}.so"),
+        #    "src/cpp/desktop/CMakeLists.txt",
+        #    string=True,
+        #)
 
     @run_before("cmake")
     def install_deps(self):
@@ -190,7 +192,7 @@ class Rstudio(CMakePackage):
 
         # method 1)
 
-        with when("@1.4.1717"):
+        if self.spec.satisfies("@1.4.1717"):
             filter_file(
                 'set(PANDOC_VERSION "2.11.4" CACHE INTERNAL "Pandoc version")',
                 'set(PANDOC_VERSION "{0}" CACHE INTERNAL "Pandoc version")'.format(
@@ -199,8 +201,8 @@ class Rstudio(CMakePackage):
                 "src/cpp/session/CMakeLists.txt",
                 string=True,
             )
-
-        with when("@2022.12.0-353:"):
+        elif self.spec.satisfies("@2022.12.0-353:2023.12.1-402"):
+            # grep PANDOC_VERSION= dependencies/common/install-pandoc
             filter_file(
                 'set(PANDOC_VERSION "2.18" CACHE INTERNAL "Pandoc version")',
                 'set(PANDOC_VERSION "{0}" CACHE INTERNAL "Pandoc version")'.format(
@@ -209,6 +211,18 @@ class Rstudio(CMakePackage):
                 "CMakeGlobals.txt",
                 string=True,
             )
+        elif self.spec.satisfies("@2024.09.0-375:"):
+            # grep PANDOC_VERSION= dependencies/common/install-pandoc
+            filter_file(
+                'set(PANDOC_VERSION "2.18" CACHE INTERNAL "Pandoc version")',
+                'set(PANDOC_VERSION "{0}" CACHE INTERNAL "Pandoc version")'.format(
+                    self.spec["pandoc"].version
+                ),
+                'cmake/globals.cmake',
+                string=True,
+            )
+
+
 
         pandoc_dir = join_path(self.prefix.tools, "pandoc", self.spec["pandoc"].version)
         os.makedirs(pandoc_dir)
@@ -227,3 +241,8 @@ class Rstudio(CMakePackage):
                 os.symlink(self.spec["yarn"].prefix.bin.yarn, "yarn")
                 os.symlink(self.spec["npm"].prefix.bin.npm, "npm")
                 os.symlink(self.spec["npm"].prefix.bin.npx, "npx")
+
+        if self.spec.satisfies("@2024.09.0-375:"):
+            node_version = self.spec['node-js'].version
+            with working_dir('dependencies/common/node'):
+                os.symlink(str(node_version), f'{node_version}-patched')
