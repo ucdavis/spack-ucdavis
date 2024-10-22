@@ -16,18 +16,34 @@ spack:
   - matrix:
     - [$libs-specs]
     - [$targets]
-  view: false
-  modules:
-    prefix_inspections:
-      lib64:
-      - LD_LIBRARY_PATH
-      lib:
-      - LD_LIBRARY_PATH
-      include:
-      - CPATH
-      - C_INCLUDE_PATH
-      - CPLUS_INCLUDE_PATH
+  #view: false
+  view:
     default:
+      root: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view
+      exclude:
+      - llvm
+      - repeatmasker # short term fix: repeatmasker is downloading giant DB files
+      projections:
+        target=x86_64_v3: generic/{name}-{version}
+        target=zen2: zen2/{name}-{version}
+        target=zen3: zen3/{name}-{version}
+        #target=skylake_avx512: 'skylake_avx512/{name}-{version}'
+      link: roots
+      link_type: hardlink
+  modules:
+    #prefix_inspections:
+    #  lib64:
+    #  - LD_LIBRARY_PATH
+    #  lib:
+    #  - LD_LIBRARY_PATH
+    #  include:
+    #  - CPATH
+    #  - C_INCLUDE_PATH
+    #  - CPLUS_INCLUDE_PATH
+    view_relative_modules:
+      use_view: True
+    default:
+      use_view: True
       roots:
         tcl: /cvmfs/hpc.ucdavis.edu/sw/spack/modulefiles/main
       tcl:
@@ -36,8 +52,8 @@ spack:
         #hide_implicits: false
         defaults:
         - cuda @12.3
-        include:
-        - $generic-specs
+        #include:
+        #- $generic-specs
         exclude:
         - mariadb
         - environment-modules
@@ -46,4 +62,4 @@ spack:
           llvm: clang/{version}
   concretizer:
     unify: false
-  packages: {}
+
