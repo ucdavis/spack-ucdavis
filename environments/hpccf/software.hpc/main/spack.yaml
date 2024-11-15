@@ -2,6 +2,7 @@ spack:
   include:
   - ../core/definitions.yaml
   - libs.yaml
+  - utils.yaml
   - general.yaml
   specs:
   # splatted specs, see definitions
@@ -11,12 +12,14 @@ spack:
   - $messaging-specs
   - $openssl-specs
   - matrix:
+    - [$utils-specs]
+    - [arch=linux-ubuntu22.04-x86_64_v3]
+  - matrix:
     - [$general-specs]
     - [arch=linux-ubuntu22.04-x86_64_v3]
   - matrix:
     - [$libs-specs]
     - [$targets]
-  #view: false
   view:
     default:
       root: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view
@@ -31,15 +34,15 @@ spack:
       link: roots
       link_type: hardlink
   modules:
-    #prefix_inspections:
-    #  lib64:
-    #  - LD_LIBRARY_PATH
-    #  lib:
-    #  - LD_LIBRARY_PATH
-    #  include:
-    #  - CPATH
-    #  - C_INCLUDE_PATH
-    #  - CPLUS_INCLUDE_PATH
+    prefix_inspections:
+      lib64:
+      - LD_LIBRARY_PATH
+      lib:
+      - LD_LIBRARY_PATH
+      include:
+      - CPATH
+      - C_INCLUDE_PATH
+      - CPLUS_INCLUDE_PATH
     view_relative_modules:
       use_view: True
     default:
@@ -60,6 +63,10 @@ spack:
         projections:
           intel-oneapi-compilers: oneapi/{version}
           llvm: clang/{version}
+          py-quast: quast/{version}
+          py-alphafold: alphafold/{version}
+          py-htseq: htseq/{version}
+          py-multiqc: multiqc/{version}
   concretizer:
     unify: false
 
