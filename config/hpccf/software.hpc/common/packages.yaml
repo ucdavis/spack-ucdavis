@@ -46,7 +46,16 @@ packages:
     require: '+thread_multiple'
   
   openmpi:
-    require: 'fabrics=ucx schedulers=slurm +legacylaunchers +cuda cuda_arch=75,86'
+    require: 
+      - spec: '+atomics fabrics=ucx schedulers=slurm +legacylaunchers +cuda cuda_arch=75,86'
+        message: 'openmpi: always enforce these variants'
+        when: '@:'
+      - spec: 'romio-filesystem=nfs,quobytefs'
+        when: '@5:'
+        message: 'openmpi: bring in the romio-filesystem variants for @5:'
+
+  mpich:
+    require: 'netmod=ucx pmi=pmix +cuda cuda_arch=75,86'
 
   environment-modules:
     variants: etcdir=/etc/environment-modules
@@ -60,7 +69,10 @@ packages:
     require: intel-oneapi-mkl
 
   mpi:
-    require: openmpi
+    require: 
+      - any_of:
+        - openmpi
+        - mpich
 
   ####
   #
@@ -115,6 +127,8 @@ packages:
       - intel-oneapi-tbb
       fftw-api:
       - fftw
+      mpi:
+      - openmpi
     variants:
     - cuda_arch=75
 

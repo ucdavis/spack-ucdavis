@@ -190,17 +190,29 @@ packages:
     - spec: cuda@8.0.61%gcc@=11.4.0~allow-unsupported-compilers~dev target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-8.0.61
     buildable: false
+  mpich:
+    externals:
+    - spec: mpich@4.2.1 %gcc@=11.4.0 netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/mpich-4.2.1
+    - spec: mpich@4.2.1 %gcc@=11.4.0 netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/mpich-4.2.1
+    - spec: mpich@4.2.1 %gcc@=11.4.0 netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/mpich-4.2.1
+    buildable: false
   openmpi:
     externals:
-    - spec: openmpi@4.1.6%gcc@=11.4.0~atomics+cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~internal-libevent~internal-pmix~java+legacylaunchers~lustre~memchecker~openshmem~orterunprefix~pmi~romio+rsh~singularity~static+vt+wrapper-rpath
-        cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3
+    - spec: openmpi@4.1.6%gcc@=11.4.0 +atomics+cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~internal-libevent~internal-pmix~java+legacylaunchers~lustre~memchecker~openshmem~orterunprefix~pmi~romio+rsh~singularity~static+vt+wrapper-rpath build_system=autotools cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.6
-    - spec: openmpi@4.1.6%gcc@=11.4.0~atomics+cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~internal-libevent~internal-pmix~java+legacylaunchers~lustre~memchecker~openshmem~orterunprefix~pmi~romio+rsh~singularity~static+vt+wrapper-rpath
-        cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen2
+    - spec: openmpi@4.1.6%gcc@=11.4.0 +atomics+cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~internal-libevent~internal-pmix~java+legacylaunchers~lustre~memchecker~openshmem~orterunprefix~pmi~romio+rsh~singularity~static+vt+wrapper-rpath build_system=autotools cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen2
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-4.1.6
-    - spec: openmpi@4.1.6%gcc@=11.4.0~atomics+cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~internal-libevent~internal-pmix~java+legacylaunchers~lustre~memchecker~openshmem~orterunprefix~pmi~romio+rsh~singularity~static+vt+wrapper-rpath
-        cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen3
+    - spec: openmpi@4.1.6%gcc@=11.4.0 +atomics+cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~internal-libevent~internal-pmix~java+legacylaunchers~lustre~memchecker~openshmem~orterunprefix~pmi~romio+rsh~singularity~static+vt+wrapper-rpath build_system=autotools cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-4.1.6
+    - spec: openmpi@5.0.3%gcc@=11.4.0 +atomics+cuda~gpfs~internal-hwloc~internal-libevent~internal-pmix~java+legacylaunchers~lustre~memchecker~openshmem~orterunprefix~romio+rsh~static+vt+wrapper-rpath build_system=autotools cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.3
+    - spec: openmpi@5.0.3%gcc@=11.4.0 +atomics+cuda~gpfs~internal-hwloc~internal-libevent~internal-pmix~java+legacylaunchers~lustre~memchecker~openshmem~orterunprefix~romio+rsh~static+vt+wrapper-rpath build_system=autotools cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-5.0.3
+    - spec: openmpi@5.0.3%gcc@=11.4.0 +atomics+cuda~gpfs~internal-hwloc~internal-libevent~internal-pmix~java+legacylaunchers~lustre~memchecker~openshmem~orterunprefix~romio+rsh~static+vt+wrapper-rpath build_system=autotools cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=zen3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.3
     buildable: false
   ucx:
     externals:
@@ -225,4 +237,13 @@ packages:
     - spec: pmix@4.2.6%gcc@=11.4.0~docs+pmi_backwards_compatibility~python~restful
         target=zen3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-4.2.6
+    - spec: pmix@5.0.1%gcc@=11.4.0~docs+pmi_backwards_compatibility~python~restful
+        target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/pmix-5.0.1
+    - spec: pmix@5.0.1%gcc@=11.4.0~docs+pmi_backwards_compatibility~python~restful
+        target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/pmix-5.0.1
+    - spec: pmix@5.0.1%gcc@=11.4.0~docs+pmi_backwards_compatibility~python~restful
+        target=zen3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-5.0.1
     buildable: false
