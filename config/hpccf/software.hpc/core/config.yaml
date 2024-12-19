@@ -4,7 +4,7 @@ config:
   build_stage:
     - /dev/shm/spack-tmp/$user/spack-stage
     - $user_cache_path/stage
-  source_cache: $user_cache_path/core/source
+  source_cache: /dev/shm/spack-source/core
   template_dirs:
   - /cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/templates
   db_lock_timeout: 60
