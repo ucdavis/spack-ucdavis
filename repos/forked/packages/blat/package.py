@@ -21,7 +21,7 @@ class Blat(Package):
     depends_on("libpng")
     depends_on("libuuid", when="@37:")
     depends_on("mysql-client", when="@37:")
-    depends_on("openssl@1.1.0l")
+    depends_on("openssl@1.1")
 
     @when("@37")
     def patch(self):
