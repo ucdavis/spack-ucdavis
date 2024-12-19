@@ -13,12 +13,13 @@ class EnvironmentModules(Package):
     """
 
     homepage = "https://cea-hpc.github.io/modules/"
-    url = "https://github.com/cea-hpc/modules/releases/download/v5.4.0/modules-5.4.0.tar.gz"
+    url = "https://github.com/cea-hpc/modules/releases/download/v5.5.0/modules-5.5.0.tar.gz"
     git = "https://github.com/cea-hpc/modules.git"
 
     maintainers("xdelaruelle")
 
     version("main", branch="main")
+    version("5.5.0", sha256="ad0e360c7adc2515a99836863d98499b3ad89cd7548625499b20293845b040cb")
     version("5.4.0", sha256="586245cbf9420866078d8c28fce8ef4f192530c69a0f368f51e848340dcf3b90")
     version("5.3.1", sha256="d02f9ce4f8baf6c99edceb7c73bfdd1e97d77bcc4725810b86efed9f58dda962")
     version("5.3.0", sha256="21b8daa0181044ef65097a1e3517af1f24e7c7343cc5bdaf70be11e3cb0edb51")
@@ -67,7 +68,9 @@ class EnvironmentModules(Package):
         when="@4.1:"
     )
 
+    depends_on("c", type="build")  # generated
     depends_on("less", type=("build", "run"), when="@4.1:")
+
     with when("@main"):
         depends_on("autoconf", type="build")
         depends_on("automake", type="build")
@@ -80,7 +83,8 @@ class EnvironmentModules(Package):
     # Dependencies:
     depends_on("tcl", type=("build", "link", "run"))
     depends_on("tcl@8.4:", type=("build", "link", "run"), when="@4.0.0:4.8")
-    depends_on("tcl@8.5:", type=("build", "link", "run"), when="@5.0.0:")
+    depends_on("tcl@8.5:8", type=("build", "link", "run"), when="@5.0.0:5.4.0")
+    depends_on("tcl@8.5:", type=("build", "link", "run"), when="@5.5.0:")
 
     def patch(self):
         etcdir = self.spec.variants["etcdir"].value
@@ -113,8 +117,11 @@ class EnvironmentModules(Package):
         if not spec.satisfies("@4.5.2"):
             config_args.extend(["--disable-dependency-tracking", "--disable-silent-rules"])
 
-        if "~X" in spec:
+        if spec.satisfies("~X"):
             config_args = ["--without-x"] + config_args
+
+        if self.spec.satisfies("@5.5.0:"):
+            config_args.extend(["--enable-conflict-unload"])
 
         etcdir = spec.variants["etcdir"].value
         if etcdir != "PREFIX/etc":
