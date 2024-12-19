@@ -47,12 +47,15 @@ packages:
   
   openmpi:
     require: 
-      - spec: '+atomics fabrics=ucx schedulers=slurm +legacylaunchers +cuda cuda_arch=75,86'
+      - spec: '+atomics fabrics=ucx schedulers=slurm +cuda cuda_arch=75,86'
         message: 'openmpi: always enforce these variants'
         when: '@:'
+      - spec: '+legacylaunchers'
+        message: 'openmpi: legacylaunchers for versions @:4'
+        when: '@:4'
       - spec: 'romio-filesystem=nfs,quobytefs'
         when: '@5:'
-        message: 'openmpi: bring in the romio-filesystem variants for @5:'
+        message: 'openmpi: romio-filesystem variants for @5:'
 
   mpich:
     require: 'netmod=ucx pmi=pmix +cuda cuda_arch=75,86'
@@ -63,7 +66,7 @@ packages:
   # When mpi=openmpi, this introduces an unresolvable dependency.
   # See https://github.com/spack/spack/issues/15836 for details
   hwloc:
-    require: '~netloc +pci +libxml2 +libudev +nvml +cuda +cairo cuda_arch=75,86'
+    require: '+pci +libxml2 +libudev +nvml +cuda +cairo cuda_arch=75,86'
 
   mkl:
     require: intel-oneapi-mkl
@@ -121,7 +124,7 @@ packages:
   all:
     target: [x86_64_v3]
     compiler:
-    - gcc @11.4.0
+    - gcc @13.2.0
     providers:
       tbb:
       - intel-oneapi-tbb

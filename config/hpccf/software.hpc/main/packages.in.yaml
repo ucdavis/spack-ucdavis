@@ -1,14 +1,14 @@
 packages:
   aocc:
     externals:
-    - spec: aocc@3.2.0%gcc@=11.4.0+license-agreed target=x86_64_v3
+    - spec: aocc@3.2.0+license-agreed target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0
       extra_attributes:
         compilers:
           c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0/bin/clang
           cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0/bin/clang++
           fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0/bin/flang
-    - spec: aocc@4.2.0%gcc@=11.4.0+license-agreed target=x86_64_v3
+    - spec: aocc@4.2.0+license-agreed target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.2.0
       extra_attributes:
         compilers:
@@ -18,40 +18,46 @@ packages:
     buildable: false
   openssl:
     externals:
-    - spec: openssl@3.2.1%gcc@=11.4.0~docs+shared certs=mozilla target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openssl-3.2.1
-    - spec: openssl@3.2.1%gcc@=11.4.0~docs+shared certs=mozilla target=zen2
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openssl-3.2.1
-    - spec: openssl@3.2.1%gcc@=11.4.0~docs+shared certs=mozilla target=zen3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openssl-3.2.1
-    - spec: openssl@1.0.2u%gcc@=11.4.0~docs+shared certs=mozilla target=x86_64_v3
+    - spec: openssl@3.4.0~docs+shared certs=mozilla target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openssl-3.4.0
+    - spec: openssl@3.4.0~docs+shared certs=mozilla target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openssl-3.4.0
+    - spec: openssl@3.4.0~docs+shared certs=mozilla target=zen3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openssl-3.4.0
+    - spec: openssl@3.2.3~docs+shared certs=mozilla target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openssl-3.2.3
+    - spec: openssl@3.2.3~docs+shared certs=mozilla target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openssl-3.2.3
+    - spec: openssl@3.2.3~docs+shared certs=mozilla target=zen3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openssl-3.2.3
+    - spec: openssl@1.0.2u~docs+shared certs=mozilla target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openssl-1.0.2u
-    - spec: openssl@1.0.2u%gcc@=11.4.0~docs+shared certs=mozilla target=zen2
+    - spec: openssl@1.0.2u~docs+shared certs=mozilla target=zen2
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openssl-1.0.2u
-    - spec: openssl@1.0.2u%gcc@=11.4.0~docs+shared certs=mozilla target=zen3
+    - spec: openssl@1.0.2u~docs+shared certs=mozilla target=zen3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openssl-1.0.2u
-    - spec: openssl@1.1.1w%gcc@=11.4.0~docs+shared certs=mozilla target=x86_64_v3
+    - spec: openssl@1.1.1w~docs+shared certs=mozilla target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openssl-1.1.1w
-    - spec: openssl@1.1.1w%gcc@=11.4.0~docs+shared certs=mozilla target=zen2
+    - spec: openssl@1.1.1w~docs+shared certs=mozilla target=zen2
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openssl-1.1.1w
-    - spec: openssl@1.1.1w%gcc@=11.4.0~docs+shared certs=mozilla target=zen3
+    - spec: openssl@1.1.1w~docs+shared certs=mozilla target=zen3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openssl-1.1.1w
-    - spec: openssl@3.0.11%gcc@=11.4.0~docs+shared certs=mozilla target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openssl-3.0.11
-    - spec: openssl@3.0.11%gcc@=11.4.0~docs+shared certs=mozilla target=zen2
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openssl-3.0.11
-    - spec: openssl@3.0.11%gcc@=11.4.0~docs+shared certs=mozilla target=zen3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openssl-3.0.11
-    - spec: openssl@3.1.5%gcc@=11.4.0~docs+shared certs=mozilla target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openssl-3.1.5
-    - spec: openssl@3.1.5%gcc@=11.4.0~docs+shared certs=mozilla target=zen2
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openssl-3.1.5
-    - spec: openssl@3.1.5%gcc@=11.4.0~docs+shared certs=mozilla target=zen3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openssl-3.1.5
+    - spec: openssl@3.0.15~docs+shared certs=mozilla target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openssl-3.0.15
+    - spec: openssl@3.0.15~docs+shared certs=mozilla target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openssl-3.0.15
+    - spec: openssl@3.0.15~docs+shared certs=mozilla target=zen3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openssl-3.0.15
+    - spec: openssl@3.1.7~docs+shared certs=mozilla target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openssl-3.1.7
+    - spec: openssl@3.1.7~docs+shared certs=mozilla target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openssl-3.1.7
+    - spec: openssl@3.1.7~docs+shared certs=mozilla target=zen3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openssl-3.1.7
     buildable: false
   gcc:
     externals:
-    - spec: gcc@13.2.0%gcc@=11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip
+    - spec: gcc@13.2.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip
         build_type=RelWithDebInfo languages='c,c++,fortran' target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0
       extra_attributes:
@@ -67,7 +73,7 @@ packages:
           c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-11.4.0/bin/gcc
           cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-11.4.0/bin/g++
           fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-11.4.0/bin/gfortran
-    - spec: gcc@7.5.0%gcc@=11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip
+    - spec: gcc@7.5.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip
         build_type=RelWithDebInfo languages='c,c++,fortran' target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0
       extra_attributes:
@@ -83,16 +89,40 @@ packages:
           cxx: /usr/bin/g++-9
           fortran: /usr/bin/gfortran-9
     buildable: false
+  llvm:
+    externals:
+    - spec: llvm@14.0.6+clang+flang target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-14.0.6
+      extra_attributes:
+        compilers:
+          c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-14.0.6/bin/clang
+          cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-14.0.6/bin/clang++
+          fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-14.0.6/bin/flang
+    - spec: llvm@16.0.6 +clang+flang target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-16.0.6
+      extra_attributes:
+        compilers:
+          c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-16.0.6/bin/clang
+          cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-16.0.6/bin/clang++
+          fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-16.0.6/bin/flang
+    - spec: llvm@19.1.3+clang+flang target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-19.1.3
+      extra_attributes:
+        compilers:
+          c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-19.1.3/bin/clang
+          cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-19.1.3/bin/clang++
+          fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-19.1.3/bin/flang
+    buildable: False
   intel-oneapi-compilers:
     externals:
-    - spec: intel-oneapi-compilers@2024.0.2%gcc@=11.4.0+envmods target=x86_64_v3
+    - spec: intel-oneapi-compilers@2024.0.2+envmods target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2
       extra_attributes:
         compilers:
           c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/icx
           cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/icpx
           fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/ifx
-    - spec: intel-oneapi-compilers@2023.2.1%gcc@=11.4.0+envmods target=x86_64_v3
+    - spec: intel-oneapi-compilers@2023.2.1+envmods target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.1
       extra_attributes:
         compilers:
@@ -102,16 +132,16 @@ packages:
     buildable: false
   hwloc:
     externals:
-    - spec: hwloc@2.9.1%gcc@=11.4.0+cairo+cuda~gl+libudev+libxml2~netloc+nvml~oneapi-level-zero~opencl+pci~rocm
+    - spec: hwloc@2.11.1+cairo+cuda~gl+libudev+libxml2+nvml~oneapi-level-zero~opencl+pci~rocm
         cuda_arch=75,86 libs=shared,static target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/hwloc-2.9.1
-    - spec: hwloc@2.9.1%gcc@=11.4.0+cairo+cuda~gl+libudev+libxml2~netloc+nvml~oneapi-level-zero~opencl+pci~rocm
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/hwloc-2.11.1
+    - spec: hwloc@2.11.1+cairo+cuda~gl+libudev+libxml2+nvml~oneapi-level-zero~opencl+pci~rocm
         cuda_arch=75,86 libs=shared,static target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/hwloc-2.9.1
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/hwloc-2.11.1
     buildable: false
   nvhpc:
     externals:
-    - spec: nvhpc@24.1%gcc@=11.4.0+blas+lapack+mpi default_cuda=default install_type=single
+    - spec: nvhpc@24.1+blas+lapack+mpi default_cuda=default install_type=single
         target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1
       extra_attributes:
@@ -119,7 +149,7 @@ packages:
           c: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-f7m6orivwro2uyskqhuqrz3aitygju7e/Linux_x86_64/2024/compilers/bin/nvc
           cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-f7m6orivwro2uyskqhuqrz3aitygju7e/Linux_x86_64/2024/compilers/bin/nvc++
           fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-f7m6orivwro2uyskqhuqrz3aitygju7e/Linux_x86_64/2024/compilers/bin/nvfortran
-    - spec: nvhpc@22.9%gcc@=11.4.0+blas+lapack+mpi default_cuda=default install_type=single
+    - spec: nvhpc@22.9+blas+lapack+mpi default_cuda=default install_type=single
         target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9
       extra_attributes:
@@ -130,120 +160,124 @@ packages:
     buildable: false
   environment-modules:
     externals:
-    - spec: environment-modules@5.4.0%gcc@=11.4.0+X etcdir=/etc/environment-modules
-        target=x86_64_v3
+    - spec: environment-modules@5.5.0+X etcdir=/etc/environment-modules target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/environment-modules
     buildable: false
   slurm:
     externals:
-    - spec: slurm@23-11-1-1%gcc@=11.4.0+cgroup~gtk~hdf5+hwloc+mariadb+nvml+pam+pmix+readline+restd~rsmi
+    - spec: slurm@24-05-5-1+cgroup~gtk~hdf5+hwloc+mariadb+nvml+pam+pmix+readline+restd~rsmi
         sysconfdir=/etc/slurm target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm-23-11-1-1
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm
     buildable: false
   libevent:
     externals:
-    - spec: libevent@2.1.12%gcc@=11.4.0+openssl target=x86_64_v3
+    - spec: libevent@2.1.12+openssl target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/libevent-2.1.12
-    - spec: libevent@2.1.12%gcc@=11.4.0+openssl target=zen2
+    - spec: libevent@2.1.12+openssl target=zen2
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/libevent-2.1.12
-    - spec: libevent@2.1.12%gcc@=11.4.0+openssl target=zen3
+    - spec: libevent@2.1.12+openssl target=zen3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/libevent-2.1.12
+    buildable: false
+  go:
+    externals:
+    - spec: go@1.23.2 target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/go-1.23.2
     buildable: false
   julia:
     externals:
-    - spec: julia@1.9.3%gcc@=11.4.0+openlibm+precompile target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/julia-1.9.3
+    - spec: julia@1.11.0+openlibm+precompile target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/julia-1.11.0
     buildable: false
   jdk:
     externals:
-    - spec: jdk@17.0.1%gcc@=11.4.0 target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/jdk-17.0.1
+    - spec: jdk@23.0.1 target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/jdk-23.0.1
     buildable: false
   openjdk:
     externals:
-    - spec: openjdk@11.0.17_8%gcc@=11.4.0 target=x86_64_v3
+    - spec: openjdk@11.0.17_8 target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openjdk-11.0.17_8
-    - spec: openjdk@16.0.2%gcc@=11.4.0 target=x86_64_v3
+    - spec: openjdk@16.0.2 target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openjdk-16.0.2
-    - spec: openjdk@17.0.8.1_1%gcc@=11.4.0 target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openjdk-17.0.8.1_1
+    - spec: openjdk@17.0.11_9 target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openjdk-17.0.11_9
     buildable: false
   rust:
     externals:
-    - spec: rust@1.78.0%gcc@=11.4.0+dev~docs+src target=x86_64_v3
+    - spec: rust@1.81.0+dev~docs+src target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.81.0
+    - spec: rust@1.78.0+dev~docs+src target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.78.0
-    - spec: rust@1.65.0%gcc@=11.4.0+dev~docs+src target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.65.0
+    #- spec: rust@1.65.0+dev~docs+src target=x86_64_v3
+    #  prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.65.0
     buildable: false
   cuda:
     externals:
-    - spec: cuda@12.3.0%gcc@=11.4.0~allow-unsupported-compilers~dev target=x86_64_v3
+    - spec: cuda@12.6.2~allow-unsupported-compilers~dev target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-12.6.2
+    - spec: cuda@12.3.0~allow-unsupported-compilers~dev target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-12.3.0
-    - spec: cuda@11.7.1%gcc@=11.4.0~allow-unsupported-compilers~dev target=x86_64_v3
+    - spec: cuda@11.7.1~allow-unsupported-compilers~dev target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-11.7.1
-    - spec: cuda@11.2.2%gcc@=11.4.0~allow-unsupported-compilers~dev target=x86_64_v3
+    - spec: cuda@11.2.2~allow-unsupported-compilers~dev target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-11.2.2
-    - spec: cuda@10.2.89%gcc@=11.4.0~allow-unsupported-compilers~dev target=x86_64_v3
+    - spec: cuda@10.2.89~allow-unsupported-compilers~dev target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-10.2.89
-    - spec: cuda@9.2.88%gcc@=11.4.0~allow-unsupported-compilers~dev target=x86_64_v3
+    - spec: cuda@9.2.88~allow-unsupported-compilers~dev target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-9.2.88
-    - spec: cuda@8.0.61%gcc@=11.4.0~allow-unsupported-compilers~dev target=x86_64_v3
+    - spec: cuda@8.0.61~allow-unsupported-compilers~dev target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-8.0.61
     buildable: false
   mpich:
     externals:
-    - spec: mpich@4.2.1 %gcc@=11.4.0 netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=x86_64_v3
+    - spec: mpich@4.2.1  netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/mpich-4.2.1
-    - spec: mpich@4.2.1 %gcc@=11.4.0 netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen2
+    - spec: mpich@4.2.1  netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen2
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/mpich-4.2.1
-    - spec: mpich@4.2.1 %gcc@=11.4.0 netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen3
+    - spec: mpich@4.2.1  netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/mpich-4.2.1
     buildable: false
   openmpi:
     externals:
-    - spec: openmpi@4.1.6%gcc@=11.4.0 +atomics+cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~internal-libevent~internal-pmix~java+legacylaunchers~lustre~memchecker~openshmem~orterunprefix~pmi~romio+rsh~singularity~static+vt+wrapper-rpath build_system=autotools cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.6
-    - spec: openmpi@4.1.6%gcc@=11.4.0 +atomics+cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~internal-libevent~internal-pmix~java+legacylaunchers~lustre~memchecker~openshmem~orterunprefix~pmi~romio+rsh~singularity~static+vt+wrapper-rpath build_system=autotools cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen2
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-4.1.6
-    - spec: openmpi@4.1.6%gcc@=11.4.0 +atomics+cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~internal-libevent~internal-pmix~java+legacylaunchers~lustre~memchecker~openshmem~orterunprefix~pmi~romio+rsh~singularity~static+vt+wrapper-rpath build_system=autotools cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-4.1.6
-    - spec: openmpi@5.0.3%gcc@=11.4.0 +atomics+cuda~gpfs~internal-hwloc~internal-libevent~internal-pmix~java+legacylaunchers~lustre~memchecker~openshmem~orterunprefix~romio+rsh~static+vt+wrapper-rpath build_system=autotools cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.3
-    - spec: openmpi@5.0.3%gcc@=11.4.0 +atomics+cuda~gpfs~internal-hwloc~internal-libevent~internal-pmix~java+legacylaunchers~lustre~memchecker~openshmem~orterunprefix~romio+rsh~static+vt+wrapper-rpath build_system=autotools cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=zen2
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-5.0.3
-    - spec: openmpi@5.0.3%gcc@=11.4.0 +atomics+cuda~gpfs~internal-hwloc~internal-libevent~internal-pmix~java+legacylaunchers~lustre~memchecker~openshmem~orterunprefix~romio+rsh~static+vt+wrapper-rpath build_system=autotools cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=zen3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.3
+    - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.7
+    - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-4.1.7
+    - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-4.1.7
+    - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5
+    - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-5.0.5
+    - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=zen3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5
     buildable: false
   ucx:
     externals:
-    - spec: ucx@1.15.0%gcc@=11.4.0~assertions~backtrace_detail~cma~cuda~dc~debug~dm+examples~gdrcopy~gtest~ib_hw_tm~java~knem~logging~mlx5_dv+openmp+optimizations~parameter_checking+pic~rc~rdmacm~rocm+thread_multiple~ucg~ud~verbs~vfs~xpmem
+    - spec: ucx@1.17.0~assertions~backtrace_detail~cma~cuda~dc~debug~dm+examples~gdrcopy~gtest~ib_hw_tm~java~knem~logging~mlx5_dv+openmp+optimizations~parameter_checking+pic~rc~rdmacm~rocm+thread_multiple~ucg~ud~verbs~vfs~xpmem
         libs=shared,static opt=3 simd=auto target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/ucx-1.15.0
-    - spec: ucx@1.15.0%gcc@=11.4.0~assertions~backtrace_detail~cma~cuda~dc~debug~dm+examples~gdrcopy~gtest~ib_hw_tm~java~knem~logging~mlx5_dv+openmp+optimizations~parameter_checking+pic~rc~rdmacm~rocm+thread_multiple~ucg~ud~verbs~vfs~xpmem
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/ucx-1.17.0
+    - spec: ucx@1.17.0~assertions~backtrace_detail~cma~cuda~dc~debug~dm+examples~gdrcopy~gtest~ib_hw_tm~java~knem~logging~mlx5_dv+openmp+optimizations~parameter_checking+pic~rc~rdmacm~rocm+thread_multiple~ucg~ud~verbs~vfs~xpmem
         libs=shared,static opt=3 simd=auto target=zen2
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/ucx-1.15.0
-    - spec: ucx@1.15.0%gcc@=11.4.0~assertions~backtrace_detail~cma~cuda~dc~debug~dm+examples~gdrcopy~gtest~ib_hw_tm~java~knem~logging~mlx5_dv+openmp+optimizations~parameter_checking+pic~rc~rdmacm~rocm+thread_multiple~ucg~ud~verbs~vfs~xpmem
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/ucx-1.17.0
+    - spec: ucx@1.17.0~assertions~backtrace_detail~cma~cuda~dc~debug~dm+examples~gdrcopy~gtest~ib_hw_tm~java~knem~logging~mlx5_dv+openmp+optimizations~parameter_checking+pic~rc~rdmacm~rocm+thread_multiple~ucg~ud~verbs~vfs~xpmem
         libs=shared,static opt=3 simd=auto target=zen3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/ucx-1.15.0
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/ucx-1.17.0
     buildable: false
   pmix:
     externals:
-    - spec: pmix@4.2.6%gcc@=11.4.0~docs+pmi_backwards_compatibility~python~restful
-        target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/pmix-4.2.6
-    - spec: pmix@4.2.6%gcc@=11.4.0~docs+pmi_backwards_compatibility~python~restful
-        target=zen2
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/pmix-4.2.6
-    - spec: pmix@4.2.6%gcc@=11.4.0~docs+pmi_backwards_compatibility~python~restful
-        target=zen3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-4.2.6
-    - spec: pmix@5.0.1%gcc@=11.4.0~docs+pmi_backwards_compatibility~python~restful
-        target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/pmix-5.0.1
-    - spec: pmix@5.0.1%gcc@=11.4.0~docs+pmi_backwards_compatibility~python~restful
-        target=zen2
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/pmix-5.0.1
-    - spec: pmix@5.0.1%gcc@=11.4.0~docs+pmi_backwards_compatibility~python~restful
-        target=zen3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-5.0.1
+    - spec: pmix@4.2.9 target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/pmix-4.2.9
+    - spec: pmix@4.2.9 target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/pmix-4.2.9
+    - spec: pmix@4.2.9 target=zen3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-4.2.9
+    - spec: pmix@5.0.3 target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/pmix-5.0.3
+    - spec: pmix@5.0.3 target=zen2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/pmix-5.0.3
+    - spec: pmix@5.0.3 target=zen3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-5.0.3
+    buildable: false
+  mpi:
     buildable: false
