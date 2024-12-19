@@ -1,35 +1,41 @@
   definitions:
     - general-specs:
-      #- abyss @2.3.7 'concretizer internal error: abyss@2.3.7 arch=linux-ubuntu22.04-x86_64_v3 is unsatisfiable'
-      #- amber @20 +cuda +openmp
+      #- abyss @2.3.7 ^openmpi@4 #'concretizer internal error: abyss@2.3.7 arch=linux-ubuntu22.04-x86_64_v3 is unsatisfiable'
+      #- amber @20 +cuda cuda_arch=75 ^openmpi@4
       - angsd @0.935
-      - apptainer @1.1.9
+      - apptainer @1.3.4
       - aragorn @1.2.41
       - aria2 @1.37
       - aspera-cli @3.7.7
-      - atlas @3.10.3 threads=pthreads
+      - atlas @3.11.41 threads=pthreads
       - augustus @3.5.0
       - awscli @1.29.41
+      - awscli-v2 @2.15.53 ^openssl@3.2.3
+      - bamtools @2.5.2
       - bayenv2 @2.0
       - bbmap @39.01
       - bcftools @1.19 +libgsl +perl-filters
       - beagle @5.4
       - bedops @2.4.41
       - bedtools2 @2.31.1
-      - blast-plus @2.13.0
+      - blast-plus @2.16.0 ^python@3.11.9
       - blast2go @5.2.5
+      - blat @37
       - bowtie @1.3.1
       - bowtie2 @2.5.2
       - braker @2.1.6
       - busco @5.4.3
       - bwa @0.7.17
-      #- bwa-mem2 @2.2.1 %oneapi target=x86_64_v3
+      - bwa-mem2 @2.2.1 %oneapi target=x86_64_v3
       - bwtool @1.0
       - canu @2.2
       - cap3 @2015-02-11
+      - ccfits @2.6
       - cdhit @4.8.1
-      - cdo @2.4.0
+      - cdo @2.4.0 ^fftw
+      - censor-norb @4.2.30
       - circos @0.69-9
+      - cfitsio @4.4.0
       - clustal-omega @1.2.4
       - clustalw @2.1
       - cmake @3.10.3
@@ -39,13 +45,16 @@
       - code-server @4.12.0
       - corset @1.09
       - coverm @0.6.1 %gcc@11.4.0 ^bwa-mem2%oneapi
-      - cp2k @2024.1 +cuda cuda_arch=70
+      - cp2k @2024.1 +cuda cuda_arch=70 ^fftw
       - cplex @12.10.0
       - cufflinks @2.2.1
       - dashing @0.4.0 %gcc@7.5.0 # used by coverm
       - dashing @1.0.3
+      - distangsd @main
+      - dealii @9.5.1 +cuda ^fftw
       - deml @1.1.4
       - diamond @2.1.7
+      - dotnet-core-sdk @8.0.4
       - doxygen @1.9.8
       - dssp @3.1.4
       - ea-utils @2021-10-20
@@ -68,18 +77,22 @@
       - freesurfer @7.4.1
       - gatk @4.5.0.0
       - gaussian @16-B.01
+      - gdl @1.0.3
       - geant4 @11.2.1
       - gemma @0.98.5
+      - genemark-et @4.71
       - genie @3.0.6
-      - genometools @1.6.2
+      - genometools @1.6.5
       - genrich @0.6.1
       - gffcompare @0.12.6
       - gffread @0.12.7
       - glimmer @3.02b
+      - glimpse @1.1.1
+      - glimpse2 @2.0.0
       - gmt @6.4.0 +blas +ffmpeg +fftw +geos +glib +graphicsmagick +lapack +pcre
       - gnuplot @6.0.0
-      - gromacs @2019.6 +cuda
-      - gromacs @2023.4 +cp2k +cuda
+      - gromacs @2019.6 +cuda ^fftw
+      - gromacs @2023.4 +cp2k +cuda ^fftw
       - hh-suite @3.3.0
       - hisat2 @2.2.1
       - hmmer @3.4
@@ -102,11 +115,13 @@
       - kraken @1.1.1
       - kraken2 @2.1.2
       - krakenuniq @1.0.4
-      - lammps @20240207 +cuda
+      - lammps @20240829.1 +cuda ^fftw
       - last @1499
       - lcov @2.0
+      - ltr-retriever @2.8.7
       - mafft @7.505
       - maker @3.01.04
+      - mark @1.0
       - mash @2.3
       - masurca @4.1.0
       - maven @3.8.4
@@ -119,21 +134,25 @@
       - miniasm @2018-3-30
       - minimap2 @2.26
       - mirdeep2 @0.0.8
+      - mlxup @4.30.0
       - mmseqs2 @14-7e284
       - mothur @1.48.0
       - mummer @3.23
       - mummer4 @4.0.0rc1
       - muscle @3.8.1551
       - muscle5 @5.1.0
+      - nanoporetech-dorado @0.3.4
       - ncbi-rmblastn @2.14.0
       - ncbi-toolkit @26_0_1
       - ncbi-vdb @3.0.2
       - nco @5.1.9
       - nextflow @23.10.1
       - ngsadmix @2018-03-19
+      - ngsrelate @2.0
       - ngstools @2023-04-05
+      - ninja-phylogeny @0.98
       - numactl @2.0.14
-      - octave @8.2.0 +fftw
+      - octave @8.2.0 +fftw ^fftw
       - octopus @7.3 +cuda ^fftw
       - ont-guppy @6.1.7
       - openldap@2.4.49
@@ -142,6 +161,8 @@
       - paml @4.10.7
       - parallel @20220522
       - paraview @5.11.2 +cuda +tbb +hdf5
+      #- parmetis @4.0.3
+      - phydrus-fortran @0.2.0
       - phylip @3.697
       #- phyluce @1.6.7 [require python 2]
       - picard @3.1.1
@@ -161,12 +182,12 @@
       - py-htseq @2.0.3
       - py-ipython @8.14.0
       - py-metaphlan @4.0.2
-      - py-multiqc @1.15
+      - py-multiqc @1.23
       - py-quast @4.6.3
       - py-vcf-kit @0.1.6
       - pythia6 @6.4.28
       - pythia8 @8.310
-      - qualimap @2.2.1
+      - qualimap @2.3
       - quantum-espresso @7.3.1 ^fftw
       - racon @1.4.3
       - raxml @8.2.12
@@ -175,12 +196,12 @@
       - rclone @1.65.1
       - recon @1.05
       - repeatmasker @4.1.5
-      #- repeatmodeler @2.0.4 ^repeatmasker@4.0.9
+      - repeatmodeler @2.0.4 ^repeatmasker@4.0.9
       - repeatscout @1.0.5
       - rnaquast @2.2.0
       - root @6.28.04 +pythia6 +pythia8 +python +fortran +fftw
       - rsem @1.3.3
-      - rstudio@2024.09.0-375 +server
+      - rstudio@2024.09.0-375 +server %gcc@13.2
       - sabre @2013-09-27
       - salmon @1.10.2
       - samtools @1.16.1
@@ -194,10 +215,14 @@
       - slim @4.0.1
       - smartdenovo @master
       - snap-korf @2021-11-04
+      - snpeff @2017-11-24
       - sortmerna @2017-07-13
       - spades @3.15.5
+      - squashfs @4.6.1
+      - squashfuse @0.5.2
       - sratoolkit @3.0.0
       - star @2.7.11a
+      #- strelka @2.9.10 # depends on python 2: deprecate
       - stringtie @2.2.1
       - subread @2.0.2
       - tabix @2013-12-16
@@ -219,3 +244,4 @@
       - virtualgl @3.1.1
       - vsearch @2.22.1
       - yasm @1.3.0
+      - yq @4.44.3
