@@ -245,6 +245,12 @@ packages:
     require: 'netmod=ucx pmi=pmix +cuda cuda_arch=75,86'
   openmpi:
     externals:
+      - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5
+      - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen2
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-4.1.5
+      - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-4.1.5
       - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.7
       - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen2
@@ -293,12 +299,9 @@ packages:
       - spec: pmix@5.0.3 target=zen3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-5.0.3
     buildable: false
-  mpi:
-    buildable: false
-    require:
-      - any_of:
-          - openmpi
-          - mpich
+  #mpi:
+  #  buildable: false
+
   ####
   # Externals: non-buildable
   ####
@@ -321,6 +324,11 @@ packages:
         prefix: /usr
   mkl:
     require: intel-oneapi-mkl
+  mpi:
+    require:
+      - any_of:
+          - openmpi
+          - mpich
   ####
   #
   # Other package / build tree constraints
