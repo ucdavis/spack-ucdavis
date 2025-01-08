@@ -1,0 +1,74 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-08 15:48:33.387610
+##
+## distangsd@main%gcc@13.2.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/mzqgowu
+##
+
+
+module-whatis { distAngsd is a software to simulate and infer phylogenetic relationships between two individuals, in which two novel methods (i.e., geno and nuc) are proposed. A bunch of other methods are also implemented, e.g., RandomSEQ, ConsensusSEQ, AmbiguityGT and NoAmbiguity for comparisons. The software can both conduct simulation and analyses real vcf/bcf file given reliable genotype likelihoods are calculated.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : distangsd}
+    puts stderr {Version: main}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr { distAngsd is a software to simulate and infer phylogenetic}
+    puts stderr {relationships between two individuals, in which two novel methods (i.e.,}
+    puts stderr {geno and nuc) are proposed. A bunch of other methods are also}
+    puts stderr {implemented, e.g., RandomSEQ, ConsensusSEQ, AmbiguityGT and NoAmbiguity}
+    puts stderr {for comparisons. The software can both conduct simulation and analyses}
+    puts stderr {real vcf/bcf file given reliable genotype likelihoods are calculated.}
+    puts stderr {The software can do 1-d simulation and inference (only genetic distance}
+    puts stderr {t estimation), 2-d simulation and inference (genetic distance t and}
+    puts stderr {invariable sites proportion p_inv joint estimation), vcf file read and}
+    puts stderr {inference, genotype likelihood table read and inference. Both JC69 are}
+    puts stderr {GTR models can be considered. Genotype likelihood and inference logs can}
+    puts stderr {be recored either in the format of txt.gz or bin. NOTE: distAngsd did}
+    puts stderr {not provide any version numbers, so it is versioned by its git hash.}
+}
+
+conflict distangsd
+
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/distangsd-main/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/distangsd-main/.}
+setenv DISTANGSD_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/distangsd-main-mzqgowueg4hrolxye6xqdtvsyjr5vdw7}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

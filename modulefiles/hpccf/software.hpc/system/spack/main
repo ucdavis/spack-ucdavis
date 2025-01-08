@@ -1,0 +1,10 @@
+#%Module
+
+set root "/cvmfs/hpc.ucdavis.edu/sw/spack/src/main"
+
+set moduledir [file dirname $ModulesCurrentModulefile]
+source $moduledir/common
+
+if { [module-info mode load] } {
+    puts stdout "spack env activate --without-view $root/../../environments/main; "
+}

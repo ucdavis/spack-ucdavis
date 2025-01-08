@@ -1,0 +1,71 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-08 15:49:55.971830
+##
+## pythia8@8.310%gcc@13.2.0~evtgen~fastjet~gzip~hdf5+hepmc+hepmc3~lhapdf~madgraph5amc~mpich~openmpi~python~rivet~root+shared build_system=autotools cxxstd=11 arch=linux-ubuntu22.04-x86_64_v3/izwdd4t
+##
+## Configure options: --with-hepmc2=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/hepmc-2.06.11-llmnljlprnehj6rzr7sukkby3k667swn --with-hepmc3=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/hepmc3-3.3.0-jwje3nybnbzyatcbhjju5xzdgayhhgzh --without-evtgen --without-root --without-rivet --without-python --without-openmp --without-mpich --without-hdf5 --without-gzip
+##
+
+
+module-whatis {The Pythia program is a standard tool for the generation of events in high-energy collisions, comprising a coherent set of physics models for the evolution from a few-body hard process to a complex multiparticle final state.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : pythia8}
+    puts stderr {Version: 8.310}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The Pythia program is a standard tool for the generation of events in}
+    puts stderr {high-energy collisions, comprising a coherent set of physics models for}
+    puts stderr {the evolution from a few-body hard process to a complex multiparticle}
+    puts stderr {final state.}
+}
+
+conflict pythia8
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/pythia8-8.310/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/pythia8-8.310/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/pythia8-8.310/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/pythia8-8.310/include}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/pythia8-8.310/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/pythia8-8.310/.}
+setenv PYTHIA8_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/pythia8-8.310-izwdd4tlglqr6vzrdxledpunfcjjvqb3}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

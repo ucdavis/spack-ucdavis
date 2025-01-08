@@ -1,0 +1,24 @@
+# vim: syntax=tcl
+#
+# Common spack activation code.
+# Expects the variable `root` to be set.
+#
+
+module-whatis "Spack is a package management tool designed to support multiple versions and configurations of software on a wide variety of platforms and environments. It was designed for large supercomputing centers, where many users and application teams share common installations of software on clusters with exotic architectures, using libraries that do not have a standard ABI. Spack is non-destructive: installing a new version does not break existing installations, so many configurations can coexist on the same system."
+
+set name "spack"
+set url "https://spack.readthedocs.io/en/latest/index.html"
+
+set shellfamily [module-info shelltype]
+set shellprog [module-info shell]
+set modmode [module-info mode]
+
+if { [module-info mode unload] } {
+    puts prestdout "spack env deactivate; "
+}
+
+source-sh bash $root/share/spack/setup-env.sh
+
+if { [module-info usergroups "software-user" ] } {
+    chdir $root/../../
+}

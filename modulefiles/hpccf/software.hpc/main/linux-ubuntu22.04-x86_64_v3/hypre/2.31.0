@@ -1,0 +1,69 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-08 15:48:39.846408
+##
+## hypre@2.31.0%gcc@13.2.0~caliper~complex~cublas+cuda~debug+fortran~gptune~gpu-aware-mpi~int64~internal-superlu~magma~mixedint~mpi+openmp~rocblas~rocm+shared~superlu-dist~sycl~umpire~unified-memory build_system=autotools cuda_arch=75 precision=double arch=linux-ubuntu22.04-x86_64_v3/r2jyrij
+##
+## Configure options: --prefix=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/hypre-2.31.0-r2jyrijh6iqcpdslibd4enfjvpx5qdg3 --with-lapack-libs=openblas --with-lapack-lib-dirs=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/openblas-0.3.28-ap4k5dzekmdokd4sqkhp6vrac2bypni3/lib --with-blas-libs=openblas --with-blas-lib-dirs=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/openblas-0.3.28-ap4k5dzekmdokd4sqkhp6vrac2bypni3/lib --without-MPI --with-openmp --disable-bigint --disable-mixedint --disable-complex --enable-shared --without-superlu --without-mli --without-fei --disable-debug --with-cuda --enable-curand --enable-cusparse --with-gpu-arch=75 --enable-device-memory-pool --with-cuda-home=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-12.6.2 --without-hip --disable-rocrand --disable-rocsparse --enable-fortran
+##
+
+
+module-whatis {Hypre is a library of high performance preconditioners that features parallel multigrid methods for both structured and unstructured grid problems.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : hypre}
+    puts stderr {Version: 2.31.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Hypre is a library of high performance preconditioners that features}
+    puts stderr {parallel multigrid methods for both structured and unstructured grid}
+    puts stderr {problems.}
+}
+
+conflict hypre
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/hypre-2.31.0/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/hypre-2.31.0/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/hypre-2.31.0/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/hypre-2.31.0/include}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/hypre-2.31.0/.}
+setenv HYPRE_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/hypre-2.31.0-r2jyrijh6iqcpdslibd4enfjvpx5qdg3}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

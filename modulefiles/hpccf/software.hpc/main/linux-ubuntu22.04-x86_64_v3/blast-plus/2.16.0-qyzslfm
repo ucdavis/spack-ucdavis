@@ -1,0 +1,68 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-08 15:48:27.286213
+##
+## blast-plus@2.16.0%gcc@13.2.0+bzip2+freetype+gnutls+jpeg+lzo+openssl+pcre+perl+png+python~static+zlib build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/qyzslfm
+##
+## Configure options: --with-bin-release --without-debug --with-mt --without-boost --with-64 --with-dll --without-static --without-static-exe --with-jpeg=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libjpeg-turbo-3.0.4-izrqhj2nnhk66smfgabjp6j5ethclads --with-png=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libpng-1.6.39-6565ndyqqpaj6epbfx7wtvzg4qkgogmy --with-freetype=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/freetype-2.13.2-e262vgdg35uw63egahg2dzuqtha63o7r --without-hdf5 --with-z=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zlib-ng-2.2.1-ci2x2tjfpbdihazwtuwsat2anrc47e6u --with-bz2=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/bzip2-1.0.8-qknztbakgnayrsc4iql53yss5tv4yslr --with-lzo=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/lzo-2.10-xhchxsob2z3owhyj4p7ctkp5dlived7n --with-gnutls=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gnutls-3.8.3-7ys6gl5d6omkwt4vajtzdsezbuxm4xwv --with-openssl=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openssl-1.1.1w --with-pcre=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/pcre-8.45-rjj57dvowwsj4rkj7p6dmcht4vsmne4b --with-python=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/python-3.11.9-wlce6b7jcdbqpur7mn77yzjb6nto2ami --with-perl=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-5.40.0-lzbctije7oh4wvh3uk67gnm57qxc26f6
+##
+
+
+module-whatis {Basic Local Alignment Search Tool.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : blast-plus}
+    puts stderr {Version: 2.16.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Basic Local Alignment Search Tool.}
+}
+
+conflict blast-plus
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/blast-plus-2.16.0-qyzslfm25iqwy72eikjdml55jz7ap5ca/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/blast-plus-2.16.0-qyzslfm25iqwy72eikjdml55jz7ap5ca/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/blast-plus-2.16.0-qyzslfm25iqwy72eikjdml55jz7ap5ca/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/blast-plus-2.16.0-qyzslfm25iqwy72eikjdml55jz7ap5ca/include}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/blast-plus-2.16.0-qyzslfm25iqwy72eikjdml55jz7ap5ca/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/blast-plus-2.16.0-qyzslfm25iqwy72eikjdml55jz7ap5ca/.}
+setenv BLAST_PLUS_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/blast-plus-2.16.0-qyzslfm25iqwy72eikjdml55jz7ap5ca}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

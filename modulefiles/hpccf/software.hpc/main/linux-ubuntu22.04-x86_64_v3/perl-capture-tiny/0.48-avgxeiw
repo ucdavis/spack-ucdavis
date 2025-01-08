@@ -1,0 +1,70 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-08 15:48:52.693472
+##
+## perl-capture-tiny@0.48%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/avgxeiw
+##
+
+
+module-whatis {Capture STDOUT and STDERR from Perl, XS or external programs}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-capture-tiny}
+    puts stderr {Version: 0.48}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Capture STDOUT and STDERR from Perl, XS or external programs}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.40.0-lzbctij
+} else {
+    depends-on perl/5.40.0-lzbctij
+}
+conflict perl-capture-tiny
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-capture-tiny-0.48-avgxeiwh6xdliywhrlojfla6xk3c6cj2/lib}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-capture-tiny-0.48-avgxeiwh6xdliywhrlojfla6xk3c6cj2/man}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-capture-tiny-0.48-avgxeiwh6xdliywhrlojfla6xk3c6cj2/.}
+prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-capture-tiny-0.48-avgxeiwh6xdliywhrlojfla6xk3c6cj2/lib/perl5}
+setenv PERL_CAPTURE_TINY_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-capture-tiny-0.48-avgxeiwh6xdliywhrlojfla6xk3c6cj2}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

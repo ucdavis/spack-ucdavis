@@ -1,0 +1,71 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-08 15:49:59.704214
+##
+## trimgalore@0.6.10%gcc@13.2.0~igzip~pigz build_system=generic arch=linux-ubuntu22.04-x86_64_v3/ypxsmmf
+##
+
+
+module-whatis {Trim Galore! is a wrapper around Cutadapt and FastQC to consistently apply adapter and quality trimming to FastQ files, with extra functionality for RRBS data.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : trimgalore}
+    puts stderr {Version: 0.6.10}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Trim Galore! is a wrapper around Cutadapt and FastQC to consistently}
+    puts stderr {apply adapter and quality trimming to FastQ files, with extra}
+    puts stderr {functionality for RRBS data.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.40.0-lzbctij
+    module load py-cutadapt/4.7
+} else {
+    depends-on perl/5.40.0-lzbctij
+    depends-on py-cutadapt/4.7
+}
+conflict trimgalore
+
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/trimgalore-0.6.10/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/trimgalore-0.6.10/.}
+setenv TRIMGALORE_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/trimgalore-0.6.10-ypxsmmfgh3ls5h6mynvzocagk5jd2heo}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+
