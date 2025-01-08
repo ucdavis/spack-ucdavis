@@ -107,7 +107,7 @@ class Rstudio(CMakePackage):
             "-DRSTUDIO_USE_SYSTEM_SOCI=Yes",
             "-DQUARTO_ENABLED=No", # temporary?
             '-DQT_QMAKE_EXECUTABLE="{0}"'.format(self.spec["qt"].prefix.bin.qmake),
-            "-DCMAKE_INSTALL_RPATH_USE_LINK_PATH=OFF"
+            "-DCMAKE_INSTALL_RPATH_USE_LINK_PATH=True"
         ]
 
         if '+server' in self.spec:
