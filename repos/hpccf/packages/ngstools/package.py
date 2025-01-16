@@ -12,8 +12,14 @@ from llnl.util import filesystem, tty
 from spack.package import *
 
 
-SUBMODULES = ["ngsSim", "ngsPopGen", "ngsUtils", \
-              "ngsDist", "ngsLD", "ngsF", "ngsF-HMM"]
+SUBMODULES = [ "ngsSim",
+               "ngsPopGen",
+               "ngsUtils",
+               "ngsDist",
+               "ngsLD",
+               "ngsF",
+               "ngsF-HMM",
+              ]
 
 
 def submodules(package):
@@ -33,6 +39,7 @@ class Ngstools(MakefilePackage):
 
     maintainers = ["camillescott"]
 
+    version("2024-08-27", commit="b38ea27", submodules=submodules)
     version("2023-04-05", commit="6505f80", submodules=submodules)
 
     depends_on("gsl@1.15:")
