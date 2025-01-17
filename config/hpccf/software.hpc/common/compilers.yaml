@@ -91,12 +91,12 @@ compilers:
     environment: {}
     extra_rpaths: []
 - compiler:
-    spec: oneapi@=2023.2.0
+    spec: oneapi@=2023.2.4
     paths:
-      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-xurh4ceudg3gkozq727pv7oxuczkqbc2/compiler/latest/linux/bin/icx
-      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-xurh4ceudg3gkozq727pv7oxuczkqbc2/compiler/latest/linux/bin/icpx
-      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-xurh4ceudg3gkozq727pv7oxuczkqbc2/compiler/latest/linux/bin/ifx
-      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2023.2.1-xurh4ceudg3gkozq727pv7oxuczkqbc2/compiler/latest/linux/bin/ifx
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4/compiler/latest/linux/bin/icx
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4/compiler/latest/linux/bin/icpx
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4/compiler/latest/linux/bin/ifx
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4/compiler/latest/linux/bin/ifx
     flags: {}
     operating_system: ubuntu22.04
     target: x86_64
@@ -106,10 +106,23 @@ compilers:
 - compiler:
     spec: oneapi@=2024.0.2
     paths:
-      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2024.0.2-cknpyng3n6wgcxfifilfrxgcsl4hntrp/compiler/latest/bin/icx
-      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2024.0.2-cknpyng3n6wgcxfifilfrxgcsl4hntrp/compiler/latest/bin/icpx
-      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2024.0.2-cknpyng3n6wgcxfifilfrxgcsl4hntrp/compiler/latest/bin/ifx
-      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-compilers-2024.0.2-cknpyng3n6wgcxfifilfrxgcsl4hntrp/compiler/latest/bin/ifx
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/icx
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/icpx
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/ifx
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/ifx
+    flags: {}
+    operating_system: ubuntu22.04
+    target: x86_64
+    modules: []
+    environment: {}
+    extra_rpaths: []
+- compiler:
+    spec: intel@=2021.10.0
+    paths:
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-classic-2021.10.0/bin/icc
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-classic-2021.10.0/bin/icpc
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-classic-2021.10.0/bin/ifort
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-classic-2021.10.0/bin/ifort
     flags: {}
     operating_system: ubuntu22.04
     target: x86_64
@@ -119,10 +132,10 @@ compilers:
 - compiler:
     spec: aocc@=3.2.0
     paths:
-      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-3.2.0-fh6i2v6mt2l6xa34v4gskyoj77wq35fs/bin/clang
-      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-3.2.0-fh6i2v6mt2l6xa34v4gskyoj77wq35fs/bin/clang++
-      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-3.2.0-fh6i2v6mt2l6xa34v4gskyoj77wq35fs/bin/flang
-      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-3.2.0-fh6i2v6mt2l6xa34v4gskyoj77wq35fs/bin/flang
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0/bin/clang
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0/bin/clang++
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0/bin/flang
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0/bin/flang
     flags:
       cflags: null
       cxxflags: null
@@ -135,10 +148,10 @@ compilers:
 - compiler:
     spec: aocc@=4.2.0
     paths:
-      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.2.0-g5sywp4fch723ndjdcwf6ngd3kvrxsi3/bin/clang
-      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.2.0-g5sywp4fch723ndjdcwf6ngd3kvrxsi3/bin/clang++
-      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.2.0-g5sywp4fch723ndjdcwf6ngd3kvrxsi3/bin/flang
-      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/aocc-4.2.0-g5sywp4fch723ndjdcwf6ngd3kvrxsi3/bin/flang
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.2.0/bin/clang
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.2.0/bin/clang++
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.2.0/bin/flang
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.2.0/bin/flang
     flags:
       cflags: null
       cxxflags: null
@@ -151,10 +164,10 @@ compilers:
 - compiler:
     spec: nvhpc@=24.1
     paths:
-      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-qtthwpcavqbljxtyrusc33mhpi3h6xsi/Linux_x86_64/2024/compilers/bin/nvc
-      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-qtthwpcavqbljxtyrusc33mhpi3h6xsi/Linux_x86_64/2024/compilers/bin/nvc++
-      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-qtthwpcavqbljxtyrusc33mhpi3h6xsi/Linux_x86_64/2024/compilers/bin/nvfortran
-      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-qtthwpcavqbljxtyrusc33mhpi3h6xsi/Linux_x86_64/2024/compilers/bin/nvfortran
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1/Linux_x86_64/2024/compilers/bin/nvc
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1/Linux_x86_64/2024/compilers/bin/nvc++
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1/Linux_x86_64/2024/compilers/bin/nvfortran
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1/Linux_x86_64/2024/compilers/bin/nvfortran
     flags: {}
     operating_system: ubuntu22.04
     target: x86_64
@@ -164,10 +177,10 @@ compilers:
 - compiler:
     spec: nvhpc@=22.9
     paths:
-      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-plixznccrff4dzkwzbga43oysmmqdyjm/Linux_x86_64/2022/compilers/bin/nvc
-      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-plixznccrff4dzkwzbga43oysmmqdyjm/Linux_x86_64/2022/compilers/bin/nvc++
-      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-plixznccrff4dzkwzbga43oysmmqdyjm/Linux_x86_64/2022/compilers/bin/nvfortran
-      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-plixznccrff4dzkwzbga43oysmmqdyjm/Linux_x86_64/2022/compilers/bin/nvfortran
+      cc: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9/Linux_x86_64/2022/compilers/bin/nvc
+      cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9/Linux_x86_64/2022/compilers/bin/nvc++
+      f77: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9/Linux_x86_64/2022/compilers/bin/nvfortran
+      fc: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9/Linux_x86_64/2022/compilers/bin/nvfortran
     flags: {}
     operating_system: ubuntu22.04
     target: x86_64

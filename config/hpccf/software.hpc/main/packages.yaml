@@ -119,13 +119,27 @@ packages:
             c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/icx
             cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/icpx
             fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/ifx
-      - spec: intel-oneapi-compilers@2023.2.1+envmods target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.1
+      - spec: intel-oneapi-compilers@2023.2.4+envmods target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4
         extra_attributes:
           compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.1/compiler/latest/linux/bin/icx
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.1/compiler/latest/linux/bin/icpx
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.1/compiler/latest/linux/bin/ifx
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4/compiler/latest/linux/bin/icx
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4/compiler/latest/linux/bin/icpx
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4/compiler/latest/linux/bin/ifx
+    buildable: false
+  intel-oneapi-compilers-classic:
+    externals:
+      - spec: intel-oneapi-compilers-classic@2021.10.0 target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-classic-2021.10.0
+        extra_attributes:
+          compilers:
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-classic-2021.10.0/bin/icc
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-classic-2021.10.0/bin/icpc
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-classic-2021.10.0/bin/ifort
+          flags:
+            cflags: -gcc-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/gcc -isystem/usr/include/x86_64-linux-gnu
+            cxxflags: -gxx-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/g++ -isystem/usr/include/x86_64-linux-gnu
+            fflags: -gcc-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/gcc
     buildable: false
   # When mpi=openmpi, this introduces an unresolvable dependency.
   # See https://github.com/spack/spack/issues/15836 for details
@@ -149,16 +163,16 @@ packages:
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1
         extra_attributes:
           compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-f7m6orivwro2uyskqhuqrz3aitygju7e/Linux_x86_64/2024/compilers/bin/nvc
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-f7m6orivwro2uyskqhuqrz3aitygju7e/Linux_x86_64/2024/compilers/bin/nvc++
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-f7m6orivwro2uyskqhuqrz3aitygju7e/Linux_x86_64/2024/compilers/bin/nvfortran
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1/Linux_x86_64/2024/compilers/bin/nvc
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1/Linux_x86_64/2024/compilers/bin/nvc++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1/Linux_x86_64/2024/compilers/bin/nvfortran
       - spec: nvhpc@22.9+blas+lapack+mpi default_cuda=default install_type=single target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9
         extra_attributes:
           compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-vsgfdktyg7xf5fj346c7mv4djz3mq6vf/Linux_x86_64/2022/compilers/bin/nvc
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-vsgfdktyg7xf5fj346c7mv4djz3mq6vf/Linux_x86_64/2022/compilers/bin/nvc++
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-vsgfdktyg7xf5fj346c7mv4djz3mq6vf/Linux_x86_64/2022/compilers/bin/nvfortran
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9/Linux_x86_64/2022/compilers/bin/nvc
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9/Linux_x86_64/2022/compilers/bin/nvc++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9/Linux_x86_64/2022/compilers/bin/nvfortran
     buildable: false
     require: '+blas +lapack +mpi'
   environment-modules:
@@ -169,10 +183,10 @@ packages:
     variants: etcdir=/etc/environment-modules
   slurm:
     externals:
-      - spec: slurm@24-05-5-1+cgroup~gtk~hdf5+hwloc+mariadb+nvml+pam+pmix+readline+restd~rsmi sysconfdir=/etc/slurm target=x86_64_v3
+      - spec: slurm@24-05-5-1+cgroup~gtk~hdf5+hwloc+mariadb+nvml+pam+pmix+readline+restd~rsmi sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm
     buildable: false
-    require: '+pmix +mariadb +hwloc +restd +nvml +cgroup +pam sysconfdir=/etc/slurm'
+    require: '+pmix +mariadb +hwloc +restd +nvml +cgroup +pam sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3'
   libevent:
     externals:
       - spec: libevent@2.1.12+openssl target=x86_64_v3
@@ -299,9 +313,6 @@ packages:
       - spec: pmix@5.0.3 target=zen3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-5.0.3
     buildable: false
-  #mpi:
-  #  buildable: false
-
   ####
   # Externals: non-buildable
   ####
@@ -322,13 +333,17 @@ packages:
     externals:
       - spec: mariadb-c-client@3 %gcc
         prefix: /usr
-  mkl:
-    require: intel-oneapi-mkl
-  mpi:
-    require:
-      - any_of:
-          - openmpi
-          - mpich
+  #mkl:
+  #  require:
+  #    - spec: intel-oneapi-mkl
+  #      message: 'mkl: require intel-oneapi-mkl'
+
+  #mpi:
+  #  require: 
+  #    - one_of:
+  #      - openmpi
+  #      - mpich
+
   ####
   #
   # Other package / build tree constraints
@@ -340,23 +355,12 @@ packages:
     require: '@1.13.6 system-socket=/var/run/dbus/system_bus_socket'
   gettext:
     require: +libxml2
-  #gdal:
-  #  variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat +gif +jasper +pcre +png +zstd
-
-  #gdl:
-  #  version: [0.9.9]
-  #  variants: +graphicsmagick +python
-
-  #libxml2:
-  #  require: +python
-  #require: '@2.10.2: +python'
-
-  #python:
-  #require: ~libxml2
   sqlite:
     variants: +rtree
   tbb:
-    require: intel-oneapi-tbb
+    require:
+      - spec: intel-oneapi-tbb
+        message: 'tbb: require oneapi tbb'
   # xmlto does not build properly with OneAPI
   xmlto:
     require: "%gcc"
@@ -372,7 +376,10 @@ packages:
         - intel-oneapi-tbb
       fftw-api:
         - fftw
+      mkl:
+        - intel-oneapi-mkl
       mpi:
         - openmpi
+        - mpich
     variants:
-      - cuda_arch=75
+      - cuda_arch=75,86

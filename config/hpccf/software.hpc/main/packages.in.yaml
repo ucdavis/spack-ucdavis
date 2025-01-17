@@ -122,13 +122,27 @@ packages:
           c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/icx
           cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/icpx
           fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/ifx
-    - spec: intel-oneapi-compilers@2023.2.1+envmods target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.1
+    - spec: intel-oneapi-compilers@2023.2.4+envmods target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4
       extra_attributes:
         compilers:
-          c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.1/compiler/latest/linux/bin/icx
-          cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.1/compiler/latest/linux/bin/icpx
-          fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.1/compiler/latest/linux/bin/ifx
+          c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4/compiler/latest/linux/bin/icx
+          cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4/compiler/latest/linux/bin/icpx
+          fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4/compiler/latest/linux/bin/ifx
+    buildable: false
+  intel-oneapi-compilers-classic:
+    externals:
+    - spec: intel-oneapi-compilers-classic@2021.10.0 target=x86_64_v3
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-classic-2021.10.0
+      extra_attributes:
+        compilers:
+          c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-classic-2021.10.0/bin/icc
+          cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-classic-2021.10.0/bin/icpc
+          fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-classic-2021.10.0/bin/ifort
+        flags:
+          cflags: -gcc-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/gcc -isystem/usr/include/x86_64-linux-gnu 
+          cxxflags: -gxx-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/g++ -isystem/usr/include/x86_64-linux-gnu 
+          fflags: -gcc-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/gcc
     buildable: false
   hwloc:
     externals:
@@ -146,17 +160,17 @@ packages:
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1
       extra_attributes:
         compilers:
-          c: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-f7m6orivwro2uyskqhuqrz3aitygju7e/Linux_x86_64/2024/compilers/bin/nvc
-          cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-f7m6orivwro2uyskqhuqrz3aitygju7e/Linux_x86_64/2024/compilers/bin/nvc++
-          fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-24.1-f7m6orivwro2uyskqhuqrz3aitygju7e/Linux_x86_64/2024/compilers/bin/nvfortran
+          c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1/Linux_x86_64/2024/compilers/bin/nvc
+          cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1/Linux_x86_64/2024/compilers/bin/nvc++
+          fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1/Linux_x86_64/2024/compilers/bin/nvfortran
     - spec: nvhpc@22.9+blas+lapack+mpi default_cuda=default install_type=single
         target=x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9
       extra_attributes:
         compilers:
-          c: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-vsgfdktyg7xf5fj346c7mv4djz3mq6vf/Linux_x86_64/2022/compilers/bin/nvc
-          cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-vsgfdktyg7xf5fj346c7mv4djz3mq6vf/Linux_x86_64/2022/compilers/bin/nvc++
-          fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nvhpc-22.9-vsgfdktyg7xf5fj346c7mv4djz3mq6vf/Linux_x86_64/2022/compilers/bin/nvfortran
+          c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9/Linux_x86_64/2022/compilers/bin/nvc
+          cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9/Linux_x86_64/2022/compilers/bin/nvc++
+          fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9/Linux_x86_64/2022/compilers/bin/nvfortran
     buildable: false
   environment-modules:
     externals:
@@ -165,8 +179,7 @@ packages:
     buildable: false
   slurm:
     externals:
-    - spec: slurm@24-05-5-1+cgroup~gtk~hdf5+hwloc+mariadb+nvml+pam+pmix+readline+restd~rsmi
-        sysconfdir=/etc/slurm target=x86_64_v3
+    - spec: slurm@24-05-5-1+cgroup~gtk~hdf5+hwloc+mariadb+nvml+pam+pmix+readline+restd~rsmi sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm
     buildable: false
   libevent:
@@ -285,5 +298,4 @@ packages:
     - spec: pmix@5.0.3 target=zen3
       prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-5.0.3
     buildable: false
-  #mpi:
-  #  buildable: false
+

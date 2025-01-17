@@ -20,7 +20,6 @@ packages:
   # Externals: buildable
   ####
 
-
   mariadb-c-client:
     externals:
     - spec: mariadb-c-client@3 %gcc
@@ -40,7 +39,7 @@ packages:
     require: '+dev'
       
   slurm:
-    require: '+pmix +mariadb +hwloc +restd +nvml +cgroup +pam sysconfdir=/etc/slurm'
+    require: '+pmix +mariadb +hwloc +restd +nvml +cgroup +pam sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3'
 
   ucx:
     require: '+thread_multiple'
@@ -68,14 +67,16 @@ packages:
   hwloc:
     require: '+pci +libxml2 +libudev +nvml +cuda +cairo cuda_arch=75,86'
 
-  mkl:
-    require: intel-oneapi-mkl
+  #mkl:
+  #  require:
+  #    - spec: intel-oneapi-mkl
+  #      message: 'mkl: require intel-oneapi-mkl'
 
-  mpi:
-    require: 
-      - any_of:
-        - openmpi
-        - mpich
+  #mpi:
+  #  require: 
+  #    - one_of:
+  #      - openmpi
+  #      - mpich
 
   ####
   #
@@ -92,25 +93,13 @@ packages:
   gettext:
     require: +libxml2
 
-  #gdal:
-  #  variants: +netcdf +sqlite3 +xml2 +grib +hdf5 +curl +geos +cfitsio +crypto +expat +gif +jasper +pcre +png +zstd
-
-  #gdl:
-  #  version: [0.9.9]
-  #  variants: +graphicsmagick +python
-
-  #libxml2:
-  #  require: +python
-  #require: '@2.10.2: +python'
-
-  #python:
-  #require: ~libxml2
-
   sqlite:
     variants: +rtree
 
   tbb:
-    require: intel-oneapi-tbb
+    require:
+      - spec: intel-oneapi-tbb
+        message: 'tbb: require oneapi tbb'
 
   # xmlto does not build properly with OneAPI
   xmlto:
@@ -127,11 +116,14 @@ packages:
     - gcc @13.2.0
     providers:
       tbb:
-      - intel-oneapi-tbb
+        - intel-oneapi-tbb
       fftw-api:
-      - fftw
+        - fftw
+      mkl:
+        - intel-oneapi-mkl
       mpi:
-      - openmpi
+        - openmpi
+        - mpich
     variants:
-    - cuda_arch=75
+    - cuda_arch=75,86
 
