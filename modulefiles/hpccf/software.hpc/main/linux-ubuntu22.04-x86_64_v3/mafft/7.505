@@ -1,0 +1,67 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:46.896639
+##
+## mafft@7.505%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/r4b6rgs
+##
+
+
+module-whatis {MAFFT is a multiple sequence alignment program for unix-like operating systems. It offers a range of multiple alignment methods, L-INS-i (accurate; for alignment of <~200 sequences), FFT-NS-2 (fast; for alignment of <~30,000 sequences), etc.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : mafft}
+    puts stderr {Version: 7.505}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {MAFFT is a multiple sequence alignment program for unix-like operating}
+    puts stderr {systems. It offers a range of multiple alignment methods, L-INS-i}
+    puts stderr {(accurate; for alignment of <~200 sequences), FFT-NS-2 (fast; for}
+    puts stderr {alignment of <~30,000 sequences), etc.}
+}
+
+conflict mafft
+
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/mafft-7.505/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/mafft-7.505/share/man}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/mafft-7.505/.}
+setenv MAFFT_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/mafft-7.505-r4b6rgs3kgl6oh6fqnnzlbtctq4swhkq}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

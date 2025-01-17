@@ -1,0 +1,87 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:22.865286
+##
+## py-jax@0.4.30%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/5beunl7
+##
+
+
+module-whatis {JAX is Autograd and XLA, brought together for high-performance machine learning research. With its updated version of Autograd, JAX can automatically differentiate native Python and NumPy functions. It can differentiate through loops, branches, recursion, and closures, and it can take derivatives of derivatives of derivatives. It supports reverse-mode differentiation (a.k.a. backpropagation) via grad as well as forward-mode differentiation, and the two can be composed arbitrarily to any order.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-jax}
+    puts stderr {Version: 0.4.30}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {JAX is Autograd and XLA, brought together for high-performance machine}
+    puts stderr {learning research. With its updated version of Autograd, JAX can}
+    puts stderr {automatically differentiate native Python and NumPy functions. It can}
+    puts stderr {differentiate through loops, branches, recursion, and closures, and it}
+    puts stderr {can take derivatives of derivatives of derivatives. It supports reverse-}
+    puts stderr {mode differentiation (a.k.a. backpropagation) via grad as well as}
+    puts stderr {forward-mode differentiation, and the two can be composed arbitrarily to}
+    puts stderr {any order.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-jaxlib/0.4.28-kfjqjvj
+    module load py-ml-dtypes/0.4.0-qnl5eqq
+    module load py-numpy/1.25.2-2wshlgs
+    module load py-opt-einsum/3.3.0-anjao2l
+    module load py-scipy/1.14.1-3aemdsc
+    module load python/3.11.9
+    module load python-venv/1.0-ed2nmwx
+} else {
+    depends-on py-jaxlib/0.4.28-kfjqjvj
+    depends-on py-ml-dtypes/0.4.0-qnl5eqq
+    depends-on py-numpy/1.25.2-2wshlgs
+    depends-on py-opt-einsum/3.3.0-anjao2l
+    depends-on py-scipy/1.14.1-3aemdsc
+    depends-on python/3.11.9
+    depends-on python-venv/1.0-ed2nmwx
+}
+conflict py-jax
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-jax-0.4.30-5beunl7753utzwx6lcmm437t536wcnqg/lib}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-jax-0.4.30-5beunl7753utzwx6lcmm437t536wcnqg/.}
+prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-jax-0.4.30-5beunl7753utzwx6lcmm437t536wcnqg/lib/python3.11/site-packages}
+setenv PY_JAX_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-jax-0.4.30-5beunl7753utzwx6lcmm437t536wcnqg}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,84 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:25.824828
+##
+## py-loompy@3.0.7%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/s35c6tp
+##
+
+
+module-whatis {Work with Loom files for single-cell RNA-seq data.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-loompy}
+    puts stderr {Version: 3.0.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Work with Loom files for single-cell RNA-seq data.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-click/8.1.7-kjrzl6j
+    module load py-h5py/3.12.1-73asaag
+    module load py-numba/0.58.1-rzf5lmw
+    module load py-numpy/1.25.2-4avjy5d
+    module load py-numpy-groupies/0.9.20-prhgiyq
+    module load py-scipy/1.14.1-3q4c4eg
+    module load python/3.11.9
+    module load python-venv/1.0-ed2nmwx
+} else {
+    depends-on py-click/8.1.7-kjrzl6j
+    depends-on py-h5py/3.12.1-73asaag
+    depends-on py-numba/0.58.1-rzf5lmw
+    depends-on py-numpy/1.25.2-4avjy5d
+    depends-on py-numpy-groupies/0.9.20-prhgiyq
+    depends-on py-scipy/1.14.1-3q4c4eg
+    depends-on python/3.11.9
+    depends-on python-venv/1.0-ed2nmwx
+}
+conflict py-loompy
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-loompy-3.0.7-s35c6tphkblr4ub3gs4g5oqrctpk5ii5/lib}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-loompy-3.0.7-s35c6tphkblr4ub3gs4g5oqrctpk5ii5/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-loompy-3.0.7-s35c6tphkblr4ub3gs4g5oqrctpk5ii5/.}
+prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-loompy-3.0.7-s35c6tphkblr4ub3gs4g5oqrctpk5ii5/lib/python3.11/site-packages}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-loompy-3.0.7-s35c6tphkblr4ub3gs4g5oqrctpk5ii5/bin}
+setenv PY_LOOMPY_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-loompy-3.0.7-s35c6tphkblr4ub3gs4g5oqrctpk5ii5}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

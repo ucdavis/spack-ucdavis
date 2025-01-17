@@ -1,0 +1,70 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:27.271340
+##
+## boost@1.86.0%gcc@13.2.0~atomic~charconv~chrono~clanglibcpp~cobalt+container~context~contract~coroutine~date_time~debug+exception~fiber~filesystem~graph~graph_parallel~icu~iostreams~json~locale~log+math~mpi+multithreaded~nowide~numpy~pic~program_options~python+random~regex~serialization+shared~signals~singlethreaded~stacktrace~system~taggedlayout~test~thread~timer~type_erasure~url~versionedlayout~wave build_system=generic cxxstd=11 patches=a440f96 visibility=hidden arch=linux-ubuntu22.04-zen2/44flou7
+##
+
+
+module-whatis {Boost provides free peer-reviewed portable C++ source libraries, emphasizing libraries that work well with the C++ Standard Library.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : boost}
+    puts stderr {Version: 1.86.0}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr {Boost provides free peer-reviewed portable C++ source libraries,}
+    puts stderr {emphasizing libraries that work well with the C++ Standard Library.}
+    puts stderr {Boost libraries are intended to be widely useful, and usable across a}
+    puts stderr {broad spectrum of applications. The Boost license encourages both}
+    puts stderr {commercial and non-commercial use.}
+}
+
+conflict boost
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/boost-1.86.0-44flou7xnxbyy5ek2kj7uxm6r6ameg6c/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/boost-1.86.0-44flou7xnxbyy5ek2kj7uxm6r6ameg6c/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/boost-1.86.0-44flou7xnxbyy5ek2kj7uxm6r6ameg6c/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/boost-1.86.0-44flou7xnxbyy5ek2kj7uxm6r6ameg6c/include}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/boost-1.86.0-44flou7xnxbyy5ek2kj7uxm6r6ameg6c/.}
+setenv BOOST_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/boost-1.86.0-44flou7xnxbyy5ek2kj7uxm6r6ameg6c}
+setenv BOOST_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/boost-1.86.0-44flou7xnxbyy5ek2kj7uxm6r6ameg6c}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+
