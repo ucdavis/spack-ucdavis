@@ -164,7 +164,7 @@ class Slurm(AutotoolsPackage):
     depends_on("hdf5", when="+hdf5")
     depends_on("hwloc", when="+hwloc")
     depends_on("mariadb", when="+mariadb")
-    depends_on("pmix@:4.2.99", when="+pmix")
+    depends_on("pmix", when="+pmix")
 
     depends_on("http-parser", when="+restd")
     depends_on("libyaml", when="+restd")
