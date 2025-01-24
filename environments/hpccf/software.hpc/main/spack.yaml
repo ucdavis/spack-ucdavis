@@ -32,7 +32,7 @@ spack:
         target=zen3: zen3/{name}-{version}
         #target=skylake_avx512: 'skylake_avx512/{name}-{version}'
       link: roots
-      link_type: hardlink
+      link_type: symlink
   modules:
     prefix_inspections:
       lib64:
