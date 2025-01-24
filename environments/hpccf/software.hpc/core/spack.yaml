@@ -23,7 +23,7 @@ spack:
         target=zen2: zen2/{name}-{version}
         target=zen3: zen3/{name}-{version}
       link: roots
-      link_type: hardlink
+      link_type: symlink
   concretizer:
     unify: false
     reuse: false
