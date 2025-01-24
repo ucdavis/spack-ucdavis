@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:59.337640
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-16 17:16:38.938663
 ##
 ## rstudio@2024.09.0-375%gcc@13.2.0~ipo~notebook+server build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/3vuxxts
 ##
@@ -61,5 +61,26 @@ if [module-info mode load] {
 }
 
 if [module-info mode unload] {
+}
+
+
+
+set ood_app_name "RStudio Server"
+
+if { [module-info mode load] } {
+
+    if { ![info exists env(SLURM_CLUSTER_NAME)] } {
+        set domainname [exec /usr/bin/hostname --domain]
+
+        puts stderr "
+The only HPCCF supported method of running $ood_app_name is now
+through OnDemand. You can find OnDemand for this cluster here:
+
+https://ondemand.$domainname/
+
+If you run into issues getting $ood_app_name to launch through OnDemand,
+then please open a ticket."
+        exit
+    }
 }
 
