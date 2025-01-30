@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:54.771623
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:06.732733
 ##
 ## perl-text-format@0.62%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/qv2xewz
 ##
@@ -23,6 +23,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict perl-text-format
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-text-format-0.62-qv2xewzpex2t3gyoklhw24hece2mrdoa/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-text-format-0.62-qv2xewzpex2t3gyoklhw24hece2mrdoa/lib}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-text-format-0.62-qv2xewzpex2t3gyoklhw24hece2mrdoa/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-text-format-0.62-qv2xewzpex2t3gyoklhw24hece2mrdoa/.}
 prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-text-format-0.62-qv2xewzpex2t3gyoklhw24hece2mrdoa/lib/perl5}

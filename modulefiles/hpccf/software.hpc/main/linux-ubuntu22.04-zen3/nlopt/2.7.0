@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:50.273455
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:02.340438
 ##
 ## nlopt@2.7.0%gcc@13.2.0~cxx~guile~ipo~matlab~octave+python+shared build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-zen3/dqgxd3k
 ##
@@ -32,6 +32,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict nlopt
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen3/python-3.11.9/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen3/python-3.11.9/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen3/python-3.11.9/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen3/python-3.11.9/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen3/python-3.11.9/include}

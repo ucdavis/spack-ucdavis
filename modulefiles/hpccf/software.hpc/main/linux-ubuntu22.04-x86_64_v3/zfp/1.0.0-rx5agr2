@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:34:02.071657
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:15.279537
 ##
 ## zfp@1.0.0%gcc@13.2.0~aligned~c~cuda~daz~fasthash~fortran~ipo~openmp~profile~python+shared~strided~tight-error~twoway+utilities bsws=8 build_system=cmake build_type=Release generator=make round=never arch=linux-ubuntu22.04-x86_64_v3/rx5agr2
 ##
@@ -24,6 +24,7 @@ proc ModulesHelp { } {
 conflict zfp
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zfp-1.0.0-rx5agr2xxijk6uef3ok6opvwcp53h5yl/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zfp-1.0.0-rx5agr2xxijk6uef3ok6opvwcp53h5yl/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zfp-1.0.0-rx5agr2xxijk6uef3ok6opvwcp53h5yl/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zfp-1.0.0-rx5agr2xxijk6uef3ok6opvwcp53h5yl/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zfp-1.0.0-rx5agr2xxijk6uef3ok6opvwcp53h5yl/include}

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:53.105615
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:05.068951
 ##
 ## pcre2@10.44%gcc@13.2.0~jit+multibyte build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/6qftryb
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict pcre2
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/pcre2-10.44-6qftrybgrnz7r7ssobkleqaq463dpgtg/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/pcre2-10.44-6qftrybgrnz7r7ssobkleqaq463dpgtg/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/pcre2-10.44-6qftrybgrnz7r7ssobkleqaq463dpgtg/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/pcre2-10.44-6qftrybgrnz7r7ssobkleqaq463dpgtg/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/pcre2-10.44-6qftrybgrnz7r7ssobkleqaq463dpgtg/include}

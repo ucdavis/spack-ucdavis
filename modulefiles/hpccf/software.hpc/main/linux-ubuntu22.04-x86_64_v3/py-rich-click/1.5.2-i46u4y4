@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:44.937193
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:57.143836
 ##
 ## py-rich-click@1.5.2%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/i46u4y4
 ##
@@ -30,6 +30,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-rich-click
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-rich-click-1.5.2-i46u4y4xdpjd54qccesq7jsmen3bekv2/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-rich-click-1.5.2-i46u4y4xdpjd54qccesq7jsmen3bekv2/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-rich-click-1.5.2-i46u4y4xdpjd54qccesq7jsmen3bekv2/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-rich-click-1.5.2-i46u4y4xdpjd54qccesq7jsmen3bekv2/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-rich-click-1.5.2-i46u4y4xdpjd54qccesq7jsmen3bekv2/lib/python3.11/site-packages}

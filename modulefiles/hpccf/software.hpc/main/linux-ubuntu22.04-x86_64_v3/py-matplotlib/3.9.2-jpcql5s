@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:27.500712
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:40.451473
 ##
 ## py-matplotlib@3.9.2%gcc@13.2.0~animation~fonts~latex~movies backend=agg build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/jpcql5s
 ##
@@ -44,6 +44,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-matplotlib
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-matplotlib-3.9.2-jpcql5swcj5fehjluwk7eagdomt4hilj/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-matplotlib-3.9.2-jpcql5swcj5fehjluwk7eagdomt4hilj/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-matplotlib-3.9.2-jpcql5swcj5fehjluwk7eagdomt4hilj/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-matplotlib-3.9.2-jpcql5swcj5fehjluwk7eagdomt4hilj/lib/python3.11/site-packages}
 setenv PY_MATPLOTLIB_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-matplotlib-3.9.2-jpcql5swcj5fehjluwk7eagdomt4hilj}

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:40.122695
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:52.558991
 ##
 ## py-ptyprocess@0.7.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/dim3f35
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-ptyprocess
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ptyprocess-0.7.0-dim3f35j3rwxp6mg6pe7udgus2skydt4/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ptyprocess-0.7.0-dim3f35j3rwxp6mg6pe7udgus2skydt4/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ptyprocess-0.7.0-dim3f35j3rwxp6mg6pe7udgus2skydt4/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ptyprocess-0.7.0-dim3f35j3rwxp6mg6pe7udgus2skydt4/lib/python3.11/site-packages}
 setenv PY_PTYPROCESS_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ptyprocess-0.7.0-dim3f35j3rwxp6mg6pe7udgus2skydt4}

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:52.829860
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:04.792007
 ##
 ## paraview@5.11.2%gcc@11.4.0~adios2~advanced_debug~catalyst~cdi+cuda+development_files~examples~eyedomelighting~fides~fortran+hdf5~ipo+kits~libcatalyst~mpi~nvindex+opengl2~pagosa~python~qt~raytracing~rocm+shared+tbb~visitbridge build_edition=canonical build_system=cmake build_type=Release cuda_arch=75 generator=ninja patches=02253c7,acb3805 use_vtkm=default arch=linux-ubuntu22.04-x86_64_v3/2zgohft
 ##
@@ -23,6 +23,7 @@ proc ModulesHelp { } {
 conflict paraview
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/paraview-5.11.2/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/paraview-5.11.2/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/paraview-5.11.2/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/paraview-5.11.2/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/paraview-5.11.2/include}

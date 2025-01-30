@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:19.867038
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:32.028500
 ##
 ## py-humanize@4.9.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/aaozfuc
 ##
@@ -32,6 +32,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-humanize
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-humanize-4.9.0-aaozfucydo4wf7xe4yrsj2dt4ldlhboo/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-humanize-4.9.0-aaozfucydo4wf7xe4yrsj2dt4ldlhboo/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-humanize-4.9.0-aaozfucydo4wf7xe4yrsj2dt4ldlhboo/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-humanize-4.9.0-aaozfucydo4wf7xe4yrsj2dt4ldlhboo/lib/python3.11/site-packages}
 setenv PY_HUMANIZE_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-humanize-4.9.0-aaozfucydo4wf7xe4yrsj2dt4ldlhboo}

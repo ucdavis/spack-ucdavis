@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:38.690578
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:49.819125
 ##
 ## gromacs@2019.6%gcc@13.2.0~cp2k+cuda~cycle_subcounters~double+gmxapi+hwloc~intel_provided_gcc~ipo~mdrun_only~mpi~nosuffix~opencl+openmp~plumed~relaxed_double_precision+shared build_system=cmake build_type=Release cuda_arch=75 generator=make openmp_max_threads=none arch=linux-ubuntu22.04-x86_64_v3/jaqdczf
 ##
@@ -26,6 +26,7 @@ proc ModulesHelp { } {
 conflict gromacs
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/gromacs-2019.6/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/gromacs-2019.6/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/gromacs-2019.6/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/gromacs-2019.6/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/gromacs-2019.6/include}

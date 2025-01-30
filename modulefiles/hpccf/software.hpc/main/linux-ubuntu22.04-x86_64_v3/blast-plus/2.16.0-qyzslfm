@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:26.521202
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:37.202867
 ##
 ## blast-plus@2.16.0%gcc@13.2.0+bzip2+freetype+gnutls+jpeg+lzo+openssl+pcre+perl+png+python~static+zlib build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/qyzslfm
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict blast-plus
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/blast-plus-2.16.0-qyzslfm25iqwy72eikjdml55jz7ap5ca/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/blast-plus-2.16.0-qyzslfm25iqwy72eikjdml55jz7ap5ca/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/blast-plus-2.16.0-qyzslfm25iqwy72eikjdml55jz7ap5ca/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/blast-plus-2.16.0-qyzslfm25iqwy72eikjdml55jz7ap5ca/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/blast-plus-2.16.0-qyzslfm25iqwy72eikjdml55jz7ap5ca/include}

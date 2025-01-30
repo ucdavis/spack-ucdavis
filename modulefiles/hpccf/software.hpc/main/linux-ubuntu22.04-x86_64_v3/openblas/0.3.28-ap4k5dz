@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:51.192522
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:03.244976
 ##
 ## openblas@0.3.28%gcc@13.2.0~bignuma~consistent_fpcsr+dynamic_dispatch+fortran~ilp64+locking+pic+shared build_system=makefile patches=d0b9276 symbol_suffix=none threads=none arch=linux-ubuntu22.04-x86_64_v3/ap4k5dz
 ##
@@ -18,6 +18,7 @@ proc ModulesHelp { } {
 conflict openblas
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/openblas-0.3.28-ap4k5dzekmdokd4sqkhp6vrac2bypni3/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/openblas-0.3.28-ap4k5dzekmdokd4sqkhp6vrac2bypni3/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/openblas-0.3.28-ap4k5dzekmdokd4sqkhp6vrac2bypni3/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/openblas-0.3.28-ap4k5dzekmdokd4sqkhp6vrac2bypni3/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/openblas-0.3.28-ap4k5dzekmdokd4sqkhp6vrac2bypni3/include}

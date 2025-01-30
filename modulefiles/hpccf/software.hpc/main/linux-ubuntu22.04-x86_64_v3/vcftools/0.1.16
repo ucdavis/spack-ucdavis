@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:34:01.171872
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:14.364288
 ##
 ## vcftools@0.1.16%gcc@13.2.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/qenqygo
 ##
@@ -26,6 +26,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict vcftools
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/vcftools-0.1.16/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/vcftools-0.1.16/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/vcftools-0.1.16/bin}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/vcftools-0.1.16/share/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/vcftools-0.1.16/.}

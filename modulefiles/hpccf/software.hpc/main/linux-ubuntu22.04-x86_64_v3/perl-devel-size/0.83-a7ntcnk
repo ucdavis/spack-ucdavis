@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:53.560790
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:05.523209
 ##
 ## perl-devel-size@0.83%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/a7ntcnk
 ##
@@ -24,6 +24,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict perl-devel-size
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-devel-size-0.83-a7ntcnks6byfkz2r26rncak4iz2cwj43/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-devel-size-0.83-a7ntcnks6byfkz2r26rncak4iz2cwj43/lib}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-devel-size-0.83-a7ntcnks6byfkz2r26rncak4iz2cwj43/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-devel-size-0.83-a7ntcnks6byfkz2r26rncak4iz2cwj43/.}
 prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-devel-size-0.83-a7ntcnks6byfkz2r26rncak4iz2cwj43/lib/perl5}

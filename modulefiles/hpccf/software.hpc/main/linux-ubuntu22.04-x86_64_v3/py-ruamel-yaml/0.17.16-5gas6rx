@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:45.534704
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:57.702776
 ##
 ## py-ruamel-yaml@0.17.16%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/5gas6rx
 ##
@@ -26,6 +26,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-ruamel-yaml
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ruamel-yaml-0.17.16-5gas6rxjzv3kfklauypqfvye45zl5oj4/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ruamel-yaml-0.17.16-5gas6rxjzv3kfklauypqfvye45zl5oj4/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ruamel-yaml-0.17.16-5gas6rxjzv3kfklauypqfvye45zl5oj4/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ruamel-yaml-0.17.16-5gas6rxjzv3kfklauypqfvye45zl5oj4/lib/python3.11/site-packages}
 setenv PY_RUAMEL_YAML_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ruamel-yaml-0.17.16-5gas6rxjzv3kfklauypqfvye45zl5oj4}

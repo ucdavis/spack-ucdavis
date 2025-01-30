@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:56.508059
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:08.789493
 ##
 ## py-xopen@1.6.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/bn276mo
 ##
@@ -30,6 +30,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-xopen
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-xopen-1.6.0-bn276moezeqlnjidcoqhjnrt5vcv3lyi/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-xopen-1.6.0-bn276moezeqlnjidcoqhjnrt5vcv3lyi/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-xopen-1.6.0-bn276moezeqlnjidcoqhjnrt5vcv3lyi/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-xopen-1.6.0-bn276moezeqlnjidcoqhjnrt5vcv3lyi/lib/python3.11/site-packages}
 setenv PY_XOPEN_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-xopen-1.6.0-bn276moezeqlnjidcoqhjnrt5vcv3lyi}

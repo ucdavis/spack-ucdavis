@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:29.380420
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:42.366518
 ##
 ## py-ml-dtypes@0.4.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/qnl5eqq
 ##
@@ -28,6 +28,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-ml-dtypes
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ml-dtypes-0.4.0-qnl5eqqrhzvu67t56boxbwhjoa5cm4as/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ml-dtypes-0.4.0-qnl5eqqrhzvu67t56boxbwhjoa5cm4as/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ml-dtypes-0.4.0-qnl5eqqrhzvu67t56boxbwhjoa5cm4as/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ml-dtypes-0.4.0-qnl5eqqrhzvu67t56boxbwhjoa5cm4as/lib/python3.11/site-packages}
 setenv PY_ML_DTYPES_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ml-dtypes-0.4.0-qnl5eqqrhzvu67t56boxbwhjoa5cm4as}

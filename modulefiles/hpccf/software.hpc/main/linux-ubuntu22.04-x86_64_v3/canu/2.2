@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:28.993955
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:39.746359
 ##
 ## canu@2.2%gcc@13.2.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/tjoqx5t
 ##
@@ -27,6 +27,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict canu
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/canu-2.2/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/canu-2.2/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/canu-2.2/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/canu-2.2/.}
 setenv CANU_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/canu-2.2-tjoqx5tz7jsjcawi2zbnz2qesdxdu74c}

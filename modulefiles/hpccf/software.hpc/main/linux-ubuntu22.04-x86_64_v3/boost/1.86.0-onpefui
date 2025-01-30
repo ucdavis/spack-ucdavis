@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:27.316826
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:38.042976
 ##
 ## boost@1.86.0%gcc@13.2.0+atomic~charconv+chrono~clanglibcpp~cobalt~container~context~contract~coroutine~date_time~debug+exception~fiber~filesystem~graph~graph_parallel~icu~iostreams~json~locale~log~math~mpi+multithreaded~nowide~numpy~pic~program_options~python~random~regex~serialization+shared~signals~singlethreaded~stacktrace+system~taggedlayout~test+thread~timer~type_erasure~url~versionedlayout~wave build_system=generic cxxstd=11 patches=a440f96 visibility=hidden arch=linux-ubuntu22.04-x86_64_v3/onpefui
 ##
@@ -22,6 +22,7 @@ proc ModulesHelp { } {
 conflict boost
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/boost-1.86.0-onpefuilqojtvbplb6igqbbgckqmcgel/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/boost-1.86.0-onpefuilqojtvbplb6igqbbgckqmcgel/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/boost-1.86.0-onpefuilqojtvbplb6igqbbgckqmcgel/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/boost-1.86.0-onpefuilqojtvbplb6igqbbgckqmcgel/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/boost-1.86.0-onpefuilqojtvbplb6igqbbgckqmcgel/include}

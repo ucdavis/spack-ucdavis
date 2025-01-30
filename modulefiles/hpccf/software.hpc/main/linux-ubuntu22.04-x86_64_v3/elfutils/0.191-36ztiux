@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:33.325549
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:44.391214
 ##
 ## elfutils@0.191%gcc@13.2.0~debuginfod+exeprefix+nls build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/36ztiux
 ##
@@ -24,6 +24,7 @@ proc ModulesHelp { } {
 conflict elfutils
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/elfutils-0.191-36ztiuxz3xygy7mvcpjz2eybeqb2oasl/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/elfutils-0.191-36ztiuxz3xygy7mvcpjz2eybeqb2oasl/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/elfutils-0.191-36ztiuxz3xygy7mvcpjz2eybeqb2oasl/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/elfutils-0.191-36ztiuxz3xygy7mvcpjz2eybeqb2oasl/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/elfutils-0.191-36ztiuxz3xygy7mvcpjz2eybeqb2oasl/include}

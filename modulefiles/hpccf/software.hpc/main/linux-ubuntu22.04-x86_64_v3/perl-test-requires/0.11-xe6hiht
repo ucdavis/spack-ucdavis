@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:54.721536
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:06.683056
 ##
 ## perl-test-requires@0.11%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/xe6hiht
 ##
@@ -23,6 +23,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict perl-test-requires
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-test-requires-0.11-xe6hihtxxl4pvf3wgty7dv56hjfp2r4v/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-test-requires-0.11-xe6hihtxxl4pvf3wgty7dv56hjfp2r4v/lib}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-test-requires-0.11-xe6hihtxxl4pvf3wgty7dv56hjfp2r4v/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-test-requires-0.11-xe6hihtxxl4pvf3wgty7dv56hjfp2r4v/.}
 prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-test-requires-0.11-xe6hihtxxl4pvf3wgty7dv56hjfp2r4v/lib/perl5}

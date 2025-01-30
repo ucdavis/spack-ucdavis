@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:05.026951
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:17.160542
 ##
 ## py-charset-normalizer@3.3.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/gdaypjv
 ##
@@ -26,6 +26,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-charset-normalizer
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-charset-normalizer-3.3.0-gdaypjvowt6fcttbanrmx3qhkpndncyo/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-charset-normalizer-3.3.0-gdaypjvowt6fcttbanrmx3qhkpndncyo/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-charset-normalizer-3.3.0-gdaypjvowt6fcttbanrmx3qhkpndncyo/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-charset-normalizer-3.3.0-gdaypjvowt6fcttbanrmx3qhkpndncyo/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-charset-normalizer-3.3.0-gdaypjvowt6fcttbanrmx3qhkpndncyo/lib/python3.11/site-packages}

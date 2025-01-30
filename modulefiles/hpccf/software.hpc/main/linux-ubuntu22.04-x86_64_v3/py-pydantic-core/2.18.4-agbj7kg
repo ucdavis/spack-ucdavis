@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:41.554896
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:53.969648
 ##
 ## py-pydantic-core@2.18.4%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/agbj7kg
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-pydantic-core
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pydantic-core-2.18.4-agbj7kgfpjy5sv2rdcvsdktcgozssyx6/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pydantic-core-2.18.4-agbj7kgfpjy5sv2rdcvsdktcgozssyx6/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pydantic-core-2.18.4-agbj7kgfpjy5sv2rdcvsdktcgozssyx6/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pydantic-core-2.18.4-agbj7kgfpjy5sv2rdcvsdktcgozssyx6/lib/python3.11/site-packages}
 setenv PY_PYDANTIC_CORE_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pydantic-core-2.18.4-agbj7kgfpjy5sv2rdcvsdktcgozssyx6}

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:55.092828
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:07.051878
 ##
 ## perl-xml-twig@3.52%gcc@13.2.0 build_system=perl patches=e73f49a arch=linux-ubuntu22.04-x86_64_v3/34zuat4
 ##
@@ -35,6 +35,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict perl-xml-twig
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-xml-twig-3.52-34zuat4h74lgeqxacussr4txsvp2l7vd/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-xml-twig-3.52-34zuat4h74lgeqxacussr4txsvp2l7vd/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-xml-twig-3.52-34zuat4h74lgeqxacussr4txsvp2l7vd/bin}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-xml-twig-3.52-34zuat4h74lgeqxacussr4txsvp2l7vd/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-xml-twig-3.52-34zuat4h74lgeqxacussr4txsvp2l7vd/.}

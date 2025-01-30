@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:56.381224
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:08.669139
 ##
 ## py-wrapt@1.15.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/tauzhs6
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-wrapt
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-wrapt-1.15.0-tauzhs6i7g3bgnf2xsjhhwgrqw32qojf/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-wrapt-1.15.0-tauzhs6i7g3bgnf2xsjhhwgrqw32qojf/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-wrapt-1.15.0-tauzhs6i7g3bgnf2xsjhhwgrqw32qojf/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-wrapt-1.15.0-tauzhs6i7g3bgnf2xsjhhwgrqw32qojf/lib/python3.11/site-packages}
 setenv PY_WRAPT_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-wrapt-1.15.0-tauzhs6i7g3bgnf2xsjhhwgrqw32qojf}

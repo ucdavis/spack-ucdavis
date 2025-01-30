@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:47.950644
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:00.337107
 ##
 ## nanoporetech-dorado@0.3.4%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/2kypoad
 ##
@@ -23,6 +23,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict nanoporetech-dorado
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/nanoporetech-dorado-0.3.4/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/nanoporetech-dorado-0.3.4/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/nanoporetech-dorado-0.3.4/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/nanoporetech-dorado-0.3.4/.}
 setenv NANOPORETECH_DORADO_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/nanoporetech-dorado-0.3.4-2kypoaddqkh6kqw73kulkc2sspjrwcaj}

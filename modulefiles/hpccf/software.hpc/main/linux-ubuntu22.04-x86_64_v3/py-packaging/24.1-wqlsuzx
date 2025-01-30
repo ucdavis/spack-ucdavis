@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:36.749015
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:49.055244
 ##
 ## py-packaging@24.1%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/wqlsuzx
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-packaging
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-packaging-24.1-wqlsuzxw5rdqs6553so2ac5mg25dx7z6/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-packaging-24.1-wqlsuzxw5rdqs6553so2ac5mg25dx7z6/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-packaging-24.1-wqlsuzxw5rdqs6553so2ac5mg25dx7z6/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-packaging-24.1-wqlsuzxw5rdqs6553so2ac5mg25dx7z6/lib/python3.8/site-packages}
 setenv PY_PACKAGING_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-packaging-24.1-wqlsuzxw5rdqs6553so2ac5mg25dx7z6}

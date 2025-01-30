@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:39.543813
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:51.506795
 ##
 ## hdf5@1.14.5%gcc@13.2.0~cxx+fortran~hl~ipo~java~map~mpi+shared~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-zen3/o74yz7p
 ##
@@ -27,6 +27,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict hdf5
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/hdf5-1.14.5-o74yz7pnb3ys65hhjix7rpkwysgo22gz/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/hdf5-1.14.5-o74yz7pnb3ys65hhjix7rpkwysgo22gz/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/hdf5-1.14.5-o74yz7pnb3ys65hhjix7rpkwysgo22gz/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/hdf5-1.14.5-o74yz7pnb3ys65hhjix7rpkwysgo22gz/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/hdf5-1.14.5-o74yz7pnb3ys65hhjix7rpkwysgo22gz/include}

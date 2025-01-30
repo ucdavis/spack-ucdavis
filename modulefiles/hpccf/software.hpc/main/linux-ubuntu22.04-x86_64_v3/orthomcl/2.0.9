@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:52.470186
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:04.428674
 ##
 ## orthomcl@2.0.9%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/s6o5umh
 ##
@@ -24,6 +24,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict orthomcl
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/orthomcl-2.0.9/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/orthomcl-2.0.9/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/orthomcl-2.0.9/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/orthomcl-2.0.9/.}
 prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/orthomcl-2.0.9/lib}

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:53.879018
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:05.841860
 ##
 ## perl-hash-merge@0.300%gcc@11.4.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/qscuwm2
 ##
@@ -27,6 +27,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict perl-hash-merge
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-hash-merge-0.300-qscuwm2tr5dn6k5yvpgruc4cztyjcw4t/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-hash-merge-0.300-qscuwm2tr5dn6k5yvpgruc4cztyjcw4t/lib}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-hash-merge-0.300-qscuwm2tr5dn6k5yvpgruc4cztyjcw4t/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-hash-merge-0.300-qscuwm2tr5dn6k5yvpgruc4cztyjcw4t/.}
 prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-hash-merge-0.300-qscuwm2tr5dn6k5yvpgruc4cztyjcw4t/lib/perl5}

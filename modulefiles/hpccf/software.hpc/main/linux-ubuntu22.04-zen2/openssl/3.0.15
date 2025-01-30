@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:51.970691
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:03.946416
 ##
 ## openssl@3.0.15%gcc@13.2.0~docs+shared build_system=generic certs=mozilla arch=linux-ubuntu22.04-zen2/dpqzxo4
 ##
@@ -23,6 +23,7 @@ proc ModulesHelp { } {
 conflict openssl
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openssl-3.0.15/lib64}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openssl-3.0.15/lib64}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openssl-3.0.15/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openssl-3.0.15/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openssl-3.0.15/include}

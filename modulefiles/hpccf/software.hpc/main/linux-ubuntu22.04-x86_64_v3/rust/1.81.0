@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:59.664454
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:11.992584
 ##
 ## rust@1.81.0%gcc@13.2.0+dev~docs+src build_system=generic arch=linux-ubuntu22.04-x86_64_v3/tkquium
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict rust
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.81.0/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.81.0/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.81.0/bin}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.81.0/share/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.81.0/.}

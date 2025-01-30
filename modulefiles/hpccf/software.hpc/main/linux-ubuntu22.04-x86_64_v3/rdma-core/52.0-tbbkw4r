@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:57.514247
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:09.826617
 ##
 ## rdma-core@52.0%gcc@13.2.0~ipo+man_pages+pyverbs+static build_system=cmake build_type=Release generator=make patches=4dec4ad arch=linux-ubuntu22.04-x86_64_v3/tbbkw4r
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict rdma-core
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/rdma-core-52.0-tbbkw4roay3pmb5m3ymo2ibtualxio32/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/rdma-core-52.0-tbbkw4roay3pmb5m3ymo2ibtualxio32/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/rdma-core-52.0-tbbkw4roay3pmb5m3ymo2ibtualxio32/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/rdma-core-52.0-tbbkw4roay3pmb5m3ymo2ibtualxio32/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/rdma-core-52.0-tbbkw4roay3pmb5m3ymo2ibtualxio32/include}

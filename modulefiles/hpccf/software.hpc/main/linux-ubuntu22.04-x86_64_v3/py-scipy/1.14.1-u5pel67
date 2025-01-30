@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:46.614349
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:58.759562
 ##
 ## py-scipy@1.14.1%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/u5pel67
 ##
@@ -27,6 +27,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-scipy
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-scipy-1.14.1-u5pel67lih7bvlwsadadm7s2s6k6c32w/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-scipy-1.14.1-u5pel67lih7bvlwsadadm7s2s6k6c32w/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-scipy-1.14.1-u5pel67lih7bvlwsadadm7s2s6k6c32w/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-scipy-1.14.1-u5pel67lih7bvlwsadadm7s2s6k6c32w/lib/python3.11/site-packages}
 setenv PY_SCIPY_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-scipy-1.14.1-u5pel67lih7bvlwsadadm7s2s6k6c32w}

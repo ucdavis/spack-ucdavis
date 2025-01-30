@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:40.750534
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:53.197855
 ##
 ## py-pybigwig@0.3.12%gcc@13.2.0+numpy build_system=python_pip patches=25a465b arch=linux-ubuntu22.04-x86_64_v3/btzmazx
 ##
@@ -29,6 +29,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-pybigwig
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pybigwig-0.3.12-btzmazxxu53pxacenxx3xk4gnaic7ctd/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pybigwig-0.3.12-btzmazxxu53pxacenxx3xk4gnaic7ctd/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pybigwig-0.3.12-btzmazxxu53pxacenxx3xk4gnaic7ctd/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pybigwig-0.3.12-btzmazxxu53pxacenxx3xk4gnaic7ctd/lib/python3.11/site-packages}
 setenv PY_PYBIGWIG_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pybigwig-0.3.12-btzmazxxu53pxacenxx3xk4gnaic7ctd}

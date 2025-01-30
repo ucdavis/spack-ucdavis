@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:23.800917
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:36.649809
 ##
 ## py-jinja2@3.1.4%gcc@13.2.0~i18n build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/4gsb36v
 ##
@@ -29,6 +29,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-jinja2
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-jinja2-3.1.4-4gsb36vqy4o25hkl666cbmdclbvs7h5s/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-jinja2-3.1.4-4gsb36vqy4o25hkl666cbmdclbvs7h5s/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-jinja2-3.1.4-4gsb36vqy4o25hkl666cbmdclbvs7h5s/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-jinja2-3.1.4-4gsb36vqy4o25hkl666cbmdclbvs7h5s/lib/python3.11/site-packages}
 setenv PY_JINJA2_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-jinja2-3.1.4-4gsb36vqy4o25hkl666cbmdclbvs7h5s}

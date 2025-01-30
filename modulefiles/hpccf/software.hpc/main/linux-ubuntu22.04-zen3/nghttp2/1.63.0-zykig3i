@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:48.970035
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:01.419365
 ##
 ## nghttp2@1.63.0%gcc@13.2.0 build_system=autotools arch=linux-ubuntu22.04-zen3/zykig3i
 ##
@@ -21,6 +21,7 @@ proc ModulesHelp { } {
 conflict nghttp2
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/nghttp2-1.63.0-zykig3izk6asvoxvozzqulmm7pp35zix/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/nghttp2-1.63.0-zykig3izk6asvoxvozzqulmm7pp35zix/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/nghttp2-1.63.0-zykig3izk6asvoxvozzqulmm7pp35zix/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/nghttp2-1.63.0-zykig3izk6asvoxvozzqulmm7pp35zix/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/nghttp2-1.63.0-zykig3izk6asvoxvozzqulmm7pp35zix/include}

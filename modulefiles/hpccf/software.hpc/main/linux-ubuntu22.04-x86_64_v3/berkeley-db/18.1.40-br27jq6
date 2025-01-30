@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:26.402711
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:37.083932
 ##
 ## berkeley-db@18.1.40%gcc@11.4.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64_v3/br27jq6
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict berkeley-db
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/berkeley-db-18.1.40-br27jq6mkoumsbtdldgzcm3lw5zqjvel/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/berkeley-db-18.1.40-br27jq6mkoumsbtdldgzcm3lw5zqjvel/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/berkeley-db-18.1.40-br27jq6mkoumsbtdldgzcm3lw5zqjvel/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/berkeley-db-18.1.40-br27jq6mkoumsbtdldgzcm3lw5zqjvel/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/berkeley-db-18.1.40-br27jq6mkoumsbtdldgzcm3lw5zqjvel/include}

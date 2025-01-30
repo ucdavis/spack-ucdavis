@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:34:02.165694
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:15.383358
 ##
 ## zlib@1.3.1%gcc@13.2.0+optimize+pic+shared build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/3zms6n7
 ##
@@ -19,6 +19,7 @@ proc ModulesHelp { } {
 conflict zlib
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zlib-1.3.1-3zms6n7vboobgjug2zpjyu7niasebcuu/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zlib-1.3.1-3zms6n7vboobgjug2zpjyu7niasebcuu/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zlib-1.3.1-3zms6n7vboobgjug2zpjyu7niasebcuu/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zlib-1.3.1-3zms6n7vboobgjug2zpjyu7niasebcuu/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zlib-1.3.1-3zms6n7vboobgjug2zpjyu7niasebcuu/include}

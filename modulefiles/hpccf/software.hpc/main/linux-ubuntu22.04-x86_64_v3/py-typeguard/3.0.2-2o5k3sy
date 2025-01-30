@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:54.610608
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:06.922318
 ##
 ## py-typeguard@3.0.2%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/2o5k3sy
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-typeguard
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-typeguard-3.0.2-2o5k3syzantofxmr2fslw2vdigr3kwcy/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-typeguard-3.0.2-2o5k3syzantofxmr2fslw2vdigr3kwcy/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-typeguard-3.0.2-2o5k3syzantofxmr2fslw2vdigr3kwcy/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-typeguard-3.0.2-2o5k3syzantofxmr2fslw2vdigr3kwcy/lib/python3.11/site-packages}
 setenv PY_TYPEGUARD_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-typeguard-3.0.2-2o5k3syzantofxmr2fslw2vdigr3kwcy}

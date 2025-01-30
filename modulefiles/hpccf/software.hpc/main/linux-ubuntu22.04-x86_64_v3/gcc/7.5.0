@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:36.319556
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:47.435973
 ##
 ## gcc@7.5.0%gcc@11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages='c,c++,fortran' patches=98a9c96,b620e92,d4919d6,dc1ca24 arch=linux-ubuntu22.04-x86_64_v3/ja3voap
 ##
@@ -21,7 +21,9 @@ proc ModulesHelp { } {
 conflict gcc
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0/lib64}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0/lib64}
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0/include}

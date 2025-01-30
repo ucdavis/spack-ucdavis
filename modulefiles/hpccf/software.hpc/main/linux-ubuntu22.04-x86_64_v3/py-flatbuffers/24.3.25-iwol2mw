@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:14.525705
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:26.707226
 ##
 ## py-flatbuffers@24.3.25%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/iwol2mw
 ##
@@ -27,6 +27,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-flatbuffers
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-flatbuffers-24.3.25-iwol2mw4p6iakrkob4fxwdafb3zmcd4e/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-flatbuffers-24.3.25-iwol2mw4p6iakrkob4fxwdafb3zmcd4e/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-flatbuffers-24.3.25-iwol2mw4p6iakrkob4fxwdafb3zmcd4e/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-flatbuffers-24.3.25-iwol2mw4p6iakrkob4fxwdafb3zmcd4e/lib/python3.11/site-packages}
 setenv PY_FLATBUFFERS_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-flatbuffers-24.3.25-iwol2mw4p6iakrkob4fxwdafb3zmcd4e}

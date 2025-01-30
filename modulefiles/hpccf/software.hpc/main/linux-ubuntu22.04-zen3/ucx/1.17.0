@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:34:01.041080
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:14.233545
 ##
 ## ucx@1.17.0%gcc@13.2.0~assertions~backtrace_detail~cma~cuda~dc~debug~dm+examples~gdrcopy~gtest~ib_hw_tm~java~knem~logging~mlx5_dv+openmp+optimizations~parameter_checking+pic~rc~rdmacm~rocm+thread_multiple~ucg~ud~verbs~vfs~xpmem build_system=autotools libs=shared,static opt=3 simd=auto arch=linux-ubuntu22.04-zen3/dvleulj
 ##
@@ -21,6 +21,7 @@ proc ModulesHelp { } {
 conflict ucx
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/ucx-1.17.0/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/ucx-1.17.0/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/ucx-1.17.0/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/ucx-1.17.0/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/ucx-1.17.0/include}

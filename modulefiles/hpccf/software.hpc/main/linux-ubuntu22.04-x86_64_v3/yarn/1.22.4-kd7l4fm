@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:34:02.011784
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:15.219257
 ##
 ## yarn@1.22.4%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/kd7l4fm
 ##
@@ -23,6 +23,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict yarn
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/yarn-1.22.4-kd7l4fmuksxztesebn7mbwtn3l7riofi/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/yarn-1.22.4-kd7l4fmuksxztesebn7mbwtn3l7riofi/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/yarn-1.22.4-kd7l4fmuksxztesebn7mbwtn3l7riofi/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/yarn-1.22.4-kd7l4fmuksxztesebn7mbwtn3l7riofi/.}
 setenv YARN_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/yarn-1.22.4-kd7l4fmuksxztesebn7mbwtn3l7riofi}

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:04.634926
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:16.745929
 ##
 ## py-certifi@2023.7.22%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/7kovaf6
 ##
@@ -27,6 +27,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-certifi
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-certifi-2023.7.22-7kovaf6v6r6rog77bafw6oa3gzdostwj/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-certifi-2023.7.22-7kovaf6v6r6rog77bafw6oa3gzdostwj/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-certifi-2023.7.22-7kovaf6v6r6rog77bafw6oa3gzdostwj/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-certifi-2023.7.22-7kovaf6v6r6rog77bafw6oa3gzdostwj/lib/python3.11/site-packages}
 setenv PY_CERTIFI_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-certifi-2023.7.22-7kovaf6v6r6rog77bafw6oa3gzdostwj}

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:12.399468
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:24.645158
 ##
 ## py-dm-haiku@0.0.10%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/yadpk4i
 ##
@@ -35,6 +35,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-dm-haiku
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-dm-haiku-0.0.10-yadpk4ihjbdyfjbfliivyyvrbzgivbbb/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-dm-haiku-0.0.10-yadpk4ihjbdyfjbfliivyyvrbzgivbbb/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-dm-haiku-0.0.10-yadpk4ihjbdyfjbfliivyyvrbzgivbbb/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-dm-haiku-0.0.10-yadpk4ihjbdyfjbfliivyyvrbzgivbbb/lib/python3.11/site-packages}
 setenv PY_DM_HAIKU_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-dm-haiku-0.0.10-yadpk4ihjbdyfjbfliivyyvrbzgivbbb}

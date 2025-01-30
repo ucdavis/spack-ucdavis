@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:32.962068
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:45.222659
 ##
 ## py-networkx@2.7.1%gcc@13.2.0+default~extra build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/odxz2bd
 ##
@@ -28,6 +28,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-networkx
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-networkx-2.7.1-odxz2bdjthkt75ky4dpjb3lkcotpvgpa/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-networkx-2.7.1-odxz2bdjthkt75ky4dpjb3lkcotpvgpa/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-networkx-2.7.1-odxz2bdjthkt75ky4dpjb3lkcotpvgpa/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-networkx-2.7.1-odxz2bdjthkt75ky4dpjb3lkcotpvgpa/lib/python3.11/site-packages}
 setenv PY_NETWORKX_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-networkx-2.7.1-odxz2bdjthkt75ky4dpjb3lkcotpvgpa}

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:57.177933
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:09.486370
 ##
 ## qt@5.15.15%gcc@13.2.0~dbus~debug~doc~examples~framework~gtk+gui~location~opengl~phonon+shared+sql+ssl+tools~webkit build_system=generic patches=2081e9c,51aeba5,75bcb42,78c70fb,7f34d48,84b0991,9378afd arch=linux-ubuntu22.04-x86_64_v3/vkv6ax7
 ##
@@ -23,6 +23,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict qt
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/qt-5.15.15-vkv6ax7kk2cscf6in26siekogah4l47t/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/qt-5.15.15-vkv6ax7kk2cscf6in26siekogah4l47t/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/qt-5.15.15-vkv6ax7kk2cscf6in26siekogah4l47t/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/qt-5.15.15-vkv6ax7kk2cscf6in26siekogah4l47t/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/qt-5.15.15-vkv6ax7kk2cscf6in26siekogah4l47t/include}

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:24.665015
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:37.489316
 ##
 ## py-joblib@1.2.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/s572o7b
 ##
@@ -27,6 +27,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-joblib
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-joblib-1.2.0-s572o7bw7cgqq7qei7bsfcjsktfhcigb/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-joblib-1.2.0-s572o7bw7cgqq7qei7bsfcjsktfhcigb/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-joblib-1.2.0-s572o7bw7cgqq7qei7bsfcjsktfhcigb/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-joblib-1.2.0-s572o7bw7cgqq7qei7bsfcjsktfhcigb/lib/python3.8/site-packages}
 setenv PY_JOBLIB_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-joblib-1.2.0-s572o7bw7cgqq7qei7bsfcjsktfhcigb}

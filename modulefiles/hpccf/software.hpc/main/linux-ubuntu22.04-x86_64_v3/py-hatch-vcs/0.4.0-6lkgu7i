@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:17.253839
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:29.447162
 ##
 ## py-hatch-vcs@0.4.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/6lkgu7i
 ##
@@ -29,6 +29,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-hatch-vcs
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-hatch-vcs-0.4.0-6lkgu7iuwc2pdyvy3ekt4sb3ypyfwtiw/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-hatch-vcs-0.4.0-6lkgu7iuwc2pdyvy3ekt4sb3ypyfwtiw/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-hatch-vcs-0.4.0-6lkgu7iuwc2pdyvy3ekt4sb3ypyfwtiw/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-hatch-vcs-0.4.0-6lkgu7iuwc2pdyvy3ekt4sb3ypyfwtiw/lib/python3.11/site-packages}
 setenv PY_HATCH_VCS_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-hatch-vcs-0.4.0-6lkgu7iuwc2pdyvy3ekt4sb3ypyfwtiw}

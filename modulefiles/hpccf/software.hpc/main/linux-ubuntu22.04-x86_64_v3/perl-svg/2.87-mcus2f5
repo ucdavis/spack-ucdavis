@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:54.618355
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:06.580376
 ##
 ## perl-svg@2.87%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/mcus2f5
 ##
@@ -23,6 +23,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict perl-svg
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-svg-2.87-mcus2f5naelhodshm6lm43mt6e7d4gij/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-svg-2.87-mcus2f5naelhodshm6lm43mt6e7d4gij/lib}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-svg-2.87-mcus2f5naelhodshm6lm43mt6e7d4gij/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-svg-2.87-mcus2f5naelhodshm6lm43mt6e7d4gij/.}
 prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-svg-2.87-mcus2f5naelhodshm6lm43mt6e7d4gij/lib/perl5}

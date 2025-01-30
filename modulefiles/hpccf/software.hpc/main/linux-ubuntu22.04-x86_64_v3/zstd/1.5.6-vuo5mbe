@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:34:02.270354
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:15.488210
 ##
 ## zstd@1.5.6%gcc@13.2.0+programs build_system=makefile compression=none libs=shared,static arch=linux-ubuntu22.04-x86_64_v3/vuo5mbe
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict zstd
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zstd-1.5.6-vuo5mbe3zuzkcvisvn77uccdvqr3o2q2/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zstd-1.5.6-vuo5mbe3zuzkcvisvn77uccdvqr3o2q2/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zstd-1.5.6-vuo5mbe3zuzkcvisvn77uccdvqr3o2q2/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zstd-1.5.6-vuo5mbe3zuzkcvisvn77uccdvqr3o2q2/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zstd-1.5.6-vuo5mbe3zuzkcvisvn77uccdvqr3o2q2/include}

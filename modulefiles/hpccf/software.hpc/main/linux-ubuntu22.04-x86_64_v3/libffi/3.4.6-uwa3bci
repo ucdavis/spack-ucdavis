@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:44.979600
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:56.800033
 ##
 ## libffi@3.4.6%gcc@7.5.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/uwa3bci
 ##
@@ -22,7 +22,9 @@ proc ModulesHelp { } {
 conflict libffi
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libffi-3.4.6-uwa3bcijsnblbhytwtprqxn7m7jhykce/lib64}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libffi-3.4.6-uwa3bcijsnblbhytwtprqxn7m7jhykce/lib64}
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libffi-3.4.6-uwa3bcijsnblbhytwtprqxn7m7jhykce/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libffi-3.4.6-uwa3bcijsnblbhytwtprqxn7m7jhykce/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libffi-3.4.6-uwa3bcijsnblbhytwtprqxn7m7jhykce/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libffi-3.4.6-uwa3bcijsnblbhytwtprqxn7m7jhykce/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libffi-3.4.6-uwa3bcijsnblbhytwtprqxn7m7jhykce/include}

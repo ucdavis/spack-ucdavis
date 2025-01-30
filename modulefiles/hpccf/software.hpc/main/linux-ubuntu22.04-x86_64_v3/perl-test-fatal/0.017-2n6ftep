@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:54.670698
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:06.632601
 ##
 ## perl-test-fatal@0.017%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/2n6ftep
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict perl-test-fatal
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-test-fatal-0.017-2n6ftep5ymg4ifra4j4e2ya6i247vyao/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-test-fatal-0.017-2n6ftep5ymg4ifra4j4e2ya6i247vyao/lib}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-test-fatal-0.017-2n6ftep5ymg4ifra4j4e2ya6i247vyao/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-test-fatal-0.017-2n6ftep5ymg4ifra4j4e2ya6i247vyao/.}
 prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-test-fatal-0.017-2n6ftep5ymg4ifra4j4e2ya6i247vyao/lib/perl5}

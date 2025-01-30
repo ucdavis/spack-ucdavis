@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:14.099222
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:26.320248
 ##
 ## py-docutils@0.20.1%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/y6wljfy
 ##
@@ -29,6 +29,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-docutils
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-docutils-0.20.1-y6wljfyj4rypqsuiyuba75nxhwnby4c7/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-docutils-0.20.1-y6wljfyj4rypqsuiyuba75nxhwnby4c7/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-docutils-0.20.1-y6wljfyj4rypqsuiyuba75nxhwnby4c7/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-docutils-0.20.1-y6wljfyj4rypqsuiyuba75nxhwnby4c7/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-docutils-0.20.1-y6wljfyj4rypqsuiyuba75nxhwnby4c7/lib/python3.11/site-packages}

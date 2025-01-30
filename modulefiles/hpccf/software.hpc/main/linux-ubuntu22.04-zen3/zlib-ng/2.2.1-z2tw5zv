@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:34:02.206211
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:15.423920
 ##
 ## zlib-ng@2.2.1%gcc@13.2.0+compat~new_strategies+opt+pic+shared build_system=autotools arch=linux-ubuntu22.04-zen3/z2tw5zv
 ##
@@ -18,6 +18,7 @@ proc ModulesHelp { } {
 conflict zlib-ng
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/zlib-ng-2.2.1-z2tw5zv32b4oxdiw7v2wg6dlolzcxzvf/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/zlib-ng-2.2.1-z2tw5zv32b4oxdiw7v2wg6dlolzcxzvf/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/zlib-ng-2.2.1-z2tw5zv32b4oxdiw7v2wg6dlolzcxzvf/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/zlib-ng-2.2.1-z2tw5zv32b4oxdiw7v2wg6dlolzcxzvf/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/zlib-ng-2.2.1-z2tw5zv32b4oxdiw7v2wg6dlolzcxzvf/include}

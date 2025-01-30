@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-16 16:50:12.418791
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:09.579856
 ##
 ## quantum-espresso@7.4%gcc@13.2.0~clock~elpa+epw~fox~gipaw~ipo~libxc+mpi~nvtx+openmp+patch~qmcpack+scalapack build_system=cmake build_type=Release generator=make hdf5=none arch=linux-ubuntu22.04-x86_64_v3/iogv6qn
 ##
@@ -21,6 +21,7 @@ proc ModulesHelp { } {
 conflict quantum-espresso
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/quantum-espresso-7.4/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/quantum-espresso-7.4/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/quantum-espresso-7.4/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/quantum-espresso-7.4/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/quantum-espresso-7.4/include}

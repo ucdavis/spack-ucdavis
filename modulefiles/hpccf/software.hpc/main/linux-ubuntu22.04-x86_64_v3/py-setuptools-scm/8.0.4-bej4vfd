@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:47.814660
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:59.983978
 ##
 ## py-setuptools-scm@8.0.4%gcc@13.2.0+toml build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/bej4vfd
 ##
@@ -35,6 +35,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-setuptools-scm
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-setuptools-scm-8.0.4-bej4vfdxag2pj4vtqqgd44gkorjsmshb/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-setuptools-scm-8.0.4-bej4vfdxag2pj4vtqqgd44gkorjsmshb/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-setuptools-scm-8.0.4-bej4vfdxag2pj4vtqqgd44gkorjsmshb/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-setuptools-scm-8.0.4-bej4vfdxag2pj4vtqqgd44gkorjsmshb/lib/python3.11/site-packages}
 setenv PY_SETUPTOOLS_SCM_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-setuptools-scm-8.0.4-bej4vfdxag2pj4vtqqgd44gkorjsmshb}

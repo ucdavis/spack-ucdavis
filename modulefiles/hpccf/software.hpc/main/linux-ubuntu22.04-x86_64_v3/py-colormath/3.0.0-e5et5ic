@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:07.295556
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:19.437128
 ##
 ## py-colormath@3.0.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/e5et5ic
 ##
@@ -29,6 +29,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-colormath
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-colormath-3.0.0-e5et5icbxag5b6eht7zk2g2ajgtmoyg4/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-colormath-3.0.0-e5et5icbxag5b6eht7zk2g2ajgtmoyg4/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-colormath-3.0.0-e5et5icbxag5b6eht7zk2g2ajgtmoyg4/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-colormath-3.0.0-e5et5icbxag5b6eht7zk2g2ajgtmoyg4/lib/python3.11/site-packages}
 setenv PY_COLORMATH_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-colormath-3.0.0-e5et5icbxag5b6eht7zk2g2ajgtmoyg4}

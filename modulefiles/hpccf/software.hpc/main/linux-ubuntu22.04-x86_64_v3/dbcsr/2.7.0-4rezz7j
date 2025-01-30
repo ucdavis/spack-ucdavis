@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-23 16:52:11.112443
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:43.994276
 ##
 ## dbcsr@2.7.0%gcc@13.2.0~cuda~cuda_arch_35_k20x~examples~g2g~ipo+mpi~mpi_f08~opencl+openmp~rocm+shared build_system=cmake build_type=Release generator=ninja smm=libxsmm arch=linux-ubuntu22.04-x86_64_v3/4rezz7j
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict dbcsr
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/dbcsr-2.7.0-4rezz7jfs4d4asb7gbyozbfi3dezpxku/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/dbcsr-2.7.0-4rezz7jfs4d4asb7gbyozbfi3dezpxku/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/dbcsr-2.7.0-4rezz7jfs4d4asb7gbyozbfi3dezpxku/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/dbcsr-2.7.0-4rezz7jfs4d4asb7gbyozbfi3dezpxku/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/dbcsr-2.7.0-4rezz7jfs4d4asb7gbyozbfi3dezpxku/include}

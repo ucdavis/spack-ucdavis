@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:39.052372
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:51.445214
 ##
 ## py-pip@23.1.2%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/j5o3zae
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-pip
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pip-23.1.2-j5o3zaekmeg6m3itma3qzo6w7saaz5ip/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pip-23.1.2-j5o3zaekmeg6m3itma3qzo6w7saaz5ip/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pip-23.1.2-j5o3zaekmeg6m3itma3qzo6w7saaz5ip/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pip-23.1.2-j5o3zaekmeg6m3itma3qzo6w7saaz5ip/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pip-23.1.2-j5o3zaekmeg6m3itma3qzo6w7saaz5ip/lib/python3.8/site-packages}

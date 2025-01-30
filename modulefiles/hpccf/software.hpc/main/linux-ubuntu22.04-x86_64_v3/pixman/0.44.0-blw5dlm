@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:55.287905
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:07.245121
 ##
 ## pixman@0.44.0%gcc@13.2.0+shared build_system=meson arch=linux-ubuntu22.04-x86_64_v3/blw5dlm
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict pixman
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/pixman-0.44.0-blw5dlmkbdtmck6oyx7ycfo77z6gknbq/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/pixman-0.44.0-blw5dlmkbdtmck6oyx7ycfo77z6gknbq/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/pixman-0.44.0-blw5dlmkbdtmck6oyx7ycfo77z6gknbq/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/pixman-0.44.0-blw5dlmkbdtmck6oyx7ycfo77z6gknbq/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/pixman-0.44.0-blw5dlmkbdtmck6oyx7ycfo77z6gknbq/include}

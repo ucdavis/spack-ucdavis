@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:56.663190
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:08.958936
 ##
 ## py-zipp@3.17.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/ej7x67s
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-zipp
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-zipp-3.17.0-ej7x67sr26atnhwmlhblyn74f4lo6srv/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-zipp-3.17.0-ej7x67sr26atnhwmlhblyn74f4lo6srv/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-zipp-3.17.0-ej7x67sr26atnhwmlhblyn74f4lo6srv/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-zipp-3.17.0-ej7x67sr26atnhwmlhblyn74f4lo6srv/lib/python3.11/site-packages}
 setenv PY_ZIPP_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-zipp-3.17.0-ej7x67sr26atnhwmlhblyn74f4lo6srv}

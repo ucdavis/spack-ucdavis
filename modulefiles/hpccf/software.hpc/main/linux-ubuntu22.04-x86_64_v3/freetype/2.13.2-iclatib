@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:35.468927
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:46.953100
 ##
 ## freetype@2.13.2%gcc@11.4.0+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/iclatib
 ##
@@ -21,6 +21,7 @@ proc ModulesHelp { } {
 conflict freetype
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/freetype-2.13.2-iclatiba4duibdtvu4ag3vs334zyp4qi/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/freetype-2.13.2-iclatiba4duibdtvu4ag3vs334zyp4qi/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/freetype-2.13.2-iclatiba4duibdtvu4ag3vs334zyp4qi/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/freetype-2.13.2-iclatiba4duibdtvu4ag3vs334zyp4qi/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/freetype-2.13.2-iclatiba4duibdtvu4ag3vs334zyp4qi/include}

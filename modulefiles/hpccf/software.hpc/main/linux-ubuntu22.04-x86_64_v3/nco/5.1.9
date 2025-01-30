@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:48.105976
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:00.494109
 ##
 ## nco@5.1.9%gcc@13.2.0~doc build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/huaidte
 ##
@@ -21,6 +21,7 @@ proc ModulesHelp { } {
 conflict nco
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/nco-5.1.9/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/nco-5.1.9/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/nco-5.1.9/bin}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/nco-5.1.9/share/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/nco-5.1.9/.}

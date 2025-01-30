@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:21.030438
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:33.201729
 ##
 ## py-ipython@8.14.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/uwbnv7d
 ##
@@ -46,6 +46,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-ipython
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/bin}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/share/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/.}

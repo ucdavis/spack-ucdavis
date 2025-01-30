@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:46.222784
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:58.081800
 ##
 ## libxcrypt@4.4.35%gcc@13.2.0~obsolete_api build_system=autotools patches=4885da3 arch=linux-ubuntu22.04-x86_64_v3/yjmurvg
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict libxcrypt
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libxcrypt-4.4.35-yjmurvgfmpmhmmng7uzmnai5omtnfnj5/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libxcrypt-4.4.35-yjmurvgfmpmhmmng7uzmnai5omtnfnj5/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libxcrypt-4.4.35-yjmurvgfmpmhmmng7uzmnai5omtnfnj5/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libxcrypt-4.4.35-yjmurvgfmpmhmmng7uzmnai5omtnfnj5/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libxcrypt-4.4.35-yjmurvgfmpmhmmng7uzmnai5omtnfnj5/include}

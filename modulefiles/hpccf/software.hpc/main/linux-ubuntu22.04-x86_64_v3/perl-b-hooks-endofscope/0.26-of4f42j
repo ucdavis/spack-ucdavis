@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:53.200475
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:05.162947
 ##
 ## perl-b-hooks-endofscope@0.26%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/of4f42j
 ##
@@ -27,6 +27,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict perl-b-hooks-endofscope
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-b-hooks-endofscope-0.26-of4f42j7kscrvnym6pmwzkbveft3g6cq/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-b-hooks-endofscope-0.26-of4f42j7kscrvnym6pmwzkbveft3g6cq/lib}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-b-hooks-endofscope-0.26-of4f42j7kscrvnym6pmwzkbveft3g6cq/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-b-hooks-endofscope-0.26-of4f42j7kscrvnym6pmwzkbveft3g6cq/.}
 prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-b-hooks-endofscope-0.26-of4f42j7kscrvnym6pmwzkbveft3g6cq/lib/perl5}

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:54.593480
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:06.555117
 ##
 ## perl-sub-quote@2.006008%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/7r6a3z3
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict perl-sub-quote
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-sub-quote-2.006008-7r6a3z3viqoynfnpogzowyaontizwfik/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-sub-quote-2.006008-7r6a3z3viqoynfnpogzowyaontizwfik/lib}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-sub-quote-2.006008-7r6a3z3viqoynfnpogzowyaontizwfik/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-sub-quote-2.006008-7r6a3z3viqoynfnpogzowyaontizwfik/.}
 prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-sub-quote-2.006008-7r6a3z3viqoynfnpogzowyaontizwfik/lib/perl5}

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:40.180517
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:52.190187
 ##
 ## intel-oneapi-compilers@2023.2.4%gcc@13.2.0~amd+envmods~nvidia build_system=generic arch=linux-ubuntu22.04-x86_64_v3/xskxrt4
 ##
@@ -23,6 +23,7 @@ proc ModulesHelp { } {
 conflict intel-oneapi-compilers
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4/.}
 prepend-path ACL_BOARD_VENDOR_PATH {/opt/Intel/OpenCLFPGA/oneAPI/Boards}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/core/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/intel-oneapi-compilers-2023.2.4-5vm35xshey75bjiqoassmg6rx3a55qbx/compiler/2023.2.4/linux/IntelDPCPP}

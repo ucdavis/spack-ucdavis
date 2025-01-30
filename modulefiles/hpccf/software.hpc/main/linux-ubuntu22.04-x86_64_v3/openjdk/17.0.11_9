@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:51.259874
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:03.311689
 ##
 ## openjdk@17.0.11_9%gcc@13.2.0 build_system=generic certs=none arch=linux-ubuntu22.04-x86_64_v3/y7yncak
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict openjdk
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openjdk-17.0.11_9/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openjdk-17.0.11_9/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openjdk-17.0.11_9/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openjdk-17.0.11_9/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openjdk-17.0.11_9/include}

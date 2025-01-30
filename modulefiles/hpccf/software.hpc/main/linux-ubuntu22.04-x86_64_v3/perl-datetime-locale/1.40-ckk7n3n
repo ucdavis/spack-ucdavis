@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:53.479291
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:05.441776
 ##
 ## perl-datetime-locale@1.40%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/ckk7n3n
 ##
@@ -33,6 +33,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict perl-datetime-locale
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-datetime-locale-1.40-ckk7n3npfemx3rshqn2r5xkmolqcv4wf/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-datetime-locale-1.40-ckk7n3npfemx3rshqn2r5xkmolqcv4wf/lib}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-datetime-locale-1.40-ckk7n3npfemx3rshqn2r5xkmolqcv4wf/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-datetime-locale-1.40-ckk7n3npfemx3rshqn2r5xkmolqcv4wf/.}
 prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-datetime-locale-1.40-ckk7n3npfemx3rshqn2r5xkmolqcv4wf/lib/perl5}

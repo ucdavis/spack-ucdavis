@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:34:00.578500
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:13.030550
 ##
 ## texinfo@7.1%gcc@13.2.0 build_system=autotools arch=linux-ubuntu22.04-zen2/ceigpbd
 ##
@@ -21,6 +21,7 @@ proc ModulesHelp { } {
 conflict texinfo
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/texinfo-7.1-ceigpbdhggogrbntujpht3v3ihvjdvnq/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/texinfo-7.1-ceigpbdhggogrbntujpht3v3ihvjdvnq/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/texinfo-7.1-ceigpbdhggogrbntujpht3v3ihvjdvnq/bin}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/texinfo-7.1-ceigpbdhggogrbntujpht3v3ihvjdvnq/share/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/texinfo-7.1-ceigpbdhggogrbntujpht3v3ihvjdvnq/.}

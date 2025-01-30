@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-23 16:58:46.078039
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:43.359460
 ##
 ## cp2k@2024.3%gcc@13.2.0~cosma~cuda~dlaf~elpa~enable_regtests~ipo+libint~libvori+libxc+mpi~mpi_f08+openmp~pexsi~plumed~pytorch~quip~rocm~sirius~spglib~spla build_system=cmake build_type=Release generator=make lmax=5 patches=37f4f1a,cf8e9cf smm=libxsmm arch=linux-ubuntu22.04-x86_64_v3/m5lfrjg
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict cp2k
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/cp2k-2024.3-m5lfrjgny73t6v76ycnn5io5ppczj65d/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/cp2k-2024.3-m5lfrjgny73t6v76ycnn5io5ppczj65d/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/cp2k-2024.3-m5lfrjgny73t6v76ycnn5io5ppczj65d/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/cp2k-2024.3-m5lfrjgny73t6v76ycnn5io5ppczj65d/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/cp2k-2024.3-m5lfrjgny73t6v76ycnn5io5ppczj65d/include}

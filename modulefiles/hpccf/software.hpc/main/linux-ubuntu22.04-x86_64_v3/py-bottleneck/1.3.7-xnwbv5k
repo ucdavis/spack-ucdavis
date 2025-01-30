@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:04.296639
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:16.386920
 ##
 ## py-bottleneck@1.3.7%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/xnwbv5k
 ##
@@ -27,6 +27,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-bottleneck
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-bottleneck-1.3.7-xnwbv5krzm7qayj2hclf7pgl5omybmp6/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-bottleneck-1.3.7-xnwbv5krzm7qayj2hclf7pgl5omybmp6/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-bottleneck-1.3.7-xnwbv5krzm7qayj2hclf7pgl5omybmp6/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-bottleneck-1.3.7-xnwbv5krzm7qayj2hclf7pgl5omybmp6/lib/python3.11/site-packages}
 setenv PY_BOTTLENECK_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-bottleneck-1.3.7-xnwbv5krzm7qayj2hclf7pgl5omybmp6}

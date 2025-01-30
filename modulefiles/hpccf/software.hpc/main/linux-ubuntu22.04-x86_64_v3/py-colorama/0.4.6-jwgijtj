@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:06.966967
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:19.143012
 ##
 ## py-colorama@0.4.6%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/jwgijtj
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-colorama
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-colorama-0.4.6-jwgijtjgntey5qufilp5qxzqkijykwdi/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-colorama-0.4.6-jwgijtjgntey5qufilp5qxzqkijykwdi/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-colorama-0.4.6-jwgijtjgntey5qufilp5qxzqkijykwdi/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-colorama-0.4.6-jwgijtjgntey5qufilp5qxzqkijykwdi/lib/python3.11/site-packages}
 setenv PY_COLORAMA_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-colorama-0.4.6-jwgijtjgntey5qufilp5qxzqkijykwdi}

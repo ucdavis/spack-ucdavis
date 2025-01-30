@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:25.464067
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:38.344137
 ##
 ## py-llvmlite@0.41.1%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/iadse3b
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-llvmlite
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-llvmlite-0.41.1-iadse3bywx62wnjatvsyvki5hubhhjl7/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-llvmlite-0.41.1-iadse3bywx62wnjatvsyvki5hubhhjl7/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-llvmlite-0.41.1-iadse3bywx62wnjatvsyvki5hubhhjl7/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-llvmlite-0.41.1-iadse3bywx62wnjatvsyvki5hubhhjl7/lib/python3.11/site-packages}
 setenv PY_LLVMLITE_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-llvmlite-0.41.1-iadse3bywx62wnjatvsyvki5hubhhjl7}

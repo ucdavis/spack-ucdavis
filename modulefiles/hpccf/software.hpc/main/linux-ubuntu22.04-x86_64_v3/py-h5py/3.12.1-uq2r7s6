@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:16.392249
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:28.636972
 ##
 ## py-h5py@3.12.1%gcc@13.2.0~mpi build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/uq2r7s6
 ##
@@ -28,6 +28,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-h5py
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-h5py-3.12.1-uq2r7s64vri4yhhiaytw5ztctja3oeja/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-h5py-3.12.1-uq2r7s64vri4yhhiaytw5ztctja3oeja/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-h5py-3.12.1-uq2r7s64vri4yhhiaytw5ztctja3oeja/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-h5py-3.12.1-uq2r7s64vri4yhhiaytw5ztctja3oeja/lib/python3.11/site-packages}
 setenv PY_H5PY_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-h5py-3.12.1-uq2r7s64vri4yhhiaytw5ztctja3oeja}

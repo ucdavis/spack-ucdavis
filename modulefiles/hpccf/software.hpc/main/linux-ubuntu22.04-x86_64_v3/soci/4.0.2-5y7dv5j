@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:34:00.025519
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:12.460856
 ##
 ## soci@4.0.2%gcc@13.2.0+boost~ipo~mysql+postgresql+sqlite~static~tests build_system=cmake build_type=Release cxxstd=14 generator=make arch=linux-ubuntu22.04-x86_64_v3/5y7dv5j
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict soci
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/soci-4.0.2-5y7dv5jwllopmtdk4ncijcoudq224xbj/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/soci-4.0.2-5y7dv5jwllopmtdk4ncijcoudq224xbj/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/soci-4.0.2-5y7dv5jwllopmtdk4ncijcoudq224xbj/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/soci-4.0.2-5y7dv5jwllopmtdk4ncijcoudq224xbj/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/soci-4.0.2-5y7dv5jwllopmtdk4ncijcoudq224xbj/include}

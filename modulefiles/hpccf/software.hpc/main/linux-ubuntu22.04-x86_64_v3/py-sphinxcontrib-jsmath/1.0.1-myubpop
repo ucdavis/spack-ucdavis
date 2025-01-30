@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:50.497424
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:02.661030
 ##
 ## py-sphinxcontrib-jsmath@1.0.1%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/myubpop
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-sphinxcontrib-jsmath
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-sphinxcontrib-jsmath-1.0.1-myubpoptv7slfvxvpj5ta2wrcs4gh3zy/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-sphinxcontrib-jsmath-1.0.1-myubpoptv7slfvxvpj5ta2wrcs4gh3zy/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-sphinxcontrib-jsmath-1.0.1-myubpoptv7slfvxvpj5ta2wrcs4gh3zy/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-sphinxcontrib-jsmath-1.0.1-myubpoptv7slfvxvpj5ta2wrcs4gh3zy/lib/python3.11/site-packages}
 setenv PY_SPHINXCONTRIB_JSMATH_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-sphinxcontrib-jsmath-1.0.1-myubpoptv7slfvxvpj5ta2wrcs4gh3zy}

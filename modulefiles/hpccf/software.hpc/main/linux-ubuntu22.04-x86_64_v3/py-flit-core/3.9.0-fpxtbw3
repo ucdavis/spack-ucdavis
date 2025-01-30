@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:14.732010
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:26.957572
 ##
 ## py-flit-core@3.9.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/fpxtbw3
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-flit-core
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-flit-core-3.9.0-fpxtbw3tixp4mc4n2ttkihu6w3kxnswf/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-flit-core-3.9.0-fpxtbw3tixp4mc4n2ttkihu6w3kxnswf/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-flit-core-3.9.0-fpxtbw3tixp4mc4n2ttkihu6w3kxnswf/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-flit-core-3.9.0-fpxtbw3tixp4mc4n2ttkihu6w3kxnswf/lib/python3.8/site-packages}
 setenv PY_FLIT_CORE_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-flit-core-3.9.0-fpxtbw3tixp4mc4n2ttkihu6w3kxnswf}

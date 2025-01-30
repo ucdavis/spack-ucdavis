@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:51.768951
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:03.759890
 ##
 ## openmpi@5.0.5%gcc@13.2.0+atomics+cuda~debug~gpfs~internal-hwloc~internal-libevent~internal-pmix~java~lustre~memchecker~openshmem~romio+rsh~static~two_level_namespace+vt+wrapper-rpath build_system=autotools cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm arch=linux-ubuntu22.04-x86_64_v3/a7323st
 ##
@@ -27,6 +27,7 @@ proc ModulesHelp { } {
 conflict openmpi
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5/include}

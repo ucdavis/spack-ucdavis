@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:25.132874
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:38.001256
 ##
 ## py-kiwisolver@1.4.5%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/t5ljy3k
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-kiwisolver
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-kiwisolver-1.4.5-t5ljy3kthcucjqq75mbmfhgdlibolh7g/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-kiwisolver-1.4.5-t5ljy3kthcucjqq75mbmfhgdlibolh7g/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-kiwisolver-1.4.5-t5ljy3kthcucjqq75mbmfhgdlibolh7g/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-kiwisolver-1.4.5-t5ljy3kthcucjqq75mbmfhgdlibolh7g/lib/python3.11/site-packages}
 setenv PY_KIWISOLVER_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-kiwisolver-1.4.5-t5ljy3kthcucjqq75mbmfhgdlibolh7g}

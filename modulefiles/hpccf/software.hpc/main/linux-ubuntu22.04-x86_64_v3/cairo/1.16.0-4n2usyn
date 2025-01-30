@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:28.238454
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:38.978253
 ##
 ## cairo@1.16.0%gcc@13.2.0+X+fc+ft+gobject+pdf+pic+png+shared~svg build_system=autotools patches=7097196,7c4da77 arch=linux-ubuntu22.04-x86_64_v3/4n2usyn
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict cairo
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/cairo-1.16.0-4n2usyn6myv2kk3kdux6iwdlp54wnaah/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/cairo-1.16.0-4n2usyn6myv2kk3kdux6iwdlp54wnaah/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/cairo-1.16.0-4n2usyn6myv2kk3kdux6iwdlp54wnaah/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/cairo-1.16.0-4n2usyn6myv2kk3kdux6iwdlp54wnaah/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/cairo-1.16.0-4n2usyn6myv2kk3kdux6iwdlp54wnaah/include}

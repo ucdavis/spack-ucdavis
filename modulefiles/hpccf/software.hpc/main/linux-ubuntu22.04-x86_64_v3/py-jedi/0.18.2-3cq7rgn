@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:23.615131
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:36.441399
 ##
 ## py-jedi@0.18.2%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/3cq7rgn
 ##
@@ -29,6 +29,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-jedi
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-jedi-0.18.2-3cq7rgn7ivuz4yt2tw5cv3dvahjkmhll/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-jedi-0.18.2-3cq7rgn7ivuz4yt2tw5cv3dvahjkmhll/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-jedi-0.18.2-3cq7rgn7ivuz4yt2tw5cv3dvahjkmhll/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-jedi-0.18.2-3cq7rgn7ivuz4yt2tw5cv3dvahjkmhll/lib/python3.11/site-packages}
 setenv PY_JEDI_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-jedi-0.18.2-3cq7rgn7ivuz4yt2tw5cv3dvahjkmhll}

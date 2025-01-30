@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:41.203908
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:53.599047
 ##
 ## py-pycparser@2.21%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/rgyvvgv
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-pycparser
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pycparser-2.21-rgyvvgvj67pi3wlwjfovj6xi7euvvcmp/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pycparser-2.21-rgyvvgvj67pi3wlwjfovj6xi7euvvcmp/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pycparser-2.21-rgyvvgvj67pi3wlwjfovj6xi7euvvcmp/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pycparser-2.21-rgyvvgvj67pi3wlwjfovj6xi7euvvcmp/lib/python3.11/site-packages}
 setenv PY_PYCPARSER_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pycparser-2.21-rgyvvgvj67pi3wlwjfovj6xi7euvvcmp}

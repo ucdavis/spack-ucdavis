@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:00.846042
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:12.810867
 ##
 ## py-anndata@0.8.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/cn7pr6r
 ##
@@ -38,6 +38,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-anndata
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-anndata-0.8.0-cn7pr6rrc36i273io5runv6jnkwbfo5n/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-anndata-0.8.0-cn7pr6rrc36i273io5runv6jnkwbfo5n/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-anndata-0.8.0-cn7pr6rrc36i273io5runv6jnkwbfo5n/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-anndata-0.8.0-cn7pr6rrc36i273io5runv6jnkwbfo5n/lib/python3.11/site-packages}
 setenv PY_ANNDATA_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-anndata-0.8.0-cn7pr6rrc36i273io5runv6jnkwbfo5n}

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:34:00.162060
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:12.597413
 ##
 ## sqlite@3.46.0%gcc@13.2.0+column_metadata+dynamic_extensions+fts~functions+rtree build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/pqnanfg
 ##
@@ -19,6 +19,7 @@ proc ModulesHelp { } {
 conflict sqlite
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/sqlite-3.46.0-pqnanfgvatmuxqe66tvfwlubzpoq6fww/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/sqlite-3.46.0-pqnanfgvatmuxqe66tvfwlubzpoq6fww/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/sqlite-3.46.0-pqnanfgvatmuxqe66tvfwlubzpoq6fww/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/sqlite-3.46.0-pqnanfgvatmuxqe66tvfwlubzpoq6fww/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/sqlite-3.46.0-pqnanfgvatmuxqe66tvfwlubzpoq6fww/include}

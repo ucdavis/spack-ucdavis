@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:27.934632
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:38.688622
 ##
 ## bzip2@1.0.8%gcc@13.2.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3/qknztba
 ##
@@ -22,6 +22,7 @@ proc ModulesHelp { } {
 conflict bzip2
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/bzip2-1.0.8/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/bzip2-1.0.8/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/bzip2-1.0.8/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/bzip2-1.0.8/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/bzip2-1.0.8/include}

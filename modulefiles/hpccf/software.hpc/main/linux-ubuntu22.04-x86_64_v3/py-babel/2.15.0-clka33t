@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:02.720159
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:14.718341
 ##
 ## py-babel@2.15.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/clka33t
 ##
@@ -29,6 +29,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-babel
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-babel-2.15.0-clka33t5gh32o6izeuhacnmmb52ongh6/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-babel-2.15.0-clka33t5gh32o6izeuhacnmmb52ongh6/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-babel-2.15.0-clka33t5gh32o6izeuhacnmmb52ongh6/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-babel-2.15.0-clka33t5gh32o6izeuhacnmmb52ongh6/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-babel-2.15.0-clka33t5gh32o6izeuhacnmmb52ongh6/lib/python3.11/site-packages}

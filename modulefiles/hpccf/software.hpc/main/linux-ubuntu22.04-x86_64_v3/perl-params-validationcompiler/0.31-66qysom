@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:54.412772
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:06.374367
 ##
 ## perl-params-validationcompiler@0.31%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/66qysom
 ##
@@ -28,6 +28,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict perl-params-validationcompiler
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-params-validationcompiler-0.31-66qysomeypica264f7rkfhwzhti5ixj4/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-params-validationcompiler-0.31-66qysomeypica264f7rkfhwzhti5ixj4/lib}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-params-validationcompiler-0.31-66qysomeypica264f7rkfhwzhti5ixj4/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-params-validationcompiler-0.31-66qysomeypica264f7rkfhwzhti5ixj4/.}
 prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-params-validationcompiler-0.31-66qysomeypica264f7rkfhwzhti5ixj4/lib/perl5}

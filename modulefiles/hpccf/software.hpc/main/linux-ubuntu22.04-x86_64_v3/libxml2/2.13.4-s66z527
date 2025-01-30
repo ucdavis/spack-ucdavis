@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:46.389883
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:58.249194
 ##
 ## libxml2@2.13.4%gcc@7.5.0+ftp+pic~python+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/s66z527
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict libxml2
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxml2-2.13.4-s66z5277b4brd7gfnobqfc7xdcinjghg/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxml2-2.13.4-s66z5277b4brd7gfnobqfc7xdcinjghg/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxml2-2.13.4-s66z5277b4brd7gfnobqfc7xdcinjghg/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxml2-2.13.4-s66z5277b4brd7gfnobqfc7xdcinjghg/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-7.5.0/libxml2-2.13.4-s66z5277b4brd7gfnobqfc7xdcinjghg/include}

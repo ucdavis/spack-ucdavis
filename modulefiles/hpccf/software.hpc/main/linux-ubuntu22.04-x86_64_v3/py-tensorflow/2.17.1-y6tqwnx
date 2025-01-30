@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:52.153962
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:04.413861
 ##
 ## py-tensorflow@2.17.1%gcc@13.2.0~android~aws~computecpp+cuda+dynamic_kernels~gcp~gdr~hdfs~ios~jemalloc~mkl~monolithic~mpi+nccl~ngraph~numa~opencl~rocm~tensorrt~verbs+xla build_system=generic cuda_arch=75 patches=2017b3e arch=linux-ubuntu22.04-x86_64_v3/y6tqwnx
 ##
@@ -67,6 +67,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-tensorflow
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-tensorflow-2.17.1-y6tqwnxojh7j2ubjonjf35ikkqkeqc6a/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-tensorflow-2.17.1-y6tqwnxojh7j2ubjonjf35ikkqkeqc6a/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-tensorflow-2.17.1-y6tqwnxojh7j2ubjonjf35ikkqkeqc6a/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-tensorflow-2.17.1-y6tqwnxojh7j2ubjonjf35ikkqkeqc6a/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-tensorflow-2.17.1-y6tqwnxojh7j2ubjonjf35ikkqkeqc6a/lib/python3.11/site-packages}

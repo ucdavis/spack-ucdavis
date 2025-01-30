@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:55.088404
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:07.374625
 ##
 ## py-urllib3@1.26.20%gcc@13.2.0~brotli~secure~socks build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/lpg4spj
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-urllib3
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-urllib3-1.26.20-lpg4spjbut3thoffxqssylnms4wjvcoh/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-urllib3-1.26.20-lpg4spjbut3thoffxqssylnms4wjvcoh/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-urllib3-1.26.20-lpg4spjbut3thoffxqssylnms4wjvcoh/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-urllib3-1.26.20-lpg4spjbut3thoffxqssylnms4wjvcoh/lib/python3.13/site-packages}
 setenv PY_URLLIB3_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-urllib3-1.26.20-lpg4spjbut3thoffxqssylnms4wjvcoh}

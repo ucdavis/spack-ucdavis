@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:33.127409
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:45.371134
 ##
 ## py-numba@0.58.1%gcc@13.2.0~tbb build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/edzfe5c
 ##
@@ -31,6 +31,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-numba
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-numba-0.58.1-edzfe5czm4ygl3eu3jzpjkynb2fxtdqh/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-numba-0.58.1-edzfe5czm4ygl3eu3jzpjkynb2fxtdqh/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-numba-0.58.1-edzfe5czm4ygl3eu3jzpjkynb2fxtdqh/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-numba-0.58.1-edzfe5czm4ygl3eu3jzpjkynb2fxtdqh/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-numba-0.58.1-edzfe5czm4ygl3eu3jzpjkynb2fxtdqh/lib/python3.11/site-packages}

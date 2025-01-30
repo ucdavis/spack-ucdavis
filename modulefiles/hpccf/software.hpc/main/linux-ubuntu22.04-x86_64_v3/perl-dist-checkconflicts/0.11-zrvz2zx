@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:53.609928
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:05.571999
 ##
 ## perl-dist-checkconflicts@0.11%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/zrvz2zx
 ##
@@ -23,6 +23,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict perl-dist-checkconflicts
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-dist-checkconflicts-0.11-zrvz2zx4wmsgc2i63vjehhyi7y35n2ld/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-dist-checkconflicts-0.11-zrvz2zx4wmsgc2i63vjehhyi7y35n2ld/lib}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-dist-checkconflicts-0.11-zrvz2zx4wmsgc2i63vjehhyi7y35n2ld/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-dist-checkconflicts-0.11-zrvz2zx4wmsgc2i63vjehhyi7y35n2ld/.}
 prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-dist-checkconflicts-0.11-zrvz2zx4wmsgc2i63vjehhyi7y35n2ld/lib/perl5}

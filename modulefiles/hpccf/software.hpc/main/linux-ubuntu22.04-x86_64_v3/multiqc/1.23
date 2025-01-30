@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:29.594121
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:42.569661
 ##
 ## py-multiqc@1.23%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/eolumh7
 ##
@@ -69,6 +69,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-multiqc
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/lib/python3.11/site-packages}

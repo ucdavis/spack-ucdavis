@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:57.084966
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:09.394478
 ##
 ## python-venv@1.0%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/ed2nmwx
 ##
@@ -23,7 +23,9 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict python-venv
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/python-venv-1.0-ed2nmwx63ntedsv7juh4s7czltxnv5kz/lib64}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/python-venv-1.0-ed2nmwx63ntedsv7juh4s7czltxnv5kz/lib64}
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/python-venv-1.0-ed2nmwx63ntedsv7juh4s7czltxnv5kz/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/python-venv-1.0-ed2nmwx63ntedsv7juh4s7czltxnv5kz/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/python-venv-1.0-ed2nmwx63ntedsv7juh4s7czltxnv5kz/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/python-venv-1.0-ed2nmwx63ntedsv7juh4s7czltxnv5kz/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/python-venv-1.0-ed2nmwx63ntedsv7juh4s7czltxnv5kz/include}

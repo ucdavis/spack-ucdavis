@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:53.218019
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:05.180359
 ##
 ## perl-bio-searchio-hmmer@1.7.3%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/h63mwqk
 ##
@@ -27,6 +27,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict perl-bio-searchio-hmmer
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-bio-searchio-hmmer-1.7.3-h63mwqkjwn2ce5zvrh53qbc2ijadiyjo/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-bio-searchio-hmmer-1.7.3-h63mwqkjwn2ce5zvrh53qbc2ijadiyjo/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-bio-searchio-hmmer-1.7.3-h63mwqkjwn2ce5zvrh53qbc2ijadiyjo/bin}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-bio-searchio-hmmer-1.7.3-h63mwqkjwn2ce5zvrh53qbc2ijadiyjo/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-bio-searchio-hmmer-1.7.3-h63mwqkjwn2ce5zvrh53qbc2ijadiyjo/.}

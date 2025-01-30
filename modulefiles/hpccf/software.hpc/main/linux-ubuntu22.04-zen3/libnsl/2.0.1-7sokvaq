@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:45.492044
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:57.353671
 ##
 ## libnsl@2.0.1%gcc@13.2.0 build_system=autotools arch=linux-ubuntu22.04-zen3/7sokvaq
 ##
@@ -19,6 +19,7 @@ proc ModulesHelp { } {
 conflict libnsl
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/libnsl-2.0.1-7sokvaq63wo5vedgjtfh3eks4eqe5i7w/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/libnsl-2.0.1-7sokvaq63wo5vedgjtfh3eks4eqe5i7w/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/libnsl-2.0.1-7sokvaq63wo5vedgjtfh3eks4eqe5i7w/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/libnsl-2.0.1-7sokvaq63wo5vedgjtfh3eks4eqe5i7w/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/libnsl-2.0.1-7sokvaq63wo5vedgjtfh3eks4eqe5i7w/include}

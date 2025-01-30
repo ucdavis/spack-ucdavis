@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:34:00.212805
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:12.647972
 ##
 ## squashfuse@0.5.2%gcc@13.2.0+lz4+lzo~min_size+shared+static+xz+zlib+zstd build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/sf2q5l5
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict squashfuse
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/squashfuse-0.5.2/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/squashfuse-0.5.2/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/squashfuse-0.5.2/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/squashfuse-0.5.2/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/squashfuse-0.5.2/include}

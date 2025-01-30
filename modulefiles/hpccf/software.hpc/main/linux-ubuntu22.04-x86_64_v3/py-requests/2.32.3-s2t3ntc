@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:44.102584
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:56.364599
 ##
 ## py-requests@2.32.3%gcc@13.2.0~socks build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/s2t3ntc
 ##
@@ -33,6 +33,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-requests
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-requests-2.32.3-s2t3ntctn4qs4cs2yhf7ill56xxrjrsc/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-requests-2.32.3-s2t3ntctn4qs4cs2yhf7ill56xxrjrsc/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-requests-2.32.3-s2t3ntctn4qs4cs2yhf7ill56xxrjrsc/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-requests-2.32.3-s2t3ntctn4qs4cs2yhf7ill56xxrjrsc/lib/python3.11/site-packages}
 setenv PY_REQUESTS_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-requests-2.32.3-s2t3ntctn4qs4cs2yhf7ill56xxrjrsc}

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:29.052472
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:42.033344
 ##
 ## py-ml-collections@0.1.1%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/7gtj4tf
 ##
@@ -36,6 +36,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-ml-collections
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ml-collections-0.1.1-7gtj4tfgn32b67tunioaoppsgp5ysfhd/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ml-collections-0.1.1-7gtj4tfgn32b67tunioaoppsgp5ysfhd/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ml-collections-0.1.1-7gtj4tfgn32b67tunioaoppsgp5ysfhd/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ml-collections-0.1.1-7gtj4tfgn32b67tunioaoppsgp5ysfhd/lib/python3.11/site-packages}
 setenv PY_ML_COLLECTIONS_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ml-collections-0.1.1-7gtj4tfgn32b67tunioaoppsgp5ysfhd}

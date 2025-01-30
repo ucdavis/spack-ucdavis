@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:09.420919
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:21.599011
 ##
 ## py-deeptools@3.5.3%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/5omo476
 ##
@@ -46,6 +46,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-deeptools
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/lib/python3.11/site-packages}

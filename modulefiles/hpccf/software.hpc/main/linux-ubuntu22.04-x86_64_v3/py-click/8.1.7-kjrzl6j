@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:06.681066
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:18.880155
 ##
 ## py-click@8.1.7%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/kjrzl6j
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-click
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-click-8.1.7-kjrzl6jepbhufjt7i3dn35i3eozx5acb/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-click-8.1.7-kjrzl6jepbhufjt7i3dn35i3eozx5acb/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-click-8.1.7-kjrzl6jepbhufjt7i3dn35i3eozx5acb/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-click-8.1.7-kjrzl6jepbhufjt7i3dn35i3eozx5acb/lib/python3.11/site-packages}
 setenv PY_CLICK_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-click-8.1.7-kjrzl6jepbhufjt7i3dn35i3eozx5acb}

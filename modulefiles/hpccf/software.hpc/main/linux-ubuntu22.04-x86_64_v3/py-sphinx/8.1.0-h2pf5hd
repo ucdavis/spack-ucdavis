@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:49.079406
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:01.243823
 ##
 ## py-sphinx@8.1.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/h2pf5hd
 ##
@@ -55,6 +55,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-sphinx
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-sphinx-8.1.0-h2pf5hdblsdgawos4zntvgsoql3lxnbm/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-sphinx-8.1.0-h2pf5hdblsdgawos4zntvgsoql3lxnbm/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-sphinx-8.1.0-h2pf5hdblsdgawos4zntvgsoql3lxnbm/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-sphinx-8.1.0-h2pf5hdblsdgawos4zntvgsoql3lxnbm/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-sphinx-8.1.0-h2pf5hdblsdgawos4zntvgsoql3lxnbm/lib/python3.11/site-packages}

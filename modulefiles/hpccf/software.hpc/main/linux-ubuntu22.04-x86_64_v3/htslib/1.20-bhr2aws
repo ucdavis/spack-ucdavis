@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-16 14:36:21.603089
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:51.751693
 ##
 ## htslib@1.20%gcc@11.4.0+gcs+libcurl+libdeflate+pic~plugins+s3 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/bhr2aws
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict htslib
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/htslib-1.20-bhr2aws2u44y4sn2xi5yqcnrqaqvb4fz/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/htslib-1.20-bhr2aws2u44y4sn2xi5yqcnrqaqvb4fz/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/htslib-1.20-bhr2aws2u44y4sn2xi5yqcnrqaqvb4fz/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/htslib-1.20-bhr2aws2u44y4sn2xi5yqcnrqaqvb4fz/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/htslib-1.20-bhr2aws2u44y4sn2xi5yqcnrqaqvb4fz/include}

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:40.604495
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:53.063976
 ##
 ## py-pyasn1@0.4.8%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/rwfysre
 ##
@@ -26,6 +26,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-pyasn1
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pyasn1-0.4.8-rwfysreweqp75vdq2adwl37iy4nlu4vg/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pyasn1-0.4.8-rwfysreweqp75vdq2adwl37iy4nlu4vg/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pyasn1-0.4.8-rwfysreweqp75vdq2adwl37iy4nlu4vg/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pyasn1-0.4.8-rwfysreweqp75vdq2adwl37iy4nlu4vg/lib/python3.13/site-packages}
 setenv PY_PYASN1_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pyasn1-0.4.8-rwfysreweqp75vdq2adwl37iy4nlu4vg}

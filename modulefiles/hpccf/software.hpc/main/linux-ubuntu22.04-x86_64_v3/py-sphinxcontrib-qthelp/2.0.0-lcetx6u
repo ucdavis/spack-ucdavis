@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:50.621609
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:02.783129
 ##
 ## py-sphinxcontrib-qthelp@2.0.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/lcetx6u
 ##
@@ -26,6 +26,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-sphinxcontrib-qthelp
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-sphinxcontrib-qthelp-2.0.0-lcetx6uvds4cfqgtnqzrjv5uqiexlxwy/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-sphinxcontrib-qthelp-2.0.0-lcetx6uvds4cfqgtnqzrjv5uqiexlxwy/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-sphinxcontrib-qthelp-2.0.0-lcetx6uvds4cfqgtnqzrjv5uqiexlxwy/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-sphinxcontrib-qthelp-2.0.0-lcetx6uvds4cfqgtnqzrjv5uqiexlxwy/lib/python3.11/site-packages}
 setenv PY_SPHINXCONTRIB_QTHELP_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-sphinxcontrib-qthelp-2.0.0-lcetx6uvds4cfqgtnqzrjv5uqiexlxwy}

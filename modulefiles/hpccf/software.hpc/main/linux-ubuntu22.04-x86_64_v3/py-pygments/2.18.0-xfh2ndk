@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:41.829953
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:54.273822
 ##
 ## py-pygments@2.18.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/xfh2ndk
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-pygments
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pygments-2.18.0-xfh2ndkj7ujtpxneoj6q5dki6qgzweoh/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pygments-2.18.0-xfh2ndkj7ujtpxneoj6q5dki6qgzweoh/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pygments-2.18.0-xfh2ndkj7ujtpxneoj6q5dki6qgzweoh/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pygments-2.18.0-xfh2ndkj7ujtpxneoj6q5dki6qgzweoh/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pygments-2.18.0-xfh2ndkj7ujtpxneoj6q5dki6qgzweoh/lib/python3.11/site-packages}

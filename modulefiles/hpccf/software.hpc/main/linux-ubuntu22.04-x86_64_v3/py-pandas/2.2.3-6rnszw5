@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:37.434802
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:49.804667
 ##
 ## py-pandas@2.2.3%gcc@13.2.0~excel+performance build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/6rnszw5
 ##
@@ -41,6 +41,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-pandas
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pandas-2.2.3-6rnszw5qp6lkl2a3qzuy5dphdd3joay2/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pandas-2.2.3-6rnszw5qp6lkl2a3qzuy5dphdd3joay2/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pandas-2.2.3-6rnszw5qp6lkl2a3qzuy5dphdd3joay2/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pandas-2.2.3-6rnszw5qp6lkl2a3qzuy5dphdd3joay2/lib/python3.11/site-packages}
 setenv PY_PANDAS_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pandas-2.2.3-6rnszw5qp6lkl2a3qzuy5dphdd3joay2}

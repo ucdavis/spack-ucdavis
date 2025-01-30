@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:34:01.399772
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:14.596020
 ##
 ## viennarna@2.6.4%gcc@13.2.0+perl+python+sse build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/sgrthhv
 ##
@@ -29,6 +29,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict viennarna
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/viennarna-2.6.4-sgrthhvgor4rj5d4vpyht3s6twsmigps/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/viennarna-2.6.4-sgrthhvgor4rj5d4vpyht3s6twsmigps/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/viennarna-2.6.4-sgrthhvgor4rj5d4vpyht3s6twsmigps/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/viennarna-2.6.4-sgrthhvgor4rj5d4vpyht3s6twsmigps/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/viennarna-2.6.4-sgrthhvgor4rj5d4vpyht3s6twsmigps/include}

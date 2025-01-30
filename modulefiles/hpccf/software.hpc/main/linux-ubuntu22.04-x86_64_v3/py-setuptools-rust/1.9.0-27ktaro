@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:47.416700
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:59.590998
 ##
 ## py-setuptools-rust@1.9.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/27ktaro
 ##
@@ -33,6 +33,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-setuptools-rust
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-setuptools-rust-1.9.0-27ktaro2nzcfz5enhytssfxqyssciit5/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-setuptools-rust-1.9.0-27ktaro2nzcfz5enhytssfxqyssciit5/lib}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-setuptools-rust-1.9.0-27ktaro2nzcfz5enhytssfxqyssciit5/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-setuptools-rust-1.9.0-27ktaro2nzcfz5enhytssfxqyssciit5/lib/python3.11/site-packages}
 setenv PY_SETUPTOOLS_RUST_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-setuptools-rust-1.9.0-27ktaro2nzcfz5enhytssfxqyssciit5}

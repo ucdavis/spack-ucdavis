@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:33:56.225214
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:08.507735
 ##
 ## py-wheel@0.41.2%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/zcrjvkt
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict py-wheel
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-wheel-0.41.2-zcrjvktdgm25ntx73rjggf7gmztyykvk/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-wheel-0.41.2-zcrjvktdgm25ntx73rjggf7gmztyykvk/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-wheel-0.41.2-zcrjvktdgm25ntx73rjggf7gmztyykvk/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-wheel-0.41.2-zcrjvktdgm25ntx73rjggf7gmztyykvk/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-wheel-0.41.2-zcrjvktdgm25ntx73rjggf7gmztyykvk/lib/python3.8/site-packages}

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:54.877126
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:06.837697
 ##
 ## perl-uri@5.08%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/d7o47om
 ##
@@ -23,6 +23,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict perl-uri
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-uri-5.08-d7o47omwi4hvslygxppmzijnqlqmbbp3/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-uri-5.08-d7o47omwi4hvslygxppmzijnqlqmbbp3/lib}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-uri-5.08-d7o47omwi4hvslygxppmzijnqlqmbbp3/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-uri-5.08-d7o47omwi4hvslygxppmzijnqlqmbbp3/.}
 prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-uri-5.08-d7o47omwi4hvslygxppmzijnqlqmbbp3/lib/perl5}

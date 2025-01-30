@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-16 16:20:29.587963
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:01.270846
 ##
 ## netlib-scalapack@2.2.0%gcc@13.2.0~ipo~pic+shared build_system=cmake build_type=Release generator=make patches=072b006,1c9ce5f,244a9aa arch=linux-ubuntu22.04-x86_64_v3/qhefhg2
 ##
@@ -21,6 +21,7 @@ proc ModulesHelp { } {
 conflict netlib-scalapack
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/netlib-scalapack-2.2.0-qhefhg22cp7htgaezxph665f4zxy5ejm/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/netlib-scalapack-2.2.0-qhefhg22cp7htgaezxph665f4zxy5ejm/lib}
 prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/netlib-scalapack-2.2.0-qhefhg22cp7htgaezxph665f4zxy5ejm/lib/pkgconfig}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/netlib-scalapack-2.2.0-qhefhg22cp7htgaezxph665f4zxy5ejm/.}
 setenv NETLIB_SCALAPACK_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/netlib-scalapack-2.2.0-qhefhg22cp7htgaezxph665f4zxy5ejm}

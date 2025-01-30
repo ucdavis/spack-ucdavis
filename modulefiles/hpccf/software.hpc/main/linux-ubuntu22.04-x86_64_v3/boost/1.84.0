@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:27.052713
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:37.738951
 ##
 ## boost@1.84.0%gcc@13.2.0+atomic+chrono~clanglibcpp~cobalt~container+context~contract+coroutine+date_time~debug+exception~fiber+filesystem+graph+graph_parallel+icu+iostreams+json+locale+log+math~mpi+multithreaded~nowide~numpy~pic+program_options~python+random+regex+serialization+shared+signals~singlethreaded+stacktrace+system~taggedlayout+test+thread+timer~type_erasure~url~versionedlayout+wave build_system=generic context-impl=fcontext cxxstd=11 patches=a440f96,b8569d7 visibility=hidden arch=linux-ubuntu22.04-x86_64_v3/cfpr2nj
 ##
@@ -22,6 +22,7 @@ proc ModulesHelp { } {
 conflict boost
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/boost-1.84.0/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/boost-1.84.0/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/boost-1.84.0/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/boost-1.84.0/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/boost-1.84.0/include}

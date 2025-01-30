@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:53:52.354827
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:09.314722
 ##
 ## python@3.13.0%gcc@13.2.0+bz2+ctypes+dbm~debug+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tkinter+uuid+zlib build_system=generic arch=linux-ubuntu22.04-x86_64_v3/xf4zxxe
 ##
@@ -20,6 +20,7 @@ proc ModulesHelp { } {
 conflict python
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/python-3.13.0-xf4zxxehbju3guxomp4iri3t36hkjjzo/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/python-3.13.0-xf4zxxehbju3guxomp4iri3t36hkjjzo/lib}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/python-3.13.0-xf4zxxehbju3guxomp4iri3t36hkjjzo/include}
 prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/python-3.13.0-xf4zxxehbju3guxomp4iri3t36hkjjzo/include}
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/python-3.13.0-xf4zxxehbju3guxomp4iri3t36hkjjzo/include}

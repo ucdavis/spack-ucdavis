@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-13 15:32:26.466255
+## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:37.147588
 ##
 ## bison@3.8.2%gcc@13.2.0~color build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/qq47dly
 ##
@@ -25,6 +25,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
 conflict bison
 
 prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/bison-3.8.2-qq47dlyjx2dgepvowjrgurad57rv2mhw/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/bison-3.8.2-qq47dlyjx2dgepvowjrgurad57rv2mhw/lib}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/bison-3.8.2-qq47dlyjx2dgepvowjrgurad57rv2mhw/bin}
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/bison-3.8.2-qq47dlyjx2dgepvowjrgurad57rv2mhw/share/man}
 prepend-path ACLOCAL_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/bison-3.8.2-qq47dlyjx2dgepvowjrgurad57rv2mhw/share/aclocal}
