@@ -1,25 +1,36 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-02-18 17:40:37.180833
+## Module file created by spack (https://github.com/spack/spack) on 2025-02-18 17:00:48.184144
 ##
-## freebayes@1.3.6%gcc@13.2.0~strip build_system=meson buildtype=release default_library=shared arch=linux-ubuntu22.04-x86_64_v3/x7qyxfx
+## samtools@1.19.2%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/xxdq3op
 ##
 
 
-module-whatis {Bayesian haplotype-based genetic polymorphism discovery and genotyping.}
+module-whatis {SAM Tools provide various utilities for manipulating alignments in the SAM format, including sorting, merging, indexing and generating alignments in a per-position format}
 
 proc ModulesHelp { } {
-    puts stderr {Name   : freebayes}
-    puts stderr {Version: 1.3.6}
+    puts stderr {Name   : samtools}
+    puts stderr {Version: 1.19.2}
     puts stderr {Target : x86_64_v3}
     puts stderr {}
-    puts stderr {Bayesian haplotype-based genetic polymorphism discovery and genotyping.}
+    puts stderr {SAM Tools provide various utilities for manipulating alignments in the}
+    puts stderr {SAM format, including sorting, merging, indexing and generating}
+    puts stderr {alignments in a per-position format}
 }
 
-conflict freebayes
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.40.0-lzbctij
+    module load python/3.11.9
+} else {
+    depends-on perl/5.40.0-lzbctij
+    depends-on python/3.11.9
+}
+conflict samtools
 
-prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/freebayes-1.3.6/bin}
-prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/freebayes-1.3.6/.}
-setenv FREEBAYES_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/freebayes-1.3.6-x7qyxfxmiftvb5f5uofn4tyovaqtq3zy}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/samtools-1.19.2-xxdq3opypyrsjjv23nclx3xjqyqq6eoe/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/samtools-1.19.2-xxdq3opypyrsjjv23nclx3xjqyqq6eoe/share/man}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/samtools-1.19.2-xxdq3opypyrsjjv23nclx3xjqyqq6eoe/.}
+setenv SAMTOOLS_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/samtools-1.19.2-xxdq3opypyrsjjv23nclx3xjqyqq6eoe}
+append-path MANPATH {}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 

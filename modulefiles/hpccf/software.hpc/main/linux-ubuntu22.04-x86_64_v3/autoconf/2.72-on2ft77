@@ -1,25 +1,34 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-02-18 17:40:37.180833
+## Module file created by spack (https://github.com/spack/spack) on 2025-02-18 19:01:05.504937
 ##
-## freebayes@1.3.6%gcc@13.2.0~strip build_system=meson buildtype=release default_library=shared arch=linux-ubuntu22.04-x86_64_v3/x7qyxfx
+## autoconf@2.72%gcc@13.2.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/on2ft77
 ##
 
 
-module-whatis {Bayesian haplotype-based genetic polymorphism discovery and genotyping.}
+module-whatis {Autoconf -- system configuration part of autotools}
 
 proc ModulesHelp { } {
-    puts stderr {Name   : freebayes}
-    puts stderr {Version: 1.3.6}
+    puts stderr {Name   : autoconf}
+    puts stderr {Version: 2.72}
     puts stderr {Target : x86_64_v3}
     puts stderr {}
-    puts stderr {Bayesian haplotype-based genetic polymorphism discovery and genotyping.}
+    puts stderr {Autoconf -- system configuration part of autotools}
 }
 
-conflict freebayes
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load m4/1.4.19
+    module load perl/5.40.0-lzbctij
+} else {
+    depends-on m4/1.4.19
+    depends-on perl/5.40.0-lzbctij
+}
+conflict autoconf
 
-prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/freebayes-1.3.6/bin}
-prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/freebayes-1.3.6/.}
-setenv FREEBAYES_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/freebayes-1.3.6-x7qyxfxmiftvb5f5uofn4tyovaqtq3zy}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/autoconf-2.72-on2ft77olqs6q6cfldkb6fn7u3ssmebi/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/autoconf-2.72-on2ft77olqs6q6cfldkb6fn7u3ssmebi/share/man}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/autoconf-2.72-on2ft77olqs6q6cfldkb6fn7u3ssmebi/.}
+setenv AUTOCONF_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/autoconf-2.72-on2ft77olqs6q6cfldkb6fn7u3ssmebi}
+append-path MANPATH {}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 
