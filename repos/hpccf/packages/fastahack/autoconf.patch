@@ -1,0 +1,151 @@
+OW: originally from: https://salsa.debian.org/med-team/libfastahack/-/blob/master/debian/patches/autoconf.patch?ref_type=heads
+Updates to use included disorder.[ch]
+
+Author: Andreas Tille <tille@debian.org>,
+        Adrian Bunk <bunk@debian.org>
+Last-Update: Sat, 18 Aug 2018 02:26:01 +0300
+Description: Add autoconf stuff to enable simple library creation
+Forwarded: not-needed
+
+--- /dev/null
++++ b/Makefile.am
+@@ -0,0 +1,16 @@
++lib_LTLIBRARIES  = libfastahack.la
++
++libfastahackdir=$(includedir)/fastahack
++libfastahack_HEADERS=Fasta.h LargeFileSupport.h Region.h split.h disorder.h
++libfastahack_la_SOURCES = Fasta.cpp split.cpp disorder.c
++libfastahack_la_LDFLAGS = -version-info @LIB_VERSION@
++
++libfastahack_la_CPPFLAGS = $(INCLUDES)
++
++bin_PROGRAMS = fastahack
++fastahack_SOURCES = FastaHack.cpp disorder.c
++LDADD = libfastahack.la
++
++pkgconfigdir=$(libdir)/pkgconfig
++pkgconfig_DATA = libfastahack.pc
++
+--- /dev/null
++++ b/configure.ac
+@@ -0,0 +1,61 @@
++#                                               -*- Autoconf -*-
++# Process this file with autoconf to produce a configure script.
++
++AC_INIT(fastahack, 0.0, erik.garrison@bc.edu)
++AC_CONFIG_HEADERS([config.h])
++
++AC_PREREQ(2.57)
++
++#	Directory that contains install-sh and other auxiliary files
++AC_CONFIG_AUX_DIR([config])
++
++################################################################################
++#	According to (http://www.mail-archive.com/autoconf@gnu.org/msg14232.html)
++#		this macro should be after AC_INIT but before AM_INIT_AUTOMAKE
++################################################################################
++AC_CONFIG_MACRO_DIR(config)
++
++AM_INIT_AUTOMAKE([1.6 foreign dist-zip tar-ustar filename-length-max=299])
++
++LIB_VERSION=0:0
++
++AC_SUBST([VERSION])
++AC_SUBST([LIB_VERSION])
++
++AC_SUBST([VERSION])
++
++# Checks for programs.
++AC_PROG_LN_S
++AC_PROG_INSTALL
++AC_PROG_LIBTOOL
++
++################################################################################
++# calling AC_PROG_CXX resets CXXFLAGS, we use our own flags set in the
++#	the AX_CXXFLAGS macro below.
++# So we cache the argument to configure
++#	here in ARG_CXX_FLAGS (so that our macro does not override them)
++################################################################################
++ARG_CXX_FLAGS="$CXXFLAGS"
++AC_PROG_CXX
++
++#Ranlib handled by check for libtool
++CXXFLAGS="$ARG_CXX_FLAGS"
++AX_CXXFLAGS
++
++AC_SUBST(CXXFLAGS)
++
++CPPFLAGS="-I\$(top_srcdir) $CPPFLAGS"
++# Checks for libraries.
++
++# Checks for header files.
++AC_HEADER_STDC
++AC_CHECK_HEADERS([stdlib.h])
++
++AC_PROG_MAKE_SET
++
++AC_CONFIG_FILES([
++	Makefile
++	libfastahack.pc
++	])
++AC_OUTPUT
++
+--- /dev/null
++++ b/libfastahack.pc.in
+@@ -0,0 +1,11 @@
++prefix=@prefix@
++exec_prefix=${prefix}
++libdir=${exec_prefix}/lib
++includedir=${prefix}/include/fastahack
++
++
++Name: libfastahack
++Version: @VERSION@
++Description: utilities for indexing and sequence extraction from FASTA files
++Libs: -L${libdir} -lfastahack
++Cflags: -I${includedir}
+--- a/Makefile
++++ /dev/null
+@@ -1,42 +0,0 @@
+-
+-# Use ?= to allow overriding from the env or command-line
+-CXX ?=		g++
+-CXXFLAGS ?=	-O3
+-PREFIX ?=	./stage
+-STRIP_CMD ?=	strip
+-INSTALL ?=	install -c
+-MKDIR ?=	mkdir -p
+-
+-# Required flags that we shouldn't override
+-CXXFLAGS +=	-D_FILE_OFFSET_BITS=64
+-
+-OBJS =	Fasta.o FastaHack.o split.o disorder.o
+-
+-all:	fastahack
+-
+-fastahack: $(OBJS)
+-	$(CXX) $(CXXFLAGS) $(OBJS) -o fastahack
+-
+-FastaHack.o: Fasta.h FastaHack.cpp
+-	$(CXX) $(CXXFLAGS) -c FastaHack.cpp
+-
+-Fasta.o: Fasta.h Fasta.cpp
+-	$(CXX) $(CXXFLAGS) -c Fasta.cpp
+-
+-split.o: split.h split.cpp
+-	$(CXX) $(CXXFLAGS) -c split.cpp
+-
+-disorder.o: disorder.c disorder.h
+-	$(CXX) $(CXXFLAGS) -c disorder.c
+-
+-install: fastahack
+-	$(MKDIR) $(DESTDIR)$(PREFIX)/bin
+-	$(INSTALL) fastahack $(DESTDIR)$(PREFIX)/bin
+-
+-install-strip: install
+-	$(STRIP_CMD) $(DESTDIR)$(PREFIX)/bin/fastahack
+-
+-clean:
+-	rm -rf fastahack *.o stage
+-
+-.PHONY: clean
