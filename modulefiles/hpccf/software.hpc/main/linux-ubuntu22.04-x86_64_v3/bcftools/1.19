@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:35.461702
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:33:53.080990
 ##
 ## bcftools@1.19%gcc@13.2.0+libgsl+perl-filters build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/muqs2pa
 ##
@@ -21,11 +21,11 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load py-gffutils/0.10.1-y65zfcx
     module load py-matplotlib/3.9.2-bsuux3u
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on py-gffutils/0.10.1-y65zfcx
     depends-on py-matplotlib/3.9.2-bsuux3u
 }

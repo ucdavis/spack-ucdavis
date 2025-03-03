@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:41.661400
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:33:59.074870
 ##
 ## circos@0.69-9%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/a4sqlya
 ##
@@ -16,7 +16,7 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load perl-clone/0.46-3guhici
     module load perl-config-general/2.65-zdwg3mj
     module load perl-exporter-tiny/1.006002-37txk54
@@ -35,7 +35,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load perl-svg/2.87-mcus2f5
     module load perl-text-format/0.62-qv2xewz
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on perl-clone/0.46-3guhici
     depends-on perl-config-general/2.65-zdwg3mj
     depends-on perl-exporter-tiny/1.006002-37txk54

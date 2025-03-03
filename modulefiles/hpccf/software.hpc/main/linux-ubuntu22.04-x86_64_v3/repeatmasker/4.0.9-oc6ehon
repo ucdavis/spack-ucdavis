@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:09.988871
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:35:29.848109
 ##
 ## repeatmasker@4.0.9%gcc@13.2.0~crossmatch build_system=generic patches=b9e0ce5 arch=linux-ubuntu22.04-x86_64_v3/oc6ehon
 ##
@@ -17,10 +17,10 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load perl-text-soundex/3.05-osjgx3p
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on perl-text-soundex/3.05-osjgx3p
 }
 conflict repeatmasker

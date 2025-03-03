@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:05.992198
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:25.569767
 ##
 ## perl-io-stringy@2.113%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/w3alcwn
 ##
@@ -25,9 +25,9 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
 }
 conflict perl-io-stringy
 

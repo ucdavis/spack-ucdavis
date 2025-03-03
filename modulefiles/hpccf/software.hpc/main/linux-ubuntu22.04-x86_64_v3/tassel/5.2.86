@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:12.954339
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:35:33.559056
 ##
 ## tassel@5.2.86%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/pvvusfv
 ##
@@ -18,10 +18,10 @@ proc ModulesHelp { } {
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load openjdk/17.0.11_9
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
 } else {
     depends-on openjdk/17.0.11_9
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
 }
 conflict tassel
 

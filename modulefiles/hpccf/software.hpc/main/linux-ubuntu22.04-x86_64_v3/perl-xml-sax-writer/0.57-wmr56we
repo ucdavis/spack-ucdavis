@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:07.013928
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:27.791704
 ##
 ## perl-xml-sax-writer@0.57%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/wmr56we
 ##
@@ -19,12 +19,12 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load perl-xml-filter-buffertext/1.01-nait7dy
     module load perl-xml-namespacesupport/1.12_9-rc4xuz5
     module load perl-xml-sax-base/1.09-ulcgtlz
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on perl-xml-filter-buffertext/1.01-nait7dy
     depends-on perl-xml-namespacesupport/1.12_9-rc4xuz5
     depends-on perl-xml-sax-base/1.09-ulcgtlz

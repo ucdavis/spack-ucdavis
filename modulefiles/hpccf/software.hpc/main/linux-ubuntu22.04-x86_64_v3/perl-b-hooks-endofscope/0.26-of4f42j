@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:05.162947
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:22.922408
 ##
 ## perl-b-hooks-endofscope@0.26%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/of4f42j
 ##
@@ -16,11 +16,11 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load perl-module-implementation/0.09-llwz36d
     module load perl-sub-exporter-progressive/0.001013-efnpjii
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on perl-module-implementation/0.09-llwz36d
     depends-on perl-sub-exporter-progressive/0.001013-efnpjii
 }

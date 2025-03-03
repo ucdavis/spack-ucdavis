@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:06.661014
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:27.236913
 ##
 ## perl-test-most@0.38%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/4pll5wx
 ##
@@ -16,14 +16,14 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load perl-exception-class/1.45-ashse2v
     module load perl-test-deep/1.204-gmy5awh
     module load perl-test-differences/0.71-3uka5bk
     module load perl-test-exception/0.43-pyd5kaw
     module load perl-test-warn/0.37-umyvksc
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on perl-exception-class/1.45-ashse2v
     depends-on perl-test-deep/1.204-gmy5awh
     depends-on perl-test-differences/0.71-3uka5bk

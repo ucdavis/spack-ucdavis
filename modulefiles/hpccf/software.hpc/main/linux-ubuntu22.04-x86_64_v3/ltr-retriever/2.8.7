@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:58.524655
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:16.072895
 ##
 ## ltr-retriever@2.8.7%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/24eqslh
 ##
@@ -20,13 +20,13 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load blast-plus/2.16.0-qyzslfm
     module load cdhit/4.8.1
     module load hmmer/3.4
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load repeatmasker/4.0.9-oc6ehon
 } else {
     depends-on blast-plus/2.16.0-qyzslfm
     depends-on cdhit/4.8.1
     depends-on hmmer/3.4
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on repeatmasker/4.0.9-oc6ehon
 }
 conflict ltr-retriever

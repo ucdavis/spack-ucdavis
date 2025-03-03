@@ -1,0 +1,83 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:26.333614
+##
+## perl-moo@2.005005%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/bhlsd6b
+##
+
+
+module-whatis {Moo - Minimalist Object Orientation (with Moose compatibility)}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-moo}
+    puts stderr {Version: 2.005005}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Moo - Minimalist Object Orientation (with Moose compatibility)}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.40.0
+    module load perl-carp/1.50-klcnrea
+    module load perl-class-method-modifiers/2.15-aiqm3eg
+    module load perl-exporter-tiny/1.006002-37txk54
+    module load perl-role-tiny/2.002004-usqyn5l
+    module load perl-scalar-list-utils/1.63-h5c2n6d
+    module load perl-sub-quote/2.006008-7r6a3z3
+} else {
+    depends-on perl/5.40.0
+    depends-on perl-carp/1.50-klcnrea
+    depends-on perl-class-method-modifiers/2.15-aiqm3eg
+    depends-on perl-exporter-tiny/1.006002-37txk54
+    depends-on perl-role-tiny/2.002004-usqyn5l
+    depends-on perl-scalar-list-utils/1.63-h5c2n6d
+    depends-on perl-sub-quote/2.006008-7r6a3z3
+}
+conflict perl-moo
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/perl-5.40.0/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/perl-5.40.0/lib}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/perl-5.40.0/man}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/perl-5.40.0/.}
+prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/perl-5.40.0/lib/perl5}
+setenv PERL_MOO_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-moo-2.005005-bhlsd6bjmjtams7xxeb4vcqjvchzmlu6}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:51.591772
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:09.132014
 ##
 ## hisat2@2.2.1%gcc@13.2.0~sra build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/xinrpxv
 ##
@@ -19,10 +19,10 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load python/3.13.0-xf4zxxe
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on python/3.13.0-xf4zxxe
 }
 conflict hisat2

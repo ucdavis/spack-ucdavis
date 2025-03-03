@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:06.213605
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:26.215381
 ##
 ## perl-module-implementation@0.09%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/llwz36d
 ##
@@ -16,13 +16,13 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load perl-module-runtime/0.016-icsesge
     module load perl-test-fatal/0.017-2n6ftep
     module load perl-test-requires/0.11-xe6hiht
     module load perl-try-tiny/0.31-voibp7l
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on perl-module-runtime/0.016-icsesge
     depends-on perl-test-fatal/0.017-2n6ftep
     depends-on perl-test-requires/0.11-xe6hiht

@@ -1,0 +1,42 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:22.863690
+##
+## perl@5.40.0%gcc@13.2.0+cpanm+opcode+open+shared+threads build_system=generic arch=linux-ubuntu22.04-x86_64_v3/lzbctij
+##
+## Configure options: -des -Dprefix=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-5.40.0-lzbctije7oh4wvh3uk67gnm57qxc26f6 -Dlocincpth=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gdbm-1.23-2cugdkieyw4a3tx42jdsf2defuvn2xxb/include -Dloclibpth=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gdbm-1.23-2cugdkieyw4a3tx42jdsf2defuvn2xxb/lib -Accflags=-DAPPLLIB_EXP=\"/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-5.40.0-lzbctije7oh4wvh3uk67gnm57qxc26f6/lib/perl5\" -Duseshrplib -Dusethreads
+##
+
+
+module-whatis {Perl 5 is a highly capable, feature-rich programming language with over 27 years of development.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl}
+    puts stderr {Version: 5.40.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Perl 5 is a highly capable, feature-rich programming language with over}
+    puts stderr {27 years of development.}
+}
+
+conflict perl
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/perl-5.40.0/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/perl-5.40.0/lib}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/perl-5.40.0/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/perl-5.40.0/man}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/perl-5.40.0/.}
+setenv PERL_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-5.40.0-lzbctije7oh4wvh3uk67gnm57qxc26f6}
+append-path MANPATH {}
+
+
+# Set environment so well behaved Perl modules can be user installed.
+# From: perl -Mlocal::lib
+
+setenv PERL_LOCAL_LIB_ROOT /home/$env(LOGNAME)/perl5
+
+prepend-path PATH          $env(PERL_LOCAL_LIB_ROOT)/bin
+prepend-path PERL5LIB      $env(PERL_LOCAL_LIB_ROOT)/lib/perl5
+setenv       PERL_MM_OPT   INSTALL_BASE=$env(PERL_LOCAL_LIB_ROOT)
+setenv       PERL_MB_OPT   "--install_base $env(PERL_LOCAL_LIB_ROOT)"
+
+

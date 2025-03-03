@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:06.646187
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:27.209650
 ##
 ## perl-test-memory-cycle@1.06%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/ve42nbq
 ##
@@ -16,11 +16,11 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load perl-devel-cycle/1.12-vmrt3yy
     module load perl-padwalker/2.5-pas54jd
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on perl-devel-cycle/1.12-vmrt3yy
     depends-on perl-padwalker/2.5-pas54jd
 }

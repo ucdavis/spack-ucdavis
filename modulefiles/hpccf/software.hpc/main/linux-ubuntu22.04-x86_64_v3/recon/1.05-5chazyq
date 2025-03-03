@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:44:09.916072
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:35:29.773047
 ##
 ## recon@1.05%gcc@13.2.0+repeatmasker build_system=makefile patches=18a7a0b arch=linux-ubuntu22.04-x86_64_v3/5chazyq
 ##
@@ -17,9 +17,9 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
 }
 conflict recon
 

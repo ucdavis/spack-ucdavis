@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:06.317791
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:26.743345
 ##
 ## perl-package-stash@0.40%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/nr63dpd
 ##
@@ -16,13 +16,13 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load perl-dist-checkconflicts/0.11-zrvz2zx
     module load perl-module-implementation/0.09-llwz36d
     module load perl-test-fatal/0.017-2n6ftep
     module load perl-test-requires/0.11-xe6hiht
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on perl-dist-checkconflicts/0.11-zrvz2zx
     depends-on perl-module-implementation/0.09-llwz36d
     depends-on perl-test-fatal/0.017-2n6ftep

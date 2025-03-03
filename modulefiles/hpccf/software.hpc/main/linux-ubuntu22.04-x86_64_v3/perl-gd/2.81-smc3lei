@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:05.759211
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:24.290855
 ##
 ## perl-gd@2.81%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/smc3lei
 ##
@@ -16,11 +16,11 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load perl-extutils-makemaker/7.70-46ob73g
     module load perl-extutils-pkgconfig/1.16-e776bpz
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on perl-extutils-makemaker/7.70-46ob73g
     depends-on perl-extutils-pkgconfig/1.16-e776bpz
 }

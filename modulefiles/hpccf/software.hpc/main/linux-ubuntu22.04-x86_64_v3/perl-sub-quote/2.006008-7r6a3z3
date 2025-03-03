@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:06.555117
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:27.084795
 ##
 ## perl-sub-quote@2.006008%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/7r6a3z3
 ##
@@ -16,10 +16,10 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load perl-scalar-list-utils/1.63-h5c2n6d
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on perl-scalar-list-utils/1.63-h5c2n6d
 }
 conflict perl-sub-quote

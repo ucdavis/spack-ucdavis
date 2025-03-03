@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:06.954520
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:27.729847
 ##
 ## perl-xml-parser@2.47%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/uotde6y
 ##
@@ -18,11 +18,11 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
-    module load perl-libwww-perl/6.68-hsaecxw
+    module load perl/5.40.0
+    module load perl-libwww-perl/6.68
 } else {
-    depends-on perl/5.40.0-lzbctij
-    depends-on perl-libwww-perl/6.68-hsaecxw
+    depends-on perl/5.40.0
+    depends-on perl-libwww-perl/6.68
 }
 conflict perl-xml-parser
 

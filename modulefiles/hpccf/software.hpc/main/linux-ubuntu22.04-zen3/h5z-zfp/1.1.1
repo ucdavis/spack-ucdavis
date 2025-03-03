@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:50.673844
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:08.668002
 ##
 ## h5z-zfp@1.1.1%gcc@13.2.0+fortran~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-zen3/22h3yn6
 ##
@@ -25,6 +25,7 @@ prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/v
 prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen3/h5z-zfp-1.1.1/include}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen3/h5z-zfp-1.1.1/.}
 setenv H5Z_ZFP_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/h5z-zfp-1.1.1-22h3yn6sryz3crvhnriwbox3f4m5co7i}
+prepend-path HDF5_PLUGIN_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/h5z-zfp-1.1.1-22h3yn6sryz3crvhnriwbox3f4m5co7i/plugin}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 

@@ -1,0 +1,85 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:25.400290
+##
+## perl-http-message@6.45%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-zen2/d3katc2
+##
+
+
+module-whatis {HTTP style message (base class)}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-http-message}
+    puts stderr {Version: 6.45}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr {HTTP style message (base class)}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.40.0-cr2hpfl
+    module load perl-clone/0.46-7dj657j
+    module load perl-encode-locale/1.05-kjc2rso
+    module load perl-http-date/6.06-qbex3hp
+    module load perl-io-html/1.004-rhd7x57
+    module load perl-lwp-mediatypes/6.04-hqco3ie
+    module load perl-try-tiny/0.31-bc4hfnp
+    module load perl-uri/5.08-hg626nm
+} else {
+    depends-on perl/5.40.0-cr2hpfl
+    depends-on perl-clone/0.46-7dj657j
+    depends-on perl-encode-locale/1.05-kjc2rso
+    depends-on perl-http-date/6.06-qbex3hp
+    depends-on perl-io-html/1.004-rhd7x57
+    depends-on perl-lwp-mediatypes/6.04-hqco3ie
+    depends-on perl-try-tiny/0.31-bc4hfnp
+    depends-on perl-uri/5.08-hg626nm
+}
+conflict perl-http-message
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/perl-http-message-6.45-d3katc2pe47mq4liyuey5nnsxerq6dvo/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/perl-http-message-6.45-d3katc2pe47mq4liyuey5nnsxerq6dvo/lib}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/perl-http-message-6.45-d3katc2pe47mq4liyuey5nnsxerq6dvo/man}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/perl-http-message-6.45-d3katc2pe47mq4liyuey5nnsxerq6dvo/.}
+prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/perl-http-message-6.45-d3katc2pe47mq4liyuey5nnsxerq6dvo/lib/perl5}
+setenv PERL_HTTP_MESSAGE_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/perl-http-message-6.45-d3katc2pe47mq4liyuey5nnsxerq6dvo}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

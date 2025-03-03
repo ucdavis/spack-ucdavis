@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:40.047494
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:33:57.461979
 ##
 ## cdhit@4.8.1%gcc@13.2.0+openmp+zlib build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/jqsqoys
 ##
@@ -17,10 +17,10 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load perl-text-nsp/1.31-6brg4kp
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on perl-text-nsp/1.31-6brg4kp
 }
 conflict cdhit

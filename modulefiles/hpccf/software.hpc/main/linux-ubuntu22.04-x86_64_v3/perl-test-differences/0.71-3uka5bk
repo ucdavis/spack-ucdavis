@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:06.603991
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:27.166225
 ##
 ## perl-test-differences@0.71%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/3uka5bk
 ##
@@ -16,11 +16,11 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load perl-capture-tiny/0.48-avgxeiw
     module load perl-text-diff/1.45-zickdx4
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on perl-capture-tiny/0.48-avgxeiw
     depends-on perl-text-diff/1.45-zickdx4
 }

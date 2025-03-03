@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:55.893616
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:13.410305
 ##
 ## lcov@2.0%gcc@13.2.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/d2oguqv
 ##
@@ -20,7 +20,7 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load perl-b-hooks-endofscope/0.26-of4f42j
     module load perl-capture-tiny/0.48-avgxeiw
     module load perl-class-inspector/1.36-odg2nxk
@@ -48,7 +48,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load perl-time-hires/1.9758-m54hiwg
     module load perl-timedate/2.33-pdpr62y
 } else {
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on perl-b-hooks-endofscope/0.26-of4f42j
     depends-on perl-capture-tiny/0.48-avgxeiw
     depends-on perl-class-inspector/1.36-odg2nxk

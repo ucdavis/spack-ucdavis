@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:43:07.702633
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:34:28.534234
 ##
 ## prokka@1.14.6%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/nie4em2
 ##
@@ -19,18 +19,18 @@ proc ModulesHelp { } {
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load blast-plus/2.16.0
     module load hmmer/3.4
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
     module load perl-bio-searchio-hmmer/1.7.3-h63mwqk
-    module load perl-bioperl/1.7.8-t2wyx73
+    module load perl-bioperl/1.7.8
     module load perl-xml-simple/2.25-bcuc24x
     module load prodigal/2.6.3
     module load tbl2asn/2022-04-26-fbwwvux
 } else {
     depends-on blast-plus/2.16.0
     depends-on hmmer/3.4
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
     depends-on perl-bio-searchio-hmmer/1.7.3-h63mwqk
-    depends-on perl-bioperl/1.7.8-t2wyx73
+    depends-on perl-bioperl/1.7.8
     depends-on perl-xml-simple/2.25-bcuc24x
     depends-on prodigal/2.6.3
     depends-on tbl2asn/2022-04-26-fbwwvux

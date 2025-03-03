@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-01-30 10:42:39.746359
+## Module file created by spack (https://github.com/spack/spack) on 2025-03-03 12:33:57.165435
 ##
 ## canu@2.2%gcc@13.2.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/tjoqx5t
 ##
@@ -18,11 +18,11 @@ proc ModulesHelp { } {
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load gnuplot/6.0.0-7z2s75q
     module load openjdk/17.0.11_9
-    module load perl/5.40.0-lzbctij
+    module load perl/5.40.0
 } else {
     depends-on gnuplot/6.0.0-7z2s75q
     depends-on openjdk/17.0.11_9
-    depends-on perl/5.40.0-lzbctij
+    depends-on perl/5.40.0
 }
 conflict canu
 
