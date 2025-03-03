@@ -4,6 +4,7 @@ spack:
   - libs.yaml
   - utils.yaml
   - general.yaml
+  - perl.yaml
   specs:
   # splatted specs, see definitions
   - $compilers
@@ -16,6 +17,9 @@ spack:
     - [arch=linux-ubuntu22.04-x86_64_v3]
   - matrix:
     - [$general-specs]
+    - [arch=linux-ubuntu22.04-x86_64_v3]
+  - matrix:
+    - [$perl-specs]
     - [arch=linux-ubuntu22.04-x86_64_v3]
   - matrix:
     - [$libs-specs]
@@ -72,6 +76,13 @@ spack:
         # Template overrides
         rstudio:
           template: hpccf/rstudio.tcl
+        perl:
+          template: hpccf/perl.tcl
+        # Env variable overrides/additions
+        h5z-zfp:
+          environment:
+            prepend_path:
+              HDF5_PLUGIN_PATH: '{prefix}/plugin'
 
   concretizer:
     unify: false
