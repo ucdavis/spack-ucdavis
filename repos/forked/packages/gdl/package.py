@@ -17,11 +17,10 @@ class Gdl(CMakePackage):
     homepage = "https://github.com/gnudatalanguage/gdl"
     url = "https://github.com/gnudatalanguage/gdl/archive/v0.9.9.tar.gz"
 
-    version("1.0.3",
+    version("1.1.1",
             sha256="db72eeb84c54dba387d5474500ce005ff1dc605b070bd00f57a552d3bb6ab16c",
-            url="https://github.com/gnudatalanguage/gdl/releases/download/v1.0.3/gdl-v1.0.3.tar.gz")
-    version("0.9.9", sha256="ad5de3fec095a5c58b46338dcc7367d2565c093794ab1bbcf180bba1a712cf14")
-    version("0.9.8", sha256="0e22df7314feaf18a76ae39ee57eea2ac8c3633bc095acbc25e1e07277d7c98b")
+            url="https://github.com/gnudatalanguage/gdl/releases/download/v1.0.3/gdl-v1.0.3.tar.gz"
+            )
 
     variant("graphicsmagick", default=False, description="Enable GraphicsMagick")
 
@@ -40,9 +39,7 @@ class Gdl(CMakePackage):
     depends_on("hdf", when="+hdf4")
     depends_on("hdf5", when="+hdf5")
     depends_on("libx11", when="+x11")
-    depends_on("plplot+wx", when="+wx@:5.11")
-    depends_on("plplot+wx+wxold", when="+wx@5.12:")
-    depends_on("plplot~wx", when="~wx")
+
     # Too many dependencies to test if GDL supports PROJ.6,
     # so restricting to old API
     depends_on("proj@:5", when="+proj")
@@ -85,8 +82,8 @@ class Gdl(CMakePackage):
         # GraphicsMagick covers the same features as ImageMagick and
         # only version 6 of ImageMagick is supported (version 7 is packaged)
         args += ["-DMAGICK=OFF",
-                 "-DUDUNITS2=OFF", 
-                 "-DGRIB=OFF", 
+                 "-DUDUNITS2=OFF",
+                 "-DGRIB=OFF",
                  "-DGLPK=OFF",
                  "-DSHAPELIB=OFF"]
 

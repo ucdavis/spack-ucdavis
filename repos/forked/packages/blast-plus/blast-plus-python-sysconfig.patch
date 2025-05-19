@@ -1,0 +1,14 @@
+--- a/c++/scripts/common/impl/python-config.py	2016-06-08 07:54:36.000000000 -0700
++++ b/c++/scripts/common/impl/python-config-patched.py	2025-05-05 12:36:57.419440441 -0700
+@@ -1,7 +1,10 @@
+ #!/usr/bin/env python
+ # $Id: python-config.py 503831 2016-06-08 14:54:36Z ucko $
+ 
+-from distutils import sysconfig
++try:
++    from distutils import sysconfig
++except ImportError:
++    import sysconfig
+ import sys
+ 
+ def lookup(want):
