@@ -12,6 +12,7 @@ class CensorNorb(AutotoolsPackage):
     homepage = "https://www.girinst.org/downloads/software/censor/"
     url = "https://www.girinst.org/downloads/software/censor/censor-norb-4.2.30.tar.gz"
 
+    version("4.2.31", sha256="cb32d47ad7a36fceef3c4d4067b0885bf4b7f7c5b4e6def946ca5556cbd0d7da")
     version("4.2.30", sha256="2a66902a859d819ddb69852dc6da2a12a88184f61dec6b45d223ebd0d0eeefe8")
 
     depends_on("ncbi-rmblastn", type=("build", "run"))
