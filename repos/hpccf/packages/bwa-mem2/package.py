@@ -18,9 +18,10 @@ class BwaMem2(MakefilePackage):
 
     version("2.2.1", sha256="9b001bdc7666ee3f14f3698b21673714d429af50438b894313b05bc4688b1f6d")
 
+    depends_on("c", type="build")
     depends_on("zlib")
 
-    patch("__cpuidex.remove.patch")
+    #patch("__cpuidex.remove.patch")
     patch("stdcheaders.patch")
 
     conflicts("%gcc@8:")
