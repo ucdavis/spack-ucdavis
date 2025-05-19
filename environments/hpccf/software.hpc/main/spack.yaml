@@ -1,5 +1,6 @@
 spack:
   include:
+  - ../compilers/definitions.yaml
   - ../core/definitions.yaml
   - libs.yaml
   - utils.yaml
@@ -7,11 +8,15 @@ spack:
   - perl.yaml
   specs:
   # splatted specs, see definitions
-  - $compilers
+  - $compiler-pkgs
   - $generic-specs
   - $cuda-specs
   - $messaging-specs
   - $openssl-specs
+  - matrix:
+    - [julia]
+    - [$julia-versions]
+    - ['%gcc@=13.2.0 arch=linux-ubuntu22.04-x86_64_v3']
   - matrix:
     - [$utils-specs]
     - [arch=linux-ubuntu22.04-x86_64_v3]
@@ -31,10 +36,10 @@ spack:
       - llvm
       - repeatmasker # short term fix: repeatmasker is downloading giant DB files
       projections:
+        "target=x86_64_v3 %oneapi": oneapi/{name}-{version}
         target=x86_64_v3: generic/{name}-{version}
         target=zen2: zen2/{name}-{version}
         target=zen3: zen3/{name}-{version}
-        #target=skylake_avx512: 'skylake_avx512/{name}-{version}'
       link: roots
       link_type: symlink
   modules:
@@ -58,27 +63,52 @@ spack:
       tcl:
         all:
           autoload: run
+          suffixes:
+            '%oneapi': '%oneapi@{compiler.version}'
+            '%intel': '%icc@{compiler.version}'
+            '%gcc@7.5': '%gcc@{compiler.version}'
+            '%gcc@9.5': '%gcc@{compiler.version}'
+            '%gcc@11.4': '%gcc@{compiler.version}'
+            '%aocc': '%aocc@{compiler.version}'
+            '%nvhpc': '%nvhpc@{compiler.version}'
+            '%clang': '%clang@{compiler.version}'
         #hide_implicits: false
         defaults:
         - cuda @12.3
-        #include:
-        #- $generic-specs
+        - '%gcc@13.2'
         exclude:
         - mariadb
         - environment-modules
         projections:
-          intel-oneapi-compilers: oneapi/{version}
-          llvm: clang/{version}
-          py-quast: quast/{version}
-          py-alphafold: alphafold/{version}
-          py-htseq: htseq/{version}
-          py-multiqc: multiqc/{version}
-        # Template overrides
+          aocc: lang/aocc/{version}
+          gcc: lang/gcc/{version}
+          intel-oneapi-compilers: lang/oneapi/{version}
+          intel-oneapi-compilers-classic: lang/icc/{version}
+          llvm: lang/clang/{version}
+          nvhpc: lang/nvhpc/{version}
+          go: lang/go/{version}
+          jdk: lang/jdk/{version}
+          openjdk: lang/openjdk/{version}
+          julia: lang/julia/{version}
+          perl: lang/perl/{version}
+          rust: lang/rust/{version}
+          cuda: lang/cuda/{version}
+          mpich: core/{name}/{version}
+          openmpi: core/{name}/{version}
+          pmix: core/{name}/{version}
+          libevent: core/{name}/{version}
+          ucx: core/{name}/{version}
+          slurm: core/{name}/{version}
+          hwloc: core/{name}/{version}
+          py-quast: general/quast/{version}
+          py-alphafold: general/alphafold/{version}
+          py-htseq: general/htseq/{version}
+          py-multiqc: general/multiqc/{version}
+          all: general/{name}/{version}
         rstudio:
           template: hpccf/rstudio.tcl
         perl:
           template: hpccf/perl.tcl
-        # Env variable overrides/additions
         h5z-zfp:
           environment:
             prepend_path:
@@ -86,3 +116,4 @@ spack:
 
   concretizer:
     unify: false
+

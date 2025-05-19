@@ -1,0 +1,10 @@
+spack:
+  specs:
+    - llvm +clang +flang ~python @16.0.6
+    - llvm +clang +flang ~python @14.0.6
+  view:
+    default:
+      root: /path/to/view
+      projections:
+        llvm: compilers/{name}-{version}
+      link: roots

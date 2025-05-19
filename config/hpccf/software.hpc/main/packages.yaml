@@ -2,19 +2,26 @@ packages:
   aocc:
     externals:
       - spec: aocc@3.2.0+license-agreed target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-3.2.0
         extra_attributes:
           compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0/bin/clang
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0/bin/clang++
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-3.2.0/bin/flang
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-3.2.0/bin/clang
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-3.2.0/bin/clang++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-3.2.0/bin/flang
       - spec: aocc@4.2.0+license-agreed target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.2.0
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-4.2.0
         extra_attributes:
           compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.1.0/bin/clang
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.1.0/bin/clang++
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/aocc-4.1.0/bin/flang
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-4.2.0/bin/clang
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-4.2.0/bin/clang++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-4.2.0/bin/flang
+      - spec: aocc@5.0.0+license-agreed target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-5.0.0
+        extra_attributes:
+          compilers:
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-5.0.0/bin/clang
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-5.0.0/bin/clang++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-5.0.0/bin/flang
     buildable: false
   openssl:
     externals:
@@ -57,89 +64,108 @@ packages:
     buildable: false
   gcc:
     externals:
-      - spec: gcc@13.2.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_type=RelWithDebInfo languages='c,c++,fortran' target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0
+      - spec: gcc@7.5.0 target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-7.5.0
         extra_attributes:
           compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/gcc
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/g++
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/gfortran
-      - spec: gcc@11.4.0%gcc@=9.5.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_type=RelWithDebInfo languages='c,c++,fortran' target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-11.4.0
-        extra_attributes:
-          compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-11.4.0/bin/gcc
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-11.4.0/bin/g++
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-11.4.0/bin/gfortran
-      - spec: gcc@7.5.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_type=RelWithDebInfo languages='c,c++,fortran' target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0
-        extra_attributes:
-          compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0/bin/gcc
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0/bin/g++
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-7.5.0/bin/gfortran
-      - spec: gcc@=9.5.0
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-7.5.0/bin/gcc
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-7.5.0/bin/g++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-7.5.0/bin/gfortran
+          environment:
+            set:
+              CUDAFLAGS: "--allow-unsupported-compiler"
+      - spec: gcc@=9.5.0 target=x86_64_v3
         prefix: /usr
         extra_attributes:
           compilers:
-            c: /usr/bin/gcc-9
-            cxx: /usr/bin/g++-9
-            fortran: /usr/bin/gfortran-9
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-9.5.0/bin/gcc
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-9.5.0/bin/g++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-9.5.0/bin/gfortran
+          environment:
+            set:
+              CUDAFLAGS: "--allow-unsupported-compiler"
+      - spec: gcc@11.4.0%gcc@=9.5.0 target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-11.4.0
+        extra_attributes:
+          compilers:
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-11.4.0/bin/gcc
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-11.4.0/bin/g++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-11.4.0/bin/gfortran
+          environment:
+            set:
+              CUDAFLAGS: "--allow-unsupported-compiler"
+      - spec: gcc@13.2.0 target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-13.2.0
+        extra_attributes:
+          compilers:
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-13.2.0/bin/gcc
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-13.2.0/bin/g++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-13.2.0/bin/gfortran
+          environment:
+            set:
+              CUDAFLAGS: "--allow-unsupported-compiler"
     buildable: false
   llvm:
     externals:
       - spec: llvm@14.0.6+clang+flang target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-14.0.6
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/clang-14.0.6
         extra_attributes:
           compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-14.0.6/bin/clang
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-14.0.6/bin/clang++
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-14.0.6/bin/flang
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/clang-14.0.6/bin/clang
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/clang-14.0.6/bin/clang++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/clang-14.0.6/bin/flang
       - spec: llvm@16.0.6 +clang+flang target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-16.0.6
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/clang-16.0.6
         extra_attributes:
           compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-16.0.6/bin/clang
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-16.0.6/bin/clang++
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-16.0.6/bin/flang
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/clang-16.0.6/bin/clang
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/clang-16.0.6/bin/clang++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/clang-16.0.6/bin/flang
       - spec: llvm@19.1.3+clang+flang target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-19.1.3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/clang-19.1.3
         extra_attributes:
           compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-19.1.3/bin/clang
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-19.1.3/bin/clang++
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/clang-19.1.3/bin/flang
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/clang-19.1.3/bin/clang
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/clang-19.1.3/bin/clang++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/clang-19.1.3/bin/flang
     buildable: False
   intel-oneapi-compilers:
     externals:
+      - spec: intel-oneapi-compilers@2025.0.0+envmods target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2025.0.0
+        extra_attributes:
+          compilers:
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2025.0.0/compiler/latest/bin/icx
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2025.0.0/compiler/latest/bin/icpx
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2025.0.0/compiler/latest/bin/ifx
       - spec: intel-oneapi-compilers@2024.0.2+envmods target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2024.0.2
         extra_attributes:
           compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/icx
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/icpx
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/ifx
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/icx
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/icpx
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2024.0.2/compiler/latest/bin/ifx
       - spec: intel-oneapi-compilers@2023.2.4+envmods target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2023.2.4
         extra_attributes:
           compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4/compiler/latest/linux/bin/icx
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4/compiler/latest/linux/bin/icpx
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-2023.2.4/compiler/latest/linux/bin/ifx
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2023.2.4/compiler/latest/linux/bin/icx
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2023.2.4/compiler/latest/linux/bin/icpx
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2023.2.4/compiler/latest/linux/bin/ifx
     buildable: false
   intel-oneapi-compilers-classic:
     externals:
       - spec: intel-oneapi-compilers-classic@2021.10.0 target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-classic-2021.10.0
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-classic-2021.10.0
         extra_attributes:
           compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-classic-2021.10.0/bin/icc
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-classic-2021.10.0/bin/icpc
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/intel-oneapi-compilers-classic-2021.10.0/bin/ifort
-          flags:
-            cflags: -gcc-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/gcc -isystem/usr/include/x86_64-linux-gnu
-            cxxflags: -gxx-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/g++ -isystem/usr/include/x86_64-linux-gnu
-            fflags: -gcc-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/gcc-13.2.0/bin/gcc
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-classic-2021.10.0/bin/icc
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-classic-2021.10.0/bin/icpc
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-classic-2021.10.0/bin/ifort
+            #flags:
+            #  cflags: -gcc-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-13.2.0/bin/gcc -isystem/usr/include/x86_64-linux-gnu 
+            #  cxxflags: -gxx-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-13.2.0/bin/g++ -isystem/usr/include/x86_64-linux-gnu 
+            #  fflags: -gcc-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-13.2.0/bin/gcc
     buildable: false
   # When mpi=openmpi, this introduces an unresolvable dependency.
   # See https://github.com/spack/spack/issues/15836 for details
@@ -159,20 +185,27 @@ packages:
   #
   nvhpc:
     externals:
+      - spec: nvhpc@24.9+blas+lapack+mpi default_cuda=default install_type=single target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.9
+        extra_attributes:
+          compilers:
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.9/Linux_x86_64/2024/compilers/bin/nvc
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.9/Linux_x86_64/2024/compilers/bin/nvc++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.9/Linux_x86_64/2024/compilers/bin/nvfortran
       - spec: nvhpc@24.1+blas+lapack+mpi default_cuda=default install_type=single target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.1
         extra_attributes:
           compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1/Linux_x86_64/2024/compilers/bin/nvc
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1/Linux_x86_64/2024/compilers/bin/nvc++
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-24.1/Linux_x86_64/2024/compilers/bin/nvfortran
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.1/Linux_x86_64/2024/compilers/bin/nvc
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.1/Linux_x86_64/2024/compilers/bin/nvc++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.1/Linux_x86_64/2024/compilers/bin/nvfortran
       - spec: nvhpc@22.9+blas+lapack+mpi default_cuda=default install_type=single target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-22.9
         extra_attributes:
           compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9/Linux_x86_64/2022/compilers/bin/nvc
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9/Linux_x86_64/2022/compilers/bin/nvc++
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/compilers/nvhpc-22.9/Linux_x86_64/2022/compilers/bin/nvfortran
+            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-22.9/Linux_x86_64/2022/compilers/bin/nvc
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-22.9/Linux_x86_64/2022/compilers/bin/nvc++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-22.9/Linux_x86_64/2022/compilers/bin/nvfortran
     buildable: false
     require: '+blas +lapack +mpi'
   environment-modules:
@@ -191,6 +224,8 @@ packages:
     externals:
       - spec: libevent@2.1.12+openssl target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/libevent-2.1.12
+      - spec: libevent@2.1.12+openssl target=x86_64_v3 %oneapi
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/libevent-2.1.12
       - spec: libevent@2.1.12+openssl target=zen2
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/libevent-2.1.12
       - spec: libevent@2.1.12+openssl target=zen3
@@ -203,8 +238,8 @@ packages:
     buildable: false
   julia:
     externals:
-      - spec: julia@1.11.0+openlibm+precompile target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/julia-1.11.0
+      - spec: julia@1.11.4+openlibm+precompile target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/julia-1.11.4
     buildable: false
   jdk:
     externals:
@@ -232,25 +267,28 @@ packages:
     require: '+dev'
   cuda:
     externals:
-      - spec: cuda@12.6.2~allow-unsupported-compilers~dev target=x86_64_v3
+      - spec: cuda@12.6.2+allow-unsupported-compilers~dev target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-12.6.2
-      - spec: cuda@12.3.0~allow-unsupported-compilers~dev target=x86_64_v3
+      - spec: cuda@12.3.0+allow-unsupported-compilers~dev target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-12.3.0
-      - spec: cuda@11.7.1~allow-unsupported-compilers~dev target=x86_64_v3
+      - spec: cuda@11.7.1+allow-unsupported-compilers~dev target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-11.7.1
-      - spec: cuda@11.2.2~allow-unsupported-compilers~dev target=x86_64_v3
+      - spec: cuda@11.2.2+allow-unsupported-compilers~dev target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-11.2.2
-      - spec: cuda@10.2.89~allow-unsupported-compilers~dev target=x86_64_v3
+      - spec: cuda@10.2.89+allow-unsupported-compilers~dev target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-10.2.89
-      - spec: cuda@9.2.88~allow-unsupported-compilers~dev target=x86_64_v3
+      - spec: cuda@9.2.88+allow-unsupported-compilers~dev target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-9.2.88
-      - spec: cuda@8.0.61~allow-unsupported-compilers~dev target=x86_64_v3
+      - spec: cuda@8.0.61+allow-unsupported-compilers~dev target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-8.0.61
     buildable: false
+    require: '+allow-unsupported-compilers'
   mpich:
     externals:
       - spec: mpich@4.2.1  netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/mpich-4.2.1
+      - spec: mpich@4.2.1  netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=x86_64_v3 %oneapi
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/mpich-4.2.1
       - spec: mpich@4.2.1  netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen2
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/mpich-4.2.1
       - spec: mpich@4.2.1  netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen3
@@ -261,18 +299,24 @@ packages:
     externals:
       - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5
+      - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3 %oneapi
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/openmpi-4.1.5
       - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen2
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-4.1.5
       - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-4.1.5
       - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.7
+      - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3 %oneapi
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/openmpi-4.1.7
       - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen2
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-4.1.7
       - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-4.1.7
       - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5
+      - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=x86_64_v3 %oneapi
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/openmpi-5.0.5
       - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=zen2
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-5.0.5
       - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=zen3
@@ -292,6 +336,8 @@ packages:
     externals:
       - spec: ucx@1.17.0~assertions~backtrace_detail~cma~cuda~dc~debug~dm+examples~gdrcopy~gtest~ib_hw_tm~java~knem~logging~mlx5_dv+openmp+optimizations~parameter_checking+pic~rc~rdmacm~rocm+thread_multiple~ucg~ud~verbs~vfs~xpmem libs=shared,static opt=3 simd=auto target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/ucx-1.17.0
+      - spec: ucx@1.17.0~assertions~backtrace_detail~cma~cuda~dc~debug~dm+examples~gdrcopy~gtest~ib_hw_tm~java~knem~logging~mlx5_dv+openmp+optimizations~parameter_checking+pic~rc~rdmacm~rocm+thread_multiple~ucg~ud~verbs~vfs~xpmem libs=shared,static opt=3 simd=auto target=x86_64_v3 %oneapi
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/ucx-1.17.0
       - spec: ucx@1.17.0~assertions~backtrace_detail~cma~cuda~dc~debug~dm+examples~gdrcopy~gtest~ib_hw_tm~java~knem~logging~mlx5_dv+openmp+optimizations~parameter_checking+pic~rc~rdmacm~rocm+thread_multiple~ucg~ud~verbs~vfs~xpmem libs=shared,static opt=3 simd=auto target=zen2
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/ucx-1.17.0
       - spec: ucx@1.17.0~assertions~backtrace_detail~cma~cuda~dc~debug~dm+examples~gdrcopy~gtest~ib_hw_tm~java~knem~logging~mlx5_dv+openmp+optimizations~parameter_checking+pic~rc~rdmacm~rocm+thread_multiple~ucg~ud~verbs~vfs~xpmem libs=shared,static opt=3 simd=auto target=zen3
@@ -302,12 +348,16 @@ packages:
     externals:
       - spec: pmix@4.2.9 target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/pmix-4.2.9
+      - spec: pmix@4.2.9 target=x86_64_v3 %oneapi
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/pmix-4.2.9
       - spec: pmix@4.2.9 target=zen2
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/pmix-4.2.9
       - spec: pmix@4.2.9 target=zen3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-4.2.9
       - spec: pmix@5.0.3 target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/pmix-5.0.3
+      - spec: pmix@5.0.3 target=x86_64_v3 %oneapi
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/pmix-5.0.3
       - spec: pmix@5.0.3 target=zen2
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/pmix-5.0.3
       - spec: pmix@5.0.3 target=zen3
@@ -355,17 +405,29 @@ packages:
     require: '@1.13.6 system-socket=/var/run/dbus/system_bus_socket'
   gettext:
     require: +libxml2
+  mysql@5.6.44:
+    require: ^openssl@1.0.2u
   sqlite:
     variants: +rtree
+  mysql-client:
+    require:
+      - spec: mariadb
+        message: 'mysql-client: require system-installed mariadb'
   tbb:
     require:
       - spec: intel-oneapi-tbb
-        message: 'tbb: require oneapi tbb'
+        message: 'tbb: require intel-oneapi-tbb provider'
   # xmlto does not build properly with OneAPI
   xmlto:
-    require: "%gcc"
+    require:
+      - spec: '%gcc'
+        message: 'xmlto: does not build properly with OneAPI'
   squashfs:
     variants: +gzip +lz4 +lzo +xz +zstd
+  tar:
+    require:
+      - spec: '%gcc'
+        message: 'tar: does not build properly with OneAPI'
   ####
   all:
     target: [x86_64_v3]
@@ -381,5 +443,7 @@ packages:
       mpi:
         - openmpi
         - mpich
+      mysql-client:
+        - mariadb
     variants:
       - cuda_arch=75,86

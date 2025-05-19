@@ -1,0 +1,34 @@
+spack:
+  include:
+  - definitions.yaml
+  specs:
+  - $compiler-specs
+  view:
+    default:
+      root: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view
+      projections:
+        gcc: '{name}-{version}'
+        aocc: '{name}-{version}'
+        intel-oneapi-compilers: '{name}-{version}'
+        intel-oneapi-compilers-classic: '{name}-{version}'
+        nvhpc: '{name}-{version}'
+        llvm: 'clang-{version}'
+      link: roots
+      link_type: hardlink
+  concretizer:
+    unify: false
+    reuse: false
+  compilers::
+  - compiler:
+      spec: gcc@=11.4.0
+      paths:
+        cc: /usr/bin/gcc-11
+        cxx: /usr/bin/g++-11
+        f77: /usr/bin/gfortran-11
+        fc: /usr/bin/gfortran-11
+      flags: {}
+      operating_system: ubuntu22.04
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
