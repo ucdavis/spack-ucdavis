@@ -1,0 +1,74 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:28:44.523635
+##
+## dbus@1.13.6%gcc@13.2.0~xml_docs build_system=autotools system-socket=/var/run/dbus/system_bus_socket arch=linux-ubuntu22.04-x86_64_v3/4yeourl
+##
+
+
+module-whatis {D-Bus is a message bus system, a simple way for applications to talk to one another. D-Bus supplies both a system daemon (for events such new hardware device printer queue ) and a per-user-login-session daemon (for general IPC needs among user applications). Also, the message bus is built on top of a general one-to-one message passing framework, which can be used by any two applications to communicate directly (without going through the message bus daemon).}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : dbus}
+    puts stderr {Version: 1.13.6}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {D-Bus is a message bus system, a simple way for applications to talk to}
+    puts stderr {one another. D-Bus supplies both a system daemon (for events such new}
+    puts stderr {hardware device printer queue ) and a per-user-login-session daemon (for}
+    puts stderr {general IPC needs among user applications). Also, the message bus is}
+    puts stderr {built on top of a general one-to-one message passing framework, which}
+    puts stderr {can be used by any two applications to communicate directly (without}
+    puts stderr {going through the message bus daemon).}
+}
+
+conflict dbus
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/dbus-1.13.6-4yeourlv4ifhosk37a5thredhv2s5iyj/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/dbus-1.13.6-4yeourlv4ifhosk37a5thredhv2s5iyj/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/dbus-1.13.6-4yeourlv4ifhosk37a5thredhv2s5iyj/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/dbus-1.13.6-4yeourlv4ifhosk37a5thredhv2s5iyj/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/dbus-1.13.6-4yeourlv4ifhosk37a5thredhv2s5iyj/include}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/dbus-1.13.6-4yeourlv4ifhosk37a5thredhv2s5iyj/bin}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/dbus-1.13.6-4yeourlv4ifhosk37a5thredhv2s5iyj/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/dbus-1.13.6-4yeourlv4ifhosk37a5thredhv2s5iyj/.}
+setenv DBUS_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/dbus-1.13.6-4yeourlv4ifhosk37a5thredhv2s5iyj}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,75 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:03.795085
+##
+## intel-oneapi-mkl@2024.0.0%gcc@13.2.0~cluster+envmods~gfortran~ilp64+shared build_system=generic mpi_family=none threads=none arch=linux-ubuntu22.04-zen2/szi6jy7
+##
+
+
+module-whatis {Intel oneAPI Math Kernel Library (Intel oneMKL; formerly Intel Math Kernel Library or Intel MKL), is a library of optimized math routines for science, engineering, and financial applications. Core math functions include BLAS, LAPACK, ScaLAPACK, sparse solvers, fast Fourier transforms, and vector math.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : intel-oneapi-mkl}
+    puts stderr {Version: 2024.0.0}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr {Intel oneAPI Math Kernel Library (Intel oneMKL; formerly Intel Math}
+    puts stderr {Kernel Library or Intel MKL), is a library of optimized math routines}
+    puts stderr {for science, engineering, and financial applications. Core math}
+    puts stderr {functions include BLAS, LAPACK, ScaLAPACK, sparse solvers, fast Fourier}
+    puts stderr {transforms, and vector math. LICENSE INFORMATION: By downloading and}
+    puts stderr {using this software, you agree to the terms and conditions of the}
+    puts stderr {software license agreements at https://intel.ly/393CijO.}
+}
+
+conflict intel-oneapi-mkl
+
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/intel-oneapi-mkl-2024.0.0/.}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/intel-oneapi-mkl-2024.0.0/mkl/2024.0/lib/cmake:}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/intel-oneapi-mkl-2024.0.0/mkl/2024.0/include:}
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/intel-oneapi-mkl-2024.0.0/mkl/2024.0/lib:}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/intel-oneapi-mkl-2024.0.0/mkl/2024.0/lib/:}
+setenv MKLROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/intel-oneapi-mkl-2024.0.0/mkl/2024.0}
+prepend-path NLSPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/intel-oneapi-mkl-2024.0.0/mkl/2024.0/share/locale/%l_%t/%N:}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/intel-oneapi-mkl-2024.0.0/mkl/2024.0/lib/pkgconfig:}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/intel-oneapi-mkl-2024.0.0/mkl/2024.0/bin/}
+setenv INTEL_ONEAPI_MKL_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/intel-oneapi-mkl-2024.0.0-szi6jy7hnmge56i4jaomtd5taynbxgsg}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

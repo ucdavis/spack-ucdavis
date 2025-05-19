@@ -1,0 +1,96 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:30:25.780995
+##
+## py-ipykernel@6.29.5%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/f3woo7t
+##
+
+
+module-whatis {IPython Kernel for Jupyter}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-ipykernel}
+    puts stderr {Version: 6.29.5}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {IPython Kernel for Jupyter}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-comm/0.1.4-pbqu732
+    module load py-debugpy/1.6.7-ihac6gr
+    module load py-ipython/8.28.0-umolap4
+    module load py-jupyter-client/8.2.0-472o4cn
+    module load py-jupyter-core/5.3.0-uhnbrgl
+    module load py-matplotlib-inline/0.1.6-ts45xcm
+    module load py-nest-asyncio/1.6.0-czpgozm
+    module load py-packaging/24.1-a36mhum
+    module load py-psutil/5.9.5-nkoahzf
+    module load py-pyzmq/25.0.2-pipdubp
+    module load py-tornado/6.3.3-kz35pvn
+    module load py-traitlets/5.14.3-k67pwzn
+    module load python/3.11.9
+    module load python-venv/1.0-ed2nmwx
+} else {
+    depends-on py-comm/0.1.4-pbqu732
+    depends-on py-debugpy/1.6.7-ihac6gr
+    depends-on py-ipython/8.28.0-umolap4
+    depends-on py-jupyter-client/8.2.0-472o4cn
+    depends-on py-jupyter-core/5.3.0-uhnbrgl
+    depends-on py-matplotlib-inline/0.1.6-ts45xcm
+    depends-on py-nest-asyncio/1.6.0-czpgozm
+    depends-on py-packaging/24.1-a36mhum
+    depends-on py-psutil/5.9.5-nkoahzf
+    depends-on py-pyzmq/25.0.2-pipdubp
+    depends-on py-tornado/6.3.3-kz35pvn
+    depends-on py-traitlets/5.14.3-k67pwzn
+    depends-on python/3.11.9
+    depends-on python-venv/1.0-ed2nmwx
+}
+conflict py-ipykernel
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ipykernel-6.29.5-f3woo7tzvhgojsznc623ej67ivblh4sz/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ipykernel-6.29.5-f3woo7tzvhgojsznc623ej67ivblh4sz/lib}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ipykernel-6.29.5-f3woo7tzvhgojsznc623ej67ivblh4sz/.}
+prepend-path JUPYTER_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ipykernel-6.29.5-f3woo7tzvhgojsznc623ej67ivblh4sz/share/jupyter}
+prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ipykernel-6.29.5-f3woo7tzvhgojsznc623ej67ivblh4sz/lib/python3.11/site-packages}
+setenv PY_IPYKERNEL_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-ipykernel-6.29.5-f3woo7tzvhgojsznc623ej67ivblh4sz}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

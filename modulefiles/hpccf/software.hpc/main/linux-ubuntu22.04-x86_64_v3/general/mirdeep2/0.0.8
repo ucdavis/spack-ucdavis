@@ -1,0 +1,70 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:19.764948
+##
+## mirdeep2@0.0.8%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/7icwadg
+##
+
+
+module-whatis {miRDeep2 is a completely overhauled tool which discovers microRNA genes by analyzing sequenced RNAs.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : mirdeep2}
+    puts stderr {Version: 0.0.8}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {miRDeep2 is a completely overhauled tool which discovers microRNA genes}
+    puts stderr {by analyzing sequenced RNAs.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.40.0
+    module load perl-pdf-api2/2.044-gamli2d
+} else {
+    depends-on perl/5.40.0
+    depends-on perl-pdf-api2/2.044-gamli2d
+}
+conflict mirdeep2
+
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/mirdeep2-0.0.8/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/mirdeep2-0.0.8/.}
+setenv MIRDEEP2_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/mirdeep2-0.0.8-7icwadgbuawudhy3sjn7vcwuft3xgchk}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

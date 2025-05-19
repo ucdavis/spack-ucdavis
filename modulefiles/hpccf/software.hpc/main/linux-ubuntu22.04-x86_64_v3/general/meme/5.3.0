@@ -1,0 +1,77 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:16.067482
+##
+## meme@5.3.0%gcc@13.2.0~magick+mpi build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/trtyoy7
+##
+
+
+module-whatis {The MEME Suite allows the biologist to discover novel motifs in collections of unaligned nucleotide or protein sequences, and to perform a wide variety of other motif-based analyses.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : meme}
+    puts stderr {Version: 5.3.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The MEME Suite allows the biologist to discover novel motifs in}
+    puts stderr {collections of unaligned nucleotide or protein sequences, and to perform}
+    puts stderr {a wide variety of other motif-based analyses.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.40.0
+    module load perl-xml-parser/2.47-uotde6y
+    module load perl-xml-simple/2.25-bcuc24x
+    module load python/3.11.9
+} else {
+    depends-on perl/5.40.0
+    depends-on perl-xml-parser/2.47-uotde6y
+    depends-on perl-xml-simple/2.25-bcuc24x
+    depends-on python/3.11.9
+}
+conflict meme
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/meme-5.3.0/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/meme-5.3.0/lib}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/meme-5.3.0/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/meme-5.3.0/.}
+setenv MEME_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/meme-5.3.0-trtyoy7az34my6htmzdwohly4vu5u5pz}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

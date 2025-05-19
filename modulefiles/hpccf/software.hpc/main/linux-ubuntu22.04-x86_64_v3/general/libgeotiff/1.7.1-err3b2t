@@ -1,0 +1,74 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:10.204178
+##
+## libgeotiff@1.7.1%gcc@13.2.0+jpeg+proj+zlib build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/err3b2t
+##
+## Configure options: --with-libtiff=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libtiff-4.7.0-lb74ztdsur3bwwmjvlw23txtqfwpq2rp --with-zlib=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zlib-ng-2.2.1-ci2x2tjfpbdihazwtuwsat2anrc47e6u --with-jpeg=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libjpeg-turbo-3.0.4-ujtiqvv4sbyi2gvs3tqui6eqfwe4igbh --with-proj=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/proj-9.4.1-uhgpe4fgawqsu36gynqmpwnuogt674l3
+##
+
+
+module-whatis {GeoTIFF represents an effort by over 160 different remote sensing, GIS, cartographic, and surveying related companies and organizations to establish a TIFF based interchange format for georeferenced raster imagery. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libgeotiff}
+    puts stderr {Version: 1.7.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {GeoTIFF represents an effort by over 160 different remote sensing, GIS,}
+    puts stderr {cartographic, and surveying related companies and organizations to}
+    puts stderr {establish a TIFF based interchange format for georeferenced raster}
+    puts stderr {imagery.}
+}
+
+conflict libgeotiff
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libgeotiff-1.7.1-err3b2tsvmhcr3hvpdgpwrj3vhyke7qx/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libgeotiff-1.7.1-err3b2tsvmhcr3hvpdgpwrj3vhyke7qx/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libgeotiff-1.7.1-err3b2tsvmhcr3hvpdgpwrj3vhyke7qx/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libgeotiff-1.7.1-err3b2tsvmhcr3hvpdgpwrj3vhyke7qx/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libgeotiff-1.7.1-err3b2tsvmhcr3hvpdgpwrj3vhyke7qx/include}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libgeotiff-1.7.1-err3b2tsvmhcr3hvpdgpwrj3vhyke7qx/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libgeotiff-1.7.1-err3b2tsvmhcr3hvpdgpwrj3vhyke7qx/share/man}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libgeotiff-1.7.1-err3b2tsvmhcr3hvpdgpwrj3vhyke7qx/.}
+setenv LIBGEOTIFF_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libgeotiff-1.7.1-err3b2tsvmhcr3hvpdgpwrj3vhyke7qx}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

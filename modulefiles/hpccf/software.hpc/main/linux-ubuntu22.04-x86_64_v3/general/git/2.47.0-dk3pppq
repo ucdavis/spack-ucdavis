@@ -1,0 +1,73 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:28:55.505480
+##
+## git@2.47.0%gcc@13.2.0+man+nls+perl+subtree~svn~tcltk build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/dk3pppq
+##
+## Configure options: --with-curl=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/curl-8.10.1-kjlrekcrb54fqmwpwmrtc5hc4743wf3u --with-expat=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/expat-2.6.4-zrieukekssfaket6eoftkam5jh6n2w23 --with-openssl=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openssl-3.4.0 --with-zlib=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zlib-ng-2.0.7-hxh7s5drtmdwrh6wjoqtgd4snaby523j --with-iconv=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libiconv-1.17-6o2z744tb5afz6tfp5pgeffkiinbhvpd --with-perl=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-5.34.1-3z56wlbv3lsw2s2znduz24rnkha22ors/bin/perl --with-libpcre2=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/pcre2-10.44-6qftrybgrnz7r7ssobkleqaq463dpgtg --without-tcltk
+##
+
+
+module-whatis {Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : git}
+    puts stderr {Version: 2.47.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Git is a free and open source distributed version control system}
+    puts stderr {designed to handle everything from small to very large projects with}
+    puts stderr {speed and efficiency.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load openssh/9.9p1-qisflhu
+} else {
+    depends-on openssh/9.9p1-qisflhu
+}
+conflict git
+
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/git-2.47.0-dk3pppqyzll3m7xfglauqs6euedvlrin/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/git-2.47.0-dk3pppqyzll3m7xfglauqs6euedvlrin/share/man}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/git-2.47.0-dk3pppqyzll3m7xfglauqs6euedvlrin/.}
+setenv GIT_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/git-2.47.0-dk3pppqyzll3m7xfglauqs6euedvlrin}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

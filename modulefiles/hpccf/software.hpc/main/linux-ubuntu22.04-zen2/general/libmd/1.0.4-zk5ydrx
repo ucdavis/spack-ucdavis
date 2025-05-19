@@ -1,0 +1,71 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:10.792995
+##
+## libmd@1.0.4%gcc@13.2.0 build_system=autotools arch=linux-ubuntu22.04-zen2/zk5ydrx
+##
+
+
+module-whatis {This library provides message digest functions found on BSD systems either on their libc (NetBSD, OpenBSD) or libmd (FreeBSD, DragonflyBSD, macOS, Solaris) libraries and lacking on others like GNU systems.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : libmd}
+    puts stderr {Version: 1.0.4}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr {This library provides message digest functions found on BSD systems}
+    puts stderr {either on their libc (NetBSD, OpenBSD) or libmd (FreeBSD, DragonflyBSD,}
+    puts stderr {macOS, Solaris) libraries and lacking on others like GNU systems.}
+}
+
+conflict libmd
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/libmd-1.0.4-zk5ydrxka5rf7lhtcori34aljnl2vupr/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/libmd-1.0.4-zk5ydrxka5rf7lhtcori34aljnl2vupr/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/libmd-1.0.4-zk5ydrxka5rf7lhtcori34aljnl2vupr/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/libmd-1.0.4-zk5ydrxka5rf7lhtcori34aljnl2vupr/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/libmd-1.0.4-zk5ydrxka5rf7lhtcori34aljnl2vupr/include}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/libmd-1.0.4-zk5ydrxka5rf7lhtcori34aljnl2vupr/share/man}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/libmd-1.0.4-zk5ydrxka5rf7lhtcori34aljnl2vupr/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/libmd-1.0.4-zk5ydrxka5rf7lhtcori34aljnl2vupr/.}
+setenv LIBMD_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/libmd-1.0.4-zk5ydrxka5rf7lhtcori34aljnl2vupr}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

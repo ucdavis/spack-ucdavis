@@ -1,0 +1,74 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:23.929846
+##
+## ngstools@2024-08-27%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/f6zi7ju
+##
+
+
+module-whatis {ngsTools is a collection of programs for population genetics analyses from NGS data, taking into account data statistical uncertainty. The methods implemented in these programs do not rely on SNP or genotype calling, and are particularly suitable for low sequencing depth data. An application note illustrating its application has published (Fumagalli et al. 2014).}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : ngstools}
+    puts stderr {Version: 2024-08-27}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {ngsTools is a collection of programs for population genetics analyses}
+    puts stderr {from NGS data, taking into account data statistical uncertainty. The}
+    puts stderr {methods implemented in these programs do not rely on SNP or genotype}
+    puts stderr {calling, and are particularly suitable for low sequencing depth data. An}
+    puts stderr {application note illustrating its application has published (Fumagalli}
+    puts stderr {et al. 2014).}
+}
+
+conflict ngstools
+
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/ngstools-2024-08-27/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/ngstools-2024-08-27/.}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/ngstools-2024-08-27/bin/ngsSim}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/ngstools-2024-08-27/bin/ngsPopGen}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/ngstools-2024-08-27/bin/ngsUtils}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/ngstools-2024-08-27/bin/ngsDist}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/ngstools-2024-08-27/bin/ngsLD}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/ngstools-2024-08-27/bin/ngsF}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/ngstools-2024-08-27/bin/ngsF-HMM}
+setenv NGSTOOLS_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ngstools-2024-08-27-f6zi7ju63zrlxvawws2be3h52ifxgi7j}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

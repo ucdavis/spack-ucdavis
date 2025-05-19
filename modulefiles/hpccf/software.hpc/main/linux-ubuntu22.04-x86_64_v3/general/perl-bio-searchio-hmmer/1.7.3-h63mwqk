@@ -1,0 +1,76 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:29.967466
+##
+## perl-bio-searchio-hmmer@1.7.3%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/h63mwqk
+##
+
+
+module-whatis {BioPerl parser to HMMER output.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-bio-searchio-hmmer}
+    puts stderr {Version: 1.7.3}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {BioPerl parser to HMMER output.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.40.0
+    module load perl-bioperl/1.7.8
+    module load perl-io-string/1.08-uc43fnq
+} else {
+    depends-on perl/5.40.0
+    depends-on perl-bioperl/1.7.8
+    depends-on perl-io-string/1.08-uc43fnq
+}
+conflict perl-bio-searchio-hmmer
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-bio-searchio-hmmer-1.7.3-h63mwqkjwn2ce5zvrh53qbc2ijadiyjo/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-bio-searchio-hmmer-1.7.3-h63mwqkjwn2ce5zvrh53qbc2ijadiyjo/lib}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-bio-searchio-hmmer-1.7.3-h63mwqkjwn2ce5zvrh53qbc2ijadiyjo/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-bio-searchio-hmmer-1.7.3-h63mwqkjwn2ce5zvrh53qbc2ijadiyjo/man}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-bio-searchio-hmmer-1.7.3-h63mwqkjwn2ce5zvrh53qbc2ijadiyjo/.}
+prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-bio-searchio-hmmer-1.7.3-h63mwqkjwn2ce5zvrh53qbc2ijadiyjo/lib/perl5}
+setenv PERL_BIO_SEARCHIO_HMMER_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-bio-searchio-hmmer-1.7.3-h63mwqkjwn2ce5zvrh53qbc2ijadiyjo}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,65 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:07.700520
+##
+## kallisto@0.48.0%gcc@13.2.0~hdf5~ipo build_system=cmake build_type=Release generator=make patches=c401afb arch=linux-ubuntu22.04-x86_64_v3/tecrzf2
+##
+## Configure options: -DCMAKE_VERBOSE_MAKEFILE:BOOL=OFF -DUSE_HDF5:BOOL=OFF
+##
+
+
+module-whatis {kallisto is a program for quantifying abundances of transcripts from RNA-Seq data.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : kallisto}
+    puts stderr {Version: 0.48.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {kallisto is a program for quantifying abundances of transcripts from}
+    puts stderr {RNA-Seq data.}
+}
+
+conflict kallisto
+
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/kallisto-0.48.0/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/kallisto-0.48.0/.}
+setenv KALLISTO_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/kallisto-0.48.0-tecrzf2mw7xivjuegjitfesohfndivgk}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

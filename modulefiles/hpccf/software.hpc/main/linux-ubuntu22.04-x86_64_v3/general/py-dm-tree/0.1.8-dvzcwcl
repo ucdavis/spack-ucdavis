@@ -1,0 +1,74 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:30:08.198487
+##
+## py-dm-tree@0.1.8%gcc@13.2.0 build_system=python_pip patches=77dbd89 arch=linux-ubuntu22.04-x86_64_v3/dvzcwcl
+##
+
+
+module-whatis {tree is a library for working with nested data structures. In a way, tree generalizes the builtin map() function which only supports flat sequences, and allows to apply a function to each leaf preserving the overall structure.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-dm-tree}
+    puts stderr {Version: 0.1.8}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {tree is a library for working with nested data structures. In a way,}
+    puts stderr {tree generalizes the builtin map() function which only supports flat}
+    puts stderr {sequences, and allows to apply a function to each leaf preserving the}
+    puts stderr {overall structure.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.9
+    module load python-venv/1.0-ed2nmwx
+} else {
+    depends-on python/3.11.9
+    depends-on python-venv/1.0-ed2nmwx
+}
+conflict py-dm-tree
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-dm-tree-0.1.8-dvzcwcl5q42pfezio6maaoxqmep7rkq5/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-dm-tree-0.1.8-dvzcwcl5q42pfezio6maaoxqmep7rkq5/lib}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-dm-tree-0.1.8-dvzcwcl5q42pfezio6maaoxqmep7rkq5/.}
+prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-dm-tree-0.1.8-dvzcwcl5q42pfezio6maaoxqmep7rkq5/lib/python3.11/site-packages}
+setenv PY_DM_TREE_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-dm-tree-0.1.8-dvzcwcl5q42pfezio6maaoxqmep7rkq5}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

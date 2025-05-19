@@ -1,0 +1,40 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:29.584036
+##
+## perl@5.40.0%gcc@11.4.0+cpanm+opcode+open+shared+threads build_system=generic arch=linux-ubuntu22.04-x86_64_v3/5j247ri
+##
+## Configure options: -des -Dprefix=/home/software/spack/[padded-to-256-chars]/morepadding/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.40.0-5j247rilnugiyjnjmtwbtpdmlzmmnlzc -Dlocincpth=/home/software/spack/[padded-to-256-chars]/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdbm-1.23-jj2atvsdprz6qvh2n43326zfxv42iw7n/include -Dloclibpth=/home/software/spack/[padded-to-256-chars]/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdbm-1.23-jj2atvsdprz6qvh2n43326zfxv42iw7n/lib -Accflags=-DAPPLLIB_EXP=\"/home/software/spack/[padded-to-256-chars]/morepadding/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.40.0-5j247rilnugiyjnjmtwbtpdmlzmmnlzc/lib/perl5\" -Duseshrplib -Dusethreads
+##
+
+
+module-whatis {Perl 5 is a highly capable, feature-rich programming language with over 27 years of development.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl}
+    puts stderr {Version: 5.40.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Perl 5 is a highly capable, feature-rich programming language with over}
+    puts stderr {27 years of development.}
+}
+
+conflict perl
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.40.0-5j247rilnugiyjnjmtwbtpdmlzmmnlzc/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.40.0-5j247rilnugiyjnjmtwbtpdmlzmmnlzc/lib}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.40.0-5j247rilnugiyjnjmtwbtpdmlzmmnlzc/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.40.0-5j247rilnugiyjnjmtwbtpdmlzmmnlzc/.}
+setenv PERL_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.40.0-5j247rilnugiyjnjmtwbtpdmlzmmnlzc}
+
+
+# Set environment so well behaved Perl modules can be user installed.
+# From: perl -Mlocal::lib
+
+setenv PERL_LOCAL_LIB_ROOT /home/$env(LOGNAME)/perl5
+
+prepend-path PATH          $env(PERL_LOCAL_LIB_ROOT)/bin
+prepend-path PERL5LIB      $env(PERL_LOCAL_LIB_ROOT)/lib/perl5
+setenv       PERL_MM_OPT   INSTALL_BASE=$env(PERL_LOCAL_LIB_ROOT)
+setenv       PERL_MB_OPT   "--install_base $env(PERL_LOCAL_LIB_ROOT)"
+
+

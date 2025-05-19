@@ -1,0 +1,86 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:32:24.060010
+##
+## rstudio@2024.09.0-375%gcc@13.2.0~ipo~notebook+server build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/kf67df2
+##
+## Configure options: -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_BUILD_TYPE=Release -DRSTUDIO_USE_SYSTEM_YAML_CPP=Yes -DRSTUDIO_USE_SYSTEM_BOOST=Yes -DRSTUDIO_USE_SYSTEM_SOCI=Yes -DQUARTO_ENABLED=No -DQT_QMAKE_EXECUTABLE="/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/qt-5.15.15-vkv6ax7kk2cscf6in26siekogah4l47t/bin/qmake" -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=True -DRSTUDIO_TARGET=Server
+##
+
+
+module-whatis {RStudio is an integrated development environment (IDE) for R.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : rstudio}
+    puts stderr {Version: 2024.09.0-375}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {RStudio is an integrated development environment (IDE) for R.}
+}
+
+conflict rstudio
+
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/rstudio-2024.09.0-375/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/rstudio-2024.09.0-375/.}
+setenv npm_config_cache {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/rstudio-2024.09.0-375/npm-cache}
+setenv RSTUDIO_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/rstudio-2024.09.0-375-kf67df25snxl3nbd25k6qjfachm7afah}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+
+
+
+set ood_app_name "RStudio Server"
+
+if { [module-info mode load] } {
+
+    if { ![info exists env(SLURM_CLUSTER_NAME)] } {
+        set domainname [exec /usr/bin/hostname --domain]
+
+        puts stderr "
+The only HPCCF supported method of running $ood_app_name is now
+through OnDemand. You can find OnDemand for this cluster here:
+
+https://ondemand.$domainname/
+
+If you run into issues getting $ood_app_name to launch through OnDemand,
+then please open a ticket."
+        exit
+    }
+}
+

@@ -1,0 +1,73 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:36.406186
+##
+## perl-xml-namespacesupport@1.12_9%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/rc4xuz5
+##
+
+
+module-whatis {This module offers a simple to process namespaced XML names (unames) from within any application that may need them. It also helps maintain a prefix to namespace URI map, and provides a number of basic checks.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-xml-namespacesupport}
+    puts stderr {Version: 1.12_9}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This module offers a simple to process namespaced XML names (unames)}
+    puts stderr {from within any application that may need them. It also helps maintain a}
+    puts stderr {prefix to namespace URI map, and provides a number of basic checks.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.40.0
+} else {
+    depends-on perl/5.40.0
+}
+conflict perl-xml-namespacesupport
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-xml-namespacesupport-1.12_9-rc4xuz5drpmaxx65vyppejnacs2uqxrs/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-xml-namespacesupport-1.12_9-rc4xuz5drpmaxx65vyppejnacs2uqxrs/lib}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-xml-namespacesupport-1.12_9-rc4xuz5drpmaxx65vyppejnacs2uqxrs/man}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-xml-namespacesupport-1.12_9-rc4xuz5drpmaxx65vyppejnacs2uqxrs/.}
+prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-xml-namespacesupport-1.12_9-rc4xuz5drpmaxx65vyppejnacs2uqxrs/lib/perl5}
+setenv PERL_XML_NAMESPACESUPPORT_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-xml-namespacesupport-1.12_9-rc4xuz5drpmaxx65vyppejnacs2uqxrs}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+
