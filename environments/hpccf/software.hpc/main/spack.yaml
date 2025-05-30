@@ -29,6 +29,7 @@ spack:
   - matrix:
     - [$libs-specs]
     - [$targets]
+  - apptainer # external
   view:
     default:
       root: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view
@@ -104,6 +105,7 @@ spack:
           py-alphafold: general/alphafold/{version}
           py-htseq: general/htseq/{version}
           py-multiqc: general/multiqc/{version}
+          apptainer: general/apptainer/latest
           all: general/{name}/{version}
         rstudio:
           template: hpccf/rstudio.tcl

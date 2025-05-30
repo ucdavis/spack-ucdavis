@@ -34,6 +34,7 @@ class Rstudio(CMakePackage):
 
     variant("notebook", default=False, description="Enable notebook support.")
     variant("server", default=False, when="@2022.12.0-353:", description="Build server version.")
+    variant("external_libr", default=True, description="Strip the RPATH entry for libR.so from the rsession binary.")
 
     depends_on("r@3.0.1:", type="build")
     depends_on("cmake@3.4.3:", type="build")
@@ -107,7 +108,7 @@ class Rstudio(CMakePackage):
             "-DRSTUDIO_USE_SYSTEM_SOCI=Yes",
             "-DQUARTO_ENABLED=No", # temporary?
             '-DQT_QMAKE_EXECUTABLE="{0}"'.format(self.spec["qt"].prefix.bin.qmake),
-            "-DCMAKE_INSTALL_RPATH_USE_LINK_PATH=True"
+            "-DCMAKE_INSTALL_RPATH_USE_LINK_PATH=OFF"
         ]
 
         if '+server' in self.spec:
@@ -119,12 +120,22 @@ class Rstudio(CMakePackage):
                 "-DRSTUDIO_TARGET=Desktop",
             ])
 
+        rpath = self.rpath
+        if "+external_libr" in self.spec:
+            import llnl.util.tty as tty
+            tty.msg(f"RPATH before: {self.rpath}")
+            rpath = [rp for rp in self.rpath if \
+                          not rp.startswith(self.spec["r"].prefix)]
+            tty.msg(f"RPATH after: {rpath}")
+        args.append("-DCMAKE_INSTALL_RPATH={0}".format(":".join(rpath)))
+
         return args
 
     def setup_build_environment(self, env):
         env.set("RSTUDIO_TOOLS_ROOT", self.prefix.tools)
 
     def patch(self):
+
         if self.spec.satisfies("@2022.12.0:"):
             filter_file(
                 '<property name="node.dir" value="../../dependencies/common/node/${node.version}"/>',
@@ -151,6 +162,7 @@ class Rstudio(CMakePackage):
                 "src/gwt/build.xml",
                 string=True,
             )
+
 
         # remove hardcoded soci path to use spack soci
         if self.spec["soci"].version <= Version("4.0.0"):
