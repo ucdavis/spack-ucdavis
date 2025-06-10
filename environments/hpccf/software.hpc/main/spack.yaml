@@ -115,7 +115,11 @@ spack:
           environment:
             prepend_path:
               HDF5_PLUGIN_PATH: '{prefix}/plugin'
+        root:
+          environment:
+            prepend_path:
+              LD_LIBRARY_PATH: '{prefix}/lib/root'
+              LIBRARY_PATH: '{prefix}/lib/root'
 
   concretizer:
     unify: false
-
