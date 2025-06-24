@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:32:23.674512
+## Module file created by spack (https://github.com/spack/spack) on 2025-06-09 17:00:18.224498
 ##
 ## root@6.24.08%gcc@13.2.0~aqua~arrow~cuda~cudnn+davix~dcache~emacs+examples~fftw~fits~fortran+gdml+gminimal~graphviz+gsl~http~ipo~jemalloc+math+minuit~mlp~mysql+opengl~oracle~postgres+pythia6~pythia8+python~r+roofit~root7+rpath~shadow~spectrum~sqlite~ssl+tbb+threads~tmva~tmva-cpu~tmva-gpu~tmva-pymva+unuran~vc+vdt~veccore~vmc+x+xml~xrootd build_system=cmake build_type=Release cxxstd=11 generator=make patches=22af347 arch=linux-ubuntu22.04-x86_64_v3/vujl5x7
 ##
@@ -18,9 +18,9 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load python/3.10.14-okxbze6
+    module load general/python/3.10.14-okxbze6
 } else {
-    depends-on python/3.10.14-okxbze6
+    depends-on general/python/3.10.14-okxbze6
 }
 conflict root
 
@@ -39,6 +39,8 @@ prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/
 setenv CLING_STANDARD_PCH {none}
 setenv CPPYY_API_PATH {none}
 setenv ROOT_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/root-6.24.08-vujl5x7m2zgsmy3fkwzjw2dvmjsp4ls3}
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/root-6.24.08-vujl5x7m2zgsmy3fkwzjw2dvmjsp4ls3/lib/root}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/root-6.24.08-vujl5x7m2zgsmy3fkwzjw2dvmjsp4ls3/lib/root}
 append-path MANPATH {}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {

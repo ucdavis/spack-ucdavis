@@ -1,7 +1,7 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:32:25.406106
+## Module file created by spack (https://github.com/spack/spack) on 2025-06-24 15:31:59.202145
 ##
-## slurm@24-05-5-1%gcc@13.2.0+cgroup~gtk~hdf5+hwloc+mariadb+nvml+pam+pmix+readline+restd~rsmi build_system=autotools sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3/5p5bvxo
+## slurm@25-05-0-1%gcc@13.2.0+cgroup~gtk~hdf5+hwloc+mariadb+nvml+pam+pmix+readline+restd~rsmi build_system=autotools sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3/eanmdpz
 ##
 ## Configure options: unknown, software installed outside of Spack
 ##
@@ -11,7 +11,7 @@ module-whatis {Slurm is an open source, fault-tolerant, and highly scalable clus
 
 proc ModulesHelp { } {
     puts stderr {Name   : slurm}
-    puts stderr {Version: 24-05-5-1}
+    puts stderr {Version: 25-05-0-1}
     puts stderr {Target : x86_64_v3}
     puts stderr {}
     puts stderr {Slurm is an open source, fault-tolerant, and highly scalable cluster}
@@ -37,6 +37,9 @@ prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generi
 prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm/share/man}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm/.}
 setenv SLURM_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm}
+setenv SQUEUE_FORMAT2 {JobID:10,UserName:16 ,Partition:15,Name:20 ,State:12,Reason:12 ,SubmitTime,TimeLeft:15,NumCPUs:7,NumNodes:7,tres-per-node:15,NodeList}
+setenv SQUEUE_SORT {V}
+setenv SINFO_FORMAT {%17n %9P %.10T %.5c %.8z %.8m %.20G %28E}
 append-path MANPATH {}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {

@@ -1,9 +1,9 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-05-30 14:34:47.416860
+## Module file created by spack (https://github.com/spack/spack) on 2025-06-09 14:28:22.321488
 ##
-## rstudio@2024.09.0-375%gcc@13.2.0+external_libr~ipo~notebook+server build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/zq5pa5q
+## rstudio@2024.09.0-375%gcc@13.2.0+external_libr~ipo~notebook+server build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/owgadto
 ##
-## Configure options: -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_BUILD_TYPE=Release -DRSTUDIO_USE_SYSTEM_YAML_CPP=Yes -DRSTUDIO_USE_SYSTEM_BOOST=Yes -DRSTUDIO_USE_SYSTEM_SOCI=Yes -DQUARTO_ENABLED=No -DQT_QMAKE_EXECUTABLE="/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/qt-5.15.15-vkv6ax7kk2cscf6in26siekogah4l47t/bin/qmake" -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=OFF -DRSTUDIO_TARGET=Server -DCMAKE_INSTALL_RPATH=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/rstudio-2024.09.0-375-zq5pa5qqb5hfxguetnunmhkayv6cbgc7/lib:/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/rstudio-2024.09.0-375-zq5pa5qqb5hfxguetnunmhkayv6cbgc7/lib64:/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/boost-1.83.0-plab4voznmubrchef5xoreq6lgownof5/lib:/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gcc-runtime-13.2.0-y4ja4trdxkpuyidxmq3vwsmylih2czjs/lib:/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gettext-0.22.5-rwigy6xo43decqeaw4y2wdvw3phgi6ru/lib:/usr/lib:/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/icu4c-74.2-inztxsrea3b7ye7yzjrjgl6luyv5y2nr/lib:/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libpam-1.09-uholhiymcl654qrn5bafl2g3ofdbzcwh/lib:/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/node-js-20.15.1-scaganaxchzkbivbpcvf5qhputhqfni5/lib:/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/npm-10.9.0-4tdev2bbfdbo5avsy36h7bgw57xslbdz/lib:/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openjdk-17.0.11_9/lib:/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/qt-5.15.15-vkv6ax7kk2cscf6in26siekogah4l47t/lib:/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/soci-4.0.2-5y7dv5jwllopmtdk4ncijcoudq224xbj/lib:/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/yaml-cpp-0.6.3-dsivrnlpmfnizi3athh3f7decefs2ke7/lib:/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/yarn-1.22.4-kd7l4fmuksxztesebn7mbwtn3l7riofi/lib:/usr/lib64:/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openssl-3.4.0/lib64
+## Configure options: -DRSTUDIO_PACKAGE_BUILD=1 -DCMAKE_BUILD_TYPE=Release -DRSTUDIO_USE_SYSTEM_YAML_CPP=Yes -DRSTUDIO_USE_SYSTEM_BOOST=Yes -DRSTUDIO_USE_SYSTEM_SOCI=Yes -DQUARTO_ENABLED=No -DQT_QMAKE_EXECUTABLE="/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/qt-5.15.15-vkv6ax7kk2cscf6in26siekogah4l47t/bin/qmake" -DRSTUDIO_TARGET=Server
 ##
 
 
@@ -22,7 +22,7 @@ conflict rstudio
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/rstudio-2024.09.0-375/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/rstudio-2024.09.0-375/.}
 setenv npm_config_cache {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/rstudio-2024.09.0-375/npm-cache}
-setenv RSTUDIO_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/rstudio-2024.09.0-375-zq5pa5qqb5hfxguetnunmhkayv6cbgc7}
+setenv RSTUDIO_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/rstudio-2024.09.0-375-owgadtolfa6s4xgw7oimlteibyhtahdy}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 
