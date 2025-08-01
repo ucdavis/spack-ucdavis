@@ -1,4 +1,5 @@
-  definitions:
+
+definitions:
     - libs-specs:
       - amdfftw @4.2 +openmp
       - boost @1.84 +atomic +chrono +context +coroutine +date_time +exception +filesystem +graph +graph_parallel +iostreams +json +locale +log +math +program_options +random +regex +serialization +signals +stacktrace +system +test +thread +timer +wave
@@ -11,9 +12,11 @@
       - gsl @2.7.1
       - h5cpp @1.10.4-6
       - h5z-zfp @1.1.1
-      - hdf5 @1.14.3
+      - hdf5 @1.14.3 +fortran +hl
+      - hdf5 @1.14.5 +fortran +hl
+      - imagemagick @7.1.1-39
       - intel-oneapi-mkl @2024.0.0
-      - intel-oneapi-mkl @2023.2.0 
+      - intel-oneapi-mkl @2023.2.0
       - intel-oneapi-mkl @2022.2.1
       - intel-oneapi-tbb @2021.11.0
       - librsvg @2.56.2

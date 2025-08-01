@@ -38,6 +38,7 @@ spack:
       - repeatmasker # short term fix: repeatmasker is downloading giant DB files
       projections:
         "target=x86_64_v3 %oneapi": oneapi/{name}-{version}
+        "target=x86_64_v3 %intel": intel/{name}-{version}
         target=x86_64_v3: generic/{name}-{version}
         target=zen2: zen2/{name}-{version}
         target=zen3: zen3/{name}-{version}
@@ -120,6 +121,9 @@ spack:
             prepend_path:
               LD_LIBRARY_PATH: '{prefix}/lib/root'
               LIBRARY_PATH: '{prefix}/lib/root'
-
+        slurm:
+          environment:
+            set:
+              SQUEUE_FORMAT2: 'JobID:10,UserName:16 ,Partition:14 ,Name:20 ,StateCompact:4,TimeLeft:13,NumCPUs:6,NumNodes:6,tres-per-node:14,ReasonList'
   concretizer:
     unify: false
