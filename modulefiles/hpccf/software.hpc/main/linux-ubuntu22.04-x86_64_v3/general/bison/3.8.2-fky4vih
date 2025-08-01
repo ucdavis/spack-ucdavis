@@ -18,9 +18,9 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load general/m4/1.4.19-grpnckw
+    module load m4/1.4.19-grpnckw
 } else {
-    depends-on general/m4/1.4.19-grpnckw
+    depends-on m4/1.4.19-grpnckw
 }
 conflict bison
 

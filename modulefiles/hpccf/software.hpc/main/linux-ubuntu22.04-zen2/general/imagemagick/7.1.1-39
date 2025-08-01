@@ -1,0 +1,75 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-07-10 17:02:35.830964
+##
+## imagemagick@7.1.1-39%gcc@13.2.0~ghostscript~rsvg build_system=autotools arch=linux-ubuntu22.04-zen2/7wfn5ic
+##
+## Configure options: --without-gslib --without-rsvg
+##
+
+
+module-whatis {ImageMagick is a software suite to create, edit, compose, or convert bitmap images.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : imagemagick}
+    puts stderr {Version: 7.1.1-39}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr {ImageMagick is a software suite to create, edit, compose, or convert}
+    puts stderr {bitmap images.}
+}
+
+conflict imagemagick
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/imagemagick-7.1.1-39/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/imagemagick-7.1.1-39/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/imagemagick-7.1.1-39/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/imagemagick-7.1.1-39/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/imagemagick-7.1.1-39/include}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/imagemagick-7.1.1-39/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/imagemagick-7.1.1-39/share/man}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/imagemagick-7.1.1-39/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/imagemagick-7.1.1-39/.}
+prepend-path XDG_DATA_DIRS {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/pango-1.54.0/share}
+prepend-path GI_TYPELIB_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/pango-1.54.0/lib/girepository-1.0}
+setenv IMAGEMAGICK_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/imagemagick-7.1.1-39-7wfn5icnjnmgycy5run6gfde65bptq7o}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -21,9 +21,9 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load general/ctffind/4.1.14-iy3d4am
+    module load ctffind/4.1.14-iy3d4am
 } else {
-    depends-on general/ctffind/4.1.14-iy3d4am
+    depends-on ctffind/4.1.14-iy3d4am
 }
 conflict relion
 

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:00.430783
+## Module file created by spack (https://github.com/spack/spack) on 2025-06-26 17:16:42.087591
 ##
 ## hdf5@1.14.5%gcc@13.2.0~cxx~fortran+hl~ipo~java~map+mpi+shared~subfiling~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-zen3/gqwmuo4
 ##
@@ -20,9 +20,9 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load pkgconf/2.2.0-xe2c2ii
+    module load general/pkgconf/2.2.0-xe2c2ii
 } else {
-    depends-on pkgconf/2.2.0-xe2c2ii
+    depends-on general/pkgconf/2.2.0-xe2c2ii
 }
 conflict hdf5
 

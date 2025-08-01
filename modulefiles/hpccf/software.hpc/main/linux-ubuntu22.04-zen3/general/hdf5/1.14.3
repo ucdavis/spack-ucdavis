@@ -1,9 +1,9 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:00.080047
+## Module file created by spack (https://github.com/spack/spack) on 2025-06-26 17:16:41.286872
 ##
-## hdf5@1.14.3%gcc@13.2.0~cxx~fortran~hl~ipo~java~map+mpi+shared~subfiling~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make patches=82088c8,f42732a arch=linux-ubuntu22.04-zen3/ipebpyo
+## hdf5@1.14.3%gcc@13.2.0~cxx+fortran+hl~ipo~java~map+mpi+shared~subfiling~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make patches=82088c8,f42732a arch=linux-ubuntu22.04-zen3/ma75hxz
 ##
-## Configure options: -DALLOW_UNSUPPORTED:BOOL=ON -DHDF5_BUILD_EXAMPLES:BOOL=OFF -DBUILD_TESTING:BOOL=OFF -DHDF5_ENABLE_SUBFILING_VFD:BOOL=OFF -DHDF5_ENABLE_MAP_API:BOOL=OFF -DHDF5_ENABLE_Z_LIB_SUPPORT:BOOL=ON -DHDF5_ENABLE_SZIP_SUPPORT:BOOL=OFF -DHDF5_ENABLE_SZIP_ENCODING:BOOL=OFF -DBUILD_SHARED_LIBS:BOOL=ON -DONLY_SHARED_LIBS:BOOL=OFF -DHDF5_ENABLE_PARALLEL:BOOL=ON -DHDF5_ENABLE_THREADSAFE:BOOL=OFF -DHDF5_BUILD_HL_LIB:BOOL=OFF -DHDF5_BUILD_CPP_LIB:BOOL=OFF -DHDF5_BUILD_FORTRAN:BOOL=OFF -DHDF5_BUILD_JAVA:BOOL=OFF -DHDF5_BUILD_TOOLS:BOOL=ON -DMPI_CXX_COMPILER:PATH=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/bin/mpic++ -DMPI_C_COMPILER:PATH=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/bin/mpicc
+## Configure options: -DALLOW_UNSUPPORTED:BOOL=ON -DHDF5_BUILD_EXAMPLES:BOOL=OFF -DBUILD_TESTING:BOOL=OFF -DHDF5_ENABLE_SUBFILING_VFD:BOOL=OFF -DHDF5_ENABLE_MAP_API:BOOL=OFF -DHDF5_ENABLE_Z_LIB_SUPPORT:BOOL=ON -DHDF5_ENABLE_SZIP_SUPPORT:BOOL=OFF -DHDF5_ENABLE_SZIP_ENCODING:BOOL=OFF -DBUILD_SHARED_LIBS:BOOL=ON -DONLY_SHARED_LIBS:BOOL=OFF -DHDF5_ENABLE_PARALLEL:BOOL=ON -DHDF5_ENABLE_THREADSAFE:BOOL=OFF -DHDF5_BUILD_HL_LIB:BOOL=ON -DHDF5_BUILD_CPP_LIB:BOOL=OFF -DHDF5_BUILD_FORTRAN:BOOL=ON -DHDF5_BUILD_JAVA:BOOL=OFF -DHDF5_BUILD_TOOLS:BOOL=ON -DMPI_CXX_COMPILER:PATH=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/bin/mpic++ -DMPI_C_COMPILER:PATH=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/bin/mpicc -DMPI_Fortran_COMPILER:PATH=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/bin/mpif90
 ##
 
 
@@ -20,9 +20,9 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load pkgconf/2.2.0-xe2c2ii
+    module load general/pkgconf/2.2.0-xe2c2ii
 } else {
-    depends-on pkgconf/2.2.0-xe2c2ii
+    depends-on general/pkgconf/2.2.0-xe2c2ii
 }
 conflict hdf5
 
@@ -35,7 +35,7 @@ prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen3/h
 prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen3/hdf5-1.14.3/lib/pkgconfig}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen3/hdf5-1.14.3/.}
 append-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen3/hdf5-1.14.3/lib}
-setenv HDF5_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/hdf5-1.14.3-ipebpyowapnmq6m2hystb6nvp3arr5gh}
+setenv HDF5_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/hdf5-1.14.3-ma75hxzjfdsdqt2jt6c6iuhhdfiknhhu}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 

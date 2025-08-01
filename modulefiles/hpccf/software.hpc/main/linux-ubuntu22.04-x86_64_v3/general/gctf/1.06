@@ -17,9 +17,9 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load lang/cuda/8.0.61
+    module load cuda/8.0.61
 } else {
-    depends-on lang/cuda/8.0.61
+    depends-on cuda/8.0.61
 }
 conflict gctf
 
