@@ -39,6 +39,7 @@ class Rstudio(CMakePackage):
     depends_on("r@3.0.1:", type="build")
     depends_on("cmake@3.4.3:", type="build")
     depends_on("pkgconfig", type="build")
+    depends_on("chrpath", type="build")
     depends_on("ant", type="build")
     #depends_on("qt+webkit@5.12:5.14")
     depends_on("qt@5.15.8:")
@@ -97,6 +98,7 @@ class Rstudio(CMakePackage):
         depends_on("r-xfun")
         depends_on("r-yaml")
 
+    #transitive_rpaths = False
         
     def cmake_args(self):
 
@@ -108,7 +110,7 @@ class Rstudio(CMakePackage):
             "-DRSTUDIO_USE_SYSTEM_SOCI=Yes",
             "-DQUARTO_ENABLED=No", # temporary?
             '-DQT_QMAKE_EXECUTABLE="{0}"'.format(self.spec["qt"].prefix.bin.qmake),
-            "-DCMAKE_INSTALL_RPATH_USE_LINK_PATH=OFF"
+            #"-DCMAKE_INSTALL_RPATH_USE_LINK_PATH=OFF"
         ]
 
         if '+server' in self.spec:
@@ -119,15 +121,6 @@ class Rstudio(CMakePackage):
             args.extend([
                 "-DRSTUDIO_TARGET=Desktop",
             ])
-
-        rpath = self.rpath
-        if "+external_libr" in self.spec:
-            import llnl.util.tty as tty
-            tty.msg(f"RPATH before: {self.rpath}")
-            rpath = [rp for rp in self.rpath if \
-                          not rp.startswith(self.spec["r"].prefix)]
-            tty.msg(f"RPATH after: {rpath}")
-        args.append("-DCMAKE_INSTALL_RPATH={0}".format(":".join(rpath)))
 
         return args
 
@@ -258,3 +251,11 @@ class Rstudio(CMakePackage):
             node_version = self.spec['node-js'].version
             with working_dir('dependencies/common/node'):
                 os.symlink(str(node_version), f'{node_version}-patched')
+
+    @run_after("build")
+    def convert_rpath(self):
+        chrpath = which("chrpath")
+        binaries = [join_path(self.build_directory, "src", "cpp", "session", "rsession"),
+                    join_path(self.build_directory, "src", "cpp", "server", "rserver")]
+        for binary in binaries:
+            chrpath("-c", binary)
