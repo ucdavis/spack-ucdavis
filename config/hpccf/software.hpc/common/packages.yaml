@@ -51,7 +51,7 @@ packages:
     require: '+pmix +mariadb +hwloc +restd +nvml +cgroup +pam sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3'
 
   ucx:
-    require: '+thread_multiple'
+    require: '+cma +dc +dm +gdrcopy +ib_hw_tm +knem +mlx5_dv +openmp +optimizations +rc +rdmacm +thread_multiple +ucg +ud +verbs +xpmem'
   
   openmpi:
     require: 

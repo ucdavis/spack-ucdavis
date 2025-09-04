@@ -85,12 +85,16 @@ packages:
           set:
             CUDAFLAGS: "--allow-unsupported-compiler"
     - spec: gcc@11.4.0 target=x86_64_v3
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-11.4.0
+      #prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-11.4.0
+      prefix: /usr
       extra_attributes:
         compilers:
-          c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-11.4.0/bin/gcc
-          cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-11.4.0/bin/g++
-          fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-11.4.0/bin/gfortran
+          c: /usr/bin/gcc-11
+          cxx: /usr/bin/g++-11
+          fortran: /usr/bin/gfortran-11
+          #c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-11.4.0/bin/gcc
+          #cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-11.4.0/bin/g++
+          #fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-11.4.0/bin/gfortran
         environment:
           set:
             CUDAFLAGS: "--allow-unsupported-compiler"
