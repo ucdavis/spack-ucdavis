@@ -1,0 +1,24 @@
+modules:
+  default:
+    arch_folder: true
+    enable::
+      - tcl
+    tcl:
+      verbose: true
+      hash_length: 0
+      hide_implicits: true
+      projections:
+        all: '{name}/{version}'
+      #  target=x86_64_v3: 'generic/{name}/{version}'
+      #  target=skylake_avx512: 'skylake_avx512/{name}/{version}'
+      #  target=zen2: 'zen2/{name}/{version}'
+      #  target=zen3: 'zen3/{name}/{version}'
+      all:
+        autoload: run
+        template: hpccf/default.tcl
+        conflict:
+        - '{name}'
+        environment:
+          set:
+            '{name}_ROOT': '{prefix}'
+

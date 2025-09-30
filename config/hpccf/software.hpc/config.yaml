@@ -1,0 +1,12 @@
+config:
+  install_tree:
+    root: /cvmfs/hpc.ucdavis.edu/sw/spack/root
+  build_stage:
+    - /dev/shm/spack-tmp/$user/spack-stage
+    - $user_cache_path/stage
+  source_cache: /dev/shm/spack-source/core
+  template_dirs:
+  - /cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/templates
+  db_lock_timeout: 60
+  deprecated: true
+  missing_library_policy: warn
