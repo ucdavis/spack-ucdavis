@@ -1,7 +1,8 @@
-# Copyright 2013-2022 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
+
+from spack_repo.builtin.build_systems.generic import Package
 
 from spack.package import *
 
@@ -12,13 +13,11 @@ class Dislin(Package):
     contours and maps."""
 
     homepage = "https://www.mps.mpg.de/dislin"
-    url = "https://www.dislin.de/downloads/linux/i586_64/dislin-11.5.linux.i586_64.tar.gz"
+    url = "ftp://ftp.gwdg.de/pub/grafik/dislin/linux/i586_64/dislin-11.0.linux.i586_64.tar.gz"
 
-    # Our package provides the newer 11.5
-
+    # HPCCF: we provide 11.5
     version("11.5", sha256="344eade6b409aff41d463f1879d5dec1079ee13d3fccdd097fd7717a947c87dc")
-    version("11.0", sha256="13d28188924e0b0b803d72aa4b48be4067e98e890701b0aa6f54a11c7d34dd10",
-            url="ftp://ftp.gwdg.de/pub/grafik/dislin/linux/i586_64/dislin-11.0.linux.i586_64.tar.gz")
+    version("11.0", sha256="13d28188924e0b0b803d72aa4b48be4067e98e890701b0aa6f54a11c7d34dd10")
 
     depends_on("motif")
     depends_on("gl")
@@ -41,21 +40,23 @@ class Dislin(Package):
 
         return find_libraries(libraries, root=self.prefix, shared=True, recursive=True)
 
-    def setup_build_environment(self, env):
+    def setup_build_environment(self, env: EnvironmentModifications) -> None:
         env.set("DISLIN", self.prefix)
 
-    def setup_run_environment(self, env):
+    def setup_run_environment(self, env: EnvironmentModifications) -> None:
         env.set("DISLIN", self.prefix)
         env.prepend_path("PATH", self.prefix)
         env.prepend_path("LD_LIBRARY_PATH", self.prefix)
         env.prepend_path("LD_LIBRARY_PATH", self.spec["motif"].prefix.lib)
         env.prepend_path("LD_LIBRARY_PATH", self.spec["mesa"].prefix.lib)
 
-    def setup_dependent_run_environment(self, env, dependent_spec):
+    def setup_dependent_run_environment(
+        self, env: EnvironmentModifications, dependent_spec: Spec
+    ) -> None:
         env.prepend_path("LD_LIBRARY_PATH", self.prefix)
 
     def install(self, spec, prefix):
-        dislin_install = Executable("./INSTALL")
-        dislin_install()
+        install = Executable("./INSTALL")
+        install()
         with working_dir("examples"):
             install("dislin_d.h", prefix)
