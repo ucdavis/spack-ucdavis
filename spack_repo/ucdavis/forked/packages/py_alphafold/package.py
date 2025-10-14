@@ -1,9 +1,11 @@
-# Copyright 2013-2023 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 import glob
+
+from spack_repo.builtin.build_systems.cuda import CudaPackage
+from spack_repo.builtin.build_systems.python import PythonPackage
 
 from spack.package import *
 
@@ -17,6 +19,8 @@ class PyAlphafold(PythonPackage, CudaPackage):
     url = "https://github.com/deepmind/alphafold/archive/refs/tags/v2.1.1.tar.gz"
     maintainers("aweits")
 
+    license("Apache-2.0")
+
     version("2.3.2", sha256="4ea8005ba1b573fa1585e4c29b7d188c5cbfa59b4e4761c9f0c15c9db9584a8e")
     version("2.2.4", sha256="8d756e16f6dc7897331d834aade8493820d0ff6a03bf60ce511bac4756c1b1e8")
     version("2.1.1", sha256="1adb6e213ba9ac321fc1acb1c563ba9b4fc054c1cebe1191bc0e2aaa671dadf7")
@@ -28,7 +32,7 @@ class PyAlphafold(PythonPackage, CudaPackage):
     depends_on("python@3.7:", type=("build", "run"))
     depends_on("py-setuptools", type="build")
     depends_on("py-absl-py@0.13.0:", type=("build", "run"), when="@2.1.1")
-    depends_on("py-absl-py@1.0.0:", type=("build", "run"), when="@2.2.4:")
+    depends_on("py-absl-py@1.0.0:", type=("build", "run"), when="@2.2.4")
     depends_on("py-biopython@1.79:", type=("build", "run"))
     depends_on("py-chex@0.0.7:", type=("build", "run"))
     depends_on("py-dm-haiku@0.0.4:", type=("build", "run"), when="@2.1.1")
@@ -42,19 +46,19 @@ class PyAlphafold(PythonPackage, CudaPackage):
     depends_on("py-jax@0.3.25:", type=("build", "run"), when="@2.3.2:")
     depends_on("py-ml-collections@0.1.0:", type=("build", "run"))
     depends_on("py-numpy@1.19.5:", type=("build", "run"), when="@2.1.1")
-    depends_on("py-numpy@1.21.6:", type=("build", "run"), when="@2.2.4:")
+    depends_on("py-numpy@1.21.6:", type=("build", "run"), when="@2.2.4")
     depends_on("py-pandas@1.3.4:", type=("build", "run"))
-    depends_on("py-protobuf@3.19:", type=("build", "run"), when="@2.2.4:")
+    depends_on("py-protobuf@3.19:", type=("build", "run"), when="@2.2.4")
     depends_on("py-scipy@1.7.0:", type=("build", "run"))
     depends_on("py-pdbfixer@1.7", type=("build", "run"))
     depends_on("py-tensorflow@2.5:", type=("build", "run"), when="@2.1.1")
-    depends_on("py-tensorflow@2.9:", type=("build", "run"), when="@2.2.4:")
+    depends_on("py-tensorflow@2.9:", type=("build", "run"), when="@2.2.4")
     depends_on(
         "openmm@7.5.1+cuda",
         type="run",
         patches=[
             patch(
-                "https://raw.githubusercontent.com/deepmind/alphafold/main/docker/openmm.patch",
+                "https://raw.githubusercontent.com/google-deepmind/alphafold/2819de4ddd075340b81d36bcf7932a0ff0fbe404/docker/openmm.patch",
                 sha256="a5a0ced820f3ecc56ae634c3111f80614863559b0587954a2658c8d4b2a07ae3",
                 working_dir="wrappers/python",
                 level=0,
@@ -78,7 +82,7 @@ class PyAlphafold(PythonPackage, CudaPackage):
     @run_after("install")
     def install_scripts(self):
         mkdirp(self.prefix.bin)
-        shebang = "#!{0}\n".format(self.spec["python"].command)
+        shebang = f"#!{python.path}\n"
         for fname in glob.glob("run_alphafold*.py"):
             destfile = join_path(self.prefix.bin, fname)
             with open(fname, "r") as src:
