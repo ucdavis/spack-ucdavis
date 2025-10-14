@@ -1,7 +1,8 @@
-# Copyright 2013-2023 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
+
+from spack_repo.builtin.build_systems.makefile import MakefilePackage
 
 from spack.package import *
 
@@ -32,6 +33,9 @@ class Stream(MakefilePackage):
         description="Datatype of arrays elements",
     )
 
+    depends_on("c", type="build")  # generated
+    depends_on("fortran", type="build")  # generated
+
     def edit(self, spec, prefix):
         makefile = FileFilter("Makefile")
 
@@ -41,6 +45,7 @@ class Stream(MakefilePackage):
 
         cflags = "-O2 -mcmodel=large  -fno-PIC"
         fflags = "-O2 -mcmodel=large  -fno-PIC"
+
         if "+openmp" in self.spec:
             cflags += " " + self.compiler.openmp_flag
             fflags += " " + self.compiler.openmp_flag
