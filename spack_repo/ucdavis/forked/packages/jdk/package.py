@@ -1,13 +1,13 @@
-# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 import os
 import re
 
+from spack_repo.builtin.build_systems.generic import Package
+
 from spack.package import *
-from spack.util.prefix import Prefix
 
 
 class Jdk(Package):
@@ -24,15 +24,24 @@ class Jdk(Package):
         sha256="2bda38cd0f31d593b56ee5a607401bc6f245aafe07535b6525572861c2d15d6f",
         url="https://download.oracle.com/java/23/latest/jdk-23_linux-x64_bin.tar.gz"
     )
-
     version(
         "21.0.5",
         sha256="9c2f7c39e0d5b296ce50e563740694b2ebfe4a620415d1b2b848ba47bebceb47",
         url="https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz",
     )
+    version(
+        "21.0.2",
+        sha256="9f1f4a7f25ef6a73255657c40a6d7714f2d269cf15fb2ff1dc9c0c8b56623a6f",
+        url="https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz",
+    )
+    version(
+        "17.0.10",
+        sha256="e4fb2df9a32a876afb0a6e17f54c594c2780e18badfa2e8fc99bc2656b0a57b1",
+        url="https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.tar.gz",
+    )
 
-    provides("java@23", when="@23")
     provides("java@21", when="@21")
+    provides("java@17", when="@17")
 
     requires("target=x86_64:", msg="binaries only availble for x86_64")
     # requires("platform=linux")  # bug in concretizer
@@ -99,12 +108,14 @@ class Jdk(Package):
     def install(self, spec, prefix):
         install_tree(".", prefix)
 
-    def setup_run_environment(self, env):
+    def setup_run_environment(self, env: EnvironmentModifications) -> None:
         """Set JAVA_HOME."""
 
         env.set("JAVA_HOME", self.home)
 
-    def setup_dependent_build_environment(self, env, dependent_spec):
+    def setup_dependent_build_environment(
+        self, env: EnvironmentModifications, dependent_spec: Spec
+    ) -> None:
         """Set JAVA_HOME and CLASSPATH.
 
         CLASSPATH contains the installation prefix for the extension and any
@@ -120,7 +131,9 @@ class Jdk(Package):
         classpath = os.pathsep.join(class_paths)
         env.set("CLASSPATH", classpath)
 
-    def setup_dependent_run_environment(self, env, dependent_spec):
+    def setup_dependent_run_environment(
+        self, env: EnvironmentModifications, dependent_spec: Spec
+    ) -> None:
         """Set CLASSPATH.
 
         CLASSPATH contains the installation prefix for the extension and any
