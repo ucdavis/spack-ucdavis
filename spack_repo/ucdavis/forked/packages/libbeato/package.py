@@ -1,7 +1,8 @@
-# Copyright 2013-2022 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
+
+from spack_repo.builtin.build_systems.autotools import AutotoolsPackage
 
 from spack.package import *
 
@@ -14,6 +15,10 @@ class Libbeato(AutotoolsPackage):
     homepage = "https://github.com/CRG-Barcelona/libbeato"
     git = "https://github.com/CRG-Barcelona/libbeato.git"
 
-    version("master", commit="0c30432af9c7e1e09ba065ad3b2bc042baa54dc2")
+    license("GPL-3.0-or-later")
+
+    version("master", branch="master")
+
+    depends_on("c", type="build")  # generated
 
     depends_on("htslib", type=("build", "run"))
