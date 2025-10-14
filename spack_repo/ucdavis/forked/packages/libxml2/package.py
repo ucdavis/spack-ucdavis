@@ -1,20 +1,22 @@
-# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 import os
 
-import spack.builder
-from spack.build_systems import autotools, nmake
+from spack_repo.builtin.build_systems import autotools, cmake, nmake
+from spack_repo.builtin.build_systems.autotools import AutotoolsPackage
+from spack_repo.builtin.build_systems.cmake import CMakePackage
+from spack_repo.builtin.build_systems.nmake import NMakePackage
+
 from spack.package import *
 
 
-class Libxml2(AutotoolsPackage, NMakePackage):
+class Libxml2(AutotoolsPackage, CMakePackage, NMakePackage):
     """Libxml2 is the XML C parser and toolkit developed for the Gnome
     project (but usable outside of the Gnome platform), it is free
     software available under the MIT License."""
 
-    homepage = "http://xmlsoft.org"
+    homepage = "https://gitlab.gnome.org/GNOME/libxml2/-/wikis"
     url = "https://download.gnome.org/sources/libxml2/2.9/libxml2-2.9.13.tar.xz"
     list_url = "https://gitlab.gnome.org/GNOME/libxml2/-/releases"
 
@@ -28,6 +30,7 @@ class Libxml2(AutotoolsPackage, NMakePackage):
 
     license("MIT")
 
+    version("2.13.5", sha256="74fc163217a3964257d3be39af943e08861263c4231f9ef5b496b6f6d4c7b2b6")
     version("2.13.4", sha256="65d042e1c8010243e617efb02afda20b85c2160acdbfbcb5b26b80cec6515650")
     version("2.12.9", sha256="59912db536ab56a3996489ea0299768c7bcffe57169f0235e7f962a91f483590")
     version("2.11.9", sha256="780157a1efdb57188ec474dca87acaee67a3a839c2525b2214d318228451809f")
@@ -63,14 +66,15 @@ class Libxml2(AutotoolsPackage, NMakePackage):
         version("2.9.2", sha256="5178c30b151d044aefb1b08bf54c3003a0ac55c59c866763997529d60770d5bc")
         version("2.7.8", sha256="cda23bc9ebd26474ca8f3d67e7d1c4a1f1e7106364b690d822e009fdc3c417ec")
 
-    depends_on("c", type="build")  # generated
-
+    variant("http", default=False, description="Enable HTTP support")
     variant("python", default=False, description="Enable Python support")
     variant("shared", default=True, description="Build shared library")
     variant("pic", default=True, description="Enable position-independent code (PIC)")
     variant("ftp", default=True, description="Enable FTP support")
 
     conflicts("~pic+shared")
+
+    depends_on("c", type="build")
 
     depends_on("pkgconfig@0.9.0:", type="build", when="build_system=autotools")
     # conditional on non Windows, but rather than specify for each platform
@@ -105,11 +109,16 @@ class Libxml2(AutotoolsPackage, NMakePackage):
         sha256="5dc43fed02b443d2563a502a52caafe39477c06fc30b70f786d5ed3eb5aea88d",
         when="@2.9.11:2.9.14",
     )
-    build_system(conditional("nmake", when="platform=windows"), "autotools", default="autotools")
+    build_system(
+        conditional("nmake", when="platform=windows"),
+        conditional("cmake", when="@2.11:"),
+        "autotools",
+        default="autotools",
+    )
 
     def flag_handler(self, name, flags):
         if name == "cflags" and self.spec.satisfies("+pic"):
-            flags.append(self.compiler.cc_pic_flag)
+            flags.append(self["c"].pic_flag)
             flags.append("-DPIC")
         return (flags, None, None)
 
@@ -224,16 +233,16 @@ class Libxml2(AutotoolsPackage, NMakePackage):
             xmllint("--dtdvalid", dtd_path, data_dir.join("info.xml"))
 
 
-class BaseBuilder(metaclass=spack.builder.PhaseCallbacksMeta):
+class AnyBuilder(BaseBuilder):
     @run_after("install")
     @on_package_attributes(run_tests=True)
     def import_module_test(self):
-        if "+python" in self.spec:
+        if self.spec.satisfies("+python"):
             with working_dir("spack-test", create=True):
                 python("-c", "import libxml2")
 
 
-class AutotoolsBuilder(BaseBuilder, autotools.AutotoolsBuilder):
+class AutotoolsBuilder(AnyBuilder, autotools.AutotoolsBuilder):
     def configure_args(self):
         spec = self.spec
 
@@ -242,7 +251,7 @@ class AutotoolsBuilder(BaseBuilder, autotools.AutotoolsBuilder):
             "--with-iconv={0}".format(spec["iconv"].prefix),
         ]
 
-        if "+python" in spec:
+        if spec.satisfies("+python"):
             args.extend(
                 [
                     "--with-python={0}".format(spec["python"].home),
@@ -252,17 +261,28 @@ class AutotoolsBuilder(BaseBuilder, autotools.AutotoolsBuilder):
         else:
             args.append("--without-python")
 
+        args.extend(self.with_or_without("http"))
+        args.extend(self.with_or_without("ftp"))
         args.extend(self.enable_or_disable("shared"))
         # PIC setting is taken care of above by self.flag_handler()
         args.append("--without-pic")
 
-        if "+ftp" in spec:
-            args.append("--with-ftp")
-
         return args
 
 
-class NMakeBuilder(BaseBuilder, nmake.NMakeBuilder):
+class CMakeBuilder(AnyBuilder, cmake.CMakeBuilder):
+    def cmake_args(self):
+        args = [
+            self.define_from_variant("BUILD_SHARED_LIBS", "shared"),
+            self.define_from_variant("LIBXML2_WITH_PYTHON", "python"),
+            self.define("LIBXML2_WITH_LZMA", True),
+            self.define("LIBXML2_WITH_ZLIB", True),
+            self.define("LIBXML2_WITH_TESTS", True),
+        ]
+        return args
+
+
+class NMakeBuilder(AnyBuilder, nmake.NMakeBuilder):
     phases = ("configure", "build", "install")
 
     @property
@@ -271,20 +291,30 @@ class NMakeBuilder(BaseBuilder, nmake.NMakeBuilder):
 
     @property
     def build_directory(self):
-        return os.path.join(self.stage.source_path, "win32")
+        return windows_sfn(os.path.join(self.stage.source_path, "win32"))
 
     def configure(self, pkg, spec, prefix):
         with working_dir(self.build_directory):
             opts = [
-                "prefix=%s" % prefix,
+                "prefix=%s" % windows_sfn(prefix),
                 "compiler=msvc",
                 "iconv=no",
                 "zlib=yes",
                 "lzma=yes",
-                "lib=%s" % ";".join((spec["zlib-api"].prefix.lib, spec["xz"].prefix.lib)),
+                "lib=%s"
+                % ";".join(
+                    (windows_sfn(spec["zlib-api"].prefix.lib), windows_sfn(spec["xz"].prefix.lib))
+                ),
                 "include=%s"
-                % ";".join((spec["zlib-api"].prefix.include, spec["xz"].prefix.include)),
+                % ";".join(
+                    (
+                        windows_sfn(spec["zlib-api"].prefix.include),
+                        windows_sfn(spec["xz"].prefix.include),
+                    )
+                ),
             ]
-            if "+python" in spec:
+            if spec.satisfies("+python"):
                 opts.append("python=yes")
+            if spec.satisfies("+http"):
+                opts.append("http=yes")
             cscript("configure.js", *opts)
