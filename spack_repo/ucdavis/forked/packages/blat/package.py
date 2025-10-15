@@ -3,6 +3,8 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+from spack_repo.builtin.build_systems.generic import Package
+
 from spack.package import *
 
 
@@ -18,6 +20,9 @@ class Blat(Package):
     version("37", sha256="88ee2b272d42ab77687c61d200b11f1d58443951069feb7e10226a2509f84cf2")
     version("35", sha256="06d9bcf114ec4a4b21fef0540a0532556b6602322a5a2b33f159dc939ae53620")
 
+    depends_on("c", type="build")
+
+    depends_on("gmake", type="build")
     depends_on("libpng")
     depends_on("libuuid", when="@37:")
     depends_on("mysql-client", when="@37:")
@@ -33,7 +38,7 @@ class Blat(Package):
             flags.append("-fcommon")
         return (flags, None, None)
 
-    def setup_build_environment(self, env):
+    def setup_build_environment(self, env: EnvironmentModifications) -> None:
         env.set("MACHTYPE", "x86_64")
         env.set("SSLDIR", self.spec["openssl"].prefix.include)
         env.set("SSL_DIR", self.spec["openssl"].prefix)
