@@ -5,6 +5,8 @@
 
 from os import symlink
 
+from spack_repo.builtin.build_systems.generic import Package
+
 from spack.package import *
 
 
@@ -39,7 +41,8 @@ class Homer(Package):
         filter_file(
             r"my \$homeDir = \$1;",
             'my $homeDir = "{0}";'.format(basedir),
-            "configureHomer.pl"
+            "configureHomer.pl",
+            string=True
         )
 
         install_tree(".", basedir)
@@ -49,5 +52,5 @@ class Homer(Package):
         perl("configureHomer.pl", "-local", "-keepScript")
 
         # download extra data if requested
-        if "+data" in spec:
+        if spec.satisfies("+data"):
             perl("configureHomer.pl", "-install", "-all", "-keepScript")

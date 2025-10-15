@@ -3,6 +3,8 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+from spack_repo.builtin.build_systems.cmake import CMakePackage
+
 from spack.package import *
 
 
@@ -24,6 +26,8 @@ class BppSeq(CMakePackage):
         sha256="0927d7fb0301c1b99a7353d5876deadb4a3040776cc74e8fe1c366fe920e7b6b",
         deprecated=True,
     )
+
+    depends_on("cxx", type="build")  # generated
 
     depends_on("cmake@2.6:", type="build")
     depends_on("bpp-core")

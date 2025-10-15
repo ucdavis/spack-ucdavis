@@ -5,8 +5,10 @@
 
 import os
 
+from spack_repo.builtin.build_systems.cmake import CMakePackage
+from spack_repo.builtin.packages.boost.package import Boost
+
 from spack.package import *
-from spack.pkg.builtin.boost import Boost
 
 
 class Rstudio(CMakePackage):
@@ -35,6 +37,9 @@ class Rstudio(CMakePackage):
     variant("notebook", default=False, description="Enable notebook support.")
     variant("server", default=False, when="@2022.12.0-353:", description="Build server version.")
     variant("external_libr", default=True, description="Strip the RPATH entry for libR.so from the rsession binary.")
+
+    depends_on("c", type="build")  # generated
+    depends_on("cxx", type="build")  # generated
 
     depends_on("r@3.0.1:", type="build")
     depends_on("cmake@3.4.3:", type="build")

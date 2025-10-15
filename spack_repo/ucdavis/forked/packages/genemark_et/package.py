@@ -6,6 +6,8 @@
 import glob
 import os
 
+from spack_repo.builtin.build_systems.generic import Package
+
 from spack.package import *
 
 
@@ -65,5 +67,5 @@ class GenemarkEt(Package):
             files = glob.iglob("*.pl")
             filter_file(pattern, repl, *files, backup=False)
 
-    def setup_run_environment(self, env):
+    def setup_run_environment(self, env: EnvironmentModifications) -> None:
         env.prepend_path("PERL5LIB", self.prefix.lib)

@@ -3,8 +3,10 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+from spack_repo.builtin.build_systems.cmake import CMakePackage
+from spack_repo.builtin.packages.boost.package import Boost
+
 from spack.package import *
-from spack.pkg.builtin.boost import Boost
 
 
 class Sailfish(CMakePackage):
@@ -16,6 +18,9 @@ class Sailfish(CMakePackage):
     license("GPL-3.0-only")
 
     version("0.10.1", sha256="a0d6d944382f2e07ffbfd0371132588e2f22bb846ecfc3d3435ff3d81b30d6c6")
+
+    depends_on("c", type="build")  # generated
+    depends_on("cxx", type="build")  # generated
 
     depends_on("boost@1.55:")
 

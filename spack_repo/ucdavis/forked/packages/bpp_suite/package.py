@@ -3,6 +3,8 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+from spack_repo.builtin.build_systems.cmake import CMakePackage
+
 from spack.package import *
 
 
@@ -23,6 +25,8 @@ class BppSuite(CMakePackage):
         sha256="761fa5eec794af221d971ae70fd8c43171ad71a6bb5f20549263a1797b43f138",
         deprecated=True,
     )
+
+    depends_on("cxx", type="build")
 
     depends_on("cmake@2.6:", type="build")
     depends_on("texinfo", type="build")

@@ -1,8 +1,9 @@
-# Copyright 2013-2023 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 import os
+
+from spack_repo.builtin.build_systems.cmake import CMakePackage
 
 from spack.package import *
 
@@ -17,10 +18,10 @@ class Gdl(CMakePackage):
     homepage = "https://github.com/gnudatalanguage/gdl"
     url = "https://github.com/gnudatalanguage/gdl/archive/v0.9.9.tar.gz"
 
-    version("1.1.1",
-            sha256="db72eeb84c54dba387d5474500ce005ff1dc605b070bd00f57a552d3bb6ab16c",
-            url="https://github.com/gnudatalanguage/gdl/releases/download/v1.0.3/gdl-v1.0.3.tar.gz"
-            )
+    version("1.1.1", sha256="db72eeb84c54dba387d5474500ce005ff1dc605b070bd00f57a552d3bb6ab16c",
+            url="https://github.com/gnudatalanguage/gdl/releases/download/v1.0.3/gdl-v1.0.3.tar.gz")
+    version("0.9.9", sha256="ad5de3fec095a5c58b46338dcc7367d2565c093794ab1bbcf180bba1a712cf14")
+    version("0.9.8", sha256="0e22df7314feaf18a76ae39ee57eea2ac8c3633bc095acbc25e1e07277d7c98b")
 
     variant("graphicsmagick", default=False, description="Enable GraphicsMagick")
 
@@ -34,12 +35,18 @@ class Gdl(CMakePackage):
 
     extends("python", when="+python")
 
+    depends_on("c", type="build")  # generated
+    depends_on("cxx", type="build")  # generated
+    depends_on("fortran", type="build")  # generated
+
     depends_on("cmake@3:", type="build")
     depends_on("graphicsmagick", when="+graphicsmagick")
     depends_on("hdf", when="+hdf4")
     depends_on("hdf5", when="+hdf5")
     depends_on("libx11", when="+x11")
-
+    depends_on("plplot+wx", when="+wx@:5.11")
+    depends_on("plplot+wx+wxold", when="+wx@5.12:")
+    depends_on("plplot~wx", when="~wx")
     # Too many dependencies to test if GDL supports PROJ.6,
     # so restricting to old API
     depends_on("proj@:5", when="+proj")
@@ -81,48 +88,44 @@ class Gdl(CMakePackage):
 
         # GraphicsMagick covers the same features as ImageMagick and
         # only version 6 of ImageMagick is supported (version 7 is packaged)
-        args += ["-DMAGICK=OFF",
-                 "-DUDUNITS2=OFF",
-                 "-DGRIB=OFF",
-                 "-DGLPK=OFF",
-                 "-DSHAPELIB=OFF"]
+        args += ["-DMAGICK=OFF"]
 
-        if "+graphicsmagick" in self.spec:
+        if self.spec.satisfies("+graphicsmagick"):
             args += ["-DGRAPHICSMAGICK=ON"]
         else:
             args += ["-DGRAPHICSMAGICK=OFF"]
 
-        if "+hdf4" in self.spec:
+        if self.spec.satisfies("+hdf4"):
             args += ["-DHDF=ON"]
         else:
             args += ["-DHDF=OFF"]
 
-        if "+hdf5" in self.spec:
+        if self.spec.satisfies("+hdf5"):
             args += ["-DHDF5=ON"]
         else:
             args += ["-DHDF5=OFF"]
 
-        if "+openmp" in self.spec:
+        if self.spec.satisfies("+openmp"):
             args += ["-DOPENMP=ON"]
         else:
             args += ["-DOPENMP=OFF"]
 
-        if "+proj" in self.spec:
+        if self.spec.satisfies("+proj"):
             args += ["-DLIBPROJ4=ON", "-DLIBPROJ4DIR={0}".format(self.spec["proj"].prefix)]
         else:
             args += ["-DLIBPROJ4=OFF"]
 
-        if "+python" in self.spec:
-            args += ["-DPYTHON_MODULE=ON", "-DPYTHON=ON"]
+        if self.spec.satisfies("+python"):
+            args += ["-DPYTHON_MODULE=ON"]
         else:
-            args += ["-DPYTHON_MODULE=OFF", "-DPYTHON=OFF"]
+            args += ["-DPYTHON_MODULE=OFF"]
 
-        if "+wx" in self.spec:
+        if self.spec.satisfies("+wx"):
             args += ["-DWXWIDGETS=ON"]
         else:
             args += ["-DWXWIDGETS=OFF"]
 
-        if "+x11" in self.spec:
+        if self.spec.satisfies("+x11"):
             args += ["-DX11=ON"]
         else:
             args += ["-DX11=OFF"]
@@ -131,7 +134,7 @@ class Gdl(CMakePackage):
 
     @run_after("install")
     def post_install(self):
-        if "+python" in self.spec:
+        if self.spec.satisfies("+python"):
             # gdl installs the python module into prefix/lib/site-python
             # move it to the standard location
             src = os.path.join(self.spec.prefix.lib, "site-python")

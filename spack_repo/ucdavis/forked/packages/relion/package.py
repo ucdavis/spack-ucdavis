@@ -5,6 +5,9 @@
 
 import os
 
+from spack_repo.builtin.build_systems.cmake import CMakePackage
+from spack_repo.builtin.build_systems.cuda import  CudaPackage
+
 from spack.package import *
 
 
@@ -14,17 +17,17 @@ class Relion(CMakePackage, CudaPackage):
     refinement of (multiple) 3D reconstructions or 2D class averages in
     electron cryo-microscopy (cryo-EM)."""
 
-    homepage = "http://www2.mrc-lmb.cam.ac.uk/relion"
+    homepage = "https://www2.mrc-lmb.cam.ac.uk/relion"
     git = "https://github.com/3dem/relion.git"
-    url = "https://github.com/3dem/relion/archive/3.1.3.zip"
+    url = "https://github.com/3dem/relion/archive/4.0.0.zip"
 
-    version("5.0.0", commit="5b1a65320d62682be3c1c8f4b6b1e28b1a68e104", preferred=True)
-    version("5.0-beta3", commit="6331fe600cca7683ecf7c1011ce676701faf1e97")
-    version("5.0-beta", commit="90d239eda870d64834e642aaa19ce3e6d0ab5ab0")
-    version("4.0.1", commit="ec417f5")
+    license("GPL-2.0-only")
 
-    version("4.0.0", commit="04079953afd9f74c8705e24004091575b4fd71e0")
-
+    version("5.0.0", sha256="800ad0c0aa778cbf584fcf8986976645f2b25d677a80f168e5397975b9db6e47")
+    version("4.0.1", sha256="7e0d56fd4068c99f943dc309ae533131d33870392b53a7c7aae7f65774f667be")
+    version("4.0.0", sha256="0987e684e9d2dfd630f1ad26a6847493fe9fcd829ec251d8bc471d11701d51dd")
+    
+    version("3.1.4", sha256="3bf3449bd2d71dc85d2cdbd342e772f5faf793d8fb3cda6414547cf34c98f34c")
     version("3.1.3", sha256="e67277200b54d1814045cfe02c678a58d88eb8f988091573453c8568bfde90fc")
     version("3.1.2", sha256="dcdf6f214f79a03d29f0fed2de58054efa35a9d8401543bdc52bfb177987931f")
     version("3.1.1", sha256="63e9b77e1ba9ec239375020ad6ff631424d1a5803cba5c608c09fd44d20b1618")

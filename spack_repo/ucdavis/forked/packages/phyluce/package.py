@@ -3,6 +3,8 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+from spack_repo.builtin.build_systems.python import PythonPackage
+
 from spack.package import *
 
 
@@ -13,6 +15,8 @@ class Phyluce(PythonPackage):
 
     homepage = "https://github.com/faircloth-lab/phyluce"
     url = "https://github.com/faircloth-lab/phyluce/archive/v1.6.7.tar.gz"
+
+    license("BSD-3-Clause")
 
     version("1.7.3", sha256="931fd512730bb101266b27728576df00277858d256e1ab30d64b474588362e11")
     version("1.7.1", sha256="d5e82aa8072f411ae30b0b44613870477bffeff37c02c48ae7ee42c1b46242ea")

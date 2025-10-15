@@ -1,15 +1,15 @@
-# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 import os
 import re
 
-import spack.build_systems.cmake
-import spack.build_systems.makefile
+from spack_repo.builtin.build_systems import cmake, makefile
+from spack_repo.builtin.build_systems.cmake import CMakePackage
+from spack_repo.builtin.build_systems.makefile import MakefilePackage
+
 from spack.package import *
-from spack.package_test import compare_output_file, compile_c_and_execute
 
 
 class Openblas(CMakePackage, MakefilePackage):
@@ -26,6 +26,7 @@ class Openblas(CMakePackage, MakefilePackage):
     license("BSD-3-Clause")
 
     version("develop", branch="develop")
+    version("0.3.29", sha256="38240eee1b29e2bde47ebb5d61160207dc68668a54cac62c076bb5032013b1eb")
     version("0.3.28", sha256="f1003466ad074e9b0c8d421a204121100b0751c96fc6fcf3d1456bd12f8a00a1")
     version("0.3.27", sha256="aa2d68b1564fe2b13bc292672608e9cdeeeb6dc34995512e65c3b10f4599e897")
     version("0.3.26", sha256="4e6e4f5cb14c209262e33e6816d70221a2fe49eb69eaf0a06f065598ac602c68")
@@ -114,6 +115,9 @@ class Openblas(CMakePackage, MakefilePackage):
     # https://github.com/OpenMathLib/OpenBLAS/pull/4328
     patch("xcode15-fortran.patch", when="@0.3.25 %apple-clang@15:")
 
+    # https://github.com/OpenMathLib/OpenBLAS/issues/5202
+    patch("openblas-0.3.29-darwin-aarch64.patch", when="@0.3.29 platform=darwin")
+
     # https://github.com/xianyi/OpenBLAS/pull/2519/files
     patch("ifort-msvc.patch", when="%msvc")
 
@@ -141,7 +145,7 @@ class Openblas(CMakePackage, MakefilePackage):
 
     # Fixes compilation error on POWER8 with GCC 7
     # https://github.com/OpenMathLib/OpenBLAS/pull/1098
-    patch("power8.patch", when="@0.2.18:0.2.19 %gcc@7.1.0: target=power8")
+    patch("power8.patch", when="@0.2.18:0.2.19 target=power8 %gcc@7.1.0:")
 
     # Change file comments to work around clang 3.9 assembler bug
     # https://github.com/OpenMathLib/OpenBLAS/pull/982
@@ -294,20 +298,6 @@ class Openblas(CMakePackage, MakefilePackage):
         # unclear whether setting `-j N` externally was supported before 0.3
         return self.spec.version >= Version("0.3.0")
 
-    @run_before("edit")
-    def check_compilers(self):
-        # As of 06/2016 there is no mechanism to specify that packages which
-        # depends on Blas/Lapack need C or/and Fortran symbols. For now
-        # require both.
-        # As of 08/2022 (0.3.21), we can build purely with a C compiler using
-        # a f2c translated LAPACK version
-        #   https://github.com/xianyi/OpenBLAS/releases/tag/v0.3.21
-        if self.compiler.fc is None and "~fortran" not in self.spec:
-            raise InstallError(
-                self.compiler.cc
-                + " has no Fortran compiler added in spack. Add it or use openblas~fortran!"
-            )
-
     @property
     def headers(self):
         # The only public headers for cblas and lapacke in
@@ -322,7 +312,7 @@ class Openblas(CMakePackage, MakefilePackage):
         spec = self.spec
 
         # Look for openblas{symbol_suffix}
-        name = ["libopenblas", "openblas"]
+        name = self.libraries
         search_shared = bool(spec.variants["shared"].value)
         suffix = spec.variants["symbol_suffix"].value
         if suffix != "none":
@@ -331,7 +321,7 @@ class Openblas(CMakePackage, MakefilePackage):
         return find_libraries(name, spec.prefix, shared=search_shared, recursive=True)
 
 
-class MakefileBuilder(spack.build_systems.makefile.MakefileBuilder):
+class MakefileBuilder(makefile.MakefileBuilder):
     @staticmethod
     def _read_targets(target_file):
         """Parse a list of available targets from the OpenBLAS/TargetList.txt
@@ -418,10 +408,10 @@ class MakefileBuilder(spack.build_systems.makefile.MakefileBuilder):
             # match for the requested one. Allow OpenBLAS to determine
             # an optimized kernel at run time, including older CPUs, while
             # forcing it not to add flags for the current host compiler.
-            if self.spec.satisfies("target=x86_64_v2"):
-                args.append("TARGET=NEHALEM")
-            elif self.spec.satisfies("target=x86_64_v3"):
-                args.append("TARGET=HASWELL")
+            if self.spec.satisfies("target=x86_64_v2"):                                                                                                                                                            
+                args.append("TARGET=NEHALEM")                                                                                                                                                                      
+            elif self.spec.satisfies("target=x86_64_v3"):                                                                                                                                                          
+                args.append("TARGET=HASWELL")                                                                                                                                                                      
             else:
                 args.append("DYNAMIC_ARCH=1")
                 if self.spec.version >= Version("0.3.12"):
@@ -457,7 +447,7 @@ class MakefileBuilder(spack.build_systems.makefile.MakefileBuilder):
 
         return args
 
-    def setup_build_environment(self, env):
+    def setup_build_environment(self, env: EnvironmentModifications) -> None:
         # When building OpenBLAS with threads=openmp, `make all`
         # runs tests, so we set the max number of threads at runtime
         # accordingly
@@ -600,7 +590,7 @@ class MakefileBuilder(spack.build_systems.makefile.MakefileBuilder):
         compare_output_file(output, blessed_file)
 
 
-class CMakeBuilder(spack.build_systems.cmake.CMakeBuilder):
+class CMakeBuilder(cmake.CMakeBuilder):
     def cmake_args(self):
         cmake_defs = [
             self.define("TARGET", "GENERIC"),
