@@ -6,8 +6,8 @@
 from shutil import copytree, ignore_patterns
 import os
 
-
-from llnl.util import filesystem, tty
+# looks like this import isn't necessary (or supported) anymore
+#from llnl.util import filesystem, tty
 
 from spack.package import *
 
