@@ -3,6 +3,7 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+from spack_repo.builtin.build_systems.generic import Package
 
 from spack.package import *
 
@@ -69,6 +70,8 @@ class EnvironmentModules(Package):
     )
 
     depends_on("c", type="build")  # generated
+    depends_on("gmake", type="build")
+    depends_on("util-linux", type=("build", "run"), when="@5.5:")
     depends_on("less", type=("build", "run"), when="@4.1:")
 
     with when("@main"):
@@ -127,7 +130,7 @@ class EnvironmentModules(Package):
         if etcdir != "PREFIX/etc":
             config_args.extend([f"--etcdir={etcdir}", "--with-initconf-in=initdir"])
 
-        if "@4.4.0:4.8" in self.spec:
+        if self.spec.satisfies("@4.4.0:4.8"):
             config_args.extend(
                 [
                     "--with-icase=search",
@@ -136,13 +139,13 @@ class EnvironmentModules(Package):
                 ]
             )
 
-        if "@4.3.0:4.8" in self.spec:
+        if self.spec.satisfies("@4.3.0:4.8"):
             config_args.extend(["--enable-color"])
 
-        if "@4.2.0:4.8" in self.spec:
+        if self.spec.satisfies("@4.2.0:4.8"):
             config_args.extend(["--enable-auto-handling"])
 
-        if "@4.1.0:" in self.spec:
+        if self.spec.satisfies("@4.1.0:"):
             config_args.extend(
                 [
                     # Variables in quarantine are empty during module command
@@ -152,17 +155,17 @@ class EnvironmentModules(Package):
                 ]
             )
 
-        if "@4.0.0:4.8" in self.spec:
+        if self.spec.satisfies("@4.0.0:4.8"):
             config_args.extend(["--disable-compat-version"])
 
-        if "@4.0.0:" in self.spec:
+        if self.spec.satisfies("@4.0.0:"):
             config_args.extend(["--with-tclsh={0}".format(tcl.prefix.bin.tclsh)])
 
-        if "@3.2.10" in self.spec:
+        if self.spec.satisfies("@3.2.10"):
             # See: https://sourceforge.net/p/modules/bugs/62/
             config_args.extend(["--disable-debug", "CPPFLAGS=-DUSE_INTERP_ERRORLINE"])
 
-        if "@:3.2" in self.spec:
+        if self.spec.satisfies("@:3.2"):
             config_args.extend(
                 [
                     "--without-tclx",
@@ -171,6 +174,9 @@ class EnvironmentModules(Package):
                     "--disable-versioning",
                 ]
             )
+
+        if self.spec.satisfies("@5.5:"):
+            config_args.append(f"--with-logger={str(self.spec['util-linux'].prefix.bin.logger)}")
 
         if self.spec.satisfies("@4.1:"):
             config_args.append(f"--with-pager={str(self.spec['less'].prefix.bin.less)}")

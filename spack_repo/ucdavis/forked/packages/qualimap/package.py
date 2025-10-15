@@ -3,6 +3,8 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+from spack_repo.builtin.build_systems.generic import Package
+
 from spack.package import *
 
 
@@ -22,7 +24,7 @@ class Qualimap(Package):
 
     depends_on("java", type="run")
 
-    def setup_run_environment(self, env):
+    def setup_run_environment(self, env: EnvironmentModifications) -> None:
         env.prepend_path("PATH", prefix)
 
     def install(self, spec, prefix):
