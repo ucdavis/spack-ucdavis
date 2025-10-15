@@ -3,6 +3,8 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+from spack_repo.builtin.build_systems.cmake import CMakePackage
+
 from spack.package import *
 
 
@@ -30,6 +32,7 @@ class Gate(CMakePackage):
 
     version("9.1", sha256="aaab874198500b81d45b27cc6d6a51e72cca9519910b893a5c85c8e6d3ffa4fc")
     version("9.0", sha256="8354f392facc0b7ae2ddf0eed61cc43136195b198ba399df25e874886b8b69cb")
+    # HPCCF: add 8 series
     version("8.2", sha256="edd8b1017310442bb6819a2815d61b63b1da1aef613fea2678aede134cbad741")
 
     depends_on("c", type="build")  # generated
@@ -66,11 +69,11 @@ class Gate(CMakePackage):
 
         return args
 
-    def setup_build_environment(self, env):
+    def setup_build_environment(self, env: EnvironmentModifications) -> None:
         gc_default_platform = self.spec.variants["default_platform"].value
         env.set("GC_DEFAULT_PLATFORM", gc_default_platform)
 
-    def setup_run_environment(self, env):
+    def setup_run_environment(self, env: EnvironmentModifications) -> None:
         env.set("GC_GATE_EXE_DIR", self.prefix.bin)
         env.set(
             "GC_CONDOR_SCRIPT", join_path(self.prefix, "share", "jobsplitter", "condor.script")

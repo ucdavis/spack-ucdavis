@@ -3,6 +3,8 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+from spack_repo.builtin.build_systems.meson import MesonPackage
+
 from spack.package import *
 
 
@@ -11,14 +13,12 @@ class Freebayes(MesonPackage):
     genotyping."""
 
     homepage = "https://github.com/freebayes/freebayes"
-    #url = "https://github.com/freebayes/freebayes/releases/download/v1.3.5/freebayes-1.3.5-src.tar.gz"
     url = "https://github.com/freebayes/freebayes/archive/refs/tags/v1.3.9.tar.gz"
     git = "https://github.com/freebayes/freebayes.git"
 
     license("MIT")
 
     version("1.3.9", sha256="41ed3074c7648375286168a6708e02dac6788eaca4ca6039ff5a7ed91f257b53")
-    #, tag="1.3.9", commit="ab36d1f789c039ba872f5d911ce6ff09952dc329", submodules=True)
     version("1.3.6", sha256="6016c1e58fdf34a1f6f77b720dd8e12e13a127f7cbac9c747e47954561b437f5")
     version("1.3.5", sha256="7e2635690e916ed85cec36b3263e6e5357413a4f2bf3035362d9749335e8a696")
     version(
@@ -83,7 +83,7 @@ class Freebayes(MesonPackage):
         return join_path(self.build_directory, "vcflib")
 
     @when("@1.3.4:")
-    def setup_build_environment(self, env):
+    def setup_build_environment(self, env: EnvironmentModifications) -> None:
         if self.run_tests:
             env.prepend_path("PATH", self.vcflib_builddir)
             env.prepend_path("PATH", self.build_directory)

@@ -3,6 +3,8 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+from spack_repo.builtin.build_systems.makefile import MakefilePackage
+
 from spack.package import *
 
 
@@ -16,6 +18,8 @@ class Megahit(CMakePackage):
     license("GPL-3.0-only")
 
     version("1.2.9", sha256="09026eb07cc4e2d24f58b0a13f7a826ae8bb73da735a47cb1cbe6e4693118852")
+    version("1.1.4", sha256="ecd64c8bfa516ef6b19f9b2961ede281ec814db836f1a91953c213c944e1575f")
+    version("1.1.3", sha256="b6eefdee075aaf7a8f9090e2e8b08b770caff90aa43a255e0e220d82ce71c492")
 
     depends_on("c", type="build")  # generated
     depends_on("cxx", type="build")  # generated
@@ -29,9 +33,9 @@ class Megahit(CMakePackage):
     def cmake_args(self):
         return ["-DCMAKE_BUILD_TYPE=Release"]
 
-    #def install(self, spec, prefix):
-    #    mkdirp(prefix.bin)
-    ##    install("megahit", prefix.bin)
-    #    install("megahit_asm_core", prefix.bin)
-    #    install("megahit_sdbg_build", prefix.bin)
-    #    install("megahit_toolkit", prefix.bin)
+    def install(self, spec, prefix):
+        mkdirp(prefix.bin)
+        install("megahit", prefix.bin)
+        install("megahit_asm_core", prefix.bin)
+        install("megahit_sdbg_build", prefix.bin)
+        install("megahit_toolkit", prefix.bin)
