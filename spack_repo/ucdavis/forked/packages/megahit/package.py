@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-from spack_repo.builtin.build_systems.makefile import MakefilePackage
+from spack_repo.builtin.build_systems.cmake import CmakePackage
 
 from spack.package import *
 
@@ -32,10 +32,3 @@ class Megahit(CMakePackage):
 
     def cmake_args(self):
         return ["-DCMAKE_BUILD_TYPE=Release"]
-
-    def install(self, spec, prefix):
-        mkdirp(prefix.bin)
-        install("megahit", prefix.bin)
-        install("megahit_asm_core", prefix.bin)
-        install("megahit_sdbg_build", prefix.bin)
-        install("megahit_toolkit", prefix.bin)
