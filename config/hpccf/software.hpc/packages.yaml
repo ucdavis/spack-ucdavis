@@ -1,35 +1,66 @@
 packages:
 
+  llvm:
+    externals:
+    - spec: llvm@14.0.0+clang~flang~lld~lldb
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          c: /usr/bin/clang
+          cxx: /usr/bin/clang++
+  gcc:
+    externals:
+    - spec: gcc@9.5.0 languages:='c,c++,fortran'
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          c: /usr/bin/gcc-9
+          cxx: /usr/bin/g++-9
+          fortran: /usr/bin/gfortran-9
+    - spec: gcc@11.4.0 languages:='c,c++,fortran'
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          c: /usr/bin/gcc
+          cxx: /usr/bin/g++
+          fortran: /usr/bin/gfortran
+    - spec: gcc@12.3.0 languages:='c,c++,fortran'
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          c: /usr/bin/gcc-12
+          cxx: /usr/bin/g++-12
+          fortran: /usr/bin/gfortran-12
   all:
     target: [x86_64_v3]
     compiler:
-      - gcc @13.2.0
+    - gcc @13.2.0
     providers:
       tbb:
-        - intel-oneapi-tbb
+      - intel-oneapi-tbb
       fftw-api:
-        - fftw
+      - fftw
       mkl:
-        - intel-oneapi-mkl
+      - intel-oneapi-mkl
       mpi:
-        - openmpi
-        - mpich
+      - openmpi
+      - mpich
       mysql-client:
-        - mariadb
+      - mariadb
     variants:
-      - cuda_arch=75,86
+    - cuda_arch=75,86
 
   apptainer:
     externals:
-      - spec: apptainer@1.3.4
-        prefix: /user
+    - spec: apptainer@1.3.4
+      prefix: /user
     buildable: false
 
   cairo:
     require: +X +ft +fc +pdf +png +gobject
 
   cuda:
-    require: '+allow-unsupported-compilers'
+    require: +allow-unsupported-compilers
 
   dbus:
     require: '@1.13.6 system-socket=/var/run/dbus/system_bus_socket'
@@ -43,56 +74,56 @@ packages:
   # When mpi=openmpi, this introduces an unresolvable dependency.
   # See https://github.com/spack/spack/issues/15836 for details
   hwloc:
-    require: '+pci +libxml2 +libudev +nvml +cuda +cairo cuda_arch=75,86'
+    require: +pci +libxml2 +libudev +nvml +cuda +cairo cuda_arch=75,86
 
   mariadb:
     externals:
-      - spec: mariadb@10.8.2 %gcc
-        prefix: /usr
+    - spec: mariadb@10.8.2 %gcc
+      prefix: /usr
     buildable: false
 
   mariadb-c-client:
     externals:
-      - spec: mariadb-c-client@3 %gcc
-        prefix: /usr
+    - spec: mariadb-c-client@3 %gcc
+      prefix: /usr
 
   mpich:
-    require: 'netmod=ucx pmi=pmix +cuda cuda_arch=75,86'
+    require: netmod=ucx pmi=pmix +cuda cuda_arch=75,86
 
   munge:
     externals:
-      - spec: munge@0.5.14 %gcc
-        prefix: /usr
+    - spec: munge@0.5.14 %gcc
+      prefix: /usr
     buildable: false
 
   mysql-client:
     require:
-      - spec: mariadb
-        message: 'mysql-client: require system-installed mariadb'
+    - spec: mariadb
+      message: 'mysql-client: require system-installed mariadb'
 
   mysql@5.6.44:
     require: ^openssl@1.0.2u
 
   nvhpc:
-    require: '+blas +lapack +mpi'
+    require: +blas +lapack +mpi
 
   openmpi:
     require:
-      - spec: '+atomics fabrics=ucx schedulers=slurm +cuda cuda_arch=75,86'
-        message: 'openmpi: always enforce these variants'
-        when: '@:'
-      - spec: '+legacylaunchers'
-        message: 'openmpi: legacylaunchers for versions @:4'
-        when: '@:4'
-      - spec: 'romio-filesystem=nfs,quobytefs'
-        when: '@5:'
-        message: 'openmpi: romio-filesystem variants for @5:'
+    - spec: +atomics fabrics=ucx schedulers=slurm +cuda cuda_arch=75,86
+      message: 'openmpi: always enforce these variants'
+      when: '@:'
+    - spec: +legacylaunchers
+      message: 'openmpi: legacylaunchers for versions @:4'
+      when: '@:4'
+    - spec: romio-filesystem=nfs,quobytefs
+      when: '@5:'
+      message: 'openmpi: romio-filesystem variants for @5:'
 
   rust:
-    require: '+dev'
+    require: +dev
 
   slurm:
-    require: '+pmix +mariadb +hwloc +restd +nvml +cgroup +pam sysconfdir=/etc/slurm'
+    require: +pmix +mariadb +hwloc +restd +nvml +cgroup +pam sysconfdir=/etc/slurm
 
   sqlite:
     variants: +rtree
@@ -102,17 +133,17 @@ packages:
 
   tar:
     require:
-      - spec: '%gcc'
-        message: 'tar: does not build properly with OneAPI'
+    - spec: '%gcc'
+      message: 'tar: does not build properly with OneAPI'
 
   tbb:
     require:
-      - spec: intel-oneapi-tbb
-        message: 'tbb: require intel-oneapi-tbb provider'
+    - spec: intel-oneapi-tbb
+      message: 'tbb: require intel-oneapi-tbb provider'
   ucx:
-    require: '+cma +dc +dm +gdrcopy +ib_hw_tm +knem +mlx5_dv +openmp +optimizations +rc +rdmacm +thread_multiple +ucg +ud +verbs +xpmem'
+    require: +cma +dc +dm +gdrcopy +ib_hw_tm +knem +mlx5_dv +openmp +optimizations +rc +rdmacm +thread_multiple +ucg +ud +verbs +xpmem
 
   xmlto:
     require:
-      - spec: '%gcc'
-        message: 'xmlto: does not build properly with OneAPI'
+    - spec: '%gcc'
+      message: 'xmlto: does not build properly with OneAPI'
