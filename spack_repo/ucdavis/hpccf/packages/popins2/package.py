@@ -21,6 +21,7 @@
 # ----------------------------------------------------------------------------
 
 from spack import *
+from spack_repo.builtin.build_systems.makefile import MakefilePackage
 
 
 class Popins2(MakefilePackage):

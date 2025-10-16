@@ -22,6 +22,7 @@
 
 import os.path
 
+from spack_repo.builtin.build_systems.r import RPackage
 from spack.package import *
 
 

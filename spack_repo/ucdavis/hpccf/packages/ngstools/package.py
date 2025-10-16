@@ -9,6 +9,7 @@ import os
 # looks like this import isn't necessary (or supported) anymore
 #from llnl.util import filesystem, tty
 
+from spack_repo.builtin.build_systems.makefile import MakefilePackage
 from spack.package import *
 
 
