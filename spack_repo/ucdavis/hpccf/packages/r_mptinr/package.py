@@ -3,22 +3,7 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-# ----------------------------------------------------------------------------
-# If you submit this package back to Spack as a pull request,
-# please first remove this boilerplate and all FIXME comments.
-#
-# This is a template package file for Spack.  We've put "FIXME"
-# next to all the things you'll want to change. Once you've handled
-# them, you can save this file and test your package like this:
-#
-#     spack install r-mptinr
-#
-# You can edit this file again by typing:
-#
-#     spack edit r-mptinr
-#
-# See the Spack documentation for more information on packaging.
-# ----------------------------------------------------------------------------
+from spack_repo.builtin.build_systems.r import RPackage
 
 from spack.package import *
 
@@ -30,22 +15,12 @@ class RMptinr(RPackage):
     homepage = "https://cran.r-project.org/web/packages/MPTinR/index.html"
     cran = "MPTinR"
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers = ["github_user1", "github_user2"]
-
     version("1.14.1", sha256="e07a3daa74bcc67e565db1d85c88b7260a8ab09eb22bd700766d8f1a67d9dc4b")
 
-    # FIXME: Add dependencies if required.
-    # depends_on("r-foo", type=("build", "run"))
     depends_on("r@4:", type=("build", "run"))
     depends_on("r-numderiv", type=("build", "run"))
     depends_on("r-brobdingnag", type=("build", "run"))
     depends_on("r-rcpp", type=("build", "run"))
     depends_on("r-rcppeigen", type=("build", "run"))
 
-    def configure_args(self):
-        # FIXME: Add arguments to pass to install via --configure-args
-        # FIXME: If not needed delete this function
-        args = []
-        return args
+
