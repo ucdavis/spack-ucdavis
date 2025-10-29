@@ -1,13 +1,24 @@
 packages:
 
-  llvm:
-    externals:
-    - spec: llvm@14.0.0+clang~flang~lld~lldb
-      prefix: /usr
-      extra_attributes:
-        compilers:
-          c: /usr/bin/clang
-          cxx: /usr/bin/clang++
+  all:
+    target: [x86_64_v3]
+    #prefer:
+    #- '%gcc@11.4.0 arch=linux-ubuntu22.04-x86_64_v3'
+    providers:
+      tbb:
+      - intel-oneapi-tbb
+      fftw-api:
+      - fftw
+      mkl:
+      - intel-oneapi-mkl
+      mpi:
+      - openmpi
+      - mpich
+      mysql-client:
+      - mariadb
+    variants:
+    - cuda_arch=75,86
+
   gcc:
     externals:
     - spec: gcc@9.5.0 languages:='c,c++,fortran'
