@@ -5,11 +5,10 @@ spack:
   - $generic-specs
   - $cuda-specs
   - $messaging-specs
-  - $openssl-specs
   - $julia-specs
   view:
     default:
-      root: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view
+      root: /cvmfs/hpc.ucdavis.edu/sw/spack/env/core/view
       projections:
         slurm: generic/slurm
         tcl: generic/{name}-{version}
@@ -23,4 +22,11 @@ spack:
   concretizer:
     unify: false
     reuse: false
-
+  include_concrete:
+    - /cvmfs/hpc.ucdavis.edu/sw/spack/env/compilers
+  packages:
+    gcc:
+      buildable: False
+  modules:
+    default:
+      enable:: []

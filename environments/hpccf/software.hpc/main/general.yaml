@@ -1,5 +1,5 @@
   definitions:
-    - general-specs:
+    - general-pkgs:
       - abyss @2.3.10 ^openmpi@4 
       #- amber @20 +cuda cuda_arch=75 ^openmpi@4 # manual download required
       - angsd @0.935
@@ -28,7 +28,7 @@
       - braker @2.1.6 ^augustus@3.5 ^perl@5.34.1 # due to perl-threads incompat with perl >=5.36
       - busco @5.4.3 ^augustus@3.5 
       - bwa @0.7.17
-      - bwa-mem2 @2.2.1 %intel target=x86_64_v3
+        
       - bwtool @1.0
       - canu @2.2
       - cap3 @2015-02-11
@@ -46,11 +46,11 @@
       - cmake @3.3.1
       - code-server @4.12.0
       - corset @1.09
-      - coverm @0.6.1 %gcc@11.4.0 ^bwa-mem2%intel
+      - coverm @0.6.1 ^bwa-mem2%intel
       - cp2k @2024.1 +cuda cuda_arch=70 ^fftw
       - cplex @12.10.0
       - cufflinks @2.2.1
-      - dashing @0.4.0 %gcc@7.5.0 # used by coverm
+        
       - dashing @1.0.3
       - distangsd @main
       - dealii @9.5.1 +cuda ^fftw
@@ -103,7 +103,7 @@
       - glimpse2 @2.0.0
       - gmt @6.4.0 +blas +ffmpeg +fftw +geos +glib +graphicsmagick +lapack +pcre
       - gnuplot @6.0.0
-      - gromacs @2019.6 +cuda ^fftw %nvhpc ^openmpi@4.1.5
+        
       - gromacs @2022.3 +cp2k +cuda ^fftw +mpi
       - gromacs @2023.4 +cp2k +cuda ^fftw +mpi
       - hh-suite @3.3.0
@@ -139,7 +139,7 @@
       - masurca @4.1.0
       - maven @3.8.4
       - mcl @14-137
-      - megahit @1.2.9 %gcc@7.5.0
+        
       - meme @5.3.0
       - metabat @2.15
       - metaeuk @7-bba0d80
@@ -162,7 +162,7 @@
       - nextflow @23.10.1
       - ngsadmix @2018-03-19
       - ngsrelate @2.0
-      - ngstools @2024-08-27 %gcc@11.4.0
+        
       - ninja-phylogeny @0.98
       - numactl @2.0.14
       #- nwchem @7.2.3 +fftw3 +openmp ^fftw ^openblas ^openmpi
@@ -174,7 +174,7 @@
       - orthomcl @2.0.9
       - paml @4.10.7
       - parallel @20220522
-      - paraview @5.11.2 %gcc@11.4 +cuda +tbb +hdf5 cuda_arch=75 ^mesa~llvm
+      - paraview @5.11.2 +cuda +tbb +hdf5 cuda_arch=75 ^mesa~llvm
       - parmetis @4.0.3 ^openmpi
       - phydrus-fortran @0.2.0
       - phylip @3.697
@@ -222,7 +222,7 @@
       - root @6.24.08
       - root @6.28.04 +pythia6 +pythia8 +python +fortran +fftw
       - rsem @1.3.3
-      - rstudio@2024.09.0-375 +server +external_libr %gcc@13.2 ^r@=4.4.2
+      - rstudio@2024.09.0-375 +server +external_libr ^r@=4.4.2
       - sabre @2013-09-27
       - salmon @1.10.3
       - samtools @1.16.1
@@ -265,3 +265,9 @@
       - vsearch @2.22.1
       - yasm @1.3.0
       - yq @4.44.3
+    - general-specs:
+      - bwa-mem2 @2.2.1 %intel target=x86_64_v3
+      - dashing @0.4.0 %gcc@7.5.0 # used by coverm
+      - gromacs @2019.6 +cuda ^fftw %nvhpc ^openmpi@4.1.5
+      - megahit @1.2.9 %gcc@7.5.0
+      - ngstools @2024-08-27 %gcc@11.4.0

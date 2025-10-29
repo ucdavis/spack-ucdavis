@@ -12,11 +12,11 @@
       # Ongoing issue with OneAPI and CUDA: https://github.com/spack/spack/issues/40374
       - matrix:
         - [$relion-cuda-pkgs]
-        - ['%gcc@13.2.0 ^cuda@11.7.1+allow-unsupported-compilers ^amdfftw ^ctffind +openmp',
-           '%intel +mklfft +gpu_delay cflags="-O3 -ip -g -xCOMMON-AVX512 -restrict " cxxflags="-O3 -ip -g -xCOMMON-AVX512 -restrict " ^cuda@11.7.1+allow-unsupported-compilers ^intel-oneapi-mkl ^ctffind +openmp ^intel-oneapi-mkl']
+        - ['^cuda@11.7.1+allow-unsupported-compilers ^amdfftw ^ctffind +openmp',
+           '+mklfft +gpu_delay cflags="-O3 -ip -g -xCOMMON-AVX512 -restrict " cxxflags="-O3 -ip -g -xCOMMON-AVX512 -restrict " %intel ^cuda@11.7.1+allow-unsupported-compilers ^intel-oneapi-mkl ^ctffind +openmp ^intel-oneapi-mkl']
       - matrix:
         - [$relion-cpu-pkgs]
-        - ['%gcc@13.2.0 ^amdfftw']
+        - ['^amdfftw']
 
       - 'relion-bbr @3.1.2 %intel +gui +cuda +mklfft cuda_arch=75 purpose=cluster cflags="-O3 -ip -g -xCOMMON-AVX512 -restrict " cxxflags="-O3 -ip -g -xCOMMON-AVX512 -restrict " ^intel-oneapi-mkl ^ctffind +openmp ^intel-oneapi-mkl ^cuda@11.2.2+allow-unsupported-compilers'
 

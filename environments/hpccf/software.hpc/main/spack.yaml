@@ -7,36 +7,60 @@ spack:
   - general.yaml
   - perl.yaml
   - cryoem.yaml
+  include_concrete:
+  - /cvmfs/hpc.ucdavis.edu/sw/spack/env/core
   specs:
   # splatted specs, see definitions
   - $compiler-pkgs
   - $generic-specs
   - $cuda-specs
   - $messaging-specs
-  - $openssl-specs
-  - $cryoem-specs
-  - matrix:
-    - [julia]
-    - [$julia-versions]
-    - ['%gcc@=13.2.0 arch=linux-ubuntu22.04-x86_64_v3']
-  - matrix:
-    - [$utils-specs]
-    - [arch=linux-ubuntu22.04-x86_64_v3]
-  - matrix:
-    - [$general-specs]
-    - [arch=linux-ubuntu22.04-x86_64_v3]
-  - matrix:
-    - [$perl-specs]
-    - [arch=linux-ubuntu22.04-x86_64_v3]
+  - $julia-specs
+  #- $cryoem-specs
+
+    #- matrix:
+    #  - [$utils-specs]
+    #  - [$default-target]
+
+    #- matrix:
+    #  - [$general-pkgs]
+    #  - [$default-target]
+    #- $general-specs
+
+    #- matrix:
+    #  - [$perl-specs]
+    #  - [$default-target]
+
   - matrix:
     - [$libs-specs]
     - [$targets]
-  - apptainer # external
+
+  #packages:
+  #  aocc: {buildable: False}
+  #  gcc: {buildable: False}
+  #  intel-oneapi-compilers: {buildable: False}
+  #  intel-oneapi-compilers-classic: {buildable: False}
+  #  llvm: {buildable: False}
+  #  nvhpc: {buildable: False}
+  #  mpich: {buildable: False}
+  #  openmpi: {buildable: False}
+  #  pmix: {buildable: False}
+  #  libevent: {buildable: False}
+  #  ucx: {buildable: False}
+  #  #environment-modules: {buildable: False}
+  #  slurm: {buildable: False}
+  #  hwloc: {buildable: False}
+  #  go: {buildable: False}
+  #  julia: {buildable: False}
+  #  rust: {buildable: False}
+  #  cuda: {buildable: False}
+  #  jdk: {buildable: False}
+  #  openjdk: {buildable: False}
   view:
     default:
       root: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view
       exclude:
-      - llvm
+      #- llvm
       - repeatmasker # short term fix: repeatmasker is downloading giant DB files
       projections:
         "target=x86_64_v3 %oneapi": oneapi/{name}-{version}
@@ -72,14 +96,15 @@ spack:
             '%intel': '%icc@{compiler.version}'
             '%gcc@7.5': '%gcc@{compiler.version}'
             '%gcc@9.5': '%gcc@{compiler.version}'
-            '%gcc@11.4': '%gcc@{compiler.version}'
+            '%gcc@13.4': '%gcc@{compiler.version}'
+            '%gcc@15.1': '%gcc@{compiler.version}'
             '%aocc': '%aocc@{compiler.version}'
             '%nvhpc': '%nvhpc@{compiler.version}'
             '%clang': '%clang@{compiler.version}'
         #hide_implicits: false
         defaults:
-        - cuda @12.3
-        - '%gcc@13.2'
+        - cuda @12.6.2
+        - '%gcc@11.4.0'
         exclude:
         - mariadb
         - environment-modules
@@ -129,3 +154,4 @@ spack:
               SQUEUE_FORMAT2: 'JobID:10,UserName:16 ,Partition:14 ,Name:20 ,StateCompact:4,TimeLeft:13,NumCPUs:6,NumNodes:6,tres-per-node:14,ReasonList'
   concretizer:
     unify: false
+    reuse: true

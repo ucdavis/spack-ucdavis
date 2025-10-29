@@ -2,10 +2,10 @@ spack:
   include:
   - definitions.yaml
   specs:
-  - $compiler-specs
+  - $compiler-pkgs
   view:
     default:
-      root: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view
+      root: /cvmfs/hpc.ucdavis.edu/sw/spack/env/compilers/view
       projections:
         gcc: '{name}-{version}'
         aocc: '{name}-{version}'
@@ -14,21 +14,11 @@ spack:
         nvhpc: '{name}-{version}'
         llvm: 'clang-{version}'
       link: roots
-      link_type: hardlink
+      link_type: copy
+  modules:
+    default:
+      enable:: []
   concretizer:
     unify: false
     reuse: false
-  compilers::
-  - compiler:
-      spec: gcc@=11.4.0
-      paths:
-        cc: /usr/bin/gcc-11
-        cxx: /usr/bin/g++-11
-        f77: /usr/bin/gfortran-11
-        fc: /usr/bin/gfortran-11
-      flags: {}
-      operating_system: ubuntu22.04
-      target: x86_64
-      modules: []
-      environment: {}
-      extra_rpaths: []
+
