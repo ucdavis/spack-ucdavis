@@ -2,29 +2,29 @@
     - relion-cuda-pkgs:
       - relion @5.0.0 +gui +cuda purpose=cluster torch_home=/share/databases/relion/torch conda_python=/cvmfs/hpc.ucdavis.edu/sw/conda/environments/relion-5.0/bin/python
       - relion @4.0.1 +gui +cuda +gpu_delay purpose=cluster 
-      #- relion @3.1.3 +gui +cuda +gpu_delay purpose=cluster
     - relion-cpu-pkgs:
       - relion @5.0.0 +gui ~cuda +altcpu purpose=cluster torch_home=/share/databases/relion/torch conda_python=/cvmfs/hpc.ucdavis.edu/sw/conda/environments/relion-5.0/bin/python
       - relion @4.0.1 +gui ~cuda +altcpu purpose=cluster
-      #- relion @3.1.3 +gui ~cuda +altcpu purpose=cluster
 
     - relion-specs:
       # Ongoing issue with OneAPI and CUDA: https://github.com/spack/spack/issues/40374
       - matrix:
         - [$relion-cuda-pkgs]
-        - ['^cuda@11.7.1+allow-unsupported-compilers ^amdfftw ^ctffind +openmp',
-           '+mklfft +gpu_delay cflags="-O3 -ip -g -xCOMMON-AVX512 -restrict " cxxflags="-O3 -ip -g -xCOMMON-AVX512 -restrict " %intel ^cuda@11.7.1+allow-unsupported-compilers ^intel-oneapi-mkl ^ctffind +openmp ^intel-oneapi-mkl']
+        - ['%gcc_default ^cuda@11.7.1+allow-unsupported-compilers ^amdfftw ^ctffind +openmp',
+           '+mklfft +gpu_delay cflags="-O3 -ip -g -xCOMMON-AVX512 -restrict " cxxflags="-O3 -ip -g -xCOMMON-AVX512 -restrict " %intel_default ^cuda@11.7.1+allow-unsupported-compilers ^intel-oneapi-mkl ^ctffind +openmp ^intel-oneapi-mkl']
       - matrix:
         - [$relion-cpu-pkgs]
-        - ['^amdfftw']
+        - ['%gcc_default ^amdfftw ^ctffind +openmp',
+           '+mklfft cflags="-O3 -ip -g -xCOMMON-AVX512 -restrict " cxxflags="-O3 -ip -g -xCOMMON-AVX512 -restrict " %intel_default ^intel-oneapi-mkl ^ctffind +openmp ^intel-oneapi-mkl']
+ 
 
-      - 'relion-bbr @3.1.2 %intel +gui +cuda +mklfft cuda_arch=75 purpose=cluster cflags="-O3 -ip -g -xCOMMON-AVX512 -restrict " cxxflags="-O3 -ip -g -xCOMMON-AVX512 -restrict " ^intel-oneapi-mkl ^ctffind +openmp ^intel-oneapi-mkl ^cuda@11.2.2+allow-unsupported-compilers'
+      - 'relion-bbr @3.1.2 +gui +cuda +mklfft cuda_arch=75 purpose=cluster cflags="-O3 -ip -g -xCOMMON-AVX512 -restrict " cxxflags="-O3 -ip -g -xCOMMON-AVX512 -restrict " %intel_default ^intel-oneapi-mkl ^ctffind +openmp ^intel-oneapi-mkl ^cuda@11.2.2+allow-unsupported-compilers'
 
     - cryoem-specs:
       - $relion-specs
-      - gctf @1.06
-      - motioncor2 @1.5.0
-      - ghostscript @10.03.1
-      - ctffind +openmp %intel ^intel-oneapi-mkl
-      - ctffind +openmp %gcc@13.2.0 ^amdfftw  
-      - unblur@1.0.2 target=x86_64_v3 ^cuda@11.7.1
+      - gctf @1.06 %gcc_default
+      - motioncor2 @1.5.0 %gcc_default
+      - ghostscript @10.03.1 %gcc_default
+      - ctffind +openmp %intel_default ^intel-oneapi-mkl
+      - ctffind +openmp %gcc_default ^amdfftw  
+      - unblur@1.0.2 %gcc_default ^cuda@11.7.1

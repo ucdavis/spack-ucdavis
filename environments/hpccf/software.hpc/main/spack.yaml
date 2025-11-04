@@ -1,13 +1,14 @@
 spack:
   include:
-  - ../compilers/definitions.yaml
-  - ../core/definitions.yaml
+  - /cvmfs/hpc.ucdavis.edu/sw/spack/env/compilers/definitions.yaml
+  - /cvmfs/hpc.ucdavis.edu/sw/spack/env/core/definitions.yaml
   - libs.yaml
   - utils.yaml
   - general.yaml
   - perl.yaml
   - cryoem.yaml
   include_concrete:
+  - /cvmfs/hpc.ucdavis.edu/sw/spack/env/compilers
   - /cvmfs/hpc.ucdavis.edu/sw/spack/env/core
   specs:
   # splatted specs, see definitions
@@ -15,7 +16,6 @@ spack:
   - $generic-specs
   - $cuda-specs
   - $messaging-specs
-  - $julia-specs
   #- $cryoem-specs
 
     #- matrix:
@@ -33,7 +33,7 @@ spack:
 
   - matrix:
     - [$libs-specs]
-    - [$targets]
+    - [$compilers]
 
   #packages:
   #  aocc: {buildable: False}

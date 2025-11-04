@@ -2,10 +2,7 @@ spack:
   include:
   - definitions.yaml
   specs:
-  - $generic-specs
-  - $cuda-specs
-  - $messaging-specs
-  - $julia-specs
+  - $core-specs
   view:
     default:
       root: /cvmfs/hpc.ucdavis.edu/sw/spack/env/core/view
@@ -13,20 +10,18 @@ spack:
         slurm: generic/slurm
         tcl: generic/{name}-{version}
         environment-modules: generic/environment-modules
-        "target=x86_64_v3 %oneapi": oneapi/{name}-{version}
+        "target=x86_64_v3 %oneapi": oneapi-{compiler.version}/{name}-{version}
         target=x86_64_v3: generic/{name}-{version}
         target=zen2: zen2/{name}-{version}
         target=zen3: zen3/{name}-{version}
       link: roots
       link_type: hardlink
   concretizer:
-    unify: false
+    unify: when_possible
     reuse: false
-  include_concrete:
-    - /cvmfs/hpc.ucdavis.edu/sw/spack/env/compilers
-  packages:
-    gcc:
-      buildable: False
+  #packages:
+  #  gcc:
+  #    buildable: False
   modules:
     default:
       enable:: []
