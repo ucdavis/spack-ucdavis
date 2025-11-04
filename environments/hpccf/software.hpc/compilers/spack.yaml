@@ -2,7 +2,9 @@ spack:
   include:
   - definitions.yaml
   specs:
-  - $compiler-pkgs
+  - matrix:
+    - [$compiler-pkgs]
+    - ['%gcc_default']
   view:
     default:
       root: /cvmfs/hpc.ucdavis.edu/sw/spack/env/compilers/view
@@ -14,7 +16,7 @@ spack:
         nvhpc: '{name}-{version}'
         llvm: 'clang-{version}'
       link: roots
-      link_type: copy
+      link_type: hardlink
   modules:
     default:
       enable:: []
