@@ -1,0 +1,34 @@
+#%Module1.0
+
+module-whatis "Dev module tree."
+
+
+module unuse --prepend-on-unload \
+  /cvmfs/hpc.ucdavis.edu/sw/spack/modulefiles/main/linux-ubuntu22.04-x86_64_v3/core \
+  /cvmfs/hpc.ucdavis.edu/sw/spack/modulefiles/main/linux-ubuntu22.04-x86_64_v3/lang \
+  /cvmfs/hpc.ucdavis.edu/sw/spack/modulefiles/main/linux-ubuntu22.04-x86_64_v3/general
+
+if [module-info mode load] {
+
+  module use  \
+    /cvmfs/hpc.ucdavis.edu/sw/spack/modulefiles/dev/linux-ubuntu22.04-x86_64_v3/core \
+    /cvmfs/hpc.ucdavis.edu/sw/spack/modulefiles/dev/linux-ubuntu22.04-x86_64_v3/lang \
+    /cvmfs/hpc.ucdavis.edu/sw/spack/modulefiles/dev/linux-ubuntu22.04-x86_64_v3/general
+
+
+  module load slurm openmpi
+
+  puts stderr "
+This module loads the development module tree. All software in this
+tree is subject to change without notice, may not work as expected
+or intended, and may eat your cat or engage in behavior otherwise
+unsuitable for polite company."
+}
+
+if [module-info mode unload] {
+  module unuse \
+    /cvmfs/hpc.ucdavis.edu/sw/spack/modulefiles/dev/linux-ubuntu22.04-x86_64_v3/core \
+    /cvmfs/hpc.ucdavis.edu/sw/spack/modulefiles/dev/linux-ubuntu22.04-x86_64_v3/lang \
+    /cvmfs/hpc.ucdavis.edu/sw/spack/modulefiles/dev/linux-ubuntu22.04-x86_64_v3/general
+}
+
