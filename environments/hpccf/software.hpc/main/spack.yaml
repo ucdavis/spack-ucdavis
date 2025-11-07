@@ -32,6 +32,10 @@ spack:
     - [$libs-specs]
     - [$targets]
   - apptainer # external
+  - hpl@2.3 %gcc@13.2.0 ^openmpi@5.0.5 ^openblas threads=openmp 
+  - hpl@2.3 %gcc@13.2.0 ^mpich@4.2.1 ^openblas threads=openmp 
+  - intel-mpi-benchmarks @2021.7 %gcc@13.2.0 ^openmpi@5.0.5 
+  - intel-mpi-benchmarks @2021.7 %gcc@13.2.0 ^mpich@4.2.1
   view:
     default:
       root: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view
@@ -39,6 +43,8 @@ spack:
       - llvm
       - repeatmasker # short term fix: repeatmasker is downloading giant DB files
       projections:
+        hpl: bench/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
+        intel-mpi-benchmarks: bench/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
         "target=x86_64_v3 %oneapi": oneapi/{name}-{version}
         "target=x86_64_v3 %intel": intel/{name}-{version}
         target=x86_64_v3: generic/{name}-{version}
@@ -84,6 +90,8 @@ spack:
         - mariadb
         - environment-modules
         projections:
+          hpl: core/{name}/{version}+{^mpi.name}-{^mpi.version}
+          intel-mpi-benchmarks: core/{name}/{version}+{^mpi.name}-{^mpi.version}
           aocc: lang/aocc/{version}
           gcc: lang/gcc/{version}
           intel-oneapi-compilers: lang/oneapi/{version}

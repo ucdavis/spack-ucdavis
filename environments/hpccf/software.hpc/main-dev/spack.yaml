@@ -1,0 +1,238 @@
+spack:
+  include:
+  - ../compilers/definitions.yaml
+  - ../core-dev/definitions.yaml
+  specs:
+  # splatted specs, see definitions
+  - $compiler-pkgs
+  - $generic-specs
+  - $cuda-specs
+  - $messaging-specs
+  - hpl@2.3 %gcc@13.2.0 ^openmpi@5.0.5 ^openblas threads=openmp 
+  - hpl@2.3 %gcc@13.2.0 ^mpich@4.2.1 ^openblas threads=openmp
+  - intel-mpi-benchmarks @2021.7 %gcc@13.2.0 ^openmpi@5.0.5 
+  - intel-mpi-benchmarks @2021.7 %gcc@13.2.0 ^mpich@4.2.1
+  view:
+    default:
+      root: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/main-dev/view
+      exclude:
+      - llvm
+      - repeatmasker # short term fix: repeatmasker is downloading giant DB files
+      projections:
+        hpl: bench/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
+        intel-mpi-benchmarks: bench/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
+        "target=x86_64_v3 %oneapi": oneapi/{name}-{version}
+        "target=x86_64_v3 %intel": intel/{name}-{version}
+        target=x86_64_v3: generic/{name}-{version}
+        target=zen2: zen2/{name}-{version}
+        target=zen3: zen3/{name}-{version}
+      link: roots
+      link_type: symlink
+  modules:
+    prefix_inspections:
+      lib64:
+      - LD_LIBRARY_PATH
+      - LIBRARY_PATH
+      lib:
+      - LD_LIBRARY_PATH
+      - LIBRARY_PATH
+      include:
+      - CPATH
+      - C_INCLUDE_PATH
+      - CPLUS_INCLUDE_PATH
+    view_relative_modules:
+      use_view: true
+    default:
+      use_view: true
+      roots:
+        tcl: /cvmfs/hpc.ucdavis.edu/sw/spack/modulefiles/dev
+      tcl:
+        all:
+          autoload: run
+          suffixes:
+            '%oneapi': '%oneapi@{compiler.version}'
+            '%intel': '%icc@{compiler.version}'
+            '%gcc@7.5': '%gcc@{compiler.version}'
+            '%gcc@9.5': '%gcc@{compiler.version}'
+            '%gcc@11.4': '%gcc@{compiler.version}'
+            '%aocc': '%aocc@{compiler.version}'
+            '%nvhpc': '%nvhpc@{compiler.version}'
+            '%clang': '%clang@{compiler.version}'
+        #hide_implicits: false
+        defaults:
+        - cuda @12.3
+        - '%gcc@13.2'
+        exclude:
+        - mariadb
+        - environment-modules
+        projections:
+          hpl: core/{name}/{version}+{^mpi.name}-{^mpi.version}
+          intel-mpi-benchmarks: core/{name}/{version}+{^mpi.name}-{^mpi.version}
+          aocc: lang/aocc/{version}
+          gcc: lang/gcc/{version}
+          intel-oneapi-compilers: lang/oneapi/{version}
+          intel-oneapi-compilers-classic: lang/icc/{version}
+          llvm: lang/clang/{version}
+          nvhpc: lang/nvhpc/{version}
+          go: lang/go/{version}
+          jdk: lang/jdk/{version}
+          openjdk: lang/openjdk/{version}
+          julia: lang/julia/{version}
+          perl: lang/perl/{version}
+          rust: lang/rust/{version}
+          cuda: lang/cuda/{version}
+          mpich: core/{name}/{version}
+          openmpi: core/{name}/{version}
+          pmix: core/{name}/{version}
+          libevent: core/{name}/{version}
+          ucx: core/{name}/{version}
+          slurm: core/{name}/{version}
+          hwloc: core/{name}/{version}
+          py-quast: general/quast/{version}
+          py-alphafold: general/alphafold/{version}
+          py-htseq: general/htseq/{version}
+          py-multiqc: general/multiqc/{version}
+          apptainer: general/apptainer/latest
+          all: general/{name}/{version}
+        rstudio:
+          template: hpccf/rstudio.tcl
+        perl:
+          template: hpccf/perl.tcl
+        h5z-zfp:
+          environment:
+            prepend_path:
+              HDF5_PLUGIN_PATH: '{prefix}/plugin'
+        root:
+          environment:
+            prepend_path:
+              LD_LIBRARY_PATH: '{prefix}/lib/root'
+              LIBRARY_PATH: '{prefix}/lib/root'
+        slurm:
+          environment:
+            set:
+              SQUEUE_FORMAT2: 'JobID:10,UserName:16 ,Partition:14 ,Name:20 ,StateCompact:4,TimeLeft:13,NumCPUs:6,NumNodes:6,tres-per-node:14,ReasonList'
+  concretizer:
+    unify: false
+  packages:
+    hcoll::
+      externals:
+      - spec: hcoll@4.8.3230 %gcc@11
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230
+        extra_attributes:
+          environment:
+            prepend_path:
+              LD_LIBRARY_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/lib
+              LIBRARY_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/lib
+              CPATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/include
+              PKG_CONFIG_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/pkgconfig
+      buildable: False
+    hwloc::
+      externals:
+        - spec: hwloc@2.11.1+cairo+cuda~gl+libudev+libxml2+nvml~oneapi-level-zero~opencl+pci~rocm cuda_arch=75,86 libs=shared,static target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/hwloc-2.11.1
+        - spec: hwloc@2.11.1+cairo+cuda~gl+libudev+libxml2+nvml~oneapi-level-zero~opencl+pci~rocm cuda_arch=75,86 libs=shared,static target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/hwloc-2.11.1
+      buildable: false
+    slurm::
+      externals:
+        - spec: slurm@25-05-0-1 arch=linux-ubuntu22.04-x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/slurm
+      buildable: false
+    libevent::
+      externals:
+        - spec: libevent@2.1.12+openssl target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/libevent-2.1.12
+        - spec: libevent@2.1.12+openssl target=x86_64_v3 %oneapi
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/oneapi/libevent-2.1.12
+        - spec: libevent@2.1.12+openssl target=zen2
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/zen2/libevent-2.1.12
+        - spec: libevent@2.1.12+openssl target=zen3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/zen3/libevent-2.1.12
+      buildable: false
+    cuda::
+      externals:
+        - spec: cuda@12.6.2+allow-unsupported-compilers~dev target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/cuda-12.6.2
+        - spec: cuda@12.3.0+allow-unsupported-compilers~dev target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/cuda-12.3.0
+        - spec: cuda@11.7.1+allow-unsupported-compilers~dev target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/cuda-11.7.1
+        - spec: cuda@11.2.2+allow-unsupported-compilers~dev target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/cuda-11.2.2
+        - spec: cuda@10.2.89+allow-unsupported-compilers~dev target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/cuda-10.2.89
+        - spec: cuda@9.2.88+allow-unsupported-compilers~dev target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/cuda-9.2.88
+        - spec: cuda@8.0.61+allow-unsupported-compilers~dev target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/cuda-8.0.61
+      buildable: false
+    mpich::
+      require: ~hydra ~hcoll +xpmem +vci device=ch4 netmod=ucx pmi=pmix +fortran +romio +slurm +verbs +cuda cuda_arch=75,86
+      externals:
+        - spec: mpich@4.2.1 target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/mpich-4.2.1
+        - spec: mpich@4.2.1 target=x86_64_v3 %oneapi
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/oneapi/mpich-4.2.1
+        - spec: mpich@4.2.1 target=zen2
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/zen2/mpich-4.2.1
+        - spec: mpich@4.2.1 target=zen3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/zen3/mpich-4.2.1
+      buildable: false
+    openmpi::
+      require:
+      - spec: +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda cuda_arch=75,86
+        message: 'openmpi: always enforce these variants'
+        when: '@:'
+      - spec: +legacylaunchers +pmi
+        message: 'openmpi: legacylaunchers for versions @:4'
+        when: '@:4'
+      - spec: romio-filesystem=nfs,quobytefs
+        when: '@5:'
+        message: 'openmpi: romio-filesystem variants for @5:'
+      externals:
+        - spec: openmpi@4.1.5 +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda  target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/openmpi-4.1.5
+        - spec: openmpi@4.1.5 +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda  target=x86_64_v3 %oneapi
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/oneapi/openmpi-4.1.5
+        - spec: openmpi@4.1.7 +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda  target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/openmpi-4.1.7
+        - spec: openmpi@4.1.7 +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda  target=x86_64_v3 %oneapi
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/oneapi/openmpi-4.1.7
+        - spec: openmpi@5.0.5 +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/openmpi-5.0.5
+        - spec: openmpi@5.0.5 +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda target=x86_64_v3 %oneapi
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/oneapi/openmpi-5.0.5
+
+      buildable: false
+    ucx::
+      require: +cma +dc +dm ~gdrcopy +ib_hw_tm +knem +mlx5_dv +openmp +optimizations +rc +rdmacm +thread_multiple +ucg +ud +verbs +xpmem
+      externals:
+        - spec: ucx@1.17.0 target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/ucx-1.17.0
+        - spec: ucx@1.17.0 target=x86_64_v3 %oneapi
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/oneapi/ucx-1.17.0
+        - spec: ucx@1.17.0 target=zen2
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/zen2/ucx-1.17.0
+        - spec: ucx@1.17.0 target=zen3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/zen3/ucx-1.17.0
+      buildable: false
+    pmix::
+      externals:
+        - spec: pmix@4.2.9 target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/pmix-4.2.9
+        - spec: pmix@4.2.9 target=x86_64_v3 %oneapi
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/oneapi/pmix-4.2.9
+        - spec: pmix@4.2.9 target=zen2
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/zen2/pmix-4.2.9
+        - spec: pmix@4.2.9 target=zen3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/zen3/pmix-4.2.9
+        - spec: pmix@5.0.3 target=x86_64_v3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/pmix-5.0.3
+        - spec: pmix@5.0.3 target=x86_64_v3 %oneapi
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/oneapi/pmix-5.0.3
+        - spec: pmix@5.0.3 target=zen2
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/zen2/pmix-5.0.3
+        - spec: pmix@5.0.3 target=zen3
+          prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/zen3/pmix-5.0.3
+      buildable: false
+

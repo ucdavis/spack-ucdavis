@@ -1,0 +1,172 @@
+spack:
+  include:
+  - definitions.yaml
+  # add package specs to the `specs` list
+  specs:
+  - $generic-specs
+  - $cuda-specs
+  - $messaging-specs
+  #- hpl@2.3 %gcc@13.2.0 ^openmpi@5.0.5 ^openblas threads=openmp 
+  #- hpl@2.3 %gcc@13.2.0 ^mpich@4.2.1 ^openblas threads=openmp 
+  #- intel-mpi-benchmarks @2021.7 %gcc@13.2.0 ^openmpi@5.0.5 
+  #- intel-mpi-benchmarks @2021.7 %gcc@13.2.0 ^mpich@4.2.1
+  #- hpl@2.3 %aocc@5.0.0 ^openmpi@5.0.5 ^openblas threads=openmp 
+  #- hpl@2.3 %aocc@5.0.0 ^mpich@4.2.1 ^openblas threads=openmp 
+  view:
+    default:
+      root: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view
+      projections:
+        hpl: bench/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
+        intel-mpi-benchmarks: bench/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
+        slurm: generic/slurm
+        tcl: generic/{name}-{version}
+        environment-modules: generic/environment-modules
+        "target=x86_64_v3 %oneapi": oneapi/{name}-{version}
+        target=x86_64_v3: generic/{name}-{version}
+        target=zen2: zen2/{name}-{version}
+        target=zen3: zen3/{name}-{version}
+      link: roots
+      link_type: hardlink
+  concretizer:
+    unify: false
+    reuse: false
+  packages:
+    hcoll::
+      externals:
+      - spec: hcoll@4.8.3230 %gcc@11
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230
+        extra_attributes:
+          environment:
+            prepend_path:
+              LD_LIBRARY_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/lib
+              LIBRARY_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/lib
+              CPATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/include
+              PKG_CONFIG_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/pkgconfig
+      buildable: False
+    hwloc::
+      require: +pci +libxml2 +libudev +nvml +cuda +cairo cuda_arch=75,86
+    mpich::
+      require: ~hydra ~hcoll +xpmem +vci device=ch4 netmod=ucx pmi=pmix +fortran +romio +slurm +verbs +cuda cuda_arch=75,86
+    openmpi::
+      require:
+      - spec: +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda cuda_arch=75,86
+        message: 'openmpi: always enforce these variants'
+        when: '@:'
+      - spec: +legacylaunchers +pmi
+        message: 'openmpi: legacylaunchers for versions @:4'
+        when: '@:4'
+      - spec: romio-filesystem=nfs,quobytefs
+        when: '@5:'
+        message: 'openmpi: romio-filesystem variants for @5:'
+    slurm::
+      require: +pmix +mariadb +hwloc +restd +nvml +cgroup +pam sysconfdir=/etc/slurm
+    ucc::
+      require: +cuda cuda_arch=75,86
+      externals:
+      - spec: ucc @1.4.0 +cuda cuda_arch=75,86
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0
+        extra_attributes:
+          environment:
+            prepend_path:
+              LD_LIBRARY_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0/lib
+              LIBRARY_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0/lib
+              CPATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0/include
+              PKG_CONFIG_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0/pkgconfig
+      buildable: False
+    ucx::
+      require: +cma +dc +dm ~gdrcopy +ib_hw_tm +knem +mlx5_dv +openmp +optimizations +rc +rdmacm +thread_multiple +ucg +ud +verbs +xpmem
+#  modules:
+#    prefix_inspections:
+#      lib64:
+#      - LD_LIBRARY_PATH
+#      - LIBRARY_PATH
+#      lib:
+#      - LD_LIBRARY_PATH
+#      - LIBRARY_PATH
+#      include:
+#      - CPATH
+#      - C_INCLUDE_PATH
+#      - CPLUS_INCLUDE_PATH
+#    view_relative_modules:
+#      use_view: true
+#    default:
+#      arch_folder: true
+#      use_view: true
+#      roots:
+#        tcl: /cvmfs/hpc.ucdavis.edu/sw/spack/modulefiles/dev
+#      enable::
+#      - tcl
+#      tcl:
+#        hash_length: 0
+#        hide_implicits: true
+#        all:
+#          autoload: run
+#          environment:
+#            set:
+#              '{name}_ROOT': '{prefix}'
+#          template: hpccf/default.tcl
+#          conflict:
+#          - '{name}'
+#          suffixes:
+#            '%oneapi': '%oneapi@{compiler.version}'
+#            '%intel': '%icc@{compiler.version}'
+#            '%gcc@7.5': '%gcc@{compiler.version}'
+#            '%gcc@9.5': '%gcc@{compiler.version}'
+#            '%gcc@11.4': '%gcc@{compiler.version}'
+#            '%aocc': '%aocc@{compiler.version}'
+#            '%nvhpc': '%nvhpc@{compiler.version}'
+#            '%clang': '%clang@{compiler.version}'
+#        #hide_implicits: false
+#        defaults:
+#        - cuda @12.3
+#        - '%gcc@13.2'
+#        exclude:
+#        - mariadb
+#        - environment-modules
+#        projections:
+#          hpl: core/{name}/{version}+{^mpi.name}-{^mpi.version}
+#          intel-mpi-benchmarks: core/{name}/{version}+{^mpi.name}-{^mpi.version}
+#          aocc: lang/aocc/{version}
+#          gcc: lang/gcc/{version}
+#          intel-oneapi-compilers: lang/oneapi/{version}
+#          intel-oneapi-compilers-classic: lang/icc/{version}
+#          llvm: lang/clang/{version}
+#          nvhpc: lang/nvhpc/{version}
+#          go: lang/go/{version}
+#          jdk: lang/jdk/{version}
+#          openjdk: lang/openjdk/{version}
+#          julia: lang/julia/{version}
+#          perl: lang/perl/{version}
+#          rust: lang/rust/{version}
+#          cuda: lang/cuda/{version}
+#          mpich: core/{name}/{version}
+#          openmpi: core/{name}/{version}
+#          pmix: core/{name}/{version}
+#          libevent: core/{name}/{version}
+#          ucx: core/{name}/{version}
+#          slurm: core/{name}/{version}
+#          hwloc: core/{name}/{version}
+#          py-quast: general/quast/{version}
+#          py-alphafold: general/alphafold/{version}
+#          py-htseq: general/htseq/{version}
+#          py-multiqc: general/multiqc/{version}
+#          apptainer: general/apptainer/latest
+#          all: general/{name}/{version}
+#        rstudio:
+#          template: hpccf/rstudio.tcl
+#        perl:
+#          template: hpccf/perl.tcl
+#        h5z-zfp:
+#          environment:
+#            prepend_path:
+#              HDF5_PLUGIN_PATH: '{prefix}/plugin'
+#        root:
+#          environment:
+#            prepend_path:
+#              LD_LIBRARY_PATH: '{prefix}/lib/root'
+#              LIBRARY_PATH: '{prefix}/lib/root'
+#        slurm:
+#          environment:
+#            set:
+#              SQUEUE_FORMAT2: 'JobID:10,UserName:16 ,Partition:14 ,Name:20 ,StateCompact:4,TimeLeft:13,NumCPUs:6,NumNodes:6,tres-per-node:14,ReasonList'
+#
