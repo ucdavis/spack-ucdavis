@@ -22,6 +22,18 @@ packages:
       prefix: /user
     buildable: false
 
+  julia:
+    externals:
+    - spec: julia@1.12.1
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/julia
+    buildable: False
+
+  rust:
+    externals:
+    - spec: rust@1.91.0
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/rust/1.91.0
+    buildable: False
+
   ####
   # Externals: buildable
   ####
@@ -43,9 +55,6 @@ packages:
 
   cuda:
     require: '+allow-unsupported-compilers'
-
-  rust:
-    require: '+dev'
       
   slurm:
     require: '+pmix +mariadb +hwloc +restd +nvml +cgroup +pam sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3'
