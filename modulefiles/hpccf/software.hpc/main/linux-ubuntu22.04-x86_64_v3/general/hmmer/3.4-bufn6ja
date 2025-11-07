@@ -1,30 +1,28 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:32:24.406831
+## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:58:55.859043
 ##
-## rust@1.78.0%gcc@13.2.0+dev~docs+src build_system=generic arch=linux-ubuntu22.04-x86_64_v3/5z2gfnf
-##
-## Configure options: unknown, software installed outside of Spack
+## hmmer@3.4%gcc@13.2.0~gsl+mpi build_system=generic arch=linux-ubuntu22.04-x86_64_v3/bufn6ja
 ##
 
 
-module-whatis {The Rust programming language toolchain.}
+module-whatis {HMMER is used for searching sequence databases for sequence homologs, and for making sequence alignments. It implements methods using probabilistic models called profile hidden Markov models (profile HMMs). }
 
 proc ModulesHelp { } {
-    puts stderr {Name   : rust}
-    puts stderr {Version: 1.78.0}
+    puts stderr {Name   : hmmer}
+    puts stderr {Version: 3.4}
     puts stderr {Target : x86_64_v3}
     puts stderr {}
-    puts stderr {The Rust programming language toolchain.}
+    puts stderr {HMMER is used for searching sequence databases for sequence homologs,}
+    puts stderr {and for making sequence alignments. It implements methods using}
+    puts stderr {probabilistic models called profile hidden Markov models (profile HMMs).}
 }
 
-conflict rust
+conflict hmmer
 
-prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.78.0/lib}
-prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.78.0/lib}
-prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.78.0/bin}
-prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.78.0/share/man}
-prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.78.0/.}
-setenv RUST_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/rust-1.78.0}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/hmmer-3.4-bufn6jasgwkpg22yixdaaasuvg6rzigu/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/hmmer-3.4-bufn6jasgwkpg22yixdaaasuvg6rzigu/share/man}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/hmmer-3.4-bufn6jasgwkpg22yixdaaasuvg6rzigu/.}
+setenv HMMER_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/hmmer-3.4-bufn6jasgwkpg22yixdaaasuvg6rzigu}
 append-path MANPATH {}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {

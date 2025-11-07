@@ -1,0 +1,78 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 14:37:09.639993
+##
+## py-humanize@4.9.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/zqcgqvk
+##
+
+
+module-whatis {This modest package contains various common humanization utilities, like turning a number into a fuzzy human readable duration ('3 minutes ago') or into a human readable size or throughput. It works with python 2.7 and 3.3 and is localized to Russian, French, Korean and Slovak. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-humanize}
+    puts stderr {Version: 4.9.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {This modest package contains various common humanization utilities, like}
+    puts stderr {turning a number into a fuzzy human readable duration ('3 minutes ago')}
+    puts stderr {or into a human readable size or throughput. It works with python 2.7}
+    puts stderr {and 3.3 and is localized to Russian, French, Korean and Slovak.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load general/py-hatch-vcs/0.4.0-5p5o6qx
+    module load general/py-hatchling/1.25.0-enhwxcs
+    module load general/python/3.11.9
+    module load general/python-venv/1.0-ed2nmwx
+} else {
+    depends-on general/py-hatch-vcs/0.4.0-5p5o6qx
+    depends-on general/py-hatchling/1.25.0-enhwxcs
+    depends-on general/python/3.11.9
+    depends-on general/python-venv/1.0-ed2nmwx
+}
+conflict py-humanize
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-humanize-4.9.0-zqcgqvkyxotciglpnxiv4uekwk3xyeyt/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-humanize-4.9.0-zqcgqvkyxotciglpnxiv4uekwk3xyeyt/lib}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-humanize-4.9.0-zqcgqvkyxotciglpnxiv4uekwk3xyeyt/.}
+prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-humanize-4.9.0-zqcgqvkyxotciglpnxiv4uekwk3xyeyt/lib/python3.11/site-packages}
+setenv PY_HUMANIZE_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-humanize-4.9.0-zqcgqvkyxotciglpnxiv4uekwk3xyeyt}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+
