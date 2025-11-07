@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:37.690155
+## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:25:45.818941
 ##
 ## pmix@4.2.9%gcc@13.2.0~munge~python~restful build_system=autotools arch=linux-ubuntu22.04-zen3/mzacwv7
 ##
@@ -35,17 +35,7 @@ proc ModulesHelp { } {
 
 conflict pmix
 
-prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-4.2.9/lib}
-prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-4.2.9/lib}
-prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-4.2.9/include}
-prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-4.2.9/include}
-prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-4.2.9/include}
-prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-4.2.9/bin}
-prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-4.2.9/share/man}
-prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-4.2.9/lib/pkgconfig}
-prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-4.2.9/.}
 setenv PMIX_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-4.2.9}
-append-path MANPATH {}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 

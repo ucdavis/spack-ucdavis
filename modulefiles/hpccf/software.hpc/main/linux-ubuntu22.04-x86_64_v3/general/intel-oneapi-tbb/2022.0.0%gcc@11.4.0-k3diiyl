@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:04.922026
+## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:25:11.221192
 ##
 ## intel-oneapi-tbb@2022.0.0%gcc@11.4.0+envmods build_system=generic arch=linux-ubuntu22.04-x86_64_v3/k3diiyl
 ##
@@ -23,12 +23,12 @@ proc ModulesHelp { } {
 conflict intel-oneapi-tbb
 
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-tbb-2022.0.0-k3diiylu5kre2r36ugrnjzz3imubaaca/.}
-prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-tbb-2022.0.0-k3diiylu5kre2r36ugrnjzz3imubaaca/tbb/2022.0/env/..}
-prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-tbb-2022.0.0-k3diiylu5kre2r36ugrnjzz3imubaaca/tbb/2022.0/env/../include}
-prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-tbb-2022.0.0-k3diiylu5kre2r36ugrnjzz3imubaaca/tbb/2022.0/env/../lib/intel64/gcc4.8}
-prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-tbb-2022.0.0-k3diiylu5kre2r36ugrnjzz3imubaaca/tbb/2022.0/env/../lib/intel64/gcc4.8}
-prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-tbb-2022.0.0-k3diiylu5kre2r36ugrnjzz3imubaaca/tbb/2022.0/env/../lib/pkgconfig}
 setenv TBBROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-tbb-2022.0.0-k3diiylu5kre2r36ugrnjzz3imubaaca/tbb/2022.0/env/..}
+setenv CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-tbb-2022.0.0-k3diiylu5kre2r36ugrnjzz3imubaaca/tbb/2022.0/env/..}
+setenv CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-tbb-2022.0.0-k3diiylu5kre2r36ugrnjzz3imubaaca/tbb/2022.0/env/../include}
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-tbb-2022.0.0-k3diiylu5kre2r36ugrnjzz3imubaaca/tbb/2022.0/env/../lib/intel64/gcc4.8}
+setenv LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-tbb-2022.0.0-k3diiylu5kre2r36ugrnjzz3imubaaca/tbb/2022.0/env/../lib/intel64/gcc4.8}
+setenv PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-tbb-2022.0.0-k3diiylu5kre2r36ugrnjzz3imubaaca/tbb/2022.0/env/../lib/pkgconfig}
 setenv INTEL_ONEAPI_TBB_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-oneapi-tbb-2022.0.0-k3diiylu5kre2r36ugrnjzz3imubaaca}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {

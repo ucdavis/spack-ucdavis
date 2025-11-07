@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:04.107687
+## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:25:10.350378
 ##
 ## intel-oneapi-mkl@2024.0.0%oneapi@2025.0.0~cluster+envmods~gfortran~ilp64+shared build_system=generic mpi_family=none threads=none arch=linux-ubuntu22.04-x86_64_v3/trwtw6v
 ##
@@ -24,14 +24,14 @@ proc ModulesHelp { } {
 conflict intel-oneapi-mkl
 
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/oneapi/intel-oneapi-mkl-2024.0.0/.}
+setenv MKLROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/oneapi/intel-oneapi-mkl-2024.0.0/mkl/2024.0}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/oneapi/intel-oneapi-mkl-2024.0.0/mkl/2024.0/lib/cmake:}
 prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/oneapi/intel-oneapi-mkl-2024.0.0/mkl/2024.0/include:}
-prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/oneapi/intel-oneapi-mkl-2024.0.0/mkl/2024.0/lib:}
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/oneapi/intel-oneapi-mkl-2024.0.0/mkl/2024.0/lib}
 prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/oneapi/intel-oneapi-mkl-2024.0.0/mkl/2024.0/lib/:}
-setenv MKLROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/oneapi/intel-oneapi-mkl-2024.0.0/mkl/2024.0}
-prepend-path NLSPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/oneapi/intel-oneapi-mkl-2024.0.0/mkl/2024.0/share/locale/%l_%t/%N:}
-prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/oneapi/intel-oneapi-mkl-2024.0.0/mkl/2024.0/lib/pkgconfig:}
+prepend-path NLSPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/oneapi/intel-oneapi-mkl-2024.0.0/mkl/2024.0/share/locale/%l_%t/%N}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/oneapi/intel-oneapi-mkl-2024.0.0/mkl/2024.0/bin/}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/oneapi/intel-oneapi-mkl-2024.0.0/mkl/2024.0/lib/pkgconfig:}
 setenv INTEL_ONEAPI_MKL_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/oneapi-2025.0.0/intel-oneapi-mkl-2024.0.0-trwtw6v4bx3cohnwtqim46jt2rsnyuqm}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {

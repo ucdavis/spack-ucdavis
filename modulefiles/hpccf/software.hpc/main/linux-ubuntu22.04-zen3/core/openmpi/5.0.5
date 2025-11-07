@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:27.219395
+## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:25:33.863434
 ##
 ## openmpi@5.0.5%gcc@13.2.0+atomics+cuda~debug~gpfs~internal-hwloc~internal-libevent~internal-pmix~java~lustre~memchecker~openshmem~romio+rsh~static~two_level_namespace+vt+wrapper-rpath build_system=autotools cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm arch=linux-ubuntu22.04-zen3/zsquaxn
 ##
@@ -26,22 +26,12 @@ proc ModulesHelp { } {
 
 conflict openmpi
 
-prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/lib}
-prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/lib}
-prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/include}
-prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/include}
-prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/include}
-prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/bin}
-prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/share/man}
-prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/lib/pkgconfig}
-prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/.}
 setenv MPICC {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/bin/mpicc}
 setenv MPICXX {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/bin/mpic++}
 setenv MPIF77 {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/bin/mpif77}
 setenv MPIF90 {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/bin/mpif90}
 setenv MPIFC {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5/bin/mpifort}
 setenv OPENMPI_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5}
-append-path MANPATH {}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 

@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-06-26 17:16:41.004820
+## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:25:04.737655
 ##
 ## hdf5@1.14.3%gcc@13.2.0~cxx+fortran+hl~ipo~java~map+mpi+shared~subfiling~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make patches=82088c8,f42732a arch=linux-ubuntu22.04-x86_64_v3/4b3ovzp
 ##
@@ -20,9 +20,9 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load general/pkgconf/2.2.0-rtve2ea
+    module load pkgconf/2.2.0-rtve2ea
 } else {
-    depends-on general/pkgconf/2.2.0-rtve2ea
+    depends-on pkgconf/2.2.0-rtve2ea
 }
 conflict hdf5
 

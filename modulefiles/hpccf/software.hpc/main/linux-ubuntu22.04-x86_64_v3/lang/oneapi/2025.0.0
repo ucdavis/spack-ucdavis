@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-05-19 12:29:02.050833
+## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:25:08.224983
 ##
 ## intel-oneapi-compilers@2025.0.0%gcc@13.2.0~amd+envmods~nvidia build_system=generic arch=linux-ubuntu22.04-x86_64_v3/xnpldlp
 ##
@@ -23,16 +23,17 @@ proc ModulesHelp { } {
 conflict intel-oneapi-compilers
 
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2025.0.0/.}
-prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0}
 setenv CMPLR_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0}
-prepend-path DIAGUTIL_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0/etc/compiler/sys_check/sys_check.sh}
-prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0/opt/compiler/lib:/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0/lib}
-prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0/lib}
-prepend-path NLSPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0/lib/compiler/locale/%l_%t/%N}
 setenv OCL_ICD_FILENAMES {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0/lib/libintelocl.so}
-prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0/lib/pkgconfig}
-prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0/share/man:/home/software-user/.nvm/versions/node/v16.18.0/share/man::/opt/puppetlabs/puppet/share/man:/home/software-user/.fzf/man::/home/software-user/.fzf/man}
+setenv CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0}
+prepend-path DIAGUTIL_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0/etc/compiler/sys_check/sys_check.sh}
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0/lib}
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0/opt/compiler/lib}
+setenv LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0/lib}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0/share/man}
+prepend-path NLSPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0/lib/compiler/locale/%l_%t/%N}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0/bin}
+setenv PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2025.0.0/compiler/2025.0/lib/pkgconfig}
 setenv CC {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2025.0.0/compiler/2025.0/bin/icx}
 setenv CXX {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2025.0.0/compiler/2025.0/bin/icpx}
 setenv F77 {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2025.0.0/compiler/2025.0/bin/ifx}
