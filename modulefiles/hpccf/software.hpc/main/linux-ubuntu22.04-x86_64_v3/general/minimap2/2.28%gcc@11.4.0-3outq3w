@@ -18,11 +18,11 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load general/python/3.11.9%gcc@11.4.0-fo4apfe
-    module load general/python-venv/1.0%gcc@11.4.0-5vh5ddy
+    module load python/3.11.9%gcc@11.4.0-fo4apfe
+    module load python-venv/1.0%gcc@11.4.0-5vh5ddy
 } else {
-    depends-on general/python/3.11.9%gcc@11.4.0-fo4apfe
-    depends-on general/python-venv/1.0%gcc@11.4.0-5vh5ddy
+    depends-on python/3.11.9%gcc@11.4.0-fo4apfe
+    depends-on python-venv/1.0%gcc@11.4.0-5vh5ddy
 }
 conflict minimap2
 

@@ -20,9 +20,9 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load general/pkgconf/2.2.0-rtve2ea
+    module load pkgconf/2.2.0-rtve2ea
 } else {
-    depends-on general/pkgconf/2.2.0-rtve2ea
+    depends-on pkgconf/2.2.0-rtve2ea
 }
 conflict hdf5
 

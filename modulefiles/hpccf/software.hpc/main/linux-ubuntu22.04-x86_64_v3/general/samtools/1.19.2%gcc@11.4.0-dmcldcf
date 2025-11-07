@@ -18,11 +18,11 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load lang/perl/5.40.0%gcc@11.4.0-cwpt5ec
-    module load general/python/3.11.9%gcc@11.4.0-fo4apfe
+    module load perl/5.40.0%gcc@11.4.0-cwpt5ec
+    module load python/3.11.9%gcc@11.4.0-fo4apfe
 } else {
-    depends-on lang/perl/5.40.0%gcc@11.4.0-cwpt5ec
-    depends-on general/python/3.11.9%gcc@11.4.0-fo4apfe
+    depends-on perl/5.40.0%gcc@11.4.0-cwpt5ec
+    depends-on python/3.11.9%gcc@11.4.0-fo4apfe
 }
 conflict samtools
 

@@ -20,15 +20,15 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load lang/cuda/12.6.2
-    module load general/py-numpy/1.25.2-2wshlgs
-    module load general/python/3.11.9
-    module load general/python-venv/1.0-ed2nmwx
+    module load cuda/12.6.2
+    module load py-numpy/1.25.2-2wshlgs
+    module load python/3.11.9
+    module load python-venv/1.0-ed2nmwx
 } else {
-    depends-on lang/cuda/12.6.2
-    depends-on general/py-numpy/1.25.2-2wshlgs
-    depends-on general/python/3.11.9
-    depends-on general/python-venv/1.0-ed2nmwx
+    depends-on cuda/12.6.2
+    depends-on py-numpy/1.25.2-2wshlgs
+    depends-on python/3.11.9
+    depends-on python-venv/1.0-ed2nmwx
 }
 conflict openmm
 

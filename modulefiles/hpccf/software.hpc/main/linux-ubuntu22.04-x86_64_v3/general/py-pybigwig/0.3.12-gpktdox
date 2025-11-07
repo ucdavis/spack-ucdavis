@@ -16,15 +16,15 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load general/curl/8.11.1-zy57ylh
-    module load general/py-numpy/2.1.2-rif434b
-    module load general/python/3.11.9
-    module load general/python-venv/1.0-ed2nmwx
+    module load curl/8.11.1-zy57ylh
+    module load py-numpy/2.1.2-rif434b
+    module load python/3.11.9
+    module load python-venv/1.0-ed2nmwx
 } else {
-    depends-on general/curl/8.11.1-zy57ylh
-    depends-on general/py-numpy/2.1.2-rif434b
-    depends-on general/python/3.11.9
-    depends-on general/python-venv/1.0-ed2nmwx
+    depends-on curl/8.11.1-zy57ylh
+    depends-on py-numpy/2.1.2-rif434b
+    depends-on python/3.11.9
+    depends-on python-venv/1.0-ed2nmwx
 }
 conflict py-pybigwig
 

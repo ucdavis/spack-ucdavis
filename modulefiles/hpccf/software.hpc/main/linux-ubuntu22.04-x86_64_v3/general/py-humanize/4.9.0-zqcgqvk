@@ -19,15 +19,15 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load general/py-hatch-vcs/0.4.0-5p5o6qx
-    module load general/py-hatchling/1.25.0-enhwxcs
-    module load general/python/3.11.9
-    module load general/python-venv/1.0-ed2nmwx
+    module load py-hatch-vcs/0.4.0-5p5o6qx
+    module load py-hatchling/1.25.0-enhwxcs
+    module load python/3.11.9
+    module load python-venv/1.0-ed2nmwx
 } else {
-    depends-on general/py-hatch-vcs/0.4.0-5p5o6qx
-    depends-on general/py-hatchling/1.25.0-enhwxcs
-    depends-on general/python/3.11.9
-    depends-on general/python-venv/1.0-ed2nmwx
+    depends-on py-hatch-vcs/0.4.0-5p5o6qx
+    depends-on py-hatchling/1.25.0-enhwxcs
+    depends-on python/3.11.9
+    depends-on python-venv/1.0-ed2nmwx
 }
 conflict py-humanize
 

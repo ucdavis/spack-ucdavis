@@ -16,21 +16,21 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load general/git/2.47.0-mustgck
-    module load general/py-packaging/24.1-a36mhum
-    module load general/py-setuptools/69.2.0-rhq2cbb
-    module load general/py-tomli/2.0.1-qvzohea
-    module load general/py-typing-extensions/4.12.2-h4iey52
-    module load general/python/3.11.9
-    module load general/python-venv/1.0-ed2nmwx
+    module load git/2.47.0-mustgck
+    module load py-packaging/24.1-a36mhum
+    module load py-setuptools/69.2.0-rhq2cbb
+    module load py-tomli/2.0.1-qvzohea
+    module load py-typing-extensions/4.12.2-h4iey52
+    module load python/3.11.9
+    module load python-venv/1.0-ed2nmwx
 } else {
-    depends-on general/git/2.47.0-mustgck
-    depends-on general/py-packaging/24.1-a36mhum
-    depends-on general/py-setuptools/69.2.0-rhq2cbb
-    depends-on general/py-tomli/2.0.1-qvzohea
-    depends-on general/py-typing-extensions/4.12.2-h4iey52
-    depends-on general/python/3.11.9
-    depends-on general/python-venv/1.0-ed2nmwx
+    depends-on git/2.47.0-mustgck
+    depends-on py-packaging/24.1-a36mhum
+    depends-on py-setuptools/69.2.0-rhq2cbb
+    depends-on py-tomli/2.0.1-qvzohea
+    depends-on py-typing-extensions/4.12.2-h4iey52
+    depends-on python/3.11.9
+    depends-on python-venv/1.0-ed2nmwx
 }
 conflict py-setuptools-scm
 

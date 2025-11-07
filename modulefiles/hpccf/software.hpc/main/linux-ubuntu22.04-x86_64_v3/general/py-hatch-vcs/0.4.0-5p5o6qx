@@ -16,15 +16,15 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load general/py-hatchling/1.25.0-enhwxcs
-    module load general/py-setuptools-scm/8.0.4-2lhuzq3
-    module load general/python/3.11.9
-    module load general/python-venv/1.0-ed2nmwx
+    module load py-hatchling/1.25.0-enhwxcs
+    module load py-setuptools-scm/8.0.4-2lhuzq3
+    module load python/3.11.9
+    module load python-venv/1.0-ed2nmwx
 } else {
-    depends-on general/py-hatchling/1.25.0-enhwxcs
-    depends-on general/py-setuptools-scm/8.0.4-2lhuzq3
-    depends-on general/python/3.11.9
-    depends-on general/python-venv/1.0-ed2nmwx
+    depends-on py-hatchling/1.25.0-enhwxcs
+    depends-on py-setuptools-scm/8.0.4-2lhuzq3
+    depends-on python/3.11.9
+    depends-on python-venv/1.0-ed2nmwx
 }
 conflict py-hatch-vcs
 

@@ -20,9 +20,9 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load general/openssh/9.9p1-nz2r5xo
+    module load openssh/9.9p1-nz2r5xo
 } else {
-    depends-on general/openssh/9.9p1-nz2r5xo
+    depends-on openssh/9.9p1-nz2r5xo
 }
 conflict git
 
