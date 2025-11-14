@@ -1,33 +1,30 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-11-12 11:39:00.102136
+## Module file created by spack (https://github.com/spack/spack) on 2025-11-14 11:35:24.825570
 ##
-## julia@1.12.1%gcc@13.2.0+openlibm+precompile build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/sbz6yk7
+## glibc@2.27%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64_v3/txizrnr
 ##
 ## Configure options: unknown, software installed outside of Spack
 ##
 
 
-module-whatis {The Julia Language: A fresh approach to technical computing}
+module-whatis {The GNU C Library provides many of the low-level components used directly by programs written in the C or C++ languages.}
 
 proc ModulesHelp { } {
-    puts stderr {Name   : julia}
-    puts stderr {Version: 1.12.1}
+    puts stderr {Name   : glibc}
+    puts stderr {Version: 2.27}
     puts stderr {Target : x86_64_v3}
     puts stderr {}
-    puts stderr {The Julia Language: A fresh approach to technical computing}
+    puts stderr {The GNU C Library provides many of the low-level components used}
+    puts stderr {directly by programs written in the C or C++ languages.}
 }
 
-conflict julia
+conflict glibc
 
-prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1/lib}
-prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1/lib}
-prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1/include}
-prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1/include}
-prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1/include}
-prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1/bin}
-prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1/share/man}
-prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1/.}
-setenv JULIA_ROOT {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1}
+prepend-path MANPATH {/usr/share/man}
+prepend-path ACLOCAL_PATH {/usr/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/usr/lib/pkgconfig}
+prepend-path PKG_CONFIG_PATH {/usr/share/pkgconfig}
+setenv GLIBC_ROOT {/usr}
 append-path MANPATH {}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {

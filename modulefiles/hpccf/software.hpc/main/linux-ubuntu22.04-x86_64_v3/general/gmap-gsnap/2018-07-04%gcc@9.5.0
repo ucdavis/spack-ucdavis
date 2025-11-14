@@ -1,34 +1,31 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-11-12 11:39:00.102136
+## Module file created by spack (https://github.com/spack/spack) on 2025-11-14 11:54:36.630745
 ##
-## julia@1.12.1%gcc@13.2.0+openlibm+precompile build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/sbz6yk7
-##
-## Configure options: unknown, software installed outside of Spack
+## gmap-gsnap@2018-07-04%gcc@9.5.0 build_system=autotools simd=avx2 arch=linux-ubuntu22.04-x86_64_v3/6xjixbp
 ##
 
 
-module-whatis {The Julia Language: A fresh approach to technical computing}
+module-whatis {GMAP: A Genomic Mapping and Alignment Program for mRNA and EST Sequences, and GSNAP: Genomic Short-read Nucleotide Alignment Program}
 
 proc ModulesHelp { } {
-    puts stderr {Name   : julia}
-    puts stderr {Version: 1.12.1}
+    puts stderr {Name   : gmap-gsnap}
+    puts stderr {Version: 2018-07-04}
     puts stderr {Target : x86_64_v3}
     puts stderr {}
-    puts stderr {The Julia Language: A fresh approach to technical computing}
+    puts stderr {GMAP: A Genomic Mapping and Alignment Program for mRNA and EST}
+    puts stderr {Sequences, and GSNAP: Genomic Short-read Nucleotide Alignment Program}
 }
 
-conflict julia
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.40.0%gcc@7.5.0-uf3kcbe
+} else {
+    depends-on perl/5.40.0%gcc@7.5.0-uf3kcbe
+}
+conflict gmap-gsnap
 
-prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1/lib}
-prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1/lib}
-prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1/include}
-prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1/include}
-prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1/include}
-prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1/bin}
-prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1/share/man}
-prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1/.}
-setenv JULIA_ROOT {/cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1}
-append-path MANPATH {}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/gmap-gsnap-2018-07-04/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/gmap-gsnap-2018-07-04/.}
+setenv GMAP_GSNAP_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-9.5.0/gmap-gsnap-2018-07-04-6xjixbp6zlxsady3v3t4akxupmajgujn}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 
