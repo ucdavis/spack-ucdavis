@@ -1,0 +1,85 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:48:11.049440
+##
+## py-biom-format@2.1.15%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/446wwj7
+##
+
+
+module-whatis {The BIOM file format (canonically pronounced biome) is designed to be a general-use format for representing biological sample by observation contingency tables.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-biom-format}
+    puts stderr {Version: 2.1.15}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The BIOM file format (canonically pronounced biome) is designed to be a}
+    puts stderr {general-use format for representing biological sample by observation}
+    puts stderr {contingency tables.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-click/8.1.7-tanfvoj
+    module load py-h5py/3.12.1-a5swayt
+    module load py-numpy/1.25.2-tsyaifo
+    module load py-pandas/2.2.3-gknvgig
+    module load py-scipy/1.11.4-psoirni
+    module load python/3.9.19-twalwsz
+    module load python-venv/1.0-p4aivh3
+} else {
+    depends-on py-click/8.1.7-tanfvoj
+    depends-on py-h5py/3.12.1-a5swayt
+    depends-on py-numpy/1.25.2-tsyaifo
+    depends-on py-pandas/2.2.3-gknvgig
+    depends-on py-scipy/1.11.4-psoirni
+    depends-on python/3.9.19-twalwsz
+    depends-on python-venv/1.0-p4aivh3
+}
+conflict py-biom-format
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-biom-format-2.1.15-446wwj7cqsuwnhaerqt3lvfwi47lv3ca/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-biom-format-2.1.15-446wwj7cqsuwnhaerqt3lvfwi47lv3ca/lib}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-biom-format-2.1.15-446wwj7cqsuwnhaerqt3lvfwi47lv3ca/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-biom-format-2.1.15-446wwj7cqsuwnhaerqt3lvfwi47lv3ca/.}
+prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-biom-format-2.1.15-446wwj7cqsuwnhaerqt3lvfwi47lv3ca/lib/python3.9/site-packages}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-biom-format-2.1.15-446wwj7cqsuwnhaerqt3lvfwi47lv3ca/bin}
+setenv PY_BIOM_FORMAT_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-biom-format-2.1.15-446wwj7cqsuwnhaerqt3lvfwi47lv3ca}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

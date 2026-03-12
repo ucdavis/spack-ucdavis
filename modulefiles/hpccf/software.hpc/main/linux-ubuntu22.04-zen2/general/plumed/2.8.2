@@ -1,9 +1,9 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:25:45.629732
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:47:58.899719
 ##
-## plumed@2.8.2%gcc@13.2.0+gsl+mpi+shared arrayfire=none build_system=autotools optional_modules=all arch=linux-ubuntu22.04-zen2/5wloj5x
+## plumed@2.8.2%gcc@13.2.0+gsl+mpi+shared arrayfire=none build_system=autotools optional_modules=all arch=linux-ubuntu22.04-zen2/n5m6sn6
 ##
-## Configure options: --disable-ld-r --enable-mpi CXX=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-5.0.5/bin/mpic++ LDFLAGS=-L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/gsl-2.8-p35qlswwx2yrz6alfyusckuun5hovj6h/lib -L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/openblas-0.3.28-4lssodlgin7wpb5iekkzbjbu6uc7bubu/lib -lgsl -lopenblas --enable-shared=yes --enable-gsl=yes --enable-af_cpu=no --enable-af_cuda=no --enable-af_ocl=no --enable-modules=all
+## Configure options: --disable-ld-r --enable-mpi CXX=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/mpich-4.2.1/bin/mpic++ LDFLAGS=-L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/gsl-2.8-p35qlswwx2yrz6alfyusckuun5hovj6h/lib -L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/openblas-0.3.25-5gaqx4urjzvpfazafmwrjlvpvwuvfrgi/lib -lgsl -lopenblas --enable-shared=yes --enable-gsl=yes --enable-af_cpu=no --enable-af_cuda=no --enable-af_ocl=no --enable-modules=all
 ##
 
 
@@ -34,7 +34,7 @@ prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/ma
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/plumed-2.8.2/bin}
 prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/plumed-2.8.2/lib/pkgconfig}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/zen2/plumed-2.8.2/.}
-setenv PLUMED_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/plumed-2.8.2-5wloj5xjjuhz5v5bgo4wmuw6s2yvfrms}
+setenv PLUMED_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/plumed-2.8.2-n5m6sn64risni6uklmhsusrss7yrc7zz}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 

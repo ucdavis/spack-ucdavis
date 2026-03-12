@@ -1,7 +1,7 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:28:36.382347
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:50:37.615486
 ##
-## repeatmodeler@2.0.4%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/lkl7v73
+## repeatmodeler@2.0.4%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/pk5lawh
 ##
 
 
@@ -20,7 +20,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load blat/35-p5cmd4d
     module load cdhit/4.8.1
     module load genometools/1.6.5-y3cat7f
-    module load ltr-retriever/2.8.7-xujqtqv
+    module load ltr-retriever/2.8.7-bbaso2h
     module load mafft/7.525-d3lothm
     module load ncbi-rmblastn/2.14.0-spm6vjl
     module load ninja-phylogeny/0.98
@@ -32,14 +32,14 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load perl-libwww-perl/6.68
     module load perl-uri/5.08-d7o47om
     module load recon/1.05-ho4frxr
-    module load repeatmasker/4.0.9-eomdn5k
+    module load repeatmasker/4.0.9-4755u2c
     module load repeatscout/1.0.5
     module load trf/4.09.1-ojcphvp
 } else {
     depends-on blat/35-p5cmd4d
     depends-on cdhit/4.8.1
     depends-on genometools/1.6.5-y3cat7f
-    depends-on ltr-retriever/2.8.7-xujqtqv
+    depends-on ltr-retriever/2.8.7-bbaso2h
     depends-on mafft/7.525-d3lothm
     depends-on ncbi-rmblastn/2.14.0-spm6vjl
     depends-on ninja-phylogeny/0.98
@@ -51,7 +51,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     depends-on perl-libwww-perl/6.68
     depends-on perl-uri/5.08-d7o47om
     depends-on recon/1.05-ho4frxr
-    depends-on repeatmasker/4.0.9-eomdn5k
+    depends-on repeatmasker/4.0.9-4755u2c
     depends-on repeatscout/1.0.5
     depends-on trf/4.09.1-ojcphvp
 }
@@ -59,7 +59,7 @@ conflict repeatmodeler
 
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/repeatmodeler-2.0.4/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/repeatmodeler-2.0.4/.}
-setenv REPEATMODELER_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/repeatmodeler-2.0.4-lkl7v73momkxhq5u2zvuov3otrl3v7sv}
+setenv REPEATMODELER_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/repeatmodeler-2.0.4-pk5lawhy6x772bn4y6l6etazkaxazwjv}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 

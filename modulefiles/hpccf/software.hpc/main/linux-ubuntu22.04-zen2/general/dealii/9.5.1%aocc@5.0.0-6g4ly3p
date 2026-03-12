@@ -1,0 +1,70 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-29 13:37:07.767103
+##
+## dealii@9.5.1%aocc@5.0.0+adol-c+arborx+arpack+assimp+cgal~cuda~doc+examples+examples_compile+ginkgo~gmsh+gsl+hdf5~int64~ipo+kokkos+metis+mpi+muparser~nanoflann~netcdf~oce~optflags+p4est+petsc+platform-introspection~python+scalapack+simplex+slepc+sundials+symengine+threads+trilinos build_system=cmake build_type=DebugRelease cxxstd=17 generator=make arch=linux-ubuntu22.04-zen2/6g4ly3p
+##
+## Configure options: -DDEAL_II_EXAMPLES_RELDIR:STRING=share/deal.II/examples -DDEAL_II_DOCREADME_RELDIR:STRING=share/deal.II/ -DDEAL_II_DOCHTML_RELDIR:STRING=share/deal.II/doc -DBOOST_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/boost-1.79.0-5bj5dzyrx5zcbp3zcv6f4cpt6z5lpbu5 -DLAPACK_FOUND:BOOL=ON -DLAPACK_INCLUDE_DIRS:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdlibflame-5.0-w7dpbfq2wmyspkagg3o55s2hhjvjvwt5/include;/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdblis-5.0-m2cy2pduxmplj6nw26oqaozk76ertcjd/include -DLAPACK_LIBRARIES:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdlibflame-5.0-w7dpbfq2wmyspkagg3o55s2hhjvjvwt5/lib/libflame.so;/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdblis-5.0-m2cy2pduxmplj6nw26oqaozk76ertcjd/lib/libblis-mt.so -DUMFPACK_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/suite-sparse-7.7.0-rfauvgy2gym6asapdwn4x5zszflzv2qd -DZLIB_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.2.1-fhud6vqkh7jaesckalgqg5xxml72in6i -DDEAL_II_ALLOW_BUNDLED:BOOL=OFF -DDEAL_II_COMPONENT_DOCUMENTATION:BOOL=OFF -DDEAL_II_COMPONENT_EXAMPLES:BOOL=ON -DDEAL_II_COMPILE_EXAMPLES:BOOL=ON -DDEAL_II_WITH_64BIT_INDICES:BOOL=OFF -DDEAL_II_WITH_CUDA:BOOL=OFF -DDEAL_II_WITH_MPI:BOOL=ON -DMPI_C_COMPILER:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/openmpi-5.0.5/bin/mpicc -DMPI_CXX_COMPILER:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/openmpi-5.0.5/bin/mpic++ -DMPI_Fortran_COMPILER:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/openmpi-5.0.5/bin/mpif90 -DMPI_CXX_LINK_FLAGS:STRING=-lopen-pal -DCMAKE_CXX_COMPILER:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/src/main/lib/spack/env/aocc/clang++ -DDEAL_II_COMPONENT_PYTHON_BINDINGS:BOOL=OFF -DDEAL_II_WITH_TBB:BOOL=ON -DTBB_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/intel-oneapi-tbb-2021.11.0-qakmr4qnaxtrcvkxzzg4wh3rttvyybhg -DDEAL_II_WITH_ARBORX:BOOL=ON -DARBORX_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/arborx-1.3-xd5nub5mocnghuoq7q347pandzqnlsuz -DDEAL_II_WITH_ASSIMP:BOOL=ON -DASSIMP_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/assimp-5.4.3-y5w2johijnybyuytphuyov5f52bnfdfh -DDEAL_II_WITH_CGAL:BOOL=ON -DCGAL_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/cgal-5.6-zg7s7sg7misojm2ufixmfpt4ef5nxyeg -DDEAL_II_WITH_GINKGO:BOOL=ON -DGINKGO_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/ginkgo-1.8.0-txrqyfbpxso6vsd723o7q2co6nvxhj4v -DDEAL_II_WITH_GMSH:BOOL=OFF -DDEAL_II_WITH_GSL:BOOL=ON -DGSL_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/gsl-2.7.1-a3imvlbhobwelif6hlxri35aebg5jwmw -DDEAL_II_WITH_HDF5:BOOL=ON -DHDF5_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/hdf5-1.14.5-gn3yblq663owwdahivkgiz26ix6ajlro -DDEAL_II_WITH_METIS:BOOL=ON -DMETIS_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/metis-5.1.0-2mbus75vq4p2m2jjwmcpbqtzqliogsao -DDEAL_II_WITH_MUPARSER:BOOL=ON -DMUPARSER_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/muparser-2.3.4-nkdpawwzp2pgf6226fouaezsca5jx7oy -DDEAL_II_WITH_NANOFLANN:BOOL=OFF -DDEAL_II_WITH_P4EST:BOOL=ON -DP4EST_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/p4est-2.8-tti6v5vtygjyd3663x2s544fnmoigjxu -DDEAL_II_WITH_PETSC:BOOL=ON -DPETSC_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/petsc-3.22.1-txzirzbsewc7yu564uwefpvtrrslfsmf -DDEAL_II_WITH_SLEPC:BOOL=ON -DSLEPC_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/slepc-3.22.1-ehuq3x4fte3orgpcbkecvuhpjj3umubk -DDEAL_II_WITH_SUNDIALS:BOOL=ON -DSUNDIALS_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/sundials-6.7.0-xuzbfwcfqvthrukteyo2zwfmkpxvys6e -DDEAL_II_WITH_SYMENGINE:BOOL=ON -DSYMENGINE_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/symengine-0.9.0-zentoy4wmgnqbrk3qdzhfmh46fokiwtd  -DDEAL_II_WITH_TRILINOS:BOOL=ON -DTRILINOS_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/trilinos-13.4.1-zfo6clpc7xgn2wrgadbdh4glzd3lg4nf  -DDEAL_II_WITH_ADOLC:BOOL=ON -DADOLC_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adol-c-2.7.2-k6bc4xhraygoqop3ie5sg5f26pung7wp -DDEAL_II_WITH_ARPACK:BOOL=ON -DARPACK_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/arpack-ng-3.9.0-dsbhvnwzg4tp76helcyszggxk4vo3wwr -DDEAL_II_ARPACK_WITH_PARPACK:BOOL=ON -DDEAL_II_WITH_NETCDF:BOOL=OFF -DDEAL_II_WITH_SCALAPACK:BOOL=ON -DSCALAPACK_FOUND:BOOL=ON -DSCALAPACK_INCLUDE_DIRS:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdscalapack-5.0-zjdiijzebgyn6dcvc3tkjyhcotzgqgdu/include -DSCALAPACK_LIBRARIES:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdscalapack-5.0-zjdiijzebgyn6dcvc3tkjyhcotzgqgdu/lib/libscalapack.so -DSCALAPACK_LIBRARY:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdscalapack-5.0-zjdiijzebgyn6dcvc3tkjyhcotzgqgdu/lib/libscalapack.so -DDEAL_II_WITH_OPENCASCADE:BOOL=OFF -DCMAKE_CXX_FLAGS:STRING=-std=c++17 -DDEAL_II_CXX_FLAGS:STRING=-march=znver2 -mtune=znver2 -DDEAL_II_ALLOW_PLATFORM_INTROSPECTION:BOOL=ON
+##
+
+
+module-whatis {C++ software library providing well-documented tools to build finite element codes for a broad variety of PDEs.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : dealii}
+    puts stderr {Version: 9.5.1}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr {C++ software library providing well-documented tools to build finite}
+    puts stderr {element codes for a broad variety of PDEs.}
+}
+
+conflict dealii
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/dealii-9.5.1-6g4ly3p5dqyu4xkhksbzkafg4xvb4u4r/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/dealii-9.5.1-6g4ly3p5dqyu4xkhksbzkafg4xvb4u4r/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/dealii-9.5.1-6g4ly3p5dqyu4xkhksbzkafg4xvb4u4r/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/dealii-9.5.1-6g4ly3p5dqyu4xkhksbzkafg4xvb4u4r/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/dealii-9.5.1-6g4ly3p5dqyu4xkhksbzkafg4xvb4u4r/include}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/dealii-9.5.1-6g4ly3p5dqyu4xkhksbzkafg4xvb4u4r/.}
+setenv DEAL_II_DIR {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/dealii-9.5.1-6g4ly3p5dqyu4xkhksbzkafg4xvb4u4r}
+setenv DEALII_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/dealii-9.5.1-6g4ly3p5dqyu4xkhksbzkafg4xvb4u4r}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

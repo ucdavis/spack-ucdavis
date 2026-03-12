@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:25:08.035580
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:47:20.026943
 ##
 ## intel-oneapi-compilers@2024.0.2%gcc@13.2.0~amd+envmods~nvidia build_system=generic arch=linux-ubuntu22.04-x86_64_v3/hsvmcx5
 ##
@@ -23,24 +23,22 @@ proc ModulesHelp { } {
 conflict intel-oneapi-compilers
 
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2024.0.2/.}
+prepend-path ACL_BOARD_VENDOR_PATH {/opt/Intel/OpenCLFPGA/oneAPI/Boards}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0}
 setenv CMPLR_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/opt/oclfpga/include}
+prepend-path DIAGUTIL_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/etc/compiler/sys_check/sys_check.sh}
 setenv FPGA_VARS_ARGS {}
 setenv FPGA_VARS_DIR {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/opt/oclfpga}
 setenv INTELFPGAOCLSDKROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/opt/oclfpga}
-prepend-path OCL_ICD_FILENAMES {libintelocl_emu.so:libalteracl.so:/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/lib/libintelocl.so}
-setenv ACL_BOARD_VENDOR_PATH {/opt/Intel/OpenCLFPGA/oneAPI/Boards}
-setenv CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0}
-setenv CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/opt/oclfpga/include}
-prepend-path DIAGUTIL_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/etc/compiler/sys_check/sys_check.sh}
-prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/lib}
-prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/opt/compiler/lib}
-prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/opt/oclfpga/host/linux64/lib}
-setenv LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/lib}
-prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/documentation/en/man/common}
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/opt/oclfpga/host/linux64/lib:/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/opt/compiler/lib:/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/lib}
 prepend-path NLSPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/lib/locale/%l_%t/%N}
+prepend-path OCL_ICD_FILENAMES {libintelocl_emu.so:libalteracl.so:/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/lib/libintelocl.so}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/lib/pkgconfig}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/documentation/en/man/common:/home/software-user/.nvm/versions/node/v16.18.0/share/man::/opt/puppetlabs/puppet/share/man:/home/software-user/.fzf/man::/home/software-user/.fzf/man}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/bin}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/opt/oclfpga/bin}
-setenv PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/spack-ucdavis/environments/hpccf/software.hpc/compilers/._view/bvxuxxurp3aux3xlmic4h4obhdmxlyhl/intel-oneapi-compilers-2024.0.2/compiler/2024.0/lib/pkgconfig}
 setenv CC {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2024.0.2/compiler/2024.0/bin/icx}
 setenv CXX {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2024.0.2/compiler/2024.0/bin/icpx}
 setenv F77 {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-2024.0.2/compiler/2024.0/bin/ifx}

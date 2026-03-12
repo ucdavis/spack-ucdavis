@@ -1,0 +1,80 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-13 19:29:42.816863
+##
+## seacas@2024-08-15%gcc@13.2.0~adios2+applications+cgns~faodel+fortran~ipo+legacy~libcatalyst+matio~metis+mpi~pamgen+shared+tests~thread_safe+x11~zlib build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/dxjknvw
+##
+## Configure options: -DSeacas_ENABLE_TESTS:BOOL=ON -DSeacas_ENABLE_CXX11:BOOL=ON -DSeacas_ENABLE_Kokkos:BOOL=OFF -DSeacas_HIDE_DEPRECATED_CODE:BOOL=OFF -DSeacas_ENABLE_Zoltan:BOOL=ON -DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=ON -DBUILD_SHARED_LIBS:BOOL=ON -DSEACASExodus_ENABLE_THREADSAFE:BOOL=OFF -DSEACASIoss_ENABLE_THREADSAFE:BOOL=OFF -DTPL_ENABLE_Pthread:BOOL=OFF -DTPL_ENABLE_X11:BOOL=ON -DSeacas_ENABLE_Fortran:BOOL=ON -DSeacas_ENABLE_SEACAS:BOOL=ON -DTPL_ENABLE_MPI:BOOL=ON -DCMAKE_C_COMPILER:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5/bin/mpicc -DCMAKE_CXX_COMPILER:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5/bin/mpic++ -DCMAKE_Fortran_COMPILER:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5/bin/mpif90 -DMPI_BASE_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5 -DSeacas_ENABLE_ALL_PACKAGES:BOOL=ON -DSeacas_ENABLE_ALL_OPTIONAL_PACKAGES:BOOL=ON -DSeacas_ENABLE_SECONDARY_TESTED_CODE:BOOL=ON -DTPL_ENABLE_Netcdf:BOOL=ON -DNetCDF_ROOT:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/netcdf-c-4.9.2-5zn6wzc32b5zeydg6t7u2hfgfhm5cm6v -DTPL_ENABLE_METIS:BOOL=OFF -DTPL_ENABLE_ParMETIS:BOOL=OFF -DSeacas_ENABLE_Pamgen:BOOL=OFF -DTPL_ENABLE_Pamgen:BOOL=OFF -DTPL_ENABLE_Matio:BOOL=ON -DMatio_ROOT:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/matio-1.5.26-ijo4z2bsooliyznliaz5ikg4xr32fhfd -DTPL_ENABLE_CGNS:BOOL=ON -DCGNS_ROOT:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/cgns-4.4.0-klotgvk4kcv2iibgoq7ripvuh46fhenc -DTPL_ENABLE_Faodel:BOOL=OFF -DTPL_ENABLE_ADIOS2:BOOL=OFF -DCMAKE_INSTALL_NAME_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/seacas-2024-08-15-dxjknvwvdhccsocwna6f4b65s27fxing/lib
+##
+
+
+module-whatis {The SEACAS Project contains the Exodus and IOSS I/O libraries and a collection of applications which create, query, modify, or translate Exodus databases. Exodus is a finite element mesh and results database file format.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : seacas}
+    puts stderr {Version: 2024-08-15}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The SEACAS Project contains the Exodus and IOSS I/O libraries and a}
+    puts stderr {collection of applications which create, query, modify, or translate}
+    puts stderr {Exodus databases. Exodus is a finite element mesh and results database}
+    puts stderr {file format. Default is to build the Exodus and IOSS libraries and the}
+    puts stderr {io_shell, io_info, io_modify, struc_to_unstruc apps.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load parallel/20240822-34dcv6y
+} else {
+    depends-on parallel/20240822-34dcv6y
+}
+conflict seacas
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/seacas-2024-08-15-dxjknvwvdhccsocwna6f4b65s27fxing/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/seacas-2024-08-15-dxjknvwvdhccsocwna6f4b65s27fxing/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/seacas-2024-08-15-dxjknvwvdhccsocwna6f4b65s27fxing/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/seacas-2024-08-15-dxjknvwvdhccsocwna6f4b65s27fxing/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/seacas-2024-08-15-dxjknvwvdhccsocwna6f4b65s27fxing/include}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/seacas-2024-08-15-dxjknvwvdhccsocwna6f4b65s27fxing/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/seacas-2024-08-15-dxjknvwvdhccsocwna6f4b65s27fxing/.}
+prepend-path XLOCALEDIR {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libx11-1.8.10-unej5ji4ptyf5ujs2ovph2sfuxtdmdqc/share/X11/locale}
+prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/seacas-2024-08-15-dxjknvwvdhccsocwna6f4b65s27fxing/lib}
+setenv SEACAS_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/seacas-2024-08-15-dxjknvwvdhccsocwna6f4b65s27fxing}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

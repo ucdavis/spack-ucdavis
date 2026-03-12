@@ -1,7 +1,7 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:25:56.622014
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:48:10.023434
 ##
-## py-biom-format@2.1.15%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/2rt3klf
+## py-biom-format@2.1.15%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/ccl2se7
 ##
 
 
@@ -18,16 +18,16 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load py-click/8.1.7-l7wqeqb
-    module load py-h5py/3.12.1-ntpr2fv
+    module load py-click/8.1.7-kjrzl6j
+    module load py-h5py/3.12.1-uq2r7s6
     module load py-numpy/1.25.2-2wshlgs
     module load py-pandas/2.2.3-xf3yunf
     module load py-scipy/1.14.1-3aemdsc
     module load python/3.11.9
     module load python-venv/1.0-ed2nmwx
 } else {
-    depends-on py-click/8.1.7-l7wqeqb
-    depends-on py-h5py/3.12.1-ntpr2fv
+    depends-on py-click/8.1.7-kjrzl6j
+    depends-on py-h5py/3.12.1-uq2r7s6
     depends-on py-numpy/1.25.2-2wshlgs
     depends-on py-pandas/2.2.3-xf3yunf
     depends-on py-scipy/1.14.1-3aemdsc
@@ -42,7 +42,7 @@ prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generi
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/lib/python3.11/site-packages}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/bin}
-setenv PY_BIOM_FORMAT_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-biom-format-2.1.15-2rt3klfcb7evfg2ykgyuhjs4debl5xz6}
+setenv PY_BIOM_FORMAT_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-biom-format-2.1.15-ccl2se7fgv7tvs5xs5etgfa77zcwfdyi}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 

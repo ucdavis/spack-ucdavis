@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:28:13.052101
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:50:12.589244
 ##
 ## py-setuptools-rust@1.9.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/27ktaro
 ##
@@ -21,14 +21,14 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load py-setuptools-scm/8.0.4-bej4vfd
     module load python/3.11.9
     module load python-venv/1.0-ed2nmwx
-    module load rust/1.81.0
+    module load rust/1.81.0-tkquium
 } else {
     depends-on py-semantic-version/2.10.0-jpdknyo
     depends-on py-setuptools/69.2.0-rhq2cbb
     depends-on py-setuptools-scm/8.0.4-bej4vfd
     depends-on python/3.11.9
     depends-on python-venv/1.0-ed2nmwx
-    depends-on rust/1.81.0
+    depends-on rust/1.81.0-tkquium
 }
 conflict py-setuptools-rust
 

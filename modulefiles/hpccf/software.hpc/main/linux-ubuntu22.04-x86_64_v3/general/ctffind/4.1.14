@@ -1,9 +1,9 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:24:46.906932
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:46:58.289152
 ##
-## ctffind@4.1.14%gcc@13.2.0+openmp build_system=autotools patches=d2d349c arch=linux-ubuntu22.04-x86_64_v3/tsduhtx
+## ctffind@4.1.14%gcc@13.2.0+openmp build_system=autotools patches=d2d349c arch=linux-ubuntu22.04-x86_64_v3/bqpbxvi
 ##
-## Configure options: --disable-debugmode --disable-mkl CPPFLAGS=-I/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/amdfftw-4.2-h4mmq45npgyil37vfx3kgitjzgoexj2z/include LDFLAGS=-L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/amdfftw-4.2-h4mmq45npgyil37vfx3kgitjzgoexj2z/lib -lfftw3 --enable-openmp
+## Configure options: --disable-debugmode --disable-mkl CPPFLAGS=-I/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/amdfftw-5.0-kvzgokugdv3f2pfml4ijzm3tbg2hu4w7/include LDFLAGS=-L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/amdfftw-5.0-kvzgokugdv3f2pfml4ijzm3tbg2hu4w7/lib -lfftw3 --enable-openmp
 ##
 
 
@@ -21,7 +21,7 @@ conflict ctffind
 
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/ctffind-4.1.14/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/ctffind-4.1.14/.}
-setenv CTFFIND_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/ctffind-4.1.14-tsduhtxx5yy4pgjp3hsozo6arq24w5ih}
+setenv CTFFIND_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/ctffind-4.1.14-bqpbxvilwnjznambosjjpguvkykvawkq}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 

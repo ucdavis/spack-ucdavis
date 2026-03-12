@@ -1,9 +1,9 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:24:41.022448
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:46:52.776999
 ##
-## cdo@2.4.0%gcc@13.2.0~curl~external-grib1+fftw3+hdf5+libxml2~magics+netcdf+openmp+proj+szip+udunits2 build_system=autotools grib2=eccodes arch=linux-ubuntu22.04-x86_64_v3/ocolwj3
+## cdo@2.4.0%gcc@13.2.0~curl~external-grib1+fftw3+hdf5+libxml2~magics+netcdf+openmp+proj+szip+udunits2 build_system=autotools grib2=eccodes arch=linux-ubuntu22.04-x86_64_v3/kfpkb4i
 ##
-## Configure options: --with-netcdf=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/netcdf-c-4.9.2-mqk2fj27yimdhnkwbpmfxpacfg6atmst --with-eccodes=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/eccodes-2.34.0-tigyndyy2dwv3tgg5gbkqij4hgzbjg34 --without-grib_api --enable-cgribex --with-szlib=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libaec-1.0.6-j6vsk27rnowtkndtomw3fovt6wwxilya --with-hdf5=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/hdf5-1.14.5-ovdqpjwcsfsfrd4jpgf6iqvtobvbpvh3 --with-udunits2=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/udunits-2.2.28-yrblqxevpegw3rx5mkokoqonjnvc2jqr --with-libxml2=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libxml2-2.13.4-bcm4imbjivtlgw4v2opnuvhylpxhhx6s --with-proj=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/proj-9.4.1-uhgpe4fgawqsu36gynqmpwnuogt674l3 --without-curl --without-magics --with-fftw3 --enable-openmp LDFLAGS=-L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/hdf5-1.14.5-ovdqpjwcsfsfrd4jpgf6iqvtobvbpvh3/lib CPPFLAGS=-DOMPI_SKIP_MPICXX -DMPICH_SKIP_MPICXX
+## Configure options: --with-netcdf=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/netcdf-c-4.9.2-flpgumuh6hpyry2taig4gzuv6meuezji --with-eccodes=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/eccodes-2.34.0-tigyndyy2dwv3tgg5gbkqij4hgzbjg34 --without-grib_api --enable-cgribex --with-szlib=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libaec-1.0.6-j6vsk27rnowtkndtomw3fovt6wwxilya --with-hdf5=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/hdf5-1.14.5-oofixatepokmafvyzo5k24ulrumcq2jm --with-udunits2=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/udunits-2.2.28-yrblqxevpegw3rx5mkokoqonjnvc2jqr --with-libxml2=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/libxml2-2.13.4-bcm4imbjivtlgw4v2opnuvhylpxhhx6s --with-proj=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/proj-5.2.0-gpts3us3wzcrrge3d73bofyxo5un6qe4 --without-curl --without-magics --with-fftw3 --enable-openmp LDFLAGS=-L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/hdf5-1.14.5-oofixatepokmafvyzo5k24ulrumcq2jm/lib CPPFLAGS=-DOMPI_SKIP_MPICXX -DMPICH_SKIP_MPICXX
 ##
 
 
@@ -22,7 +22,7 @@ conflict cdo
 
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/cdo-2.4.0/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/cdo-2.4.0/.}
-setenv CDO_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/cdo-2.4.0-ocolwj3w7oikv7huh267okunnliqikac}
+setenv CDO_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/cdo-2.4.0-kfpkb4iglb4nuexx7ys42kb77hyljkvm}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 

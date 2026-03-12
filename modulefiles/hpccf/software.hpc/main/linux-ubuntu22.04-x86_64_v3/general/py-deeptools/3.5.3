@@ -1,7 +1,7 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:26:12.799680
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:48:26.649196
 ##
-## py-deeptools@3.5.3%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/5omo476
+## py-deeptools@3.5.3%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/cq4apji
 ##
 
 
@@ -24,8 +24,8 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load py-numpydoc/1.5.0-hv47yf4
     module load py-plotly/5.20.0-er524ij
     module load py-py2bit/0.2.1-j4ouaee
-    module load py-pybigwig/0.3.12-btzmazx
-    module load py-pysam/0.19.1-qyscevj
+    module load py-pybigwig/0.3.12-gpktdox
+    module load py-pysam/0.19.1-6734tia
     module load py-scipy/1.14.1-u5pel67
     module load python/3.11.9
     module load python-venv/1.0-ed2nmwx
@@ -37,8 +37,8 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     depends-on py-numpydoc/1.5.0-hv47yf4
     depends-on py-plotly/5.20.0-er524ij
     depends-on py-py2bit/0.2.1-j4ouaee
-    depends-on py-pybigwig/0.3.12-btzmazx
-    depends-on py-pysam/0.19.1-qyscevj
+    depends-on py-pybigwig/0.3.12-gpktdox
+    depends-on py-pysam/0.19.1-6734tia
     depends-on py-scipy/1.14.1-u5pel67
     depends-on python/3.11.9
     depends-on python-venv/1.0-ed2nmwx
@@ -51,7 +51,7 @@ prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generi
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/lib/python3.11/site-packages}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/bin}
-setenv PY_DEEPTOOLS_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-deeptools-3.5.3-5omo476xgsiylbt5c6r2fe36ayvw6et7}
+setenv PY_DEEPTOOLS_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-deeptools-3.5.3-cq4apjizaxsptrs4uevk55ettjybazhj}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 

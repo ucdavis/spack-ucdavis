@@ -1,0 +1,78 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:46:25.909967
+##
+## amdscalapack@5.0%aocc@5.0.0~ilp64~ipo~pic+shared build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-zen2/ymye7bt
+##
+## Configure options: -DBUILD_SHARED_LIBS:BOOL=ON -DBUILD_STATIC_LIBS:BOOL=OFF -DLAPACK_FOUND=true -DLAPACK_INCLUDE_DIRS=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdlibflame-5.0-6ebpsv5mtxyaabuvb6ipmgbyraumthh6/include -DLAPACK_LIBRARIES=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdlibflame-5.0-6ebpsv5mtxyaabuvb6ipmgbyraumthh6/lib/libflame.so -DBLAS_LIBRARIES=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdblis-5.0-ih6y4tsgozdhspk2cxcranbhtxrqi4jf/lib/libblis-mt.so -DCMAKE_C_FLAGS:STRING= -DENABLE_ILP64:BOOL=OFF -DUSE_F2C:BOOL=OFF -DCMAKE_C_FLAGS:STRING=-Wno-implicit-function-declaration -Wno-deprecated-non-prototype -Wno-incompatible-pointer-types -DLAPACK_LIBRARIES=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdlibflame-5.0-6ebpsv5mtxyaabuvb6ipmgbyraumthh6/lib/libflame.so -DLAPACK_FOUND=true -DUSE_OPTIMIZED_LAPACK_BLAS=true -DCMAKE_C_COMPILER=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/openmpi-5.0.5/bin/mpicc -DCMAKE_Fortran_COMPILER=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/openmpi-5.0.5/bin/mpif90
+##
+
+
+module-whatis { ScaLAPACK is a library of high-performance linear algebra routines for parallel distributed memory machines. It depends on external libraries including BLAS and LAPACK for Linear Algebra computations.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : amdscalapack}
+    puts stderr {Version: 5.0}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr { ScaLAPACK is a library of high-performance linear algebra routines for}
+    puts stderr {parallel distributed memory machines. It depends on external libraries}
+    puts stderr {including BLAS and LAPACK for Linear Algebra computations. AMD's}
+    puts stderr {optimized version of ScaLAPACK enables using BLIS and LibFLAME library}
+    puts stderr {that have optimized dense matrix functions and solvers for AMD EPYC}
+    puts stderr {processor family CPUs. LICENSING INFORMATION: By downloading, installing}
+    puts stderr {and using this software, you agree to the terms and conditions of the}
+    puts stderr {AMD AOCL-ScaLAPACK license agreement. You may obtain a copy of this}
+    puts stderr {license agreement from}
+    puts stderr {https://www.amd.com/en/developer/aocl/scalapack/eula/scalapack-}
+    puts stderr {libraries-4-2-eula.html}
+    puts stderr {https://www.amd.com/en/developer/aocl/scalapack/eula/scalapack-}
+    puts stderr {libraries-eula.html}
+}
+
+conflict amdscalapack
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdscalapack-5.0-ymye7bt3th5z6pzig4kcy34mgopee4lz/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdscalapack-5.0-ymye7bt3th5z6pzig4kcy34mgopee4lz/lib}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdscalapack-5.0-ymye7bt3th5z6pzig4kcy34mgopee4lz/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdscalapack-5.0-ymye7bt3th5z6pzig4kcy34mgopee4lz/.}
+setenv AMDSCALAPACK_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdscalapack-5.0-ymye7bt3th5z6pzig4kcy34mgopee4lz}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

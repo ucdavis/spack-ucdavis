@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:27:12.022822
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:49:18.407723
 ##
 ## py-maturin@1.6.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/g2pyjgn
 ##
@@ -19,11 +19,11 @@ proc ModulesHelp { } {
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load python/3.11.9
     module load python-venv/1.0-ed2nmwx
-    module load rust/1.81.0
+    module load rust/1.81.0-tkquium
 } else {
     depends-on python/3.11.9
     depends-on python-venv/1.0-ed2nmwx
-    depends-on rust/1.81.0
+    depends-on rust/1.81.0-tkquium
 }
 conflict py-maturin
 

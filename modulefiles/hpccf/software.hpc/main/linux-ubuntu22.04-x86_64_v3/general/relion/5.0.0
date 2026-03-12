@@ -1,7 +1,7 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:28:35.677446
+## Module file created by spack (https://github.com/spack/spack) on 2025-12-21 20:01:50.992950
 ##
-## relion@5.0.0%gcc@13.2.0+allow_ctf_in_sagd+altcpu~cuda+double~double-gpu~external_motioncor2~gctf~gpu_delay+gui~ipo+mklfft build_system=cmake build_type=RelWithDebInfo conda_python=/cvmfs/hpc.ucdavis.edu/sw/conda/environments/relion-5.0/bin/python generator=make purpose=cluster torch_home=/share/databases/relion/torch arch=linux-ubuntu22.04-x86_64_v3/zwlwzwi
+## relion@5.0.0%gcc@13.2.0+allow_ctf_in_sagd+altcpu~cuda+double~double-gpu~external_motioncor2~gctf~gpu_delay+gui~ipo+mklfft build_system=cmake build_type=RelWithDebInfo conda_python=/cvmfs/hpc.ucdavis.edu/sw/conda/environments/relion-5.0/bin/python generator=make purpose=cluster torch_home=/share/databases/relion/torch arch=linux-ubuntu22.04-x86_64_v3/t2ayulu
 ##
 ## Configure options: -DCMAKE_C_FLAGS=-g -DCMAKE_CXX_FLAGS=-g -DGUI=True -DDoublePrec_CPU=True -DDoublePrec_GPU=False -DALLOW_CTF_IN_SAGD=True -DMKLFFT=True -DALTCPU=True -DAMDFFTW=ON -DFORCE_OWN_TBB=OFF -DTBB_INCLUDE_DIR:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/intel-oneapi-tbb-2022.0.0-rh7o5bv6rujkevj4j3ntn5hjibks4v6m/tbb/2022.0/include -DTBB_LIBRARY:STRING=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/intel-oneapi-tbb-2022.0.0-rh7o5bv6rujkevj4j3ntn5hjibks4v6m/tbb/2022.0/lib -DPYTHON_EXE_PATH:STRING=/cvmfs/hpc.ucdavis.edu/sw/conda/environments/relion-5.0/bin/python -DTORCH_HOME_PATH:STRING=/share/databases/relion/torch
 ##
@@ -21,15 +21,15 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load ctffind/4.1.14-iy3d4am
+    module load ctffind/4.1.14-hdz32jl
 } else {
-    depends-on ctffind/4.1.14-iy3d4am
+    depends-on ctffind/4.1.14-hdz32jl
 }
 conflict relion
 
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/relion-5.0.0/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/relion-5.0.0/.}
-setenv RELION_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/relion-5.0.0-zwlwzwi46y5vnzvabhxvrydd5eyqvvtq}
+setenv RELION_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/relion-5.0.0-t2ayululsyegvnv6ofzdrdm3plmhi72v}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 

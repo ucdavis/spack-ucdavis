@@ -1,0 +1,80 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:49:49.657666
+##
+## py-pdbfixer@1.7%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/7bpc2sp
+##
+
+
+module-whatis {PDBFixer is an easy to use application for fixing problems in Protein Data Bank files in preparation for simulating them.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-pdbfixer}
+    puts stderr {Version: 1.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {PDBFixer is an easy to use application for fixing problems in Protein}
+    puts stderr {Data Bank files in preparation for simulating them.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load openmm/7.5.1-tny3xqr
+    module load py-numpy/1.25.2-2wshlgs
+    module load python/3.11.9
+    module load python-venv/1.0-ed2nmwx
+} else {
+    depends-on openmm/7.5.1-tny3xqr
+    depends-on py-numpy/1.25.2-2wshlgs
+    depends-on python/3.11.9
+    depends-on python-venv/1.0-ed2nmwx
+}
+conflict py-pdbfixer
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pdbfixer-1.7-7bpc2spp2moex4korpinu2w2aszmflkb/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pdbfixer-1.7-7bpc2spp2moex4korpinu2w2aszmflkb/lib}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pdbfixer-1.7-7bpc2spp2moex4korpinu2w2aszmflkb/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pdbfixer-1.7-7bpc2spp2moex4korpinu2w2aszmflkb/.}
+setenv OPENMM_CUDA_COMPILER {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-12.6.2/bin/nvcc}
+setenv CUDA_HOST_COMPILER {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-13.2.0/bin/g++}
+prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pdbfixer-1.7-7bpc2spp2moex4korpinu2w2aszmflkb/lib/python3.11/site-packages}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pdbfixer-1.7-7bpc2spp2moex4korpinu2w2aszmflkb/bin}
+setenv PY_PDBFIXER_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-pdbfixer-1.7-7bpc2spp2moex4korpinu2w2aszmflkb}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

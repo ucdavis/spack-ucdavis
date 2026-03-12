@@ -1,0 +1,70 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-29 13:37:19.022906
+##
+## ginkgo@1.8.0%aocc@5.0.0~cuda~develtools~full_optimizations~hwloc~ipo~mpi+openmp~rocm~sde+shared~sycl build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-zen2/txrqyfb
+##
+## Configure options: -DGINKGO_BUILD_CUDA:BOOL=OFF -DGINKGO_BUILD_HIP:BOOL=OFF -DGINKGO_BUILD_SYCL:BOOL=OFF -DGINKGO_BUILD_OMP:BOOL=ON -DGINKGO_BUILD_MPI:BOOL=OFF -DBUILD_SHARED_LIBS:BOOL=ON -DGINKGO_JACOBI_FULL_OPTIMIZATIONS:BOOL=OFF -DGINKGO_BUILD_HWLOC:BOOL=OFF -DGINKGO_WITH_PAPI_SDE:BOOL=OFF -DGINKGO_DEVEL_TOOLS:BOOL=OFF -DGINKGO_BUILD_BENCHMARKS=OFF -DGINKGO_BUILD_DOC=OFF -DGINKGO_BUILD_EXAMPLES=OFF -DGINKGO_WITH_CCACHE=OFF -DGINKGO_BUILD_TESTS:BOOL=OFF -DGINKGO_INSTALL_RPATH=OFF
+##
+
+
+module-whatis {High-performance linear algebra library for manycore systems, with a focus on sparse solution of linear systems.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : ginkgo}
+    puts stderr {Version: 1.8.0}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr {High-performance linear algebra library for manycore systems, with a}
+    puts stderr {focus on sparse solution of linear systems.}
+}
+
+conflict ginkgo
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/ginkgo-1.8.0-txrqyfbpxso6vsd723o7q2co6nvxhj4v/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/ginkgo-1.8.0-txrqyfbpxso6vsd723o7q2co6nvxhj4v/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/ginkgo-1.8.0-txrqyfbpxso6vsd723o7q2co6nvxhj4v/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/ginkgo-1.8.0-txrqyfbpxso6vsd723o7q2co6nvxhj4v/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/ginkgo-1.8.0-txrqyfbpxso6vsd723o7q2co6nvxhj4v/include}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/ginkgo-1.8.0-txrqyfbpxso6vsd723o7q2co6nvxhj4v/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/ginkgo-1.8.0-txrqyfbpxso6vsd723o7q2co6nvxhj4v/.}
+setenv GINKGO_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/ginkgo-1.8.0-txrqyfbpxso6vsd723o7q2co6nvxhj4v}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

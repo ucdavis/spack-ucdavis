@@ -1,0 +1,75 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:47:03.178782
+##
+## fftw@3.3.10%gcc@13.2.0+mpi~openmp~pfft_patches+shared build_system=autotools patches=872cff9 precision=double,float arch=linux-ubuntu22.04-x86_64_v3/tnhu2g2
+##
+
+
+module-whatis {FFTW is a C subroutine library for computing the discrete Fourier transform (DFT) in one or more dimensions, of arbitrary input size, and of both real and complex data (as well as of even/odd data, i.e. the discrete cosine/sine transforms or DCT/DST). We believe that FFTW, which is free software, should become the FFT library of choice for most applications.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : fftw}
+    puts stderr {Version: 3.3.10}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {FFTW is a C subroutine library for computing the discrete Fourier}
+    puts stderr {transform (DFT) in one or more dimensions, of arbitrary input size, and}
+    puts stderr {of both real and complex data (as well as of even/odd data, i.e. the}
+    puts stderr {discrete cosine/sine transforms or DCT/DST). We believe that FFTW, which}
+    puts stderr {is free software, should become the FFT library of choice for most}
+    puts stderr {applications.}
+}
+
+conflict fftw
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/fftw-3.3.10-tnhu2g2mosjnxrxtyqyjvx536cskuqe3/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/fftw-3.3.10-tnhu2g2mosjnxrxtyqyjvx536cskuqe3/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/fftw-3.3.10-tnhu2g2mosjnxrxtyqyjvx536cskuqe3/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/fftw-3.3.10-tnhu2g2mosjnxrxtyqyjvx536cskuqe3/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/fftw-3.3.10-tnhu2g2mosjnxrxtyqyjvx536cskuqe3/include}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/fftw-3.3.10-tnhu2g2mosjnxrxtyqyjvx536cskuqe3/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/fftw-3.3.10-tnhu2g2mosjnxrxtyqyjvx536cskuqe3/share/man}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/fftw-3.3.10-tnhu2g2mosjnxrxtyqyjvx536cskuqe3/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/fftw-3.3.10-tnhu2g2mosjnxrxtyqyjvx536cskuqe3/.}
+setenv FFTW_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/fftw-3.3.10-tnhu2g2mosjnxrxtyqyjvx536cskuqe3}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

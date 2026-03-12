@@ -1,7 +1,7 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:26:01.799832
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:48:16.528244
 ##
-## py-checkm-genome@1.2.1%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/qx7mkm2
+## py-checkm-genome@1.2.1%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/lj5ltac
 ##
 
 
@@ -23,7 +23,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load py-dendropy/4.5.2-fqewg7j
     module load py-matplotlib/3.9.2-bsuux3u
     module load py-numpy/2.1.2-rif434b
-    module load py-pysam/0.19.1-qyscevj
+    module load py-pysam/0.19.1-6734tia
     module load py-scipy/1.14.1-u5pel67
     module load py-setuptools/69.2.0-rhq2cbb
     module load python/3.11.9
@@ -35,7 +35,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     depends-on py-dendropy/4.5.2-fqewg7j
     depends-on py-matplotlib/3.9.2-bsuux3u
     depends-on py-numpy/2.1.2-rif434b
-    depends-on py-pysam/0.19.1-qyscevj
+    depends-on py-pysam/0.19.1-6734tia
     depends-on py-scipy/1.14.1-u5pel67
     depends-on py-setuptools/69.2.0-rhq2cbb
     depends-on python/3.11.9
@@ -49,7 +49,7 @@ prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generi
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/.}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/lib/python3.11/site-packages}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/bin}
-setenv PY_CHECKM_GENOME_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-checkm-genome-1.2.1-qx7mkm2txjjboiuozv2kjtu5gtr32pqe}
+setenv PY_CHECKM_GENOME_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-checkm-genome-1.2.1-lj5ltaclnjtjnfojxqq5uvl3yobqbeye}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 

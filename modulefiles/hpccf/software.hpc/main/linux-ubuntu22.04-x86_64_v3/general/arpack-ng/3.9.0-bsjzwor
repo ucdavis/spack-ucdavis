@@ -1,0 +1,82 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:46:27.081706
+##
+## arpack-ng@3.9.0%gcc@13.2.0~icb~ipo+mpi+shared build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/bsjzwor
+##
+
+
+module-whatis {ARPACK-NG is a collection of Fortran77 subroutines designed to solve large scale eigenvalue problems.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : arpack-ng}
+    puts stderr {Version: 3.9.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {ARPACK-NG is a collection of Fortran77 subroutines designed to solve}
+    puts stderr {large scale eigenvalue problems. Important Features: * Reverse}
+    puts stderr {Communication Interface. * Single and Double Precision Real Arithmetic}
+    puts stderr {Versions for Symmetric, Non-symmetric, Standard or Generalized Problems.}
+    puts stderr {* Single and Double Precision Complex Arithmetic Versions for Standard}
+    puts stderr {or Generalized Problems. * Routines for Banded Matrices - Standard or}
+    puts stderr {Generalized Problems. * Routines for The Singular Value Decomposition. *}
+    puts stderr {Example driver routines that may be used as templates to implement}
+    puts stderr {numerous Shift-Invert strategies for all problem types, data types and}
+    puts stderr {precision. This project is a joint project between Debian, Octave and}
+    puts stderr {Scilab in order to provide a common and maintained version of arpack.}
+    puts stderr {Indeed, no single release has been published by Rice university for the}
+    puts stderr {last few years and since many software (Octave, Scilab, R, Matlab...)}
+    puts stderr {forked it and implemented their own modifications, arpack-ng aims to}
+    puts stderr {tackle this by providing a common repository and maintained versions.}
+    puts stderr {arpack-ng is replacing arpack almost everywhere.}
+}
+
+conflict arpack-ng
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/arpack-ng-3.9.0-bsjzworvxsc7dudtkx2fx2m4hoa6pk47/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/arpack-ng-3.9.0-bsjzworvxsc7dudtkx2fx2m4hoa6pk47/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/arpack-ng-3.9.0-bsjzworvxsc7dudtkx2fx2m4hoa6pk47/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/arpack-ng-3.9.0-bsjzworvxsc7dudtkx2fx2m4hoa6pk47/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/arpack-ng-3.9.0-bsjzworvxsc7dudtkx2fx2m4hoa6pk47/include}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/arpack-ng-3.9.0-bsjzworvxsc7dudtkx2fx2m4hoa6pk47/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/arpack-ng-3.9.0-bsjzworvxsc7dudtkx2fx2m4hoa6pk47/.}
+setenv ARPACK_NG_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/arpack-ng-3.9.0-bsjzworvxsc7dudtkx2fx2m4hoa6pk47}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

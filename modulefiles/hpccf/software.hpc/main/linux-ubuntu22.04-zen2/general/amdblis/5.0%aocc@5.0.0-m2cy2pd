@@ -1,0 +1,83 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-29 13:36:32.161011
+##
+## amdblis@5.0%aocc@5.0.0~aocl_gemm+blas+cblas~ilp64~logging+suphandling~tracing build_system=makefile libs=shared,static threads=openmp arch=linux-ubuntu22.04-zen2/m2cy2pd
+##
+## Configure options: --enable-threading=openmp --blas-int-size=32 --enable-cblas --enable-blas --enable-shared --enable-static --enable-sup-handling --complex-return=intel --disable-aocl-dynamic
+##
+
+
+module-whatis {AMD Optimized BLIS.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : amdblis}
+    puts stderr {Version: 5.0}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr {AMD Optimized BLIS. BLIS is a portable software framework for}
+    puts stderr {instantiating high-performance BLAS-like dense linear algebra libraries.}
+    puts stderr {The framework was designed to isolate essential kernels of computation}
+    puts stderr {that, when optimized, immediately enable optimized implementations of}
+    puts stderr {most of its commonly used and computationally intensive operations.}
+    puts stderr {LICENSING INFORMATION: By downloading, installing and using this}
+    puts stderr {software, you agree to the terms and conditions of the AMD AOCL-BLIS}
+    puts stderr {license agreement. You may obtain a copy of this license agreement from}
+    puts stderr {https://www.amd.com/en/developer/aocl/dense/eula/blas-4-2-eula.html}
+    puts stderr {https://www.amd.com/en/developer/aocl/dense/eula/blas-eula.html}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load python/3.11.9%gcc@11.4.0-fo4apfe
+} else {
+    depends-on python/3.11.9%gcc@11.4.0-fo4apfe
+}
+conflict amdblis
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdblis-5.0-m2cy2pduxmplj6nw26oqaozk76ertcjd/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdblis-5.0-m2cy2pduxmplj6nw26oqaozk76ertcjd/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdblis-5.0-m2cy2pduxmplj6nw26oqaozk76ertcjd/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdblis-5.0-m2cy2pduxmplj6nw26oqaozk76ertcjd/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdblis-5.0-m2cy2pduxmplj6nw26oqaozk76ertcjd/include}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdblis-5.0-m2cy2pduxmplj6nw26oqaozk76ertcjd/share/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdblis-5.0-m2cy2pduxmplj6nw26oqaozk76ertcjd/.}
+setenv AMDBLIS_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/aocc-5.0.0/amdblis-5.0-m2cy2pduxmplj6nw26oqaozk76ertcjd}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

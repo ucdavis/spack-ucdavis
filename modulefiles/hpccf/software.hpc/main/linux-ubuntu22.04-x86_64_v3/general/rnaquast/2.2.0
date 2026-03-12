@@ -1,5 +1,5 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:28:36.784113
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:50:38.024014
 ##
 ## rnaquast@2.2.0%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/55g3cps
 ##
@@ -21,14 +21,14 @@ proc ModulesHelp { } {
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load blast-plus/2.16.0-t4w7u6u
-    module load gmap-gsnap/2023-07-20-ywftkgx
+    module load gmap-gsnap/2023-07-20
     module load py-gffutils/0.10.1-y65zfcx
     module load py-joblib/1.2.0-ksvfjnz
     module load py-matplotlib/3.9.2-bsuux3u
     module load python/3.11.9
 } else {
     depends-on blast-plus/2.16.0-t4w7u6u
-    depends-on gmap-gsnap/2023-07-20-ywftkgx
+    depends-on gmap-gsnap/2023-07-20
     depends-on py-gffutils/0.10.1-y65zfcx
     depends-on py-joblib/1.2.0-ksvfjnz
     depends-on py-matplotlib/3.9.2-bsuux3u

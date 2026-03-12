@@ -1,0 +1,82 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:50:41.227125
+##
+## slurm@25-11-1-1%gcc@13.2.0+cgroup~gtk~hdf5+hwloc+mariadb+nvml+pam+pmix+readline+restd~rsmi build_system=autotools sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3/w5wzhu2
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis {Slurm is an open source, fault-tolerant, and highly scalable cluster management and job scheduling system for large and small Linux clusters.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : slurm}
+    puts stderr {Version: 25-11-1-1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Slurm is an open source, fault-tolerant, and highly scalable cluster}
+    puts stderr {management and job scheduling system for large and small Linux clusters.}
+    puts stderr {Slurm requires no kernel modifications for its operation and is}
+    puts stderr {relatively self-contained. As a cluster workload manager, Slurm has}
+    puts stderr {three key functions. First, it allocates exclusive and/or non-exclusive}
+    puts stderr {access to resources (compute nodes) to users for some duration of time}
+    puts stderr {so they can perform work. Second, it provides a framework for starting,}
+    puts stderr {executing, and monitoring work (normally a parallel job) on the set of}
+    puts stderr {allocated nodes. Finally, it arbitrates contention for resources by}
+    puts stderr {managing a queue of pending work.}
+}
+
+conflict slurm
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm/include}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm/share/man}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm/.}
+setenv SLURM_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm}
+setenv SQUEUE_FORMAT2 {JobID:12 ,JobArrayID:18 ,UserName:16,Partition:15,Name:20 ,StateCompact:3 ,TimeLeft:13,NumCPUs:7,MinMemory:11,NumNodes:6,ReasonList:40}
+setenv SINFO_FORMAT {%17n %9P %.10T %.5c %.8m %24f %28E}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

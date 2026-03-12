@@ -1,7 +1,7 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:25:22.185240
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:47:33.585738
 ##
-## ltr-retriever@2.8.7%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/6mrykjq
+## ltr-retriever@2.8.7%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/dytbr2g
 ##
 
 
@@ -17,23 +17,23 @@ proc ModulesHelp { } {
 }
 
 if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
-    module load blast-plus/2.16.0
+    module load blast-plus/2.16.0-t4w7u6u
     module load cdhit/4.8.1
     module load hmmer/3.4
     module load perl/5.40.0
-    module load repeatmasker/4.0.9-eomdn5k
+    module load repeatmasker/4.1.5
 } else {
-    depends-on blast-plus/2.16.0
+    depends-on blast-plus/2.16.0-t4w7u6u
     depends-on cdhit/4.8.1
     depends-on hmmer/3.4
     depends-on perl/5.40.0
-    depends-on repeatmasker/4.0.9-eomdn5k
+    depends-on repeatmasker/4.1.5
 }
 conflict ltr-retriever
 
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/ltr-retriever-2.8.7/bin}
 prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/ltr-retriever-2.8.7/.}
-setenv LTR_RETRIEVER_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/ltr-retriever-2.8.7-6mrykjqj37n4ugk5veyvzw272wdqshbt}
+setenv LTR_RETRIEVER_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/ltr-retriever-2.8.7-dytbr2gfak3xsveeki37kae32tqozbpt}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 

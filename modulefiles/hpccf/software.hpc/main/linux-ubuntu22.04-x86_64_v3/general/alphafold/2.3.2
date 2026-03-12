@@ -1,7 +1,7 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2025-11-07 13:25:46.837750
+## Module file created by spack (https://github.com/spack/spack) on 2026-01-30 08:48:00.266469
 ##
-## py-alphafold@2.3.2%gcc@13.2.0~cuda build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/xvilp4x
+## py-alphafold@2.3.2%gcc@13.2.0~cuda build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/oxpzoom
 ##
 
 
@@ -22,7 +22,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load hh-suite/3.3.0
     module load hmmer/3.4
     module load kalign/3.4.0
-    module load openmm/7.5.1-apcrzxu
+    module load openmm/7.5.1-tny3xqr
     module load py-absl-py/1.4.0-ojr3fkl
     module load py-biopython/1.81-agjkphq
     module load py-chex/0.1.86-fktpkxt
@@ -34,7 +34,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     module load py-ml-collections/0.1.1-7gtj4tf
     module load py-numpy/1.25.2-2wshlgs
     module load py-pandas/2.2.3-xf3yunf
-    module load py-pdbfixer/1.7-nl74ru5
+    module load py-pdbfixer/1.7-7bpc2sp
     module load py-protobuf/4.25.3-b4ekuzd
     module load py-scipy/1.14.1-3aemdsc
     module load py-tensorflow/2.17.1-eylhmcd
@@ -45,7 +45,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     depends-on hh-suite/3.3.0
     depends-on hmmer/3.4
     depends-on kalign/3.4.0
-    depends-on openmm/7.5.1-apcrzxu
+    depends-on openmm/7.5.1-tny3xqr
     depends-on py-absl-py/1.4.0-ojr3fkl
     depends-on py-biopython/1.81-agjkphq
     depends-on py-chex/0.1.86-fktpkxt
@@ -57,7 +57,7 @@ if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
     depends-on py-ml-collections/0.1.1-7gtj4tf
     depends-on py-numpy/1.25.2-2wshlgs
     depends-on py-pandas/2.2.3-xf3yunf
-    depends-on py-pdbfixer/1.7-nl74ru5
+    depends-on py-pdbfixer/1.7-7bpc2sp
     depends-on py-protobuf/4.25.3-b4ekuzd
     depends-on py-scipy/1.14.1-3aemdsc
     depends-on py-tensorflow/2.17.1-eylhmcd
@@ -74,7 +74,7 @@ setenv OPENMM_CUDA_COMPILER {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/v
 setenv CUDA_HOST_COMPILER {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-13.2.0/bin/g++}
 prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/lib/python3.11/site-packages}
 prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/bin}
-setenv PY_ALPHAFOLD_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-alphafold-2.3.2-xvilp4xoz73fwn6mqlwvqmp4qjtctyko}
+setenv PY_ALPHAFOLD_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-alphafold-2.3.2-oxpzoomxujfmf4tateede3gyvqevv3ri}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
 
