@@ -14,6 +14,7 @@ spack:
         tcl: generic/{name}-{version}
         environment-modules: generic/environment-modules
         "target=x86_64_v3 %oneapi": oneapi/{name}-{version}
+        "target=zen2 %aocc": aocc-{compiler.version}/{name}-{version}
         target=x86_64_v3: generic/{name}-{version}
         target=zen2: zen2/{name}-{version}
         target=zen3: zen3/{name}-{version}

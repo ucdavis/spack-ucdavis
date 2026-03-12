@@ -7,6 +7,7 @@ spack:
   - general.yaml
   - perl.yaml
   - cryoem.yaml
+  - benchmarks.yaml
   specs:
   # splatted specs, see definitions
   - $compiler-pkgs
@@ -15,6 +16,7 @@ spack:
   - $messaging-specs
   - $openssl-specs
   - $cryoem-specs
+  - $benchmarks-specs
   - matrix:
     - [$utils-specs]
     - [arch=linux-ubuntu22.04-x86_64_v3]
@@ -30,10 +32,13 @@ spack:
   - apptainer # external
   - julia@1.12.1
   - rust@1.91.0
-  - hpl@2.3 arch=linux-ubuntu22.04-x86_64_v3 %gcc@13.2.0 ^openmpi@5.0.5 ^openblas threads=openmp 
-  - hpl@2.3 arch=linux-ubuntu22.04-x86_64_v3 %gcc@13.2.0 ^mpich@4.2.1 ^openblas threads=openmp 
-  - intel-mpi-benchmarks @2021.7 arch=linux-ubuntu22.04-x86_64_v3 %gcc@13.2.0 ^openmpi@5.0.5 
-  - intel-mpi-benchmarks @2021.7 arch=linux-ubuntu22.04-x86_64_v3 %gcc@13.2.0 ^mpich@4.2.1
+  - aspect @2.5.0 %aocc@5 arch=linux-ubuntu22.04-zen2
+    ^openmpi@5 %aocc@5
+    ^dealii@9.5.1 ~cuda %aocc@5
+    ^ginkgo %aocc@5
+    ^[virtuals=lapack] amdlibflame %aocc@5
+    ^[virtuals=scalapack] amdscalapack %aocc@5
+    ^[virtuals=blas] amdblis threads=openmp %aocc@5
   view:
     default:
       root: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view
@@ -45,6 +50,7 @@ spack:
         intel-mpi-benchmarks: bench/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
         "target=x86_64_v3 %oneapi": oneapi/{name}-{version}
         "target=x86_64_v3 %intel": intel/{name}-{version}
+        "target=zen2 %aocc": aocc/{name}-{version}
         target=x86_64_v3: generic/{name}-{version}
         target=zen2: zen2/{name}-{version}
         target=zen3: zen3/{name}-{version}
@@ -132,6 +138,7 @@ spack:
         slurm:
           environment:
             set:
-              SQUEUE_FORMAT2: 'JobID:10,UserName:16 ,Partition:14 ,Name:20 ,StateCompact:4,TimeLeft:13,NumCPUs:6,NumNodes:6,tres-per-node:14,ReasonList'
+              SQUEUE_FORMAT2: 'JobID:12 ,JobArrayID:18 ,UserName:16,Partition:15,Name:20 ,StateCompact:3 ,TimeLeft:13,NumCPUs:7,MinMemory:11,NumNodes:6,ReasonList:40'
+              SINFO_FORMAT: '%17n %9P %.10T %.5c %.8m %24f %28E'
   concretizer:
     unify: false
