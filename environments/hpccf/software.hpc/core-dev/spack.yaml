@@ -35,13 +35,13 @@ spack:
       externals:
       - spec: hcoll@4.8.3230 %gcc@11
         prefix: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230
-        extra_attributes:
-          environment:
-            prepend_path:
-              LD_LIBRARY_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/lib
-              LIBRARY_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/lib
-              CPATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/include
-              PKG_CONFIG_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/pkgconfig
+          #extra_attributes:
+          #  environment:
+          #    prepend_path:
+          #      LD_LIBRARY_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/lib
+          #      LIBRARY_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/lib
+          #      CPATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/include
+          #      PKG_CONFIG_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/pkgconfig
       buildable: False
     hwloc::
       require: +pci +libxml2 +libudev +nvml +cuda +cairo cuda_arch=75,86
@@ -49,32 +49,32 @@ spack:
       require: ~hydra ~hcoll +xpmem +vci device=ch4 netmod=ucx pmi=pmix +fortran +romio +slurm +verbs +cuda cuda_arch=75,86
     openmpi::
       require:
-      - spec: +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda cuda_arch=75,86
+      - spec: +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs schedulers=slurm +cuda cuda_arch=75,86
         message: 'openmpi: always enforce these variants'
         when: '@:'
       - spec: +legacylaunchers +pmi
         message: 'openmpi: legacylaunchers for versions @:4'
         when: '@:4'
-      - spec: romio-filesystem=nfs,quobytefs
+      - spec: romio-filesystem=nfs,quobytefs +romio ldflags="-Wl,--allow-shlib-undefined" ^pmix@5.0.3
         when: '@5:'
         message: 'openmpi: romio-filesystem variants for @5:'
     slurm::
       require: +pmix +mariadb +hwloc +restd +nvml +cgroup +pam sysconfdir=/etc/slurm
-    ucc::
-      require: +cuda cuda_arch=75,86
-      externals:
-      - spec: ucc @1.4.0 +cuda cuda_arch=75,86
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0
-        extra_attributes:
-          environment:
-            prepend_path:
-              LD_LIBRARY_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0/lib
-              LIBRARY_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0/lib
-              CPATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0/include
-              PKG_CONFIG_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0/pkgconfig
-      buildable: False
+        #ucc::
+        #  require: +cuda cuda_arch=75,86
+        #  externals:
+        #  - spec: ucc @1.4.0 +cuda cuda_arch=75,86
+        #    prefix: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0
+        #    extra_attributes:
+        #      environment:
+        #        prepend_path:
+        #          LD_LIBRARY_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0/lib
+        #          LIBRARY_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0/lib
+        #          CPATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0/include
+        #          PKG_CONFIG_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0/pkgconfig
+        #  buildable: False
     ucx::
-      require: +cma +dc +dm ~gdrcopy +ib_hw_tm +knem +mlx5_dv +openmp +optimizations +rc +rdmacm +thread_multiple +ucg +ud +verbs +xpmem
+      require: +cma +dc +dm ~gdrcopy +ib_hw_tm +mlx5_dv +openmp +optimizations +rc +rdmacm +thread_multiple +ucg +ud +verbs
 #  modules:
 #    prefix_inspections:
 #      lib64:

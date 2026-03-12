@@ -8,6 +8,7 @@ spack:
   - $generic-specs
   - $cuda-specs
   - $messaging-specs
+  - aspect @2.5.0 %gcc@13 ^openmpi@5 %gcc@13 ^dealii@9.5.1 ~cuda ^fftw ^openblas
   - hpl@2.3 %gcc@13.2.0 ^openmpi@5.0.5 ^openblas threads=openmp 
   - hpl@2.3 %gcc@13.2.0 ^mpich@4.2.1 ^openblas threads=openmp
   - intel-mpi-benchmarks @2021.7 %gcc@13.2.0 ^openmpi@5.0.5 
@@ -118,13 +119,6 @@ spack:
       externals:
       - spec: hcoll@4.8.3230 %gcc@11
         prefix: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230
-        extra_attributes:
-          environment:
-            prepend_path:
-              LD_LIBRARY_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/lib
-              LIBRARY_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/lib
-              CPATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/include
-              PKG_CONFIG_PATH: /cvmfs/hpc.ucdavis.edu/sw/nvidia/hcoll/4.8.3230/pkgconfig
       buildable: False
     hwloc::
       externals:
@@ -179,16 +173,16 @@ spack:
           prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/zen3/mpich-4.2.1
       buildable: false
     openmpi::
-      require:
-      - spec: +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda cuda_arch=75,86
-        message: 'openmpi: always enforce these variants'
-        when: '@:'
-      - spec: +legacylaunchers +pmi
-        message: 'openmpi: legacylaunchers for versions @:4'
-        when: '@:4'
-      - spec: romio-filesystem=nfs,quobytefs
-        when: '@5:'
-        message: 'openmpi: romio-filesystem variants for @5:'
+      #require:
+      #- spec: +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda cuda_arch=75,86
+      #  message: 'openmpi: always enforce these variants'
+      #  when: '@:'
+      #- spec: +legacylaunchers +pmi
+      #  message: 'openmpi: legacylaunchers for versions @:4'
+      #  when: '@:4'
+      #- spec: romio-filesystem=nfs,quobytefs +romio ^pmix@5.0.3
+      #  when: '@5:'
+      #  message: 'openmpi: romio-filesystem variants for @5:'
       externals:
         - spec: openmpi@4.1.5 +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda  target=x86_64_v3
           prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/openmpi-4.1.5
@@ -198,14 +192,14 @@ spack:
           prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/openmpi-4.1.7
         - spec: openmpi@4.1.7 +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda  target=x86_64_v3 %oneapi
           prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/oneapi/openmpi-4.1.7
-        - spec: openmpi@5.0.5 +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda target=x86_64_v3
+        - spec: openmpi@5.0.5 +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda romio-filesystem=nfs,quobytefs +romio arch=linux-ubuntu22.04-x86_64_v3
           prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/openmpi-5.0.5
         - spec: openmpi@5.0.5 +atomics +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda target=x86_64_v3 %oneapi
           prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/oneapi/openmpi-5.0.5
 
       buildable: false
     ucx::
-      require: +cma +dc +dm ~gdrcopy +ib_hw_tm +knem +mlx5_dv +openmp +optimizations +rc +rdmacm +thread_multiple +ucg +ud +verbs +xpmem
+      require: +cma +dc +dm ~gdrcopy +ib_hw_tm +knem +mlx5_dv +openmp +optimizations +rc +rdmacm +thread_multiple +ucg +ud +verbs
       externals:
         - spec: ucx@1.17.0 target=x86_64_v3
           prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core-dev/view/generic/ucx-1.17.0
