@@ -57,11 +57,11 @@ packages:
     require: '+allow-unsupported-compilers'
       
   slurm:
-    require: '+pmix +mariadb +hwloc +restd +nvml +cgroup +pam sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3'
+    require: '+pmix +mariadb +hwloc +restd +nvml +cgroup +pam sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3 ^pmix@5.0.3'
 
   ucx:
-    require: '+cma +dc +dm +gdrcopy +ib_hw_tm +knem +mlx5_dv +openmp +optimizations +rc +rdmacm +thread_multiple +ucg +ud +verbs +xpmem'
-  
+    require: '+cma +dc +dm ~gdrcopy +ib_hw_tm +mlx5_dv +openmp +optimizations +rc +rdmacm +thread_multiple +ucg +ud +verbs'
+
   openmpi:
     require: 
       - spec: '+atomics fabrics=ucx schedulers=slurm +cuda cuda_arch=75,86'
@@ -70,12 +70,12 @@ packages:
       - spec: '+legacylaunchers'
         message: 'openmpi: legacylaunchers for versions @:4'
         when: '@:4'
-      - spec: 'romio-filesystem=nfs,quobytefs'
+      - spec: 'romio-filesystem=nfs,quobytefs ^pmix@5.0.3' # Make sure pmix version matches openmpi's internal pmix version
         when: '@5:'
         message: 'openmpi: romio-filesystem variants for @5:'
 
   mpich:
-    require: 'netmod=ucx pmi=pmix +cuda cuda_arch=75,86'
+    require: 'netmod=ucx pmi=pmix +romio +verbs +fortran +cuda cuda_arch=75,86'
 
   environment-modules:
     variants: etcdir=/etc/environment-modules

@@ -15,13 +15,20 @@ packages:
             c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-4.2.0/bin/clang
             cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-4.2.0/bin/clang++
             fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-4.2.0/bin/flang
+
       - spec: aocc@5.0.0+license-agreed target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-5.0.0
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/compilers/aocc/5.0.0
+        modules:
+          - /cvmfs/hpc.ucdavis.edu/sw/compilers/aocc/5.0.0_module
         extra_attributes:
           compilers:
-            c: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-5.0.0/bin/clang
-            cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-5.0.0/bin/clang++
-            fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/aocc-5.0.0/bin/flang
+            c: /cvmfs/hpc.ucdavis.edu/sw/compilers/aocc/5.0.0/bin/clang
+            cxx: /cvmfs/hpc.ucdavis.edu/sw/compilers/aocc/5.0.0/bin/clang++
+            fortran: /cvmfs/hpc.ucdavis.edu/sw/compilers/aocc/5.0.0/bin/flang
+          flags:
+            cflags:   -O3 -fvectorize -fslp-vectorize -fnt-store
+            cxxflags: -O3 -fvectorize -fslp-vectorize -fnt-store
+            cppflags: -O3 -fvectorize -fslp-vectorize -fnt-store
     buildable: false
   openssl:
     externals:
@@ -167,20 +174,24 @@ packages:
             cxx: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-classic-2021.10.0/bin/icpc
             fortran: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/intel-oneapi-compilers-classic-2021.10.0/bin/ifort
             #flags:
-            #  cflags: -gcc-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-13.2.0/bin/gcc -isystem/usr/include/x86_64-linux-gnu 
-            #  cxxflags: -gxx-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-13.2.0/bin/g++ -isystem/usr/include/x86_64-linux-gnu 
+            #  cflags: -gcc-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-13.2.0/bin/gcc -isystem/usr/include/x86_64-linux-gnu
+            #  cxxflags: -gxx-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-13.2.0/bin/g++ -isystem/usr/include/x86_64-linux-gnu
             #  fflags: -gcc-name /cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/gcc-13.2.0/bin/gcc
     buildable: false
   # When mpi=openmpi, this introduces an unresolvable dependency.
   # See https://github.com/spack/spack/issues/15836 for details
   hwloc:
     externals:
-      - spec: hwloc@2.11.1+cairo+cuda~gl+libudev+libxml2+nvml~oneapi-level-zero~opencl+pci~rocm cuda_arch=75,86 libs=shared,static target=x86_64_v3
+      - spec: hwloc@2.11.1 cuda_arch=75,86 libs=shared,static target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/hwloc-2.11.1
-      - spec: hwloc@2.11.1+cairo+cuda~gl+libudev+libxml2+nvml~oneapi-level-zero~opencl+pci~rocm cuda_arch=75,86 libs=shared,static target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/hwloc-2.11.1
+      - spec: hwloc@2.11.1 cuda_arch=75,86 libs=shared,static target=zen2
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/hwloc-2.11.1
+      - spec: hwloc@2.11.1 cuda_arch=75,86 libs=shared,static target=zen3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/hwloc-2.11.1
+      - spec: hwloc@2.11.1 cuda_arch=75,86 libs=shared,static target=x86_64_v3 %oneapi
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/hwloc-2.11.1
     buildable: false
-    require: '+pci +libxml2 +libudev +nvml +cuda +cairo cuda_arch=75,86'
+    #require: '+pci +libxml2 +libudev +nvml +cuda +cairo cuda_arch=75,86'
   ####
   #
   # Core stack and libraries
@@ -220,7 +231,7 @@ packages:
     variants: etcdir=/etc/environment-modules
   slurm:
     externals:
-      - spec: slurm@25-05-0-1+cgroup~gtk~hdf5+hwloc+mariadb+nvml+pam+pmix+readline+restd~rsmi sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3
+      - spec: slurm@25-11-1-1+cgroup~gtk~hdf5+hwloc+mariadb+nvml+pam+pmix+readline+restd~rsmi sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm
     buildable: false
     require: '+pmix +mariadb +hwloc +restd +nvml +cgroup +pam sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3'
@@ -234,11 +245,18 @@ packages:
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/libevent-2.1.12
       - spec: libevent@2.1.12+openssl target=zen3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/libevent-2.1.12
+      - spec: libevent@2.1.12+openssl target=zen2 %aocc@5.0
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/libevent-2.1.12
     buildable: false
   go:
     externals:
       - spec: go@1.23.2 target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/go-1.23.2
+    buildable: false
+  gaussian:
+    externals:
+      - spec: gaussian@16-B.01 target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/gaussian16/b.01
     buildable: false
   julia:
     externals:
@@ -296,6 +314,7 @@ packages:
     require: 'netmod=ucx pmi=pmix +cuda cuda_arch=75,86'
   openmpi:
     externals:
+      # 4.1.5
       - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5
       - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3 %oneapi
@@ -304,6 +323,9 @@ packages:
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-4.1.5
       - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-4.1.5
+      - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen2 %aocc@5.0
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/openmpi-4.1.5
+      # 4.1.7
       - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.7
       - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3 %oneapi
@@ -312,25 +334,31 @@ packages:
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-4.1.7
       - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-4.1.7
-      - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5
-      - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=x86_64_v3 %oneapi
+      - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen2 %aocc@5.0
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/openmpi-4.1.7
+      # 5.0.5
+      - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm arch=linux-ubuntu22.04-x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5 %gcc
+
+      - spec: openmpi@5.0.5 %oneapi cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm arch=linux-ubuntu22.04-x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/openmpi-5.0.5
-      - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=zen2
+      - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm arch=linux-ubuntu22.04-zen2 %gcc
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-5.0.5
-      - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm target=zen3
+      - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm arch=linux-ubuntu22.04-zen3 %gcc
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5
+      - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm arch=linux-ubuntu22.04-zen2 %aocc@5.0
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/openmpi-5.0.5
     buildable: false
-    require:
-      - spec: '+atomics fabrics=ucx schedulers=slurm +cuda cuda_arch=75,86'
-        message: 'openmpi: always enforce these variants'
-        when: '@:'
-      - spec: '+legacylaunchers'
-        message: 'openmpi: legacylaunchers for versions @:4'
-        when: '@:4'
-      - spec: 'romio-filesystem=nfs,quobytefs'
-        when: '@5:'
-        message: 'openmpi: romio-filesystem variants for @5:'
+    #require:
+    #  - spec: '+atomics fabrics=ucx schedulers=slurm +cuda cuda_arch=75,86'
+    #    message: 'openmpi: always enforce these variants'
+    #    when: '@:'
+    #- spec: '+legacylaunchers'
+    #    message: 'openmpi: legacylaunchers for versions @:4'
+    #    when: '@:4'
+    #  - spec: 'romio-filesystem=nfs,quobytefs'
+    #    when: '@5:'
+    #    message: 'openmpi: romio-filesystem variants for @5:'
   ucx:
     externals:
       - spec: ucx@1.17.0 target=x86_64_v3
@@ -339,10 +367,12 @@ packages:
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/ucx-1.17.0
       - spec: ucx@1.17.0 target=zen2
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/ucx-1.17.0
+      - spec: ucx@1.17.0 target=zen2 %aocc@5.0
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/ucx-1.17.0
       - spec: ucx@1.17.0 target=zen3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/ucx-1.17.0
     buildable: false
-    require: '+cma +dc +dm +gdrcopy +ib_hw_tm +knem +mlx5_dv +openmp +optimizations +rc +rdmacm +thread_multiple +ucg +ud +verbs +xpmem'
+    require: '+cma +dc +dm +gdrcopy +ib_hw_tm +mlx5_dv +openmp +optimizations +rc +rdmacm +thread_multiple +ucg +ud +verbs +xpmem'
   pmix:
     externals:
       - spec: pmix@4.2.9 target=x86_64_v3
@@ -351,6 +381,8 @@ packages:
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/pmix-4.2.9
       - spec: pmix@4.2.9 target=zen2
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/pmix-4.2.9
+      - spec: pmix@4.2.9 target=zen2 %aocc@5.0
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/pmix-4.2.9
       - spec: pmix@4.2.9 target=zen3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-4.2.9
       - spec: pmix@5.0.3 target=x86_64_v3
@@ -361,6 +393,8 @@ packages:
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/pmix-5.0.3
       - spec: pmix@5.0.3 target=zen3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/pmix-5.0.3
+      - spec: pmix@5.0.3 target=zen2 %aocc@5.0
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/pmix-5.0.3
     buildable: false
   ####
   # Externals: non-buildable
@@ -378,7 +412,12 @@ packages:
   apptainer:
     externals:
       - spec: apptainer@1.3.4
-        prefix: /user
+        prefix: /usr
+    buildable: false
+  mesa:
+    externals:
+      - spec: mesa@23.2.1%gcc ~llvm +glx +opengl +osmesa
+        prefix: /usr
     buildable: false
   ####
   # Externals: buildable
@@ -393,7 +432,7 @@ packages:
   #      message: 'mkl: require intel-oneapi-mkl'
 
   #mpi:
-  #  require: 
+  #  require:
   #    - one_of:
   #      - openmpi
   #      - mpich
