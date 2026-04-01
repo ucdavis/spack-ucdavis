@@ -30,6 +30,7 @@ class Mpich(AutotoolsPackage, CudaPackage, ROCmPackage):
     license("mpich2")
 
     version("develop", submodules=True)
+    version("4.3.2", sha256="47d774587a7156a53752218c811c852e70ac44db9c502dc3f399b4cb817e3818")
     version("4.2.3", sha256="7a019180c51d1738ad9c5d8d452314de65e828ee240bcb2d1f80de9a65be88a8")
     version("4.2.2", sha256="883f5bb3aeabf627cb8492ca02a03b191d09836bbe0f599d8508351179781d41")
     version("4.2.1", sha256="23331b2299f287c3419727edc2df8922d7e7abbb9fd0ac74e03b9966f9ad42d7")
@@ -114,6 +115,16 @@ supported, and netmod is ignored if device is ch3:sock.""",
         "of applications that do heavy concurrent MPI"
         "communications. Set MPIR_CVAR_CH4_NUM_VCIS=<N> to "
         "enable multiple vcis at runtime.",
+    )
+    variant(
+        "romio-filesystem",
+        description="Add the filesystem to romio",
+        values=disjoint_sets(
+            (
+                "nfs",
+                "quobytefs",
+            )
+        ).with_non_feature_values("none"),
     )
 
     variant(
@@ -645,6 +656,10 @@ supported, and netmod is ignored if device is ch3:sock.""",
 
         if "+xpmem" in spec:
             config_args.append("--with-xpmem=" + spec["xpmem"].prefix)
+
+        if not spec.satisfies("romio-filesystem=none"):
+            args = "+".join(spec.variants["romio-filesystem"].value)
+            config_args.append(f"--with-file-system={args}")
 
         return config_args
 
