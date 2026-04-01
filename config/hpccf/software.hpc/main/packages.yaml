@@ -302,16 +302,18 @@ packages:
     require: '+allow-unsupported-compilers'
   mpich:
     externals:
-      - spec: mpich@4.2.1  netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/mpich-4.2.1
-      - spec: mpich@4.2.1  netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=x86_64_v3 %oneapi
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/mpich-4.2.1
-      - spec: mpich@4.2.1  netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen2
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/mpich-4.2.1
-      - spec: mpich@4.2.1  netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/mpich-4.2.1
+      - spec: mpich@4.3.2 romio-filesystem=nfs,quobytefs netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/mpich-4.3.2
+      - spec: mpich@4.3.2 romio-filesystem=nfs,quobytefs netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=x86_64_v3 %oneapi
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/mpich-4.3.2
+      - spec: mpich@4.3.2 romio-filesystem=nfs,quobytefs netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen2
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/mpich-4.3.2
+      - spec: mpich@4.3.2 romio-filesystem=nfs,quobytefs netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/mpich-4.3.2
+      - spec: mpich@4.3.2 romio-filesystem=nfs,quobytefs netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen2 %aocc@5.0
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/mpich-4.3.2
     buildable: false
-    require: 'netmod=ucx pmi=pmix +cuda cuda_arch=75,86'
+    require: 'romio-filesystem=nfs,quobytefs netmod=ucx pmi=pmix +cuda cuda_arch=75,86'
   openmpi:
     externals:
       # 4.1.5

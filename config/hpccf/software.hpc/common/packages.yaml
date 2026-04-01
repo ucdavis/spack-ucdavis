@@ -75,7 +75,7 @@ packages:
         message: 'openmpi: romio-filesystem variants for @5:'
 
   mpich:
-    require: 'netmod=ucx pmi=pmix +romio +verbs +fortran +cuda cuda_arch=75,86'
+    require: 'netmod=ucx pmi=pmix romio-filesystem=nfs,quobytefs +romio +verbs +fortran +cuda cuda_arch=75,86 ^pmix@5.0.3'
 
   environment-modules:
     variants: etcdir=/etc/environment-modules

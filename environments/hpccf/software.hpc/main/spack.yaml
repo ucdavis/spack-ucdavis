@@ -46,6 +46,7 @@ spack:
       - llvm
       - repeatmasker # short term fix: repeatmasker is downloading giant DB files
       projections:
+        asepect: bench/{target}/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
         hpl: bench/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
         intel-mpi-benchmarks: bench/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
         "target=x86_64_v3 %oneapi": oneapi/{name}-{version}
