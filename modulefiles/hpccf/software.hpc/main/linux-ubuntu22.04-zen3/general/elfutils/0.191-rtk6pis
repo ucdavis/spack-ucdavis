@@ -1,0 +1,76 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:45:30.181761
+##
+## elfutils@0.191%gcc@13.2.0~debuginfod+exeprefix+nls build_system=autotools arch=linux-ubuntu22.04-zen3/rtk6pis
+##
+## Configure options: --with-bzlib=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/bzip2-1.0.8-wz4eegz6ceqpftqmadi7inc5zosgctzt --with-lzma=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/xz-5.4.6-a24paznjicffunpkddbatriorqbvkmr7 --with-zlib=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/zlib-ng-2.2.1-nq2fn2zk7neqnk5x5huakun5ooot4p2v --program-prefix='eu-' --with-zstd=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/zstd-1.5.6-vrlio3vbrejrxkn6beizdks2i66qczq5 --with-libiconv-prefix=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/libiconv-1.17-wgio5ewy4elzhzv3pnxy7gzyoowgxmp6 --with-libintl-prefix=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/gettext-0.22.5-v4szz4ygfb3p5jkjflgjndkgoswzkmrt --disable-debuginfod --disable-libdebuginfod
+##
+
+
+module-whatis {elfutils is a collection of various binary tools such as eu-objdump, eu-readelf, and other utilities that allow you to inspect and manipulate ELF files. Refer to Table 5.Tools Included in elfutils for Red Hat Developer for a complete list of binary tools that are distributed with the Red Hat Developer Toolset version of elfutils.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : elfutils}
+    puts stderr {Version: 0.191}
+    puts stderr {Target : zen3}
+    puts stderr {}
+    puts stderr {elfutils is a collection of various binary tools such as eu-objdump, eu-}
+    puts stderr {readelf, and other utilities that allow you to inspect and manipulate}
+    puts stderr {ELF files. Refer to Table 5.Tools Included in elfutils for Red Hat}
+    puts stderr {Developer for a complete list of binary tools that are distributed with}
+    puts stderr {the Red Hat Developer Toolset version of elfutils.}
+}
+
+conflict elfutils
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/elfutils-0.191-rtk6pis24hh7227xlxqdwiwmgwsfc56e/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/elfutils-0.191-rtk6pis24hh7227xlxqdwiwmgwsfc56e/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/elfutils-0.191-rtk6pis24hh7227xlxqdwiwmgwsfc56e/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/elfutils-0.191-rtk6pis24hh7227xlxqdwiwmgwsfc56e/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/elfutils-0.191-rtk6pis24hh7227xlxqdwiwmgwsfc56e/include}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/elfutils-0.191-rtk6pis24hh7227xlxqdwiwmgwsfc56e/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/elfutils-0.191-rtk6pis24hh7227xlxqdwiwmgwsfc56e/share/man}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/elfutils-0.191-rtk6pis24hh7227xlxqdwiwmgwsfc56e/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/elfutils-0.191-rtk6pis24hh7227xlxqdwiwmgwsfc56e/.}
+setenv ELFUTILS_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/elfutils-0.191-rtk6pis24hh7227xlxqdwiwmgwsfc56e}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

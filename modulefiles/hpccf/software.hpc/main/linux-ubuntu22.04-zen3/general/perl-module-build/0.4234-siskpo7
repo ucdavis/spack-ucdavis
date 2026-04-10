@@ -1,0 +1,77 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:46:28.484809
+##
+## perl-module-build@0.4234%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-zen3/siskpo7
+##
+
+
+module-whatis {Module::Build is a system for building, testing, and installing Perl modules. It is meant to be an alternative to ExtUtils::MakeMaker. Developers may alter the behavior of the module through subclassing in a much more straightforward way than with MakeMaker. It also does not require a make on your system - most of the Module::Build code is pure-perl and written in a very cross-platform way. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-module-build}
+    puts stderr {Version: 0.4234}
+    puts stderr {Target : zen3}
+    puts stderr {}
+    puts stderr {Module::Build is a system for building, testing, and installing Perl}
+    puts stderr {modules. It is meant to be an alternative to ExtUtils::MakeMaker.}
+    puts stderr {Developers may alter the behavior of the module through subclassing in a}
+    puts stderr {much more straightforward way than with MakeMaker. It also does not}
+    puts stderr {require a make on your system - most of the Module::Build code is pure-}
+    puts stderr {perl and written in a very cross-platform way.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.40.0-bctvhob
+} else {
+    depends-on perl/5.40.0-bctvhob
+}
+conflict perl-module-build
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/perl-module-build-0.4234-siskpo7ig3xdei36th63kmliyw47egrh/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/perl-module-build-0.4234-siskpo7ig3xdei36th63kmliyw47egrh/lib}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/perl-module-build-0.4234-siskpo7ig3xdei36th63kmliyw47egrh/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/perl-module-build-0.4234-siskpo7ig3xdei36th63kmliyw47egrh/man}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/perl-module-build-0.4234-siskpo7ig3xdei36th63kmliyw47egrh/.}
+prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/perl-module-build-0.4234-siskpo7ig3xdei36th63kmliyw47egrh/lib/perl5}
+setenv PERL_MODULE_BUILD_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/perl-module-build-0.4234-siskpo7ig3xdei36th63kmliyw47egrh}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

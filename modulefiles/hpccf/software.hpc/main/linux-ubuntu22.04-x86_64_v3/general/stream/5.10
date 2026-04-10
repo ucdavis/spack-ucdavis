@@ -1,0 +1,64 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:49:35.496035
+##
+## stream@5.10%gcc@13.2.0+openmp build_system=makefile ntimes=100 offset=none stream_array_size=650000000 stream_type=double arch=linux-ubuntu22.04-x86_64_v3/6tmmssy
+##
+
+
+module-whatis {The STREAM benchmark is a simple synthetic benchmark program that measures sustainable memory bandwidth (in MB/s) and the corresponding computation rate for simple vector kernels.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : stream}
+    puts stderr {Version: 5.10}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The STREAM benchmark is a simple synthetic benchmark program that}
+    puts stderr {measures sustainable memory bandwidth (in MB/s) and the corresponding}
+    puts stderr {computation rate for simple vector kernels.}
+}
+
+conflict stream
+
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/stream-5.10/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/stream-5.10/.}
+setenv STREAM_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/stream-5.10-6tmmssyufc6zhgpmdfjj6gj42mw2nhld}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

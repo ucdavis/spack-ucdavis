@@ -1,0 +1,72 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:49:31.006827
+##
+## repeatscout@1.0.5%gcc@13.2.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3/6j5xywc
+##
+
+
+module-whatis {RepeatScout - De Novo Repeat Finder, Price A.L., Jones N.C. and Pevzner P.A.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : repeatscout}
+    puts stderr {Version: 1.0.5}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {RepeatScout - De Novo Repeat Finder, Price A.L., Jones N.C. and Pevzner}
+    puts stderr {P.A.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load nseg/1.0-z7wuqx5
+    module load perl/5.40.0
+    module load trf/4.09.1-ojcphvp
+} else {
+    depends-on nseg/1.0-z7wuqx5
+    depends-on perl/5.40.0
+    depends-on trf/4.09.1-ojcphvp
+}
+conflict repeatscout
+
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/repeatscout-1.0.5/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/repeatscout-1.0.5/.}
+setenv REPEATSCOUT_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/repeatscout-1.0.5-6j5xywc2z2l6ge7nyqglq7ylnsek32lt}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

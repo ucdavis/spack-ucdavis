@@ -1,0 +1,72 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:49:27.032333
+##
+## python@3.11.9%gcc@13.2.0+bz2+crypt+ctypes+dbm~debug+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tkinter+uuid+zlib build_system=generic patches=13fa8bf,b0615b2,ebdca64,f2fd060 arch=linux-ubuntu22.04-zen3/no4q5t2
+##
+## Configure options: CPPFLAGS=-I/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/bzip2-1.0.8-3kw5li3w63lsupkvuxshgzg2vocqer2m/include -I/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/expat-2.6.4-wkrbadqn6fkpln6yiuyyqqwhfgcvtrj5/include -I/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gcc-runtime-13.2.0-y4ja4trdxkpuyidxmq3vwsmylih2czjs/include -I/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/gdbm-1.23-sglppntxyq5sy4m4ppkw7fuhoasuddy5/include -I/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/gettext-0.22.5-475kay3lm4knvixsawltb5e6lvtinzfg/include -I/usr/include -I/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/libffi-3.4.6-mqzuwjbzjepvmyrs7uj2g6f25pmt5jva/include -I/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/libxcrypt-4.4.35-wgi6fnyuc2rrgvjxbsluffdovapskrz5/include -I/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/ncurses-6.5-sonphlcgpnmjqnzzbjmbbjcea3bws4b4/include -I/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openssl-3.4.0/include -I/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/readline-8.2-y4rpa5i5vst73fffeyykkcdscy6lfycj/include -I/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/sqlite-3.46.0-75v6eadpde6pxl6y63ewwfcpkpekya26/include -I/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/util-linux-uuid-2.40.2-heuen27j53ywarolbnzf7b6bl3lwe4d7/include -I/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/xz-5.4.6-v5i4yfpemxvohc3i6a66s6bs3hszxcwd/include -I/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/zlib-ng-2.2.1-kkmv62jfbfkdtlwy4yfj34kkgzpej2yq/include LDFLAGS=-L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/bzip2-1.0.8-3kw5li3w63lsupkvuxshgzg2vocqer2m/lib -L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/expat-2.6.4-wkrbadqn6fkpln6yiuyyqqwhfgcvtrj5/lib  -L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/gdbm-1.23-sglppntxyq5sy4m4ppkw7fuhoasuddy5/lib -L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/gettext-0.22.5-475kay3lm4knvixsawltb5e6lvtinzfg/lib  -L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/libffi-3.4.6-mqzuwjbzjepvmyrs7uj2g6f25pmt5jva/lib64 -L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/libxcrypt-4.4.35-wgi6fnyuc2rrgvjxbsluffdovapskrz5/lib -L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/ncurses-6.5-sonphlcgpnmjqnzzbjmbbjcea3bws4b4/lib -L/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openssl-3.4.0/lib64 -L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/readline-8.2-y4rpa5i5vst73fffeyykkcdscy6lfycj/lib -L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/sqlite-3.46.0-75v6eadpde6pxl6y63ewwfcpkpekya26/lib -L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/util-linux-uuid-2.40.2-heuen27j53ywarolbnzf7b6bl3lwe4d7/lib -L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/xz-5.4.6-v5i4yfpemxvohc3i6a66s6bs3hszxcwd/lib -L/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/zlib-ng-2.2.1-kkmv62jfbfkdtlwy4yfj34kkgzpej2yq/lib --without-pydebug --enable-shared --without-ensurepip --with-openssl=/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openssl-3.4.0 --with-dbmliborder=gdbm --with-system-expat --with-system-ffi --enable-loadable-sqlite-extensions CFLAGS=-fPIC
+##
+
+
+module-whatis {The Python programming language.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : python}
+    puts stderr {Version: 3.11.9}
+    puts stderr {Target : zen3}
+    puts stderr {}
+    puts stderr {The Python programming language.}
+}
+
+conflict python
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/python-3.11.9-no4q5t2567f3jv57xgwahvq7s77ku4ba/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/python-3.11.9-no4q5t2567f3jv57xgwahvq7s77ku4ba/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/python-3.11.9-no4q5t2567f3jv57xgwahvq7s77ku4ba/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/python-3.11.9-no4q5t2567f3jv57xgwahvq7s77ku4ba/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/python-3.11.9-no4q5t2567f3jv57xgwahvq7s77ku4ba/include}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/python-3.11.9-no4q5t2567f3jv57xgwahvq7s77ku4ba/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/python-3.11.9-no4q5t2567f3jv57xgwahvq7s77ku4ba/share/man}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/python-3.11.9-no4q5t2567f3jv57xgwahvq7s77ku4ba/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/python-3.11.9-no4q5t2567f3jv57xgwahvq7s77ku4ba/.}
+setenv PYTHON_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/python-3.11.9-no4q5t2567f3jv57xgwahvq7s77ku4ba}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,77 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:48:05.361572
+##
+## py-meson-python@0.16.0%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/dzjqwe2
+##
+
+
+module-whatis {Meson Python build backend (PEP 517).}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-meson-python}
+    puts stderr {Version: 0.16.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Meson Python build backend (PEP 517).}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load meson/1.5.1-3p4cnvl
+    module load py-packaging/24.1-i4rgow4
+    module load py-pyproject-metadata/0.7.1-zbnpkty
+    module load python/3.11.9-pvgvzl4
+    module load python-venv/1.0-55lh4lb
+} else {
+    depends-on meson/1.5.1-3p4cnvl
+    depends-on py-packaging/24.1-i4rgow4
+    depends-on py-pyproject-metadata/0.7.1-zbnpkty
+    depends-on python/3.11.9-pvgvzl4
+    depends-on python-venv/1.0-55lh4lb
+}
+conflict py-meson-python
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-meson-python-0.16.0-dzjqwe2k7pxkbobs755e34u3lkkvkakp/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-meson-python-0.16.0-dzjqwe2k7pxkbobs755e34u3lkkvkakp/lib}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-meson-python-0.16.0-dzjqwe2k7pxkbobs755e34u3lkkvkakp/.}
+prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-meson-python-0.16.0-dzjqwe2k7pxkbobs755e34u3lkkvkakp/lib/python3.11/site-packages}
+setenv PY_MESON_PYTHON_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-meson-python-0.16.0-dzjqwe2k7pxkbobs755e34u3lkkvkakp}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

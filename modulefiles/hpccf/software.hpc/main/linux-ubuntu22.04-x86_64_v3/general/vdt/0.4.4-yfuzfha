@@ -1,0 +1,69 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:49:37.702682
+##
+## vdt@0.4.4%gcc@13.2.0~ipo~preload build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/yfuzfha
+##
+## Configure options: -DPRELOAD:BOOL=OFF -DSSE:BOOL=ON -DAVX:BOOL=ON -DAVX2:BOOL=ON -DFMA:BOOL=ON -DNEON:BOOL=OFF
+##
+
+
+module-whatis {Vectorised math. A collection of fast and inline implementations of mathematical functions. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : vdt}
+    puts stderr {Version: 0.4.4}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Vectorised math. A collection of fast and inline implementations of}
+    puts stderr {mathematical functions.}
+}
+
+conflict vdt
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/vdt-0.4.4-yfuzfha66apfmmh4owf5hkck76zna6hm/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/vdt-0.4.4-yfuzfha66apfmmh4owf5hkck76zna6hm/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/vdt-0.4.4-yfuzfha66apfmmh4owf5hkck76zna6hm/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/vdt-0.4.4-yfuzfha66apfmmh4owf5hkck76zna6hm/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/vdt-0.4.4-yfuzfha66apfmmh4owf5hkck76zna6hm/include}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/vdt-0.4.4-yfuzfha66apfmmh4owf5hkck76zna6hm/.}
+setenv VDT_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/vdt-0.4.4-yfuzfha66apfmmh4owf5hkck76zna6hm}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,89 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:45:54.222246
+##
+## interproscan@4.8%gcc@13.2.0~databases build_system=generic patches=a243277,c90e3d6 arch=linux-ubuntu22.04-x86_64_v3/e2eg4q6
+##
+
+
+module-whatis {InterProScan is the software package that allows sequences (protein and nucleic) to be scanned against InterPro's signatures. Signatures are predictive models, provided by several different databases, that make up the InterPro consortium. By default this does not download all the databases you likely want, you'll either want to build with +databases or download the data archive for the version you installed to a separate location and modify interproscan.properties}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : interproscan}
+    puts stderr {Version: 4.8}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {InterProScan is the software package that allows sequences (protein and}
+    puts stderr {nucleic) to be scanned against InterPro's signatures. Signatures are}
+    puts stderr {predictive models, provided by several different databases, that make up}
+    puts stderr {the InterPro consortium. By default this does not download all the}
+    puts stderr {databases you likely want, you'll either want to build with +databases}
+    puts stderr {or download the data archive for the version you installed to a separate}
+    puts stderr {location and modify interproscan.properties}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.40.0%gcc@11.4.0-cwpt5ec
+    module load perl-cgi/4.56-ylsasfw
+    module load perl-db-file/1.859-3hxsd6q
+    module load perl-io-string/1.08-hiuzdcn
+    module load perl-io-stringy/2.113-lo4iyjm
+    module load perl-mailtools/2.21-3r47hdp
+    module load perl-xml-parser/2.47%gcc@11.4.0-tlui3ed
+    module load perl-xml-quote/1.02-hd6p4xs
+} else {
+    depends-on perl/5.40.0%gcc@11.4.0-cwpt5ec
+    depends-on perl-cgi/4.56-ylsasfw
+    depends-on perl-db-file/1.859-3hxsd6q
+    depends-on perl-io-string/1.08-hiuzdcn
+    depends-on perl-io-stringy/2.113-lo4iyjm
+    depends-on perl-mailtools/2.21-3r47hdp
+    depends-on perl-xml-parser/2.47%gcc@11.4.0-tlui3ed
+    depends-on perl-xml-quote/1.02-hd6p4xs
+}
+conflict interproscan
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/interproscan-4.8-e2eg4q6elavuabl55srw4zqxinbm5yf2/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/interproscan-4.8-e2eg4q6elavuabl55srw4zqxinbm5yf2/lib}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/interproscan-4.8-e2eg4q6elavuabl55srw4zqxinbm5yf2/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/interproscan-4.8-e2eg4q6elavuabl55srw4zqxinbm5yf2/.}
+setenv INTERPROSCAN_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/interproscan-4.8-e2eg4q6elavuabl55srw4zqxinbm5yf2}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,64 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:49:40.785439
+##
+## zip@3.0%gcc@13.2.0 build_system=makefile patches=14dc880,3bc30ba,5068e7c,51f48db,66ab4ce,a92fc4e,a95ed93,b930b69,eb83fc8,f7d0bc4,fa8312c arch=linux-ubuntu22.04-x86_64_v3/xwplkcg
+##
+
+
+module-whatis {Zip is a compression and file packaging/archive utility.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : zip}
+    puts stderr {Version: 3.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Zip is a compression and file packaging/archive utility.}
+}
+
+conflict zip
+
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zip-3.0-xwplkcgtrzehspiyw745jgpm7tp7we2z/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zip-3.0-xwplkcgtrzehspiyw745jgpm7tp7we2z/man}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zip-3.0-xwplkcgtrzehspiyw745jgpm7tp7we2z/.}
+setenv ZIP_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/zip-3.0-xwplkcgtrzehspiyw745jgpm7tp7we2z}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

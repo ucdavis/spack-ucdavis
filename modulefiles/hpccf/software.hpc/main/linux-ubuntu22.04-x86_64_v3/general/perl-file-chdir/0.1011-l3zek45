@@ -1,0 +1,74 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:46:25.476635
+##
+## perl-file-chdir@0.1011%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/l3zek45
+##
+
+
+module-whatis {Perl's chdir() has the unfortunate problem of being very, very, very global. If any part of your program calls chdir() or if any library you use calls chdir(), it changes the current working directory for the *whole* program.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-file-chdir}
+    puts stderr {Version: 0.1011}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Perl's chdir() has the unfortunate problem of being very, very, very}
+    puts stderr {global. If any part of your program calls chdir() or if any library you}
+    puts stderr {use calls chdir(), it changes the current working directory for the}
+    puts stderr {*whole* program. This sucks. File::chdir gives you an alternative, $CWD}
+    puts stderr {and @CWD. These two variables combine all the power of chdir(),}
+    puts stderr {File::Spec and Cwd.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.40.0%gcc@11.4.0-cwpt5ec
+} else {
+    depends-on perl/5.40.0%gcc@11.4.0-cwpt5ec
+}
+conflict perl-file-chdir
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-file-chdir-0.1011-l3zek45vsmfjci7hb5brxgb23qzikozk/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-file-chdir-0.1011-l3zek45vsmfjci7hb5brxgb23qzikozk/lib}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-file-chdir-0.1011-l3zek45vsmfjci7hb5brxgb23qzikozk/.}
+prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-file-chdir-0.1011-l3zek45vsmfjci7hb5brxgb23qzikozk/lib/perl5}
+setenv PERL_FILE_CHDIR_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-file-chdir-0.1011-l3zek45vsmfjci7hb5brxgb23qzikozk}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

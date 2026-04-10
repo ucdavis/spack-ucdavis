@@ -1,0 +1,72 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:46:12.548360
+##
+## mysqlpp@3.3.0%gcc@13.2.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/gr4qmfy
+##
+## Configure options: --with-mysql=/usr
+##
+
+
+module-whatis {MySQL++ is a C++ wrapper for MySQL and MariaDB C APIs. It is built on the same principles as the Standard C++ Library to make dealing with the database as easy as dealing with std containers. MySQL++ also provides facilities that let you avoid the most repetitive sorts of SQL within your own code, providing native C++ interfaces for these common tasks.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : mysqlpp}
+    puts stderr {Version: 3.3.0}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {MySQL++ is a C++ wrapper for MySQL and MariaDB C APIs. It is built on}
+    puts stderr {the same principles as the Standard C++ Library to make dealing with the}
+    puts stderr {database as easy as dealing with std containers. MySQL++ also provides}
+    puts stderr {facilities that let you avoid the most repetitive sorts of SQL within}
+    puts stderr {your own code, providing native C++ interfaces for these common tasks.}
+}
+
+conflict mysqlpp
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/mysqlpp-3.3.0-gr4qmfyzskuwzknpq2d76avluodtpebp/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/mysqlpp-3.3.0-gr4qmfyzskuwzknpq2d76avluodtpebp/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/mysqlpp-3.3.0-gr4qmfyzskuwzknpq2d76avluodtpebp/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/mysqlpp-3.3.0-gr4qmfyzskuwzknpq2d76avluodtpebp/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/mysqlpp-3.3.0-gr4qmfyzskuwzknpq2d76avluodtpebp/include}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/mysqlpp-3.3.0-gr4qmfyzskuwzknpq2d76avluodtpebp/.}
+setenv MYSQLPP_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/mysqlpp-3.3.0-gr4qmfyzskuwzknpq2d76avluodtpebp}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

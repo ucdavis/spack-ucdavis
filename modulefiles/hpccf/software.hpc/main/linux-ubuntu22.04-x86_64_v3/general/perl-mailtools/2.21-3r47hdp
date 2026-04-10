@@ -1,0 +1,71 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:46:28.192906
+##
+## perl-mailtools@2.21%gcc@13.2.0 build_system=perl arch=linux-ubuntu22.04-x86_64_v3/3r47hdp
+##
+
+
+module-whatis {Perl module for handling mail}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : perl-mailtools}
+    puts stderr {Version: 2.21}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Perl module for handling mail}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load perl/5.40.0%gcc@11.4.0-cwpt5ec
+    module load perl-timedate/2.33-yklgacu
+} else {
+    depends-on perl/5.40.0%gcc@11.4.0-cwpt5ec
+    depends-on perl-timedate/2.33-yklgacu
+}
+conflict perl-mailtools
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-mailtools-2.21-3r47hdpdxcbklgc6x7z4m3zp62p2mb73/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-mailtools-2.21-3r47hdpdxcbklgc6x7z4m3zp62p2mb73/lib}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-mailtools-2.21-3r47hdpdxcbklgc6x7z4m3zp62p2mb73/.}
+prepend-path PERL5LIB {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-mailtools-2.21-3r47hdpdxcbklgc6x7z4m3zp62p2mb73/lib/perl5}
+setenv PERL_MAILTOOLS_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/perl-mailtools-2.21-3r47hdpdxcbklgc6x7z4m3zp62p2mb73}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,117 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:48:08.019668
+##
+## py-multiqc@1.23%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/ddaeexj
+##
+
+
+module-whatis {MultiQC is a tool to aggregate bioinformatics results across many samples into a single report. It is written in Python and contains modules for a large number of common bioinformatics tools.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-multiqc}
+    puts stderr {Version: 1.23}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {MultiQC is a tool to aggregate bioinformatics results across many}
+    puts stderr {samples into a single report. It is written in Python and contains}
+    puts stderr {modules for a large number of common bioinformatics tools.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-click/8.1.7-kjrzl6j
+    module load py-coloredlogs/15.0.1-koguzbh
+    module load py-humanize/4.9.0-zqcgqvk
+    module load py-importlib-metadata/7.0.1-zicbpxt
+    module load py-jinja2/3.1.4-4gsb36v
+    module load py-kaleido/0.2.1-riennrc
+    module load py-markdown/3.4.1-dopjxc4
+    module load py-natsort/8.4.0-6dhkqjr
+    module load py-numpy/1.26.4-pzeanm2
+    module load py-packaging/24.1-a36mhum
+    module load py-pillow/11.0.0-ofhp5he
+    module load py-plotly/5.20.0-er524ij
+    module load py-pyaml-env/1.2.1-angiqop
+    module load py-pydantic/2.7.4-srj25r3
+    module load py-pyyaml/6.0.2-xo53gxx
+    module load py-requests/2.32.3-s2t3ntc
+    module load py-rich/13.7.1-o74bxaf
+    module load py-rich-click/1.5.2-i46u4y4
+    module load py-spectra/0.0.11-p3nmzwl
+    module load py-tqdm/4.66.3-mnhyrue
+    module load py-typeguard/3.0.2-2o5k3sy
+    module load python/3.11.9
+    module load python-venv/1.0-ed2nmwx
+} else {
+    depends-on py-click/8.1.7-kjrzl6j
+    depends-on py-coloredlogs/15.0.1-koguzbh
+    depends-on py-humanize/4.9.0-zqcgqvk
+    depends-on py-importlib-metadata/7.0.1-zicbpxt
+    depends-on py-jinja2/3.1.4-4gsb36v
+    depends-on py-kaleido/0.2.1-riennrc
+    depends-on py-markdown/3.4.1-dopjxc4
+    depends-on py-natsort/8.4.0-6dhkqjr
+    depends-on py-numpy/1.26.4-pzeanm2
+    depends-on py-packaging/24.1-a36mhum
+    depends-on py-pillow/11.0.0-ofhp5he
+    depends-on py-plotly/5.20.0-er524ij
+    depends-on py-pyaml-env/1.2.1-angiqop
+    depends-on py-pydantic/2.7.4-srj25r3
+    depends-on py-pyyaml/6.0.2-xo53gxx
+    depends-on py-requests/2.32.3-s2t3ntc
+    depends-on py-rich/13.7.1-o74bxaf
+    depends-on py-rich-click/1.5.2-i46u4y4
+    depends-on py-spectra/0.0.11-p3nmzwl
+    depends-on py-tqdm/4.66.3-mnhyrue
+    depends-on py-typeguard/3.0.2-2o5k3sy
+    depends-on python/3.11.9
+    depends-on python-venv/1.0-ed2nmwx
+}
+conflict py-multiqc
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/lib}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/.}
+prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/lib/python3.11/site-packages}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/python-3.11.9/bin}
+setenv PY_MULTIQC_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-multiqc-1.23-ddaeexjn3mtl2uk5p2fcljz4gecqf77l}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

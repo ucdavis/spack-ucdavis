@@ -1,0 +1,73 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:46:15.284561
+##
+## nghttp2@1.63.0%gcc@13.2.0 build_system=autotools arch=linux-ubuntu22.04-zen2/7dw4mcs
+##
+## Configure options: --enable-lib-only --with-libxml2=no --with-jansson=no --with-zlib=no --with-libevent-openssl=no --with-libcares=no --with-openssl=no --with-libev=no --with-cunit=no --with-jemalloc=no --with-systemd=no --with-mruby=no --with-neverbleed=no --with-boost=no --with-wolfssl=no
+##
+
+
+module-whatis {nghttp2 is an implementation of HTTP/2 and its header compression algorithm HPACK in C.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : nghttp2}
+    puts stderr {Version: 1.63.0}
+    puts stderr {Target : zen2}
+    puts stderr {}
+    puts stderr {nghttp2 is an implementation of HTTP/2 and its header compression}
+    puts stderr {algorithm HPACK in C.}
+}
+
+conflict nghttp2
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/nghttp2-1.63.0-7dw4mcsjc3lhesj6rpef4uqyxw77lnev/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/nghttp2-1.63.0-7dw4mcsjc3lhesj6rpef4uqyxw77lnev/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/nghttp2-1.63.0-7dw4mcsjc3lhesj6rpef4uqyxw77lnev/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/nghttp2-1.63.0-7dw4mcsjc3lhesj6rpef4uqyxw77lnev/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/nghttp2-1.63.0-7dw4mcsjc3lhesj6rpef4uqyxw77lnev/include}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/nghttp2-1.63.0-7dw4mcsjc3lhesj6rpef4uqyxw77lnev/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/nghttp2-1.63.0-7dw4mcsjc3lhesj6rpef4uqyxw77lnev/share/man}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/nghttp2-1.63.0-7dw4mcsjc3lhesj6rpef4uqyxw77lnev/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/nghttp2-1.63.0-7dw4mcsjc3lhesj6rpef4uqyxw77lnev/.}
+setenv NGHTTP2_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen2/gcc-13.2.0/nghttp2-1.63.0-7dw4mcsjc3lhesj6rpef4uqyxw77lnev}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,78 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:49:36.206878
+##
+## tar@1.34%gcc@13.2.0 build_system=autotools zip=pigz arch=linux-ubuntu22.04-zen3/cpjilhh
+##
+## Configure options: --with-xz=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/xz-5.4.6-v5i4yfpemxvohc3i6a66s6bs3hszxcwd/bin/xz --with-lzma=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/xz-5.4.6-v5i4yfpemxvohc3i6a66s6bs3hszxcwd/bin/lzma --with-bzip2=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/bzip2-1.0.8-3kw5li3w63lsupkvuxshgzg2vocqer2m/bin/bzip2 --with-libiconv-prefix=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/libiconv-1.17-vyuhnote2pb6qgja6hfzu7i4xqxe5yvo --with-zstd=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/zstd-1.5.6-ugvnge6kkbxiakha6zqptfyif7zfwltb/bin/zstd --with-gzip=/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/pigz-2.8-6enuthltu4vpnts3mazok64tsrja36z4/bin/pigz
+##
+
+
+module-whatis {GNU Tar provides the ability to create tar archives, as well as various other kinds of manipulation.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : tar}
+    puts stderr {Version: 1.34}
+    puts stderr {Target : zen3}
+    puts stderr {}
+    puts stderr {GNU Tar provides the ability to create tar archives, as well as various}
+    puts stderr {other kinds of manipulation.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load bzip2/1.0.8-3kw5li3
+    module load pigz/2.8-6enuthl
+    module load xz/5.4.6-v5i4yfp
+    module load zstd/1.5.6-ugvnge6
+} else {
+    depends-on bzip2/1.0.8-3kw5li3
+    depends-on pigz/2.8-6enuthl
+    depends-on xz/5.4.6-v5i4yfp
+    depends-on zstd/1.5.6-ugvnge6
+}
+conflict tar
+
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/tar-1.34-cpjilhhayyshg4jdi4lyunrizyamr365/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/tar-1.34-cpjilhhayyshg4jdi4lyunrizyamr365/share/man}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/tar-1.34-cpjilhhayyshg4jdi4lyunrizyamr365/.}
+setenv TAR_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-zen3/gcc-13.2.0/tar-1.34-cpjilhhayyshg4jdi4lyunrizyamr365}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

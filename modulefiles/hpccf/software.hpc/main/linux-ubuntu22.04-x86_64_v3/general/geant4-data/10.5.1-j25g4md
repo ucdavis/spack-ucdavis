@@ -1,0 +1,97 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:45:38.944928
+##
+## geant4-data@10.5.1%gcc@13.2.0 build_system=bundle arch=linux-ubuntu22.04-x86_64_v3/j25g4md
+##
+
+
+module-whatis {A bundle package to hold Geant4 data packages}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : geant4-data}
+    puts stderr {Version: 10.5.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {A bundle package to hold Geant4 data packages}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load g4abla/3.1-2h5snhp
+    module load g4emlow/7.7-yzjnaue
+    module load g4ensdfstate/2.2-fnhomx4
+    module load g4incl/1.0-2psvep6
+    module load g4ndl/4.5-po6c2cd
+    module load g4particlexs/1.1-thij6or
+    module load g4photonevaporation/5.3-7yvpjth
+    module load g4pii/1.3-ybxnrrd
+    module load g4radioactivedecay/5.3-hx3fmhd
+    module load g4realsurface/2.1.1-gfddpoo
+    module load g4saiddata/2.0-spkjojk
+} else {
+    depends-on g4abla/3.1-2h5snhp
+    depends-on g4emlow/7.7-yzjnaue
+    depends-on g4ensdfstate/2.2-fnhomx4
+    depends-on g4incl/1.0-2psvep6
+    depends-on g4ndl/4.5-po6c2cd
+    depends-on g4particlexs/1.1-thij6or
+    depends-on g4photonevaporation/5.3-7yvpjth
+    depends-on g4pii/1.3-ybxnrrd
+    depends-on g4radioactivedecay/5.3-hx3fmhd
+    depends-on g4realsurface/2.1.1-gfddpoo
+    depends-on g4saiddata/2.0-spkjojk
+}
+conflict geant4-data
+
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/geant4-data-10.5.1-j25g4md5w2q3iupjkdknexfg5deu5e4i/.}
+setenv G4ABLADATA {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/g4abla-3.1-2h5snhp3pz5qi3ybepuzwtep74zkrwhp/share/data/G4ABLA3.1}
+setenv G4LEDATA {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/g4emlow-7.7-yzjnauezq66cm72benao3cqkt6s4vyiw/share/data/G4EMLOW7.7}
+setenv G4ENSDFSTATEDATA {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/g4ensdfstate-2.2-fnhomx42gmamfzg7mnjswdrcjvtjjhmm/share/data/G4ENSDFSTATE2.2}
+setenv G4INCLDATA {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/g4incl-1.0-2psvep6rztbezcv6qrnsg2lfvxhxnto5/share/data/G4INCL1.0}
+setenv G4NEUTRONHPDATA {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/g4ndl-4.5-po6c2cdjnibo2iypqndh5fsmryadqz2o/share/data/G4NDL4.5}
+setenv G4PARTICLEXSDATA {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/g4particlexs-1.1-thij6ori74qtyhwupppquoyn3ct64pts/share/data/G4PARTICLEXS1.1}
+setenv G4LEVELGAMMADATA {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/g4photonevaporation-5.3-7yvpjthla5mxa6xklh77kfhphehjsxyh/share/data/PhotonEvaporation5.3}
+setenv G4PIIDATA {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/g4pii-1.3-ybxnrrd2si27qmwof6gh3uewdvvprfik/share/data/G4PII1.3}
+setenv G4RADIOACTIVEDATA {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/g4radioactivedecay-5.3-hx3fmhdjcfaacv4c3fuga7hj36prsm3d/share/data/RadioactiveDecay5.3}
+setenv G4REALSURFACEDATA {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/g4realsurface-2.1.1-gfddpoo5gqz747ufa4vrekqhpxfxc2vx/share/data/RealSurface2.1.1}
+setenv G4SAIDXSDATA {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/g4saiddata-2.0-spkjojk7gzwz5pqxnkrjlcfglec6mngq/share/data/G4SAIDDATA2.0}
+setenv GEANT4_DATA_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/geant4-data-10.5.1-j25g4md5w2q3iupjkdknexfg5deu5e4i}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,92 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:49:11.973803
+##
+## py-tensorboard@2.17.1%gcc@13.2.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3/krbkmvm
+##
+
+
+module-whatis {TensorBoard is a suite of web applications for inspecting and understanding your TensorFlow runs and graphs.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : py-tensorboard}
+    puts stderr {Version: 2.17.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {TensorBoard is a suite of web applications for inspecting and}
+    puts stderr {understanding your TensorFlow runs and graphs.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load py-absl-py/1.4.0-ojr3fkl
+    module load py-grpcio/1.62.2-y57t6pm
+    module load py-markdown/3.4.1-tcuvdv4
+    module load py-numpy/1.25.2-2wshlgs
+    module load py-protobuf/4.25.3-b4ekuzd
+    module load py-setuptools/63.4.3-dk3apgd
+    module load py-six/1.16.0-i34z4g2
+    module load py-tensorboard-data-server/0.7.0-7ftpby4
+    module load py-werkzeug/3.0.4-oenqkfk
+    module load python/3.11.9
+    module load python-venv/1.0-ed2nmwx
+} else {
+    depends-on py-absl-py/1.4.0-ojr3fkl
+    depends-on py-grpcio/1.62.2-y57t6pm
+    depends-on py-markdown/3.4.1-tcuvdv4
+    depends-on py-numpy/1.25.2-2wshlgs
+    depends-on py-protobuf/4.25.3-b4ekuzd
+    depends-on py-setuptools/63.4.3-dk3apgd
+    depends-on py-six/1.16.0-i34z4g2
+    depends-on py-tensorboard-data-server/0.7.0-7ftpby4
+    depends-on py-werkzeug/3.0.4-oenqkfk
+    depends-on python/3.11.9
+    depends-on python-venv/1.0-ed2nmwx
+}
+conflict py-tensorboard
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-tensorboard-2.17.1-krbkmvmw2de5vvb75j6jrdju46yyenrk/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-tensorboard-2.17.1-krbkmvmw2de5vvb75j6jrdju46yyenrk/lib}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-tensorboard-2.17.1-krbkmvmw2de5vvb75j6jrdju46yyenrk/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-tensorboard-2.17.1-krbkmvmw2de5vvb75j6jrdju46yyenrk/.}
+prepend-path PYTHONPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-tensorboard-2.17.1-krbkmvmw2de5vvb75j6jrdju46yyenrk/lib/python3.11/site-packages}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-tensorboard-2.17.1-krbkmvmw2de5vvb75j6jrdju46yyenrk/bin}
+setenv PY_TENSORBOARD_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/py-tensorboard-2.17.1-krbkmvmw2de5vvb75j6jrdju46yyenrk}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,76 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:46:05.454871
+##
+## ltr-retriever@2.8.7%gcc@13.2.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3/mzbzgmu
+##
+
+
+module-whatis {LTR_retriever is a highly accurate and sensitive program for identification of LTR retrotransposons.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : ltr-retriever}
+    puts stderr {Version: 2.8.7}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {LTR_retriever is a highly accurate and sensitive program for}
+    puts stderr {identification of LTR retrotransposons.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load blast-plus/2.16.0-k3gasfu
+    module load cdhit/4.8.1
+    module load hmmer/3.4
+    module load perl/5.40.0
+    module load repeatmasker/4.0.9-2vs4wul
+} else {
+    depends-on blast-plus/2.16.0-k3gasfu
+    depends-on cdhit/4.8.1
+    depends-on hmmer/3.4
+    depends-on perl/5.40.0
+    depends-on repeatmasker/4.0.9-2vs4wul
+}
+conflict ltr-retriever
+
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/ltr-retriever-2.8.7-mzbzgmufxfxkorhbfnugbtulwd472ovd/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/ltr-retriever-2.8.7-mzbzgmufxfxkorhbfnugbtulwd472ovd/.}
+setenv LTR_RETRIEVER_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/ltr-retriever-2.8.7-mzbzgmufxfxkorhbfnugbtulwd472ovd}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

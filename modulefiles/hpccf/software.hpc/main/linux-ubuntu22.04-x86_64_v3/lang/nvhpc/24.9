@@ -1,0 +1,83 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:46:17.818977
+##
+## nvhpc@24.9%gcc@13.2.0+blas+lapack+mpi build_system=generic default_cuda=default install_type=single arch=linux-ubuntu22.04-x86_64_v3/h6vh5vz
+##
+## Configure options: unknown, software installed outside of Spack
+##
+
+
+module-whatis {The NVIDIA HPC SDK is a comprehensive suite of compilers, libraries and tools essential to maximizing developer productivity and the performance and portability of HPC applications. The NVIDIA HPC SDK C, C++, and Fortran compilers support GPU acceleration of HPC modeling and simulation applications with standard C++ and Fortran, OpenACC directives, and CUDA. GPU-accelerated math libraries maximize performance on common HPC algorithms, and optimized communications libraries enable standards-based multi-GPU and scalable systems programming. Performance profiling and debugging tools simplify porting and optimization of HPC applications.}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : nvhpc}
+    puts stderr {Version: 24.9}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The NVIDIA HPC SDK is a comprehensive suite of compilers, libraries and}
+    puts stderr {tools essential to maximizing developer productivity and the performance}
+    puts stderr {and portability of HPC applications. The NVIDIA HPC SDK C, C++, and}
+    puts stderr {Fortran compilers support GPU acceleration of HPC modeling and}
+    puts stderr {simulation applications with standard C++ and Fortran, OpenACC}
+    puts stderr {directives, and CUDA. GPU-accelerated math libraries maximize}
+    puts stderr {performance on common HPC algorithms, and optimized communications}
+    puts stderr {libraries enable standards-based multi-GPU and scalable systems}
+    puts stderr {programming. Performance profiling and debugging tools simplify porting}
+    puts stderr {and optimization of HPC applications.}
+}
+
+conflict nvhpc
+
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.9/.}
+setenv CC {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.9/Linux_x86_64/24.9/compilers/bin/nvc}
+setenv CXX {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.9/Linux_x86_64/24.9/compilers/bin/nvc++}
+setenv F77 {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.9/Linux_x86_64/24.9/compilers/bin/nvfortran}
+setenv FC {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.9/Linux_x86_64/24.9/compilers/bin/nvfortran}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.9/Linux_x86_64/24.9/compilers/bin}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.9/Linux_x86_64/24.9/compilers/lib}
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.9/Linux_x86_64/24.9/compilers/lib}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.9/Linux_x86_64/24.9/compilers/man}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.9/Linux_x86_64/24.9/comm_libs/mpi/bin}
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.9/Linux_x86_64/24.9/comm_libs/mpi/lib}
+setenv NVHPC_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/compilers/view/nvhpc-24.9}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,74 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:45:44.360804
+##
+## gobject-introspection@1.78.1%gcc@13.2.0~strip build_system=meson buildtype=release default_library=shared arch=linux-ubuntu22.04-x86_64_v3/lbxjktl
+##
+
+
+module-whatis {The GObject Introspection is used to describe the program APIs and collect them in a uniform, machine readable format.Cairo is a 2D graphics library with support for multiple output }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : gobject-introspection}
+    puts stderr {Version: 1.78.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {The GObject Introspection is used to describe the program APIs and}
+    puts stderr {collect them in a uniform, machine readable format.Cairo is a 2D}
+    puts stderr {graphics library with support for multiple output}
+}
+
+conflict gobject-introspection
+
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gobject-introspection-1.78.1-lbxjktlxxkuloykmvnpnzarwuzjft3ez/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gobject-introspection-1.78.1-lbxjktlxxkuloykmvnpnzarwuzjft3ez/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gobject-introspection-1.78.1-lbxjktlxxkuloykmvnpnzarwuzjft3ez/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gobject-introspection-1.78.1-lbxjktlxxkuloykmvnpnzarwuzjft3ez/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gobject-introspection-1.78.1-lbxjktlxxkuloykmvnpnzarwuzjft3ez/include}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gobject-introspection-1.78.1-lbxjktlxxkuloykmvnpnzarwuzjft3ez/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gobject-introspection-1.78.1-lbxjktlxxkuloykmvnpnzarwuzjft3ez/share/man}
+prepend-path ACLOCAL_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gobject-introspection-1.78.1-lbxjktlxxkuloykmvnpnzarwuzjft3ez/share/aclocal}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gobject-introspection-1.78.1-lbxjktlxxkuloykmvnpnzarwuzjft3ez/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gobject-introspection-1.78.1-lbxjktlxxkuloykmvnpnzarwuzjft3ez/.}
+prepend-path GI_TYPELIB_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gobject-introspection-1.78.1-lbxjktlxxkuloykmvnpnzarwuzjft3ez/lib/girepository-1.0}
+setenv GOBJECT_INTROSPECTION_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/gobject-introspection-1.78.1-lbxjktlxxkuloykmvnpnzarwuzjft3ez}
+append-path MANPATH {}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

@@ -1,0 +1,68 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:45:29.719781
+##
+## doxygen@1.9.1%gcc@13.2.0~graphviz~ipo~mscgen build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3/t7ur5kf
+##
+## Configure options: -Duse_sys_spdlog:BOOL=OFF -Duse_sys_sqlite3:BOOL=OFF
+##
+
+
+module-whatis {Doxygen is the de facto standard tool for generating documentation from annotated C++ sources, but it also supports other popular programming languages such as C, Objective-C, C#, PHP, Java, Python, IDL (Corba, Microsoft, and UNO/OpenOffice flavors), Fortran, VHDL, Tcl, and to some extent D..}
+
+proc ModulesHelp { } {
+    puts stderr {Name   : doxygen}
+    puts stderr {Version: 1.9.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr {Doxygen is the de facto standard tool for generating documentation from}
+    puts stderr {annotated C++ sources, but it also supports other popular programming}
+    puts stderr {languages such as C, Objective-C, C#, PHP, Java, Python, IDL (Corba,}
+    puts stderr {Microsoft, and UNO/OpenOffice flavors), Fortran, VHDL, Tcl, and to some}
+    puts stderr {extent D..}
+}
+
+conflict doxygen
+
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/doxygen-1.9.1-t7ur5kfpblwolownfy62ukans3x4s2iv/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/doxygen-1.9.1-t7ur5kfpblwolownfy62ukans3x4s2iv/.}
+setenv DOXYGEN_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/doxygen-1.9.1-t7ur5kfpblwolownfy62ukans3x4s2iv}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+
