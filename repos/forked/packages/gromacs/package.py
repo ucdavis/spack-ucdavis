@@ -514,6 +514,7 @@ class CMakeBuilder(spack.build_systems.cmake.CMakeBuilder):
                         "-DCMAKE_CXX_COMPILER=%s" % spack_cxx,
                         "-DMPI_C_COMPILER=%s" % self.spec["mpi"].mpicc,
                         "-DMPI_CXX_COMPILER=%s" % self.spec["mpi"].mpicxx,
+                        "-DMPI_Fortran_COMPILER=%s" % self.spec["mpi"].mpifc
                     ]
                 )
         else:

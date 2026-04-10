@@ -108,9 +108,9 @@
       - gmap-gsnap @2018-07-04 %gcc@9
       - gmt @6.4.0 +blas +ffmpeg +fftw +geos +glib +graphicsmagick +lapack +pcre
       - gnuplot @6.0.0
-      - gromacs @2019.6 +cuda ^fftw %nvhpc ^openmpi@4.1.5
-      - gromacs @2022.3 +cp2k +cuda ^fftw +mpi
-      - gromacs @2023.4 +cp2k +cuda ^fftw +mpi
+      - gromacs @2019.6 +cuda ^fftw %nvhpc ^openmpi@4.1.5 ^openblas
+      - gromacs @2022.3 +cp2k +cuda ^fftw +mpi ^[virtuals=mpi] mpich ^openblas ^[virtuals=scalapack] amdscalapack ^cp2k +mpi build_system=cmake ^[virtuals=mpi] mpich
+      - gromacs @2023.4 +cp2k +cuda ~cufftmp ^fftw +mpi ^[virtuals=mpi] mpich ^openblas ^[virtuals=scalapack] amdscalapack ^cp2k +mpi build_system=cmake ^[virtuals=mpi] mpich
       - hh-suite @3.3.0
       - hisat2 @2.2.1
       - hmmer @3.4
