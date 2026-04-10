@@ -32,13 +32,13 @@ spack:
   - apptainer # external
   - julia@1.12.1
   - rust@1.91.0
-  - aspect @2.5.0 %aocc@5 arch=linux-ubuntu22.04-zen2
-    ^openmpi@5 %aocc@5
-    ^dealii@9.5.1 ~cuda %aocc@5
-    ^ginkgo %aocc@5
-    ^[virtuals=lapack] amdlibflame %aocc@5
-    ^[virtuals=scalapack] amdscalapack %aocc@5
-    ^[virtuals=blas] amdblis threads=openmp %aocc@5
+  #- aspect @2.5.0 %aocc@5 arch=linux-ubuntu22.04-zen2
+  #  ^openmpi@5 %aocc@5
+  #  ^dealii@9.5.1 ~cuda %aocc@5
+  #  ^ginkgo %aocc@5
+  #  ^[virtuals=lapack] amdlibflame %aocc@5
+  #  ^[virtuals=scalapack] amdscalapack %aocc@5
+  #  ^[virtuals=blas] amdblis threads=openmp %aocc@5
   view:
     default:
       root: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view
@@ -46,7 +46,7 @@ spack:
       - llvm
       - repeatmasker # short term fix: repeatmasker is downloading giant DB files
       projections:
-        asepect: bench/{target}/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
+        aspect: bench/{target}/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
         hpl: bench/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
         intel-mpi-benchmarks: bench/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
         "target=x86_64_v3 %oneapi": oneapi/{name}-{version}
@@ -122,6 +122,7 @@ spack:
           py-htseq: general/htseq/{version}
           py-multiqc: general/multiqc/{version}
           apptainer: general/apptainer/latest
+          aspect: general/{name}/{version}+{^mpi.name}-{^mpi.version}
           all: general/{name}/{version}
         rstudio:
           template: hpccf/rstudio.tcl

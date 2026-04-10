@@ -1,8 +1,8 @@
   definitions:
     - benchmarks-specs:
       - hpl@2.3 arch=linux-ubuntu22.04-x86_64_v3 %gcc@13.2.0 ^openmpi@5.0.5 ^openblas threads=openmp 
-      - hpl@2.3 arch=linux-ubuntu22.04-x86_64_v3 %gcc@13.2.0 ^mpich@4.2.1 ^openblas threads=openmp 
+      - hpl@2.3 arch=linux-ubuntu22.04-x86_64_v3 %gcc@13.2.0 ^mpich ^openblas threads=openmp 
       - intel-mpi-benchmarks @2021.7 arch=linux-ubuntu22.04-x86_64_v3 %gcc@13.2.0 ^openmpi@5.0.5 
-      - intel-mpi-benchmarks @2021.7 arch=linux-ubuntu22.04-x86_64_v3 %gcc@13.2.0 ^mpich@4.2.1
+      - intel-mpi-benchmarks @2021.7 arch=linux-ubuntu22.04-x86_64_v3 %gcc@13.2.0 ^mpich
       - stream +openmp stream_array_size=650000000 ntimes=100 stream_type=double %gcc@13.2.0
 

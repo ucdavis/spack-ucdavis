@@ -302,13 +302,13 @@ packages:
     require: '+allow-unsupported-compilers'
   mpich:
     externals:
-      - spec: mpich@4.3.2 romio-filesystem=nfs,quobytefs netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=x86_64_v3
+      - spec: mpich@4.3.2 romio-filesystem=nfs,quobytefs netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=x86_64_v3 %gcc@13.2.0
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/mpich-4.3.2
       - spec: mpich@4.3.2 romio-filesystem=nfs,quobytefs netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=x86_64_v3 %oneapi
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/mpich-4.3.2
-      - spec: mpich@4.3.2 romio-filesystem=nfs,quobytefs netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen2
+      - spec: mpich@4.3.2 romio-filesystem=nfs,quobytefs netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen2 %gcc@13.2.0
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/mpich-4.3.2
-      - spec: mpich@4.3.2 romio-filesystem=nfs,quobytefs netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen3
+      - spec: mpich@4.3.2 romio-filesystem=nfs,quobytefs netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen3 %gcc@13.2.0
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/mpich-4.3.2
       - spec: mpich@4.3.2 romio-filesystem=nfs,quobytefs netmod=ucx pmi=pmix +cuda cuda_arch=75,86 target=zen2 %aocc@5.0
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/mpich-4.3.2
@@ -340,8 +340,7 @@ packages:
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/openmpi-4.1.7
       # 5.0.5
       - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm arch=linux-ubuntu22.04-x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5 %gcc
-
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5
       - spec: openmpi@5.0.5 %oneapi cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm arch=linux-ubuntu22.04-x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/openmpi-5.0.5
       - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm arch=linux-ubuntu22.04-zen2 %gcc
