@@ -49,6 +49,8 @@ spack:
         aspect: bench/{target}/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
         hpl: bench/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
         intel-mpi-benchmarks: bench/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
+        amber~cuda: generic/{name}-{version}
+        amber+cuda: generic/{name}-{version}+cuda
         "target=x86_64_v3 %oneapi": oneapi/{name}-{version}
         "target=x86_64_v3 %intel": intel/{name}-{version}
         "target=zen2 %aocc": aocc/{name}-{version}
@@ -123,6 +125,8 @@ spack:
           py-multiqc: general/multiqc/{version}
           apptainer: general/apptainer/latest
           aspect: general/{name}/{version}+{^mpi.name}-{^mpi.version}
+          amber~cuda: general/{name}/{version}
+          amber+cuda: general/{name}/{version}+cuda
           all: general/{name}/{version}
         rstudio:
           template: hpccf/rstudio.tcl

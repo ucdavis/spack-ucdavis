@@ -2,6 +2,8 @@
     - general-specs:
       - abyss @2.3.10 ^openmpi@4 
       #- amber @20 +cuda cuda_arch=75 ^openmpi@4 # manual download required
+      - amber @26 +mpi +openmp python_executable=/cvmfs/hpc.ucdavis.edu/sw/conda/environments/amber-26/bin/python 
+      - amber @26 +mpi +openmp +cuda python_executable=/cvmfs/hpc.ucdavis.edu/sw/conda/environments/amber-26/bin/python ^cuda@12.6
       - angsd @0.935
       - aragorn @1.2.41
       - aria2 @1.37

@@ -284,6 +284,8 @@ packages:
     buildable: false
   cuda:
     externals:
+      - spec: cuda@13.3.0+allow-unsupported-compilers~dev target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-13.3.0
       - spec: cuda@12.6.2+allow-unsupported-compilers~dev target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/cuda-12.6.2
       - spec: cuda@12.3.0+allow-unsupported-compilers~dev target=x86_64_v3
