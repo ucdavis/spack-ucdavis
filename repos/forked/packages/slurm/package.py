@@ -28,6 +28,7 @@ class Slurm(AutotoolsPackage):
 
     license("GPL-2.0-or-later")
 
+    version("26-05-1-1", sha256="432362d3ced66476a8edb61b6c06b6f0c0c1b3bbbf40589fae94de0664c803b5")
     version("25-11-1-1", sha256="85bcf02126ad9844761b363e8db53e5a51f620d4ec71b64dbccbe141d4fe90da")
     version("25-11-0-1", sha256="f208e2fb5f312da669ad5bdc9a6226f0dec715a00ff2f5f258d61bc25cd6f49b")
     version("25-05-0-1", sha256="d4771e71154f7d72f17cf68e2831dbb88c98009be49cfb94192ccb644b5c62c7")
@@ -146,12 +147,11 @@ class Slurm(AutotoolsPackage):
     variant("cgroup", default=False, description="Enable cgroup plugin")
     variant("pam", default=False, description="Enable PAM support")
     variant("rsmi", default=False, description="Enable ROCm SMI support")
+    variant("lua", default=False, description="Enable Lua support")
 
     # TODO: add variant for BG/Q and Cray support
 
     # TODO: add support for checkpoint/restart (BLCR)
-
-    # TODO: add support for lua
 
     depends_on("curl")
     depends_on("glib")
@@ -177,6 +177,7 @@ class Slurm(AutotoolsPackage):
     depends_on("dbus", when="+cgroup")
     depends_on("linux-pam", when="+pam")
     depends_on("rocm-smi-lib", when="+rsmi")
+    depends_on("lua-lang", when="+lua", type=("build", "link", "run"))
 
     executables = ["^srun$", "^salloc$"]
 
@@ -243,6 +244,9 @@ class Slurm(AutotoolsPackage):
 
         if spec.satisfies("+rsmi"):
             args.append(f"--with-rsmi={spec['rocm-smi-lib'].prefix}")
+
+        if spec.satisfies("+lua"):
+            args.append(f"--with-lua")
 
         sysconfdir = spec.variants["sysconfdir"].value
         if sysconfdir != "PREFIX/etc":
