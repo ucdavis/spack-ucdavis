@@ -57,7 +57,7 @@ packages:
     require: '+allow-unsupported-compilers'
       
   slurm:
-    require: '+pmix +mariadb +hwloc +restd +nvml +cgroup +pam sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3 ^pmix@5.0.3'
+    require: '+pmix +mariadb +hwloc +restd +nvml +cgroup +pam +lua sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3 ^pmix@5.0.3'
 
   ucx:
     require: '+cma +dc +dm ~gdrcopy +ib_hw_tm +mlx5_dv +openmp +optimizations +rc +rdmacm +thread_multiple +ucg +ud +verbs'
