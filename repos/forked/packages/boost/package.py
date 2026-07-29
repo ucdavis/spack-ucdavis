@@ -1,11 +1,11 @@
-# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 import os
 import sys
 from pathlib import Path
+
 
 from spack.package import *
 
@@ -30,6 +30,11 @@ class Boost(Package):
     license("BSL-1.0")
 
     version("develop", branch="develop", submodules=True)
+    version("1.91.0", sha256="de5e6b0e4913395c6bdfa90537febd9028ea4c0735d2cdb0cd9b45d5f51264f5")
+    version("1.90.0", sha256="49551aff3b22cbc5c5a9ed3dbc92f0e23ea50a0f7325b0d198b705e8ee3fc305")
+    version("1.89.0", sha256="85a33fa22621b4f314f8e85e1a5e2a9363d22e4f4992925d4bb3bc631b5a0c7a")
+    version("1.88.0", sha256="46d9d2c06637b219270877c9e16155cbd015b6dc84349af064c088e9b5b12f7b")
+    version("1.87.0", sha256="af57be25cb4c4f4b413ed692fe378affb4352ea50fbe294a11ef548f4d527d89")
     version("1.86.0", sha256="1bed88e40401b2cb7a1f76d4bab499e352fa4d0c5f31c0dbae64e24d34d7513b")
     version("1.85.0", sha256="7009fe1faa1697476bdc7027703a2badb84e849b7b0baad5086b087b971f8617")
     version("1.84.0", sha256="cc4b893acf645c9d4b698e9a0f08ca8846aa5d6c68275c14c3e7949c24109454")
@@ -81,9 +86,6 @@ class Boost(Package):
     version("1.40.0", sha256="36cf4a239b587067a4923fdf6e290525a14c3af29829524fa73f3dec6841530c")
     version("1.39.0", sha256="44785eae8c6cce61a29a8a51f9b737e57b34d66baa7c0bcd4af188832b8018fd")
 
-    depends_on("c", type="build")
-    depends_on("cxx", type="build")
-
     with_default_variants = "boost" + "".join(
         [
             "+atomic",
@@ -100,7 +102,6 @@ class Boost(Package):
             "+random",
             "+regex",
             "+serialization",
-            "+signals",
             "+system",
             "+test",
             "+thread",
@@ -124,6 +125,7 @@ class Boost(Package):
         "container",
         "context",
         "contract",
+        "conversion",
         "coroutine",
         "date_time",
         "exception",
@@ -137,13 +139,16 @@ class Boost(Package):
         "log",
         "math",
         "mpi",
+        "mqtt5",
         "nowide",
+        "openmethod",
         "program_options",
         "python",
         "random",
         "regex",
         "serialization",
         "signals",
+        "signals2",
         "stacktrace",
         "system",
         "test",
@@ -154,8 +159,30 @@ class Boost(Package):
         "wave",
     ]
 
-    # Add any extra requirements for specific
-    all_libs_opts = {"charconv": {"when": "@1.85.0:"}, "cobalt": {"when": "@1.84.0:"}}
+    # Add any extra requirements for specific libraries
+    # signals library was removed from boost in 1.69
+    # https://www.boost.org/releases/1.69.0/#:~:text=Discontinued
+    all_libs_opts = {
+        "openmethod": {"when": "@1.90:"},
+        "mqtt5": {"when": "@1.88:"},
+        "charconv": {"when": "@1.85:"},
+        "cobalt": {"when": "@1.84:"},
+        "url": {"when": "@1.81:"},
+        "json": {"when": "@1.75:"},
+        "nowide": {"when": "@1.73:"},
+        "signals": {"when": "@:1.68"},
+        "contract": {"when": "@1.67:"},
+        "stacktrace": {"when": "@1.65:"},
+        "fiber": {"when": "@1.62:"},
+        "type_erasure": {"when": "@1.60:"},
+        "atomic": {"when": "@1.53:"},
+        "coroutine": {"when": "@1.54:1.66"},
+        "context": {"when": "@1.51:"},
+        "container": {"when": "@1.56:"},
+        "locale": {"when": "@1.48:"},
+        "chrono": {"when": "@1.47:"},
+        "signals2": {"when": "@1.87:"},
+    }
 
     for lib in all_libs:
         lib_opts = all_libs_opts.get(lib, {})
@@ -237,8 +264,11 @@ class Boost(Package):
         values=("global", "protected", "hidden"),
         default="hidden",
         multi=False,
-        description="Default symbol visibility in compiled libraries " "(1.69.0 or later)",
+        description="Default symbol visibility in compiled libraries (1.69.0 or later)",
     )
+
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
 
     # Unicode support
     depends_on("icu4c", when="+icu")
@@ -288,6 +318,9 @@ class Boost(Package):
     # boost-python in 1.72.0 broken with cxxstd=98
     conflicts("cxxstd=98", when="+mpi+python @1.72.0")
 
+    # boost-mpi depends on boost-python since 1.87.0
+    conflicts("~python", when="+mpi @1.87.0:")
+
     # Container's Extended Allocators were not added until 1.56.0
     conflicts("+container", when="@:1.55")
 
@@ -303,6 +336,9 @@ class Boost(Package):
     # (https://github.com/spack/spack/pull/32879#issuecomment-1265933265)
     conflicts("%oneapi", when="@1.80")
 
+    # Boost did not support the oneapi compilers prior to 1.76
+    conflicts("%oneapi@2023:", when="@:1.75")
+
     # Boost 1.85.0 stacktrace added a hard compilation error that has to
     # explicitly be suppressed on some platforms:
     # https://github.com/boostorg/stacktrace/pull/150. This conflict could be
@@ -310,16 +346,32 @@ class Boost(Package):
     # safe to do so on affected platforms.
     conflicts("+clanglibcpp", when="@1.85: +stacktrace")
 
+    # https://github.com/boostorg/python/issues/400
+    conflicts(
+        "@:1.80.0",
+        when="+python ^python@3.11:",
+        msg="Boost.python.enum has a known bug for boost@:1.80.0 and python@3.11:",
+    )
+
     # On Windows, the signals variant is required when building any of
     # the all_libs variants.
     for lib in all_libs:
-        requires("+signals", when=f"+{lib} platform=windows")
+        if lib not in ["signals", "signals2"]:
+            # <= 1.68 needs signals, after that needs signals2
+            requires("+signals", when=f"@:1.68 +{lib} platform=windows")
+            requires("+signals2", when=f"@1.69: +{lib} platform=windows")
 
     # Patch fix from https://svn.boost.org/trac/boost/ticket/11856
     patch("boost_11856.patch", when="@1.60.0%gcc@4.4.7")
 
     # Patch fix from https://svn.boost.org/trac/boost/ticket/11120
-    patch("python_jam-1_77.patch", when="@1.77:     ^python@3:")
+    # Boost 1.91.0 added a free-threaded ("t" ABI) fallback block in
+    # compute-default-paths, which shifts the trailing context of the
+    # include-path hunk and breaks python_jam-1_77.patch. Use a variant of the
+    # patch matching the new context for @1.91:; the original still applies
+    # cleanly through 1.90.
+    patch("python_jam-1_77.patch", when="@1.77:1.90 ^python@3:")
+    patch("python_jam-1_91.patch", when="@1.91:     ^python@3:")
     patch("python_jam.patch", when="@1.56:1.76 ^python@3:")
     patch("python_jam_pre156.patch", when="@:1.55.0   ^python@3:")
 
@@ -329,11 +381,6 @@ class Boost(Package):
 
     # Patch fix from https://svn.boost.org/trac/boost/ticket/10125
     patch("call_once_variadic.patch", when="@1.54.0:1.55%gcc@5.0:")
-
-    # Patch fix for PGI compiler
-    patch("boost_1.67.0_pgi.patch", when="@1.67.0:1.68%pgi")
-    patch("boost_1.63.0_pgi.patch", when="@1.63.0%pgi")
-    patch("boost_1.63.0_pgi_17.4_workaround.patch", when="@1.63.0%pgi@17.4")
 
     # Patch to override the PGI toolset when using the NVIDIA compilers
     patch("nvhpc-1.74.patch", when="@1.74.0:1.75%nvhpc")
@@ -355,6 +402,14 @@ class Boost(Package):
         "https://482372.bugs.gentoo.org/attachment.cgi?id=356970",
         when="@1.53.0:1.54",
         sha256="b6f6ce68282159d46c716a1e6c819c815914bdb096cddc516fa48134209659f2",
+    )
+
+    # Fix: "Compile issue with flat_tree insert"
+    # See: https://github.com/boostorg/container/pull/101
+    patch(
+        "container_PR101.patch",
+        when="@1.66.0:1.69.0",
+        sha256="d216bf7c826c577912aa518c76c17697898483f95336cc035ae9ed16b12dc2b0",
     )
 
     # Fix: "Unable to compile code using boost/process.hpp"
@@ -436,6 +491,13 @@ class Boost(Package):
     # https://www.intel.com/content/www/us/en/developer/articles/technical/building-boost-with-oneapi.html
     patch("intel-oneapi-linux-jam.patch", when="@1.76: %oneapi")
 
+    # https://github.com/spack/spack/issues/44003
+    patch(
+        "oneapi_pthread.patch",
+        sha256="7845717c5d916fabc0e62eb6e1f5ad8f13baaf4a4b71b99b19847703386064c4",
+        when="@1.76: %oneapi@2022:",
+    )
+
     # https://github.com/boostorg/phoenix/issues/111
     patch("boost_phoenix_1.81.0.patch", level=2, when="@1.81.0:1.82.0")
 
@@ -446,6 +508,14 @@ class Boost(Package):
         when="@1.82.0 platform=windows",
     )
 
+    # https://github.com/boostorg/context/pull/280
+    patch(
+        "https://github.com/boostorg/context/commit/d11cbccc87da5d6d41c04f3949e18d49c43e62fc.patch?full_index=1",
+        sha256="e2d37f9e35e8e238977de9af32604a8e1c2648d153df1d568935a20216b5c67f",
+        when="@1.87.0",
+        working_dir="libs/context",
+    )
+
     def patch(self):
         # Disable SSSE3 and AVX2 when using the NVIDIA compiler
         if self.spec.satisfies("%nvhpc"):
@@ -453,7 +523,6 @@ class Boost(Package):
             filter_file("<define>BOOST_LOG_USE_AVX2", "", "libs/log/build/Jamfile.v2")
             filter_file("dump_ssse3", "", "libs/log/build/Jamfile.v2")
             filter_file("<define>BOOST_LOG_USE_SSSE3", "", "libs/log/build/Jamfile.v2")
-
             filter_file("-fast", "-O1", "tools/build/src/tools/pgi.jam")
             filter_file("-fast", "-O1", "tools/build/src/engine/build.sh")
 
@@ -481,10 +550,10 @@ class Boost(Package):
             "%intel": "intel",
             "%oneapi": "intel",
             "%clang": "clang",
+            "%apple-clang": "clang",
             "%arm": "clang",
             "%xl": "xlcpp",
             "%xl_r": "xlcpp",
-            "%pgi": "pgi",
             "%nvhpc": "pgi",
             "%fj": "clang",
         }
@@ -685,7 +754,7 @@ class Boost(Package):
             cxxflags.append("-DBOOST_STACKTRACE_LIBCXX_RUNTIME_MAY_CAUSE_MEMORY_LEAK")
 
         if cxxflags:
-            options.append('cxxflags="{0}"'.format(" ".join(cxxflags)))
+            options.append("cxxflags={0}".format(" ".join(cxxflags)))
 
         # Visibility was added in 1.69.0.
         if spec.satisfies("@1.69.0:"):
@@ -708,7 +777,7 @@ class Boost(Package):
         """
         bootstrap_options = list()
         if self.spec.satisfies("%msvc"):
-            bootstrap_options.append(f"vc{self.compiler.platform_toolset_ver}")
+            bootstrap_options.append("vc%s" % self["msvc"].platform_toolset_ver)
         elif self.spec.satisfies("%gcc"):
             bootstrap_options.append("gcc")
         elif self.spec.satisfies("%clang"):
@@ -731,6 +800,8 @@ class Boost(Package):
         with_libs = {f"{lib}" for lib in Boost.all_libs if f"+{lib}" in spec}
 
         # Remove libraries that the release version does not support
+        if not spec.satisfies("@1.88.0:"):
+            with_libs.discard("mqtt5")
         if not spec.satisfies("@1.85.0:"):
             with_libs.discard("charconv")
         if not spec.satisfies("@1.84.0:"):
@@ -741,6 +812,10 @@ class Boost(Package):
             with_libs.discard("json")
         if spec.satisfies("@1.69.0:"):
             with_libs.discard("signals")
+        # Boost.System is header-only as of 1.91.0 and no longer ships an
+        # old-style build/Jamfile, so b2 rejects --with-system.
+        if spec.satisfies("@1.91.0:"):
+            with_libs.discard("system")
         if not spec.satisfies("@1.54.0:"):
             with_libs.discard("log")
         if not spec.satisfies("@1.53.0:"):
@@ -827,22 +902,12 @@ class Boost(Package):
         if (sys.platform == "darwin") and ("+shared" in spec):
             fix_darwin_install_name(prefix.lib)
 
-    def setup_run_environment(self, env):
+    def setup_run_environment(self, env) -> None:
         env.set("BOOST_ROOT", self.prefix)
 
-    def setup_dependent_package(self, module, dependent_spec):
-        # Disable find package's config mode for versions of Boost that
-        # didn't provide it. See https://github.com/spack/spack/issues/20169
-        # and https://cmake.org/cmake/help/latest/module/FindBoost.html
-        if self.spec.satisfies("boost@:1.69.0") and dependent_spec.satisfies("build_system=cmake"):
-            args_fn = type(dependent_spec.package.builder).cmake_args
-
-            def _cmake_args(self):
-                return ["-DBoost_NO_BOOST_CMAKE=ON"] + args_fn(self)
-
-            type(dependent_spec.package.builder).cmake_args = _cmake_args
-
-    def setup_dependent_build_environment(self, env, dependent_spec):
+    def setup_dependent_build_environment(
+        self, env, dependent_spec: Spec
+    ) -> None:
         if "+context" in self.spec and "context-impl" in self.spec.variants:
             context_impl = self.spec.variants["context-impl"].value
             # fcontext, as the default, has no corresponding macro
