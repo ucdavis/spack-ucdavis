@@ -6,13 +6,16 @@
 import os
 
 from spack.package import *
-from spack.pkg.builtin.boost import Boost
+from spack.pkg.ucdavis.forked.boost import Boost
 
 
 class Rstudio(CMakePackage):
     """RStudio is an integrated development environment (IDE) for R."""
 
     homepage = "www.rstudio.com/products/rstudio/"
+
+    version("2026.07.1-147",
+            sha256="40b978e1e79c3c7769c441d6bfd02d2da25a5e87c01bc6c07f7573e3a3b9e066")
 
     version("2024.09.0-375",
             sha256="8a29b77c53a3db8379d824a9f4a491843036003d105ed71981cd40fe39d2c8c8")
@@ -44,7 +47,6 @@ class Rstudio(CMakePackage):
     #depends_on("qt+webkit@5.12:5.14")
     depends_on("qt@5.15.8:")
     depends_on("patchelf@0.9:")
-    depends_on("yaml-cpp@:0.6.3")  # find_package fails with newest version
     depends_on("yarn")
     depends_on("pandoc@2.11.4:")
     depends_on("icu4c")
@@ -60,6 +62,7 @@ class Rstudio(CMakePackage):
         depends_on("node-js@16:")
         depends_on("yarn@1.22.4:")
         depends_on("npm@9.8.1")
+        depends_on("yaml-cpp@:0.6.3")  # find_package fails with newest version
 
     # require EXACT node version to match rstudio expectation
     with when("@2023.12.1-402"):
@@ -68,6 +71,7 @@ class Rstudio(CMakePackage):
         depends_on("yarn@1.22.4:")
         depends_on("npm@9.8.1")
         depends_on("openssl@3.2:")
+        depends_on("yaml-cpp@:0.6.3")  # find_package fails with newest version
 
     # require EXACT node version to match rstudio expectation
     with when("@2024.09.0-375"):
@@ -76,9 +80,27 @@ class Rstudio(CMakePackage):
         depends_on("yarn@1.22.4:")
         depends_on("npm@10.9.0") # Not specified in rstudio source, grabbing newest.
         depends_on("openssl@3.2:")
+        depends_on("yaml-cpp@:0.6.3")  # find_package fails with newest version
         #Necessary to exactly match?# depends_on("pandoc@2.18") # grep PANDOC_VERSION= dependencies/common/install-pandoc
-        
-        
+
+    with when("@2026.07.1-147"):
+        depends_on("node-js@20.15.1") # grep 'set(RSTUDIO_INSTALLED_NODE_VERSION' cmake/globals.cmake
+        depends_on("yarn@1.22.4:")
+        depends_on("npm@10.9.0") # Not specified in rstudio source, grabbing newest.
+        depends_on("openssl@3.2:")
+        # rstudio 2026.07.1 adds Boost.URL to its required components
+        # (src/cpp/CMakeLists.txt BOOST_LIBS), so boost must be built +url.
+        depends_on("{0}@1.91.0 +pic +url".format(Boost.with_default_variants))
+        depends_on("yaml-cpp@0.8.0")
+        # rstudio 2026.07.1 hardcodes PANDOC_VERSION "3.2"
+        # (cmake/globals.cmake); match it so the tools/pandoc/<ver> check passes.
+        depends_on("pandoc@3.2")
+        # rstudio 2026.07.1's fetch() (src/cpp/ext/CMakeLists.txt) only promotes
+        # system deps to a GLOBAL imported target when cmake > 3.24. With older
+        # cmake, yaml-cpp::yaml-cpp stays scoped to src/cpp/ext and is
+        # unresolvable from the sibling targets that link it.
+        depends_on("cmake@3.25:", type="build")
+
     with when("+notebook"):
         depends_on("r-base64enc")
         depends_on("r-digest")
@@ -109,6 +131,7 @@ class Rstudio(CMakePackage):
             "-DRSTUDIO_USE_SYSTEM_BOOST=Yes",
             "-DRSTUDIO_USE_SYSTEM_SOCI=Yes",
             "-DQUARTO_ENABLED=No", # temporary?
+            "-DRSTUDIO_ENABLE_COPILOT=No",
             '-DQT_QMAKE_EXECUTABLE="{0}"'.format(self.spec["qt"].prefix.bin.qmake),
             #"-DCMAKE_INSTALL_RPATH_USE_LINK_PATH=OFF"
         ]
@@ -187,7 +210,18 @@ class Rstudio(CMakePackage):
         if self.spec.satisfies("@2023.12.1:"):
             deps = Executable("./dependencies/common/install-panmirror")
             deps()
-            
+
+        if self.spec.satisfies("@2026.07.1-147:"):
+            with working_dir("dependencies/common"):
+                # GWT client build (src/gwt/build.xml) resolves lib.dir to
+                # dependencies/common/gwtproject.
+                Executable("./install-gwt")()
+                # rstudio 2026 bundles a pinned node (RSTUDIO_INSTALLED_NODE_VERSION
+                # = 22.22.2 in dependencies/tools/rstudio-tools.sh), which the
+                # install step copies from node/<ver>-installed. Spack has no such
+                # node, so fetch rstudio's own node (+yarn) via its installer.
+                Executable("./install-npm-dependencies")()
+
         # two methods for pandoc
         # 1) replace install-pandoc:
         #    - link pandoc into tools/pandoc/$PANDOC_VERSION
