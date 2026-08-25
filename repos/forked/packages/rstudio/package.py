@@ -14,6 +14,9 @@ class Rstudio(CMakePackage):
 
     homepage = "www.rstudio.com/products/rstudio/"
 
+    version("2026.08.1-195",
+            sha256="4ce15fb58f38c7eb9bf831ec5707fa013840068489e4ca70a75b3ff1aa8ea389")
+
     version("2026.07.1-147",
             sha256="40b978e1e79c3c7769c441d6bfd02d2da25a5e87c01bc6c07f7573e3a3b9e066")
 
@@ -83,7 +86,7 @@ class Rstudio(CMakePackage):
         depends_on("yaml-cpp@:0.6.3")  # find_package fails with newest version
         #Necessary to exactly match?# depends_on("pandoc@2.18") # grep PANDOC_VERSION= dependencies/common/install-pandoc
 
-    with when("@2026.07.1-147"):
+    with when("@2026.07.1-147:2026.08.1-195"):
         depends_on("node-js@20.15.1") # grep 'set(RSTUDIO_INSTALLED_NODE_VERSION' cmake/globals.cmake
         depends_on("yarn@1.22.4:")
         depends_on("npm@10.9.0") # Not specified in rstudio source, grabbing newest.
