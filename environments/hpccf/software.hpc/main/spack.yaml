@@ -147,5 +147,10 @@ spack:
             set:
               SQUEUE_FORMAT2: 'JobID:12 ,JobArrayID:18 ,UserName:16,Partition:15,Name:20 ,StateCompact:3 ,TimeLeft:13,NumCPUs:7,MinMemory:11,NumNodes:6,ReasonList:40'
               SINFO_FORMAT: '%17n %9P %.10T %.5c %.8m %24f %28E'
+  packages:
+    vasp:
+      permissions:
+        group: ark245grp
+        read: group
   concretizer:
     unify: false

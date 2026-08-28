@@ -259,6 +259,7 @@
       - subread @2.0.2
       - tabix @2013-12-16
       - tassel @5.2.86
+      #- tesseract @4.1.1 ^leptonica@1.81.0 ^cmake@3.30.5 cxxflags="-include cstdint" #pin older leptonica since 4.1.1 is old (2019) INC2636504
       - tophat @2.1.2
       - transdecoder @5.7.1
       - trilinos @15.0.0 # +cuda +uvm +wrapper
@@ -267,6 +268,7 @@
       - trinity @2.15.1.FULL
       - usearch @11.0.667
       - valgrind @3.20.0
+      - vasp @6.5.1 %nvhpc +shmem +cuda +openmp +hdf5 +vtst ^[virtuals=mpi] openmpi@4.1.7 %nvhpc ^[virtuals=scalapack] intel-oneapi-mkl
       - vcftools @0.1.16
       - velvet @1.2.10
       - velvetoptimiser
