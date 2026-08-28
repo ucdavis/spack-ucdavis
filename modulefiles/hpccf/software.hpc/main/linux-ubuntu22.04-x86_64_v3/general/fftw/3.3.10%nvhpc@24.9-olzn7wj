@@ -1,7 +1,7 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:45:32.429189
+## Module file created by spack (https://github.com/spack/spack) on 2026-08-27 12:03:42.154571
 ##
-## fftw@3.3.10%nvhpc@24.9+mpi~openmp~pfft_patches+shared build_system=autotools patches=872cff9 precision=double,float arch=linux-ubuntu22.04-x86_64_v3/d2q3hg6
+## fftw@3.3.10%nvhpc@24.9+mpi+openmp~pfft_patches+shared build_system=autotools patches=872cff9 precision=double,float arch=linux-ubuntu22.04-x86_64_v3/olzn7wj
 ##
 
 
@@ -22,16 +22,16 @@ proc ModulesHelp { } {
 
 conflict fftw
 
-prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-d2q3hg6k6lyzrxb343p4ys4rrkottpqc/lib}
-prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-d2q3hg6k6lyzrxb343p4ys4rrkottpqc/lib}
-prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-d2q3hg6k6lyzrxb343p4ys4rrkottpqc/include}
-prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-d2q3hg6k6lyzrxb343p4ys4rrkottpqc/include}
-prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-d2q3hg6k6lyzrxb343p4ys4rrkottpqc/include}
-prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-d2q3hg6k6lyzrxb343p4ys4rrkottpqc/bin}
-prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-d2q3hg6k6lyzrxb343p4ys4rrkottpqc/share/man}
-prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-d2q3hg6k6lyzrxb343p4ys4rrkottpqc/lib/pkgconfig}
-prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-d2q3hg6k6lyzrxb343p4ys4rrkottpqc/.}
-setenv FFTW_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-d2q3hg6k6lyzrxb343p4ys4rrkottpqc}
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-olzn7wj3eahllhifsvwrbcwnj7jzazf6/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-olzn7wj3eahllhifsvwrbcwnj7jzazf6/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-olzn7wj3eahllhifsvwrbcwnj7jzazf6/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-olzn7wj3eahllhifsvwrbcwnj7jzazf6/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-olzn7wj3eahllhifsvwrbcwnj7jzazf6/include}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-olzn7wj3eahllhifsvwrbcwnj7jzazf6/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-olzn7wj3eahllhifsvwrbcwnj7jzazf6/share/man}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-olzn7wj3eahllhifsvwrbcwnj7jzazf6/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-olzn7wj3eahllhifsvwrbcwnj7jzazf6/.}
+setenv FFTW_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/fftw-3.3.10-olzn7wj3eahllhifsvwrbcwnj7jzazf6}
 append-path MANPATH {}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {

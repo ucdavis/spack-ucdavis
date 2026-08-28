@@ -1,0 +1,70 @@
+#%Module1.0
+## Module file created by spack (https://github.com/spack/spack) on 2026-08-27 15:36:18.387875
+##
+## vasp@6.5.1%nvhpc@24.9+cuda+fftlib+hdf5~libbeef~libxc+openmp+shmem+vtst~wannier90 build_system=makefile cuda_arch=75,86 patches=8836427 arch=linux-ubuntu22.04-x86_64_v3/ygyfx3o
+##
+
+
+module-whatis { The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale materials modelling, e.g. electronic structure calculations and quantum-mechanical molecular dynamics, from first principles. }
+
+proc ModulesHelp { } {
+    puts stderr {Name   : vasp}
+    puts stderr {Version: 6.5.1}
+    puts stderr {Target : x86_64_v3}
+    puts stderr {}
+    puts stderr { The Vienna Ab initio Simulation Package (VASP) is a computer program}
+    puts stderr {for atomic scale materials modelling, e.g. electronic structure}
+    puts stderr {calculations and quantum-mechanical molecular dynamics, from first}
+    puts stderr {principles.}
+}
+
+if {![info exists ::env(LMOD_VERSION_MAJOR)]} {
+    module load openmpi/4.1.7%nvhpc@24.9
+} else {
+    depends-on openmpi/4.1.7%nvhpc@24.9
+}
+conflict vasp
+
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/vasp-6.5.1/bin}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/main/view/generic/vasp-6.5.1/.}
+setenv VASP_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/main/linux-ubuntu22.04-x86_64_v3/nvhpc-24.9/vasp-6.5.1-ygyfx3o7cctdm4u4zflspsxtjjglzuzi}
+
+if { [module-info mode load] && [info exists env(deprecate_on)] } {
+
+   set deprecate_on "$env(deprecate_on)"
+   unsetenv deprecate_on
+   set deprecate_on_s [clock scan "$deprecate_on" -format "%Y-%m-%d"]
+   set now_s [clock seconds]
+
+   if { $now_s > $deprecate_on_s } {
+      puts stderr "\n******************************************************************"
+      puts stderr "ERROR: this module is deprecated and was disabled on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "******************************************************************"
+
+      exit
+   } else {
+
+      puts stderr "\n**********************************************************************"
+      puts stderr "WARNING: this module is deprecated; it will be removed on $deprecate_on.\n"
+      puts stderr "Use a newer version if available. To request software, please see:"
+      puts stderr "https://hpc.ucdavis.edu/software-installation-policy"
+      puts stderr "**********************************************************************"
+   }
+}
+
+
+try {
+    set user_email [exec -ignorestderr /usr/bin/grep --color=never -Po "^$env(USER):.*\<\\K.*?(?=\>)" /etc/passwd]
+} on error {e} {
+    set user_email ""
+}
+setenv USER_EMAIL $user_email
+
+if [module-info mode load] {
+}
+
+if [module-info mode unload] {
+}
+

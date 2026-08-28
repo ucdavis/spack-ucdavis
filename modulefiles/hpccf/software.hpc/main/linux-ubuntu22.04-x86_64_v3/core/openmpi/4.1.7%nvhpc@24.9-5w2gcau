@@ -1,7 +1,7 @@
 #%Module1.0
-## Module file created by spack (https://github.com/spack/spack) on 2026-04-09 14:46:18.671829
+## Module file created by spack (https://github.com/spack/spack) on 2026-08-27 14:11:54.753482
 ##
-## openmpi@4.1.5%nvhpc@24.9+atomics+cuda~cxx~cxx_exceptions~debug~gpfs~internal-hwloc~internal-libevent~internal-pmix~java~legacylaunchers~lustre~memchecker~openshmem~orterunprefix~pmi+romio+rsh~singularity~static~two_level_namespace+vt+wrapper-rpath build_system=autotools cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm arch=linux-ubuntu22.04-x86_64_v3/3sv4v2i
+## openmpi@4.1.7%nvhpc@24.9+atomics+cuda~cxx~cxx_exceptions~debug~gpfs~internal-hwloc~internal-libevent~internal-pmix~java~legacylaunchers~lustre~memchecker~openshmem~orterunprefix~pmi+romio+rsh~singularity~static~two_level_namespace+vt+wrapper-rpath build_system=autotools cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm arch=linux-ubuntu22.04-x86_64_v3/5w2gcau
 ##
 ## Configure options: unknown, software installed outside of Spack
 ##
@@ -11,7 +11,7 @@ module-whatis {An open source Message Passing Interface implementation.}
 
 proc ModulesHelp { } {
     puts stderr {Name   : openmpi}
-    puts stderr {Version: 4.1.5}
+    puts stderr {Version: 4.1.7}
     puts stderr {Target : x86_64_v3}
     puts stderr {}
     puts stderr {An open source Message Passing Interface implementation. The Open MPI}
@@ -26,21 +26,21 @@ proc ModulesHelp { } {
 
 conflict openmpi
 
-prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5/lib}
-prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5/lib}
-prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5/include}
-prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5/include}
-prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5/include}
-prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5/bin}
-prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5/share/man}
-prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5/lib/pkgconfig}
-prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5/.}
-setenv MPICC {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5/bin/mpicc}
-setenv MPICXX {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5/bin/mpic++}
-setenv MPIF77 {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5/bin/mpif77}
-setenv MPIF90 {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5/bin/mpif90}
-setenv MPIFC {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5/bin/mpifort}
-setenv OPENMPI_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5}
+prepend-path LD_LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/openmpi-4.1.7/lib}
+prepend-path LIBRARY_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/openmpi-4.1.7/lib}
+prepend-path CPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/openmpi-4.1.7/include}
+prepend-path C_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/openmpi-4.1.7/include}
+prepend-path CPLUS_INCLUDE_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/openmpi-4.1.7/include}
+prepend-path PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/openmpi-4.1.7/bin}
+prepend-path MANPATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/openmpi-4.1.7/share/man}
+prepend-path PKG_CONFIG_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/openmpi-4.1.7/lib/pkgconfig}
+prepend-path CMAKE_PREFIX_PATH {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/openmpi-4.1.7/.}
+setenv MPICC {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/openmpi-4.1.7/bin/mpicc}
+setenv MPICXX {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/openmpi-4.1.7/bin/mpic++}
+setenv MPIF77 {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/openmpi-4.1.7/bin/mpif77}
+setenv MPIF90 {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/openmpi-4.1.7/bin/mpif90}
+setenv MPIFC {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/openmpi-4.1.7/bin/mpifort}
+setenv OPENMPI_ROOT {/cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/openmpi-4.1.7}
 append-path MANPATH {}
 
 if { [module-info mode load] && [info exists env(deprecate_on)] } {
