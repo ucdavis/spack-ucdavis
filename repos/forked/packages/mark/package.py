@@ -45,3 +45,4 @@ class Mark(Package):
         chmod = which("chmod")
         chmod("+x", join_path(prefix.bin, 'mark64-v2'))
         chmod("+x", join_path(prefix.bin, 'mark64-v3'))
+        os.symlink(join_path(prefix.bin, 'mark64-v3'), join_path(prefix.bin, 'mark'))
