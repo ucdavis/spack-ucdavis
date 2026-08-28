@@ -37,6 +37,7 @@
       - '@3.4.0'
     - targets:
       - '%gcc@=13.2.0 arch=linux-ubuntu22.04-x86_64_v3'
+      #- '%nvhpc@=24.9 arch=linux-ubuntu22.04-x86_64_v3'
       - '%oneapi@=2025.0.0 arch=linux-ubuntu22.04-x86_64_v3'
       - '%aocc@=5.0.0 arch=linux-ubuntu22.04-zen2'
       - '%gcc@=13.2.0 arch=linux-ubuntu22.04-zen2'
@@ -62,3 +63,7 @@
         - [$openssl-versions]
         - [$targets]
         #- ['%gcc@=13.2.0']
+    - nvhpc-specs:
+      - matrix:
+        - [openmpi@4.1.7, pmix@4.2.9, ucx@1.17.0]
+        - ['%nvhpc@=24.9 arch=linux-ubuntu22.04-x86_64_v3']

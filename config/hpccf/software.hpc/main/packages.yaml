@@ -319,31 +319,31 @@ packages:
   openmpi:
     externals:
       # 4.1.5
-      - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5
       - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3 %oneapi
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/openmpi-4.1.5
-      - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen2
+      - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen2 %gcc
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-4.1.5
-      - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen3
+      - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen3 %gcc
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-4.1.5
       - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen2 %aocc@5.0
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/openmpi-4.1.5
+      - spec: openmpi@4.1.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3 %gcc
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.5
       # 4.1.7
-      - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.7
+      - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3 %nvhpc
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/openmpi-4.1.7
       - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3 %oneapi
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/openmpi-4.1.7
-      - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen2
+      - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen2 %gcc
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-4.1.7
-      - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen3
+      - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen3 %gcc
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-4.1.7
       - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=zen2 %aocc@5.0
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/openmpi-4.1.7
+      - spec: openmpi@4.1.7 cuda_arch=75,86 fabrics=ucx romio-filesystem=none schedulers=slurm target=x86_64_v3 %gcc
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-4.1.7
       # 5.0.5
-      - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm arch=linux-ubuntu22.04-x86_64_v3
-        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5
-      - spec: openmpi@5.0.5 %oneapi cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm arch=linux-ubuntu22.04-x86_64_v3
+      - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm arch=linux-ubuntu22.04-x86_64_v3 %oneapi
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/openmpi-5.0.5
       - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm arch=linux-ubuntu22.04-zen2 %gcc
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen2/openmpi-5.0.5
@@ -351,6 +351,8 @@ packages:
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/zen3/openmpi-5.0.5
       - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm arch=linux-ubuntu22.04-zen2 %aocc@5.0
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/aocc-5.0.0/openmpi-5.0.5
+      - spec: openmpi@5.0.5 cuda_arch=75,86 fabrics=ucx romio-filesystem=nfs,quobytefs schedulers=slurm arch=linux-ubuntu22.04-x86_64_v3 %gcc
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/openmpi-5.0.5
     buildable: false
     #require:
     #  - spec: '+atomics fabrics=ucx schedulers=slurm +cuda cuda_arch=75,86'
@@ -366,6 +368,8 @@ packages:
     externals:
       - spec: ucx@1.17.0 target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/ucx-1.17.0
+      - spec: ucx@1.17.0 target=x86_64_v3 %nvhpc
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/ucx-1.17.0
       - spec: ucx@1.17.0 target=x86_64_v3 %oneapi
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/ucx-1.17.0
       - spec: ucx@1.17.0 target=zen2
@@ -380,6 +384,8 @@ packages:
     externals:
       - spec: pmix@4.2.9 target=x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/pmix-4.2.9
+      - spec: pmix@4.2.9 target=x86_64_v3 %nvhpc
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/nvhpc/pmix-4.2.9
       - spec: pmix@4.2.9 target=x86_64_v3 %oneapi
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/oneapi/pmix-4.2.9
       - spec: pmix@4.2.9 target=zen2

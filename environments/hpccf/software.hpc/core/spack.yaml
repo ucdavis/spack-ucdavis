@@ -6,6 +6,7 @@ spack:
   - $cuda-specs
   - $messaging-specs
   - $openssl-specs
+  - $nvhpc-specs
   view:
     default:
       root: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view
@@ -14,6 +15,7 @@ spack:
         tcl: generic/{name}-{version}
         environment-modules: generic/environment-modules
         "target=x86_64_v3 %oneapi": oneapi/{name}-{version}
+        "target=x86_64_v3 %nvhpc": nvhpc/{name}-{version}
         "target=zen2 %aocc": aocc-{compiler.version}/{name}-{version}
         target=x86_64_v3: generic/{name}-{version}
         target=zen2: zen2/{name}-{version}
