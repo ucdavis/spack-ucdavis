@@ -231,7 +231,7 @@ packages:
     variants: etcdir=/etc/environment-modules
   slurm:
     externals:
-      - spec: slurm@26-05-1-1+cgroup~gtk~hdf5+hwloc+mariadb+nvml+pam+pmix+readline+restd~rsmi+lua sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3
+      - spec: slurm@26-05-4-1+cgroup~gtk~hdf5+hwloc+mariadb+nvml+pam+pmix+readline+restd~rsmi+lua sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3
         prefix: /cvmfs/hpc.ucdavis.edu/sw/spack/environments/core/view/generic/slurm
     buildable: false
     require: '+pmix +mariadb +hwloc +restd +nvml +cgroup +pam +lua sysconfdir=/etc/slurm arch=linux-ubuntu22.04-x86_64_v3'
