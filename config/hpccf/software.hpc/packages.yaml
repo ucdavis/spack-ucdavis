@@ -189,7 +189,7 @@ packages:
       prefix: /usr
 
   mpich:
-    require: ~hydra ~hcoll +xpmem +vci device=ch4 netmod=ucx pmi=pmix +fortran +romio +slurm +verbs +cuda cuda_arch=75,86
+    require: 'netmod=ucx pmi=pmix romio-filesystem=nfs,quobytefs +romio +verbs +fortran +cuda cuda_arch=75,86 ^pmix@5.0.3'
 
   munge:
     externals:
@@ -206,19 +206,22 @@ packages:
     require: ^openssl@1.0.2u
 
   openmpi:
-    require:
-    - spec: +atomics +fortran +openshmem +rsh fabrics=cma,hcoll,ofi,ucc,ucx,verbs,xpmem schedulers=slurm +cuda cuda_arch=75,86
-      message: 'openmpi: always enforce these variants'
-      when: '@:'
-    - spec: +legacylaunchers +pmi
-      message: 'openmpi: legacylaunchers for versions @:4'
-      when: '@:4'
-    - spec: romio-filesystem=nfs,quobytefs
-      when: '@5:'
-      message: 'openmpi: romio-filesystem variants for @5:'
+    require: 
+      - spec: '+atomics fabrics=ucx schedulers=slurm +cuda cuda_arch=75,86'
+        message: 'openmpi: always enforce these variants'
+        when: '@:'
+      - spec: '+legacylaunchers'
+        message: 'openmpi: legacylaunchers for versions @:4'
+        when: '@:4'
+      - spec: 'romio-filesystem=nfs,quobytefs ^pmix@5.0.3' # Make sure pmix version matches openmpi's internal pmix version
+        when: '@5:'
+        message: 'openmpi: romio-filesystem variants for @5:'
 
   rust:
-    require: +dev
+    externals:
+    - spec: rust@1.91.0
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/rust/1.91.0
+    buildable: False
 
   slurm:
     require: +pmix +mariadb +hwloc +restd +nvml +cgroup +pam sysconfdir=/etc/slurm
@@ -239,14 +242,14 @@ packages:
     - spec: intel-oneapi-tbb
       message: 'tbb: require intel-oneapi-tbb provider'
 
-  ucc:
-    require: +cuda cuda_arch=75,86
-    externals:
-    - spec: ucc @1.4.0 +cuda cuda_arch=75,86
-      prefix: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0
+  #ucc:
+  #  require: +cuda cuda_arch=75,86
+  #  externals:
+  #  - spec: ucc @1.4.0 +cuda cuda_arch=75,86
+  #    prefix: /cvmfs/hpc.ucdavis.edu/sw/nvidia/ucc/1.4.0
 
   ucx:
-    require: +cma +dc +dm ~gdrcopy +ib_hw_tm +knem +mlx5_dv +openmp +optimizations +rc +rdmacm +thread_multiple +ucg +ud +verbs +xpmem
+    require: '+cma +dc +dm ~gdrcopy +ib_hw_tm +mlx5_dv +openmp +optimizations +rc +rdmacm +thread_multiple +ucg +ud +verbs'
 
   #xmlto:
   #  require:
