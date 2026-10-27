@@ -13,7 +13,7 @@ class RShapefiles(RPackage):
     homepage = "https://cran.r-project.org/package=shapefiles"
     cran = "shapefiles"
 
-    maintainers = ["camillescott"]
+    maintainers("camillescott")
 
     version("0.7.2", sha256="4bfa4094c1052c1b1918b1670798f8b4e53f771cfdf9cb8c04bd00a856674d0f")
     version("0.7.1", sha256="63de50d72765303eff4e084d4bbd2e47de4329df44a60e298a58ad19c89db0e2")

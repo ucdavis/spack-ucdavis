@@ -17,5 +17,7 @@ Contains some functions catching all messages, 'stdout' and other useful informa
 
     version('0.6.5', sha256='2add076bd2ca6749715a044e26baf1e0aee5d50211903ee6bfceecc30b9e9f90')
 
+    depends_on("cxx", type="build")
+
     depends_on('r-digest', type=('build', 'run'))
     depends_on('r-rcpp', type=('build', 'run'))

@@ -14,3 +14,5 @@ class RGenomicsimulation(RPackage):
     url = "https://github.com/vllrs/genomicSimulation/releases/download/v0.2.2/genomicSimulation_0.2.2.tar.gz"
 
     version("0.2.2", sha256="90c1e19e9b715dc6665a01faf4cf52785ec41d524266fef67accc835e0a4888f")
+
+    depends_on("c", type="build")

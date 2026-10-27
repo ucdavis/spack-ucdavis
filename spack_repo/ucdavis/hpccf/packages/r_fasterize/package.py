@@ -15,6 +15,8 @@ class RFasterize(RPackage):
 
     version('1.0.3', sha256='62b459625e9bdb00251ec5f6cb873e0c59713f3e86dc1e2c8332adc0cea17f81')
 
+    depends_on("cxx", type="build")
+
     depends_on('r-rcpp', type=('build', 'run'))
     depends_on('r-raster', type=('build', 'run'))
     depends_on('r-sp', type=('build', 'run'))

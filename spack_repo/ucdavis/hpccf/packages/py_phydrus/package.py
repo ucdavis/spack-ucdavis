@@ -16,7 +16,7 @@ class PyPhydrus(PythonPackage):
     homepage = "https://github.com/phydrus/phydrus"
     pypi = "phydrus/phydrus-0.2.0.tar.gz"
 
-    maintainers = ["camillescott"]
+    maintainers("camillescott")
 
     version("0.2.0", sha256="8395b08af3ad688bbe5c455de093fccc4ddb5f1e94ebdebc72268dc47e35a598")
 

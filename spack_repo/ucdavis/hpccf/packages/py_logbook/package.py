@@ -22,6 +22,8 @@ class PyLogbook(PythonPackage):
     version("1.7.0.post0", sha256="a5e8016701ca3beea6a390b0ba1541037f663543ca508ccd36cfdc841639cdd7")
     version("1.5.3", sha256="66f454ada0f56eae43066f604a222b09893f98c1adc18df169710761b8f32fe8")
 
+    depends_on("c", type="build")  # cython speedups
+
     depends_on("python@3.8:", type=("build", "run"), when="@1.6:")
     depends_on("python@2.7,3.4:3.6",  type=("build", "run"), when="@1.5.3")
     depends_on("py-cython", type="build")

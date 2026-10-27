@@ -16,6 +16,8 @@ class RMptinr(RPackage):
 
     version("1.14.1", sha256="e07a3daa74bcc67e565db1d85c88b7260a8ab09eb22bd700766d8f1a67d9dc4b")
 
+    depends_on("cxx", type="build")
+
     depends_on("r@4:", type=("build", "run"))
     depends_on("r-numderiv", type=("build", "run"))
     depends_on("r-brobdingnag", type=("build", "run"))

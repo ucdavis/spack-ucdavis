@@ -14,3 +14,5 @@ class RSlam(RPackage):
     cran = "slam"
 
     version("0.1-50", sha256="7899bf3266c204ecccefc1878f96940b117d4503af128f4fbc50fc409163f8bd")
+
+    depends_on("c", type="build")

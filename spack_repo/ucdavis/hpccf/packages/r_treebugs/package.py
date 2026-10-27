@@ -15,6 +15,9 @@ class RTreebugs(RPackage):
 
     version("1.4.9", sha256="487a309219ae9d129edb279c5bc7d9a2aa6a7f89976b940ca33981b49aec23cb")
 
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
+
     depends_on("r-rcpp", type=("build", "run"))
     depends_on("r-runjags", type=("build", "run"))
     depends_on("r-coda", type=("build", "run"))

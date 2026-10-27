@@ -15,5 +15,7 @@ class RWordcloud(RPackage):
 
     version("2.6", sha256="53716954430acd4f164bfd8eacd7068a908ee3358293ded6cd992d53b7f72649")
 
+    depends_on("cxx", type="build")
+
     depends_on("r-rcolorbrewer", type=("build", "run"))
     depends_on("r-rcpp", type=("build", "run"))

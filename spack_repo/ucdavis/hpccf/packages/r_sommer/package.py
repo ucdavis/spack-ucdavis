@@ -29,6 +29,8 @@ class RSommer(RPackage):
 
     version('4.1.6', sha256='e8fed96e2135852b23868c086f40460f4bbbf9d237cba50e368fb2bdea2db024')
 
+    depends_on("cxx", type="build")
+
     depends_on('r-matrix', type=('build', 'run'))
     depends_on('r-mass', type=('build', 'run'))
     depends_on('r-lattice', type=('build', 'run'))

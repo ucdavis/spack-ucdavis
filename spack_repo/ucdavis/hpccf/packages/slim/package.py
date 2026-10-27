@@ -14,3 +14,6 @@ class Slim(CMakePackage):
     url = "https://github.com/MesserLab/SLiM/releases/download/v4.0.1/SLiM.zip"
 
     version("4.0.1", sha256="92e7ebe09cc1b048bcd4586a22b5df0f982dbdc543aae1d4e5abb6a60b17e2de")
+
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")

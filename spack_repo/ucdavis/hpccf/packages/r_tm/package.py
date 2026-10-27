@@ -15,6 +15,9 @@ class RTm(RPackage):
 
     version("0.7-9", sha256="db53e851a050b52264931cdd1b9186c2d91be074c3fc68a00b22967192a47e28")
 
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
+
     depends_on("r-nlp", type=("build", "run"))
     depends_on("r-rcpp", type=("build", "run"))
     depends_on("r-slam", type=("build", "run"))

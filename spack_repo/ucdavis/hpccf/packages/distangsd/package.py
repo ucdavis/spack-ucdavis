@@ -35,10 +35,13 @@ class Distangsd(MakefilePackage):
 
     version('main', branch='main')
 
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
+
     depends_on('htslib')
     depends_on('eigen')
     depends_on('gsl')
-    depends_on('lzma')
+    depends_on('xz')
     depends_on('openssl')
     depends_on('libdeflate')
 

@@ -19,6 +19,8 @@ class PyBasevar(PythonPackage):
 
     version("0.8.0", sha256="3f860a997b2e4530c7ebc5c46b616104040f7b5b44f6b42fa2e7bb6a0d92314b")
 
+    depends_on("c", type="build")  # cython extensions
+
     depends_on("python@2.7,3.7:3.8", type=("build", "run"))
     depends_on("py-cython@0.29.6:0.29.36", type="build")
     depends_on("py-setuptools", type="build")

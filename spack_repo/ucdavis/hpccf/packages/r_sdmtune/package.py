@@ -23,6 +23,8 @@ class RSdmtune(RPackage):
     version('1.1.5', sha256='5cf6798499b6a399a65aac0565e53ae7f71297b19acbf98f3c76fb795ea8ddd9')
 
     #depends_on('', type=('build', 'run'))
+    depends_on("cxx", type="build")
+
     depends_on('r-maxnet', type=('build', 'run'))
     depends_on('r-whisker', type=('build', 'run'))
     depends_on('r-stringr', type=('build', 'run'))

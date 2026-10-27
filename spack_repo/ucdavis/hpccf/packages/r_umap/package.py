@@ -15,6 +15,8 @@ class RUmap(RPackage):
 
     version("0.2.9.0", sha256="551bc189e1e6856bf306e316c461095102a2d034e0cf93691d48b73b13d80289")
 
+    depends_on("cxx", type="build")
+
     depends_on("r-matrix", type=("build", "run"))
     depends_on("r-openssl", type=("build", "run"))
     depends_on("r-reticulate", type=("build", "run"))

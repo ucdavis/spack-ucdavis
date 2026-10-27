@@ -15,6 +15,8 @@ class RPerformanceanalytics(RPackage):
 
     version("2.0.4", sha256="78a17070977665b30ddf3999d02fbbcca0f418b0791358c14bdc722235342232")
 
+    depends_on("c", type="build")
+
     depends_on("r-xts", type=("build", "run"))
     depends_on("r-quadprog", type=("build", "run"))
     depends_on("r-zoo", type=("build", "run"))

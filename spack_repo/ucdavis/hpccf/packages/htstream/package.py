@@ -13,8 +13,11 @@ class Htstream(CMakePackage):
     homepage = "https://s4hts.github.io/HTStream/"
     url = "https://github.com/s4hts/HTStream/archive/refs/tags/v1.3.3.tar.gz"
 
-    maintainers = ["camillescott"]
+    maintainers("camillescott")
 
     version("1.3.3", sha256="1cccafd926615877a8b48cdd8efc118ad90289b378d86fd9c3c8368011419f4c")
+
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
 
     depends_on("boost@1.56: +system +program_options +iostreams +filesystem", type=("build", "link"))

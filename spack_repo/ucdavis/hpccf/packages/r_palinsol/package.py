@@ -15,7 +15,7 @@ class RPalinsol(RPackage):
     homepage = "https://bitbucket.org/mcrucifix/insol"
     cran = "palinsol"
 
-    maintainers = ["camillescott"]
+    maintainers("camillescott")
 
     version("0.93", sha256="5525b60f601e204996e766f3760d4dd7a6c77b3e042cd800f3c4f92305d5494c")
     version("0.92", sha256="eff62d0a47b19fb30e631d053171fbf16229f13bc36dd51e9728078e3a1ebecb")

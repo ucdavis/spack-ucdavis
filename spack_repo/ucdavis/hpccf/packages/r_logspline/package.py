@@ -14,3 +14,6 @@ class RLogspline(RPackage):
     cran = "logspline"
 
     version("2.1.17", sha256="03b72b860896f8801014b7b3b907389cc3cbe2e13bc1049241606df685a08815")
+
+    depends_on("c", type="build")
+    depends_on("fortran", type="build")

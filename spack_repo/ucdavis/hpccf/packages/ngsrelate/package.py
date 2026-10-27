@@ -20,6 +20,9 @@ class Ngsrelate(MakefilePackage):
 
     version("2.0", sha256="f2c20228720298d6ef2fd34324449ba7ebdd4b987477c78bd20ed99f176218c6")
 
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
+
     depends_on("htslib")
     depends_on("openssl")
     depends_on('libdeflate')
