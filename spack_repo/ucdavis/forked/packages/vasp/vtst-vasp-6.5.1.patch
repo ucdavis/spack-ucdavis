@@ -1,0 +1,53 @@
+--- a/src/main.F
++++ b/src/main.F
+@@ -1046,7 +1046,7 @@
+ ! init all chains (INCAR reader)
+ !-----------------------------------------------------------------------
+       LCHAIN = IMAGES > 0 .AND. .NOT.AFQMC_SET % ACTIVE
+-      IF (LCHAIN) CALL chain_init( T_INFO, IO)
++      CALL chain_init( T_INFO, IO)
+ !-----------------------------------------------------------------------
+ !xml finish copying parameters from INCAR to xml file
+ ! no INCAR reading from here
+@@ -3896,7 +3896,7 @@
+          CALL CHAIN_STRESS( TSIF )
+       END IF
+       CALL CHAIN_FORCE(T_INFO%NIONS,DYN%POSION,TOTEN,TIFOR, &
+-           LATT_CUR%A,LATT_CUR%B,IO%IU6)
++           TSIF,LATT_CUR%A,LATT_CUR%B,IO%IU6)
+ 
+       CALL PARALLEL_TEMPERING(NSTEP,T_INFO%NIONS,DYN%POSION,DYN%VEL,TOTEN,TIFOR,DYN%TEBEG,DYN%TEEND, &
+            LATT_CUR%A,LATT_CUR%B,IO%IU6)
+--- a/src/.objects
++++ b/src/.objects
+@@ -149,6 +149,10 @@
+ 	dos.o \
+ 	elf.o \
+ 	hamil_rot.o \
++	bfgs.o dynmat.o instanton.o lbfgs.o sd.o cg.o dimer.o bbm.o \
++	fire.o lanczos.o neb.o qm.o \
++	pyamff_fortran/*.o ml_pyamff.o \
++	opt.o \
+ 	chain.o \
+ 	dyna.o \
+ 	fileio.o \
+--- a/src/makefile
++++ b/src/makefile
+@@ -16,7 +16,7 @@
+ OFLAG=$(OFLAG_2)
+ OFLAG_IN=$(OFLAG)
+ 
+-LIB=lib parser
++LIB=lib parser pyamff_fortran
+ LLIB=-Llib -ldmy -Lparser -lparser
+ 
+ SRCDIR=../../src
+@@ -174,7 +174,7 @@
+ 	cp $@/arch/makefile.include.vasp $@/makefile.include
+ 	$(MAKE) -C $@ libvaspml
+ 
+-dependencies: sources
++dependencies: sources libs
+ 	$(MAKE) depend
+ 
+ depend: $(F90SRC)
