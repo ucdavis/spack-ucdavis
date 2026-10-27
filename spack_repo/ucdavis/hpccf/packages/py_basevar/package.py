@@ -29,4 +29,3 @@ class PyBasevar(PythonPackage):
     depends_on("py-scipy@1.1.0:", type=("build", "run"))
 
     depends_on("htslib@1.3:1.9")
-

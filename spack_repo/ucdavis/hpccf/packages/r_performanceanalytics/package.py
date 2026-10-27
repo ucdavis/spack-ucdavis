@@ -3,23 +3,6 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-# ----------------------------------------------------------------------------
-# If you submit this package back to Spack as a pull request,
-# please first remove this boilerplate and all FIXME comments.
-#
-# This is a template package file for Spack.  We've put "FIXME"
-# next to all the things you'll want to change. Once you've handled
-# them, you can save this file and test your package like this:
-#
-#     spack install r-performanceanalytics
-#
-# You can edit this file again by typing:
-#
-#     spack edit r-performanceanalytics
-#
-# See the Spack documentation for more information on packaging.
-# ----------------------------------------------------------------------------
-
 from spack_repo.builtin.build_systems.r import RPackage
 from spack.package import *
 
@@ -30,14 +13,8 @@ class RPerformanceanalytics(RPackage):
     homepage = "https://github.com/braverock/PerformanceAnalytics"
     cran = "PerformanceAnalytics"
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers = ["github_user1", "github_user2"]
-
     version("2.0.4", sha256="78a17070977665b30ddf3999d02fbbcca0f418b0791358c14bdc722235342232")
 
-    # FIXME: Add dependencies if required.
-    # depends_on("r-foo", type=("build", "run"))
     depends_on("r-xts", type=("build", "run"))
     depends_on("r-quadprog", type=("build", "run"))
     depends_on("r-zoo", type=("build", "run"))

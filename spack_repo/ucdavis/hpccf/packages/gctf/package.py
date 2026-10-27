@@ -32,4 +32,3 @@ class Gctf(Package):
         for binary in binaries:
             patchelf("--set-rpath", cuda_rpath, binary)
             install(binary, prefix.bin)
-

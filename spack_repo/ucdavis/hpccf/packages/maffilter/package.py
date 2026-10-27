@@ -33,4 +33,3 @@ class Maffilter(CMakePackage):
     depends_on("bpp-popgen @2023-05-07:")
     depends_on("boost +iostreams")
     depends_on("eigen")
-

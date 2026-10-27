@@ -3,23 +3,6 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-# ----------------------------------------------------------------------------
-# If you submit this package back to Spack as a pull request,
-# please first remove this boilerplate and all FIXME comments.
-#
-# This is a template package file for Spack.  We've put "FIXME"
-# next to all the things you'll want to change. Once you've handled
-# them, you can save this file and test your package like this:
-#
-#     spack install r-dmrichr
-#
-# You can edit this file again by typing:
-#
-#     spack edit r-dmrichr
-#
-# See the Spack documentation for more information on packaging.
-# ----------------------------------------------------------------------------
-
 from spack_repo.builtin.build_systems.r import RPackage
 from spack.package import *
 
@@ -27,13 +10,8 @@ from spack.package import *
 class RDmrichr(RPackage):
     """ A R package and executable for the preprocessing, statistical analysis, and downstream testing and visualization of differentially methylated regions (DMRs) from CpG count matrices (Bismark cytosine reports)."""
 
-    # FIXME: Add a proper url for your package's homepage here.
     homepage = "https://github.com/ben-laufer/DMRichR"
     url      = "https://github.com/ben-laufer/DMRichR/archive/refs/tags/v1.7.1.tar.gz"
-
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers = ['github_user1', 'github_user2']
 
     version('1.7.1', sha256='dde09ad5623ab10ca72e646804cbafc4024c53dc4dc5f2d9caa824279fa3151e')
 

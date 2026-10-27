@@ -153,4 +153,3 @@ class RelionBbr(CMakePackage, CudaPackage):
                 filter_file(r'^#define CUB_NS_QUALIFIER ::cub # for compatibility with CUDA 11.5',
                             r'#define CUB_NS_QUALIFIER ::cub // for compatibility with CUDA 11.5',
                             join_path("src", "acc", "cuda", "cuda_utils_cub.cuh"))
-

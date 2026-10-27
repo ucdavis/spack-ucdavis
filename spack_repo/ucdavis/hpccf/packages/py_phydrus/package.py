@@ -30,15 +30,3 @@ class PyPhydrus(PythonPackage):
     depends_on("py-scipy @1.1:", type=("build", "run"))
 
     depends_on("phydrus-fortran", type=("build", "link", "run"))
-
-    def global_options(self, spec, prefix):
-        # FIXME: Add options to pass to setup.py
-        # FIXME: If not needed, delete this function
-        options = []
-        return options
-
-    def install_options(self, spec, prefix):
-        # FIXME: Add options to pass to setup.py install
-        # FIXME: If not needed, delete this function
-        options = []
-        return options

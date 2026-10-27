@@ -40,4 +40,3 @@ class PhydrusFortran(MakefilePackage):
 
     def setup_run_environment(self, env):
         env.set("HYDRUS_BINARY", os.path.join(self.prefix.bin, 'hydrus'))
-

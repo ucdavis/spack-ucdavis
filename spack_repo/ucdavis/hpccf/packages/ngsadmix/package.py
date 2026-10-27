@@ -25,4 +25,3 @@ class Ngsadmix(Package):
 
         mkdirp(prefix.bin)
         install("NGSadmix", prefix.bin)
-

@@ -18,10 +18,3 @@ class Htstream(CMakePackage):
     version("1.3.3", sha256="1cccafd926615877a8b48cdd8efc118ad90289b378d86fd9c3c8368011419f4c")
 
     depends_on("boost@1.56: +system +program_options +iostreams +filesystem", type=("build", "link"))
-
-    def cmake_args(self):
-        # FIXME: Add arguments other than
-        # FIXME: CMAKE_INSTALL_PREFIX and CMAKE_BUILD_TYPE
-        # FIXME: If not needed delete this function
-        args = []
-        return args

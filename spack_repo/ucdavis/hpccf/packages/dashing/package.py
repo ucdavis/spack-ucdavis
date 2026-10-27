@@ -52,4 +52,3 @@ class Dashing(MakefilePackage):
 
     def install(self, spec, prefix):
         make("PREFIX={0}".format(prefix), "install")
-

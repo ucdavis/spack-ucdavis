@@ -3,23 +3,6 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-# ----------------------------------------------------------------------------
-# If you submit this package back to Spack as a pull request,
-# please first remove this boilerplate and all FIXME comments.
-#
-# This is a template package file for Spack.  We've put "FIXME"
-# next to all the things you'll want to change. Once you've handled
-# them, you can save this file and test your package like this:
-#
-#     spack install r-sommer
-#
-# You can edit this file again by typing:
-#
-#     spack edit r-sommer
-#
-# See the Spack documentation for more information on packaging.
-# ----------------------------------------------------------------------------
-
 from spack_repo.builtin.build_systems.r import RPackage
 from spack.package import *
 
@@ -41,18 +24,11 @@ class RSommer(RPackage):
     models can also be fitted using the two-dimensional spline
     functionality available in sommer."""
 
-    # FIXME: Add a proper url for your package's homepage here.
     homepage = "https://cran.r-project.org/web/packages/sommer/"
     cran     = "sommer"
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers = ['github_user1', 'github_user2']
-
     version('4.1.6', sha256='e8fed96e2135852b23868c086f40460f4bbbf9d237cba50e368fb2bdea2db024')
 
-    # FIXME: Add dependencies if required.
-    # depends_on('r-foo', type=('build', 'run'))
     depends_on('r-matrix', type=('build', 'run'))
     depends_on('r-mass', type=('build', 'run'))
     depends_on('r-lattice', type=('build', 'run'))
@@ -60,9 +36,3 @@ class RSommer(RPackage):
     depends_on('r-rcpp', type=('build', 'run'))
     depends_on('r-rcpparmadillo', type=('build', 'run'))
     depends_on('r-rcppprogress', type=('build', 'run'))
-    
-    def configure_args(self):
-        # FIXME: Add arguments to pass to install via --configure-args
-        # FIXME: If not needed delete this function
-        args = []
-        return args

@@ -27,4 +27,3 @@ class PyLogbook(PythonPackage):
     depends_on("py-cython", type="build")
     depends_on("py-cython@:0.29.36", type="build", when="@1.5.3")
     depends_on("py-setuptools", type="build")
-
