@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 from spack_repo.builtin.build_systems.makefile import MakefilePackage
+
 from spack.package import *
 
 
@@ -15,12 +16,15 @@ class Glimpse2(MakefilePackage):
 
     version("2.0.0", sha256="9babfdbb4907d3528f16494f8913abb2b72676710a984becfeabe5f51c354854")
 
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
+
     depends_on("htslib@1.7:")
     depends_on("boost@1.65: +iostreams +program_options +serialization")
     depends_on("xz")
     depends_on("bzip2")
     depends_on("curl")
-    depends_on("openssl@1")
+    depends_on("openssl")
     depends_on("libdeflate")
 
     projects = [
@@ -45,7 +49,7 @@ class Glimpse2(MakefilePackage):
             makefile = FileFilter(join_path(mf, 'makefile'))
             makefile.filter(r"(unil-dcsr: DYN_LIBS=.*)",  r"\1 -ldeflate")
 
-    def make(self, spec, prefix):
+    def build(self, spec, prefix):
         for p in Glimpse2.projects:
             with working_dir(p):
                 make('unil-dcsr')

@@ -3,8 +3,6 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-import platform
-
 from spack_repo.builtin.build_systems.makefile import MakefilePackage
 from spack.package import *
 
@@ -20,18 +18,16 @@ class BwaMem2(MakefilePackage):
     version("2.2.1", sha256="9b001bdc7666ee3f14f3698b21673714d429af50438b894313b05bc4688b1f6d")
 
     depends_on("c", type="build")
-    depends_on("zlib")
+    depends_on("cxx", type="build")
+    depends_on("zlib-api")
 
-    #patch("__cpuidex.remove.patch")
     patch("stdcheaders.patch")
 
     conflicts("%gcc@8:")
 
     @property
     def build_targets(self):
-        return ["CXX={0}".format(self.compiler.cxx),
-                "CC={0}".format(self.compiler.cc),
-                "multi"]
+        return ["CXX={0}".format(spack_cxx), "CC={0}".format(spack_cc), "multi"]
 
     def install(self, spec, prefix):
         mkdirp(prefix.bin)

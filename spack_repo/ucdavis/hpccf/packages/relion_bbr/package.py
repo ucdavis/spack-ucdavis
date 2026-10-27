@@ -3,10 +3,9 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-import os
-
 from spack_repo.builtin.build_systems.cmake import CMakePackage
 from spack_repo.builtin.build_systems.cuda import CudaPackage
+
 from spack.package import *
 
 
@@ -59,9 +58,13 @@ class RelionBbr(CMakePackage, CudaPackage):
         description="Have external motioncor2 available in addition to " "Relion builtin",
     )
 
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
+
     depends_on("mpi")
     depends_on("cmake@3:", type="build")
-    depends_on("fftw-api precision=float,double", when="~mklfft")
+    # variants can't be requested on a virtual (fftw-api); builtin relion uses fftw too
+    depends_on("fftw precision=float,double", when="~mklfft")
     #depends_on("amdfftw precision=float,double", when="+amdfftw")
 
     # use the +xft variant so the interface is not so horrible looking
@@ -103,7 +106,7 @@ class RelionBbr(CMakePackage, CudaPackage):
                     "-DCUDA_ARCH=%s" % (carch),
                 ]
 
-            if "+mklfft" not in self.spec and  int(carch) >= 11:
+            if "+mklfft" not in self.spec and self.spec.satisfies("^cuda@11:"):
                 args += [
                     "-DTHRUST_IGNORE_CUB_VERSION_CHECK=1"
                 ]
@@ -146,10 +149,8 @@ class RelionBbr(CMakePackage, CudaPackage):
                 join_path("src", "pipeline_jobs.h"),
             )
 
-        if "+cuda" in self.spec:
-            carch = self.spec.variants["cuda_arch"].value[0]
-            if int(carch) >= 11:
-                # see: https://github.com/3dem/relion/commit/554e0ed993e5ac8a3fee4be7c5cf64a62216a8c7
+        if self.spec.satisfies("+cuda ^cuda@11:"):
+            # see: https://github.com/3dem/relion/commit/554e0ed993e5ac8a3fee4be7c5cf64a62216a8c7
                 filter_file(r'^#define CUB_NS_QUALIFIER ::cub # for compatibility with CUDA 11.5',
                             r'#define CUB_NS_QUALIFIER ::cub // for compatibility with CUDA 11.5',
                             join_path("src", "acc", "cuda", "cuda_utils_cub.cuh"))

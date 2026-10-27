@@ -3,10 +3,11 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-from spack_repo.builtin.build_systems.makefile import MakefilePackage
-from spack.package import *
-
 import shutil
+
+from spack_repo.builtin.build_systems.makefile import MakefilePackage
+
+from spack.package import *
 
 
 class Dashing(MakefilePackage):
@@ -30,19 +31,23 @@ class Dashing(MakefilePackage):
             get_full_repo=True,
             commit="c4f9c1353892161ce83f373ca6dd02febe353bb8")
 
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
+    depends_on("git", type="build", when="@0.4.0")
+
     conflicts("%gcc@8:", when="@:1")
 
     build_targets = ["dashing"]
     no_cache = True
 
-    def edit(self, spec, prefix):
-        env['PREFIX'] = prefix
+    def setup_build_environment(self, env: EnvironmentModifications) -> None:
+        env.set("PREFIX", self.prefix)
 
     def build(self, spec, prefix):
-        with when("@0.4.0"):
+        if spec.satisfies("@0.4.0"):
             zstd_path = join_path("bonsai", "zstd")
             shutil.rmtree(zstd_path, ignore_errors=True)
-            git = which("git")
+            git = which("git", required=True)
             git("clone", "--recursive", "--single-branch", "--branch", "dev",
                 "https://github.com/facebook/zstd", zstd_path)
             with working_dir(zstd_path):

@@ -4,12 +4,9 @@
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 from shutil import copytree, ignore_patterns
-import os
-
-# looks like this import isn't necessary (or supported) anymore
-#from llnl.util import filesystem, tty
 
 from spack_repo.builtin.build_systems.makefile import MakefilePackage
+
 from spack.package import *
 
 
@@ -38,15 +35,21 @@ class Ngstools(MakefilePackage):
     homepage = "https://github.com/mfumagalli/ngsTools"
     git = "https://github.com/mfumagalli/ngsTools.git"
 
-    maintainers = ["camillescott"]
+    maintainers("camillescott")
 
-    version("2024-08-27", commit="b38ea27", submodules=submodules)
-    version("2023-04-05", commit="6505f80", submodules=submodules)
+    version(
+        "2024-08-27", commit="b38ea272c9f68822e74efd6bcb3495a08df42181", submodules=submodules
+    )
+    version(
+        "2023-04-05", commit="6505f809ec9384bdbecd1eeaedf9d00ff6033b2c", submodules=submodules
+    )
+
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
 
     depends_on("gsl@1.15:")
     depends_on("bzip2")
-    depends_on("lzma")
-    depends_on("zlib")
+    depends_on("zlib-api")
     depends_on("curl")
     depends_on("libdeflate")
     depends_on("xz")
@@ -61,7 +64,6 @@ class Ngstools(MakefilePackage):
         makefile.filter(r'^\s*HTS_LIBDIR\s*=.*', 'HTS_LIBDIR = ' + hts_lib)
 
     def build(self, spec, prefix):
-        make = which("make")
         for submodule in SUBMODULES:
             with working_dir(submodule):
                 make()

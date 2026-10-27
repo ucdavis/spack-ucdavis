@@ -3,8 +3,9 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-from spack.package import *
 from spack_repo.builtin.build_systems.cmake import CMakePackage
+
+from spack.package import *
 
 
 class Bifrost(CMakePackage):
@@ -17,10 +18,14 @@ class Bifrost(CMakePackage):
 
     variant('MAX_KMER_SIZE', default='32', description='The maximum k-mer size supported')
 
-    depends_on('gcc@5.1.0:')
-    depends_on('llvm@3.5:')
-    depends_on('cmake@2.8.12:', type="build")
-    depends_on('zlib')
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
+    depends_on("cmake@2.8.12:", type="build")
+    depends_on("zlib-api")
+
+    # bifrost needs a C++11 compiler: GCC 5.1+ or Clang 3.5+
+    conflicts("%gcc@:5.0")
+    conflicts("%clang@:3.4")
 
     def cmake_args(self):
         args = []
