@@ -1,0 +1,159 @@
+packages:
+  gcc:
+    buildable: false
+    externals:
+    - spec: gcc@9.5.0 languages:='c,c++,fortran'
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          c: /usr/bin/gcc-9
+          cxx: /usr/bin/g++-9
+          fortran: /usr/bin/gfortran-9
+        environment:
+          set:
+            CUDAFLAGS: "--allow-unsupported-compiler"
+    - spec: gcc@11.4.0 languages:='c,c++,fortran'
+      prefix: /usr
+      extra_attributes:
+        compilers:
+          c: /usr/bin/gcc
+          cxx: /usr/bin/g++
+          fortran: /usr/bin/gfortran
+        environment:
+          set:
+            CUDAFLAGS: "--allow-unsupported-compiler"
+
+  llvm:
+    buildable: false
+
+  aocc:
+    buildable: false
+    externals:
+    - spec: aocc@4.2.0
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/compilers/aocc/4.2.0
+      extra_attributes:
+        compilers:
+          c: /cvmfs/hpc.ucdavis.edu/sw/compilers/aocc/4.2.0/bin/clang
+          cxx: /cvmfs/hpc.ucdavis.edu/sw/compilers/aocc/4.2.0/bin/clang++
+          fortran: /cvmfs/hpc.ucdavis.edu/sw/compilers/aocc/4.2.0/bin/flang
+    - spec: aocc@5.0.0
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/compilers/aocc/5.0.0
+      extra_attributes:
+        compilers:
+          c: /cvmfs/hpc.ucdavis.edu/sw/compilers/aocc/5.0.0/bin/clang
+          cxx: /cvmfs/hpc.ucdavis.edu/sw/compilers/aocc/5.0.0/bin/clang++
+          fortran: /cvmfs/hpc.ucdavis.edu/sw/compilers/aocc/5.0.0/bin/flang
+
+  nvhpc:
+    buildable: false
+    externals:
+    - spec: nvhpc@25.9+blas+lapack+mpi
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/compilers/nvhpc/25.9/Linux_x86_64/25.9/compilers
+      extra_attributes:
+        compilers:
+          c: /cvmfs/hpc.ucdavis.edu/sw/compilers/nvhpc/25.9/Linux_x86_64/25.9/compilers/bin/nvc
+          cxx: /cvmfs/hpc.ucdavis.edu/sw/compilers/nvhpc/25.9/Linux_x86_64/25.9/compilers/bin/nvc++
+          fortran: /cvmfs/hpc.ucdavis.edu/sw/compilers/nvhpc/25.9/Linux_x86_64/25.9/compilers/bin/nvfortran
+    - spec: nvhpc@23.11+blas+lapack+mpi
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/compilers/nvhpc/23.11/Linux_x86_64/23.11/compilers
+      extra_attributes:
+        compilers:
+          c: /cvmfs/hpc.ucdavis.edu/sw/compilers/nvhpc/23.11/Linux_x86_64/23.11/compilers/bin/nvc
+          cxx: /cvmfs/hpc.ucdavis.edu/sw/compilers/nvhpc/23.11/Linux_x86_64/23.11/compilers/bin/nvc++
+          fortran: /cvmfs/hpc.ucdavis.edu/sw/compilers/nvhpc/23.11/Linux_x86_64/23.11/compilers/bin/nvfortran
+    require: +blas +lapack +mpi
+
+  intel-oneapi-compilers:
+    buildable: false
+    externals:
+    - spec: intel-oneapi-compilers@2023.2.4
+      id: oneapi-classic-provider
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2023.2.4
+      extra_attributes:
+        compilers:
+          c: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2023.2.4/compiler/2023.2.4/linux/bin/icx
+          cxx: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2023.2.4/compiler/2023.2.4/linux/bin/icpx
+          fortran: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2023.2.4/compiler/2023.2.4/linux/bin/ifx
+    - spec: intel-oneapi-compilers@2024.0.2
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2024.0.2
+      extra_attributes:
+        compilers:
+          c: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2024.0.2/compiler/2024.0/bin/icx
+          cxx: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2024.0.2/compiler/2024.0/bin/icpx
+          fortran: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2024.0.2/compiler/2024.0/bin/ifx
+    - spec: intel-oneapi-compilers@2025.2.1
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2025.2.1
+      extra_attributes:
+        compilers:
+          c: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2025.2.1/compiler/2025.2/bin/icx
+          cxx: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2025.2.1/compiler/2025.2/bin/icpx
+          fortran: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2025.2.1/compiler/2025.2/bin/ifx
+
+  intel-oneapi-compilers-classic:
+    buildable: false
+    externals:
+    - spec: intel-oneapi-compilers-classic@2021.10.0
+      dependencies:
+      - id: oneapi-classic-provider
+        deptypes: run
+      prefix: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2023.2.4/
+      extra_attributes:
+        compilers:
+          c: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2023.2.4/compiler/2023.2.4/linux/bin/intel64/icc
+          cxx: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2023.2.4/compiler/2023.2.4/linux/bin/intel64/icpc
+          fortran: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2023.2.4/compiler/2023.2.4/linux/bin/ifort
+
+  mariadb:
+    externals:
+      - spec: mariadb@10.8.2 %gcc@11.4.0
+        prefix: /usr
+    buildable: false
+  
+  munge:
+    externals:
+      - spec: munge@0.5.14 %gcc@11.4.0
+        prefix: /usr
+    buildable: false
+  
+  apptainer:
+    externals:
+      - spec: apptainer@1.3.4 %gcc@11.4.0
+        prefix: /usr
+    buildable: false
+  
+  mesa:
+    externals:
+      - spec: mesa@23.2.1 ~llvm +glx +opengl +osmesa %gcc@11.4.0 
+        prefix: /usr
+    buildable: false
+
+  gaussian:
+    externals:
+      - spec: gaussian@16-B.01 target=x86_64_v3
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/gaussian16/b.01
+    buildable: false
+
+  julia:
+    externals:
+      - spec: julia@1.12.1 %gcc@11.4.0
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/julia/1.12.1
+    buildable: False
+
+  rust:
+    externals:
+      - spec: rust@1.91.0 %gcc@11.4.0
+        prefix: /cvmfs/hpc.ucdavis.edu/sw/rust/1.91.0
+    buildable: False
+
+#####################################################################
+# buildable
+
+  mariadb-c-client:
+    externals:
+      - spec: mariadb-c-client@3 %gcc@11.4.0
+        prefix: /usr
+
+  openssl:
+    externals:
+    - spec: openssl@3.0.2 %gcc@11.4.0
+      prefix: /usr
