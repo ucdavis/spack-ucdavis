@@ -1,0 +1,381 @@
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
+#
+# SPDX-License-Identifier: (Apache-2.0 OR MIT)
+
+# UC Davis fork of builtin @ v2026.10.0: adds Amber 26 (CMake build of the pmemd engine,
+# -DPMEMD_ONLY=TRUE, with Spack-provided netcdf/blas/lapack and an optional
+# python_executable), keeps the legacy configure/make build for <= 20 in GenericBuilder,
+# and declares the c/cxx/fortran language dependencies.
+
+import os
+import shutil
+
+from spack_repo.builtin.build_systems import cmake, generic
+from spack_repo.builtin.build_systems.cmake import CMakePackage
+from spack_repo.builtin.build_systems.cuda import CudaPackage
+from spack_repo.builtin.build_systems.generic import Package
+
+from spack.package import *
+
+
+class Amber(CMakePackage, Package, CudaPackage):
+    """Amber is a suite of biomolecular simulation programs together
+    with Amber tools.
+
+    A manual download is required for Ambers. Spack will search your current
+    directory for the download files. Alternatively, add the files to a mirror
+    so that Spack can find them. For instructions on how to set up a mirror, see
+    https://spack.readthedocs.io/en/latest/mirrors.html
+
+    Note: Only certain versions of ambertools are compatible with amber.
+    Only the latter version of ambertools for each amber version is supported.
+
+    Starting with Amber 26 the build system switched to CMake and the tarball
+    (pmemd26_src) ships the pmemd MD engine, built here with -DPMEMD_ONLY=TRUE.
+    Older versions (<= 20) continue to use the legacy ./configure + make build.
+    """
+
+    homepage = "https://ambermd.org/"
+    url = "file://{0}/Amber18.tar.bz2".format(os.getcwd())
+    manual_download = True
+
+    maintainers("hseara")
+
+    version("26", sha256="0478ccce892f3525e995e9c85458d552c6060b73dd28acd03c366e61ecf23a14")
+    version("20", sha256="a4c53639441c8cc85adee397933d07856cc4a723c82c6bea585cd76c197ead75")
+    version("18", sha256="2060897c0b11576082d523fb63a51ba701bc7519ff7be3d299d5ec56e8e6e277")
+
+    # Amber <= 20 uses the legacy configure/make build; Amber 26+ uses CMake.
+    build_system(
+        conditional("cmake", when="@26:"), conditional("generic", when="@:20"), default="generic"
+    )
+
+    for ver, ambertools_ver, ambertools_checksum in (
+        # (version amber, version ambertools, sha256sum)
+        ("20", "21", "f55fa930598d5a8e9749e8a22d1f25cab7fcf911d98570e35365dd7f262aaafd"),
+        ("18", "19", "0c86937904854b64e4831e047851f504ec45b42e593db4ded92c1bee5973e699"),
+    ):
+        resource(
+            when="@{0}".format(ver),
+            name="AmberTools",
+            url="file://{0}/AmberTools{1}.tar.bz2".format(os.getcwd(), ambertools_ver),
+            sha256=ambertools_checksum,
+            destination="",
+            placement="ambertools_tmpdir",
+        )
+
+    for ver, num, checksum in (
+        ("20", "1", "10780cb91a022b49ffdd7b1e2bf4a572fa4edb7745f0fc4e5d93b158d6168e42"),
+        ("20", "2", "9c973e3f8f33a271d60787e8862901e8f69e94e7d80cda1695f7fad7bc396093"),
+        ("20", "3", "acb359dc9b1bcff7e0f1965baa9f3f3dc18eeae99c49f1103c1e2986c0bbeed8"),
+        ("20", "4", "fd93c74f5ec80689023648cdd12b2c5fb21a3898c81ebc3fa256ef244932562a"),
+        ("20", "5", "8e46d5be28c002f560050a71f4851b01ef45a3eb66ac90d7e23553fae1370e68"),
+        ("20", "6", "8cf9707b3d08ad9242326f02d1861831ad782c9bfb0c46e7b1f0d4640571d5c1"),
+        ("20", "7", "143b6a09f774aeae8b002afffb00839212020139a11873a3a1a34d4a63fa995d"),
+        ("20", "8", "a6fc6d5c8ba0aad3a8afe44d1539cc299ef78ab53721e28244198fd5425d14ad"),
+        ("20", "9", "5ce6b534bab869b1e9bfefa353d7f578750e54fa72c8c9d74ddf129d993e78cf"),
+        ("20", "10", "76a683435be7cbb860f5bd26f09a0548c2e77c5a481fc6d64b55a3a443ce481d"),
+        ("20", "11", "f40b3612bd3e59efa2fa1ec06ed6fd92446ee0f1d5d99d0f7796f66b18e64060"),
+        ("20", "12", "194119aed03f80677c4bab78a20fc09b0b3dc17c41a57c5eb3c912b2d73b18ab"),
+        ("18", "1", "3cefac9a24ece99176d5d2d58fea2722de3e235be5138a128428b9260fe922ad"),
+        ("18", "2", "3a0707a9a59dcbffa765dcf87b68001450095c51b96ec39d21260ba548a2f66a"),
+        ("18", "3", "24c2e06f71ae553a408caa3f722254db2cbf1ca4db274542302184e3d6ca7015"),
+        ("18", "4", "51de613e8fda20cc92979265cf7179288df8c1af4202f02794ad7327fda2657b"),
+        ("18", "5", "c70354bfa312603e4819efce11a242ddcc3830895453d9424f0c83f7ae98bc5b"),
+        ("18", "6", "3450433a8697b27e43172043be68d31515a7c7c00b2b248f84043dd70a2f59a8"),
+        ("18", "7", "10ba41422b7a3eb5b32bc6453231100544cf620c764ab8332c629a3b9fc749d4"),
+        ("18", "8", "73968dc0fd99bcbd5eae2223bd54f414879c062ac933948ba6b8b67383dc6a53"),
+        ("18", "9", "e7d72fa31560f1e8ea572b8c73259d9fe512f56fbeb1b58ae014c43b9b5b6290"),
+        ("18", "10", "1bee419a3b0b686a729aa12515b0f96a9a8f43478ca2c01ea1661cc1698c6266"),
+        ("18", "11", "926557f0c137ea8dbf99a0487b25e131b12dfd39977d3e515f01f49187e6a09c"),
+        ("18", "12", "7e2645d539d257f7064808308048622818c9083dedfa4ac0a958cd15181231ac"),
+        ("18", "13", "95d2e33d0d05b8f9b6d8091d1c804271ec3a69e9aef792cc3b1ab8a2165eca3e"),
+        ("18", "14", "a1adfb072f60ffcb67adb589df7c5578629441bee4ccb89ab635a6e8d7a35277"),
+        ("18", "15", "4deb3df329c05729561dcc7310e49059eaddc504c4210ad31fad11dc70f61742"),
+        ("18", "16", "cf02f9b949127363bad1aa700ab662a3c7cf9ce0e2e4750e066d2204b9500a99"),
+        ("18", "17", "480300f949e0dd6402051810a9714adb388cf96e454a55346c76954cdd69413d"),
+    ):
+        patch_url_str = "https://ambermd.org/bugfixes/{0}.0/update.{1}"
+        patch(patch_url_str.format(ver, num), sha256=checksum, level=0, when="@{0}".format(ver))
+
+    # Patch to move the namelist sebomd after the variable declarations
+    # Taken from http://archive.ambermd.org/202105/0098.html
+    patch("sebomd_fix.patch", when="@20")
+
+    # The following patches touch AmberTools/src files from the legacy
+    # (configure/make) build and must not be applied to the CMake build (@26:).
+    # Patch to add ppc64le in config.guess
+    patch("ppc64le.patch", when="@18:20 target=ppc64le:")
+
+    # Patch to add aarch64 in config.guess
+    patch("aarch64.patch", when="@18:20 target=aarch64:")
+
+    # Workaround to modify the AmberTools script when using the NVIDIA
+    # compilers
+    patch("nvhpc.patch", when="@18:20 %nvhpc")
+
+    # Workaround to use NVIDIA compilers to build the bundled Boost
+    patch("nvhpc-boost.patch", when="@18:20 %nvhpc")
+
+    variant("mpi", description="Build MPI executables", default=True)
+    variant("openmp", description="Use OpenMP pragmas to parallelize", default=False)
+    variant("x11", description="Build programs that require X11", default=False)
+    variant("update", description="Update the sources prior compilation", default=False)
+
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
+    depends_on("fortran", type="build")
+
+    # MPI is common to both build systems.
+    # Potential issues with openmpi 4
+    # (http://archive.ambermd.org/201908/0105.html)
+    depends_on("mpi", when="+mpi")
+    depends_on("gmake", type="build")
+
+    # Legacy configure/make build (Amber <= 20).
+    with when("build_system=generic"):
+        depends_on("zlib-api")
+        depends_on("bzip2")
+        depends_on("flex", type="build")
+        depends_on("bison", type="build")
+        depends_on("netcdf-fortran")
+        depends_on("parallel-netcdf", when="@20:")  # when='AmberTools@21:'
+        depends_on("tcsh", type=("build"), when="@20")  # when='AmberTools@21:'
+        # Cuda dependencies
+        # /AmberTools/src/configure2:1329
+        depends_on("cuda@:11.1", when="@20:+cuda")  # when='AmberTools@21:'
+        depends_on("cuda@:10.2.89", when="@18+cuda")
+
+    # CMake build (Amber 26+). Third-party libraries are provided by Spack and
+    # forced external via -DFORCE_EXTERNAL_LIBS (see CMakeBuilder.cmake_args).
+    # The pmemd distribution's CMake buildsystem only knows how to consume a
+    # small set of external libraries (blas, lapack, netcdf, netcdf-fortran);
+    # pmemd uses its own internal PME FFT, so fftw/pnetcdf/readline are neither
+    # needed nor accepted here. CudaPackage already supplies
+    # `depends_on("cuda", when="+cuda")` with no artificial upper bound, which
+    # is correct for Amber 26.
+    with when("build_system=cmake"):
+        depends_on("cmake@3.8.1:", type="build")
+        depends_on("netcdf-c")
+        depends_on("netcdf-fortran")
+        depends_on("blas")
+        depends_on("lapack")
+
+        # Amber always detects a Python interpreter at configure time (used for
+        # the amber.python symlink) even under PMEMD_ONLY. Let the user point it
+        # at a specific interpreter via -DPYTHON_EXECUTABLE; default "none"
+        # leaves Amber's autodetection (system Python) untouched.
+        variant(
+            "python_executable",
+            default="none",
+            values=lambda v: True,
+            multi=False,
+            description="Path to set as -DPYTHON_EXECUTABLE (default: let Amber autodetect)",
+        )
+
+    # conflicts
+    conflicts("+x11", when="platform=cray", msg="x11 amber applications not available for cray")
+    conflicts("+openmp", when="%clang", msg="OpenMP not available for the clang compiler")
+    conflicts(
+        "+openmp", when="%apple-clang", msg="OpenMP not available for the Apple clang compiler"
+    )
+
+    def url_for_version(self, version):
+        url = "file://{0}/Amber{1}.tar.bz2".format(os.getcwd(), version)
+        return url
+
+    def setup_build_environment(self, env: EnvironmentModifications) -> None:
+        # The legacy build runs from the source tree and needs AMBERHOME set,
+        # plus a workaround for the bundled Boost's bzip2 detection. The CMake
+        # build does neither (it builds out-of-source and installs cleanly).
+        if self.spec.satisfies("build_system=generic"):
+            amber_src = self.stage.source_path
+            env.set("AMBERHOME", amber_src)
+
+            # The bundled Boost does not detect the bzip2 package, but
+            # will silently fall back to a system install (if available).
+            # Force it to use the bzip2 package.
+            env.prepend_path("CPATH", self.spec["bzip2"].prefix.include)
+
+        # CUDA
+        if self.spec.satisfies("+cuda"):
+            env.set("CUDA_HOME", self.spec["cuda"].prefix)
+
+    def setup_run_environment(self, env: EnvironmentModifications) -> None:
+        env.set("AMBER_PREFIX", self.prefix)
+        env.set("AMBERHOME", self.prefix)
+        # CUDA
+        if self.spec.satisfies("+cuda"):
+            env.prepend_path("LD_LIBRARY_PATH", self.spec["cuda"].prefix.lib)
+
+
+class GenericBuilder(generic.GenericBuilder):
+    """Legacy ./configure + make build used for Amber <= 20."""
+
+    def install(self, pkg, spec, prefix):
+        # The resource command does not allow us to expand the package in the
+        # root stage folder as required, as it already contains files. Here we
+        # install AmberTools where it should be, which results in 3 copies of
+        # the  ambertools (~9 GB). This has to be improved in the future.
+        install_tree("ambertools_tmpdir", ".")
+        shutil.rmtree(join_path(pkg.stage.source_path, "ambertools_tmpdir"))
+
+        # Select compiler style
+        if spec.satisfies("%cce"):
+            compiler = "cray"
+        elif spec.satisfies("%gcc"):
+            compiler = "gnu"
+        elif spec.satisfies("%intel"):
+            compiler = "intel"
+        elif spec.satisfies("%nvhpc"):
+            compiler = "pgi"
+        elif spec.satisfies("%clang"):
+            compiler = "clang"
+        else:
+            raise InstallError("Unknown compiler, exiting!!!")
+
+        # Alternative way to make csh/tcsh detection work with modules
+        filter_file(
+            r"-x /bin/csh",
+            "command -v csh &> /dev/null/",
+            "AmberTools/src/configure2",
+            string=True,
+        )
+
+        # Base configuration
+        conf = Executable("./configure")
+        base_args = ["--skip-python", "--with-netcdf", spec["netcdf-fortran"].prefix]
+        if spec.satisfies("~x11"):
+            base_args += ["-noX11"]
+
+        # Update the sources: Apply all upstream patches
+        if spec.satisfies("+update"):
+            update = Executable("./update_amber")
+            update(*(["--update"]))
+        else:
+            base_args += ["--no-updates"]
+
+        # Non-x86 architecture
+        if spec.target.family != "x86_64":
+            base_args += ["-nosse"]
+
+        # Single core
+        conf(*(base_args + [compiler]))
+        make("install")
+
+        # CUDA
+        if spec.satisfies("+cuda"):
+            conf(*(base_args + ["-cuda", compiler]))
+            make("install")
+
+        # MPI
+        if spec.satisfies("+mpi"):
+            conf(*(base_args + ["-mpi", compiler]))
+            make("install")
+
+        # Openmp
+        if spec.satisfies("+openmp"):
+            make("clean")
+            conf(*(base_args + ["-openmp", compiler]))
+            make("openmp")
+
+        # CUDA + MPI
+        if spec.satisfies("+cuda") and spec.satisfies("+mpi"):
+            make("clean")
+            conf(*(base_args + ["-cuda", "-mpi", compiler]))
+            make("install")
+
+        # just install everything that was built
+        install_tree(".", prefix)
+
+
+class CMakeBuilder(cmake.CMakeBuilder):
+    """CMake build used for Amber 26+ (pmemd MD engine, -DPMEMD_ONLY=TRUE)."""
+
+    @run_before("cmake")
+    def remove_bundled_cub(self):
+        # Amber bundles a stale CUB namespace stub at src/pmemd/src/cub/ that is
+        # only meant for CUDA < 11 (see src/pmemd/src/cuda/kNLRadixSort.cu, which
+        # includes the toolkit's <cub/cub.cuh> when CUDA_VERSION >= 11000 and the
+        # bundled "../cub/cub.cuh" only below that). Because
+        # src/pmemd/src/CMakeLists.txt does `include_directories(.)`, that stub is
+        # on the include path and shadows the CUDA toolkit's own CUB headers,
+        # which makes the toolkit Thrust abort with a CUB/Thrust version mismatch.
+        # For CUDA >= 11 (all versions Amber 26 supports) both Amber and Thrust
+        # must use the toolkit CUB, so remove the bundled directory.
+        if self.spec.satisfies("+cuda"):
+            cub_dir = join_path(self.pkg.stage.source_path, "src", "pmemd", "src", "cub")
+            if os.path.isdir(cub_dir):
+                shutil.rmtree(cub_dir)
+
+    def cmake_args(self):
+        spec = self.spec
+
+        # Map the Spack compiler to Amber's -DCOMPILER value.
+        if spec.satisfies("%gcc"):
+            compiler = "GNU"
+        elif spec.satisfies("%oneapi"):
+            compiler = "INTELLLVM"
+        elif spec.satisfies("%intel"):
+            compiler = "INTEL"
+        elif spec.satisfies("%clang") or spec.satisfies("%apple-clang"):
+            compiler = "CLANG"
+        elif spec.satisfies("%cce"):
+            compiler = "CRAY"
+        else:
+            raise InstallError("Unknown compiler, exiting!!!")
+
+        args = [
+            # Build only the pmemd MD engine (pmemd, pmemd.MPI, pmemd.cuda,
+            # pmemd.cuda.MPI as enabled below).
+            self.define("PMEMD_ONLY", True),
+            self.define("COMPILER", compiler),
+            self.define_from_variant("MPI", "mpi"),
+            self.define_from_variant("CUDA", "cuda"),
+            self.define_from_variant("OPENMP", "openmp"),
+            self.define("BUILD_GUI", spec.satisfies("+x11")),
+            # Do not pull in Amber's own miniconda/python/perl stack.
+            self.define("DOWNLOAD_MINICONDA", False),
+            self.define("BUILD_PYTHON", False),
+            self.define("BUILD_PERL", False),
+        ]
+
+        # Optionally pin the Python interpreter Amber detects at configure time
+        # (used for the amber.python symlink) instead of the autodetected one.
+        python_exe = spec.variants["python_executable"].value
+        if python_exe != "none":
+            args.append(self.define("PYTHON_EXECUTABLE", python_exe))
+
+        args += [
+            # Do not contact Amber's update server during the build.
+            self.define("CHECK_UPDATES", False),
+            self.define_from_variant("APPLY_UPDATES", "update"),
+            self.define("INSTALL_TESTS", False),
+        ]
+
+        # Use the Spack-provided (external) third-party libraries rather than
+        # Amber's bundled copies. Spack sets CMAKE_PREFIX_PATH so these resolve
+        # to the dependencies declared above. These are the only libraries the
+        # pmemd CMake buildsystem knows how to source externally (see its
+        # 3RDPARTY_TOOLS list); pmemd uses its own internal FFT. If any external
+        # lib proves troublesome, the fallback is -DTRUST_SYSTEM_LIBS=TRUE.
+        external_libs = ["netcdf", "netcdf-fortran", "blas", "lapack"]
+        args.append(self.define("FORCE_EXTERNAL_LIBS", ";".join(external_libs)))
+
+        # Amber's bundled FindNetCDF (cmake/jedbrown/FindNetCDF.cmake) assumes
+        # the Fortran interface lives in the same prefix as the C library and
+        # searches only the C include dir (with NO_DEFAULT_PATH) for netcdf.mod.
+        # Spack installs netcdf-c and netcdf-fortran in separate prefixes, so
+        # pre-seed the F90 cache variables (this turns the finder's find_path /
+        # find_library into no-ops) to point at the netcdf-fortran prefix.
+        ncf = spec["netcdf-fortran"]
+        args.append(self.define("NetCDF_INCLUDES_F90", ncf.prefix.include))
+        libnetcdff = find_libraries("libnetcdff", root=ncf.prefix, shared=True, recursive=True)
+        if libnetcdff:
+            args.append(self.define("NetCDF_LIBRARIES_F90", libnetcdff[0]))
+
+        # Disable SSE on non-x86 architectures.
+        if spec.target.family != "x86_64":
+            args.append(self.define("SSE", False))
+
+        return args
