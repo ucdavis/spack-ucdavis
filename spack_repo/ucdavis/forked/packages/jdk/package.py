@@ -16,29 +16,35 @@ class Jdk(Package):
     plus tools for developing, debugging, and monitoring Java applications."""
 
     homepage = "https://www.oracle.com/technetwork/java/javase/downloads/index.html"
+    url = "https://download.oracle.com/java/17/archive/jdk-17.0.10_linux-x64_bin.tar.gz"
 
     maintainers("justintoo")
 
     version(
+        "25.0.1",
+        sha256="a159db241c72f804ec7c862d465f8237e31d36a463e0b86e18f68bc654dcef91",
+    )
+
+    version(
         "23.0.1",
         sha256="2bda38cd0f31d593b56ee5a607401bc6f245aafe07535b6525572861c2d15d6f",
-        url="https://download.oracle.com/java/23/latest/jdk-23_linux-x64_bin.tar.gz"
     )
     version(
         "21.0.5",
         sha256="9c2f7c39e0d5b296ce50e563740694b2ebfe4a620415d1b2b848ba47bebceb47",
-        url="https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz",
     )
     version(
         "21.0.2",
         sha256="9f1f4a7f25ef6a73255657c40a6d7714f2d269cf15fb2ff1dc9c0c8b56623a6f",
-        url="https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz",
     )
     version(
         "17.0.10",
         sha256="e4fb2df9a32a876afb0a6e17f54c594c2780e18badfa2e8fc99bc2656b0a57b1",
-        url="https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.tar.gz",
     )
+
+    def url_for_version(self, version):
+        url = "https://download.oracle.com/java/{0}/archive/jdk-{1}_linux-x64_bin.tar.gz"
+        return url.format(version.up_to(1), version)
 
     provides("java@21", when="@21")
     provides("java@17", when="@17")
