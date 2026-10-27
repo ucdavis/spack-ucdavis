@@ -1,10 +1,17 @@
 toolchains:
-  gcc_default:
+  gcc_bootstrap:
   - spec: "%c=gcc@11.4.0"
     when: "%c"
   - spec: "%cxx=gcc@11.4.0"
     when: "%cxx"
   - spec: "%fortran=gcc@11.4.0"
+    when: "%fortran"
+  gcc_default:
+  - spec: "%c=gcc@13.5.0"
+    when: "%c"
+  - spec: "%cxx=gcc@13.5.0"
+    when: "%cxx"
+  - spec: "%fortran=gcc@13.5.0"
     when: "%fortran"
   oneapi_default:
   - spec: "%c=oneapi@2025.2.1"
@@ -19,4 +26,11 @@ toolchains:
   - spec: "%cxx=intel-oneapi-compilers-classic@2021.10.0"
     when: "%cxx"
   - spec: "%fortran=intel-oneapi-compilers-classic@2021.10.0"
+    when: "%fortran"
+  nvhpc_default:
+  - spec: "%c=nvhpc@25.9"
+    when: "%c"
+  - spec: "%cxx=nvhpc@25.9"
+    when: "%cxx"
+  - spec: "%fortran=nvhpc@25.9"
     when: "%fortran"
