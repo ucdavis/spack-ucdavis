@@ -1,24 +1,25 @@
   definitions:
+
     - compilers:
       - '%gcc_default'
       - '%oneapi_default'
 
     - messaging-pkgs:
-      - mpich @4.3.0
-      - openmpi @4.1.8
-      - openmpi @5.0.8
+      - mpich @4.3.2 #^pmix@5.0.3
+      - openmpi @4.1.5
+      - openmpi @4.1.7
+      - openmpi @5.0.5 #^pmix@5.0.3
       - pmix @4.2.9
-      - pmix @5.0.3 # DEPRECATE
-      - pmix @5.0.8
+      - pmix @5.0.3
+      #- pmix @5.0.8
       - libevent @2.1.12
-      - ucx @1.17.0 # DEPRECATE
-      - ucx @1.18.1
+      - ucx @1.17.0
+      - hwloc @2.11.1
 
     - generic-pkgs:
       - environment-modules @5.5.0
       - tcl
-      - slurm @25-05-0-1
-      - hwloc @2.11.1
+      - slurm @26-05-4-1
       - go @1.23.2
       - rust @1.85.0
       - rust @1.81.0
@@ -32,7 +33,7 @@
         - ['%gcc_default']
 
     - cuda-versions:
-      - '@12.9.0'
+      - '@13.3.0'
       - '@12.6.2'
       - '@12.3.0'
       - '@11.7'
