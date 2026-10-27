@@ -3,24 +3,7 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-# ----------------------------------------------------------------------------
-# If you submit this package back to Spack as a pull request,
-# please first remove this boilerplate and all FIXME comments.
-#
-# This is a template package file for Spack.  We've put "FIXME"
-# next to all the things you'll want to change. Once you've handled
-# them, you can save this file and test your package like this:
-#
-#     spack install popins2
-#
-# You can edit this file again by typing:
-#
-#     spack edit popins2
-#
-# See the Spack documentation for more information on packaging.
-# ----------------------------------------------------------------------------
-
-from spack import *
+from spack.package import *
 from spack_repo.builtin.build_systems.makefile import MakefilePackage
 
 
@@ -31,13 +14,8 @@ class Popins2(MakefilePackage):
     url      = "https://github.com/kehrlab/PopIns2"
     git      = "https://github.com/kehrlab/PopIns2.git"
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated.
-    # maintainers = ['github_user1', 'github_user2']
-
     version('0.13.0-47964d4', commit="47964d4a4bed073cd2dac347182726d628f7e85a", submodules=True, get_full_repo=True)
 
-    # FIXME: Add dependencies if required.
     depends_on('bifrost@1.0.4 MAX_KMER_SIZE=64')
     depends_on('bwa@0.7.15')
     depends_on('samtools@1.5')
