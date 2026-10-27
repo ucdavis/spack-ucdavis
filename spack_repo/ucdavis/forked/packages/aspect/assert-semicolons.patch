@@ -1,0 +1,264 @@
+diff --git a/source/initial_temperature/continental_geotherm.cc b/source/initial_temperature/continental_geotherm.cc
+index 54a99d8a5..59c5b4bf9 100644
+--- a/source/initial_temperature/continental_geotherm.cc
++++ b/source/initial_temperature/continental_geotherm.cc
+@@ -211,7 +211,7 @@ namespace aspect
+ 
+           // To obtain the radioactive heating rate in W/kg, we divide the volumetric heating rate by density
+           AssertThrow(heat_productivities.size() == 3 && densities.size() == 3 && conductivities.size() == 3,
+-                      ExcMessage("The entries for density, conductivity and heat production do not match with the expected number of layers (3)."))
++                      ExcMessage("The entries for density, conductivity and heat production do not match with the expected number of layers (3)."));
+ 
+           for (unsigned int i = 0; i<3; ++i)
+             heat_productivities[i] /= densities[i];
+diff --git a/source/material_model/rheology/strain_dependent.cc b/source/material_model/rheology/strain_dependent.cc
+index c4f238f8c..c41ff59b6 100644
+--- a/source/material_model/rheology/strain_dependent.cc
++++ b/source/material_model/rheology/strain_dependent.cc
+@@ -232,7 +232,7 @@ namespace aspect
+                             ExcMessage("A material model with strain weakening using the full strain tensor only works if there are "
+                                        "compositional fields called sij, with i=1,..,dim and j=1,...,dim listed in the following order: "
+                                        "s11, s12, s21, s22."));
+-                AssertThrow(n_s22 == n_s11+s-1, ExcMessage("The strain tensor components should be represented by consecutive fields."))
++                AssertThrow(n_s22 == n_s11+s-1, ExcMessage("The strain tensor components should be represented by consecutive fields."));
+               }
+             if (dim==3)
+               {
+diff --git a/source/material_model/utilities.cc b/source/material_model/utilities.cc
+index 6151a95e9..b5487499e 100644
+--- a/source/material_model/utilities.cc
++++ b/source/material_model/utilities.cc
+@@ -606,17 +606,17 @@ namespace aspect
+             {
+               first_natural_variable = column_name;
+               in >> column_name;
+-              AssertThrow(column_name == "T(K)", ExcMessage("The second column name in PerpleX lookup file " + filename + " should be T(K)."))
++              AssertThrow(column_name == "T(K)", ExcMessage("The second column name in PerpleX lookup file " + filename + " should be T(K)."));
+             }
+           else if (column_name == "T(K)")
+             {
+               first_natural_variable = column_name;
+               in >> column_name;
+-              AssertThrow(column_name == "P(bar)", ExcMessage("The second column name in PerpleX lookup file " + filename + " should be P(bar)."))
++              AssertThrow(column_name == "P(bar)", ExcMessage("The second column name in PerpleX lookup file " + filename + " should be P(bar)."));
+             }
+           else
+             {
+-              AssertThrow(false, ExcMessage("The first column name in the PerpleX lookup file " + filename + " should be P(bar) or T(K)."))
++              AssertThrow(false, ExcMessage("The first column name in the PerpleX lookup file " + filename + " should be P(bar) or T(K)."));
+             }
+ 
+           for (unsigned int n=2; n<n_columns; n++)
+diff --git a/source/particle/property/crystal_preferred_orientation.cc b/source/particle/property/crystal_preferred_orientation.cc
+index 24cb8f2f5..81e3272c2 100644
+--- a/source/particle/property/crystal_preferred_orientation.cc
++++ b/source/particle/property/crystal_preferred_orientation.cc
+@@ -174,11 +174,11 @@ namespace aspect
+               {
+ #ifdef ASPECT_WITH_WORLD_BUILDER
+                 AssertThrow(false,
+-                            ExcMessage("Not implemented."))
++                            ExcMessage("Not implemented."));
+ #else
+                 AssertThrow(false,
+                             ExcMessage("The world builder was requested but not provided. Make sure that aspect is "
+-                                       "compiled with the World Builder and that you provide a world builder file in the input."))
++                                       "compiled with the World Builder and that you provide a world builder file in the input."));
+ #endif
+               }
+             else
+@@ -1146,7 +1146,7 @@ namespace aspect
+                 {
+                   AssertThrow(false,
+                               ExcMessage("The CPO derivatives algorithm needs to be one of the following: "
+-                                         "Spin tensor, D-Rex 2004."))
++                                         "Spin tensor, D-Rex 2004."));
+                 }
+ 
+               const std::string temp_advection_method = prm.get("Property advection method");
+@@ -1213,7 +1213,7 @@ namespace aspect
+                         AssertThrow(false,
+                                     ExcMessage("The fabric needs to be assigned one of the following comma-delimited values: Olivine: Karato 2008, "
+                                                "Olivine: A-fabric, Olivine: B-fabric, Olivine: C-fabric, Olivine: D-fabric,"
+-                                               "Olivine: E-fabric, Enstatite, Passive."))
++                                               "Olivine: E-fabric, Enstatite, Passive."));
+                       }
+                   }
+ 
+diff --git a/source/postprocess/particles.cc b/source/postprocess/particles.cc
+index ca0fa6eb4..314d5b032 100644
+--- a/source/postprocess/particles.cc
++++ b/source/postprocess/particles.cc
+@@ -241,7 +241,7 @@ namespace aspect
+ 
+       AssertThrow (out, ExcMessage(std::string("Trying to write to file <") +
+                                    filename +
+-                                   ">, but the file can't be opened!"))
++                                   ">, but the file can't be opened!"));
+ 
+       // now write and then move the tmp file to its final destination
+       // if necessary
+diff --git a/source/postprocess/visualization.cc b/source/postprocess/visualization.cc
+index d641838bb..b0c4a5ed1 100644
+--- a/source/postprocess/visualization.cc
++++ b/source/postprocess/visualization.cc
+@@ -1072,7 +1072,7 @@ namespace aspect
+ 
+       AssertThrow (out, ExcMessage(std::string("Trying to write to file <") +
+                                    filename +
+-                                   ">, but the file can't be opened!"))
++                                   ">, but the file can't be opened!"));
+ 
+       // now write and then move the tmp file to its final destination
+       // if necessary
+diff --git a/source/simulator/core.cc b/source/simulator/core.cc
+index 7fc8584ee..5db72a177 100644
+--- a/source/simulator/core.cc
++++ b/source/simulator/core.cc
+@@ -452,7 +452,7 @@ namespace aspect
+     geometry_model->create_coarse_mesh (triangulation);
+     Assert (triangulation.all_reference_cells_are_hyper_cube(),
+             ExcMessage ("ASPECT only supports meshes that are composed of quadrilateral "
+-                        "or hexahedral cells."))
++                        "or hexahedral cells."));
+     global_Omega_diameter = GridTools::diameter (triangulation);
+ 
+     // After creating the coarse mesh, initialize mapping cache if one is used
+diff --git a/source/simulator/solver.cc b/source/simulator/solver.cc
+index 72d5e407a..38b19b86b 100644
+--- a/source/simulator/solver.cc
++++ b/source/simulator/solver.cc
+@@ -604,13 +604,15 @@ namespace aspect
+         catch (const std::exception &exc)
+           {
+             if (Utilities::MPI::this_mpi_process(mpi_communicator) == 0)
+-              AssertThrow (false,
+-                           ExcMessage (std::string("The direct Stokes solver "
+-                                                   "did not succeed. It reported the following error:\n\n")
+-                                       +
+-                                       exc.what()))
+-              else
+-                throw QuietException();
++              {
++                AssertThrow (false,
++                             ExcMessage (std::string("The direct Stokes solver "
++                                                     "did not succeed. It reported the following error:\n\n")
++                                         +
++                                         exc.what()));
++              }
++            else
++              throw QuietException();
+           }
+ 
+ 
+@@ -645,7 +647,9 @@ namespace aspect
+         const unsigned int block_p = (parameters.include_melt_transport) ?
+                                      introspection.variable("fluid pressure").block_index
+                                      : introspection.block_indices.pressure;
++        (void) block_vel;
+         Assert(block_vel == 0, ExcNotImplemented());
++        (void) block_p;
+         Assert(block_p == 1, ExcNotImplemented());
+         Assert(!parameters.include_melt_transport
+                || introspection.variable("compaction pressure").block_index == 1, ExcNotImplemented());
+diff --git a/source/utilities.cc b/source/utilities.cc
+index bedcb9075..d7a2101a3 100644
+--- a/source/utilities.cc
++++ b/source/utilities.cc
+@@ -82,11 +82,7 @@ namespace aspect
+         inline MPI_Datatype
+         mpi_type_id(const bool *)
+         {
+-#  if DEAL_II_MPI_VERSION_GTE(2, 2)
+           return MPI_CXX_BOOL;
+-#  else
+-          return MPI_C_BOOL;
+-#  endif
+         }
+ 
+ 
+diff --git a/source/volume_of_fluid/handler.cc b/source/volume_of_fluid/handler.cc
+index 076acd0dd..d21ebe050 100644
+--- a/source/volume_of_fluid/handler.cc
++++ b/source/volume_of_fluid/handler.cc
+@@ -428,7 +428,7 @@ namespace aspect
+                 ExcMessage("Volume of Fluid Interface Tracking is currently incompatible with the Free Surface implementation."));
+ 
+     AssertThrow(!this->get_parameters().include_melt_transport,
+-                ExcMessage("Volume of Fluid Interface Tracking has not been tested with melt transport yet, so inclusion of both is currently disabled."))
++                ExcMessage("Volume of Fluid Interface Tracking has not been tested with melt transport yet, so inclusion of both is currently disabled."));
+ 
+     if ( this->get_parameters().initial_adaptive_refinement > 0 ||
+          this->get_parameters().adaptive_refinement_interval > 0 )
+diff --git a/source/volume_of_fluid/solver.cc b/source/volume_of_fluid/solver.cc
+index 44d8a888b..283ce0d52 100644
+--- a/source/volume_of_fluid/solver.cc
++++ b/source/volume_of_fluid/solver.cc
+@@ -69,13 +69,15 @@ namespace aspect
+     catch (const std::exception &exc)
+       {
+         if (Utilities::MPI::this_mpi_process(this->get_mpi_communicator()) == 0)
+-          AssertThrow (false,
+-                       ExcMessage (std::string("The iterative advection solver "
+-                                               "did not converge. It reported the following error:\n\n")
+-                                   +
+-                                   exc.what()))
+-          else
+-            throw QuietException();
++          {
++            AssertThrow (false,
++                         ExcMessage (std::string("The iterative advection solver "
++                                                 "did not converge. It reported the following error:\n\n")
++                                     +
++                                     exc.what()));
++          }
++        else
++          throw QuietException();
+       }
+ 
+     sim.current_constraints.distribute (distributed_solution);
+diff --git a/tests/solidus_initial_conditions.cc b/tests/solidus_initial_conditions.cc
+index 07f711605..04312e331 100644
+--- a/tests/solidus_initial_conditions.cc
++++ b/tests/solidus_initial_conditions.cc
+@@ -95,8 +95,7 @@ namespace aspect
+         /**
+          * Return the initial temperature as a function of position.
+          */
+-        virtual
+-        double initial_temperature (const Point<dim> &position) const;
++        double initial_temperature (const Point<dim> &position) const override;
+ 
+         /**
+          * Declare the parameters this class takes through input files.
+@@ -108,9 +107,8 @@ namespace aspect
+         /**
+          * Read the parameters this class declares from the parameter file.
+          */
+-        virtual
+         void
+-        parse_parameters (ParameterHandler &prm);
++        parse_parameters (ParameterHandler &prm) override;
+ 
+       private:
+         /**
+@@ -193,7 +191,7 @@ namespace aspect
+               else if (T_Unit!="K")
+                 {
+                   AssertThrow(false,ExcMessage ("Unit of the first column of melting curve data "
+-                                                "has to be one of the following: C/K."))
++                                                "has to be one of the following: C/K."));
+                 }
+ 
+               is_radius=false;                    // Second column is pressure
+@@ -208,8 +206,8 @@ namespace aspect
+                     p*=1.e3;                    // km to meters
+                   else if (P_Unit!="m")
+                     AssertThrow(false,ExcMessage ("Unit of the second column of melting curve data "
+-                                                  "has to be one of the following: Pa/GPa/km/m."))
+-                  }
++                                                  "has to be one of the following: Pa/GPa/km/m."));
++                }
+               T_array.push_back(T);
+               P_or_R_array.push_back(p);
+               n_points++;
