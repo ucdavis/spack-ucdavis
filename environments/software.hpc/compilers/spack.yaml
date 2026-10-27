@@ -3,24 +3,24 @@ spack:
   - definitions.yaml
   specs:
   - matrix:
-    - [$compiler-pkgs]
-    - ['%gcc_default']
+    - [$compilers-to-build]
+    - ['%gcc_bootstrap']
   view:
     default:
-      root: /cvmfs/hpc.ucdavis.edu/sw/spack/env/compilers/view
+      root: $spack/../env/compilers/view
       projections:
         gcc: '{name}-{version}'
-        aocc: '{name}-{version}'
-        intel-oneapi-compilers: '{name}-{version}'
-        intel-oneapi-compilers-classic: '{name}-{version}'
-        nvhpc: '{name}-{version}'
-        llvm: 'clang-{version}'
+        llvm: clang-{version}
       link: roots
       link_type: hardlink
   modules:
     default:
-      enable:: []
+      'enable:': []
   concretizer:
     unify: false
     reuse: false
-
+  packages:
+    llvm:
+      buildable: true
+    gcc:
+      buildable: true
