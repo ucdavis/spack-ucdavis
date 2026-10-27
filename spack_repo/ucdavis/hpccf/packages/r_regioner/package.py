@@ -13,7 +13,7 @@ class RRegioner(RPackage):
 
     bioc = "regioneR"
 
-    version("1.30.0", commit="52f238d")
+    version("1.30.0", commit="52f238dc44feb4791ed3e2faed33a52da3381b25")
 
     depends_on("r-bsgenome@1.66.1:", type=("build", "run"))
     depends_on("r-genomicranges", type=("build", "run"))

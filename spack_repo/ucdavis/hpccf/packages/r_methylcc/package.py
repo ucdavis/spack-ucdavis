@@ -11,7 +11,8 @@ class RMethylcc(RPackage):
     """A tool to estimate the cell composition of DNA methylation whole blood sample measured on any platform technology (microarray and sequencing)."""
 
     homepage = "https://bioconductor.org/packages/release/bioc/html/methylCC.html"
-    url = "https://bioconductor.org/packages/release/bioc/src/contrib/methylCC_1.12.0.tar.gz"
+    # pinned to Bioconductor 3.16; packages/release/ URLs stop working after each release
+    url = "https://bioconductor.org/packages/3.16/bioc/src/contrib/methylCC_1.12.0.tar.gz"
     bioc = "methylCC"
 
     version("1.12.0", sha256="b4f47e31294af20370f569fb5b0b4e04e76f8bf715ce32a4a3ba76216dd01f54")

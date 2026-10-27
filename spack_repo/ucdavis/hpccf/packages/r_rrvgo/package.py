@@ -11,7 +11,8 @@ class RRrvgo(RPackage):
     """Reduce and visualize lists of Gene Ontology terms by identifying redudance based on semantic similarity."""
 
     homepage = "https://bioconductor.org/packages/release/bioc/html/rrvgo.html"
-    url = "https://bioconductor.org/packages/release/bioc/src/contrib/rrvgo_1.10.0.tar.gz"
+    # pinned to Bioconductor 3.16; packages/release/ URLs stop working after each release
+    url = "https://bioconductor.org/packages/3.16/bioc/src/contrib/rrvgo_1.10.0.tar.gz"
     bioc = "rrvgo"
 
     version("1.10.0", sha256="f80fe7c0f362874185f988f3fcc7d0a66859081ae31468aa84d714ff7410067e")

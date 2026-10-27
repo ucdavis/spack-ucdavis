@@ -12,7 +12,7 @@ class RDmrseq(RPackage):
 
     bioc = "dmrseq"
 
-    version("1.18.0", commit="3bb8fe6")
+    version("1.18.0", commit="3bb8fe6290aa4edbf9a5b6f0c397c3eee9949c6c")
     version("1.16.0", commit="b65f67bb2ecf141d9df1b7702806dc449469165b")
 
     depends_on("r-bsseq", type=("build", "run"))

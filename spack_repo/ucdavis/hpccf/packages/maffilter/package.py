@@ -3,9 +3,6 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-
-import os
-
 from spack_repo.builtin.build_systems.cmake import CMakePackage
 from spack.package import *
 
@@ -19,11 +16,14 @@ class Maffilter(CMakePackage):
     etc.)."""
 
     homepage = "https://jydu.github.io/maffilter"
-    url = "https://github.com/jydu/maffilter/tarball/master"
+    url = "https://github.com/jydu/maffilter/archive/refs/tags/v1.3.1.tar.gz"
 
-    maintainers = ["camillescott"]
+    maintainers("camillescott")
 
-    version("1.3.1", sha256="27a4cf02cf6cb28a23bbd69c6a24f0d7885140f7d08322d9eae4b2c312ab7384")
+    version("1.3.1", sha256="b4a03152d6cb3fa78d6406a6500a89b76d4fb6ff1a0f7260939094a66453eb75")
+
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
 
     depends_on("bpp-core @2023-07-26:")
     depends_on("bpp-seq @2023-04-24:")

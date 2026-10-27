@@ -11,7 +11,8 @@ class RPlyranges(RPackage):
     """A dplyr-like interface for interacting with the common Bioconductor classes Ranges and GenomicRanges. By providing a grammatical and consistent way of manipulating these classes their accessiblity for new Bioconductor users is hopefully increased."""
 
     homepage = "https://bioconductor.org/packages/release/bioc/html/plyranges.html"
-    url = "https://bioconductor.org/packages/release/bioc/src/contrib/plyranges_1.18.0.tar.gz"
+    # pinned to Bioconductor 3.16; packages/release/ URLs stop working after each release
+    url = "https://bioconductor.org/packages/3.16/bioc/src/contrib/plyranges_1.18.0.tar.gz"
     bioc = "plyranges"
 
     version("1.18.0", sha256="9b32885a1821d1143e2f966edef965810edb4626b30b4901d2288523791ee453")

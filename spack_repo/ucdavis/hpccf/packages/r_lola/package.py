@@ -11,7 +11,8 @@ class RLola(RPackage):
     """Provides functions for testing overlap of sets of genomic regions with public and custom region set (genomic ranges) databases. This makes it possible to do automated enrichment analysis for genomic region sets, thus facilitating interpretation of functional genomics and epigenomics data."""
 
     homepage = "https://bioconductor.org/packages/release/bioc/html/LOLA.html"
-    url = "https://bioconductor.org/packages/release/bioc/src/contrib/LOLA_1.28.0.tar.gz"
+    # pinned to Bioconductor 3.16; packages/release/ URLs stop working after each release
+    url = "https://bioconductor.org/packages/3.16/bioc/src/contrib/LOLA_1.28.0.tar.gz"
     bioc = "LOLA"
 
     version("1.28.0", sha256="2d4d2f5715fee18b08a6b32a76259ba7612cd0a00c0f3cfdaafa302e730bd301")

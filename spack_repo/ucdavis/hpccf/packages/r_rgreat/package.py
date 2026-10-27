@@ -13,7 +13,9 @@ class RRgreat(RPackage):
 
     bioc = "rGREAT"
 
-    version("2.0.0", commit="a8049fc")
+    version("2.0.0", commit="a8049fcb22f243db36e9460beb9ed9b92e05a0cb")
+
+    depends_on("cxx", type="build")
 
     depends_on("r-genomeinfodb@1.35.1:", type=("build", "run"))
 

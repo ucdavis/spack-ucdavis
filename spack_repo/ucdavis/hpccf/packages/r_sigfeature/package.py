@@ -11,7 +11,8 @@ class RSigfeature(RPackage):
     """This package provides a novel feature selection algorithm for binary classification using support vector machine recursive feature elimination SVM-RFE and t-statistic. In this feature selection process, the selected features are differentially significant between the two classes and also they are good classifier with higher degree of classification accuracy."""
 
     homepage = "https://www.bioconductor.org/packages/release/bioc/html/sigFeature.html"
-    url = "https://www.bioconductor.org/packages/release/bioc/src/contrib/sigFeature_1.16.0.tar.gz"
+    # pinned to Bioconductor 3.16; packages/release/ URLs stop working after each release
+    url = "https://bioconductor.org/packages/3.16/bioc/src/contrib/sigFeature_1.16.0.tar.gz"
     bioc = "sigFeature"
 
     version("1.16.0", sha256="d795ce8179067598a693b13e80c8b67bd4c0d6c2710d06244b85539119896e47")

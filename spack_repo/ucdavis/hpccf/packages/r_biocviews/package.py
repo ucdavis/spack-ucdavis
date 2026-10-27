@@ -11,7 +11,8 @@ class RBiocviews(RPackage):
     """Infrastructure to support 'views' used to classify Bioconductor packages. 'biocViews' are directed acyclic graphs of terms from a controlled vocabulary. There are three major classifications, corresponding to 'software', 'annotation', and 'experiment data' packages."""
 
     homepage = "https://bioconductor.org/packages/release/bioc/html/biocViews.html"
-    url = "https://bioconductor.org/packages/release/bioc/src/contrib/biocViews_1.66.0.tar.gz"
+    # pinned to Bioconductor 3.16; packages/release/ URLs stop working after each release
+    url = "https://bioconductor.org/packages/3.16/bioc/src/contrib/Archive/biocViews/biocViews_1.66.0.tar.gz"
     bioc = "biocViews"
 
     version("1.66.0", sha256="4348fb91724ed6e83c21a4d616155d3740544c0ef8778a06429ed4c29f02f6e5")

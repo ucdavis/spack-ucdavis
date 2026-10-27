@@ -3,9 +3,8 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-import os.path
-
 from spack_repo.builtin.build_systems.r import RPackage
+
 from spack.package import *
 
 
@@ -13,15 +12,12 @@ class RGgbiplot(RPackage):
     """An implementation of the biplot using ggplot2."""
 
     homepage = "https://github.com/vqv/ggbiplot"
-    manual_download = True
+    git = "https://github.com/vqv/ggbiplot.git"
 
-    # FIXME: Add proper versions and checksums here.
-    # version("1.2.3", "0123456789abcdef0123456789abcdef")
-    version("7325e88", sha256='4220e9cd7c73ceab8343063f93afd4d90a41a4dc8919df2533810720a0005f78')
+    # Upstream snapshot 7325e88 (DESCRIPTION Version 0.55). CRAN now carries ggbiplot
+    # 0.6.5, but it needs r-ggarrow, which builtin does not provide yet.
+    version("0.55", commit="7325e880485bea4c07465a0304c470608fffb5d9")
 
-    def url_for_version(self, version):
-        return "file://{0}/spack-ucdavis/repos/hpccf/files/ggbiplot-{1}.zip".format(os.path.expanduser('~'), version)
-            
     depends_on("r-ggplot2", type=("build", "run"))
     depends_on("r-plyr", type=("build", "run"))
     depends_on("r-scales", type=("build", "run"))
