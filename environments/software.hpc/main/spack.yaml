@@ -63,6 +63,9 @@ spack:
       #- llvm
       - repeatmasker # short term fix: repeatmasker is downloading giant DB files
       projections:
+        aspect: bench/{target}/{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}/{name}-{version}
+        amber~cuda: generic/{name}-{version}
+        amber+cuda: generic/{name}-{version}+cuda
         "target=x86_64_v3 %oneapi": oneapi/{name}-{version}
         "target=x86_64_v3 %intel": intel/{name}-{version}
         target=x86_64_v3: generic/{name}-{version}
@@ -134,6 +137,9 @@ spack:
           py-htseq: general/htseq/{version}
           py-multiqc: general/multiqc/{version}
           apptainer: general/apptainer/latest
+          aspect: general/{name}/{version}+{^mpi.name}-{^mpi.version}
+          amber~cuda: general/{name}/{version}
+          amber+cuda: general/{name}/{version}+cuda
           all: general/{name}/{version}
         rstudio:
           template: hpccf/rstudio.tcl
@@ -152,6 +158,11 @@ spack:
           environment:
             set:
               SQUEUE_FORMAT2: 'JobID:10,UserName:16 ,Partition:14 ,Name:20 ,StateCompact:4,TimeLeft:13,NumCPUs:6,NumNodes:6,tres-per-node:14,ReasonList'
+  packages:
+    vasp:
+      permissions:
+        group: ark245grp
+        read: group
   concretizer:
     unify: false
     reuse: true
