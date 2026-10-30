@@ -2,6 +2,8 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+# UC Davis fork of builtin @ v2026.10.0: adds 11.5.
+
 from spack_repo.builtin.build_systems.generic import Package
 
 from spack.package import *
@@ -15,7 +17,9 @@ class Dislin(Package):
     homepage = "https://www.mps.mpg.de/dislin"
     url = "ftp://ftp.gwdg.de/pub/grafik/dislin/linux/i586_64/dislin-11.0.linux.i586_64.tar.gz"
 
-    # HPCCF: we provide 11.5
+    license("LicenseRef-DISLIN-Proprietary", checked_by="tgamblin")
+    redistribute(source=False, binary=False)
+
     version("11.5", sha256="344eade6b409aff41d463f1879d5dec1079ee13d3fccdd097fd7717a947c87dc")
     version("11.0", sha256="13d28188924e0b0b803d72aa4b48be4067e98e890701b0aa6f54a11c7d34dd10")
 
