@@ -1,7 +1,9 @@
-# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
+
+# UC Davis fork of builtin @ v2026.10.0: strips -XX:MaxPermSize from the launcher so it runs
+# on Java > 8, and drops builtin's java@17: conflict, which exists only because of that flag.
 
 from spack_repo.builtin.build_systems.generic import Package
 
