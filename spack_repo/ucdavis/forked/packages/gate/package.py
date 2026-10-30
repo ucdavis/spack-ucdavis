@@ -1,7 +1,9 @@
-# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
+
+# UC Davis fork of builtin @ v2026.10.0: adds Gate 8.2 (non-threaded geant4@:10.5) with a
+# Slurm cluster-tools patch; the jobsplitter platform patch only applies to 9.0+.
 
 from spack_repo.builtin.build_systems.cmake import CMakePackage
 
@@ -30,13 +32,10 @@ class Gate(CMakePackage):
 
     license("LGPL-3.0-or-later")
 
+    version("9.4.2", sha256="11dac0770a13b12647c1b8532d8f11bf401e768dec1e2d054ede71544d961b4d")
     version("9.1", sha256="aaab874198500b81d45b27cc6d6a51e72cca9519910b893a5c85c8e6d3ffa4fc")
     version("9.0", sha256="8354f392facc0b7ae2ddf0eed61cc43136195b198ba399df25e874886b8b69cb")
-    # HPCCF: add 8 series
     version("8.2", sha256="edd8b1017310442bb6819a2815d61b63b1da1aef613fea2678aede134cbad741")
-
-    depends_on("c", type="build")  # generated
-    depends_on("cxx", type="build")  # generated
 
     variant("rtk", default=False, description="build support for the Reconstruction Toolkit")
     variant(
@@ -47,13 +46,18 @@ class Gate(CMakePackage):
         multi=False,
     )
 
+    depends_on("c", type="build")  # generated
+    depends_on("cxx", type="build")  # generated
+
     depends_on("geant4@:10.5~threads", when="@8.2")  # Gate needs a non-threaded geant4
     depends_on("geant4@:10.6~threads", when="@9.0")  # Gate needs a non-threaded geant4
     depends_on("geant4@:10.7~threads", when="@9.1")  # Gate needs a non-threaded geant4
+    depends_on("geant4@11.4~threads", when="@9.4")
+    depends_on("root@6", when="@9.4")
     depends_on("root")
+    depends_on("itk@5: +rtk", when="+rtk @9.4")
     depends_on("itk+rtk", when="+rtk")
 
-    
     patch("cluster_tools_filemerger_Makefile.patch")
     patch("cluster_tools_jobsplitter_Makefile.patch")
     patch("cluster_tools_jobsplitter_platform.patch", when="@9.0:")
