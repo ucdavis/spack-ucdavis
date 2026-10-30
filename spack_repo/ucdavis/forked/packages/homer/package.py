@@ -1,9 +1,10 @@
-# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-from os import symlink
+# UC Davis fork of builtin @ v2026.10.0: installs the tree after pointing configureHomer.pl at
+# the install prefix (so users can run the installed copy to add genomes), and passes
+# -keepScript so configureHomer.pl does not replace itself with an unpatched upstream copy.
 
 from spack_repo.builtin.build_systems.generic import Package
 
@@ -39,16 +40,16 @@ class Homer(Package):
 
         # override homer base directory in configure script
         filter_file(
-            r"my \$homeDir = \$1;",
+            "my $homeDir = $1;",
             'my $homeDir = "{0}";'.format(basedir),
             "configureHomer.pl",
-            string=True
+            string=True,
         )
 
         install_tree(".", basedir)
 
         # compile/prepare binaries and perl scripts with the correct paths
-        perl = which("perl")
+        perl = which("perl", required=True)
         perl("configureHomer.pl", "-local", "-keepScript")
 
         # download extra data if requested
