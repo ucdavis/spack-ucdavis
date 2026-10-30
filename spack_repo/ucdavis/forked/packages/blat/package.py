@@ -1,7 +1,9 @@
-# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
+
+# UC Davis fork of builtin @ v2026.10.0: builds 37 against Spack's openssl (shared -lssl instead
+# of a system libssl.a).
 
 from spack_repo.builtin.build_systems.generic import Package
 
@@ -14,7 +16,6 @@ class Blat(Package):
 
     homepage = "https://genome.ucsc.edu/FAQ/FAQblat.html"
     url = "https://genome-test.gi.ucsc.edu/~kent/src/blatSrc35.zip"
-
     maintainers("snehring")
 
     version("37", sha256="88ee2b272d42ab77687c61d200b11f1d58443951069feb7e10226a2509f84cf2")
@@ -22,11 +23,11 @@ class Blat(Package):
 
     depends_on("c", type="build")
 
-    depends_on("gmake", type="build")
     depends_on("libpng")
-    depends_on("libuuid", when="@37:")
+    depends_on("uuid", when="@37:")
     depends_on("mysql-client", when="@37:")
-    depends_on("openssl@:1.1")
+    depends_on("openssl", when="@37:")
+    depends_on("gmake", type="build")
 
     @when("@37")
     def patch(self):
@@ -40,8 +41,9 @@ class Blat(Package):
 
     def setup_build_environment(self, env: EnvironmentModifications) -> None:
         env.set("MACHTYPE", "x86_64")
-        env.set("SSLDIR", self.spec["openssl"].prefix.include)
-        env.set("SSL_DIR", self.spec["openssl"].prefix)
+        if self.spec.satisfies("@37:"):
+            env.set("SSLDIR", self.spec["openssl"].prefix.include)
+            env.set("SSL_DIR", self.spec["openssl"].prefix)
 
     def install(self, spec, prefix):
         filter_file("CC=.*", "CC={0}".format(spack_cc), "inc/common.mk")
