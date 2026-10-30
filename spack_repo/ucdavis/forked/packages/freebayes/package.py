@@ -1,7 +1,9 @@
-# Copyright 2013-2024 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
+
+# UC Davis fork of builtin @ v2026.10.0: adds 1.3.9 (wfa2-lib/fastahack deps, meson.build
+# fix for libwfa2, installs the helper scripts) and the deprecated 1.1.0 Makefile build.
 
 from spack_repo.builtin.build_systems.meson import MesonPackage
 
@@ -32,6 +34,7 @@ class Freebayes(MesonPackage):
     depends_on("cxx", type="build")  # generated
 
     depends_on("cmake", type="build")
+    depends_on("gmake", type="build")
     depends_on("zlib-api")
 
     # Deps for @1.3.5 and beyond
@@ -44,7 +47,7 @@ class Freebayes(MesonPackage):
     depends_on("vcftools", when="@1.3.5:")
     depends_on("bc", when="@1.3.5:")
     depends_on("samtools", when="@1.3.5:")
-    
+
     depends_on("wfa2-lib", when="@1.3.9:")
 
     # TODO: 2025-02-19: has linker errors and does not compile.
@@ -101,17 +104,16 @@ class Freebayes(MesonPackage):
     def install(self, spec, prefix):
         with working_dir(self.build_directory):
             ninja("install")
-            
+
         chmod = which("chmod")
         chmod("+x", "scripts/sam_add_rg.pl")
         chmod("+x", "scripts/split_ref_by_bai_datasize.py")
 
         install("scripts/*", prefix.bin)
-                
+
     @when("@1.3.9:")
     def patch(self):
         """With the defaults it looks for liblibwfa2.a"""
-        
+
         # ORIGINAL: wfa2lib_dep = cc.find_library('libwfa2') # need to link for vcflib code
-        
         filter_file(r"^wfa2lib_dep\s+=\s+.*", "wfa2lib_dep = cc.find_library('wfa2')", "meson.build")
