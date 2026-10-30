@@ -2,6 +2,8 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+# UC Davis fork of builtin @ v2026.10.0: adds the openmp variant (--enable-openmp).
+
 from spack_repo.builtin.build_systems.autotools import AutotoolsPackage
 
 from spack.package import *
@@ -26,7 +28,8 @@ class Ctffind(AutotoolsPackage):
         extension="tar.gz",
     )
 
-    depends_on("cxx", type="build")  # generated
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
 
     def url_for_version(self, version):
         url = "https://grigoriefflab.umassmed.edu/system/tdf?path=ctffind-{0}.tar.gz&file=1&type=node&id=26"
@@ -64,7 +67,7 @@ class Ctffind(AutotoolsPackage):
                 ]
             )
 
-        if '+openmp' in self.spec:
+        if self.spec.satisfies("+openmp"):
             config_args.append("--enable-openmp")
 
         return config_args
