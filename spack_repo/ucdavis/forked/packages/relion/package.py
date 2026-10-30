@@ -1,12 +1,17 @@
-# Copyright 2013-2022 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-import os
+# UC Davis fork of builtin @ v2026.10.0: keeps 5.0.0 (removed upstream, still deployed); adds
+# conda_python/torch_home (point RELION 5's Python tools at an external conda env instead of
+# py-relion), gpu_delay (stagger GPU start-up to limit power spikes), gctf, system TBB for
+# +altcpu, amdfftw as the FFTW provider, and THRUST_IGNORE_CUB_VERSION_CHECK for CUDA 11+
+# with FFTW.
+
+import glob
 
 from spack_repo.builtin.build_systems.cmake import CMakePackage
-from spack_repo.builtin.build_systems.cuda import  CudaPackage
+from spack_repo.builtin.build_systems.cuda import CudaPackage
 
 from spack.package import *
 
@@ -20,13 +25,16 @@ class Relion(CMakePackage, CudaPackage):
     homepage = "https://www2.mrc-lmb.cam.ac.uk/relion"
     git = "https://github.com/3dem/relion.git"
     url = "https://github.com/3dem/relion/archive/4.0.0.zip"
+    maintainers("dacolombo", "Markus92")
 
     license("GPL-2.0-only")
 
+    version("5.0.1", sha256="3253230cd4b3d9633a5cac906937039b9971eb9430c3e2d838473777fb811f4c")
     version("5.0.0", sha256="800ad0c0aa778cbf584fcf8986976645f2b25d677a80f168e5397975b9db6e47")
     version("4.0.1", sha256="7e0d56fd4068c99f943dc309ae533131d33870392b53a7c7aae7f65774f667be")
     version("4.0.0", sha256="0987e684e9d2dfd630f1ad26a6847493fe9fcd829ec251d8bc471d11701d51dd")
-    
+
+    # 3.1.4 latest release in 3.1 branch
     version("3.1.4", sha256="3bf3449bd2d71dc85d2cdbd342e772f5faf793d8fb3cda6414547cf34c98f34c")
     version("3.1.3", sha256="e67277200b54d1814045cfe02c678a58d88eb8f988091573453c8568bfde90fc")
     version("3.1.2", sha256="dcdf6f214f79a03d29f0fed2de58054efa35a9d8401543bdc52bfb177987931f")
@@ -45,6 +53,12 @@ class Relion(CMakePackage, CudaPackage):
     variant("cuda", default=True, description="enable compute on gpu")
     variant("double", default=True, description="double precision (cpu) code")
     variant("double-gpu", default=False, description="double precision gpu")
+    variant(
+        "python",
+        default=True,
+        description="Include py-relion Python tools (torch, napari, etc.)",
+        when="@5:",
+    )
 
     # if built with purpose=cluster then relion will link to gpfs libraries
     # if that's not desirable then use purpose=desktop
@@ -64,14 +78,14 @@ class Relion(CMakePackage, CudaPackage):
 
     # these new values were added in relion 3
     # do not seem to cause problems with < 3
-    variant("mklfft", default=True, description="Use MKL rather than FFTW for FFT")
-    #variant("amdfftw", default=False, description="Use AMD-optimized FFTW")
+    variant("mklfft", default=False, description="Use MKL rather than FFTW for FFT")
     variant(
         "allow_ctf_in_sagd",
         default=True,
         description=(
-            "Allow CTF-modulation in SAGD, " "as specified in Claim 1 of patent US10,282,513B2"
+            "Allow CTF-modulation in SAGD, as specified in Claim 1 of patent US10,282,513B2"
         ),
+        when="@3",
     )
     variant("altcpu", default=False, description="Use CPU acceleration", when="~cuda")
 
@@ -81,24 +95,36 @@ class Relion(CMakePackage, CudaPackage):
         description="Have external motioncor2 available in addition to Relion builtin",
     )
     variant(
-        "gctf",
-        default=False,
-        description="Install gctf dependency (requires manual download)"
+        "ghostscript",
+        default=True,
+        description="Use ghostscript for merging EPS diagnostic plots into PDF logfiles",
+        when="@4:",
+    )
+    variant("gctf", default=False, description="Install gctf dependency (requires manual download)")
+    variant("gpu_delay", default=False, description="Delay GPU start to alleviate power spikes")
+    variant(
+        "conda_python",
+        default="none",
+        values=any,
+        description="Python interpreter for the relion_python_* tools (e.g. a conda env)",
+        when="@5:",
+    )
+    variant(
+        "torch_home",
+        default="none",
+        values=any,
+        description="TORCH_HOME for the Blush model weights",
+        when="@5:",
     )
 
-    variant("gpu_delay", default=False, description="Delay GPU start to alleviate power spikes.")
-    variant("conda_python", 
-            default='CONDA_PYTHON', 
-            validator=lambda cls_name, var_name, v: os.path.isfile(v[0]) and os.access(v[0], os.X_OK),
-            when="@5:")
-    variant("torch_home",
-            default='TORCH_HOME',
-            when="@5:")
-
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
     depends_on("mpi")
     depends_on("cmake@3:", type="build")
-    depends_on("fftw-api precision=float,double", when="~mklfft")
-    #depends_on("amdfftw precision=float,double", when="+amdfftw")
+    depends_on("binutils@2.32:", type="build")
+    depends_on("fftw-api", when="~mklfft")
+    depends_on("fftw precision=float,double", when="~mklfft ^[virtuals=fftw-api] fftw")
+    depends_on("amdfftw precision=float,double", when="~mklfft ^[virtuals=fftw-api] amdfftw")
 
     # use the +xft variant so the interface is not so horrible looking
     depends_on("fltk+xft", when="+gui")
@@ -106,24 +132,43 @@ class Relion(CMakePackage, CudaPackage):
     depends_on("libtiff")
     depends_on("libpng", when="@4:")
 
-    depends_on("cuda", when="+cuda")
     depends_on("cuda@9:", when="@3: +cuda")
+    conflicts("cuda@13:", when="@:5.0.0 +cuda")
     depends_on("tbb", when="+altcpu")
     depends_on("mkl", when="+mklfft")
-    depends_on("ctffind", type="run")
+    depends_on("ctffind@4.1:4", type="run")
     depends_on("motioncor2", type="run", when="+external_motioncor2")
     depends_on("gctf", type="run", when="+gctf")
 
-    # TODO: more externals to add
-    # Spack packages needed
-    # - ResMap
+    # ghostscript is only needed at runtime for merging EPS diagnostic plots
+    # into PDF logfiles. Relion gracefully degrades when gs is missing
+    # (creates empty placeholder PDFs, individual EPS files are still produced).
+    depends_on("ghostscript", type="run", when="+ghostscript")
+    depends_on("pbzip2", type="run", when="@5:")
+    depends_on("xz", type="run", when="@5:")
+    depends_on("zstd", type="run", when="@5:")
+
+    # py-relion is now gated behind +python variant
+    for arch in CudaPackage.cuda_arch_values:
+        depends_on(
+            f"py-relion@5.0.1 +cuda cuda_arch={arch}",
+            type=("build", "run"),
+            when=f"@5.0.1 +python +cuda cuda_arch={arch}",
+        )
+    depends_on("py-relion@5.0.1 ~cuda", type=("build", "run"), when="@5.0.1 +python ~cuda")
+    conflicts("+python", when="@5.0.0", msg="py-relion is only packaged for 5.0.1; use conda_python=")
+
     patch("0002-Simple-patch-to-fix-intel-mkl-linking.patch", when="@:3.1.1 os=ubuntu18.04")
+    patch(
+        "https://github.com/3dem/relion/commit/2daa7447c1c871be062cce99109b6041955ec5e9.patch?full_index=1",
+        sha256="4995b0d4bc24a1ec99042a4b73e9db84918eb6f622dacb308b718146bfb6a5ea",
+        when="@4.0.0",
+    )
+    patch("cudarch-override.patch", when="@5.0.1: +cuda")
     patch("delay_gpu_start.patch", when="@4.0.0: +gpu_delay")
 
     def cmake_args(self):
         args = [
-            "-DCMAKE_C_FLAGS=-g",
-            "-DCMAKE_CXX_FLAGS=-g",
             "-DGUI=%s" % ("+gui" in self.spec),
             "-DDoublePrec_CPU=%s" % ("+double" in self.spec),
             "-DDoublePrec_GPU=%s" % ("+double-gpu" in self.spec),
@@ -131,6 +176,9 @@ class Relion(CMakePackage, CudaPackage):
             "-DMKLFFT=%s" % ("+mklfft" in self.spec),
             "-DALTCPU=%s" % ("+altcpu" in self.spec),
         ]
+        if self.spec.satisfies("+gui"):
+            incs = [f"-I{self.spec[lib].prefix.include}" for lib in ["libx11", "xproto"]]
+            args += ["-DCMAKE_CXX_FLAGS=" + " ".join(incs)]
 
         if "+cuda" in self.spec:
             carch = self.spec.variants["cuda_arch"].value[0]
@@ -139,40 +187,52 @@ class Relion(CMakePackage, CudaPackage):
             if carch == "none":
                 raise ValueError("Must select a value for cuda_arch")
             else:
-                args += [
-                    "-DCUDA=ON",
-                    "-DCudaTexture=ON",
-                    "-DCUDA_ARCH=%s" % (carch),
-                ]
+                args += ["-DCUDA=ON", "-DCudaTexture=ON", "-DCUDA_ARCH=%s" % (carch)]
 
-            if "+mklfft" not in self.spec and int(carch) >= 11:
-                args += [
-                    "-DTHRUST_IGNORE_CUB_VERSION_CHECK=1"
-                ]
+            if self.spec.satisfies("@5.0.1:"):
+                cuda_flags = " ".join(
+                    CudaPackage.cuda_flags(self.spec.variants["cuda_arch"].value)
+                )
+                args += [f"-DCUDARCH={cuda_flags}"]
 
-        if "^amdfftw" in self.spec:
-            args += [
-                "-DAMDFFTW=ON"
-            ]
+            if self.spec.satisfies("~mklfft ^cuda@11:"):
+                args.append("-DTHRUST_IGNORE_CUB_VERSION_CHECK=1")
 
-        if "+altcpu" in self.spec:
+        if self.spec.satisfies("~mklfft ^[virtuals=fftw-api] amdfftw"):
+            args.append("-DAMDFFTW=ON")
+
+        if self.spec.satisfies("+altcpu"):
             args += [
                 "-DFORCE_OWN_TBB=OFF",
                 self.define("TBB_INCLUDE_DIR", self.spec["tbb"].headers.directories[0]),
-                self.define("TBB_LIBRARY", self.spec["tbb"].libs.directories[0])
+                self.define("TBB_LIBRARY", self.spec["tbb"].libs.directories[0]),
             ]
 
-        if 'conda_python' in self.spec.variants:
-            args += [
-                self.define_from_variant("PYTHON_EXE_PATH", "conda_python")
-            ]
+        if self.spec.satisfies("@5: ~cuda"):
+            # Relion 5 defaults to CUDA=ON so it has to be explicitly disabled.
+            args.append("-DCUDA=OFF")
 
-        if "torch_home" in self.spec.variants:
-            args += [
-                self.define_from_variant("TORCH_HOME_PATH", "torch_home")
-            ]
+        if self.spec.satisfies("@5:"):
+            if self.spec.satisfies("+python"):
+                args.append(f"-DPYTHON_EXE_PATH={self.spec['python'].command.path}")
+            elif self._conda_python:
+                args.append(self.define("PYTHON_EXE_PATH", self._conda_python))
+            else:
+                # /does-not-exist prevents CMake from auto-discovering Conda Python
+                args.append("-DPYTHON_EXE_PATH=/does-not-exist")
+            args.append("-DFETCH_WEIGHTS=OFF")
+            torch_home = self.spec.variants["torch_home"].value
+            if torch_home != "none":
+                args.append(self.define("TORCH_HOME_PATH", torch_home))
 
         return args
+
+    @property
+    def _conda_python(self):
+        """The external interpreter from conda_python=, or None."""
+        if self.spec.satisfies("@5:") and self.spec.variants["conda_python"].value != "none":
+            return self.spec.variants["conda_python"].value
+        return None
 
     def patch(self):
         # Remove flags not recognized by the NVIDIA compilers
@@ -198,10 +258,19 @@ class Relion(CMakePackage, CudaPackage):
                 join_path("src", "pipeline_jobs.h"),
             )
 
-        if "+cuda" in self.spec:
-            carch = self.spec.variants["cuda_arch"].value[0]
-            if int(carch) >= 11:
-                # see: https://github.com/3dem/relion/commit/554e0ed993e5ac8a3fee4be7c5cf64a62216a8c7
-                filter_file(r'^#define CUB_NS_QUALIFIER ::cub # for compatibility with CUDA 11.5',
-                            r'#define CUB_NS_QUALIFIER ::cub // for compatibility with CUDA 11.5',
-                            join_path("src", "acc", "cuda", "cuda_utils_cub.cuh"))
+    @run_after("install")
+    def stub_python_scripts(self):
+        """When ~python (and no conda_python), replace relion_python_* scripts with a clear
+        error stub."""
+        if self.spec.satisfies("@5: ~python") and not self._conda_python:
+            stub = (
+                "#!/usr/bin/env bash\n\n"
+                'echo "This build of RELION does not support Python commands."\n'
+                "exit 1\n"
+            )
+            for path in glob.glob(join_path(self.prefix.bin, "relion_python_*")):
+                with open(path, "w") as f:
+                    f.write(stub)
+
+    def setup_run_environment(self, env):
+        env.set("RELION_CTFFIND_EXECUTABLE", self.spec["ctffind"].prefix.bin.ctffind)

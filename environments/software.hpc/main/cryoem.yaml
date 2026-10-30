@@ -1,9 +1,9 @@
   definitions:
     - relion-cuda-pkgs:
-      - relion @5.0.0 +gui +cuda purpose=cluster torch_home=/share/databases/relion/torch conda_python=/cvmfs/hpc.ucdavis.edu/sw/conda/environments/relion-5.0/bin/python
+      - relion @5.0.0 +gui +cuda ~python purpose=cluster torch_home=/share/databases/relion/torch conda_python=/cvmfs/hpc.ucdavis.edu/sw/conda/environments/relion-5.0/bin/python
       - relion @4.0.1 +gui +cuda +gpu_delay purpose=cluster 
     - relion-cpu-pkgs:
-      - relion @5.0.0 +gui ~cuda +altcpu purpose=cluster torch_home=/share/databases/relion/torch conda_python=/cvmfs/hpc.ucdavis.edu/sw/conda/environments/relion-5.0/bin/python
+      - relion @5.0.0 +gui ~cuda ~python +altcpu purpose=cluster torch_home=/share/databases/relion/torch conda_python=/cvmfs/hpc.ucdavis.edu/sw/conda/environments/relion-5.0/bin/python
       - relion @4.0.1 +gui ~cuda +altcpu purpose=cluster
 
     - relion-specs:
