@@ -2,6 +2,9 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+# UC Davis fork of builtin @ v2026.10.0: adds 25.0.1, 23.0.1 and 21.0.5 (and java@25/@23
+# provides for them).
+
 import os
 import re
 
@@ -16,36 +19,23 @@ class Jdk(Package):
     plus tools for developing, debugging, and monitoring Java applications."""
 
     homepage = "https://www.oracle.com/technetwork/java/javase/downloads/index.html"
-    url = "https://download.oracle.com/java/17/archive/jdk-17.0.10_linux-x64_bin.tar.gz"
 
     maintainers("justintoo")
 
-    version(
-        "25.0.1",
-        sha256="a159db241c72f804ec7c862d465f8237e31d36a463e0b86e18f68bc654dcef91",
-    )
+    license("LicenseRef-Oracle-Proprietary", checked_by="alecbcs")
 
-    version(
-        "23.0.1",
-        sha256="2bda38cd0f31d593b56ee5a607401bc6f245aafe07535b6525572861c2d15d6f",
-    )
-    version(
-        "21.0.5",
-        sha256="9c2f7c39e0d5b296ce50e563740694b2ebfe4a620415d1b2b848ba47bebceb47",
-    )
-    version(
-        "21.0.2",
-        sha256="9f1f4a7f25ef6a73255657c40a6d7714f2d269cf15fb2ff1dc9c0c8b56623a6f",
-    )
-    version(
-        "17.0.10",
-        sha256="e4fb2df9a32a876afb0a6e17f54c594c2780e18badfa2e8fc99bc2656b0a57b1",
-    )
+    redistribute(source=False, binary=False)
 
-    def url_for_version(self, version):
-        url = "https://download.oracle.com/java/{0}/archive/jdk-{1}_linux-x64_bin.tar.gz"
-        return url.format(version.up_to(1), version)
+    version("25.0.1", sha256="a159db241c72f804ec7c862d465f8237e31d36a463e0b86e18f68bc654dcef91")
+    version("23.0.1", sha256="2bda38cd0f31d593b56ee5a607401bc6f245aafe07535b6525572861c2d15d6f")
+    version("21.0.11", sha256="e1c25a83f9e2e374c93e0c29cc3d98a947621ae0fefa4a8d932951eb160c47c3")
+    version("21.0.5", sha256="9c2f7c39e0d5b296ce50e563740694b2ebfe4a620415d1b2b848ba47bebceb47")
+    version("21.0.2", sha256="9f1f4a7f25ef6a73255657c40a6d7714f2d269cf15fb2ff1dc9c0c8b56623a6f")
+    version("17.0.12", sha256="311f1448312ecab391fe2a1b2ac140d6e1c7aea6fbf08416b466a58874f2b40f")
+    version("17.0.10", sha256="e4fb2df9a32a876afb0a6e17f54c594c2780e18badfa2e8fc99bc2656b0a57b1")
 
+    provides("java@25", when="@25")
+    provides("java@23", when="@23")
     provides("java@21", when="@21")
     provides("java@17", when="@17")
 
@@ -64,6 +54,10 @@ class Jdk(Package):
     extendable = True
 
     executables = ["^java$"]
+
+    def url_for_version(self, version):
+        url = "https://download.oracle.com/java/{0}/archive/jdk-{1}_linux-x64_bin.tar.gz"
+        return url.format(version.up_to(1), version)
 
     @classmethod
     def determine_version(cls, exe):
