@@ -39,11 +39,17 @@ packages:
 
   # When mpi=openmpi, this introduces an unresolvable dependency.
   # See https://github.com/spack/spack/issues/15836 for details
+  # +cairo (graphical lstopo) only for gcc: with compiler_mixing: false, cairo's link/run
+  # closure (glib -> python, X11) would otherwise have to be built with oneapi/nvhpc, and
+  # python conflicts with %nvhpc.
   hwloc:
-    require: +pci +libxml2 +libudev +nvml +cuda +cairo
+    require:
+    - '+pci +libxml2 +libudev +nvml +cuda'
+    - spec: '+cairo'
+      when: '%c=gcc'
 
   mpich:
-    require: 'netmod=ucx pmi=pmix romio-filesystem=nfs,quobytefs +romio +verbs +fortran +cuda ^pmix@5.0.3'
+    require: 'netmod=ucx pmi=pmix romio-filesystem=nfs,quobytefs +romio +verbs +fortran +cuda'
 
   mysql-client:
     require:
@@ -61,12 +67,12 @@ packages:
       - spec: '+legacylaunchers'
         message: 'openmpi: legacylaunchers for versions @:4'
         when: '@:4'
-      - spec: 'romio-filesystem=nfs,quobytefs ^pmix@5.0.3' # Make sure pmix version matches openmpi's internal pmix version
+      - spec: 'romio-filesystem=nfs,quobytefs' # Make sure pmix version matches openmpi's internal pmix version
         when: '@5:'
         message: 'openmpi: romio-filesystem variants for @5:'
 
   slurm:
-    require: '+pmix +mariadb +hwloc +restd +nvml +cgroup +pam +lua sysconfdir=/etc/slurm ^pmix@5.0.3'
+    require: '+pmix +mariadb +hwloc +restd +nvml +cgroup +pam +lua sysconfdir=/etc/slurm'
 
   sqlite:
     variants: +rtree
