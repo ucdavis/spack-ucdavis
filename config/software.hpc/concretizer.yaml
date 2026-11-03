@@ -23,4 +23,16 @@ concretizer:
   # on each root spec, allowing different versions and variants of the same package in
   # an environment.
   unify: when_possible
-  compiler_mixing: false
+  # A list keeps mixing disabled except for these packages. They are the system externals
+  # built with gcc@11.4.0 (packages.external.yaml); without the exemption, anything that links
+  # them (e.g. slurm -> mariadb/munge) cannot use gcc_default, oneapi or nvhpc.
+  # The exemption covers only the named node, not its dependencies (externals have none).
+  compiler_mixing:
+  - apptainer
+  - julia
+  - mariadb
+  - mariadb-c-client
+  - mesa
+  - munge
+  - openssl
+  - rust
