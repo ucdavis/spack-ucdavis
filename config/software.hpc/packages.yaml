@@ -34,8 +34,15 @@ packages:
   environment-modules:
     variants: etcdir=/etc/environment-modules
 
+  # -Mnodwarf (nvhpc): nvc claims GCC 11, so glibc 2.35's <error.h> enables inline
+  # error()/error_at_line() built on __builtin_va_arg_pack, which nvc lacks. gnulib's configure
+  # check then fails, it compiles its own error.c, and nvc ICEs emitting debug info for it
+  # ("get_var_line(): line not found ... bits/error.h"). -Mnodwarf cancels autotools' -g.
   gettext:
-    require: +libxml2
+    require:
+    - '+libxml2'
+    - spec: cflags=-Mnodwarf
+      when: '%c=nvhpc'
 
   # When mpi=openmpi, this introduces an unresolvable dependency.
   # See https://github.com/spack/spack/issues/15836 for details
@@ -47,6 +54,12 @@ packages:
     - '+pci +libxml2 +libudev +nvml +cuda'
     - spec: '+cairo'
       when: '%c=gcc'
+
+  # -Mnodwarf for nvhpc: see gettext above.
+  libiconv:
+    require:
+    - spec: cflags=-Mnodwarf
+      when: '%c=nvhpc'
 
   mpich:
     require: 'netmod=ucx pmi=pmix romio-filesystem=nfs,quobytefs +romio +verbs +fortran +cuda'
