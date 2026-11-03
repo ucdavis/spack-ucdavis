@@ -17,6 +17,9 @@
 # __builtin_va_arg_pack, which nvc lacks: link errors, and an ICE with -g. Same
 # technique as NVIDIA's own compilers/include/bits/{floatn,link}.h overrides.
 #
+# And sets NVCOMPILER_NOSWITCHERROR=1 for Spack builds using nvhpc, so GCC-only flags that
+# build systems hard-code (e.g. libxml2's -Wno-array-bounds) warn instead of failing.
+#
 # Copyright (c) 2020, NVIDIA CORPORATION. All rights reserved.
 import glob
 import os.path
@@ -738,15 +741,22 @@ class Nvhpc(Package, CompilerPackage):
         # command line, after SPACK_TARGET_ARGS_*, and nvc honors the last -tp. They cannot
         # replace SPACK_TARGET_ARGS_* directly: compiler-wrapper sets those after externals'
         # hooks.
+        langs = [
+            lang
+            for lang in ("c", "cxx", "fortran")
+            if dependent_spec.satisfies(f"^[virtuals={lang}] nvhpc")
+        ]
         tp = _GENERIC_X86_TP.get(dependent_spec.target.name)
         if tp and self.spec.satisfies("@23.11:"):
-            for lang, var in (
-                ("c", "SPACK_ALWAYS_CFLAGS"),
-                ("cxx", "SPACK_ALWAYS_CXXFLAGS"),
-                ("fortran", "SPACK_ALWAYS_FFLAGS"),
-            ):
-                if dependent_spec.satisfies(f"^[virtuals={lang}] nvhpc"):
-                    env.append_flags(var, f"-tp {tp}")
+            for lang in langs:
+                var = {"c": "CFLAGS", "cxx": "CXXFLAGS", "fortran": "FFLAGS"}[lang]
+                env.append_flags(f"SPACK_ALWAYS_{var}", f"-tp {tp}")
+
+        # ucdavis: unknown switches (GCC-only -W.../-f... flags that build systems hard-code,
+        # e.g. libxml2's -Wno-array-bounds) are warnings, not fatal errors: same as passing
+        # -noswitcherror (read by nvhpc's rcfiles/nativerc). Builds only, not the modulefile.
+        if langs:
+            env.set("NVCOMPILER_NOSWITCHERROR", "1")
 
     def setup_dependent_package(self, module, dependent_spec):
         if "+mpi" in self.spec or self.provides("mpi"):
