@@ -10,6 +10,13 @@
 # zlib-ng's configure then fails to link. Named targets (zen2, haswell, ...) are
 # unaffected and keep archspec's flags.
 #
+# Also puts include-fixes/ (a no-op-for-nvc <bits/error.h>) ahead of /usr/include via
+# C_INCLUDE_PATH/CPLUS_INCLUDE_PATH in setup_run_environment, which covers both the
+# modulefile and Spack builds using nvhpc. nvc claims GCC 11, so glibc 2.35's
+# <error.h> enables inline error()/error_at_line() wrappers built on
+# __builtin_va_arg_pack, which nvc lacks: link errors, and an ICE with -g. Same
+# technique as NVIDIA's own compilers/include/bits/{floatn,link}.h overrides.
+#
 # Copyright (c) 2020, NVIDIA CORPORATION. All rights reserved.
 import glob
 import os.path
@@ -653,10 +660,19 @@ class Nvhpc(Package, CompilerPackage):
         # Update localrc to use Spack gcc
         makelocalrc(*makelocalrc_args)
 
+    @property
+    def _include_fixes(self) -> str:
+        """ucdavis: header overrides searched before /usr/include (see header comment)."""
+        return join_path(self.package_dir, "include-fixes")
+
     def setup_run_environment(self, env: EnvironmentModifications) -> None:
         prefix = Prefix(
             join_path(self.prefix, "Linux_%s" % self.spec.target.family, self.version, "compilers")
         )
+
+        # ucdavis: system-include semantics, like NVIDIA's own compilers/include
+        env.prepend_path("C_INCLUDE_PATH", self._include_fixes)
+        env.prepend_path("CPLUS_INCLUDE_PATH", self._include_fixes)
 
         env.set("CC", join_path(prefix.bin, "nvc"))
         env.set("CXX", join_path(prefix.bin, "nvc++"))
@@ -714,10 +730,14 @@ class Nvhpc(Package, CompilerPackage):
                 if hasattr(dependent_module, attr_name):
                     env.set(var_name, getattr(dependent_module, attr_name))
 
-        # ucdavis: replace archspec's "-tp px -m..." for generic x86 levels (see header).
-        # SPACK_ALWAYS_* flags go last on the compiler wrapper's command line, after
-        # SPACK_TARGET_ARGS_*, and nvc honors the last -tp. They cannot replace
-        # SPACK_TARGET_ARGS_* directly: compiler-wrapper sets those after externals' hooks.
+        # ucdavis (see header): include-fixes/ reaches builds through setup_run_environment,
+        # which Spack also applies for direct build dependencies such as the compiler. (Not
+        # -isystem in SPACK_ALWAYS_*: any -isystem there makes the wrapper pass every
+        # dependency's include dir as -isystem instead of -I.)
+        # -tp x86-64-vN for generic x86 levels: SPACK_ALWAYS_* flags go last on the wrapper's
+        # command line, after SPACK_TARGET_ARGS_*, and nvc honors the last -tp. They cannot
+        # replace SPACK_TARGET_ARGS_* directly: compiler-wrapper sets those after externals'
+        # hooks.
         tp = _GENERIC_X86_TP.get(dependent_spec.target.name)
         if tp and self.spec.satisfies("@23.11:"):
             for lang, var in (
