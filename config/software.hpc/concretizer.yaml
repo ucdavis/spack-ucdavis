@@ -23,16 +23,65 @@ concretizer:
   # on each root spec, allowing different versions and variants of the same package in
   # an environment.
   unify: when_possible
-  # A list keeps mixing disabled except for these packages. They are the system externals
-  # built with gcc@11.4.0 (packages.external.yaml); without the exemption, anything that links
-  # them (e.g. slurm -> mariadb/munge) cannot use gcc_default, oneapi or nvhpc.
-  # The exemption covers only the named node, not its dependencies (externals have none).
+  # A list keeps mixing disabled except for the named packages: everything that links into an
+  # nvhpc/oneapi root must use that compiler unless it is listed here. The exemption covers only
+  # the named node, not its dependencies, so a library's whole link/run closure has to be listed.
+  # Three groups:
+  #  1. System externals built with gcc@11.4.0 (packages.external.yaml): apptainer, julia,
+  #     mariadb, mariadb-c-client, mesa, munge, openssl, rust.
+  #  2. Plain-C libraries in the MPI stacks' link closures, built once with %gcc_default via
+  #     environments/software.hpc/common/packages.gcc-libs.yaml (numactl, libnl, libxcrypt,
+  #     gettext and their closures). Rules for adding one: C-only ABI (no Fortran modules, no C++
+  #     API used by the HPC stack), not on the performance/OpenMP path, and every link/run
+  #     dependency listed too. Keep each entry in both files.
+  #  3. Build tools the solver would otherwise build per vendor compiler (perl, cmake, python ...);
+  #     the exemption is a safety net in case one becomes a run dependency of a vendor root.
+  # Not listed, on purpose: openmpi, mpich, ucx, hwloc, pmix, prrte, libevent, yaksa, and in main
+  # hdf5, netcdf, fftw, openblas, scalapack (Fortran modules, C++ or performance).
   compiler_mixing:
   - apptainer
+  - autoconf
+  - automake
+  - bzip2
+  - cmake
+  - curl
+  - diffutils
+  - expat
+  - file
+  - gdbm
+  - gettext
   - julia
+  - krb5
+  - less
+  - libbsd
+  - libedit
+  - libffi
+  - libiconv
+  - libmd
+  - libnl
+  - libpciaccess
+  - libtool
+  - libxcrypt
+  - libxml2
   - mariadb
   - mariadb-c-client
   - mesa
   - munge
+  - ncurses
+  - nghttp2
+  - numactl
+  - openssh
   - openssl
+  - perl
+  - pigz
+  - py-cython
+  - python
+  - rdma-core
+  - readline
   - rust
+  - sqlite
+  - tar
+  - util-linux-uuid
+  - xz
+  - zlib-ng
+  - zstd

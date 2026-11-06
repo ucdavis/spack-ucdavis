@@ -1,0 +1,90 @@
+# Plain-C libraries and build tools built once with %gcc_default and linked by the nvhpc and
+# oneapi stacks. Each package here is also on the compiler_mixing allow-list in
+# config/software.hpc/concretizer.yaml (the allow-list permits mixing; this file forces gcc).
+# Included by the core and main environments only: the compilers environment builds gcc@13.5.0
+# itself with %gcc_bootstrap, so a site-wide requirement would be circular there.
+#
+# Rules for adding a package: C-only public ABI (no Fortran modules, no C++ API used by the HPC
+# stack: nvc++/icpx use the system gcc-11 libstdc++, gcc@13.5.0's is newer), not on the
+# performance/OpenMP path, and every link/run dependency listed too (the allow-list exempts only
+# the named node). A requirement list in this scope replaces a site packages.yaml require entry
+# for the same package, so such entries are repeated here (gettext). tar keeps its site entry.
+packages:
+
+  # --- link-closure libraries of the nvhpc/oneapi MPI stacks ---
+  bzip2:
+    require: '%gcc_default'
+  expat:
+    require: '%gcc_default'
+  gdbm:
+    require: '%gcc_default'
+  gettext:
+    require: ['+libxml2', '%gcc_default']   # +libxml2 repeated from config/software.hpc/packages.yaml
+  krb5:
+    require: '%gcc_default'
+  libbsd:
+    require: '%gcc_default'
+  libedit:
+    require: '%gcc_default'
+  libffi:
+    require: '%gcc_default'
+  libiconv:
+    require: '%gcc_default'
+  libmd:
+    require: '%gcc_default'
+  libnl:
+    require: '%gcc_default'
+  libpciaccess:
+    require: '%gcc_default'
+  libxcrypt:
+    require: '%gcc_default'
+  libxml2:
+    require: '%gcc_default'
+  ncurses:
+    require: '%gcc_default'
+  numactl:
+    require: '%gcc_default'
+  openssh:
+    require: '%gcc_default'
+  rdma-core:
+    require: ['~pyverbs', '%gcc_default']   # pyverbs would pull python into the MPI link closure
+  readline:
+    require: '%gcc_default'
+  sqlite:
+    require: '%gcc_default'
+  util-linux-uuid:
+    require: '%gcc_default'
+  xz:
+    require: '%gcc_default'
+  zlib-ng:
+    require: '%gcc_default'
+  zstd:
+    require: '%gcc_default'
+
+  # --- build tools the solver would otherwise build once per vendor compiler ---
+  autoconf:
+    require: '%gcc_default'
+  automake:
+    require: '%gcc_default'
+  cmake:
+    require: '%gcc_default'
+  curl:
+    require: '%gcc_default'
+  diffutils:
+    require: '%gcc_default'
+  file:
+    require: '%gcc_default'
+  less:
+    require: '%gcc_default'
+  libtool:
+    require: '%gcc_default'
+  nghttp2:
+    require: '%gcc_default'
+  perl:
+    require: '%gcc_default'
+  pigz:
+    require: '%gcc_default'
+  py-cython:
+    require: '%gcc_default'
+  python:
+    require: '%gcc_default'
