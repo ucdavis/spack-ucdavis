@@ -14,6 +14,10 @@ packages:
       - mpich
       mysql-client:
       - mariadb
+    # cuda_arch is a sticky, multi-valued variant, so this is the exact default set for every
+    # +cuda build. List only the compute capabilities present on the cluster. A spec that pins
+    # an older cuda must set cuda_arch= itself (86 needs cuda@11.1:, 89 11.8:, 90 12.0:).
+    # Keep this as variants: (prefer: is additive on multi-valued variants, require: is hard).
     variants:
     - cuda_arch=75,86
     #deprecation:
@@ -24,8 +28,10 @@ packages:
     require: +X +ft +fc +pdf +png +gobject
 
   cuda:
-    version:
-      - '13.0.2'
+    # Strong preference (ranks above reuse): unpinned +cuda builds get 13.0.2 even while other
+    # cuda versions are installed; an explicit ^cuda@X in a spec still wins. A version:
+    # preference would lose to reuse of whichever cuda happens to be installed.
+    prefer: ['@13.0.2']
     require: +allow-unsupported-compilers
 
   dbus:
