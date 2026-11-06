@@ -1,0 +1,28 @@
+--- a/src/ucs/type/rwlock.h
++++ b/src/ucs/type/rwlock.h
+@@ -93,9 +93,12 @@
+     }
+ 
+     for (;;) {
+-        if (__atomic_compare_exchange_n(&lock->state, &x, UCS_RWLOCK_WRITE, 0,
+-                                        __ATOMIC_ACQUIRE, __ATOMIC_RELAXED)) {
+-            return;
++        {
++            uint32_t old = __sync_val_compare_and_swap(&lock->state, x, UCS_RWLOCK_WRITE);
++            if (old == x) {
++                return;
++            }
++            x = old;
+         }
+ 
+ wait:
+@@ -118,8 +121,7 @@
+ 
+     x = __atomic_load_n(&lock->state, __ATOMIC_RELAXED);
+     if ((x < UCS_RWLOCK_WRITE) &&
+-        (__atomic_compare_exchange_n(&lock->state, &x, x | UCS_RWLOCK_WRITE, 1,
+-                                     __ATOMIC_ACQUIRE, __ATOMIC_RELAXED))) {
++        (__sync_val_compare_and_swap(&lock->state, x, x | UCS_RWLOCK_WRITE) == x)) {
+         return 1;
+     }
+ 
