@@ -157,3 +157,10 @@ packages:
     externals:
     - spec: openssl@3.0.2 %gcc@11.4.0
       prefix: /usr
+      # Ubuntu keeps openssl.pc under the multiarch dir; Spack adds no pkgconfig dirs for
+      # system prefixes and its own pkgconf searches only its prefix, so pkg-config based
+      # configures (libjwt) cannot find openssl without this.
+      extra_attributes:
+        environment:
+          prepend_path:
+            PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig
