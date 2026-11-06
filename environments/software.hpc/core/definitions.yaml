@@ -4,17 +4,21 @@
       - '%oneapi_default'
       - '%nvhpc_default'
 
+    # ^cuda@13.0.2 on each package whose DAG contains cuda: with unify: when_possible every
+    # solve round holds a single cuda root and the MPI stacks land in different rounds, so
+    # without the pin each stack links a different cuda (ucx 1.22 then fails against
+    # cuda@:11.6). pmix and libevent have no cuda dependency and must stay unpinned.
     - messaging-pkgs:
-      - mpich @4.3.2 ^pmix@5.0.10
-      - openmpi @5.0.10 ^pmix@5.0.10
+      - mpich @4.3.2 ^pmix@5.0.10 ^cuda@13.0.2
+      - openmpi @5.0.10 ^pmix@5.0.10 ^cuda@13.0.2
       #- openmpi @4.1.5
-      - openmpi @4.1.7
+      - openmpi @4.1.7 ^cuda@13.0.2
       - pmix @4.2.9
       - pmix @5.0.10
       #- pmix @5.0.8
       - libevent @2.1.12
-      - ucx @1.17.0
-      - hwloc @2.11.1
+      - ucx @1.17.0 ^cuda@13.0.2
+      - hwloc @2.11.1 ^cuda@13.0.2
 
     - generic-pkgs:
       - environment-modules @5.7.0
