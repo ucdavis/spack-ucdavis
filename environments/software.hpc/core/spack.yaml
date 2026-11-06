@@ -1,23 +1,22 @@
 spack:
   include:
   - definitions.yaml
+  - ../compilers/externalized.yaml
   specs:
-  - group: core
-    specs:
-    - $core-specs
+  - $core-specs
+  #- group: core
+  #  specs:
+  #  - $core-specs
   view:
     default:
-      root: /cvmfs/hpc.ucdavis.edu/sw/spack/env/core/view
+      root: $spack/../env/core/view
       projections:
-        all: {architecture.platform}-{architecture.target}/{compiler.name}-{compiler.version}/{name}-{version}
+        all: "{architecture.platform}-{architecture.target}/{compiler.name}-{compiler.version}/{name}-{version}"
       link: roots
       link_type: hardlink
   concretizer:
     unify: when_possible
     reuse: false
-  #packages:
-  #  gcc:
-  #    buildable: False
   modules:
     default:
       enable:: []

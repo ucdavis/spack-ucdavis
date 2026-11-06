@@ -1,32 +1,32 @@
   definitions:
-
     - compilers:
       - '%gcc_default'
       - '%oneapi_default'
+      - '%nvhpc_default'
 
     - messaging-pkgs:
-      - mpich @4.3.2 #^pmix@5.0.3
-      - openmpi @4.1.5
+      - mpich @4.3.2 ^pmix@5.0.10
+      - openmpi @5.0.10 ^pmix@5.0.10
+      #- openmpi @4.1.5
       - openmpi @4.1.7
-      - openmpi @5.0.5 #^pmix@5.0.3
       - pmix @4.2.9
-      - pmix @5.0.3
+      - pmix @5.0.10
       #- pmix @5.0.8
       - libevent @2.1.12
       - ucx @1.17.0
       - hwloc @2.11.1
 
     - generic-pkgs:
-      - environment-modules @5.5.0
+      - environment-modules @5.7.0
       - tcl
-      - slurm @26-05-4-1
+      - slurm @26-05-4-1 ^pmix@5.0.10
       - go @1.23.2
-      - rust @1.85.0
-      - rust @1.81.0
+      - go @1.27.1
       - jdk @23.0.1
       - openjdk @11.0.17_8
       - openjdk @16.0.2
       - openjdk @17.0.11_9
+      - openjdk @25.0.2_10
     - generic-specs:
       - matrix:
         - [$generic-pkgs]
@@ -34,6 +34,7 @@
 
     - cuda-versions:
       - '@13.3.0'
+      - '@13.0.2'
       - '@12.6.2'
       - '@12.3.0'
       - '@11.7'
@@ -45,6 +46,7 @@
       - matrix:
         - [cuda]
         - [$cuda-versions]
+        - ['%gcc_default']
 
     - messaging-specs:
       - matrix:
