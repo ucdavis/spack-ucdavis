@@ -1,0 +1,24 @@
+Per-package pkg-config directories for externals that live under /usr.
+
+Spack adds <prefix>/lib/pkgconfig to PKG_CONFIG_PATH only for non-system prefixes, and
+Spack's own pkgconf searches only its own prefix, so a configure script that asks
+pkg-config for a /usr external fails (libjwt -> openssl). Each directory here holds
+symlinks to the system .pc files of exactly one external, and the matching entry in
+config/software.hpc/packages.external.yaml prepends that directory to PKG_CONFIG_PATH
+through extra_attributes.environment. Linking only that package's files keeps the other
+~200 system .pc files out of Spack builds.
+
+Rules
+- One directory per Spack package name; symlinks into /usr/lib/x86_64-linux-gnu/pkgconfig
+  or /usr/share/pkgconfig, nothing copied, so Ubuntu updates flow through.
+- The hook path is /cvmfs/hpc.ucdavis.edu/sw/spack-blue/config/pkgconfig/<name>, via the
+  deployment's config symlink, so it does not depend on the worktree location.
+- extra_attributes are part of the external's DAG hash. Adding or changing a hook gives the
+  external a new identity and rebuilds its whole dependent closure; change hooks only when
+  that rebuild is planned, and uninstall the stale external record afterwards.
+- Spack applies the hook to direct build dependents of the external (BUILDTIME_DIRECT in
+  build_environment.py); a link-only direct dependency does not receive it.
+- An external with no .pc files on the system (apptainer) gets no directory and no hook.
+- An external inside an installed compiler's link/run closure keeps its old identity in every
+  solve until that compiler is rebuilt: the solver injects installed compilers and their
+  closures into the reuse set regardless of concretizer:reuse (openssl via llvm -> python).

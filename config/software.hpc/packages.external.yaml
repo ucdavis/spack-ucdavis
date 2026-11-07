@@ -103,16 +103,31 @@ packages:
           cxx: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2023.2.4/compiler/2023.2.4/linux/bin/intel64/icpc
           fortran: /cvmfs/hpc.ucdavis.edu/sw/compilers/oneapi/2023.2.4/compiler/2023.2.4/linux/bin/ifort
 
+# pkg-config and /usr externals: Spack adds PKG_CONFIG_PATH entries only for non-system
+# prefixes and its own pkgconf searches only its prefix, so configure scripts that use
+# pkg-config cannot see a /usr external (libjwt -> openssl). Every /usr external with .pc
+# files therefore prepends config/pkgconfig/<name>, a directory of symlinks to only that
+# package's system .pc files (see the README there). The hook reaches direct build
+# dependents. extra_attributes are part of the external's hash: editing a hook gives the
+# external a new identity and rebuilds its whole dependent closure.
   mariadb:
     externals:
       - spec: mariadb@10.8.2 %gcc@11.4.0
         prefix: /usr
+        extra_attributes:
+          environment:
+            prepend_path:
+              PKG_CONFIG_PATH: /cvmfs/hpc.ucdavis.edu/sw/spack-blue/config/pkgconfig/mariadb
     buildable: false
   
   munge:
     externals:
       - spec: munge@0.5.14 %gcc@11.4.0
         prefix: /usr
+        extra_attributes:
+          environment:
+            prepend_path:
+              PKG_CONFIG_PATH: /cvmfs/hpc.ucdavis.edu/sw/spack-blue/config/pkgconfig/munge
     buildable: false
   
   apptainer:
@@ -125,6 +140,10 @@ packages:
     externals:
       - spec: mesa@23.2.1 ~llvm +glx +opengl +osmesa %gcc@11.4.0 
         prefix: /usr
+        extra_attributes:
+          environment:
+            prepend_path:
+              PKG_CONFIG_PATH: /cvmfs/hpc.ucdavis.edu/sw/spack-blue/config/pkgconfig/mesa
     buildable: false
 
   gaussian:
@@ -152,15 +171,16 @@ packages:
     externals:
       - spec: mariadb-c-client@3 %gcc@11.4.0
         prefix: /usr
+        extra_attributes:
+          environment:
+            prepend_path:
+              PKG_CONFIG_PATH: /cvmfs/hpc.ucdavis.edu/sw/spack-blue/config/pkgconfig/mariadb-c-client
 
   openssl:
     externals:
     - spec: openssl@3.0.2 %gcc@11.4.0
       prefix: /usr
-      # Ubuntu keeps openssl.pc under the multiarch dir; Spack adds no pkgconfig dirs for
-      # system prefixes and its own pkgconf searches only its prefix, so pkg-config based
-      # configures (libjwt) cannot find openssl without this.
       extra_attributes:
         environment:
           prepend_path:
-            PKG_CONFIG_PATH: /usr/lib/x86_64-linux-gnu/pkgconfig
+            PKG_CONFIG_PATH: /cvmfs/hpc.ucdavis.edu/sw/spack-blue/config/pkgconfig/openssl
